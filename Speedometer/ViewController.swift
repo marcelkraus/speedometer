@@ -15,8 +15,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        unitLabel.text = Unit.kilometersPerHour.rawValue
-        speedLabel.text = speed(locationManager.location!.speed, inUnit: Unit.kilometersPerHour)
+        updateDisplay(unit: Unit.kilometersPerHour, speed: locationManager.location?.speed ?? 0)
     }
 
 }
@@ -32,8 +31,11 @@ private extension ViewController {
         locationManager.startUpdatingLocation()
     }
 
-    func speed(_ speed: Double, inUnit unit: Unit) -> String {
-        return String(format: "%03.0f", speed * unit.factor)
+    func updateDisplay(unit: Unit, speed: Double) {
+        let speed = speed > 1.0 ? speed * unit.factor : 0
+
+        unitLabel.text = unit.rawValue
+        speedLabel.text = String(format: "%03.0f", speed)
     }
 
 }
