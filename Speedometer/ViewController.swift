@@ -7,6 +7,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var unitLabel: UILabel!
 
     private var theme = Theme.light
+    private var unit = Unit.kilometersPerHour
     private let locationManager = CLLocationManager()
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -16,12 +17,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initGestureRecognizer()
+        initThemeRecognizer()
+        initUnitRecognizer()
+
         initLocationManager()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        updateDisplay(unit: Unit.kilometersPerHour, speed: locationManager.location?.speed ?? 0)
+        updateDisplay(unit: unit, speed: locationManager.location?.speed ?? 0)
     }
 
 }
@@ -41,11 +44,15 @@ private extension ViewController {
         locationManager.startUpdatingLocation()
     }
 
-    func initGestureRecognizer() {
-        let recognizer = UISwipeGestureRecognizer(target: self, action: #selector(toggleTheme))
-        recognizer.direction = [.left, .right]
-        recognizer.cancelsTouchesInView = false
-        view.addGestureRecognizer(recognizer)
+    func initThemeRecognizer() {
+        let themeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(toggleTheme))
+        themeRecognizer.direction = [.left, .right]
+        view.addGestureRecognizer(themeRecognizer)
+    }
+
+    func initUnitRecognizer() {
+        let unitRecognizer = UITapGestureRecognizer(target: self, action: #selector(toggleUnit))
+        view.addGestureRecognizer(unitRecognizer)
     }
 
     func updateDisplay(unit: Unit, speed: Double) {
@@ -70,6 +77,19 @@ private extension ViewController {
         }
 
         setNeedsStatusBarAppearanceUpdate()
+    }
+
+    @objc func toggleUnit() {
+        switch unit {
+        case .kilometersPerHour:
+            unit = .milesPerHour
+        case .milesPerHour:
+            unit = .metersPerSecond
+        case .metersPerSecond:
+            unit = .kilometersPerHour
+        }
+
+        updateDisplay(unit: unit, speed: locationManager.location?.speed ?? 0)
     }
 
 }
