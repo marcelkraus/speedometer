@@ -17,8 +17,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initThemeRecognizer()
-        initUnitRecognizer()
+        configureThemeRecognizers()
+        configureUnitRecognizer()
 
         initLocationManager()
     }
@@ -44,15 +44,21 @@ private extension ViewController {
         locationManager.startUpdatingLocation()
     }
 
-    func initThemeRecognizer() {
-        let themeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(toggleTheme))
-        themeRecognizer.direction = [.left, .right]
-        view.addGestureRecognizer(themeRecognizer)
+    func configureThemeRecognizers() {
+        let darkThemeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(setDarkTheme))
+        darkThemeGestureRecognizer.numberOfTouchesRequired = 2
+        darkThemeGestureRecognizer.direction = .up
+        view.addGestureRecognizer(darkThemeGestureRecognizer)
+
+        let lightThemeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(setLightTheme))
+        lightThemeGestureRecognizer.numberOfTouchesRequired = 2
+        lightThemeGestureRecognizer.direction = .down
+        view.addGestureRecognizer(lightThemeGestureRecognizer)
     }
 
-    func initUnitRecognizer() {
-        let unitRecognizer = UITapGestureRecognizer(target: self, action: #selector(toggleUnit))
-        view.addGestureRecognizer(unitRecognizer)
+    func configureUnitRecognizer() {
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(toggleUnit))
+        view.addGestureRecognizer(gestureRecognizer)
     }
 
     func updateDisplay(unit: Unit, speed: Double) {
@@ -62,20 +68,27 @@ private extension ViewController {
         speedLabel.text = String(format: "%03.0f", speed)
     }
 
-    @objc func toggleTheme() {
-        theme = theme == .dark ? .light : .dark
-
-        switch theme {
-        case .dark:
-            view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            speedLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            unitLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        case .light:
-            view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            speedLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            unitLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    @objc func setDarkTheme() {
+        guard theme == .light else {
+            return
         }
 
+        theme = .dark
+        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        speedLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        unitLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+
+    @objc func setLightTheme() {
+        guard theme == .dark else {
+            return
+        }
+
+        theme = .light
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        speedLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        unitLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         setNeedsStatusBarAppearanceUpdate()
     }
 
