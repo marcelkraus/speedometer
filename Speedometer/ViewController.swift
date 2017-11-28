@@ -67,13 +67,13 @@ private extension ViewController {
 
         switch theme {
         case .dark:
-            view.backgroundColor = UIColor.black
-            speedLabel.textColor = UIColor.white
-            unitLabel.textColor = UIColor.white
+            view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            speedLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            unitLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         case .light:
-            view.backgroundColor = UIColor.white
-            speedLabel.textColor = UIColor.black
-            unitLabel.textColor = UIColor.black
+            view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            speedLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            unitLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         }
 
         setNeedsStatusBarAppearanceUpdate()
