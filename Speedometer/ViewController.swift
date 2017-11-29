@@ -80,7 +80,7 @@ private extension ViewController {
         let speed = speed > 1.0 ? speed * unit.factor : 0
 
         unitLabel.text = unit.rawValue
-        speedLabel.text = String(format: "%03.0f", speed)
+        speedLabel.text = String(format: "%01.0f", speed)
     }
 
     @objc func nextTheme() {
