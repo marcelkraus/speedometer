@@ -3,28 +3,17 @@ import UIKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
-    private let themes = LocalThemeLoader.load()
     private let locationManager = CLLocationManager()
+    private let themeManager = ThemeManager()
 
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var unitLabel: UILabel!
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return theme.statusBarAppearance
+        return themeManager.current.statusBarAppearance
     }
 
-    private var theme: Theme {
-        didSet {
-            configureTheme()
-        }
-    }
     private var unit = Unit.kilometersPerHour
-
-    required init?(coder aDecoder: NSCoder) {
-        theme = themes.first!
-
-        super.init(coder: aDecoder)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +21,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         configureThemeRecognizers()
         configureUnitRecognizer()
         initLocationManager()
-        configureTheme()
+        updateThemeColors()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        updateDisplay(unit: unit, speed: locationManager.location?.speed ?? 0)
+        updateLabels(unit: unit, speed: locationManager.location?.speed ?? 0)
     }
 
 }
@@ -69,14 +58,14 @@ private extension ViewController {
         view.addGestureRecognizer(gestureRecognizer)
     }
 
-    func configureTheme() {
-        view.backgroundColor = theme.backgroundColor
-        speedLabel.textColor = theme.speedLabelColor
-        unitLabel.textColor = theme.unitLabelColor
+    func updateThemeColors() {
+        view.backgroundColor = themeManager.current.backgroundColor
+        speedLabel.textColor = themeManager.current.speedLabelColor
+        unitLabel.textColor = themeManager.current.unitLabelColor
         setNeedsStatusBarAppearanceUpdate()
     }
 
-    func updateDisplay(unit: Unit, speed: Double) {
+    func updateLabels(unit: Unit, speed: Double) {
         let speed = speed > 1.0 ? speed * unit.factor : 0
 
         unitLabel.text = unit.rawValue
@@ -84,19 +73,15 @@ private extension ViewController {
     }
 
     @objc func nextTheme() {
-        guard let index = themes.index(of: theme)?.advanced(by: +1), themes.indices.contains(index) else {
-            return
-        }
+        themeManager.next()
 
-        theme = themes[index]
+        updateThemeColors()
     }
 
     @objc func previousTheme() {
-        guard let index = themes.index(of: theme)?.advanced(by: -1), themes.indices.contains(index) else {
-            return
-        }
+        themeManager.previous()
 
-        theme = themes[index]
+        updateThemeColors()
     }
 
     @objc func toggleUnit() {
@@ -109,7 +94,7 @@ private extension ViewController {
             unit = .kilometersPerHour
         }
 
-        updateDisplay(unit: unit, speed: locationManager.location?.speed ?? 0)
+        updateLabels(unit: unit, speed: locationManager.location?.speed ?? 0)
     }
 
 }
