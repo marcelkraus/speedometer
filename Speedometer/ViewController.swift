@@ -11,7 +11,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     private var unit = Unit.kilometersPerHour
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return themeManager.current.statusBarAppearance
+        return themeManager.current.statusBarStyle
     }
 
     override func viewDidLoad() {
@@ -55,9 +55,9 @@ private extension ViewController {
     }
 
     func updateThemeColors() {
-        view.backgroundColor = themeManager.current.backgroundColor
-        speedLabel.textColor = themeManager.current.speedLabelColor
-        unitLabel.textColor = themeManager.current.unitLabelColor
+        view.backgroundColor = themeManager.current.color.background
+        speedLabel.textColor = themeManager.current.color.speedLabel
+        unitLabel.textColor = themeManager.current.color.unitLabel
         setNeedsStatusBarAppearanceUpdate()
     }
 

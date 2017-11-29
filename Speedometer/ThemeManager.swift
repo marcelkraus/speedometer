@@ -3,13 +3,11 @@ import UIKit
 class ThemeManager {
 
     struct Theme: Equatable {
-        let backgroundColor: UIColor
-        let speedLabelColor: UIColor
-        let unitLabelColor: UIColor
-        let statusBarAppearance: UIStatusBarStyle
+        let color: (background: UIColor, speedLabel: UIColor, unitLabel: UIColor)
+        let statusBarStyle: UIStatusBarStyle
 
         static func ==(lhs: Theme, rhs: Theme) -> Bool {
-            return lhs.backgroundColor == rhs.backgroundColor && lhs.speedLabelColor == rhs.speedLabelColor && lhs.unitLabelColor == rhs.unitLabelColor && lhs.statusBarAppearance == rhs.statusBarAppearance
+            return lhs.color.background == rhs.color.background && lhs.color.speedLabel == rhs.color.speedLabel && lhs.color.unitLabel == rhs.color.unitLabel && lhs.statusBarStyle == rhs.statusBarStyle
         }
     }
 
@@ -40,9 +38,9 @@ class ThemeManager {
 private extension ThemeManager {
 
     static let themes = [
-        Theme(backgroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), speedLabelColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), unitLabelColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), statusBarAppearance: .default),
-        Theme(backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), speedLabelColor: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), unitLabelColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), statusBarAppearance: .default),
-        Theme(backgroundColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), speedLabelColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), unitLabelColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), statusBarAppearance: .lightContent),
+        Theme(color: (background: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), speedLabel: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), unitLabel: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)), statusBarStyle: .default),
+        Theme(color: (background: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), speedLabel: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), unitLabel: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)), statusBarStyle: .default),
+        Theme(color: (background: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), speedLabel: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), unitLabel: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), statusBarStyle: .lightContent),
     ]
 
 }
