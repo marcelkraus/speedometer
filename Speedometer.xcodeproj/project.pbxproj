@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
-		DFCFE4561FCEBBBA00D12EE7 /* ThemeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCFE4551FCEBBBA00D12EE7 /* ThemeLoader.swift */; };
+		DF4D76B31FCEEBA600348662 /* LocalThemeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D76B21FCEEBA600348662 /* LocalThemeLoader.swift */; };
 		DFCFE4581FCECF7600D12EE7 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCFE4571FCECF7600D12EE7 /* Theme.swift */; };
 		DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */; };
 		DFEB62281F30B5EA00FEC555 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62271F30B5EA00FEC555 /* ViewController.swift */; };
@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		DF2C45AE1FCC2EF0005C8906 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
-		DFCFE4551FCEBBBA00D12EE7 /* ThemeLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeLoader.swift; sourceTree = "<group>"; };
+		DF4D76B21FCEEBA600348662 /* LocalThemeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalThemeLoader.swift; sourceTree = "<group>"; };
 		DFCFE4571FCECF7600D12EE7 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		DFEB62221F30B5EA00FEC555 /* Speedometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Speedometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF4D76B41FCEEDB700348662 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				DF4D76B21FCEEBA600348662 /* LocalThemeLoader.swift */,
+				DFCFE4571FCECF7600D12EE7 /* Theme.swift */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
 		DFEB62191F30B5E900FEC555 = {
 			isa = PBXGroup;
 			children = (
@@ -65,8 +74,7 @@
 				DFEB62311F30B5EA00FEC555 /* Info.plist */,
 				DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */,
 				DFEB62291F30B5EA00FEC555 /* Main.storyboard */,
-				DFCFE4571FCECF7600D12EE7 /* Theme.swift */,
-				DFCFE4551FCEBBBA00D12EE7 /* ThemeLoader.swift */,
+				DF4D76B41FCEEDB700348662 /* Template */,
 				DF2C45AE1FCC2EF0005C8906 /* Unit.swift */,
 				DFEB62271F30B5EA00FEC555 /* ViewController.swift */,
 			);
@@ -150,7 +158,7 @@
 				DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */,
 				DFEB62281F30B5EA00FEC555 /* ViewController.swift in Sources */,
 				DFCFE4581FCECF7600D12EE7 /* Theme.swift in Sources */,
-				DFCFE4561FCEBBBA00D12EE7 /* ThemeLoader.swift in Sources */,
+				DF4D76B31FCEEBA600348662 /* LocalThemeLoader.swift in Sources */,
 				DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
