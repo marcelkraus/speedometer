@@ -9,18 +9,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var unitLabel: UILabel!
 
+    private var unit = Unit.kilometersPerHour
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return themeManager.current.statusBarAppearance
     }
 
-    private var unit = Unit.kilometersPerHour
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureThemeRecognizers()
-        configureUnitRecognizer()
         initLocationManager()
+        configureGestureRecognizers()
         updateThemeColors()
     }
 
@@ -41,7 +39,7 @@ private extension ViewController {
         locationManager.startUpdatingLocation()
     }
 
-    func configureThemeRecognizers() {
+    func configureGestureRecognizers() {
         let nextThemeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(nextTheme))
         nextThemeGestureRecognizer.numberOfTouchesRequired = 2
         nextThemeGestureRecognizer.direction = .up
@@ -51,9 +49,7 @@ private extension ViewController {
         previousThemeGestureRecognizer.numberOfTouchesRequired = 2
         previousThemeGestureRecognizer.direction = .down
         view.addGestureRecognizer(previousThemeGestureRecognizer)
-    }
 
-    func configureUnitRecognizer() {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(toggleUnit))
         view.addGestureRecognizer(gestureRecognizer)
     }
