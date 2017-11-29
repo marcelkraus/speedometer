@@ -6,13 +6,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var unitLabel: UILabel!
 
-    private var theme = Theme.light
-    private var unit = Unit.kilometersPerHour
-    private let locationManager = CLLocationManager()
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return theme == .dark ? .lightContent : .default
+    var theme: Theme {
+        return themes[themeIndex]
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return theme.statusBarAppearance
+    }
+
+    private let themes = ThemeLoader().loadThemes()
+    private var themeIndex = 0 {
+        didSet {
+            view.backgroundColor = theme.backgroundColor
+            speedLabel.textColor = theme.speedLabelColor
+            unitLabel.textColor = theme.unitLabelColor
+            setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    private let locationManager = CLLocationManager()
+    private var unit = Unit.kilometersPerHour
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +42,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
 private extension ViewController {
 
-    enum Theme {
-        case dark, light
-    }
-
     func initLocationManager() {
         locationManager.requestWhenInUseAuthorization()
 
@@ -45,15 +52,15 @@ private extension ViewController {
     }
 
     func configureThemeRecognizers() {
-        let darkThemeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(setDarkTheme))
-        darkThemeGestureRecognizer.numberOfTouchesRequired = 2
-        darkThemeGestureRecognizer.direction = .up
-        view.addGestureRecognizer(darkThemeGestureRecognizer)
+        let previousThemeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(previousTheme))
+        previousThemeGestureRecognizer.numberOfTouchesRequired = 2
+        previousThemeGestureRecognizer.direction = .up
+        view.addGestureRecognizer(previousThemeGestureRecognizer)
 
-        let lightThemeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(setLightTheme))
-        lightThemeGestureRecognizer.numberOfTouchesRequired = 2
-        lightThemeGestureRecognizer.direction = .down
-        view.addGestureRecognizer(lightThemeGestureRecognizer)
+        let nextThemeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(nextTheme))
+        nextThemeGestureRecognizer.numberOfTouchesRequired = 2
+        nextThemeGestureRecognizer.direction = .down
+        view.addGestureRecognizer(nextThemeGestureRecognizer)
     }
 
     func configureUnitRecognizer() {
@@ -68,28 +75,20 @@ private extension ViewController {
         speedLabel.text = String(format: "%03.0f", speed)
     }
 
-    @objc func setDarkTheme() {
-        guard theme == .light else {
+    @objc func previousTheme() {
+        guard themeIndex-1 >= 0 else {
             return
         }
 
-        theme = .dark
-        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        speedLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        unitLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        setNeedsStatusBarAppearanceUpdate()
+        themeIndex -= 1
     }
 
-    @objc func setLightTheme() {
-        guard theme == .dark else {
+    @objc func nextTheme() {
+        guard themeIndex+1 < themes.count else {
             return
         }
 
-        theme = .light
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        speedLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        unitLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        setNeedsStatusBarAppearanceUpdate()
+        themeIndex += 1
     }
 
     @objc func toggleUnit() {
