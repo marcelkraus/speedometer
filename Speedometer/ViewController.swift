@@ -62,9 +62,9 @@ private extension ViewController {
     }
 
     func updateLabels(unit: Unit, speed: Double) {
-        let speed = speed > 1.0 ? speed * unit.factor : 0
+        let speed = speed > 1.0 ? speed * unit.data.factor : 0
 
-        unitLabel.text = unit.rawValue
+        unitLabel.text = unit.data.abbreviation
         speedLabel.text = String(format: "%01.0f", speed)
     }
 

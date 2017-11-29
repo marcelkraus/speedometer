@@ -1,17 +1,15 @@
-enum Unit: String {
+enum Unit {
 
-    case kilometersPerHour = "km/h"
-    case metersPerSecond = "m/s"
-    case milesPerHour = "mph"
+    case kilometersPerHour, metersPerSecond, milesPerHour
 
-    var factor: Double {
+    var data: (abbreviation: String, factor: Double) {
         switch self {
         case .kilometersPerHour:
-            return 3.6
+            return (abbreviation: "km/h", factor: 3.6)
         case .metersPerSecond:
-            return 1
+            return (abbreviation: "m/s", factor: 1.0)
         case .milesPerHour:
-            return 2.23694
+            return (abbreviation: "mph", factor: 2.23694)
         }
     }
 
