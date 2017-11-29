@@ -3,11 +3,11 @@ import UIKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet private weak var speedLabel: UILabel!
+    @IBOutlet private weak var unitLabel: UILabel!
+
     private let locationManager = CLLocationManager()
     private let themeManager = ThemeManager()
-
-    @IBOutlet weak var speedLabel: UILabel!
-    @IBOutlet weak var unitLabel: UILabel!
 
     private var unit = Unit.kilometersPerHour
     override var preferredStatusBarStyle: UIStatusBarStyle {
