@@ -39,6 +39,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF568E471FD0119600D546B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */,
+				DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */,
+				DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */,
+				DFEB62291F30B5EA00FEC555 /* Main.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DF568E481FD011B700D546B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DFEB62271F30B5EA00FEC555 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DF568E491FD011C200D546B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DFB934C21FCF39AF00B41731 /* ThemeManager.swift */,
+				DF2C45AE1FCC2EF0005C8906 /* Unit.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DFEB62191F30B5E900FEC555 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +86,10 @@
 		DFEB62241F30B5EA00FEC555 /* Speedometer */ = {
 			isa = PBXGroup;
 			children = (
-				DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */,
-				DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */,
+				DF568E481FD011B700D546B8 /* Controller */,
+				DF568E491FD011C200D546B8 /* Model */,
+				DF568E471FD0119600D546B8 /* Supporting Files */,
 				DFEB62311F30B5EA00FEC555 /* Info.plist */,
-				DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */,
-				DFEB62291F30B5EA00FEC555 /* Main.storyboard */,
-				DFB934C21FCF39AF00B41731 /* ThemeManager.swift */,
-				DF2C45AE1FCC2EF0005C8906 /* Unit.swift */,
-				DFEB62271F30B5EA00FEC555 /* ViewController.swift */,
 			);
 			path = Speedometer;
 			sourceTree = "<group>";
