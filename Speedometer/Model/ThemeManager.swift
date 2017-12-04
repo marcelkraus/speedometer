@@ -11,11 +11,7 @@ class ThemeManager {
         }
     }
 
-    var current: Theme
-
-    init() {
-        current = ThemeManager.themes.first!
-    }
+    var current = ThemeManager.themes.first!
 
     func next() {
         guard let index = ThemeManager.themes.index(of: current)?.advanced(by: +1), ThemeManager.themes.indices.contains(index) else {
