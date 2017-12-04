@@ -1,7 +1,7 @@
 import CoreLocation
 import UIKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet private weak var speedLabel: UILabel!
     @IBOutlet private weak var unitLabel: UILabel!
@@ -21,11 +21,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         configureGestureRecognizers()
         updateThemeColors()
     }
+}
+
+extension ViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         updateLabels(unit: unit, speed: locationManager.location?.speed ?? 0)
     }
-
 }
 
 private extension ViewController {
