@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         setupLocationManager()
-        configureGestureRecognizers()
+        setupGestureRecognizers()
         updateThemeColors()
     }
 }
@@ -28,6 +28,7 @@ extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         updateLabels(unit: unit, speed: locationManager.location?.speed ?? 0)
     }
+
 }
 
 private extension ViewController {
@@ -41,7 +42,7 @@ private extension ViewController {
         locationManager.startUpdatingLocation()
     }
 
-    func configureGestureRecognizers() {
+    func setupGestureRecognizers() {
         let nextThemeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(nextTheme))
         nextThemeGestureRecognizer.numberOfTouchesRequired = 2
         nextThemeGestureRecognizer.direction = .up
