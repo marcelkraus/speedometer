@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initLocationManager()
+        setupLocationManager()
         configureGestureRecognizers()
         updateThemeColors()
     }
@@ -32,7 +32,7 @@ extension ViewController: CLLocationManagerDelegate {
 
 private extension ViewController {
 
-    func initLocationManager() {
+    func setupLocationManager() {
         locationManager.requestWhenInUseAuthorization()
 
         locationManager.delegate = self
