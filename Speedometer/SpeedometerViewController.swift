@@ -47,21 +47,6 @@ class SpeedometerViewController: UIViewController {
         setupGestureRecognizers()
     }
 
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        switch UIDevice.current.orientation {
-        case .landscapeLeft, .landscapeRight:
-            stackView.axis = .horizontal
-            stackView.alignment = .firstBaseline
-            stackView.spacing = 16
-        case .portrait, .portraitUpsideDown:
-            stackView.axis = .vertical
-            stackView.alignment = .center
-            stackView.spacing = 0
-        default:
-            break
-        }
-    }
-
 }
 
 extension SpeedometerViewController: CLLocationManagerDelegate {
