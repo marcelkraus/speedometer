@@ -8,21 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
+		DF5F4C5F1FD5DAA10043F97E /* UIViewController+Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */; };
+		DF962C4F1FD5A41300514B06 /* SpeedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */; };
+		DF962C511FD5A42B00514B06 /* SpeedometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */; };
 		DFB934C31FCF39AF00B41731 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB934C21FCF39AF00B41731 /* ThemeManager.swift */; };
+		DFCA0C611FD5E17300260E24 /* FlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C601FD5E17300260E24 /* FlowViewController.swift */; };
+		DFCA0C631FD5E55300260E24 /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFCA0C621FD5E55300260E24 /* LoadingViewController.xib */; };
+		DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */; };
+		DFCA0C671FD5E84400260E24 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C661FD5E84400260E24 /* MessageViewController.swift */; };
+		DFCA0C691FD5E86D00260E24 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFCA0C681FD5E86D00260E24 /* MessageViewController.xib */; };
 		DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */; };
-		DFEB62281F30B5EA00FEC555 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62271F30B5EA00FEC555 /* ViewController.swift */; };
-		DFEB622B1F30B5EA00FEC555 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEB62291F30B5EA00FEC555 /* Main.storyboard */; };
 		DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */; };
 		DFEB62301F30B5EA00FEC555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DF2C45AE1FCC2EF0005C8906 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Transition.swift"; sourceTree = "<group>"; };
+		DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerViewController.swift; sourceTree = "<group>"; };
+		DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeedometerViewController.xib; sourceTree = "<group>"; };
 		DFB934C21FCF39AF00B41731 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		DFCA0C601FD5E17300260E24 /* FlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowViewController.swift; sourceTree = "<group>"; };
+		DFCA0C621FD5E55300260E24 /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
+		DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		DFCA0C661FD5E84400260E24 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		DFCA0C681FD5E86D00260E24 /* MessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
 		DFEB62221F30B5EA00FEC555 /* Speedometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Speedometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DFEB62271F30B5EA00FEC555 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DFEB622A1F30B5EA00FEC555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFEB622F1F30B5EA00FEC555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFEB62311F30B5EA00FEC555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,29 +54,11 @@
 		DF568E471FD0119600D546B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */,
 				DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */,
 				DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */,
-				DFEB62291F30B5EA00FEC555 /* Main.storyboard */,
+				DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DF568E481FD011B700D546B8 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				DFEB62271F30B5EA00FEC555 /* ViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		DF568E491FD011C200D546B8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				DFB934C21FCF39AF00B41731 /* ThemeManager.swift */,
-				DF2C45AE1FCC2EF0005C8906 /* Unit.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		DFEB62191F30B5E900FEC555 = {
@@ -86,10 +80,18 @@
 		DFEB62241F30B5EA00FEC555 /* Speedometer */ = {
 			isa = PBXGroup;
 			children = (
-				DF568E481FD011B700D546B8 /* Controller */,
-				DF568E491FD011C200D546B8 /* Model */,
 				DF568E471FD0119600D546B8 /* Supporting Files */,
+				DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */,
+				DFCA0C601FD5E17300260E24 /* FlowViewController.swift */,
 				DFEB62311F30B5EA00FEC555 /* Info.plist */,
+				DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */,
+				DFCA0C621FD5E55300260E24 /* LoadingViewController.xib */,
+				DFCA0C661FD5E84400260E24 /* MessageViewController.swift */,
+				DFCA0C681FD5E86D00260E24 /* MessageViewController.xib */,
+				DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */,
+				DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */,
+				DFB934C21FCF39AF00B41731 /* ThemeManager.swift */,
+				DF2C45AE1FCC2EF0005C8906 /* Unit.swift */,
 			);
 			path = Speedometer;
 			sourceTree = "<group>";
@@ -155,9 +157,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF962C511FD5A42B00514B06 /* SpeedometerViewController.xib in Resources */,
 				DFEB62301F30B5EA00FEC555 /* LaunchScreen.storyboard in Resources */,
 				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
-				DFEB622B1F30B5EA00FEC555 /* Main.storyboard in Resources */,
+				DFCA0C691FD5E86D00260E24 /* MessageViewController.xib in Resources */,
+				DFCA0C631FD5E55300260E24 /* LoadingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,9 +172,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */,
+				DF5F4C5F1FD5DAA10043F97E /* UIViewController+Transition.swift in Sources */,
 				DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */,
-				DFEB62281F30B5EA00FEC555 /* ViewController.swift in Sources */,
+				DFCA0C611FD5E17300260E24 /* FlowViewController.swift in Sources */,
 				DFB934C31FCF39AF00B41731 /* ThemeManager.swift in Sources */,
+				DFCA0C671FD5E84400260E24 /* MessageViewController.swift in Sources */,
+				DF962C4F1FD5A41300514B06 /* SpeedometerViewController.swift in Sources */,
 				DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,14 +186,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DFEB62291F30B5EA00FEC555 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DFEB622A1F30B5EA00FEC555 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

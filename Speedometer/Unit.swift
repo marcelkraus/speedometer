@@ -13,4 +13,15 @@ enum Unit {
         }
     }
 
+    mutating func toggle() {
+        switch self {
+        case .kilometersPerHour:
+            self = .milesPerHour
+        case .milesPerHour:
+            self = .metersPerSecond
+        case .metersPerSecond:
+            self = .kilometersPerHour
+        }
+    }
+
 }
