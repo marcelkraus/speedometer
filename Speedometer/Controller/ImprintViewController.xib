@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImprintViewController" customModule="Speedometer" customModuleProvider="target">
+            <connections>
+                <outlet property="appTitle" destination="mwo-md-gsh" id="RtH-Ft-qes"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speedometer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwo-md-gsh">
+                    <rect key="frame" x="16" y="76" width="343" height="32"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zP-bv-RfS">
+                    <rect key="frame" x="16" y="140" width="343" height="87"/>
+                    <string key="text">Marcel Kraus
+Dreikönigenweg 8a
+50374 Erftstadt
+Germany</string>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRR-4B-jdz">
+                    <rect key="frame" x="16" y="243" width="343" height="21"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nX-yc-ykB">
+                    <rect key="frame" x="16" y="279.33333333333331" width="343" height="65"/>
+                    <string key="text">Phone: +49 2235 8401372
+Email: app-speedometer@marcelkraus.de
+USt-Id-Nr.: TODO</string>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V42-Qr-4t8">
+                    <rect key="frame" x="16" y="376.33333333333331" width="359" height="30"/>
+                    <state key="normal" title="Close Imprint"/>
+                    <connections>
+                        <action selector="closeImprint:" destination="-1" eventType="touchUpInside" id="rXM-LM-KOi"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8zP-bv-RfS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="1ay-TS-wVU"/>
+                <constraint firstItem="mwo-md-gsh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="Cp8-7Z-jCe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8zP-bv-RfS" secondAttribute="trailing" constant="16" id="Rhy-Mh-elc"/>
+                <constraint firstItem="mwo-md-gsh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="TU1-xs-pIb"/>
+                <constraint firstItem="V42-Qr-4t8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Vdr-LJ-461"/>
+                <constraint firstItem="rRR-4B-jdz" firstAttribute="top" secondItem="8zP-bv-RfS" secondAttribute="bottom" constant="16" id="W3v-gT-1qG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rRR-4B-jdz" secondAttribute="trailing" constant="16" id="Wqz-4n-rDX"/>
+                <constraint firstItem="rRR-4B-jdz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="fXw-XH-QNZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mwo-md-gsh" secondAttribute="trailing" constant="16" id="gQd-Wb-tA7"/>
+                <constraint firstItem="2nX-yc-ykB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="lIJ-aZ-1gX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2nX-yc-ykB" secondAttribute="trailing" constant="16" id="mW4-UR-eru"/>
+                <constraint firstItem="2nX-yc-ykB" firstAttribute="top" secondItem="rRR-4B-jdz" secondAttribute="bottom" constant="16" id="nFk-YD-q7B"/>
+                <constraint firstItem="V42-Qr-4t8" firstAttribute="top" secondItem="2nX-yc-ykB" secondAttribute="bottom" constant="32" id="pdd-we-Oxy"/>
+                <constraint firstItem="8zP-bv-RfS" firstAttribute="top" secondItem="mwo-md-gsh" secondAttribute="bottom" constant="32" id="xfw-4V-dCi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V42-Qr-4t8" secondAttribute="trailing" id="zw5-az-keD"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="54"/>
+        </view>
+    </objects>
+</document>

@@ -4,23 +4,17 @@ import UIKit
 class RootViewController: UIViewController {
     private let locationManager = CLLocationManager()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        locationManager.delegate = self
-    }
-
     override func viewWillAppear(_ animated: Bool) {
         guard CLLocationManager.authorizationStatus() != .notDetermined else {
             return transition(to: AuthorizationViewController(locationManager: locationManager))
         }
 
-        return transition(to: LoadingViewController())
+        transition(to: LoadingViewController()) { _ in
+            self.chooseViewController()
+        }
     }
-}
 
-extension RootViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    private func chooseViewController() {
         switch CLLocationManager.authorizationStatus()  {
         case .restricted:
             self.transition(to: MessageViewController(message: "Usage of this app is not possible due to restrictions of Location Services.\n\nPlease remove any restrictions in settings:\n\nSettings > General > Restrictions > Location Services\n\nor contact your administrator.", heading: "Houston, we've had a problem here!"))

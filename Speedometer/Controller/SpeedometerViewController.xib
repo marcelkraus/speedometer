@@ -41,13 +41,21 @@
                     </subviews>
                     <variation key="heightClass=compact" alignment="firstBaseline" axis="horizontal" spacing="16"/>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JET-vv-Bdg">
+                    <rect key="frame" x="337" y="740" width="22" height="22"/>
+                    <connections>
+                        <action selector="showImprint:" destination="-1" eventType="touchUpInside" id="LVa-l5-g8v"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rNI-Bi-orA" secondAttribute="trailing" constant="16" id="0Oh-1d-odx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JET-vv-Bdg" secondAttribute="trailing" constant="16" id="4ad-0Y-HSd"/>
                 <constraint firstItem="r2T-z9-CiM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Wbx-x4-nz6"/>
                 <constraint firstItem="rNI-Bi-orA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="eiQ-eG-8jx"/>
                 <constraint firstItem="r2T-z9-CiM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="or5-fq-l5Z"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="JET-vv-Bdg" secondAttribute="bottom" constant="16" id="sFJ-tw-fp0"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rNI-Bi-orA" secondAttribute="bottom" constant="16" id="vm5-9r-tPs"/>
                 <constraint firstItem="rNI-Bi-orA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="weF-Dd-GDN"/>
             </constraints>

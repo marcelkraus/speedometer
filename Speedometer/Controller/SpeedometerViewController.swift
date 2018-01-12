@@ -6,6 +6,10 @@ class SpeedometerViewController: UIViewController {
     @IBOutlet private weak var speedLabel: UILabel!
     @IBOutlet private weak var unitLabel: UILabel!
 
+    @IBAction func showImprint(_ sender: UIButton) {
+        present(ImprintViewController(), animated: true, completion: nil)
+    }
+
     private let locationManager: CLLocationManager
 
     private var speed = 0.0 {
