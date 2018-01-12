@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="iAY-uC-gly">
-                    <rect key="frame" x="20" y="304.66666666666669" width="375" height="203.66666666666669"/>
+                    <rect key="frame" x="16" y="304.66666666666669" width="375" height="203.66666666666669"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Speedometer!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKW-tN-X2W">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="20.333333333333332"/>
@@ -28,7 +28,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMg-5w-hos">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMg-5w-hos">
                             <rect key="frame" x="0.0" y="52.333333333333307" width="375" height="86.333333333333314"/>
                             <string key="text">This apps needs access to your location data to show your current speed. Please press the button below and confirm allow access within the popup.</string>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -48,9 +48,9 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="iAY-uC-gly" secondAttribute="trailing" constant="20" symbolic="YES" id="CR4-Vd-fzV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iAY-uC-gly" secondAttribute="trailing" constant="16" id="CR4-Vd-fzV"/>
                 <constraint firstItem="iAY-uC-gly" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Ik6-EO-0dL"/>
-                <constraint firstItem="iAY-uC-gly" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="wXX-af-d61"/>
+                <constraint firstItem="iAY-uC-gly" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="wXX-af-d61"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="68" y="52"/>

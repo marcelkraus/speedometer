@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,31 +21,32 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zm-o1-kv6">
-                    <rect key="frame" x="158" y="183.66666666666666" width="59" height="38.666666666666657"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odx-Oe-kEe">
-                    <rect key="frame" x="153" y="598.66666666666663" width="69" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="nHi-mc-GuQ">
+                    <rect key="frame" x="16" y="370" width="375" height="72.666666666666686"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zm-o1-kv6">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="20.333333333333332"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odx-Oe-kEe">
+                            <rect key="frame" x="0.0" y="52.333333333333314" width="375" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="odx-Oe-kEe" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DW4-VI-M2H"/>
-                <constraint firstItem="odx-Oe-kEe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="J79-ce-5Gl"/>
-                <constraint firstItem="3Zm-o1-kv6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KqI-RI-zYo"/>
-                <constraint firstItem="3Zm-o1-kv6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.5" id="MNg-xq-Dqb"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3Zm-o1-kv6" secondAttribute="trailing" constant="16" id="bO8-l0-lD0"/>
-                <constraint firstItem="3Zm-o1-kv6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ie3-kS-u4G"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="odx-Oe-kEe" secondAttribute="trailing" constant="16" id="tCe-NM-MsG"/>
-                <constraint firstItem="odx-Oe-kEe" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.5" id="yA1-4Q-0DM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nHi-mc-GuQ" secondAttribute="trailing" constant="16" id="DqI-hC-jwi"/>
+                <constraint firstItem="nHi-mc-GuQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="IAd-2E-gAu"/>
+                <constraint firstItem="nHi-mc-GuQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="SY1-gQ-bGh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="64" y="54"/>
         </view>
     </objects>
 </document>
