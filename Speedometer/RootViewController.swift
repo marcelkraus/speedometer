@@ -2,7 +2,6 @@ import CoreLocation
 import UIKit
 
 class RootViewController: UIViewController {
-
     private let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
@@ -18,7 +17,6 @@ class RootViewController: UIViewController {
 
         return transition(to: LoadingViewController())
     }
-
 }
 
 extension RootViewController: CLLocationManagerDelegate {

@@ -1,7 +1,6 @@
 import UIKit
 
 extension UIViewController {
-
     func transition(to child: UIViewController, completion: ((Bool) -> Void)? = nil) {
         let duration = 0.3
         let current = childViewControllers.last
@@ -29,5 +28,4 @@ extension UIViewController {
             })
         }
     }
-
 }

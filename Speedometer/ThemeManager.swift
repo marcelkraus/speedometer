@@ -1,7 +1,6 @@
 import UIKit
 
 struct ThemeManager {
-
     struct Theme: Equatable {
         let color: (background: UIColor, speedLabel: UIColor, unitLabel: UIColor)
         let statusBarStyle: UIStatusBarStyle
@@ -32,5 +31,4 @@ struct ThemeManager {
 
         return ThemeManager.themes[index]
     }
-
 }

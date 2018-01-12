@@ -2,7 +2,6 @@ import CoreLocation
 import UIKit
 
 class AuthorizationViewController: UIViewController {
-
     private var locationManager: CLLocationManager
 
     init(locationManager: CLLocationManager) {
@@ -18,5 +17,4 @@ class AuthorizationViewController: UIViewController {
     @IBAction func authorizeApp(_ sender: UIButton) {
         self.locationManager.requestWhenInUseAuthorization()
     }
-
 }

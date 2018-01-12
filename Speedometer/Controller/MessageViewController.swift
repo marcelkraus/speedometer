@@ -1,7 +1,6 @@
 import UIKit
 
 class MessageViewController: UIViewController {
-
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
 
@@ -15,15 +14,14 @@ class MessageViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Not implemented")
+    }
+
     override func viewDidLoad() {
         headingLabel?.text = heading
         messageLabel?.text = message
 
         super.viewDidLoad()
     }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("Not implemented")
-    }
-
 }

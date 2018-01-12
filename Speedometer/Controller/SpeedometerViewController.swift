@@ -2,7 +2,6 @@ import CoreLocation
 import UIKit
 
 class SpeedometerViewController: UIViewController {
-
     @IBOutlet private weak var stackView: UIStackView!
     @IBOutlet private weak var speedLabel: UILabel!
     @IBOutlet private weak var unitLabel: UILabel!
@@ -46,19 +45,19 @@ class SpeedometerViewController: UIViewController {
         setupLocationManager()
         setupGestureRecognizers()
     }
-
 }
 
-extension SpeedometerViewController: CLLocationManagerDelegate {
+// MARK: - CLLocationManagerDelegate
 
+extension SpeedometerViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         speed = locations.last?.speed ?? 0
     }
-
 }
 
-private extension SpeedometerViewController {
+// MARK: - Private Methods
 
+private extension SpeedometerViewController {
     func setupLocationManager() {
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager.startUpdatingLocation()
@@ -113,5 +112,4 @@ private extension SpeedometerViewController {
 
         theme = ThemeManager().before(theme)
     }
-
 }

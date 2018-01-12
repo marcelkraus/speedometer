@@ -1,5 +1,4 @@
 enum Unit {
-
     case kilometersPerHour, metersPerSecond, milesPerHour
 
     var data: (abbreviation: String, factor: Double) {
@@ -23,5 +22,4 @@ enum Unit {
             self = .kilometersPerHour
         }
     }
-
 }

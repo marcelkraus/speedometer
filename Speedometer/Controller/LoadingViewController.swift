@@ -1,7 +1,6 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
-
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -9,5 +8,4 @@ class LoadingViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("Not implemented")
     }
-
 }
