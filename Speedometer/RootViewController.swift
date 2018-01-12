@@ -1,7 +1,7 @@
 import CoreLocation
 import UIKit
 
-class FlowViewController: UIViewController {
+class RootViewController: UIViewController {
 
     private let locationManager = CLLocationManager()
 
@@ -14,7 +14,7 @@ class FlowViewController: UIViewController {
 
 }
 
-extension FlowViewController: CLLocationManagerDelegate {
+extension RootViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch CLLocationManager.authorizationStatus()  {

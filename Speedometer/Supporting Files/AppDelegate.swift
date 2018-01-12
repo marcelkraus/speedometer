@@ -21,7 +21,7 @@ private extension AppDelegate {
 
     func setupRootViewController() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = FlowViewController()
+        window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
     }
 
