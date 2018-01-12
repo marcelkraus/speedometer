@@ -9,7 +9,9 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
 
         locationManager.delegate = self
+    }
 
+    override func viewWillAppear(_ animated: Bool) {
         guard CLLocationManager.authorizationStatus() != .notDetermined else {
             return transition(to: AuthorizationViewController(locationManager: locationManager))
         }
@@ -23,10 +25,10 @@ extension RootViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch CLLocationManager.authorizationStatus()  {
         case .restricted:
-            self.transition(to: MessageViewController(message: "The user cannot change this app’s status, possibly due to active restrictions such as parental controls being in place.", heading: ".restricted"))
+            self.transition(to: MessageViewController(message: "Usage of this app is not possible due to restrictions of Location Services.\n\nPlease remove any restrictions in settings:\n\nSettings > General > Restrictions > Location Services\n\nor contact your administrator.", heading: "Houston, we've had a problem here!"))
         case .denied:
-            self.transition(to: MessageViewController(message: "The user explicitly denied the use of location services for this app or location services are currently disabled in Settings.", heading: ".denied"))
-        case .authorizedWhenInUse, .authorizedAlways:
+            self.transition(to: MessageViewController(message: "Please ensure to allow Location Services for Speedometer to use this app.\n\nPlease check the following settings to be enabled:\n\nSettings > Privacy > Location Services\n\nand\n\nSettings > Privacy > Location Services > Speedometer > While Using", heading: "Houston, we've had a problem here!"))
+        case .authorizedWhenInUse:
             self.transition(to: SpeedometerViewController(locationManager: self.locationManager, unit: .kilometersPerHour))
         default:
             break
