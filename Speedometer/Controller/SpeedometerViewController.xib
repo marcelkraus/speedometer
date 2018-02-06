@@ -6,15 +6,14 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpeedometerViewController" customModule="Speedometer" customModuleProvider="target">
             <connections>
-                <outlet property="speedLabel" destination="rNI-Bi-orA" id="qyR-WP-PsV"/>
-                <outlet property="stackView" destination="r2T-z9-CiM" id="Si6-vv-oex"/>
-                <outlet property="unitLabel" destination="LtQ-Pw-R0H" id="QFs-1Y-d5P"/>
+                <outlet property="informationButton" destination="JET-vv-Bdg" id="RFI-zc-0aY"/>
+                <outlet property="speedLabel" destination="LZk-rE-CiX" id="GSc-i9-gae"/>
+                <outlet property="unitLabel" destination="RNh-OI-jDg" id="G5K-ph-Ia4"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kPs-0p-S3A"/>
             </connections>
         </placeholder>
@@ -23,42 +22,52 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="r2T-z9-CiM">
-                    <rect key="frame" x="118.33333333333333" y="287.33333333333331" width="138.66666666666669" height="237.66666666666669"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEi-VX-GD1" userLabel="Canvas View">
+                    <rect key="frame" x="0.0" y="119" width="375" height="634"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNI-Bi-orA">
-                            <rect key="frame" x="30.666666666666664" y="0.0" width="77.666666666666686" height="153"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="128"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km/h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LtQ-Pw-R0H">
-                            <rect key="frame" x="0.0" y="161" width="138.66666666666666" height="76.666666666666686"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="64"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DGr-na-3Vj">
+                            <rect key="frame" x="126.66666666666669" y="185.33333333333329" width="122" height="262.66666666666674"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZk-rE-CiX">
+                                    <rect key="frame" x="13" y="0.0" width="95.666666666666671" height="191"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="160"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km/h" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNh-OI-jDg">
+                                    <rect key="frame" x="0.0" y="191" width="122" height="71.666666666666686"/>
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
+                                    <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JET-vv-Bdg">
+                            <rect key="frame" x="333" y="592" width="22" height="22"/>
+                            <connections>
+                                <action selector="showImprint:" destination="-1" eventType="touchUpInside" id="LVa-l5-g8v"/>
+                            </connections>
+                        </button>
                     </subviews>
-                </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JET-vv-Bdg">
-                    <rect key="frame" x="337" y="740" width="22" height="22"/>
-                    <connections>
-                        <action selector="showImprint:" destination="-1" eventType="touchUpInside" id="LVa-l5-g8v"/>
-                    </connections>
-                </button>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="JET-vv-Bdg" secondAttribute="trailing" constant="20" id="8Tx-DJ-Wca"/>
+                        <constraint firstItem="DGr-na-3Vj" firstAttribute="centerY" secondItem="YEi-VX-GD1" secondAttribute="centerY" id="gTG-nr-d3l"/>
+                        <constraint firstAttribute="bottom" secondItem="JET-vv-Bdg" secondAttribute="bottom" constant="20" id="llW-F4-rY3"/>
+                        <constraint firstItem="DGr-na-3Vj" firstAttribute="centerX" secondItem="YEi-VX-GD1" secondAttribute="centerX" id="qPV-tl-MvX"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rNI-Bi-orA" secondAttribute="trailing" constant="16" id="0Oh-1d-odx"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JET-vv-Bdg" secondAttribute="trailing" constant="16" id="4ad-0Y-HSd"/>
-                <constraint firstItem="r2T-z9-CiM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Wbx-x4-nz6"/>
-                <constraint firstItem="rNI-Bi-orA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="eiQ-eG-8jx"/>
-                <constraint firstItem="r2T-z9-CiM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="or5-fq-l5Z"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="JET-vv-Bdg" secondAttribute="bottom" constant="16" id="sFJ-tw-fp0"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rNI-Bi-orA" secondAttribute="bottom" constant="16" id="vm5-9r-tPs"/>
-                <constraint firstItem="rNI-Bi-orA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="weF-Dd-GDN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="leading" secondItem="YEi-VX-GD1" secondAttribute="leading" id="M79-2J-JIN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="YEi-VX-GD1" secondAttribute="trailing" id="dOA-Xp-okp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="YEi-VX-GD1" secondAttribute="top" constant="-75" id="iQu-ny-kdl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="YEi-VX-GD1" secondAttribute="bottom" constant="25" id="vEY-XR-xhU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="54"/>
         </view>
     </objects>
 </document>

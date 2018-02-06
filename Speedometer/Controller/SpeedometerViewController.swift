@@ -2,9 +2,9 @@ import CoreLocation
 import UIKit
 
 class SpeedometerViewController: UIViewController {
-    @IBOutlet private weak var stackView: UIStackView!
-    @IBOutlet private weak var speedLabel: UILabel!
-    @IBOutlet private weak var unitLabel: UILabel!
+    @IBOutlet weak var speedLabel: UILabel!
+    @IBOutlet weak var unitLabel: UILabel!
+    @IBOutlet weak var informationButton: UIButton!
 
     @IBAction func showImprint(_ sender: UIButton) {
         present(ImprintViewController(), animated: true, completion: nil)
