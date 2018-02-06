@@ -24,14 +24,6 @@ class SpeedometerViewController: UIViewController {
         }
     }
 
-    private var theme = ThemeManager.themes.first! {
-        didSet {
-            view.backgroundColor = theme.color.background
-            speedLabel.textColor = theme.color.speedLabel
-            unitLabel.textColor = theme.color.unitLabel
-        }
-    }
-
     init(locationManager: CLLocationManager, unit: Unit) {
         self.locationManager = locationManager
         self.unit = unit
@@ -69,16 +61,6 @@ private extension SpeedometerViewController {
     }
 
     func setupGestureRecognizers() {
-        let nextThemeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(nextTheme))
-        nextThemeGestureRecognizer.numberOfTouchesRequired = 2
-        nextThemeGestureRecognizer.direction = .up
-        view.addGestureRecognizer(nextThemeGestureRecognizer)
-
-        let previousThemeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(previousTheme))
-        previousThemeGestureRecognizer.numberOfTouchesRequired = 2
-        previousThemeGestureRecognizer.direction = .down
-        view.addGestureRecognizer(previousThemeGestureRecognizer)
-
         let toggleUnitGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(toggleUnit))
         view.addGestureRecognizer(toggleUnitGestureRecognizer)
     }
@@ -99,21 +81,5 @@ private extension SpeedometerViewController {
         }
 
         unit.toggle()
-    }
-
-    @objc func nextTheme(_ recognizer: UISwipeGestureRecognizer) {
-        guard recognizer.state == .recognized else {
-            return
-        }
-
-        theme = ThemeManager().after(theme)
-    }
-
-    @objc func previousTheme(_ recognizer: UISwipeGestureRecognizer) {
-        guard recognizer.state == .recognized else {
-            return
-        }
-
-        theme = ThemeManager().before(theme)
     }
 }

@@ -15,7 +15,6 @@
 		DF8FDCEB2008FD0500140DA9 /* ImprintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF8FDCE92008FD0500140DA9 /* ImprintViewController.xib */; };
 		DF962C4F1FD5A41300514B06 /* SpeedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */; };
 		DF962C511FD5A42B00514B06 /* SpeedometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */; };
-		DFB934C31FCF39AF00B41731 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB934C21FCF39AF00B41731 /* ThemeManager.swift */; };
 		DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C601FD5E17300260E24 /* RootViewController.swift */; };
 		DFCA0C631FD5E55300260E24 /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFCA0C621FD5E55300260E24 /* LoadingViewController.xib */; };
 		DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */; };
@@ -35,7 +34,6 @@
 		DF8FDCE92008FD0500140DA9 /* ImprintViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImprintViewController.xib; sourceTree = "<group>"; };
 		DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerViewController.swift; sourceTree = "<group>"; };
 		DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeedometerViewController.xib; sourceTree = "<group>"; };
-		DFB934C21FCF39AF00B41731 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		DFCA0C601FD5E17300260E24 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		DFCA0C621FD5E55300260E24 /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
 		DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				DFEB62311F30B5EA00FEC555 /* Info.plist */,
 				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
 				DF568E471FD0119600D546B8 /* Supporting Files */,
-				DFB934C21FCF39AF00B41731 /* ThemeManager.swift */,
 				DF2C45AE1FCC2EF0005C8906 /* Unit.swift */,
 			);
 			path = Speedometer;
@@ -208,7 +205,6 @@
 				DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */,
 				DF8FDCEA2008FD0500140DA9 /* ImprintViewController.swift in Sources */,
 				DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */,
-				DFB934C31FCF39AF00B41731 /* ThemeManager.swift in Sources */,
 				DFCA0C671FD5E84400260E24 /* MessageViewController.swift in Sources */,
 				DF962C4F1FD5A41300514B06 /* SpeedometerViewController.swift in Sources */,
 				DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */,
