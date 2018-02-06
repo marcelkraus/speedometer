@@ -1,4 +1,11 @@
-enum Unit {
+import Foundation
+
+// Global list of available units in the desired order, should be refactored
+let units = [Unit.milesPerHour, Unit.kilometersPerHour, Unit.metersPerSecond]
+
+enum Unit: String {
+    static let UserDefaultsKey = "unit"
+
     case kilometersPerHour, metersPerSecond, milesPerHour
 
     var abbreviation: String {

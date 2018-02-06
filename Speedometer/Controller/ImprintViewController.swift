@@ -1,7 +1,13 @@
 import UIKit
 
 class ImprintViewController: UIViewController {
-    init() {
+    private var unit: Unit
+
+    // MARK: - Controller Lifecycle
+
+    init(unit: Unit) {
+        self.unit = unit
+
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -9,16 +15,36 @@ class ImprintViewController: UIViewController {
         fatalError("Not implemented")
     }
 
-    @IBOutlet weak var appTitle: UILabel! {
-        didSet {
-            let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
-            let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-            appTitle.text = "Speedometer (v\(versionNumber), Build \(buildNumber))"
-        }
+        setupUnitSelection(unit: self.unit)
+    }
+
+    // MARK: - Outlets & Actions
+
+    @IBOutlet weak var unitSelection: UISegmentedControl!
+
+    @IBAction func selectUnit(_ sender: UISegmentedControl) {
+        let unit = units[sender.selectedSegmentIndex]
+
+        UserDefaults.standard.set(unit.rawValue, forKey: Unit.UserDefaultsKey)
     }
 
     @IBAction func closeImprint(_ sender: UIButton) {
         presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - Private Methods
+
+private extension ImprintViewController {
+    func setupUnitSelection(unit: Unit) {
+        unitSelection.removeAllSegments()
+        units.enumerated().forEach { (index, unit) in
+            unitSelection.insertSegment(withTitle: unit.abbreviation, at: index, animated: false)
+        }
+
+        unitSelection.selectedSegmentIndex = units.index(where: { $0.abbreviation == unit.abbreviation }) ?? 0
     }
 }

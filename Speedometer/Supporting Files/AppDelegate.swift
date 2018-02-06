@@ -5,6 +5,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        UserDefaults.standard.register(defaults: [Unit.UserDefaultsKey: Unit.milesPerHour.rawValue])
+
         setupRootViewController()
 
         return true

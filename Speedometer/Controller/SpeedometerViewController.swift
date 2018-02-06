@@ -2,27 +2,16 @@ import CoreLocation
 import UIKit
 
 class SpeedometerViewController: UIViewController {
-    @IBOutlet weak var speedLabel: UILabel!
-    @IBOutlet weak var unitLabel: UILabel!
-    @IBOutlet weak var informationButton: UIButton!
-
-    @IBAction func showImprint(_ sender: UIButton) {
-        present(ImprintViewController(), animated: true, completion: nil)
-    }
-
     private let locationManager: CLLocationManager
 
+    private var unit: Unit
     private var speed = 0.0 {
         didSet {
-            speedLabel.text = speed(speed, in: unit)
+            speedLabel.text = speed(speed)
         }
     }
 
-    private var unit: Unit {
-        didSet {
-            unitLabel.text = unit.abbreviation
-        }
-    }
+    // MARK: - Controller Lifecycle
 
     init(locationManager: CLLocationManager, unit: Unit) {
         self.locationManager = locationManager
@@ -39,6 +28,17 @@ class SpeedometerViewController: UIViewController {
         super.viewDidLoad()
 
         setupLocationManager()
+        setupUnitLabel()
+    }
+
+    // MARK: - Outlets & Actions
+
+    @IBOutlet weak var speedLabel: UILabel!
+    @IBOutlet weak var unitLabel: UILabel!
+    @IBOutlet weak var informationButton: UIButton!
+
+    @IBAction func showImprint(_ sender: UIButton) {
+        present(ImprintViewController(unit: unit), animated: true, completion: nil)
     }
 }
 
@@ -59,9 +59,11 @@ private extension SpeedometerViewController {
         locationManager.delegate = self
     }
 
-    func speed(_ speed: Double, in unit: Unit) -> String {
-        let speed = speed > 1.0 ? speed * unit.factor : 0
+    func setupUnitLabel() {
+        unitLabel.text = unit.abbreviation
+    }
 
-        return String(format: "%01.0f", speed)
+    func speed(_ speed: Double) -> String {
+        return String(format: "%01.0f", speed > 1.0 ? speed * unit.factor : 0)
     }
 }
