@@ -7,7 +7,7 @@ class MessageViewController: UIViewController {
     private let heading: String
     private let message: String
 
-    init(message: String, heading: String = "An error has occurred") {
+    init(heading: String, message: String) {
         self.heading = heading
         self.message = message
 
@@ -21,6 +21,9 @@ class MessageViewController: UIViewController {
     override func viewDidLoad() {
         headingLabel?.text = heading
         messageLabel?.text = message
+
+        headingLabel.textColor = view.tintColor
+        messageLabel.numberOfLines = 0
 
         super.viewDidLoad()
     }

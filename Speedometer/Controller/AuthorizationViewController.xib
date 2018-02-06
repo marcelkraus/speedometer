@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthorizationViewController" customModule="Speedometer" customModuleProvider="target">
             <connections>
+                <outlet property="button" destination="1mn-5g-lqZ" id="UY3-ap-4O9"/>
+                <outlet property="headingLabel" destination="jTe-TI-PCd" id="Yc2-NB-etI"/>
+                <outlet property="messageLabel" destination="DSs-Br-CqC" id="5dF-cg-hrl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,38 +22,52 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="iAY-uC-gly">
-                    <rect key="frame" x="16" y="304.33333333333303" width="375" height="203.66666666666669"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zaA-9e-NYH" userLabel="Canvas View">
+                    <rect key="frame" x="0.0" y="119" width="375" height="634"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Speedometer!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKW-tN-X2W">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="20.333333333333332"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMg-5w-hos">
-                            <rect key="frame" x="0.0" y="52.333333333333364" width="375" height="86.333333333333314"/>
-                            <string key="text">This apps needs access to your location data to show your current speed. Please press the button below and confirm allow access within the popup.</string>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZZ-QE-tS8">
-                            <rect key="frame" x="0.0" y="170.66666666666606" width="375" height="33"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ftt-Gg-WLc">
+                            <rect key="frame" x="25" y="284.66666666666669" width="325" height="65.666666666666686"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading Placeholder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTe-TI-PCd">
+                                    <rect key="frame" x="79.666666666666686" y="0.0" width="166" height="20.333333333333332"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Placeholder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSs-Br-CqC">
+                                    <rect key="frame" x="80.666666666666686" y="45.333333333333314" width="164" height="20.333333333333329"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mn-5g-lqZ">
+                            <rect key="frame" x="145.66666666666666" y="389.33333333333331" width="84" height="36"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                             <state key="normal" title="I've got it!"/>
                             <connections>
-                                <action selector="authorizeApp:" destination="-1" eventType="touchUpInside" id="Kju-p5-KOS"/>
+                                <action selector="authorizeApp:" destination="-1" eventType="touchUpInside" id="7JT-1g-eNt"/>
                             </connections>
                         </button>
                     </subviews>
-                </stackView>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="1mn-5g-lqZ" firstAttribute="centerX" secondItem="zaA-9e-NYH" secondAttribute="centerX" id="Cgt-u8-bB2"/>
+                        <constraint firstItem="ftt-Gg-WLc" firstAttribute="leading" secondItem="zaA-9e-NYH" secondAttribute="leading" constant="25" id="XvD-w8-9Pe"/>
+                        <constraint firstItem="ftt-Gg-WLc" firstAttribute="centerY" secondItem="zaA-9e-NYH" secondAttribute="centerY" id="cLj-Xz-htn"/>
+                        <constraint firstItem="ftt-Gg-WLc" firstAttribute="bottom" secondItem="1mn-5g-lqZ" secondAttribute="bottom" constant="-75" id="fTo-h8-JA1"/>
+                        <constraint firstAttribute="trailing" secondItem="ftt-Gg-WLc" secondAttribute="trailing" constant="25" id="fYI-G4-0bd"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iAY-uC-gly" secondAttribute="trailing" constant="16" id="CR4-Vd-fzV"/>
-                <constraint firstItem="iAY-uC-gly" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Ik6-EO-0dL"/>
-                <constraint firstItem="iAY-uC-gly" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="wXX-af-d61"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="zaA-9e-NYH" secondAttribute="top" constant="-75" id="MhE-7R-4ua"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zaA-9e-NYH" secondAttribute="trailing" id="j3x-DR-k0z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zaA-9e-NYH" secondAttribute="bottom" constant="25" id="mSd-N7-uMd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="zaA-9e-NYH" secondAttribute="leading" id="ytB-hU-EgB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="68" y="52"/>

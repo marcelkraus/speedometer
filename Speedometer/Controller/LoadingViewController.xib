@@ -19,17 +19,31 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wuc-bS-5wy">
-                    <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
-                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </activityIndicatorView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSY-X7-jfb" userLabel="Canvas View">
+                    <rect key="frame" x="0.0" y="119" width="375" height="634"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wuc-bS-5wy">
+                            <rect key="frame" x="169.33333333333334" y="299" width="37" height="37"/>
+                            <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="wuc-bS-5wy" firstAttribute="centerX" secondItem="SSY-X7-jfb" secondAttribute="centerX" id="AjI-1a-4xg"/>
+                        <constraint firstItem="wuc-bS-5wy" firstAttribute="centerY" secondItem="SSY-X7-jfb" secondAttribute="centerY" id="IPb-hZ-0s3"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="wuc-bS-5wy" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rTG-tA-AUE"/>
-                <constraint firstItem="wuc-bS-5wy" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="rkU-vH-Rr3"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="SSY-X7-jfb" secondAttribute="top" constant="-75" id="5dV-2j-Nq2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="SSY-X7-jfb" secondAttribute="trailing" id="M8Y-5E-eeH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="SSY-X7-jfb" secondAttribute="bottom" constant="25" id="hRj-iC-B0S"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="leading" secondItem="SSY-X7-jfb" secondAttribute="leading" id="fM7-nW-HMY"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="54"/>
         </view>
     </objects>
 </document>
