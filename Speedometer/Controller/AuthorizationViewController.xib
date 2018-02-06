@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="iAY-uC-gly">
-                    <rect key="frame" x="16" y="304.66666666666669" width="375" height="203.66666666666669"/>
+                    <rect key="frame" x="16" y="304.33333333333303" width="375" height="203.66666666666669"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Speedometer!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKW-tN-X2W">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="20.333333333333332"/>
@@ -29,14 +29,14 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMg-5w-hos">
-                            <rect key="frame" x="0.0" y="52.333333333333307" width="375" height="86.333333333333314"/>
+                            <rect key="frame" x="0.0" y="52.333333333333364" width="375" height="86.333333333333314"/>
                             <string key="text">This apps needs access to your location data to show your current speed. Please press the button below and confirm allow access within the popup.</string>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZZ-QE-tS8">
-                            <rect key="frame" x="0.0" y="170.66666666666663" width="375" height="33"/>
+                            <rect key="frame" x="0.0" y="170.66666666666606" width="375" height="33"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <state key="normal" title="I've got it!"/>
                             <connections>

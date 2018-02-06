@@ -39,7 +39,6 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <variation key="heightClass=compact" alignment="firstBaseline" axis="horizontal" spacing="16"/>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JET-vv-Bdg">
                     <rect key="frame" x="337" y="740" width="22" height="22"/>
