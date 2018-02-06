@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImprintViewController" customModule="Speedometer" customModuleProvider="target">
             <connections>
-                <outlet property="appTitle" destination="mwo-md-gsh" id="RtH-Ft-qes"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,62 +19,54 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speedometer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwo-md-gsh">
-                    <rect key="frame" x="16" y="76" width="343" height="32"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zP-bv-RfS">
-                    <rect key="frame" x="16" y="140" width="343" height="87"/>
-                    <string key="text">Marcel Kraus
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d5h-d2-S7T" userLabel="Canvas View">
+                    <rect key="frame" x="0.0" y="119" width="375" height="634"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMo-r1-yIh">
+                            <rect key="frame" x="138" y="579" width="100" height="30"/>
+                            <state key="normal" title="Close Settings"/>
+                            <connections>
+                                <action selector="closeImprint:" destination="-1" eventType="touchUpInside" id="jA9-eJ-GFA"/>
+                            </connections>
+                        </button>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WNy-P5-XaQ">
+                            <rect key="frame" x="50" y="50" width="275" height="29"/>
+                            <segments>
+                                <segment title="mls/h"/>
+                                <segment title="km/h"/>
+                                <segment title="m/s"/>
+                            </segments>
+                        </segmentedControl>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLB-D0-uuv">
+                            <rect key="frame" x="50" y="128" width="275" height="61"/>
+                            <string key="text">Marcel Kraus
 Dreikönigenweg 8a
-50374 Erftstadt
-Germany</string>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRR-4B-jdz">
-                    <rect key="frame" x="16" y="243" width="343" height="21"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nX-yc-ykB">
-                    <rect key="frame" x="16" y="279.33333333333331" width="343" height="65"/>
-                    <string key="text">Phone: +49 2235 8401372
-Email: app-speedometer@marcelkraus.de
-USt-Id-Nr.: TODO</string>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V42-Qr-4t8">
-                    <rect key="frame" x="16" y="376.33333333333331" width="359" height="30"/>
-                    <state key="normal" title="Close Imprint"/>
-                    <connections>
-                        <action selector="closeImprint:" destination="-1" eventType="touchUpInside" id="rXM-LM-KOi"/>
-                    </connections>
-                </button>
+50374 Erftstadt</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="cMo-r1-yIh" secondAttribute="bottom" constant="25" id="8NO-lG-AfB"/>
+                        <constraint firstItem="mLB-D0-uuv" firstAttribute="top" secondItem="WNy-P5-XaQ" secondAttribute="bottom" constant="50" id="Cwd-gQ-mNq"/>
+                        <constraint firstItem="mLB-D0-uuv" firstAttribute="leading" secondItem="d5h-d2-S7T" secondAttribute="leading" constant="50" id="DxQ-w6-Ipb"/>
+                        <constraint firstAttribute="trailing" secondItem="mLB-D0-uuv" secondAttribute="trailing" constant="50" id="LB6-4H-j75"/>
+                        <constraint firstItem="WNy-P5-XaQ" firstAttribute="top" secondItem="d5h-d2-S7T" secondAttribute="top" constant="50" id="Y09-Gl-5gG"/>
+                        <constraint firstItem="cMo-r1-yIh" firstAttribute="centerX" secondItem="d5h-d2-S7T" secondAttribute="centerX" id="cSj-qu-v5B"/>
+                        <constraint firstItem="WNy-P5-XaQ" firstAttribute="leading" secondItem="d5h-d2-S7T" secondAttribute="leading" constant="50" id="jfp-nH-4dJ"/>
+                        <constraint firstAttribute="trailing" secondItem="WNy-P5-XaQ" secondAttribute="trailing" constant="50" id="tnU-r8-VD9"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="8zP-bv-RfS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="1ay-TS-wVU"/>
-                <constraint firstItem="mwo-md-gsh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="Cp8-7Z-jCe"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8zP-bv-RfS" secondAttribute="trailing" constant="16" id="Rhy-Mh-elc"/>
-                <constraint firstItem="mwo-md-gsh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="TU1-xs-pIb"/>
-                <constraint firstItem="V42-Qr-4t8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Vdr-LJ-461"/>
-                <constraint firstItem="rRR-4B-jdz" firstAttribute="top" secondItem="8zP-bv-RfS" secondAttribute="bottom" constant="16" id="W3v-gT-1qG"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rRR-4B-jdz" secondAttribute="trailing" constant="16" id="Wqz-4n-rDX"/>
-                <constraint firstItem="rRR-4B-jdz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="fXw-XH-QNZ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mwo-md-gsh" secondAttribute="trailing" constant="16" id="gQd-Wb-tA7"/>
-                <constraint firstItem="2nX-yc-ykB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="lIJ-aZ-1gX"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2nX-yc-ykB" secondAttribute="trailing" constant="16" id="mW4-UR-eru"/>
-                <constraint firstItem="2nX-yc-ykB" firstAttribute="top" secondItem="rRR-4B-jdz" secondAttribute="bottom" constant="16" id="nFk-YD-q7B"/>
-                <constraint firstItem="V42-Qr-4t8" firstAttribute="top" secondItem="2nX-yc-ykB" secondAttribute="bottom" constant="32" id="pdd-we-Oxy"/>
-                <constraint firstItem="8zP-bv-RfS" firstAttribute="top" secondItem="mwo-md-gsh" secondAttribute="bottom" constant="32" id="xfw-4V-dCi"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V42-Qr-4t8" secondAttribute="trailing" id="zw5-az-keD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="d5h-d2-S7T" secondAttribute="top" constant="-75" id="2Vk-Qi-d3K"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="d5h-d2-S7T" secondAttribute="trailing" id="Nmg-bk-gUy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="d5h-d2-S7T" secondAttribute="bottom" constant="25" id="wHY-WI-1dl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="d5h-d2-S7T" secondAttribute="leading" id="dwj-T1-bV6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="54"/>
