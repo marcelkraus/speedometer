@@ -26,16 +26,16 @@
                     <rect key="frame" x="0.0" y="119" width="375" height="634"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DGr-na-3Vj">
-                            <rect key="frame" x="126.66666666666669" y="185.33333333333329" width="122" height="262.66666666666674"/>
+                            <rect key="frame" x="132.66666666666666" y="185.33333333333329" width="110" height="262.66666666666674"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZk-rE-CiX">
-                                    <rect key="frame" x="13" y="0.0" width="95.666666666666671" height="191"/>
+                                    <rect key="frame" x="7.3333333333333428" y="0.0" width="95.666666666666671" height="191"/>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="160"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km/h" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNh-OI-jDg">
-                                    <rect key="frame" x="0.0" y="191" width="122" height="71.666666666666686"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mph" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNh-OI-jDg">
+                                    <rect key="frame" x="0.0" y="191" width="110" height="71.666666666666686"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
                                     <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>

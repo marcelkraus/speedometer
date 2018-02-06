@@ -20,7 +20,7 @@ class SpeedometerViewController: UIViewController {
 
     private var unit: Unit {
         didSet {
-            unitLabel.text = abbreviation(for: unit)
+            unitLabel.text = unit.abbreviation
         }
     }
 
@@ -39,7 +39,6 @@ class SpeedometerViewController: UIViewController {
         super.viewDidLoad()
 
         setupLocationManager()
-        setupGestureRecognizers()
     }
 }
 
@@ -60,26 +59,9 @@ private extension SpeedometerViewController {
         locationManager.delegate = self
     }
 
-    func setupGestureRecognizers() {
-        let toggleUnitGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(toggleUnit))
-        view.addGestureRecognizer(toggleUnitGestureRecognizer)
-    }
-
     func speed(_ speed: Double, in unit: Unit) -> String {
-        let speed = speed > 1.0 ? speed * unit.data.factor : 0
+        let speed = speed > 1.0 ? speed * unit.factor : 0
 
         return String(format: "%01.0f", speed)
-    }
-
-    func abbreviation(for unit: Unit) -> String {
-        return unit.data.abbreviation
-    }
-
-    @objc func toggleUnit(_ recognizer: UITapGestureRecognizer) {
-        guard recognizer.state == .ended else {
-            return
-        }
-
-        unit.toggle()
     }
 }

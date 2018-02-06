@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,10 +17,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d5h-d2-S7T" userLabel="Canvas View">
-                    <rect key="frame" x="0.0" y="119" width="375" height="634"/>
+                    <rect key="frame" x="0.0" y="95" width="375" height="692"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMo-r1-yIh">
-                            <rect key="frame" x="138" y="579" width="100" height="30"/>
+                            <rect key="frame" x="138" y="637" width="100" height="30"/>
                             <state key="normal" title="Close Settings"/>
                             <connections>
                                 <action selector="closeImprint:" destination="-1" eventType="touchUpInside" id="jA9-eJ-GFA"/>
@@ -32,7 +29,7 @@
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WNy-P5-XaQ">
                             <rect key="frame" x="50" y="50" width="275" height="29"/>
                             <segments>
-                                <segment title="mls/h"/>
+                                <segment title="mph"/>
                                 <segment title="km/h"/>
                                 <segment title="m/s"/>
                             </segments>
@@ -65,8 +62,8 @@ Dreikönigenweg 8a
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="d5h-d2-S7T" secondAttribute="top" constant="-75" id="2Vk-Qi-d3K"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="d5h-d2-S7T" secondAttribute="trailing" id="Nmg-bk-gUy"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="d5h-d2-S7T" secondAttribute="bottom" constant="25" id="wHY-WI-1dl"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="d5h-d2-S7T" secondAttribute="leading" id="dwj-T1-bV6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="d5h-d2-S7T" secondAttribute="bottom" constant="25" id="wHY-WI-1dl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="54"/>

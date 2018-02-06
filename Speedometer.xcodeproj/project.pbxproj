@@ -67,6 +67,14 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DF5F138B202A5AAE006D51DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF2C45AE1FCC2EF0005C8906 /* Unit.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DF78E6AB2008BDB0009038B6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,9 +122,9 @@
 				DF78E6AB2008BDB0009038B6 /* Controller */,
 				DF8FDCE72008DD6200140DA9 /* Extension */,
 				DFEB62311F30B5EA00FEC555 /* Info.plist */,
+				DF5F138B202A5AAE006D51DA /* Model */,
 				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
 				DF568E471FD0119600D546B8 /* Supporting Files */,
-				DF2C45AE1FCC2EF0005C8906 /* Unit.swift */,
 			);
 			path = Speedometer;
 			sourceTree = "<group>";

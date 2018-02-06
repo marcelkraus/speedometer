@@ -39,7 +39,7 @@ private extension RootViewController {
         case .denied:
             self.transition(to: MessageViewController(heading: "Houston, we've had a problem here!", message: "Please ensure to allow Location Services for Speedometer to use this app.\n\nPlease check the following settings to be enabled:\n\nSettings > Privacy > Location Services\n\nand\n\nSettings > Privacy > Location Services > Speedometer > While Using"))
         case .authorizedWhenInUse:
-            self.transition(to: SpeedometerViewController(locationManager: self.locationManager, unit: .kilometersPerHour))
+            self.transition(to: SpeedometerViewController(locationManager: self.locationManager, unit: .milesPerHour))
         default:
             break
         }
