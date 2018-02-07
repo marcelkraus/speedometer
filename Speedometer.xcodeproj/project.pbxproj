@@ -75,7 +75,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DF78E6AB2008BDB0009038B6 /* Controller */ = {
+		DF78E6AB2008BDB0009038B6 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				DF78E6AC2008BE85009038B6 /* AuthorizationViewController.swift */,
@@ -89,15 +89,15 @@
 				DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */,
 				DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */,
 			);
-			path = Controller;
+			path = Screens;
 			sourceTree = "<group>";
 		};
-		DF8FDCE72008DD6200140DA9 /* Extension */ = {
+		DF8FDCE72008DD6200140DA9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DFEB62191F30B5E900FEC555 = {
@@ -119,12 +119,12 @@
 		DFEB62241F30B5EA00FEC555 /* Speedometer */ = {
 			isa = PBXGroup;
 			children = (
-				DF78E6AB2008BDB0009038B6 /* Controller */,
-				DF8FDCE72008DD6200140DA9 /* Extension */,
-				DFEB62311F30B5EA00FEC555 /* Info.plist */,
+				DF8FDCE72008DD6200140DA9 /* Extensions */,
 				DF5F138B202A5AAE006D51DA /* Model */,
-				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
+				DF78E6AB2008BDB0009038B6 /* Screens */,
 				DF568E471FD0119600D546B8 /* Supporting Files */,
+				DFEB62311F30B5EA00FEC555 /* Info.plist */,
+				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
 			);
 			path = Speedometer;
 			sourceTree = "<group>";
