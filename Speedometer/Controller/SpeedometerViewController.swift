@@ -37,8 +37,8 @@ class SpeedometerViewController: UIViewController {
     @IBOutlet weak var unitLabel: UILabel!
     @IBOutlet weak var informationButton: UIButton!
 
-    @IBAction func showImprint(_ sender: UIButton) {
-        present(ImprintViewController(unit: unit), animated: true, completion: nil)
+    @IBAction func closeSettings(_ sender: UIButton) {
+        present(SettingsViewController(unit: unit), animated: true, completion: nil)
     }
 }
 

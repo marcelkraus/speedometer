@@ -1,6 +1,6 @@
 import UIKit
 
-class ImprintViewController: UIViewController {
+class SettingsViewController: UIViewController {
     private var unit: Unit
 
     // MARK: - Controller Lifecycle
@@ -31,14 +31,14 @@ class ImprintViewController: UIViewController {
         UserDefaults.standard.set(unit.rawValue, forKey: Unit.UserDefaultsKey)
     }
 
-    @IBAction func closeImprint(_ sender: UIButton) {
+    @IBAction func closeSettings(_ sender: UIButton) {
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
 
 // MARK: - Private Methods
 
-private extension ImprintViewController {
+private extension SettingsViewController {
     func setupUnitSelection(unit: Unit) {
         unitSelection.removeAllSegments()
         units.enumerated().forEach { (index, unit) in
