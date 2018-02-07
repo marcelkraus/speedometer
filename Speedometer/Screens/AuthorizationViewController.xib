@@ -43,8 +43,8 @@
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mn-5g-lqZ">
-                            <rect key="frame" x="145.66666666666666" y="389.33333333333331" width="84" height="36"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                            <rect key="frame" x="152.33333333333334" y="393.33333333333337" width="71" height="32"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                             <state key="normal" title="I've got it!"/>
                             <connections>
                                 <action selector="authorizeApp:" destination="-1" eventType="touchUpInside" id="7JT-1g-eNt"/>

@@ -19,10 +19,23 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         setupUnitSelection(unit: self.unit)
+
+        headlines.forEach { headline in
+            headline.textColor = view.tintColor
+        }
     }
 
     // MARK: - Outlets & Actions
 
+    @IBOutlet var headlines: [UILabel]!
+
+    @IBOutlet weak var imprintHeading: UILabel! {
+        didSet {
+            let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+            let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
+            imprintHeading.text = "Speedometer \(versionNumber) (\(buildNumber))"
+        }
+    }
     @IBOutlet weak var unitSelection: UISegmentedControl!
 
     @IBAction func selectUnit(_ sender: UISegmentedControl) {
