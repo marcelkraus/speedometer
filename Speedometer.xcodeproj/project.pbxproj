@@ -23,6 +23,7 @@
 		DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */; };
 		DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */; };
 		DFEB62301F30B5EA00FEC555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */; };
+		DFFCE6952035EDA1007C4904 /* Open 24 Display ST.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFFCE6942035EDA1007C4904 /* Open 24 Display ST.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFEB622F1F30B5EA00FEC555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFEB62311F30B5EA00FEC555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFFCE6942035EDA1007C4904 /* Open 24 Display ST.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open 24 Display ST.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */,
 				DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */,
+				DFFCE6962035EF40007C4904 /* Fonts */,
 				DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
@@ -127,6 +130,14 @@
 				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
 			);
 			path = Speedometer;
+			sourceTree = "<group>";
+		};
+		DFFCE6962035EF40007C4904 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DFFCE6942035EDA1007C4904 /* Open 24 Display ST.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
 				DFCA0C691FD5E86D00260E24 /* MessageViewController.xib in Resources */,
 				DFCA0C631FD5E55300260E24 /* LoadingViewController.xib in Resources */,
+				DFFCE6952035EDA1007C4904 /* Open 24 Display ST.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
