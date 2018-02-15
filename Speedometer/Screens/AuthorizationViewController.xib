@@ -25,39 +25,55 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zaA-9e-NYH" userLabel="Canvas View">
                     <rect key="frame" x="0.0" y="119" width="375" height="634"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ftt-Gg-WLc">
-                            <rect key="frame" x="25" y="284.66666666666669" width="325" height="65.666666666666686"/>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLo-p6-6fM">
+                            <rect key="frame" x="0.0" y="25" width="375" height="584"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading Placeholder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTe-TI-PCd">
-                                    <rect key="frame" x="79.666666666666686" y="0.0" width="166" height="20.333333333333332"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Placeholder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSs-Br-CqC">
-                                    <rect key="frame" x="80.666666666666686" y="45.333333333333314" width="164" height="20.333333333333329"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="WcY-p1-xak" userLabel="Outer Stack View">
+                                    <rect key="frame" x="25" y="0.0" width="375" height="147.66666666666666"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ftt-Gg-WLc" userLabel="Message Stack View">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65.666666666666671"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading Placeholder" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTe-TI-PCd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.333333333333332"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Placeholder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSs-Br-CqC">
+                                                    <rect key="frame" x="0.0" y="45.333333333333343" width="164" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mn-5g-lqZ">
+                                            <rect key="frame" x="162.66666666666666" y="115.66666666666669" width="71" height="32"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                            <state key="normal" title="I've got it!"/>
+                                            <connections>
+                                                <action selector="authorizeApp:" destination="-1" eventType="touchUpInside" id="7JT-1g-eNt"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
                             </subviews>
-                        </stackView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mn-5g-lqZ">
-                            <rect key="frame" x="152.33333333333334" y="393.33333333333337" width="71" height="32"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
-                            <state key="normal" title="I've got it!"/>
-                            <connections>
-                                <action selector="authorizeApp:" destination="-1" eventType="touchUpInside" id="7JT-1g-eNt"/>
-                            </connections>
-                        </button>
+                            <constraints>
+                                <constraint firstItem="WcY-p1-xak" firstAttribute="width" secondItem="CLo-p6-6fM" secondAttribute="width" constant="-50" id="OdJ-Tc-sOb"/>
+                                <constraint firstItem="WcY-p1-xak" firstAttribute="leading" secondItem="CLo-p6-6fM" secondAttribute="leading" constant="25" id="elC-UI-6HV"/>
+                                <constraint firstItem="WcY-p1-xak" firstAttribute="bottom" secondItem="CLo-p6-6fM" secondAttribute="bottom" id="nrB-Fl-Ea0"/>
+                                <constraint firstItem="WcY-p1-xak" firstAttribute="trailing" secondItem="CLo-p6-6fM" secondAttribute="trailing" constant="25" id="r6h-Pn-Q28"/>
+                                <constraint firstItem="WcY-p1-xak" firstAttribute="top" secondItem="CLo-p6-6fM" secondAttribute="top" id="rIM-Sb-hfJ"/>
+                            </constraints>
+                        </scrollView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="1mn-5g-lqZ" firstAttribute="centerX" secondItem="zaA-9e-NYH" secondAttribute="centerX" id="Cgt-u8-bB2"/>
-                        <constraint firstItem="ftt-Gg-WLc" firstAttribute="leading" secondItem="zaA-9e-NYH" secondAttribute="leading" constant="25" id="XvD-w8-9Pe"/>
-                        <constraint firstItem="ftt-Gg-WLc" firstAttribute="centerY" secondItem="zaA-9e-NYH" secondAttribute="centerY" id="cLj-Xz-htn"/>
-                        <constraint firstItem="ftt-Gg-WLc" firstAttribute="bottom" secondItem="1mn-5g-lqZ" secondAttribute="bottom" constant="-75" id="fTo-h8-JA1"/>
-                        <constraint firstAttribute="trailing" secondItem="ftt-Gg-WLc" secondAttribute="trailing" constant="25" id="fYI-G4-0bd"/>
+                        <constraint firstItem="CLo-p6-6fM" firstAttribute="top" secondItem="zaA-9e-NYH" secondAttribute="top" constant="25" id="4UG-UZ-dPJ"/>
+                        <constraint firstItem="CLo-p6-6fM" firstAttribute="trailing" secondItem="zaA-9e-NYH" secondAttribute="trailing" id="7FI-0o-hpt"/>
+                        <constraint firstItem="CLo-p6-6fM" firstAttribute="leading" secondItem="zaA-9e-NYH" secondAttribute="leading" id="EGK-Me-P5U"/>
+                        <constraint firstItem="CLo-p6-6fM" firstAttribute="bottom" secondItem="zaA-9e-NYH" secondAttribute="bottom" constant="-25" id="zf9-S5-bBN"/>
                     </constraints>
                 </view>
             </subviews>
