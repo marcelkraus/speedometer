@@ -3,18 +3,11 @@ import UIKit
 
 class AuthorizationViewController: UIViewController {
     @IBOutlet weak var headingLabel: UILabel!
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var button: UIButton!
-
-    private let heading: String
-    private let message: String
 
     private var locationManager: CLLocationManager
 
-    init(locationManager: CLLocationManager, heading: String, message: String) {
+    init(locationManager: CLLocationManager) {
         self.locationManager = locationManager
-        self.heading = heading
-        self.message = message
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -24,11 +17,7 @@ class AuthorizationViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-        headingLabel?.text = heading
-        messageLabel?.text = message
-
         headingLabel.textColor = view.tintColor
-        messageLabel.numberOfLines = 0
 
         super.viewDidLoad()
     }

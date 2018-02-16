@@ -12,7 +12,7 @@ class RootViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         guard CLLocationManager.authorizationStatus() != .notDetermined else {
-            return transition(to: AuthorizationViewController(locationManager: locationManager, heading: "Welcome to Speedometer!", message: "This apps needs access to your location data to show your current speed.\n\nYour location data will only be used when you use this app and will never be shared.\n\nPlease press the button below and confirm access within the popup."))
+            return transition(to: AuthorizationViewController(locationManager: locationManager))
         }
 
         transition(to: LoadingViewController()) { _ in
