@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Speedometer" customModuleProvider="target">
             <connections>
-                <outlet property="imprintHeading" destination="EtS-Pw-we9" id="8W9-cE-O1S"/>
+                <outlet property="appInformation" destination="EtS-Pw-we9" id="8W9-cE-O1S"/>
                 <outlet property="unitSelection" destination="WNy-P5-XaQ" id="JJu-AD-0hL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="headlines" destination="EtS-Pw-we9" collectionClass="NSMutableArray" id="Z2H-xH-P2x"/>
@@ -30,7 +30,7 @@
                             <rect key="frame" x="0.0" y="25" width="375" height="584"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Dth-KX-vBn" userLabel="Outer Stack View">
-                                    <rect key="frame" x="25" y="0.0" width="375" height="535"/>
+                                    <rect key="frame" x="25" y="0.0" width="375" height="557"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="fbb-Tz-fHH" userLabel="Unit Selection Stack View">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="73.333333333333329"/>
@@ -55,28 +55,29 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="tpn-y0-aYJ" userLabel="Imprint Stack View">
-                                            <rect key="frame" x="0.0" y="123.33333333333329" width="375" height="329.66666666666674"/>
+                                            <rect key="frame" x="0.0" y="123.33333333333329" width="375" height="351.66666666666674"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imprint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtS-Pw-we9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Information Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtS-Pw-we9">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="20.333333333333332"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLB-D0-uuv">
-                                                    <rect key="frame" x="0.0" y="45.333333333333371" width="375" height="284.33333333333331"/>
-                                                    <string key="text">Angaben gemäß § 5 TMG:
+                                                    <rect key="frame" x="0.0" y="45.333333333333371" width="375" height="306.33333333333331"/>
+                                                    <string key="text">This app is a project of:
 
 Marcel Kraus
 Dreikönigenweg 8a
-50374 Erftstadt
+D-50374 Erftstadt
 
-Kontakt:
-Telefon: +49 163 6938184
-E-Mail: mail@marcelkraus.de
+Contact:
+
+Phone: +49 2235 8401372
+E-Mail: speedometer-app@marcelkraus.de
 USt-IdNr.: DE225346678
 
-Danke an Marc Kalmes und Matthias Kucharski für die Unterstützung!</string>
+Many thanks to Marc Kalmes and Matthias Kucharski for their support!</string>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -84,7 +85,7 @@ Danke an Marc Kalmes und Matthias Kucharski für die Unterstützung!</string>
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMo-r1-yIh">
-                                            <rect key="frame" x="0.0" y="503" width="375" height="32"/>
+                                            <rect key="frame" x="0.0" y="525" width="375" height="32"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                             <state key="normal" title="Close"/>
                                             <connections>

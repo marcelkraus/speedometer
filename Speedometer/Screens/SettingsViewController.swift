@@ -29,11 +29,11 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet var headlines: [UILabel]!
 
-    @IBOutlet weak var imprintHeading: UILabel! {
+    @IBOutlet weak var appInformation: UILabel! {
         didSet {
             let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
             let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
-            imprintHeading.text = "Speedometer \(versionNumber) (\(buildNumber))"
+            appInformation.text = "Speedometer \(versionNumber) (\(buildNumber))"
         }
     }
     @IBOutlet weak var unitSelection: UISegmentedControl!
