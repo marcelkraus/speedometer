@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
 		DF562D772036D00A0006731E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF562D792036D00A0006731E /* SettingsViewController.xib */; };
+		DF562D7C2036D26C0006731E /* AuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF562D7E2036D26C0006731E /* AuthorizationViewController.xib */; };
 		DF5F4C5F1FD5DAA10043F97E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */; };
 		DF78E6AE2008BE85009038B6 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF78E6AC2008BE85009038B6 /* AuthorizationViewController.swift */; };
-		DF78E6AF2008BE85009038B6 /* AuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF78E6AD2008BE85009038B6 /* AuthorizationViewController.xib */; };
 		DF8FDCEA2008FD0500140DA9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FDCE82008FD0500140DA9 /* SettingsViewController.swift */; };
 		DF962C4F1FD5A41300514B06 /* SpeedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */; };
 		DF962C511FD5A42B00514B06 /* SpeedometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */; };
@@ -31,9 +31,10 @@
 		DF562D782036D00A0006731E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SettingsViewController.xib; sourceTree = "<group>"; };
 		DF562D7A2036D0160006731E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/SettingsViewController.strings; sourceTree = "<group>"; };
 		DF562D7B2036D0160006731E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DF562D7D2036D26C0006731E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AuthorizationViewController.xib; sourceTree = "<group>"; };
+		DF562D802036D2700006731E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/AuthorizationViewController.strings; sourceTree = "<group>"; };
 		DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		DF78E6AC2008BE85009038B6 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
-		DF78E6AD2008BE85009038B6 /* AuthorizationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorizationViewController.xib; sourceTree = "<group>"; };
 		DF8FDCE82008FD0500140DA9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerViewController.swift; sourceTree = "<group>"; };
 		DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeedometerViewController.xib; sourceTree = "<group>"; };
@@ -84,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				DF78E6AC2008BE85009038B6 /* AuthorizationViewController.swift */,
-				DF78E6AD2008BE85009038B6 /* AuthorizationViewController.xib */,
+				DF562D7E2036D26C0006731E /* AuthorizationViewController.xib */,
 				DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */,
 				DFCA0C621FD5E55300260E24 /* LoadingViewController.xib */,
 				DFCA0C661FD5E84400260E24 /* MessageViewController.swift */,
@@ -187,6 +188,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = DFEB62191F30B5E900FEC555;
 			productRefGroup = DFEB62231F30B5EA00FEC555 /* Products */;
@@ -205,7 +207,7 @@
 			files = (
 				DF962C511FD5A42B00514B06 /* SpeedometerViewController.xib in Resources */,
 				DFEB62301F30B5EA00FEC555 /* LaunchScreen.storyboard in Resources */,
-				DF78E6AF2008BE85009038B6 /* AuthorizationViewController.xib in Resources */,
+				DF562D7C2036D26C0006731E /* AuthorizationViewController.xib in Resources */,
 				DF562D772036D00A0006731E /* SettingsViewController.xib in Resources */,
 				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
 				DFCA0C691FD5E86D00260E24 /* MessageViewController.xib in Resources */,
@@ -243,6 +245,15 @@
 				DF562D7A2036D0160006731E /* de */,
 			);
 			name = SettingsViewController.xib;
+			sourceTree = "<group>";
+		};
+		DF562D7E2036D26C0006731E /* AuthorizationViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF562D7D2036D26C0006731E /* Base */,
+				DF562D802036D2700006731E /* de */,
+			);
+			name = AuthorizationViewController.xib;
 			sourceTree = "<group>";
 		};
 		DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */ = {
