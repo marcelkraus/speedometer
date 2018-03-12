@@ -33,7 +33,7 @@ extension RootViewController: CLLocationManagerDelegate {
 
 private extension RootViewController {
     func chooseViewController() {
-        switch CLLocationManager.authorizationStatus()  {
+        switch CLLocationManager.authorizationStatus() {
         case .restricted:
             self.transition(to: MessageViewController(heading: "Houston, we've had a problem here!", message: "Usage of this app is not possible due to restrictions of Location Services.\n\nPlease remove any restrictions in settings:\n\nSettings > General > Restrictions > Location Services\n\nor contact your administrator."))
         case .denied:
