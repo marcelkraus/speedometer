@@ -48,11 +48,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		32A23E08346748F1793F899C5FF672C1 /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SwiftLint;
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				9758CC519AE2C57A9659FFC01AAD26F9 /* Pods */,
 				1B2FBC01D8265CE74C2757B86EA4FC45 /* Products */,
 				B2E8FA174E16D88F3946F2713452D0BF /* Targets Support Files */,
 			);
@@ -74,6 +83,14 @@
 			);
 			name = "Pods-Speedometer";
 			path = "Target Support Files/Pods-Speedometer";
+			sourceTree = "<group>";
+		};
+		9758CC519AE2C57A9659FFC01AAD26F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32A23E08346748F1793F899C5FF672C1 /* SwiftLint */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		B2E8FA174E16D88F3946F2713452D0BF /* Targets Support Files */ = {
