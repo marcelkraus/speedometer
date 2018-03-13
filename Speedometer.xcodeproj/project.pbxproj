@@ -14,6 +14,7 @@
 		DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */; };
 		DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */; };
 		DF5F4C5F1FD5DAA10043F97E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */; };
+		DF744CD32058297000AE365B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF744CD12058297000AE365B /* Localizable.strings */; };
 		DF78E6AE2008BE85009038B6 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF78E6AC2008BE85009038B6 /* AuthorizationViewController.swift */; };
 		DF8FDCEA2008FD0500140DA9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FDCE82008FD0500140DA9 /* SettingsViewController.swift */; };
 		DF962C4F1FD5A41300514B06 /* SpeedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */; };
@@ -40,6 +41,8 @@
 		DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.ttf"; sourceTree = "<group>"; };
 		DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Medium.ttf"; sourceTree = "<group>"; };
 		DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		DF744CD520582D7700AE365B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = "Speedometer/Supporting Files/Base.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		DF744CD620582D8500AE365B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = "Speedometer/Supporting Files/de.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		DF78E6AC2008BE85009038B6 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		DF8FDCE82008FD0500140DA9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 				DF58A64A2057FAC900005A07 /* Fonts */,
 				DFEB62311F30B5EA00FEC555 /* Info.plist */,
 				DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */,
+				DF744CD12058297000AE365B /* Localizable.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -240,6 +244,7 @@
 				DFEB62301F30B5EA00FEC555 /* LaunchScreen.storyboard in Resources */,
 				DF562D7C2036D26C0006731E /* AuthorizationViewController.xib in Resources */,
 				DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */,
+				DF744CD32058297000AE365B /* Localizable.strings in Resources */,
 				DF562D772036D00A0006731E /* SettingsViewController.xib in Resources */,
 				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
 				DFCA0C691FD5E86D00260E24 /* MessageViewController.xib in Resources */,
@@ -336,6 +341,15 @@
 				DF562D802036D2700006731E /* de */,
 			);
 			name = AuthorizationViewController.xib;
+			sourceTree = "<group>";
+		};
+		DF744CD12058297000AE365B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF744CD520582D7700AE365B /* Base */,
+				DF744CD620582D8500AE365B /* de */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */ = {

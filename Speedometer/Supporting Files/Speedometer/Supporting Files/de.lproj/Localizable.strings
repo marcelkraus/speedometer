@@ -1,0 +1,3 @@
+"ErrorHeading" = "Houston, wir haben ein Problem!";
+"LocationRestrictionError" = "Die Benutzung von Speedometer ist nicht möglich, da der Zugriff auf die Ortungsdienste beschränkt wurde.\n\nBitte entferne alle Einschränkungen in deinen Einstellungen:\n\nEinstellungen > Allgemein > Einschränkungen > Ortungsdienste";
+"NoLocationServicesError" = "Bitte aktiviere die Ortungsdienste, um Speedometer zu benutzen.\n\nDu findest die notwendigen Einstellungen hier:\n\nEinstellungen > Datenschutz > Ortungsdienste > Speedometer > Beim Verwenden der App";
