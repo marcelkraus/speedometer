@@ -17,5 +17,5 @@
 /* Class = "UIButton"; normalTitle = "Close"; ObjectID = "cMo-r1-yIh"; */
 "cMo-r1-yIh.normalTitle" = "Schließen";
 
-/* Class = "UILabel"; text = "This app is a noncommercial project of:\n\nMarcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nContact:\n\nPhone: +49 2235 8401372\nE-Mail: speedometer-app@marcelkraus.de\nUSt-IdNr.: DE225346678\n\nMany thanks to Marc Kalmes and Matthias Kucharski for their support!"; ObjectID = "mLB-D0-uuv"; */
-"mLB-D0-uuv.text" = "Diese App ist ein unkommerzielles Projekt von Marcel Kraus. Angaben gemäß § 5 TMG:\n\nMarcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nKontakt:\n\nTelefon: +49 2235 8401372\nE-Mail: speedometer-app@marcelkraus.de\nUSt-IdNr.: DE225346678\n\nDanke an Marc Kalmes und Matthias Kucharski für die Unterstützung!";
+/* Class = "UILabel"; text = "This app is a noncommercial project of:\n\nMarcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nGermany\n\nContact:\n\nPhone: +49 2235 8401372\nMail: mail-speedometer@marcelkraus.de\nUSt-IdNr.: DE225346678\n\nMany thanks to Marc Kalmes and Matthias Kucharski for their support!"; ObjectID = "mLB-D0-uuv"; */
+"mLB-D0-uuv.text" = "Diese App ist ein unkommerzielles Projekt von Marcel Kraus. Angaben gemäß § 5 TMG:\n\nMarcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nDeutschland\n\nKontakt:\n\nTelefon: +49 2235 8401372\nE-Mail: mail-speedometer@marcelkraus.de\nUSt-IdNr.: DE225346678\n\nDanke an Marc Kalmes und Matthias Kucharski für die Unterstützung!";
