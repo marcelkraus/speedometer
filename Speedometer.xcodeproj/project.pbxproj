@@ -87,9 +87,9 @@
 		DF568E471FD0119600D546B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */,
 				DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */,
 				DFFCE6962035EF40007C4904 /* Fonts */,
+				DFEB62311F30B5EA00FEC555 /* Info.plist */,
 				DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
@@ -149,12 +149,12 @@
 		DFEB62241F30B5EA00FEC555 /* Speedometer */ = {
 			isa = PBXGroup;
 			children = (
+				DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */,
 				DF8FDCE72008DD6200140DA9 /* Extensions */,
 				DF5F138B202A5AAE006D51DA /* Model */,
+				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
 				DF78E6AB2008BDB0009038B6 /* Screens */,
 				DF568E471FD0119600D546B8 /* Supporting Files */,
-				DFEB62311F30B5EA00FEC555 /* Info.plist */,
-				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
 			);
 			path = Speedometer;
 			sourceTree = "<group>";
@@ -463,7 +463,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = N8P95HFNCS;
-				INFOPLIST_FILE = Speedometer/Info.plist;
+				INFOPLIST_FILE = "Speedometer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.marcelkraus.speedometer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -482,7 +482,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = N8P95HFNCS;
-				INFOPLIST_FILE = Speedometer/Info.plist;
+				INFOPLIST_FILE = "Speedometer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.marcelkraus.speedometer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
