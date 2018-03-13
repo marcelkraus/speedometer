@@ -11,6 +11,8 @@
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
 		DF562D772036D00A0006731E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF562D792036D00A0006731E /* SettingsViewController.xib */; };
 		DF562D7C2036D26C0006731E /* AuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF562D7E2036D26C0006731E /* AuthorizationViewController.xib */; };
+		DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */; };
+		DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */; };
 		DF5F4C5F1FD5DAA10043F97E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */; };
 		DF78E6AE2008BE85009038B6 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF78E6AC2008BE85009038B6 /* AuthorizationViewController.swift */; };
 		DF8FDCEA2008FD0500140DA9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FDCE82008FD0500140DA9 /* SettingsViewController.swift */; };
@@ -24,7 +26,6 @@
 		DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */; };
 		DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */; };
 		DFEB62301F30B5EA00FEC555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */; };
-		DFFCE6952035EDA1007C4904 /* Open 24 Display ST.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFFCE6942035EDA1007C4904 /* Open 24 Display ST.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		DF562D7B2036D0160006731E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DF562D7D2036D26C0006731E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AuthorizationViewController.xib; sourceTree = "<group>"; };
 		DF562D802036D2700006731E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/AuthorizationViewController.strings; sourceTree = "<group>"; };
+		DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.ttf"; sourceTree = "<group>"; };
+		DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Medium.ttf"; sourceTree = "<group>"; };
 		DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		DF78E6AC2008BE85009038B6 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		DF8FDCE82008FD0500140DA9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +54,6 @@
 		DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFEB622F1F30B5EA00FEC555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFEB62311F30B5EA00FEC555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFFCE6942035EDA1007C4904 /* Open 24 Display ST.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open 24 Display ST.ttf"; sourceTree = "<group>"; };
 		F7077A7CC24E3EE4BA03CA1F /* Pods-Speedometer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Speedometer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Speedometer/Pods-Speedometer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,11 +90,20 @@
 			isa = PBXGroup;
 			children = (
 				DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */,
-				DFFCE6962035EF40007C4904 /* Fonts */,
+				DF58A64A2057FAC900005A07 /* Fonts */,
 				DFEB62311F30B5EA00FEC555 /* Info.plist */,
 				DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DF58A64A2057FAC900005A07 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */,
+				DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		DF5F138B202A5AAE006D51DA /* Model */ = {
@@ -157,14 +168,6 @@
 				DF568E471FD0119600D546B8 /* Supporting Files */,
 			);
 			path = Speedometer;
-			sourceTree = "<group>";
-		};
-		DFFCE6962035EF40007C4904 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				DFFCE6942035EDA1007C4904 /* Open 24 Display ST.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,13 +236,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF962C511FD5A42B00514B06 /* SpeedometerViewController.xib in Resources */,
+				DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */,
 				DFEB62301F30B5EA00FEC555 /* LaunchScreen.storyboard in Resources */,
 				DF562D7C2036D26C0006731E /* AuthorizationViewController.xib in Resources */,
+				DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */,
 				DF562D772036D00A0006731E /* SettingsViewController.xib in Resources */,
 				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
 				DFCA0C691FD5E86D00260E24 /* MessageViewController.xib in Resources */,
 				DFCA0C631FD5E55300260E24 /* LoadingViewController.xib in Resources */,
-				DFFCE6952035EDA1007C4904 /* Open 24 Display ST.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
