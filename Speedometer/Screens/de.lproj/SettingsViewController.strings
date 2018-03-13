@@ -1,21 +1,3 @@
-
-/* Class = "UILabel"; text = "Unit Selection"; ObjectID = "7Id-iz-M00"; */
-"7Id-iz-M00.text" = "Auswahl der Einheit";
-
-/* Class = "UILabel"; text = "App Information Placeholder"; ObjectID = "EtS-Pw-we9"; */
-"EtS-Pw-we9.text" = "App Information Placeholder";
-
-/* Class = "UISegmentedControl"; WNy-P5-XaQ.segmentTitles[0] = "Unit 1"; ObjectID = "WNy-P5-XaQ"; */
-"WNy-P5-XaQ.segmentTitles[0]" = "Einheit 1";
-
-/* Class = "UISegmentedControl"; WNy-P5-XaQ.segmentTitles[1] = "Unit 2"; ObjectID = "WNy-P5-XaQ"; */
-"WNy-P5-XaQ.segmentTitles[1]" = "Einheit 2";
-
-/* Class = "UISegmentedControl"; WNy-P5-XaQ.segmentTitles[2] = "Unit 3"; ObjectID = "WNy-P5-XaQ"; */
-"WNy-P5-XaQ.segmentTitles[2]" = "Einheit 3";
-
-/* Class = "UIButton"; normalTitle = "Close"; ObjectID = "cMo-r1-yIh"; */
+"7Id-iz-M00.text" = "Gewünschte Einheit";
+"mLB-D0-uuv.text" = "Diese App ist ein privates, unkommerzielles Projekt von:\n\nMarcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nDeutschland\n\nDanke an Marc Kalmes und Matthias Kucharski für die Unterstützung!";
 "cMo-r1-yIh.normalTitle" = "Schließen";
-
-/* Class = "UILabel"; text = "This app is a noncommercial project of:\n\nMarcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nGermany\n\nContact:\n\nPhone: +49 2235 8401372\nMail: mail-speedometer@marcelkraus.de\nUSt-IdNr.: DE225346678\n\nMany thanks to Marc Kalmes and Matthias Kucharski for their support!"; ObjectID = "mLB-D0-uuv"; */
-"mLB-D0-uuv.text" = "Diese App ist ein unkommerzielles Projekt von Marcel Kraus. Angaben gemäß § 5 TMG:\n\nMarcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nDeutschland\n\nKontakt:\n\nTelefon: +49 2235 8401372\nE-Mail: mail-speedometer@marcelkraus.de\nUSt-IdNr.: DE225346678\n\nDanke an Marc Kalmes und Matthias Kucharski für die Unterstützung!";
