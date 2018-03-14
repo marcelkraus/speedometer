@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DB42B48D5A357451A42C6030 /* Pods_Speedometer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3678B8DD1591CDACFF17F21D /* Pods_Speedometer.framework */; };
+		DF14A43E2059441C00FFFA5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF14A4402059441C00FFFA5F /* InfoPlist.strings */; };
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
 		DF562D772036D00A0006731E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF562D792036D00A0006731E /* SettingsViewController.xib */; };
 		DF562D7C2036D26C0006731E /* AuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF562D7E2036D26C0006731E /* AuthorizationViewController.xib */; };
@@ -32,6 +33,8 @@
 /* Begin PBXFileReference section */
 		0A3BDD7AE02C355FDC6B2A24 /* Pods-Speedometer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Speedometer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Speedometer/Pods-Speedometer.debug.xcconfig"; sourceTree = "<group>"; };
 		3678B8DD1591CDACFF17F21D /* Pods_Speedometer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Speedometer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF14A4412059441F00FFFA5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DF14A4422059442900FFFA5F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DF2C45AE1FCC2EF0005C8906 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		DF562D782036D00A0006731E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SettingsViewController.xib; sourceTree = "<group>"; };
 		DF562D7A2036D0160006731E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/SettingsViewController.strings; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 				DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */,
 				DF58A64A2057FAC900005A07 /* Fonts */,
 				DFEB62311F30B5EA00FEC555 /* Info.plist */,
+				DF14A4402059441C00FFFA5F /* InfoPlist.strings */,
 				DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */,
 				DF744CD12058297000AE365B /* Localizable.strings */,
 			);
@@ -248,6 +252,7 @@
 				DF562D772036D00A0006731E /* SettingsViewController.xib in Resources */,
 				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
 				DFCA0C691FD5E86D00260E24 /* MessageViewController.xib in Resources */,
+				DF14A43E2059441C00FFFA5F /* InfoPlist.strings in Resources */,
 				DFCA0C631FD5E55300260E24 /* LoadingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +330,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		DF14A4402059441C00FFFA5F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF14A4412059441F00FFFA5F /* Base */,
+				DF14A4422059442900FFFA5F /* de */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		DF562D792036D00A0006731E /* SettingsViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
