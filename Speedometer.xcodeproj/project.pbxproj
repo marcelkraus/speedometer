@@ -38,7 +38,6 @@
 		DF2C45AE1FCC2EF0005C8906 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		DF562D782036D00A0006731E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SettingsViewController.xib; sourceTree = "<group>"; };
 		DF562D7A2036D0160006731E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/SettingsViewController.strings; sourceTree = "<group>"; };
-		DF562D7B2036D0160006731E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DF562D7D2036D26C0006731E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AuthorizationViewController.xib; sourceTree = "<group>"; };
 		DF562D802036D2700006731E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/AuthorizationViewController.strings; sourceTree = "<group>"; };
 		DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.ttf"; sourceTree = "<group>"; };
@@ -370,7 +369,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				DFEB622F1F30B5EA00FEC555 /* Base */,
-				DF562D7B2036D0160006731E /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
