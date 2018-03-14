@@ -27,22 +27,22 @@
                             <rect key="frame" x="0.0" y="25" width="375" height="584"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="WcY-p1-xak" userLabel="Outer Stack View">
-                                    <rect key="frame" x="25" y="0.0" width="375" height="301.66666666666669"/>
+                                    <rect key="frame" x="25" y="0.0" width="375" height="323.66666666666669"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ftt-Gg-WLc" userLabel="Message Stack View">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="219.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="241.66666666666666"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Speedometer!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTe-TI-PCd">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTe-TI-PCd">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="20.333333333333332"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSs-Br-CqC">
-                                                    <rect key="frame" x="0.0" y="45.333333333333329" width="375" height="174.33333333333337"/>
-                                                    <string key="text">This apps needs access to your location data to show your current speed.
+                                                    <rect key="frame" x="0.0" y="45.333333333333329" width="375" height="196.33333333333337"/>
+                                                    <string key="text">Speedometer! is just a small ad-free app which shows you your current speed.
 
-Your location data will only be used when you use this app and will never be shared.
+Therefore, this app needs access to your location data, which will only be used for this purpose and never be shared.
 
 Please press the button below and confirm access within the popup.</string>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -52,7 +52,7 @@ Please press the button below and confirm access within the popup.</string>
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mn-5g-lqZ">
-                                            <rect key="frame" x="162.66666666666666" y="269.66666666666669" width="71" height="32"/>
+                                            <rect key="frame" x="162.66666666666666" y="291.66666666666669" width="71" height="32"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                             <state key="normal" title="I've got it!"/>
                                             <connections>

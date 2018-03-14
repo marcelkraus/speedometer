@@ -31,8 +31,8 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var appInformation: UILabel! {
         didSet {
-            if let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
-                appInformation.text = "Speedometer \(versionNumber) (\(buildNumber))"
+            if let productName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName"), let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
+                appInformation.text = "\(productName) v\(versionNumber) (\(buildNumber))"
             }
         }
     }
