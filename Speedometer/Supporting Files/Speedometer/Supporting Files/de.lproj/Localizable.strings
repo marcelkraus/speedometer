@@ -1,3 +1,0 @@
-"ErrorHeading" = "Houston, wir haben ein Problem!";
-"LocationRestrictionError" = "Die Nutzung von Tacho! ist nicht möglich, da der Zugriff auf deine Standortdaten beschränkt wurde.\n\nBitte entferne alle Einschränkungen in deinen Einstellungen:\n\nEinstellungen > Allgemein > Einschränkungen > Ortungsdienste";
-"NoLocationServicesError" = "Bitte erlaube Zugriff auf deine Standortdaten, um Tacho! nutzen zu können.\n\nDu findest die notwendigen Einstellungen hier:\n\nEinstellungen > Datenschutz > Ortungsdienste > Tacho! > Beim Verwenden der App";

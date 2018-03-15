@@ -12,7 +12,14 @@ class RootViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         guard CLLocationManager.authorizationStatus() != .notDetermined else {
-            return transition(to: AuthorizationViewController(locationManager: locationManager))
+            return transition(to:
+                MessageViewController(
+                    locationManager: locationManager,
+                    heading: "RootViewController.OnboardingInformation.Heading".localized,
+                    message: "RootViewController.OnboardingInformation.Message".localized,
+                    buttonTitle: "RootViewController.OnboardingInformation.Button".localized
+                )
+            )
         }
 
         transition(to: LoadingViewController()) { _ in
@@ -35,9 +42,21 @@ private extension RootViewController {
     func chooseViewController() {
         switch CLLocationManager.authorizationStatus() {
         case .restricted:
-            self.transition(to: MessageViewController(heading: NSLocalizedString("ErrorHeading", comment: ""), message: NSLocalizedString("LocationRestrictionError", comment: "")))
+            self.transition(to:
+                MessageViewController(
+                    locationManager: locationManager,
+                    heading: "RootViewController.LocationAuthorizationStatusRestricted.Heading".localized,
+                    message: "RootViewController.LocationAuthorizationStatusRestricted.Message".localized
+                )
+            )
         case .denied:
-            self.transition(to: MessageViewController(heading: NSLocalizedString("ErrorHeading", comment: ""), message: NSLocalizedString("NoLocationServicesError", comment: "")))
+            self.transition(to:
+                MessageViewController(
+                    locationManager: locationManager,
+                    heading: "RootViewController.LocationAuthorizationStatusDenied.Heading".localized,
+                    message: "RootViewController.LocationAuthorizationStatusRestricted.Message".localized
+                )
+            )
         case .authorizedWhenInUse:
             self.transition(to: SpeedometerViewController(locationManager: self.locationManager, unit: Unit(rawValue: UserDefaults.standard.string(forKey: Unit.UserDefaultsKey)!)!))
         default:

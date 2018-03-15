@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MessageViewController" customModule="Speedometer" customModuleProvider="target">
             <connections>
+                <outlet property="button" destination="Tpe-k4-z2D" id="Ys2-E7-B3m"/>
                 <outlet property="headingLabel" destination="VgX-La-xkN" id="XBO-HS-SO5"/>
                 <outlet property="messageLabel" destination="uhQ-zx-LZs" id="2FP-DT-h7l"/>
                 <outlet property="view" destination="iN0-l3-epB" id="EKJ-or-e3H"/>
@@ -27,8 +28,8 @@
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhX-JD-h8S">
                             <rect key="frame" x="0.0" y="25" width="375" height="584"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ozV-GZ-5y8">
-                                    <rect key="frame" x="25" y="0.0" width="375" height="65.666666666666671"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ozV-GZ-5y8">
+                                    <rect key="frame" x="25" y="0.0" width="375" height="122.66666666666667"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading Placeholder" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgX-La-xkN">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="20.333333333333332"/>
@@ -37,11 +38,19 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Placeholder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhQ-zx-LZs">
-                                            <rect key="frame" x="0.0" y="45.333333333333343" width="164" height="20.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="45.333333333333343" width="375" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpe-k4-z2D">
+                                            <rect key="frame" x="0.0" y="90.666666666666657" width="375" height="32"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                            <state key="normal" title="Button Placeholder"/>
+                                            <connections>
+                                                <action selector="authorizeApp:" destination="-1" eventType="touchUpInside" id="7V0-px-Lnl"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </stackView>
                             </subviews>

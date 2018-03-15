@@ -1,0 +1,13 @@
+"RootViewController.LocationAuthorizationStatusDenied.Heading" = "Houston, we've had a problem here!";
+"RootViewController.LocationAuthorizationStatusDenied.Message" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
+
+"RootViewController.LocationAuthorizationStatusRestricted.Heading" = "Houston, we've had a problem here!";
+"RootViewController.LocationAuthorizationStatusRestricted.Message" = "Please allow access to your location data to use Speedometer\n\nPlease check the following settings:\n\nSettings > Privacy > Location Services > Speedometer > While Using";
+
+"RootViewController.OnboardingInformation.Heading" = "Welcome!";
+"RootViewController.OnboardingInformation.Message" = "Speedometer is just a small ad-free app which shows you your current speed.\n\nTherefore, this app needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease press the button below and confirm access within the popup.";
+"RootViewController.OnboardingInformation.Button" = "I've got it!";
+
+"SettingsViewController.UnitSelection.Heading" = "Unit Selection";
+"SettingsViewController.Imprint.Contents" = "This app is a private, non-commercial project of:\n\nMarcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nGermany\n\nMany thanks to Marc Kalmes for his support!";
+"SettingsViewController.Button" = "Close";

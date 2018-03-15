@@ -20,23 +20,37 @@ class SettingsViewController: UIViewController {
 
         setupUnitSelection(unit: self.unit)
 
-        headlines.forEach { headline in
+        headings.forEach { headline in
             headline.textColor = view.tintColor
         }
     }
 
     // MARK: - Outlets & Actions
 
-    @IBOutlet var headlines: [UILabel]!
-
-    @IBOutlet weak var appInformation: UILabel! {
+    @IBOutlet var headings: [UILabel]!
+    @IBOutlet weak var unitSelectionHeading: UILabel! {
         didSet {
-            if let productName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName"), let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
-                appInformation.text = "\(productName) v\(versionNumber) (\(buildNumber))"
-            }
+            unitSelectionHeading.text = "SettingsViewController.UnitSelection.Heading".localized
         }
     }
     @IBOutlet weak var unitSelection: UISegmentedControl!
+    @IBOutlet weak var imprintHeading: UILabel! {
+        didSet {
+            if let productName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName"), let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
+                imprintHeading.text = "\(productName) v\(versionNumber) (\(buildNumber))"
+            }
+        }
+    }
+    @IBOutlet weak var imprintContents: UILabel! {
+        didSet {
+            imprintContents.text = "SettingsViewController.Imprint.Contents".localized
+        }
+    }
+    @IBOutlet weak var button: UIButton! {
+        didSet {
+            button.setTitle("SettingsViewController.Button".localized, for: .normal)
+        }
+    }
 
     @IBAction func selectUnit(_ sender: UISegmentedControl) {
         let unit = units[sender.selectedSegmentIndex]

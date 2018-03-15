@@ -8,56 +8,52 @@
 
 /* Begin PBXBuildFile section */
 		DB42B48D5A357451A42C6030 /* Pods_Speedometer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3678B8DD1591CDACFF17F21D /* Pods_Speedometer.framework */; };
-		DF14A43E2059441C00FFFA5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF14A4402059441C00FFFA5F /* InfoPlist.strings */; };
+		DF1F79DA2059EAA500BAFC11 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF1F79D72059EA9E00BAFC11 /* SettingsViewController.xib */; };
+		DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */; };
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
-		DF562D772036D00A0006731E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF562D792036D00A0006731E /* SettingsViewController.xib */; };
-		DF562D7C2036D26C0006731E /* AuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF562D7E2036D26C0006731E /* AuthorizationViewController.xib */; };
+		DF3010D8205A929E005B493D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3010D7205A929E005B493D /* String.swift */; };
 		DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */; };
 		DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */; };
 		DF5F4C5F1FD5DAA10043F97E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */; };
-		DF744CD32058297000AE365B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF744CD12058297000AE365B /* Localizable.strings */; };
-		DF78E6AE2008BE85009038B6 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF78E6AC2008BE85009038B6 /* AuthorizationViewController.swift */; };
 		DF8FDCEA2008FD0500140DA9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FDCE82008FD0500140DA9 /* SettingsViewController.swift */; };
 		DF962C4F1FD5A41300514B06 /* SpeedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */; };
 		DF962C511FD5A42B00514B06 /* SpeedometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */; };
+		DFC358F4205A9BCF00DEDB9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFC358F6205A9BCF00DEDB9E /* InfoPlist.strings */; };
 		DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C601FD5E17300260E24 /* RootViewController.swift */; };
 		DFCA0C631FD5E55300260E24 /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFCA0C621FD5E55300260E24 /* LoadingViewController.xib */; };
 		DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */; };
 		DFCA0C671FD5E84400260E24 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C661FD5E84400260E24 /* MessageViewController.swift */; };
 		DFCA0C691FD5E86D00260E24 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFCA0C681FD5E86D00260E24 /* MessageViewController.xib */; };
+		DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFE69BD7205A904000FA0CE3 /* Localizable.strings */; };
 		DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */; };
 		DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */; };
-		DFEB62301F30B5EA00FEC555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A3BDD7AE02C355FDC6B2A24 /* Pods-Speedometer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Speedometer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Speedometer/Pods-Speedometer.debug.xcconfig"; sourceTree = "<group>"; };
 		3678B8DD1591CDACFF17F21D /* Pods_Speedometer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Speedometer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF14A4412059441F00FFFA5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DF14A4422059442900FFFA5F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DF1F79D72059EA9E00BAFC11 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF2C45AE1FCC2EF0005C8906 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
-		DF562D782036D00A0006731E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SettingsViewController.xib; sourceTree = "<group>"; };
-		DF562D7A2036D0160006731E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/SettingsViewController.strings; sourceTree = "<group>"; };
-		DF562D7D2036D26C0006731E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AuthorizationViewController.xib; sourceTree = "<group>"; };
-		DF562D802036D2700006731E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/AuthorizationViewController.strings; sourceTree = "<group>"; };
+		DF3010D7205A929E005B493D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.ttf"; sourceTree = "<group>"; };
 		DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Medium.ttf"; sourceTree = "<group>"; };
 		DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		DF744CD520582D7700AE365B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = "Speedometer/Supporting Files/Base.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		DF744CD620582D8500AE365B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = "Speedometer/Supporting Files/de.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		DF78E6AC2008BE85009038B6 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		DF8FDCE82008FD0500140DA9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerViewController.swift; sourceTree = "<group>"; };
 		DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeedometerViewController.xib; sourceTree = "<group>"; };
+		DFC358F8205A9BDD00DEDB9E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DFC358F9205A9BE800DEDB9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DFCA0C601FD5E17300260E24 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		DFCA0C621FD5E55300260E24 /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
 		DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		DFCA0C661FD5E84400260E24 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		DFCA0C681FD5E86D00260E24 /* MessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
+		DFE69BD6205A904000FA0CE3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DFE69BD8205A904C00FA0CE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DFEB62221F30B5EA00FEC555 /* Speedometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Speedometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DFEB622F1F30B5EA00FEC555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFEB62311F30B5EA00FEC555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7077A7CC24E3EE4BA03CA1F /* Pods-Speedometer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Speedometer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Speedometer/Pods-Speedometer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,9 +93,9 @@
 				DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */,
 				DF58A64A2057FAC900005A07 /* Fonts */,
 				DFEB62311F30B5EA00FEC555 /* Info.plist */,
-				DF14A4402059441C00FFFA5F /* InfoPlist.strings */,
-				DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */,
-				DF744CD12058297000AE365B /* Localizable.strings */,
+				DFC358F6205A9BCF00DEDB9E /* InfoPlist.strings */,
+				DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */,
+				DFE69BD7205A904000FA0CE3 /* Localizable.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -124,14 +120,12 @@
 		DF78E6AB2008BDB0009038B6 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				DF78E6AC2008BE85009038B6 /* AuthorizationViewController.swift */,
-				DF562D7E2036D26C0006731E /* AuthorizationViewController.xib */,
 				DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */,
 				DFCA0C621FD5E55300260E24 /* LoadingViewController.xib */,
 				DFCA0C661FD5E84400260E24 /* MessageViewController.swift */,
 				DFCA0C681FD5E86D00260E24 /* MessageViewController.xib */,
 				DF8FDCE82008FD0500140DA9 /* SettingsViewController.swift */,
-				DF562D792036D00A0006731E /* SettingsViewController.xib */,
+				DF1F79D72059EA9E00BAFC11 /* SettingsViewController.xib */,
 				DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */,
 				DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */,
 			);
@@ -141,6 +135,7 @@
 		DF8FDCE72008DD6200140DA9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DF3010D7205A929E005B493D /* String.swift */,
 				DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */,
 			);
 			path = Extensions;
@@ -223,9 +218,8 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
-				Base,
 				de,
+				en,
 			);
 			mainGroup = DFEB62191F30B5E900FEC555;
 			productRefGroup = DFEB62231F30B5EA00FEC555 /* Products */;
@@ -242,17 +236,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */,
+				DF1F79DA2059EAA500BAFC11 /* SettingsViewController.xib in Resources */,
 				DF962C511FD5A42B00514B06 /* SpeedometerViewController.xib in Resources */,
 				DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */,
-				DFEB62301F30B5EA00FEC555 /* LaunchScreen.storyboard in Resources */,
-				DF562D7C2036D26C0006731E /* AuthorizationViewController.xib in Resources */,
+				DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */,
 				DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */,
-				DF744CD32058297000AE365B /* Localizable.strings in Resources */,
-				DF562D772036D00A0006731E /* SettingsViewController.xib in Resources */,
 				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
 				DFCA0C691FD5E86D00260E24 /* MessageViewController.xib in Resources */,
-				DF14A43E2059441C00FFFA5F /* InfoPlist.strings in Resources */,
 				DFCA0C631FD5E55300260E24 /* LoadingViewController.xib in Resources */,
+				DFC358F4205A9BCF00DEDB9E /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +307,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF78E6AE2008BE85009038B6 /* AuthorizationViewController.swift in Sources */,
 				DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */,
 				DF5F4C5F1FD5DAA10043F97E /* UIViewController.swift in Sources */,
 				DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */,
@@ -322,6 +314,7 @@
 				DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */,
 				DFCA0C671FD5E84400260E24 /* MessageViewController.swift in Sources */,
 				DF962C4F1FD5A41300514B06 /* SpeedometerViewController.swift in Sources */,
+				DF3010D8205A929E005B493D /* String.swift in Sources */,
 				DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,48 +322,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DF14A4402059441C00FFFA5F /* InfoPlist.strings */ = {
+		DFC358F6205A9BCF00DEDB9E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DF14A4412059441F00FFFA5F /* Base */,
-				DF14A4422059442900FFFA5F /* de */,
+				DFC358F8205A9BDD00DEDB9E /* de */,
+				DFC358F9205A9BE800DEDB9E /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		DF562D792036D00A0006731E /* SettingsViewController.xib */ = {
+		DFE69BD7205A904000FA0CE3 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DF562D782036D00A0006731E /* Base */,
-				DF562D7A2036D0160006731E /* de */,
-			);
-			name = SettingsViewController.xib;
-			sourceTree = "<group>";
-		};
-		DF562D7E2036D26C0006731E /* AuthorizationViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DF562D7D2036D26C0006731E /* Base */,
-				DF562D802036D2700006731E /* de */,
-			);
-			name = AuthorizationViewController.xib;
-			sourceTree = "<group>";
-		};
-		DF744CD12058297000AE365B /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DF744CD520582D7700AE365B /* Base */,
-				DF744CD620582D8500AE365B /* de */,
+				DFE69BD6205A904000FA0CE3 /* de */,
+				DFE69BD8205A904C00FA0CE3 /* en */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		DFEB622E1F30B5EA00FEC555 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DFEB622F1F30B5EA00FEC555 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
