@@ -1,0 +1,14 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    ensure_git_status_clean
+    build_number = Time.new.strftime("%y%m%d%H%M")
+    increment_build_number(build_number: build_number)
+    build_app(workspace: "Speedometer.xcworkspace", scheme: "Speedometer")
+    upload_to_testflight
+    clean_build_artifacts
+    commit_version_bump(message: "Bump build number")
+  end
+end
