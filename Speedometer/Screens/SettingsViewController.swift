@@ -18,6 +18,8 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.modalTransitionStyle = .flipHorizontal
+
         setupUnitSelection(unit: self.unit)
 
         headings.forEach { headline in
