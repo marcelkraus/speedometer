@@ -1,11 +1,11 @@
 "RootViewController.LocationAuthorizationStatusDenied.Heading" = "Houston, we've had a problem here!";
-"RootViewController.LocationAuthorizationStatusDenied.Message" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
+"RootViewController.LocationAuthorizationStatusDenied.Message" = "Usage of How Fast I Am? is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
 
 "RootViewController.LocationAuthorizationStatusRestricted.Heading" = "Houston, we've had a problem here!";
-"RootViewController.LocationAuthorizationStatusRestricted.Message" = "Please allow access to your location data to use Speedometer\n\nPlease check the following settings:\n\nSettings > Privacy > Location Services > Speedometer > While Using";
+"RootViewController.LocationAuthorizationStatusRestricted.Message" = "Please allow access to your location data to use How Fast I Am?\n\nPlease check the following settings:\n\nSettings > Privacy > Location Services > How Fast I Am? > While Using";
 
 "RootViewController.OnboardingInformation.Heading" = "Welcome!";
-"RootViewController.OnboardingInformation.Message" = "Speedometer is just a small ad-free app which shows you your current speed.\n\nTherefore, this app needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease press the button below and confirm access within the popup.";
+"RootViewController.OnboardingInformation.Message" = "How Fast I Am? is just a small ad-free app which shows you your current speed.\n\nTherefore, this app needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease press the button below and confirm access within the popup.";
 "RootViewController.OnboardingInformation.Button" = "I've got it!";
 
 "SettingsViewController.UnitSelection.Heading" = "Unit Selection";
