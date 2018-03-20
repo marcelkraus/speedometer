@@ -185,6 +185,7 @@
 				DFEB62201F30B5E900FEC555 /* Resources */,
 				CD093DD0AA5E8B29F2920F85 /* [CP] Embed Pods Frameworks */,
 				AF4E8E6DBE430A8689E8E9B1 /* [CP] Copy Pods Resources */,
+				DF2CDF0E20616D0B004AE1FE /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -299,6 +300,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Speedometer/Pods-Speedometer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DF2CDF0E20616D0B004AE1FE /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f \"${PODS_ROOT}/SwiftLint/swiftlint\" ]; then\n    \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
