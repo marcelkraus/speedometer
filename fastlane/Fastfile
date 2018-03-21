@@ -16,5 +16,5 @@ lane :beta do
 
   clean_build_artifacts
 
-  commit_version_bump(message: "Bump build number")
+  reset_git_repo
 end
