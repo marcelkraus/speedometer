@@ -9,5 +9,5 @@
 "RootViewController.OnboardingInformation.Button" = "OK, leg los!";
 
 "SettingsViewController.UnitSelection.Heading" = "Gewünschte Einheit";
-"SettingsViewController.Imprint.Contents" = "Diese App ist ein privates, unkommerzielles Projekt von:\n\nMarcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nDeutschland\n\Vielen Dank an Marc Kalmes für die Unterstützung!";
+"SettingsViewController.Imprint.Contents" = "Diese App ist ein privates, unkommerzielles Projekt von:\n\nMarcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nDeutschland\n\nVielen Dank an Marc Kalmes, Matthias Kucharski und Thomas Lange für ihre Unterstützung!";
 "SettingsViewController.Button" = "Schließen";
