@@ -8,9 +8,13 @@ class SpeedometerViewController: UIViewController {
     private let locationManager: CLLocationManager
 
     private var unit: Unit
-    private var speed = 0.0 {
+    private var speedValue: Double? {
         didSet {
-            speedLabel.text = speed(speed)
+            guard let speedValue = speedValue else {
+                return
+            }
+
+            speedLabel.text = speed(speedValue)
         }
     }
 
@@ -57,11 +61,11 @@ extension SpeedometerViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if speedLabel.text == SpeedometerViewController.PlaceholderLabel {
             UIView.transition(with: speedLabel, duration: SpeedometerViewController.PlaceholderAnimationDuration, options: .transitionCrossDissolve, animations: { [weak self] in
-                self?.speed = locations.last?.speed ?? 0
+                self?.speedValue = locations.last?.speed ?? 0
             }, completion: nil)
         }
 
-        speed = locations.last?.speed ?? 0
+        speedValue = locations.last?.speed ?? 0
     }
 }
 
