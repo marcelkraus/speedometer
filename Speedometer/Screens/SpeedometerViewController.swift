@@ -2,8 +2,9 @@ import CoreLocation
 import UIKit
 
 class SpeedometerViewController: UIViewController {
-    private static let PlaceholderLabel = "…"
-    private static let PlaceholderAnimationDuration = 0.5
+    static let speedStringFormat = "%.0f"
+    private static let speedPlaceholderLabel = "…"
+    private static let speedPlaceholderAnimationDuration = 0.5
 
     private let locationManager: CLLocationManager
 
@@ -15,7 +16,7 @@ class SpeedometerViewController: UIViewController {
             let convertedSpeed = convertSpeed(speedValue)
             speedLabel.text = String(format: "%01.0f", convertedSpeed)
 
-            let maximumSpeedWithoutWarning = UserDefaults.standard.float(forKey: Speed.WarningDefaultsKey)
+            let maximumSpeedWithoutWarning = UserDefaults.standard.float(forKey: Speed.currentSpeedLimitKey)
             guard maximumSpeedWithoutWarning > 0, Float(convertedSpeed) > maximumSpeedWithoutWarning else {
                 speedLabel.textColor = nil
                 return
@@ -48,7 +49,7 @@ class SpeedometerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        speedLabel.text = SpeedometerViewController.PlaceholderLabel
+        speedLabel.text = SpeedometerViewController.speedPlaceholderLabel
     }
 
     // MARK: - Outlets & Actions
@@ -66,8 +67,8 @@ class SpeedometerViewController: UIViewController {
 
 extension SpeedometerViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if speedLabel.text == SpeedometerViewController.PlaceholderLabel {
-            UIView.transition(with: speedLabel, duration: SpeedometerViewController.PlaceholderAnimationDuration, options: .transitionCrossDissolve, animations: { [weak self] in
+        if speedLabel.text == SpeedometerViewController.speedPlaceholderLabel {
+            UIView.transition(with: speedLabel, duration: SpeedometerViewController.speedPlaceholderAnimationDuration, options: .transitionCrossDissolve, animations: { [weak self] in
                 self?.speedValue = locations.last?.speed ?? 0
             }, completion: nil)
         }

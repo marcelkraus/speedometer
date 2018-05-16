@@ -4,7 +4,7 @@ import Foundation
 let units = [Unit.milesPerHour, Unit.kilometersPerHour, Unit.metersPerSecond]
 
 enum Unit: String {
-    static let UserDefaultsKey = "unit"
+    static let currentUnitKey = "unit"
 
     case kilometersPerHour, metersPerSecond, milesPerHour
 

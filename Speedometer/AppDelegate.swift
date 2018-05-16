@@ -6,8 +6,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UserDefaults.standard.register(defaults: [
-            Unit.UserDefaultsKey: Unit.kilometersPerHour.rawValue,
-            Speed.WarningDefaultsKey: "0"
+            Unit.currentUnitKey: Unit.kilometersPerHour.rawValue,
+            Speed.currentSpeedLimitKey: "0"
         ])
 
         setupRootViewController()

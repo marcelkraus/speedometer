@@ -58,7 +58,7 @@ private extension RootViewController {
                 )
             )
         case .authorizedWhenInUse:
-            self.transition(to: SpeedometerViewController(locationManager: self.locationManager, unit: Unit(rawValue: UserDefaults.standard.string(forKey: Unit.UserDefaultsKey)!)!))
+            self.transition(to: SpeedometerViewController(locationManager: self.locationManager, unit: Unit(rawValue: UserDefaults.standard.string(forKey: Unit.currentUnitKey)!)!))
         default:
             break
         }
