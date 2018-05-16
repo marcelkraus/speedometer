@@ -5,7 +5,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        UserDefaults.standard.register(defaults: [Unit.UserDefaultsKey: Unit.kilometersPerHour.rawValue])
+        UserDefaults.standard.register(defaults: [
+            Unit.UserDefaultsKey: Unit.kilometersPerHour.rawValue,
+            Speed.WarningDefaultsKey: "0"
+        ])
 
         setupRootViewController()
 

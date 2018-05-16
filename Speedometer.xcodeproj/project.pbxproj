@@ -18,6 +18,7 @@
 		DF8FDCEA2008FD0500140DA9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FDCE82008FD0500140DA9 /* SettingsViewController.swift */; };
 		DF962C4F1FD5A41300514B06 /* SpeedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */; };
 		DF962C511FD5A42B00514B06 /* SpeedometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */; };
+		DFB6D73820815E2700BFC1F3 /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB6D73720815E2700BFC1F3 /* Speed.swift */; };
 		DFC358F4205A9BCF00DEDB9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFC358F6205A9BCF00DEDB9E /* InfoPlist.strings */; };
 		DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C601FD5E17300260E24 /* RootViewController.swift */; };
 		DFCA0C631FD5E55300260E24 /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFCA0C621FD5E55300260E24 /* LoadingViewController.xib */; };
@@ -42,6 +43,7 @@
 		DF8FDCE82008FD0500140DA9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerViewController.swift; sourceTree = "<group>"; };
 		DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeedometerViewController.xib; sourceTree = "<group>"; };
+		DFB6D73720815E2700BFC1F3 /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		DFC358F8205A9BDD00DEDB9E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DFC358F9205A9BE800DEDB9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DFCA0C601FD5E17300260E24 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				DF2C45AE1FCC2EF0005C8906 /* Unit.swift */,
+				DFB6D73720815E2700BFC1F3 /* Speed.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */,
 				DF5F4C5F1FD5DAA10043F97E /* UIViewController.swift in Sources */,
 				DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */,
+				DFB6D73820815E2700BFC1F3 /* Speed.swift in Sources */,
 				DF8FDCEA2008FD0500140DA9 /* SettingsViewController.swift in Sources */,
 				DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */,
 				DFCA0C671FD5E84400260E24 /* MessageViewController.swift in Sources */,

@@ -10,11 +10,18 @@ class SpeedometerViewController: UIViewController {
     private var unit: Unit
     private var speedValue: Double? {
         didSet {
-            guard let speedValue = speedValue else {
+            guard let speedValue = speedValue else { return }
+
+            let convertedSpeed = convertSpeed(speedValue)
+            speedLabel.text = String(format: "%01.0f", convertedSpeed)
+
+            let maximumSpeedWithoutWarning = UserDefaults.standard.float(forKey: Speed.WarningDefaultsKey)
+            guard maximumSpeedWithoutWarning > 0, Float(convertedSpeed) > maximumSpeedWithoutWarning else {
+                speedLabel.textColor = nil
                 return
             }
 
-            speedLabel.text = speed(speedValue)
+            speedLabel.textColor = UIColor(red: 0.6196, green: 0, blue: 0, alpha: 1.0)
         }
     }
 
@@ -82,7 +89,7 @@ private extension SpeedometerViewController {
         unitLabel.text = unit.abbreviation
     }
 
-    func speed(_ speed: Double) -> String {
-        return String(format: "%01.0f", speed > 1.0 ? speed * unit.factor : 0)
+    func convertSpeed(_ speed: Double) -> Double {
+        return speed > 1.0 ? speed * unit.factor : 0
     }
 }

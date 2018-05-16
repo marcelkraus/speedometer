@@ -20,7 +20,8 @@ class SettingsViewController: UIViewController {
 
         self.modalTransitionStyle = .flipHorizontal
 
-        setupUnitSelection(unit: self.unit)
+        configureUnitSelection(unit: self.unit)
+        configureSpeedLimitSelection()
 
         headings.forEach { headline in
             headline.textColor = view.tintColor
@@ -35,7 +36,11 @@ class SettingsViewController: UIViewController {
             unitSelectionHeading.text = "SettingsViewController.UnitSelection.Heading".localized
         }
     }
-    @IBOutlet weak var unitSelection: UISegmentedControl!
+    @IBOutlet weak var speedLimitHeading: UILabel! {
+        didSet {
+            speedLimitHeading.text = "SettingsViewController.SpeedWarning.Heading".localized
+        }
+    }
     @IBOutlet weak var imprintHeading: UILabel! {
         didSet {
             if let productName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName"), let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
@@ -48,16 +53,27 @@ class SettingsViewController: UIViewController {
             imprintContents.text = "SettingsViewController.Imprint.Contents".localized
         }
     }
-    @IBOutlet weak var button: UIButton! {
+    @IBOutlet weak var closeButton: UIButton! {
         didSet {
-            button.setTitle("SettingsViewController.Button".localized, for: .normal)
+            closeButton.setTitle("SettingsViewController.Button.Close".localized, for: .normal)
         }
     }
 
-    @IBAction func selectUnit(_ sender: UISegmentedControl) {
-        let unit = units[sender.selectedSegmentIndex]
+    @IBOutlet weak var unitSelection: UISegmentedControl!
+    @IBOutlet weak var speedWarningSlider: UISlider!
+    @IBOutlet weak var speedWarningValue: UILabel!
 
-        UserDefaults.standard.set(unit.rawValue, forKey: Unit.UserDefaultsKey)
+    @IBAction func selectUnit(_ sender: UISegmentedControl) {
+        changeUnit(unit: units[sender.selectedSegmentIndex])
+    }
+
+    @IBAction func selectSpeedLimit(_ sender: UISlider) {
+        let roundedValue = round(sender.value / Float(unit.speedLimitSliderSteps)) * Float(unit.speedLimitSliderSteps)
+
+        sender.setValue(roundedValue, animated: true)
+        speedWarningValue.text = String(format: "%.0f", roundedValue)
+
+        UserDefaults.standard.set(roundedValue, forKey: Speed.WarningDefaultsKey)
     }
 
     @IBAction func closeSettings(_ sender: UIButton) {
@@ -68,12 +84,26 @@ class SettingsViewController: UIViewController {
 // MARK: - Private Methods
 
 private extension SettingsViewController {
-    func setupUnitSelection(unit: Unit) {
+    func configureUnitSelection(unit: Unit) {
         unitSelection.removeAllSegments()
         units.enumerated().forEach { (index, unit) in
             unitSelection.insertSegment(withTitle: unit.abbreviation, at: index, animated: false)
         }
 
         unitSelection.selectedSegmentIndex = units.index(where: { $0.abbreviation == unit.abbreviation }) ?? 0
+    }
+
+    func changeUnit(unit: Unit) {
+        self.unit = unit
+        UserDefaults.standard.set(unit.rawValue, forKey: Unit.UserDefaultsKey)
+        UserDefaults.standard.removeObject(forKey: Speed.WarningDefaultsKey)
+
+        configureSpeedLimitSelection()
+    }
+
+    func configureSpeedLimitSelection() {
+        speedWarningSlider.maximumValue = unit.maximumSpeedLimit
+        speedWarningSlider.value = UserDefaults.standard.float(forKey: Speed.WarningDefaultsKey)
+        speedWarningValue.text = String(format: "%.0f", speedWarningSlider.value)
     }
 }
