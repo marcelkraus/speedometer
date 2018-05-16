@@ -162,12 +162,12 @@
 		DFEB62241F30B5EA00FEC555 /* Speedometer */ = {
 			isa = PBXGroup;
 			children = (
-				DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */,
 				DF8FDCE72008DD6200140DA9 /* Extensions */,
 				DF5F138B202A5AAE006D51DA /* Model */,
-				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
 				DF78E6AB2008BDB0009038B6 /* Screens */,
 				DF568E471FD0119600D546B8 /* Supporting Files */,
+				DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */,
+				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
 			);
 			path = Speedometer;
 			sourceTree = "<group>";
