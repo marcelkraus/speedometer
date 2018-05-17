@@ -2,27 +2,32 @@ import CoreLocation
 import UIKit
 
 class SpeedometerViewController: UIViewController {
-    static let speedStringFormat = "%.0f"
     private static let speedPlaceholderLabel = "…"
     private static let speedPlaceholderAnimationDuration = 0.5
 
     private let locationManager: CLLocationManager
 
-    private var unit: Unit
     private var speedValue: Double? {
         didSet {
-            guard let speedValue = speedValue else { return }
-
-            let convertedSpeed = convertSpeed(speedValue)
-            speedLabel.text = String(format: "%01.0f", convertedSpeed)
-
-            let maximumSpeedWithoutWarning = UserDefaults.standard.float(forKey: Speed.currentSpeedLimitKey)
-            guard maximumSpeedWithoutWarning > 0, Float(convertedSpeed) > maximumSpeedWithoutWarning else {
-                speedLabel.textColor = nil
+            guard let speedValue = speedValue else {
                 return
             }
 
-            speedLabel.textColor = UIColor(red: 0.6196, green: 0, blue: 0, alpha: 1.0)
+            let speed = Speed(speed: speedValue, unit: unit)
+            switch speed.limitIsExceeded {
+            case true:
+                speedLabel.textColor = UIColor(red: 0.6196, green: 0, blue: 0, alpha: 1.0)
+            case false:
+                speedLabel.textColor = nil
+            }
+
+            speedLabel.text = speed.asString
+        }
+    }
+
+    private var unit: Unit {
+        didSet {
+            unitLabel.text = unit.abbreviation
         }
     }
 
@@ -42,23 +47,17 @@ class SpeedometerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupLocationManager()
-        setupUnitLabel()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        speedLabel.text = SpeedometerViewController.speedPlaceholderLabel
+        configureView()
+        configureLocationManager()
     }
 
     // MARK: - Outlets & Actions
 
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var unitLabel: UILabel!
-    @IBOutlet weak var informationButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
 
-    @IBAction func closeSettings(_ sender: UIButton) {
+    @IBAction func presentSettings(_ sender: UIButton) {
         present(SettingsViewController(unit: unit), animated: true, completion: nil)
     }
 }
@@ -80,17 +79,14 @@ extension SpeedometerViewController: CLLocationManagerDelegate {
 // MARK: - Private Methods
 
 private extension SpeedometerViewController {
-    func setupLocationManager() {
-        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationManager.startUpdatingLocation()
-        locationManager.delegate = self
-    }
-
-    func setupUnitLabel() {
+    func configureView() {
+        speedLabel.text = SpeedometerViewController.speedPlaceholderLabel
         unitLabel.text = unit.abbreviation
     }
 
-    func convertSpeed(_ speed: Double) -> Double {
-        return speed > 1.0 ? speed * unit.factor : 0
+    func configureLocationManager() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationManager.startUpdatingLocation()
+        locationManager.delegate = self
     }
 }

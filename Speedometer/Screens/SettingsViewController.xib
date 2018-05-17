@@ -72,13 +72,13 @@
                                                     <rect key="frame" x="0.0" y="45.5" width="325" height="30"/>
                                                     <subviews>
                                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="130" translatesAutoresizingMaskIntoConstraints="NO" id="Vb1-Je-mdd">
-                                                            <rect key="frame" x="-2" y="0.0" width="292.5" height="31"/>
+                                                            <rect key="frame" x="-2" y="0.0" width="296.5" height="31"/>
                                                             <connections>
                                                                 <action selector="selectSpeedLimit:" destination="-1" eventType="valueChanged" id="z4B-wP-wYj"/>
                                                             </connections>
                                                         </slider>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5l-GQ-lvc">
-                                                            <rect key="frame" x="296.5" y="0.0" width="28.5" height="30"/>
+                                                            <rect key="frame" x="300.5" y="0.0" width="24.5" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -109,7 +109,7 @@
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                             <state key="normal" title="Button"/>
                                             <connections>
-                                                <action selector="closeSettings:" destination="-1" eventType="touchUpInside" id="jA9-eJ-GFA"/>
+                                                <action selector="dismissSettings:" destination="-1" eventType="touchUpInside" id="jA9-eJ-GFA"/>
                                             </connections>
                                         </button>
                                     </subviews>

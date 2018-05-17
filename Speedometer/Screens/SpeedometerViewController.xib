@@ -1,25 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SourceCodePro-Medium.ttf">
-            <string>SourceCodePro-Medium</string>
-        </array>
-        <array key="SourceCodePro-Regular.ttf">
-            <string>SourceCodePro-Regular</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpeedometerViewController" customModule="Speedometer" customModuleProvider="target">
             <connections>
-                <outlet property="informationButton" destination="JET-vv-Bdg" id="RFI-zc-0aY"/>
+                <outlet property="settingsButton" destination="JET-vv-Bdg" id="RFI-zc-0aY"/>
                 <outlet property="speedLabel" destination="LZk-rE-CiX" id="GSc-i9-gae"/>
                 <outlet property="unitLabel" destination="RNh-OI-jDg" id="G5K-ph-Ia4"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kPs-0p-S3A"/>
@@ -31,19 +20,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEi-VX-GD1" userLabel="Canvas View">
-                    <rect key="frame" x="0.0" y="119" width="375" height="634"/>
+                    <rect key="frame" x="0.0" y="95" width="375" height="692"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DGr-na-3Vj">
-                            <rect key="frame" x="50" y="217" width="275" height="201.33333333333337"/>
+                            <rect key="frame" x="50" y="253" width="275" height="187"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZk-rE-CiX">
-                                    <rect key="frame" x="29.666666666666686" y="0.0" width="216" height="151"/>
+                                    <rect key="frame" x="37.5" y="0.0" width="200.5" height="140"/>
                                     <fontDescription key="fontDescription" name="SourceCodePro-Medium" family="Source Code Pro" pointSize="120"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNh-OI-jDg">
-                                    <rect key="frame" x="89.666666666666657" y="151" width="96" height="50.333333333333343"/>
+                                    <rect key="frame" x="101" y="140" width="73" height="47"/>
                                     <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="40"/>
                                     <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -51,9 +40,9 @@
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JET-vv-Bdg">
-                            <rect key="frame" x="328" y="587" width="22" height="22"/>
+                            <rect key="frame" x="328" y="645" width="22" height="22"/>
                             <connections>
-                                <action selector="closeSettings:" destination="-1" eventType="touchUpInside" id="LVa-l5-g8v"/>
+                                <action selector="presentSettings:" destination="-1" eventType="touchUpInside" id="LVa-l5-g8v"/>
                             </connections>
                         </button>
                     </subviews>

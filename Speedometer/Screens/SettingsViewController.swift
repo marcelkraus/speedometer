@@ -71,12 +71,12 @@ class SettingsViewController: UIViewController {
         let roundedValue = round(sender.value / Float(unit.speedLimitSliderSteps)) * Float(unit.speedLimitSliderSteps)
 
         sender.setValue(roundedValue, animated: true)
-        speedWarningValue.text = String(format: SpeedometerViewController.speedStringFormat, roundedValue)
+        speedWarningValue.text = String(format: Speed.stringFormatForSpeed, roundedValue)
 
         UserDefaults.standard.set(roundedValue, forKey: Speed.currentSpeedLimitKey)
     }
 
-    @IBAction func closeSettings(_ sender: UIButton) {
+    @IBAction func dismissSettings(_ sender: UIButton) {
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
@@ -104,6 +104,6 @@ private extension SettingsViewController {
     func configureSpeedLimitSelection() {
         speedWarningSlider.maximumValue = unit.maximumSpeedLimit
         speedWarningSlider.value = UserDefaults.standard.float(forKey: Speed.currentSpeedLimitKey)
-        speedWarningValue.text = String(format: SpeedometerViewController.speedStringFormat, speedWarningSlider.value)
+        speedWarningValue.text = String(format: Speed.stringFormatForSpeed, speedWarningSlider.value)
     }
 }
