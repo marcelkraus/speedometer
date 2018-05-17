@@ -1,7 +1,13 @@
 default_platform(:ios)
 
+lane :tests do
+  run_tests(scheme: "Speedometer")
+end
+
 lane :beta do
   ensure_git_status_clean
+
+  run_tests(scheme: "Speedometer")
 
   build_number = latest_testflight_build_number(version: get_version_number) + 1
   increment_build_number(

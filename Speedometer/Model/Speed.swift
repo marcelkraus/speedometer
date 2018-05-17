@@ -1,20 +1,22 @@
 import Foundation
 
 struct Speed {
-    let speed: Double
+    let speed: Float
     let unit: Unit
+    let speedLimit: Float
 
-    private var convertedSpeed: Float {
-        return Float(speed > 1.0 ? speed * unit.factor : 0)
+    init(speed: Double, unit: Unit, speedLimit: Float) {
+        self.speed = Float(speed > 1.0 ? speed * unit.factor : 0)
+        self.unit = unit
+        self.speedLimit = speedLimit
     }
 
     var asString: String {
-        return String(format: Configuration.speedStringFormat, convertedSpeed)
+        return String(format: Configuration.speedStringFormat, speed)
     }
 
     var limitIsExceeded: Bool {
-        let currentSpeedLimit = UserDefaults.standard.float(forKey: Configuration.currentSpeedLimitDefaultsKey)
-        guard currentSpeedLimit > 0, convertedSpeed > currentSpeedLimit else {
+        guard speedLimit > 0, speed > speedLimit else {
             return false
         }
 

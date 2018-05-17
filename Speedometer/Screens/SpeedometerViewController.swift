@@ -10,7 +10,7 @@ class SpeedometerViewController: UIViewController {
                 return
             }
 
-            let speed = Speed(speed: speedValue, unit: unit)
+            let speed = Speed(speed: speedValue, unit: unit, speedLimit: UserDefaults.standard.float(forKey: Configuration.currentSpeedLimitDefaultsKey))
             switch speed.limitIsExceeded {
             case true:
                 speedLabel.textColor = UIColor(red: 0.6196, green: 0, blue: 0, alpha: 1.0)
