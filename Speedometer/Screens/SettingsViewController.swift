@@ -43,14 +43,16 @@ class SettingsViewController: UIViewController {
     }
     @IBOutlet weak var imprintHeading: UILabel! {
         didSet {
-            if let productName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName"), let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
-                imprintHeading.text = "\(productName) v\(versionNumber) (\(buildNumber))"
-            }
+            imprintHeading.text = "SettingsViewController.Imprint.Heading".localized
         }
     }
     @IBOutlet weak var imprintContents: UILabel! {
         didSet {
             imprintContents.text = "SettingsViewController.Imprint.Contents".localized
+
+            if let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
+                imprintContents.text?.append("\n\n\("SettingsViewController.Imprint.AppVersion".localized): \(versionNumber) (\(buildNumber))")
+            }
         }
     }
     @IBOutlet weak var closeButton: UIButton! {

@@ -10,5 +10,7 @@
 
 "SettingsViewController.UnitSelection.Heading" = "Gewünschte Einheit";
 "SettingsViewController.SpeedWarning.Heading" = "Geschwindigkeitswarnung";
-"SettingsViewController.Imprint.Contents" = "Diese App ist ein privates Projekt von:\n\nMarcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nVielen Dank an Marc, Matthias und Thomas für ihre Unterstützung!";
+"SettingsViewController.Imprint.Heading" = "Impressum";
+"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nDeutschland\n\nVielen Dank an Marc Kalmes und Thomas Lange für ihre Unterstützung!";
+"SettingsViewController.Imprint.AppVersion" = "App-Version";
 "SettingsViewController.Button.Close" = "Schließen";
