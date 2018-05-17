@@ -1,9 +1,6 @@
 import Foundation
 
 struct Speed {
-    static let stringFormatForSpeed = "%.0f"
-    static let currentSpeedLimitKey = "speed"
-
     let speed: Double
     let unit: Unit
 
@@ -12,11 +9,11 @@ struct Speed {
     }
 
     var asString: String {
-        return String(format: Speed.stringFormatForSpeed, convertedSpeed)
+        return String(format: Configuration.speedStringFormat, convertedSpeed)
     }
 
     var limitIsExceeded: Bool {
-        let currentSpeedLimit = UserDefaults.standard.float(forKey: Speed.currentSpeedLimitKey)
+        let currentSpeedLimit = UserDefaults.standard.float(forKey: Configuration.currentSpeedLimitDefaultsKey)
         guard currentSpeedLimit > 0, convertedSpeed > currentSpeedLimit else {
             return false
         }

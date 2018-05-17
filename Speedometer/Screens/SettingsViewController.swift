@@ -73,9 +73,9 @@ class SettingsViewController: UIViewController {
         let roundedValue = round(sender.value / Float(unit.speedLimitSliderSteps)) * Float(unit.speedLimitSliderSteps)
 
         sender.setValue(roundedValue, animated: true)
-        speedWarningValue.text = String(format: Speed.stringFormatForSpeed, roundedValue)
+        speedWarningValue.text = String(format: Configuration.speedStringFormat, roundedValue)
 
-        UserDefaults.standard.set(roundedValue, forKey: Speed.currentSpeedLimitKey)
+        UserDefaults.standard.set(roundedValue, forKey: Configuration.currentSpeedLimitDefaultsKey)
     }
 
     @IBAction func dismissSettings(_ sender: UIButton) {
@@ -97,15 +97,15 @@ private extension SettingsViewController {
 
     func changeUnit(unit: Unit) {
         self.unit = unit
-        UserDefaults.standard.set(unit.rawValue, forKey: Unit.currentUnitKey)
-        UserDefaults.standard.removeObject(forKey: Speed.currentSpeedLimitKey)
+        UserDefaults.standard.set(unit.rawValue, forKey: Configuration.currentUnitDefaultsKey)
+        UserDefaults.standard.removeObject(forKey: Configuration.currentSpeedLimitDefaultsKey)
 
         configureSpeedLimitSelection()
     }
 
     func configureSpeedLimitSelection() {
         speedWarningSlider.maximumValue = unit.maximumSpeedLimit
-        speedWarningSlider.value = UserDefaults.standard.float(forKey: Speed.currentSpeedLimitKey)
-        speedWarningValue.text = String(format: Speed.stringFormatForSpeed, speedWarningSlider.value)
+        speedWarningSlider.value = UserDefaults.standard.float(forKey: Configuration.currentSpeedLimitDefaultsKey)
+        speedWarningValue.text = String(format: Configuration.speedStringFormat, speedWarningSlider.value)
     }
 }

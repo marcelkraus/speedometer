@@ -2,9 +2,6 @@ import CoreLocation
 import UIKit
 
 class SpeedometerViewController: UIViewController {
-    private static let speedPlaceholderLabel = "…"
-    private static let speedPlaceholderAnimationDuration = 0.5
-
     private let locationManager: CLLocationManager
 
     private var speedValue: Double? {
@@ -66,8 +63,8 @@ class SpeedometerViewController: UIViewController {
 
 extension SpeedometerViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if speedLabel.text == SpeedometerViewController.speedPlaceholderLabel {
-            UIView.transition(with: speedLabel, duration: SpeedometerViewController.speedPlaceholderAnimationDuration, options: .transitionCrossDissolve, animations: { [weak self] in
+        if speedLabel.text == Configuration.speedPlaceholderLabel {
+            UIView.transition(with: speedLabel, duration: Configuration.speedPlaceholderAnimationDuration, options: .transitionCrossDissolve, animations: { [weak self] in
                 self?.speedValue = locations.last?.speed ?? 0
             }, completion: nil)
         }
@@ -80,7 +77,7 @@ extension SpeedometerViewController: CLLocationManagerDelegate {
 
 private extension SpeedometerViewController {
     func configureView() {
-        speedLabel.text = SpeedometerViewController.speedPlaceholderLabel
+        speedLabel.text = Configuration.speedPlaceholderLabel
         unitLabel.text = unit.abbreviation
     }
 
