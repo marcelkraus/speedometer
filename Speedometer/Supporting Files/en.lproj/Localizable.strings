@@ -11,6 +11,6 @@
 "SettingsViewController.UnitSelection.Heading" = "Unit Selection";
 "SettingsViewController.SpeedWarning.Heading" = "Speed Warning";
 "SettingsViewController.Imprint.Heading" = "Imprint";
-"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nGermany\n\nMany thanks to Marc Kalmes and Thomas Lange for their support!";
+"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nMany thanks to Marc and Thomas for their support. \"Speedometer\" part of app icon designed by Freepik from Flaticon.";
 "SettingsViewController.Imprint.AppVersion" = "App Version";
 "SettingsViewController.Button.Close" = "Close";

@@ -11,6 +11,6 @@
 "SettingsViewController.UnitSelection.Heading" = "Gewünschte Einheit";
 "SettingsViewController.SpeedWarning.Heading" = "Geschwindigkeitswarnung";
 "SettingsViewController.Imprint.Heading" = "Impressum";
-"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nDeutschland\n\nVielen Dank an Marc Kalmes und Thomas Lange für ihre Unterstützung!";
+"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nVielen Dank an Marc und Thomas für ihre Unterstützung. \"Tacho\"-Bestandteil des App-Icons designed durch Freepik von Flaticon.";
 "SettingsViewController.Imprint.AppVersion" = "App-Version";
 "SettingsViewController.Button.Close" = "Schließen";
