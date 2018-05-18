@@ -11,6 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Configuration.currentSpeedLimitDefaultsKey: "0"
         ])
 
+        application.isIdleTimerDisabled = true
         StoreReviewHelper.incrementAppStartCounter()
         setupRootViewController()
 
