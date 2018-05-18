@@ -79,6 +79,8 @@ private extension SpeedometerViewController {
     func configureView() {
         speedLabel.text = Configuration.speedPlaceholderLabel
         unitLabel.text = unit.abbreviation
+
+        StoreReviewHelper.askForReview()
     }
 
     func configureLocationManager() {
