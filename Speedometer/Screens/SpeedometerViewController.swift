@@ -53,9 +53,23 @@ class SpeedometerViewController: UIViewController {
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var unitLabel: UILabel!
     @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var unitSegmentedControl: UISegmentedControl! {
+        didSet {
+            unitSegmentedControl.removeAllSegments()
+            units.enumerated().forEach { (index, unit) in
+                unitSegmentedControl.insertSegment(withTitle: unit.abbreviation, at: index, animated: false)
+            }
+
+            unitSegmentedControl.selectedSegmentIndex = units.index(where: { $0.abbreviation == unit.abbreviation }) ?? 0
+        }
+    }
 
     @IBAction func presentSettings(_ sender: UIButton) {
         present(SettingsViewController(unit: unit), animated: true, completion: nil)
+    }
+
+    @IBAction func selectUnit(_ sender: UISegmentedControl) {
+        selectUnit(unit: units[sender.selectedSegmentIndex])
     }
 }
 
@@ -81,6 +95,12 @@ private extension SpeedometerViewController {
         unitLabel.text = unit.abbreviation
 
         StoreReviewHelper.askForReview()
+    }
+
+    func selectUnit(unit: Unit) {
+        self.unit = unit
+        UserDefaults.standard.set(unit.rawValue, forKey: Configuration.currentUnitDefaultsKey)
+        UserDefaults.standard.removeObject(forKey: Configuration.currentSpeedLimitDefaultsKey)
     }
 
     func configureLocationManager() {

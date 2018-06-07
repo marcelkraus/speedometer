@@ -18,9 +18,8 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.modalTransitionStyle = .flipHorizontal
+        self.modalTransitionStyle = .coverVertical
 
-        configureUnitSelection(unit: self.unit)
         configureSpeedLimitSelection()
 
         headings.forEach { headline in
@@ -31,11 +30,6 @@ class SettingsViewController: UIViewController {
     // MARK: - Outlets & Actions
 
     @IBOutlet var headings: [UILabel]!
-    @IBOutlet weak var unitSelectionHeading: UILabel! {
-        didSet {
-            unitSelectionHeading.text = "SettingsViewController.UnitSelection.Heading".localized
-        }
-    }
     @IBOutlet weak var speedLimitHeading: UILabel! {
         didSet {
             speedLimitHeading.text = "SettingsViewController.SpeedWarning.Heading".localized
@@ -67,10 +61,6 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var speedWarningSlider: UISlider!
     @IBOutlet weak var speedWarningValue: UILabel!
 
-    @IBAction func selectUnit(_ sender: UISegmentedControl) {
-        changeUnit(unit: units[sender.selectedSegmentIndex])
-    }
-
     @IBAction func selectSpeedLimit(_ sender: UISlider) {
         let roundedValue = round(sender.value / Float(unit.speedLimitSliderSteps)) * Float(unit.speedLimitSliderSteps)
 
@@ -88,23 +78,6 @@ class SettingsViewController: UIViewController {
 // MARK: - Private Methods
 
 private extension SettingsViewController {
-    func configureUnitSelection(unit: Unit) {
-        unitSelection.removeAllSegments()
-        units.enumerated().forEach { (index, unit) in
-            unitSelection.insertSegment(withTitle: unit.abbreviation, at: index, animated: false)
-        }
-
-        unitSelection.selectedSegmentIndex = units.index(where: { $0.abbreviation == unit.abbreviation }) ?? 0
-    }
-
-    func changeUnit(unit: Unit) {
-        self.unit = unit
-        UserDefaults.standard.set(unit.rawValue, forKey: Configuration.currentUnitDefaultsKey)
-        UserDefaults.standard.removeObject(forKey: Configuration.currentSpeedLimitDefaultsKey)
-
-        configureSpeedLimitSelection()
-    }
-
     func configureSpeedLimitSelection() {
         speedWarningSlider.maximumValue = unit.maximumSpeedLimit
         speedWarningSlider.value = UserDefaults.standard.float(forKey: Configuration.currentSpeedLimitDefaultsKey)

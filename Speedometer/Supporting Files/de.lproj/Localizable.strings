@@ -8,7 +8,6 @@
 "RootViewController.OnboardingInformation.Message" = "Tacho ist eine kostenlose, werbefreie App, die dir deine aktuelle Geschwindigkeit anzeigt.\n\nAus diesem Grund benötigt Tacho Zugriff auf deine Standortdaten, die nur für diese Zwecke verwendet und mit niemandem geteilt werden.\n\nBitte betätige den untenstehenden Button und bestätige den Hinweis im sich öffnenden Fenster.";
 "RootViewController.OnboardingInformation.Button" = "OK, leg los!";
 
-"SettingsViewController.UnitSelection.Heading" = "Gewünschte Einheit";
 "SettingsViewController.SpeedWarning.Heading" = "Geschwindigkeitswarnung";
 "SettingsViewController.Imprint.Heading" = "Impressum";
 "SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nVielen Dank an Marc und Thomas für ihre Unterstützung. \"Tacho\"-Bestandteil des App-Icons designed durch Freepik von Flaticon.";

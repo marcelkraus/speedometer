@@ -19,10 +19,7 @@
                 <outlet property="speedLimitHeading" destination="EtS-Pw-we9" id="Asz-G5-9w1"/>
                 <outlet property="speedWarningSlider" destination="Vb1-Je-mdd" id="BdG-hU-Fbj"/>
                 <outlet property="speedWarningValue" destination="c5l-GQ-lvc" id="FkS-Ro-gMT"/>
-                <outlet property="unitSelection" destination="WNy-P5-XaQ" id="JJu-AD-0hL"/>
-                <outlet property="unitSelectionHeading" destination="7Id-iz-M00" id="Bw3-fW-yT4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="headings" destination="7Id-iz-M00" collectionClass="NSMutableArray" id="Lcf-xD-Ba2"/>
                 <outletCollection property="headings" destination="EtS-Pw-we9" collectionClass="NSMutableArray" id="Z2H-xH-P2x"/>
                 <outletCollection property="headings" destination="YQa-rH-EzF" collectionClass="NSMutableArray" id="nYU-pw-hkL"/>
             </connections>
@@ -36,32 +33,10 @@
                     <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Dth-KX-vBn">
-                            <rect key="frame" x="20" y="20" width="335" height="351.33333333333331"/>
+                            <rect key="frame" x="20" y="20" width="335" height="251"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fbb-Tz-fHH" userLabel="Unit Selection Stack View">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="68.333333333333329"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit Selection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Id-iz-M00">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="20.333333333333332"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WNy-P5-XaQ">
-                                            <rect key="frame" x="0.0" y="40.333333333333329" width="335" height="29"/>
-                                            <segments>
-                                                <segment title="Unit 1"/>
-                                                <segment title="Unit 2"/>
-                                                <segment title="Unit 3"/>
-                                            </segments>
-                                            <connections>
-                                                <action selector="selectUnit:" destination="-1" eventType="valueChanged" id="wGu-pk-KI7"/>
-                                            </connections>
-                                        </segmentedControl>
-                                    </subviews>
-                                </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xAa-9Q-Yfo" userLabel="Speed Warning Stack View">
-                                    <rect key="frame" x="0.0" y="108.33333333333334" width="335" height="70.333333333333343"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="70.333333333333329"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed Warning" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtS-Pw-we9">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="20.333333333333332"/>
@@ -70,16 +45,16 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Kik-W3-ytl" userLabel="Slider Stack View">
-                                            <rect key="frame" x="0.0" y="40.333333333333314" width="335" height="30"/>
+                                            <rect key="frame" x="0.0" y="40.333333333333329" width="335" height="30"/>
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="130" translatesAutoresizingMaskIntoConstraints="NO" id="Vb1-Je-mdd">
-                                                    <rect key="frame" x="-2" y="0.0" width="331" height="31"/>
+                                                    <rect key="frame" x="-2" y="0.0" width="330.66666666666669" height="31"/>
                                                     <connections>
                                                         <action selector="selectSpeedLimit:" destination="-1" eventType="valueChanged" id="z4B-wP-wYj"/>
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5l-GQ-lvc">
-                                                    <rect key="frame" x="335" y="0.0" width="0.0" height="30"/>
+                                                    <rect key="frame" x="334.66666666666669" y="0.0" width="0.33333333333331439" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -89,7 +64,7 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tpn-y0-aYJ" userLabel="Imprint Stack View">
-                                    <rect key="frame" x="0.0" y="218.66666666666669" width="335" height="60.666666666666686"/>
+                                    <rect key="frame" x="0.0" y="110.33333333333336" width="335" height="60.666666666666671"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imprint Heading" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQa-rH-EzF">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="20.333333333333332"/>
@@ -106,8 +81,11 @@
                                     </subviews>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMo-r1-yIh">
-                                    <rect key="frame" x="0.0" y="319.33333333333331" width="335" height="32"/>
+                                    <rect key="frame" x="0.0" y="211" width="335" height="40"/>
                                     <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="nKi-3Z-qSL"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Close"/>
