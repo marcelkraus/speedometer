@@ -33,13 +33,15 @@ class MessageViewController: UIViewController {
         headingLabel?.text = heading
         messageLabel?.text = message
 
-        button.setTitle(buttonTitle, for: .normal)
         if nil == buttonTitle {
             button.isHidden = true
+        } else {
+            button.setTitle(buttonTitle, for: .normal)
+            button.layer.masksToBounds = true
+            button.layer.cornerRadius = 5
         }
 
         headingLabel.textColor = view.tintColor
-        messageLabel.numberOfLines = 0
 
         super.viewDidLoad()
     }

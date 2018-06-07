@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,28 +20,24 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSY-X7-jfb" userLabel="Canvas View">
-                    <rect key="frame" x="0.0" y="84" width="375" height="674"/>
-                    <subviews>
-                        <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wuc-bS-5wy">
-                            <rect key="frame" x="169.33333333333334" y="319.33333333333331" width="37" height="37"/>
-                            <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </activityIndicatorView>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="wuc-bS-5wy" firstAttribute="centerX" secondItem="SSY-X7-jfb" secondAttribute="centerX" id="AjI-1a-4xg"/>
-                        <constraint firstItem="wuc-bS-5wy" firstAttribute="centerY" secondItem="SSY-X7-jfb" secondAttribute="centerY" id="IPb-hZ-0s3"/>
-                    </constraints>
-                </view>
+                <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wuc-bS-5wy" userLabel="Activity Indicator">
+                    <rect key="frame" x="169" y="392.66666666666669" width="37" height="37"/>
+                    <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading…" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="311-gd-x2F">
+                    <rect key="frame" x="158.33333333333334" y="437.66666666666669" width="58.666666666666657" height="15.666666666666686"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="SSY-X7-jfb" secondAttribute="top" constant="-40" id="5dV-2j-Nq2"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="SSY-X7-jfb" secondAttribute="trailing" id="M8Y-5E-eeH"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="leading" secondItem="SSY-X7-jfb" secondAttribute="leading" id="fM7-nW-HMY"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="SSY-X7-jfb" secondAttribute="bottom" constant="20" id="hRj-iC-B0S"/>
+                <constraint firstItem="311-gd-x2F" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="BGa-vc-ezU"/>
+                <constraint firstItem="wuc-bS-5wy" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="PEM-dp-ZeM"/>
+                <constraint firstItem="311-gd-x2F" firstAttribute="top" secondItem="wuc-bS-5wy" secondAttribute="bottom" constant="8" symbolic="YES" id="dJq-Xa-NdV"/>
+                <constraint firstItem="wuc-bS-5wy" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="fSe-F3-IAL"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="33.5" y="54"/>

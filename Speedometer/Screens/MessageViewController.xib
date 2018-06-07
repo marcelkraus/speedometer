@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,63 +23,62 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zz2-jM-1eI" userLabel="Canvas View">
-                    <rect key="frame" x="0.0" y="84" width="375" height="674"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhX-JD-h8S">
+                    <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhX-JD-h8S">
-                            <rect key="frame" x="0.0" y="25" width="375" height="624"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ozV-GZ-5y8">
+                            <rect key="frame" x="20" y="20" width="335" height="162.66666666666666"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ozV-GZ-5y8">
-                                    <rect key="frame" x="25" y="0.0" width="325" height="122.66666666666667"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uup-JN-xOC">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="82.666666666666671"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading Placeholder" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgX-La-xkN">
-                                            <rect key="frame" x="0.0" y="0.0" width="325" height="20.333333333333332"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgX-La-xkN">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="20.333333333333332"/>
+                                            <color key="tintColor" red="0.082352941176470587" green="0.56862745098039214" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Placeholder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhQ-zx-LZs">
-                                            <rect key="frame" x="0.0" y="45.333333333333343" width="325" height="20.333333333333329"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speedometer is a free app to show your current speed." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhQ-zx-LZs">
+                                            <rect key="frame" x="0.0" y="40.333333333333329" width="335" height="42.333333333333329"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpe-k4-z2D">
-                                            <rect key="frame" x="0.0" y="90.666666666666657" width="325" height="32"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
-                                            <state key="normal" title="Button Placeholder"/>
-                                            <connections>
-                                                <action selector="authorizeApp:" destination="-1" eventType="touchUpInside" id="7V0-px-Lnl"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                 </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpe-k4-z2D">
+                                    <rect key="frame" x="0.0" y="122.66666666666666" width="335" height="40"/>
+                                    <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="VIY-y7-lY4"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button Placeholder"/>
+                                    <connections>
+                                        <action selector="authorizeApp:" destination="-1" eventType="touchUpInside" id="7V0-px-Lnl"/>
+                                    </connections>
+                                </button>
                             </subviews>
-                            <constraints>
-                                <constraint firstItem="ozV-GZ-5y8" firstAttribute="trailing" secondItem="OhX-JD-h8S" secondAttribute="trailing" constant="25" id="7MD-0L-4JF"/>
-                                <constraint firstItem="ozV-GZ-5y8" firstAttribute="top" secondItem="OhX-JD-h8S" secondAttribute="top" id="8tj-T8-Ywn"/>
-                                <constraint firstItem="ozV-GZ-5y8" firstAttribute="width" secondItem="OhX-JD-h8S" secondAttribute="width" constant="-50" id="9Vt-ze-G75"/>
-                                <constraint firstItem="ozV-GZ-5y8" firstAttribute="bottom" secondItem="OhX-JD-h8S" secondAttribute="bottom" id="DcX-Ue-AJ5"/>
-                                <constraint firstItem="ozV-GZ-5y8" firstAttribute="leading" secondItem="OhX-JD-h8S" secondAttribute="leading" constant="25" id="jvT-ce-jz5"/>
-                            </constraints>
-                        </scrollView>
+                        </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="OhX-JD-h8S" firstAttribute="leading" secondItem="Zz2-jM-1eI" secondAttribute="leading" id="SCJ-9n-Jy1"/>
-                        <constraint firstItem="OhX-JD-h8S" firstAttribute="bottom" secondItem="Zz2-jM-1eI" secondAttribute="bottom" constant="-25" id="fcO-al-LZs"/>
-                        <constraint firstItem="OhX-JD-h8S" firstAttribute="top" secondItem="Zz2-jM-1eI" secondAttribute="top" constant="25" id="job-3i-ojc"/>
-                        <constraint firstItem="OhX-JD-h8S" firstAttribute="trailing" secondItem="Zz2-jM-1eI" secondAttribute="trailing" id="yPZ-OU-WoC"/>
+                        <constraint firstAttribute="bottom" secondItem="ozV-GZ-5y8" secondAttribute="bottom" constant="20" id="c5k-lJ-FNY"/>
+                        <constraint firstAttribute="trailing" secondItem="ozV-GZ-5y8" secondAttribute="trailing" constant="20" id="umi-k2-PGY"/>
+                        <constraint firstItem="ozV-GZ-5y8" firstAttribute="top" secondItem="OhX-JD-h8S" secondAttribute="top" constant="20" id="wee-5C-h4r"/>
+                        <constraint firstItem="ozV-GZ-5y8" firstAttribute="leading" secondItem="OhX-JD-h8S" secondAttribute="leading" constant="20" id="zqi-mP-sja"/>
                     </constraints>
-                </view>
+                </scrollView>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="Zz2-jM-1eI" secondAttribute="top" constant="-40" id="7pp-8I-HWE"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Zz2-jM-1eI" secondAttribute="trailing" id="G8Z-ws-dpZ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Zz2-jM-1eI" secondAttribute="bottom" constant="20" id="aOM-63-b6i"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="leading" secondItem="Zz2-jM-1eI" secondAttribute="leading" id="qfG-S5-Fz5"/>
+                <constraint firstItem="OhX-JD-h8S" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="85Z-ey-BDE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OhX-JD-h8S" secondAttribute="trailing" id="Kzz-v8-deM"/>
+                <constraint firstItem="ozV-GZ-5y8" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" constant="-40" id="SzC-HU-SnJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="OhX-JD-h8S" secondAttribute="bottom" id="Vru-2q-7At"/>
+                <constraint firstItem="OhX-JD-h8S" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="f8Z-8Y-xSB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="63.5" y="54"/>

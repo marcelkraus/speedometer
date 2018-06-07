@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,50 +31,37 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEi-VX-GD1" userLabel="Canvas View">
-                    <rect key="frame" x="0.0" y="60" width="375" height="587"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DGr-na-3Vj">
+                    <rect key="frame" x="79.5" y="233" width="216" height="201.5"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DGr-na-3Vj">
-                            <rect key="frame" x="50" y="193.5" width="275" height="201.5"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZk-rE-CiX">
-                                    <rect key="frame" x="29.5" y="0.0" width="216" height="151"/>
-                                    <fontDescription key="fontDescription" name="SourceCodePro-Medium" family="Source Code Pro" pointSize="120"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNh-OI-jDg">
-                                    <rect key="frame" x="89.5" y="151" width="96" height="50.5"/>
-                                    <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="40"/>
-                                    <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JET-vv-Bdg">
-                            <rect key="frame" x="328" y="540" width="22" height="22"/>
-                            <connections>
-                                <action selector="presentSettings:" destination="-1" eventType="touchUpInside" id="LVa-l5-g8v"/>
-                            </connections>
-                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZk-rE-CiX">
+                            <rect key="frame" x="0.0" y="0.0" width="216" height="151"/>
+                            <fontDescription key="fontDescription" name="SourceCodePro-Medium" family="Source Code Pro" pointSize="120"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNh-OI-jDg">
+                            <rect key="frame" x="60" y="151" width="96" height="50.5"/>
+                            <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="40"/>
+                            <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="JET-vv-Bdg" secondAttribute="trailing" constant="25" id="8Tx-DJ-Wca"/>
-                        <constraint firstItem="DGr-na-3Vj" firstAttribute="leading" secondItem="YEi-VX-GD1" secondAttribute="leading" constant="50" id="EjN-4f-Ryn"/>
-                        <constraint firstItem="DGr-na-3Vj" firstAttribute="centerY" secondItem="YEi-VX-GD1" secondAttribute="centerY" id="gTG-nr-d3l"/>
-                        <constraint firstAttribute="bottom" secondItem="JET-vv-Bdg" secondAttribute="bottom" constant="25" id="llW-F4-rY3"/>
-                        <constraint firstAttribute="trailing" secondItem="DGr-na-3Vj" secondAttribute="trailing" constant="50" id="pjb-Sd-xvw"/>
-                    </constraints>
-                </view>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JET-vv-Bdg">
+                    <rect key="frame" x="333" y="40" width="22" height="22"/>
+                    <connections>
+                        <action selector="presentSettings:" destination="-1" eventType="touchUpInside" id="LVa-l5-g8v"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="leading" secondItem="YEi-VX-GD1" secondAttribute="leading" id="M79-2J-JIN"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="YEi-VX-GD1" secondAttribute="trailing" id="dOA-Xp-okp"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="YEi-VX-GD1" secondAttribute="top" constant="-40" id="iQu-ny-kdl"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="YEi-VX-GD1" secondAttribute="bottom" constant="20" id="vEY-XR-xhU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JET-vv-Bdg" secondAttribute="trailing" constant="20" id="Qav-e4-Ncp"/>
+                <constraint firstItem="JET-vv-Bdg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="Zaw-gt-m7j"/>
+                <constraint firstItem="DGr-na-3Vj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dky-am-PwJ"/>
+                <constraint firstItem="DGr-na-3Vj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pdX-dG-AOw"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="33.5" y="54"/>

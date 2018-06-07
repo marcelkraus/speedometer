@@ -55,9 +55,11 @@ class SettingsViewController: UIViewController {
             }
         }
     }
-    @IBOutlet weak var closeButton: UIButton! {
+    @IBOutlet weak var button: UIButton! {
         didSet {
-            closeButton.setTitle("SettingsViewController.Button.Close".localized, for: .normal)
+            button.setTitle("SettingsViewController.Button.Close".localized, for: .normal)
+            button.layer.masksToBounds = true
+            button.layer.cornerRadius = 5
         }
     }
 
