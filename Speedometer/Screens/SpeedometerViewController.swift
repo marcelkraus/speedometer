@@ -50,6 +50,13 @@ class SpeedometerViewController: UIViewController {
 
     // MARK: - Outlets & Actions
 
+    @IBOutlet weak var inaccurateSignalIndicatorLabel: UILabel! {
+        didSet {
+            inaccurateSignalIndicatorLabel.text = "SpeedometerViewController.Indicator".localized
+        }
+    }
+    @IBOutlet weak var loadingStackView: UIStackView!
+    @IBOutlet weak var speedStackView: UIStackView!
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var unitLabel: UILabel!
     @IBOutlet weak var settingsButton: UIButton!
@@ -77,24 +84,44 @@ class SpeedometerViewController: UIViewController {
 
 extension SpeedometerViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if speedLabel.text == Configuration.speedPlaceholderLabel {
-            UIView.transition(with: speedLabel, duration: Configuration.speedPlaceholderAnimationDuration, options: .transitionCrossDissolve, animations: { [weak self] in
-                self?.speedValue = locations.last?.speed ?? 0
-            }, completion: nil)
+        guard let speed = locations.last?.speed, let horizontalAccuracy = locations.last?.horizontalAccuracy, horizontalAccuracy <= Configuration.minimumHorizontalAccuracy else {
+            setDisplayMode(to: .loadingIndicator)
+
+            return
         }
 
-        speedValue = locations.last?.speed ?? 0
+        if speedStackView.isHidden {
+            setDisplayMode(to: .speed)
+        }
+
+        speedValue = speed
     }
 }
 
 // MARK: - Private Methods
 
 private extension SpeedometerViewController {
+    enum DisplayMode {
+        case loadingIndicator
+        case speed
+    }
+
     func configureView() {
-        speedLabel.text = Configuration.speedPlaceholderLabel
+        setDisplayMode(to: .loadingIndicator)
         unitLabel.text = unit.abbreviation
 
         StoreReviewHelper.askForReview()
+    }
+
+    func setDisplayMode(to displayMode: DisplayMode) {
+        switch displayMode {
+        case .loadingIndicator:
+            loadingStackView.isHidden = false
+            speedStackView.isHidden = true
+        case .speed:
+            loadingStackView.isHidden = true
+            speedStackView.isHidden = false
+        }
     }
 
     func selectUnit(unit: Unit) {
@@ -104,7 +131,6 @@ private extension SpeedometerViewController {
     }
 
     func configureLocationManager() {
-        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
     }

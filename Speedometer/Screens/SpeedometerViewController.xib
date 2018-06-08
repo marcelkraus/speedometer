@@ -20,8 +20,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpeedometerViewController" customModule="Speedometer" customModuleProvider="target">
             <connections>
+                <outlet property="inaccurateSignalIndicatorLabel" destination="cCG-c3-4MX" id="hKM-xd-4Qq"/>
+                <outlet property="loadingStackView" destination="FNW-QK-w6v" id="X8I-VV-gtH"/>
                 <outlet property="settingsButton" destination="JET-vv-Bdg" id="RFI-zc-0aY"/>
                 <outlet property="speedLabel" destination="LZk-rE-CiX" id="GSc-i9-gae"/>
+                <outlet property="speedStackView" destination="DGr-na-3Vj" id="PCC-wX-Ypq"/>
                 <outlet property="unitLabel" destination="RNh-OI-jDg" id="G5K-ph-Ia4"/>
                 <outlet property="unitSegmentedControl" destination="bzB-ww-Om0" id="Frq-fn-6nd"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kPs-0p-S3A"/>
@@ -32,6 +35,21 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FNW-QK-w6v">
+                    <rect key="frame" x="74" y="309.66666666666669" width="227" height="72.666666666666686"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dtP-dW-3ae">
+                            <rect key="frame" x="95" y="0.0" width="37" height="37"/>
+                            <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </activityIndicatorView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SpeedometerViewController.Indicator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCG-c3-4MX">
+                            <rect key="frame" x="0.0" y="56.999999999999993" width="227" height="15.666666666666664"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DGr-na-3Vj">
                     <rect key="frame" x="79.666666666666686" y="245.33333333333331" width="216" height="201.33333333333331"/>
                     <subviews>
@@ -76,6 +94,7 @@
                     </subviews>
                     <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="JET-vv-Bdg" secondAttribute="trailing" constant="20" id="BzW-CS-Dg2"/>
                         <constraint firstAttribute="height" constant="120" id="G93-kA-esc"/>
                         <constraint firstItem="JET-vv-Bdg" firstAttribute="centerY" secondItem="srP-bX-IF6" secondAttribute="centerY" id="LOW-1w-DHI"/>
                         <constraint firstItem="bzB-ww-Om0" firstAttribute="centerX" secondItem="srP-bX-IF6" secondAttribute="centerX" id="df7-hY-0nQ"/>
@@ -86,12 +105,13 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="FNW-QK-w6v" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-60" id="Ecf-G5-IVp"/>
                 <constraint firstItem="srP-bX-IF6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bfy-Tu-Ugz"/>
                 <constraint firstAttribute="trailing" secondItem="srP-bX-IF6" secondAttribute="trailing" id="c1e-XO-Qd8"/>
+                <constraint firstItem="FNW-QK-w6v" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cdY-gB-cXg"/>
                 <constraint firstItem="DGr-na-3Vj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dky-am-PwJ"/>
                 <constraint firstItem="DGr-na-3Vj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-60" id="pdX-dG-AOw"/>
                 <constraint firstAttribute="bottom" secondItem="srP-bX-IF6" secondAttribute="bottom" id="uph-2o-37d"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JET-vv-Bdg" secondAttribute="trailing" constant="20" id="yUw-1s-9mf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="33.5" y="54"/>

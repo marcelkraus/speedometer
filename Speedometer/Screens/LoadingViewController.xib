@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingViewController" customModule="Speedometer" customModuleProvider="target">
             <connections>
+                <outlet property="loadingIndicatorLabel" destination="311-gd-x2F" id="2qi-Ao-03O"/>
                 <outlet property="view" destination="iN0-l3-epB" id="KgU-5y-lGW"/>
             </connections>
         </placeholder>
@@ -20,24 +21,37 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wuc-bS-5wy" userLabel="Activity Indicator">
-                    <rect key="frame" x="169" y="392.66666666666669" width="37" height="37"/>
-                    <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </activityIndicatorView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading…" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="311-gd-x2F">
-                    <rect key="frame" x="158.33333333333334" y="437.66666666666669" width="58.666666666666657" height="15.666666666666686"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Bup-Sb-zxY">
+                    <rect key="frame" x="90.666666666666671" y="309.66666666666669" width="193.66666666666663" height="72.666666666666686"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wuc-bS-5wy">
+                            <rect key="frame" x="78.333333333333329" y="0.0" width="37" height="37"/>
+                            <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </activityIndicatorView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoadingViewController.Indicator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="311-gd-x2F">
+                            <rect key="frame" x="0.0" y="56.999999999999993" width="193.66666666666666" height="15.666666666666664"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVr-oj-yyE" userLabel="Canvas">
+                    <rect key="frame" x="0.0" y="692" width="375" height="120"/>
+                    <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="Kme-Mw-2FW"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="311-gd-x2F" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="BGa-vc-ezU"/>
-                <constraint firstItem="wuc-bS-5wy" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="PEM-dp-ZeM"/>
-                <constraint firstItem="311-gd-x2F" firstAttribute="top" secondItem="wuc-bS-5wy" secondAttribute="bottom" constant="8" symbolic="YES" id="dJq-Xa-NdV"/>
-                <constraint firstItem="wuc-bS-5wy" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="fSe-F3-IAL"/>
+                <constraint firstItem="Bup-Sb-zxY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2rt-iC-h7M"/>
+                <constraint firstItem="RVr-oj-yyE" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="4d8-C9-nPN"/>
+                <constraint firstItem="RVr-oj-yyE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NYL-yQ-YHW"/>
+                <constraint firstItem="Bup-Sb-zxY" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-60" id="cQ0-hG-BIy"/>
+                <constraint firstItem="RVr-oj-yyE" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="gmM-vM-PLj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="33.5" y="54"/>

@@ -1,3 +1,5 @@
+"LoadingViewController.Indicator" = "Laden…";
+
 "RootViewController.LocationAuthorizationStatusDenied.Heading" = "Houston, wir haben ein Problem!";
 "RootViewController.LocationAuthorizationStatusDenied.Message" = "Die Nutzung von Tacho ist nicht möglich, da der Zugriff auf deine Standortdaten beschränkt wurde.\n\nBitte entferne alle Einschränkungen in deinen Einstellungen:\n\nEinstellungen > Allgemein > Einschränkungen > Ortungsdienste";
 
@@ -13,3 +15,5 @@
 "SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nVielen Dank an Marc und Thomas für ihre Unterstützung. \"Tacho\"-Bestandteil des App-Icons designed durch Freepik von Flaticon.";
 "SettingsViewController.Imprint.AppVersion" = "App-Version";
 "SettingsViewController.Button.Close" = "Schließen";
+
+"SpeedometerViewController.Indicator" = "Warten auf GPS-Signal…";
