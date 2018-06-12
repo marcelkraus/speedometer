@@ -4,27 +4,41 @@ import UIKit
 class SpeedometerViewController: UIViewController {
     private let locationManager: CLLocationManager
 
-    private var speedValue: Double? {
+    private var speed: Speed? {
         didSet {
-            guard let speedValue = speedValue else {
+            guard let speed = speed else {
                 return
             }
 
-            let speed = Speed(speed: speedValue, unit: unit, speedLimit: UserDefaults.standard.float(forKey: Configuration.currentSpeedLimitDefaultsKey))
-            switch speed.limitIsExceeded {
-            case true:
+            speedLabel.text = speed.asString
+
+            speedLabel.textColor = nil
+            if let speedLimit = speedLimit, speed.roundedSpeed > speedLimit.roundedSpeed {
                 speedLabel.textColor = UIColor(red: 0.6196, green: 0, blue: 0, alpha: 1.0)
-            case false:
-                speedLabel.textColor = nil
+            }
+        }
+    }
+
+    private var speedLimit: Speed? {
+        didSet {
+            guard let speedLimit = speedLimit else {
+                resetSpeedLimitLabels()
+
+                return
             }
 
-            speedLabel.text = speed.asString
+            UserDefaults.standard.set(speedLimit.asString, forKey: Configuration.currentSpeedLimitDefaultsKey)
+            speedLimitLabel.text = "\("SpeedometerViewController.SpeedLimit.CurrentSpeedLimit".localized) \(speedLimit.asStringWithUnit)"
+            speedLimitDescriptionLabel.text = "SpeedometerViewController.SpeedLimit.TapToReleaseSpeedLimit".localized
         }
     }
 
     private var unit: Unit {
         didSet {
+            UserDefaults.standard.removeObject(forKey: Configuration.currentSpeedLimitDefaultsKey)
+
             unitLabel.text = unit.abbreviation
+            UserDefaults.standard.set(unit.rawValue, forKey: Configuration.currentUnitDefaultsKey)
         }
     }
 
@@ -50,15 +64,18 @@ class SpeedometerViewController: UIViewController {
 
     // MARK: - Outlets & Actions
 
-    @IBOutlet weak var inaccurateSignalIndicatorLabel: UILabel! {
-        didSet {
-            inaccurateSignalIndicatorLabel.text = "SpeedometerViewController.Indicator".localized
-        }
-    }
+    @IBOutlet weak var inaccurateSignalIndicatorLabel: UILabel!
     @IBOutlet weak var loadingStackView: UIStackView!
     @IBOutlet weak var speedStackView: UIStackView!
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var unitLabel: UILabel!
+    @IBOutlet weak var speedLimitStackView: UIStackView!
+    @IBOutlet weak var speedLimitLabel: UILabel! {
+        didSet {
+
+        }
+    }
+    @IBOutlet weak var speedLimitDescriptionLabel: UILabel!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var unitSegmentedControl: UISegmentedControl! {
         didSet {
@@ -72,11 +89,11 @@ class SpeedometerViewController: UIViewController {
     }
 
     @IBAction func presentSettings(_ sender: UIButton) {
-        present(SettingsViewController(unit: unit), animated: true, completion: nil)
+        present(SettingsViewController(), animated: true, completion: nil)
     }
 
-    @IBAction func selectUnit(_ sender: UISegmentedControl) {
-        selectUnit(unit: units[sender.selectedSegmentIndex])
+    @IBAction func updateUnit(_ sender: UISegmentedControl) {
+        updateUnit(units[sender.selectedSegmentIndex])
     }
 }
 
@@ -84,7 +101,7 @@ class SpeedometerViewController: UIViewController {
 
 extension SpeedometerViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let speed = locations.last?.speed, let horizontalAccuracy = locations.last?.horizontalAccuracy, horizontalAccuracy <= Configuration.minimumHorizontalAccuracy else {
+        guard let speedValue = locations.last?.speed, let horizontalAccuracy = locations.last?.horizontalAccuracy, horizontalAccuracy <= Configuration.minimumHorizontalAccuracy else {
             setDisplayMode(to: .loadingIndicator)
 
             return
@@ -94,7 +111,7 @@ extension SpeedometerViewController: CLLocationManagerDelegate {
             setDisplayMode(to: .speed)
         }
 
-        speedValue = speed
+        speed = Speed(speed: speedValue, unit: unit)
     }
 }
 
@@ -108,9 +125,20 @@ private extension SpeedometerViewController {
 
     func configureView() {
         setDisplayMode(to: .loadingIndicator)
+
+        inaccurateSignalIndicatorLabel.text = "SpeedometerViewController.Indicator".localized
         unitLabel.text = unit.abbreviation
+        resetSpeedLimitLabels()
+
+        let speedLimitTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.updateSpeedLimit(sender:)))
+        speedStackView.addGestureRecognizer(speedLimitTapGesture)
 
         StoreReviewHelper.askForReview()
+    }
+
+    func resetSpeedLimitLabels() {
+        speedLimitLabel.text = "SpeedometerViewController.SpeedLimit.NoSpeedLimit".localized
+        speedLimitDescriptionLabel.text = "SpeedometerViewController.SpeedLimit.TapToSetSpeedLimit".localized
     }
 
     func setDisplayMode(to displayMode: DisplayMode) {
@@ -118,16 +146,34 @@ private extension SpeedometerViewController {
         case .loadingIndicator:
             loadingStackView.isHidden = false
             speedStackView.isHidden = true
+            speedLimitStackView.isHidden = true
         case .speed:
             loadingStackView.isHidden = true
             speedStackView.isHidden = false
+            speedLimitStackView.isHidden = false
         }
     }
 
-    func selectUnit(unit: Unit) {
+    func updateUnit(_ unit: Unit) {
         self.unit = unit
-        UserDefaults.standard.set(unit.rawValue, forKey: Configuration.currentUnitDefaultsKey)
-        UserDefaults.standard.removeObject(forKey: Configuration.currentSpeedLimitDefaultsKey)
+
+        guard let speedLimit = speedLimit else {
+            return
+        }
+
+        self.speedLimit = Speed(speed: speedLimit, unit: unit)
+    }
+
+    @objc func updateSpeedLimit(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            guard speedLimit == nil else {
+                speedLimit = nil
+
+                return
+            }
+
+            speedLimit = speed
+        }
     }
 
     func configureLocationManager() {

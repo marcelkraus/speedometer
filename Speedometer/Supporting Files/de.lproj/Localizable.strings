@@ -2,18 +2,19 @@
 
 "RootViewController.LocationAuthorizationStatusDenied.Heading" = "Houston, wir haben ein Problem!";
 "RootViewController.LocationAuthorizationStatusDenied.Message" = "Die Nutzung von Tacho ist nicht möglich, da der Zugriff auf deine Standortdaten beschränkt wurde.\n\nBitte entferne alle Einschränkungen in deinen Einstellungen:\n\nEinstellungen > Allgemein > Einschränkungen > Ortungsdienste";
-
 "RootViewController.LocationAuthorizationStatusRestricted.Heading" = "Houston, wir haben ein Problem!";
 "RootViewController.LocationAuthorizationStatusRestricted.Message" = "Bitte erlaube Zugriff auf deine Standortdaten, um Tacho nutzen zu können.\n\nDu findest die notwendigen Einstellungen hier:\n\nEinstellungen > Datenschutz > Ortungsdienste > Tacho > Beim Verwenden der App";
-
+"RootViewController.OnboardingInformation.Button" = "OK, leg los!";
 "RootViewController.OnboardingInformation.Heading" = "Herzlich Willkommen!";
 "RootViewController.OnboardingInformation.Message" = "Tacho ist eine kostenlose, werbefreie App, die dir deine aktuelle Geschwindigkeit anzeigt.\n\nAus diesem Grund benötigt Tacho Zugriff auf deine Standortdaten, die nur für diese Zwecke verwendet und mit niemandem geteilt werden.\n\nBitte betätige den untenstehenden Button und bestätige den Hinweis im sich öffnenden Fenster.";
-"RootViewController.OnboardingInformation.Button" = "OK, leg los!";
 
-"SettingsViewController.SpeedWarning.Heading" = "Geschwindigkeitswarnung";
-"SettingsViewController.Imprint.Heading" = "Impressum";
-"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nVielen Dank an Marc und Thomas für ihre Unterstützung. \"Tacho\"-Bestandteil des App-Icons designed durch Freepik von Flaticon.";
-"SettingsViewController.Imprint.AppVersion" = "App-Version";
 "SettingsViewController.Button.Close" = "Schließen";
+"SettingsViewController.Imprint.AppVersion" = "App-Version";
+"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nVielen Dank an Marc und Thomas für ihre Unterstützung. \"Tacho\"-Bestandteil des App-Icons designed durch Freepik von Flaticon.";
+"SettingsViewController.Imprint.Heading" = "Impressum";
 
 "SpeedometerViewController.Indicator" = "Warten auf GPS-Signal…";
+"SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Warnung bei";
+"SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "Keine Geschwindigkeitswarnung";
+"SpeedometerViewController.SpeedLimit.TapToReleaseSpeedLimit" = "Zum entfernen auf Geschwindigkeit tappen";
+"SpeedometerViewController.SpeedLimit.TapToSetSpeedLimit" = "Zum setzen auf Geschwindigkeit tappen";

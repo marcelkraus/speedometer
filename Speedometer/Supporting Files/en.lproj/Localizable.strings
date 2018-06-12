@@ -2,18 +2,19 @@
 
 "RootViewController.LocationAuthorizationStatusDenied.Heading" = "Houston, we've had a problem here!";
 "RootViewController.LocationAuthorizationStatusDenied.Message" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
-
 "RootViewController.LocationAuthorizationStatusRestricted.Heading" = "Houston, we've had a problem here!";
 "RootViewController.LocationAuthorizationStatusRestricted.Message" = "Please allow access to your location data to use Speedometer\n\nPlease check the following settings:\n\nSettings > Privacy > Location Services > Speedometer > While Using";
-
+"RootViewController.OnboardingInformation.Button" = "I've got it!";
 "RootViewController.OnboardingInformation.Heading" = "Welcome!";
 "RootViewController.OnboardingInformation.Message" = "Speedometer is just a small ad-free app which shows you your current speed.\n\nTherefore, this app needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease press the button below and confirm access within the popup.";
-"RootViewController.OnboardingInformation.Button" = "I've got it!";
 
-"SettingsViewController.SpeedWarning.Heading" = "Speed Warning";
-"SettingsViewController.Imprint.Heading" = "Imprint";
-"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nMany thanks to Marc and Thomas for their support. \"Speedometer\" part of app icon designed by Freepik from Flaticon.";
-"SettingsViewController.Imprint.AppVersion" = "App Version";
 "SettingsViewController.Button.Close" = "Close";
+"SettingsViewController.Imprint.AppVersion" = "App Version";
+"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nMany thanks to Marc and Thomas for their support. \"Speedometer\" part of app icon designed by Freepik from Flaticon.";
+"SettingsViewController.Imprint.Heading" = "Imprint";
 
 "SpeedometerViewController.Indicator" = "Waiting for GPS signal…";
+"SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Speed limit set to";
+"SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "No Speed Limit";
+"SpeedometerViewController.SpeedLimit.TapToReleaseSpeedLimit" = "Tap current speed to release";
+"SpeedometerViewController.SpeedLimit.TapToSetSpeedLimit" = "Tap current speed to set";

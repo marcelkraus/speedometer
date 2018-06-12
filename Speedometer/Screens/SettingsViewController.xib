@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,11 +15,7 @@
                 <outlet property="button" destination="cMo-r1-yIh" id="quV-ad-ZAg"/>
                 <outlet property="imprintContents" destination="mLB-D0-uuv" id="nCX-oV-d2n"/>
                 <outlet property="imprintHeading" destination="YQa-rH-EzF" id="Rf9-fT-cmb"/>
-                <outlet property="speedLimitHeading" destination="EtS-Pw-we9" id="Asz-G5-9w1"/>
-                <outlet property="speedWarningSlider" destination="Vb1-Je-mdd" id="BdG-hU-Fbj"/>
-                <outlet property="speedWarningValue" destination="c5l-GQ-lvc" id="FkS-Ro-gMT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="headings" destination="EtS-Pw-we9" collectionClass="NSMutableArray" id="Z2H-xH-P2x"/>
                 <outletCollection property="headings" destination="YQa-rH-EzF" collectionClass="NSMutableArray" id="nYU-pw-hkL"/>
             </connections>
         </placeholder>
@@ -33,38 +28,10 @@
                     <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Dth-KX-vBn">
-                            <rect key="frame" x="20" y="20" width="335" height="251"/>
+                            <rect key="frame" x="20" y="20" width="335" height="140.66666666666666"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xAa-9Q-Yfo" userLabel="Speed Warning Stack View">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="70.333333333333329"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed Warning" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtS-Pw-we9">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="20.333333333333332"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Kik-W3-ytl" userLabel="Slider Stack View">
-                                            <rect key="frame" x="0.0" y="40.333333333333329" width="335" height="30"/>
-                                            <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="130" translatesAutoresizingMaskIntoConstraints="NO" id="Vb1-Je-mdd">
-                                                    <rect key="frame" x="-2" y="0.0" width="330.66666666666669" height="31"/>
-                                                    <connections>
-                                                        <action selector="selectSpeedLimit:" destination="-1" eventType="valueChanged" id="z4B-wP-wYj"/>
-                                                    </connections>
-                                                </slider>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5l-GQ-lvc">
-                                                    <rect key="frame" x="334.66666666666669" y="0.0" width="0.33333333333331439" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tpn-y0-aYJ" userLabel="Imprint Stack View">
-                                    <rect key="frame" x="0.0" y="110.33333333333336" width="335" height="60.666666666666671"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="60.666666666666664"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imprint Heading" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQa-rH-EzF">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="20.333333333333332"/>
@@ -73,7 +40,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imprint Contents" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLB-D0-uuv">
-                                            <rect key="frame" x="0.0" y="40.333333333333314" width="335" height="20.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="40.333333333333329" width="335" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -81,7 +48,7 @@
                                     </subviews>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMo-r1-yIh">
-                                    <rect key="frame" x="0.0" y="211" width="335" height="40"/>
+                                    <rect key="frame" x="0.0" y="100.66666666666666" width="335" height="40"/>
                                     <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="nKi-3Z-qSL"/>

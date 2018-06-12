@@ -1,25 +1,28 @@
 import Foundation
 
 struct Speed {
-    let speed: Float
+    let speed: Double
     let unit: Unit
-    let speedLimit: Float
 
-    init(speed: Double, unit: Unit, speedLimit: Float) {
-        self.speed = Float(speed > 1.0 ? speed * unit.factor : 0)
+    init(speed: Double, unit: Unit) {
+        self.speed = (speed > 0.5) ? speed * unit.factor : 0
         self.unit = unit
-        self.speedLimit = speedLimit
+    }
+
+    init(speed: Speed, unit: Unit) {
+        self.speed = (speed.speed / speed.unit.factor) * unit.factor
+        self.unit = unit
+    }
+
+    var roundedSpeed: Int {
+        return Int(round(speed))
     }
 
     var asString: String {
         return String(format: Configuration.speedStringFormat, speed)
     }
 
-    var limitIsExceeded: Bool {
-        guard speedLimit > 0, speed > speedLimit else {
-            return false
-        }
-
-        return true
+    var asStringWithUnit: String {
+        return "\(asString) \(unit.abbreviation)"
     }
 }
