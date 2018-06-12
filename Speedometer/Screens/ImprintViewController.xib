@@ -10,13 +10,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Speedometer" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImprintViewController" customModule="Speedometer" customModuleProvider="target">
             <connections>
-                <outlet property="button" destination="cMo-r1-yIh" id="quV-ad-ZAg"/>
-                <outlet property="imprintContents" destination="mLB-D0-uuv" id="nCX-oV-d2n"/>
-                <outlet property="imprintHeading" destination="YQa-rH-EzF" id="Rf9-fT-cmb"/>
+                <outlet property="closeButton" destination="cMo-r1-yIh" id="TmQ-Yv-YTi"/>
+                <outlet property="contents" destination="mLB-D0-uuv" id="PP1-fT-oWS"/>
+                <outlet property="heading" destination="YQa-rH-EzF" id="zTx-xe-yPo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="headings" destination="YQa-rH-EzF" collectionClass="NSMutableArray" id="nYU-pw-hkL"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -33,7 +32,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tpn-y0-aYJ" userLabel="Imprint Stack View">
                                     <rect key="frame" x="0.0" y="0.0" width="335" height="60.666666666666664"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imprint Heading" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQa-rH-EzF">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imprint" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQa-rH-EzF">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="20.333333333333332"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
@@ -57,7 +56,7 @@
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Close"/>
                                     <connections>
-                                        <action selector="dismissSettings:" destination="-1" eventType="touchUpInside" id="jA9-eJ-GFA"/>
+                                        <action selector="dismiss:" destination="-1" eventType="touchUpInside" id="f7a-hC-Fby"/>
                                     </connections>
                                 </button>
                             </subviews>

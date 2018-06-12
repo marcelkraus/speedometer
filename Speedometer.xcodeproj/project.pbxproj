@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DB42B48D5A357451A42C6030 /* Pods_Speedometer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3678B8DD1591CDACFF17F21D /* Pods_Speedometer.framework */; };
-		DF1F79DA2059EAA500BAFC11 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF1F79D72059EA9E00BAFC11 /* SettingsViewController.xib */; };
+		DF1F79DA2059EAA500BAFC11 /* ImprintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF1F79D72059EA9E00BAFC11 /* ImprintViewController.xib */; };
 		DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */; };
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
 		DF3010D8205A929E005B493D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3010D7205A929E005B493D /* String.swift */; };
@@ -16,7 +16,7 @@
 		DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */; };
 		DF5F4C5F1FD5DAA10043F97E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */; };
 		DF602D1520AEE3C00083532A /* StoreKitReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */; };
-		DF8FDCEA2008FD0500140DA9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FDCE82008FD0500140DA9 /* SettingsViewController.swift */; };
+		DF8FDCEA2008FD0500140DA9 /* ImprintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FDCE82008FD0500140DA9 /* ImprintViewController.swift */; };
 		DF962C4F1FD5A41300514B06 /* SpeedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */; };
 		DF962C511FD5A42B00514B06 /* SpeedometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */; };
 		DF9DCB0220ADD770008BAE8B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DCB0120ADD770008BAE8B /* Configuration.swift */; };
@@ -47,7 +47,7 @@
 /* Begin PBXFileReference section */
 		0A3BDD7AE02C355FDC6B2A24 /* Pods-Speedometer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Speedometer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Speedometer/Pods-Speedometer.debug.xcconfig"; sourceTree = "<group>"; };
 		3678B8DD1591CDACFF17F21D /* Pods_Speedometer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Speedometer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF1F79D72059EA9E00BAFC11 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		DF1F79D72059EA9E00BAFC11 /* ImprintViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImprintViewController.xib; sourceTree = "<group>"; };
 		DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF2C45AE1FCC2EF0005C8906 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		DF3010D7205A929E005B493D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Medium.ttf"; sourceTree = "<group>"; };
 		DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitReviewHelper.swift; sourceTree = "<group>"; };
-		DF8FDCE82008FD0500140DA9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DF8FDCE82008FD0500140DA9 /* ImprintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprintViewController.swift; sourceTree = "<group>"; };
 		DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerViewController.swift; sourceTree = "<group>"; };
 		DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeedometerViewController.xib; sourceTree = "<group>"; };
 		DF9DCB0120ADD770008BAE8B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -152,12 +152,12 @@
 		DF78E6AB2008BDB0009038B6 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				DF8FDCE82008FD0500140DA9 /* ImprintViewController.swift */,
+				DF1F79D72059EA9E00BAFC11 /* ImprintViewController.xib */,
 				DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */,
 				DFCA0C621FD5E55300260E24 /* LoadingViewController.xib */,
 				DFCA0C661FD5E84400260E24 /* MessageViewController.swift */,
 				DFCA0C681FD5E86D00260E24 /* MessageViewController.xib */,
-				DF8FDCE82008FD0500140DA9 /* SettingsViewController.swift */,
-				DF1F79D72059EA9E00BAFC11 /* SettingsViewController.xib */,
 				DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */,
 				DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */,
 			);
@@ -322,7 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */,
-				DF1F79DA2059EAA500BAFC11 /* SettingsViewController.xib in Resources */,
+				DF1F79DA2059EAA500BAFC11 /* ImprintViewController.xib in Resources */,
 				DF962C511FD5A42B00514B06 /* SpeedometerViewController.xib in Resources */,
 				DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */,
 				DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */,
@@ -420,7 +420,7 @@
 				DF5F4C5F1FD5DAA10043F97E /* UIViewController.swift in Sources */,
 				DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */,
 				DFB6D73820815E2700BFC1F3 /* Speed.swift in Sources */,
-				DF8FDCEA2008FD0500140DA9 /* SettingsViewController.swift in Sources */,
+				DF8FDCEA2008FD0500140DA9 /* ImprintViewController.swift in Sources */,
 				DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */,
 				DFCA0C671FD5E84400260E24 /* MessageViewController.swift in Sources */,
 				DF962C4F1FD5A41300514B06 /* SpeedometerViewController.swift in Sources */,

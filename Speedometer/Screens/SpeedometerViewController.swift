@@ -89,7 +89,7 @@ class SpeedometerViewController: UIViewController {
     }
 
     @IBAction func presentSettings(_ sender: UIButton) {
-        present(SettingsViewController(), animated: true, completion: nil)
+        present(ImprintViewController(), animated: true, completion: nil)
     }
 
     @IBAction func updateUnit(_ sender: UISegmentedControl) {
