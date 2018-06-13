@@ -20,6 +20,16 @@ class SpeedometerViewController: UIViewController {
         }
     }
 
+    private var coordinates: Coordinates? {
+        didSet {
+            guard let coordinates = coordinates  else {
+                return
+            }
+
+            coordinatesLabel.text = "\(coordinates.formatted.latitude)\n\(coordinates.formatted.longitude)"
+        }
+    }
+
     private var speedLimit: Speed? {
         didSet {
             guard let speedLimit = speedLimit else {
@@ -71,6 +81,7 @@ class SpeedometerViewController: UIViewController {
     @IBOutlet weak var speedStackView: UIStackView!
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var unitLabel: UILabel!
+    @IBOutlet weak var coordinatesLabel: UILabel!
     @IBOutlet weak var speedLimitStackView: UIStackView!
     @IBOutlet weak var speedLimitLabel: UILabel!
     @IBOutlet weak var speedLimitDescriptionLabel: UILabel!
@@ -103,7 +114,7 @@ class SpeedometerViewController: UIViewController {
 
 extension SpeedometerViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let speedValue = locations.last?.speed, let horizontalAccuracy = locations.last?.horizontalAccuracy, horizontalAccuracy <= Configuration.minimumHorizontalAccuracy else {
+        guard let location = locations.last, location.horizontalAccuracy <= Configuration.minimumHorizontalAccuracy else {
             setDisplayMode(to: .loadingIndicator)
 
             return
@@ -113,7 +124,8 @@ extension SpeedometerViewController: CLLocationManagerDelegate {
             setDisplayMode(to: .speed)
         }
 
-        speed = Speed(speed: speedValue, unit: unit)
+        speed = Speed(speed: location.speed, unit: unit)
+        coordinates = Coordinates(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
     }
 }
 
@@ -128,14 +140,14 @@ private extension SpeedometerViewController {
     func configureView() {
         setDisplayMode(to: .loadingIndicator)
 
+        circleView.fillColor = view.tintColor.cgColor
         inaccurateSignalIndicatorLabel.text = "SpeedometerViewController.Indicator".localized
+        coordinatesLabel.text = "SpeedometerViewController.NoCoordinates".localized
         unitLabel.text = unit.abbreviation
         resetSpeedLimitLabels()
 
         let speedLimitTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.updateSpeedLimit(sender:)))
         speedStackView.addGestureRecognizer(speedLimitTapGesture)
-
-        circleView.fillColor = view.tintColor.cgColor
 
         StoreReviewHelper.askForReview()
     }

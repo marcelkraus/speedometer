@@ -14,6 +14,7 @@
 "SettingsViewController.Imprint.Heading" = "Impressum";
 
 "SpeedometerViewController.Indicator" = "Warten auf GPS-Signal…";
+"SpeedometerViewController.NoCoordinates" = "– Keine Koordinaten –";
 "SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Warnung bei";
 "SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "Keine Geschwindigkeitswarnung";
 "SpeedometerViewController.SpeedLimit.TapToReleaseSpeedLimit" = "Zum entfernen auf Geschwindigkeit tappen";

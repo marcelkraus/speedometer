@@ -14,6 +14,7 @@
 "SettingsViewController.Imprint.Heading" = "Imprint";
 
 "SpeedometerViewController.Indicator" = "Waiting for GPS signal…";
+"SpeedometerViewController.NoCoordinates" = "– No Coordinates –";
 "SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Speed limit set to";
 "SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "No Speed Limit";
 "SpeedometerViewController.SpeedLimit.TapToReleaseSpeedLimit" = "Tap current speed to release";
