@@ -14,6 +14,10 @@ struct Speed {
         self.unit = unit
     }
 
+    var fillment: Double {
+        return ((speed * 100) / Double(unit.maximumSpeed)) * 0.01
+    }
+
     var roundedSpeed: Int {
         return Int(round(speed))
     }

@@ -11,6 +11,7 @@ class SpeedometerViewController: UIViewController {
             }
 
             speedLabel.text = speed.asString
+            circleView.fillmentLevel = speed.fillment
 
             speedLabel.textColor = nil
             if let speedLimit = speedLimit, speed.roundedSpeed > speedLimit.roundedSpeed {
@@ -64,17 +65,14 @@ class SpeedometerViewController: UIViewController {
 
     // MARK: - Outlets & Actions
 
+    @IBOutlet weak var circleView: CircleView!
     @IBOutlet weak var inaccurateSignalIndicatorLabel: UILabel!
     @IBOutlet weak var loadingStackView: UIStackView!
     @IBOutlet weak var speedStackView: UIStackView!
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var unitLabel: UILabel!
     @IBOutlet weak var speedLimitStackView: UIStackView!
-    @IBOutlet weak var speedLimitLabel: UILabel! {
-        didSet {
-
-        }
-    }
+    @IBOutlet weak var speedLimitLabel: UILabel!
     @IBOutlet weak var speedLimitDescriptionLabel: UILabel!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var unitSegmentedControl: UISegmentedControl! {
@@ -137,6 +135,8 @@ private extension SpeedometerViewController {
         let speedLimitTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.updateSpeedLimit(sender:)))
         speedStackView.addGestureRecognizer(speedLimitTapGesture)
 
+        circleView.fillColor = view.tintColor.cgColor
+
         StoreReviewHelper.askForReview()
     }
 
@@ -149,10 +149,12 @@ private extension SpeedometerViewController {
         switch displayMode {
         case .loadingIndicator:
             loadingStackView.isHidden = false
+            circleView.isHidden = true
             speedStackView.isHidden = true
             speedLimitStackView.isHidden = true
         case .speed:
             loadingStackView.isHidden = true
+            circleView.isHidden = false
             speedStackView.isHidden = false
             speedLimitStackView.isHidden = false
         }

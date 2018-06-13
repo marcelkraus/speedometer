@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,6 +21,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpeedometerViewController" customModule="Speedometer" customModuleProvider="target">
             <connections>
+                <outlet property="circleView" destination="wSB-jW-SZA" id="4aZ-27-xgo"/>
                 <outlet property="inaccurateSignalIndicatorLabel" destination="cCG-c3-4MX" id="hKM-xd-4Qq"/>
                 <outlet property="loadingStackView" destination="FNW-QK-w6v" id="X8I-VV-gtH"/>
                 <outlet property="settingsButton" destination="JET-vv-Bdg" id="RFI-zc-0aY"/>
@@ -43,7 +44,7 @@
                     <rect key="frame" x="81.666666666666686" y="310.33333333333331" width="212" height="71.333333333333314"/>
                     <subviews>
                         <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dtP-dW-3ae">
-                            <rect key="frame" x="87.333333333333329" y="0.0" width="37" height="37"/>
+                            <rect key="frame" x="87.666666666666671" y="0.0" width="37" height="37"/>
                             <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </activityIndicatorView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SpeedometerViewController.Indicator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCG-c3-4MX">
@@ -54,28 +55,39 @@
                         </label>
                     </subviews>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DGr-na-3Vj">
-                    <rect key="frame" x="79.666666666666686" y="245.33333333333331" width="216" height="201.33333333333331"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSB-jW-SZA" customClass="CircleView" customModule="Speedometer" customModuleProvider="target">
+                    <rect key="frame" x="40" y="84" width="295" height="295"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nkq-sX-cWL">
-                            <rect key="frame" x="0.0" y="0.0" width="216" height="201.33333333333334"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DGr-na-3Vj">
+                            <rect key="frame" x="39" y="46.000000000000014" width="216" height="201.33333333333337"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZk-rE-CiX">
-                                    <rect key="frame" x="0.0" y="0.0" width="216" height="151"/>
-                                    <fontDescription key="fontDescription" name="SourceCodePro-Medium" family="Source Code Pro" pointSize="120"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNh-OI-jDg">
-                                    <rect key="frame" x="59.999999999999986" y="150.99999999999997" width="96.000000000000014" height="50.333333333333343"/>
-                                    <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="40"/>
-                                    <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nkq-sX-cWL">
+                                    <rect key="frame" x="0.0" y="0.0" width="216" height="201.33333333333334"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZk-rE-CiX">
+                                            <rect key="frame" x="0.0" y="0.0" width="216" height="151"/>
+                                            <fontDescription key="fontDescription" name="SourceCodePro-Medium" family="Source Code Pro" pointSize="120"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNh-OI-jDg">
+                                            <rect key="frame" x="60" y="151" width="96" height="50.333333333333343"/>
+                                            <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="40"/>
+                                            <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                         </stackView>
                     </subviews>
-                </stackView>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="wSB-jW-SZA" secondAttribute="height" multiplier="1:1" id="5GU-hT-pNq"/>
+                        <constraint firstItem="DGr-na-3Vj" firstAttribute="centerX" secondItem="wSB-jW-SZA" secondAttribute="centerX" id="CJm-Pt-FcN"/>
+                        <constraint firstItem="DGr-na-3Vj" firstAttribute="centerY" secondItem="wSB-jW-SZA" secondAttribute="centerY" id="DMM-Ys-HmJ"/>
+                    </constraints>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sfe-MD-3uh">
                     <rect key="frame" x="20" y="625.66666666666663" width="335" height="46.333333333333371"/>
                     <subviews>
@@ -141,11 +153,12 @@
                 <constraint firstItem="srP-bX-IF6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bfy-Tu-Ugz"/>
                 <constraint firstAttribute="trailing" secondItem="srP-bX-IF6" secondAttribute="trailing" id="c1e-XO-Qd8"/>
                 <constraint firstItem="FNW-QK-w6v" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cdY-gB-cXg"/>
-                <constraint firstItem="DGr-na-3Vj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dky-am-PwJ"/>
-                <constraint firstItem="DGr-na-3Vj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-60" id="pdX-dG-AOw"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sfe-MD-3uh" secondAttribute="trailing" constant="20" id="r5o-0r-yTn"/>
                 <constraint firstItem="sfe-MD-3uh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="sEM-lg-faL"/>
+                <constraint firstItem="wSB-jW-SZA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="sj1-bB-8wF"/>
                 <constraint firstAttribute="bottom" secondItem="srP-bX-IF6" secondAttribute="bottom" id="uph-2o-37d"/>
+                <constraint firstItem="wSB-jW-SZA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="v3W-aX-opv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wSB-jW-SZA" secondAttribute="trailing" constant="40" id="wAE-HQ-waf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="33.5" y="54"/>

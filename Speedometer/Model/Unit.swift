@@ -32,17 +32,8 @@ enum Unit: String {
         }
     }
 
-    var maximumSpeedLimit: Float {
-        switch self {
-        case .kilometersPerHour:
-            return 160
-        case .knots:
-            return 85
-        case .metersPerSecond:
-            return 45
-        case .milesPerHour:
-            return 100
-        }
+    var maximumSpeed: Int {
+        return Int(self.factor * 66.7)
     }
 
     var speedLimitSliderSteps: Int {

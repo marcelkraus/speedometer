@@ -14,10 +14,10 @@ class UnitTests: XCTestCase {
         XCTAssertEqual(unit.factor, 3.6, "Factor of km/h should equal 3.6")
     }
 
-    func testUnitMaxiumSpeedLimit() {
+    func testUnitMaxiumSpeed() {
         let unit = Unit.kilometersPerHour
 
-        XCTAssertEqual(unit.maximumSpeedLimit, 160, "Maximum speed limit of km/h should equal 160")
+        XCTAssertEqual(unit.maximumSpeed, 240, "Maximum speed limit of km/h should equal 160")
     }
 
     func testUnitSpeedLimitSliderSteps() {
