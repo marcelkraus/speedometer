@@ -12,10 +12,13 @@ class SpeedometerViewController: UIViewController {
 
             speedLabel.text = speed.asString
             circleView.fillmentLevel = speed.fillment
-
+            circleView.fillColor = view.tintColor
             speedLabel.textColor = nil
+
             if let speedLimit = speedLimit, speed.roundedSpeed > speedLimit.roundedSpeed {
-                speedLabel.textColor = UIColor(red: 0.6196, green: 0, blue: 0, alpha: 1.0)
+                let warningColor = UIColor(red: 0.6196, green: 0, blue: 0, alpha: 1.0)
+                circleView.fillColor = warningColor
+                speedLabel.textColor = warningColor
             }
         }
     }
@@ -140,7 +143,6 @@ private extension SpeedometerViewController {
     func configureView() {
         setDisplayMode(to: .loadingIndicator)
 
-        circleView.fillColor = view.tintColor.cgColor
         inaccurateSignalIndicatorLabel.text = "SpeedometerViewController.Indicator".localized
         coordinatesLabel.text = "SpeedometerViewController.NoCoordinates".localized
         unitLabel.text = unit.abbreviation
