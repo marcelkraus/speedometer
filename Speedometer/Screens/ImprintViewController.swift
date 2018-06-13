@@ -12,12 +12,18 @@ class ImprintViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        modalTransitionStyle = .coverVertical
+        view.backgroundColor = UIColor.clear.withAlphaComponent(0.7)
         heading.textColor = view.tintColor
     }
 
     // MARK: - Outlets & Actions
 
+    @IBOutlet weak var backgroundView: UIView! {
+        didSet {
+            backgroundView.layer.masksToBounds = true
+            backgroundView.layer.cornerRadius = 20
+        }
+    }
     @IBOutlet weak var heading: UILabel! {
         didSet {
             heading.text = "SettingsViewController.Imprint.Heading".localized
@@ -30,13 +36,6 @@ class ImprintViewController: UIViewController {
             if let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
                 contents.text?.append("\n\n\("SettingsViewController.Imprint.AppVersion".localized): \(versionNumber) (\(buildNumber))")
             }
-        }
-    }
-    @IBOutlet weak var closeButton: UIButton! {
-        didSet {
-            closeButton.setTitle("SettingsViewController.Button.Close".localized, for: .normal)
-            closeButton.layer.masksToBounds = true
-            closeButton.layer.cornerRadius = 5
         }
     }
 
