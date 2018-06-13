@@ -43,7 +43,7 @@ class SpeedometerViewController: UIViewController {
 
             UserDefaults.standard.set(speedLimit.asString, forKey: Configuration.currentSpeedLimitDefaultsKey)
             speedLimitLabel.text = "\("SpeedometerViewController.SpeedLimit.CurrentSpeedLimit".localized) \(speedLimit.asStringWithUnit)"
-            speedLimitDescriptionLabel.text = "SpeedometerViewController.SpeedLimit.TapToReleaseSpeedLimit".localized
+            speedLimitButton.setTitle("SpeedometerViewController.SpeedLimit.Button.TapToReleaseSpeedLimit".localized, for: .normal)
         }
     }
 
@@ -86,7 +86,7 @@ class SpeedometerViewController: UIViewController {
     @IBOutlet weak var unitLabel: UILabel!
     @IBOutlet weak var coordinatesLabel: UILabel!
     @IBOutlet weak var speedLimitLabel: UILabel!
-    @IBOutlet weak var speedLimitDescriptionLabel: UILabel!
+    @IBOutlet weak var speedLimitButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var unitSegmentedControl: UISegmentedControl! {
         didSet {
@@ -109,6 +109,10 @@ class SpeedometerViewController: UIViewController {
 
     @IBAction func updateUnit(_ sender: UISegmentedControl) {
         updateUnit(units[sender.selectedSegmentIndex])
+    }
+
+    @IBAction func updateSpeedLimit(_ sender: UIButton) {
+        updateSpeedLimit()
     }
 }
 
@@ -147,15 +151,12 @@ private extension SpeedometerViewController {
         unitLabel.text = unit.abbreviation
         resetSpeedLimitLabels()
 
-        let speedLimitTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.updateSpeedLimit(sender:)))
-        speedStackView.addGestureRecognizer(speedLimitTapGesture)
-
         StoreReviewHelper.askForReview()
     }
 
     func resetSpeedLimitLabels() {
         speedLimitLabel.text = "SpeedometerViewController.SpeedLimit.NoSpeedLimit".localized
-        speedLimitDescriptionLabel.text = "SpeedometerViewController.SpeedLimit.TapToSetSpeedLimit".localized
+        speedLimitButton.setTitle("SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit".localized, for: .normal)
     }
 
     func setDisplayMode(to displayMode: DisplayMode) {
@@ -179,16 +180,14 @@ private extension SpeedometerViewController {
         self.speedLimit = Speed(speed: speedLimit, unit: unit)
     }
 
-    @objc func updateSpeedLimit(sender: UITapGestureRecognizer) {
-        if sender.state == .ended {
-            guard speedLimit == nil else {
-                speedLimit = nil
+    func updateSpeedLimit() {
+        guard speedLimit == nil else {
+            speedLimit = nil
 
-                return
-            }
-
-            speedLimit = speed
+            return
         }
+
+        speedLimit = speed
     }
 
     func configureLocationManager() {

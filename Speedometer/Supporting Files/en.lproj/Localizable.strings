@@ -15,7 +15,7 @@
 
 "SpeedometerViewController.Indicator" = "Waiting for GPS signal…";
 "SpeedometerViewController.NoCoordinates" = "– No Coordinates –";
+"SpeedometerViewController.SpeedLimit.Button.TapToReleaseSpeedLimit" = "Tap here to release";
+"SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit" = "Tap here to set";
 "SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Speed limit set to";
 "SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "No Speed Limit";
-"SpeedometerViewController.SpeedLimit.TapToReleaseSpeedLimit" = "Tap current speed to release";
-"SpeedometerViewController.SpeedLimit.TapToSetSpeedLimit" = "Tap current speed to set";

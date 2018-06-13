@@ -15,7 +15,7 @@
 
 "SpeedometerViewController.Indicator" = "Warten auf GPS-Signal…";
 "SpeedometerViewController.NoCoordinates" = "– Keine Koordinaten –";
-"SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Warnung bei";
-"SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "Keine Geschwindigkeitswarnung";
-"SpeedometerViewController.SpeedLimit.TapToReleaseSpeedLimit" = "Zum entfernen auf Geschwindigkeit tappen";
-"SpeedometerViewController.SpeedLimit.TapToSetSpeedLimit" = "Zum setzen auf Geschwindigkeit tappen";
+"SpeedometerViewController.SpeedLimit.Button.TapToReleaseSpeedLimit" = "Tappe hier zum löschen";
+"SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit" = "Tappe hier zum setzen";
+"SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Limit bei";
+"SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "Kein Geschwindigkeitslimit";

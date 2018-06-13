@@ -5,7 +5,7 @@ struct Speed {
     let unit: Unit
 
     init(speed: Double, unit: Unit) {
-        self.speed = (speed > 0.5) ? speed * unit.factor : 0
+        self.speed = (speed > 1.0) ? speed * unit.factor : 0
         self.unit = unit
     }
 

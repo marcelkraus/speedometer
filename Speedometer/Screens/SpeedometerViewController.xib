@@ -24,7 +24,7 @@
                 <outlet property="loadingStackView" destination="FNW-QK-w6v" id="X8I-VV-gtH"/>
                 <outlet property="settingsButton" destination="JET-vv-Bdg" id="RFI-zc-0aY"/>
                 <outlet property="speedLabel" destination="LZk-rE-CiX" id="GSc-i9-gae"/>
-                <outlet property="speedLimitDescriptionLabel" destination="Oy9-uc-mSx" id="bN6-pT-QGI"/>
+                <outlet property="speedLimitButton" destination="H9p-UN-lmF" id="bzL-v2-kK3"/>
                 <outlet property="speedLimitLabel" destination="T2p-VV-OTS" id="G0A-NB-7bQ"/>
                 <outlet property="speedStackView" destination="I8g-Of-vte" id="YOC-Q4-oCh"/>
                 <outlet property="unitLabel" destination="RNh-OI-jDg" id="G5K-ph-Ia4"/>
@@ -53,7 +53,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="I8g-Of-vte">
-                    <rect key="frame" x="40" y="155.33333333333334" width="295" height="381.33333333333326"/>
+                    <rect key="frame" x="40" y="149.33333333333334" width="295" height="393.33333333333326"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSB-jW-SZA" customClass="CircleView" customModule="Speedometer" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="295" height="295"/>
@@ -95,7 +95,7 @@
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sfe-MD-3uh">
-                            <rect key="frame" x="0.0" y="335" width="295" height="46.333333333333314"/>
+                            <rect key="frame" x="0.0" y="335" width="295" height="58.333333333333314"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed Limit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2p-VV-OTS">
                                     <rect key="frame" x="100.33333333333334" y="0.0" width="94.666666666666657" height="20.333333333333332"/>
@@ -103,12 +103,14 @@
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed Limit Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oy9-uc-mSx">
-                                    <rect key="frame" x="65.666666666666671" y="28.333333333333314" width="163.66666666666663" height="18"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9p-UN-lmF">
+                                    <rect key="frame" x="113.66666666666666" y="28.333333333333314" width="68" height="30"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                    <state key="normal" title="Tap to set"/>
+                                    <connections>
+                                        <action selector="updateSpeedLimit:" destination="-1" eventType="touchUpInside" id="tbf-k4-tM4"/>
+                                    </connections>
+                                </button>
                             </subviews>
                         </stackView>
                     </subviews>
