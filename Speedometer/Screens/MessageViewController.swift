@@ -38,7 +38,7 @@ class MessageViewController: UIViewController {
         } else {
             button.setTitle(buttonTitle, for: .normal)
             button.layer.masksToBounds = true
-            button.layer.cornerRadius = 5
+            button.layer.cornerRadius = CGFloat(Configuration.buttonBorderRadius)
         }
 
         headingLabel.textColor = view.tintColor

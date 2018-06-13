@@ -26,8 +26,7 @@
                 <outlet property="speedLabel" destination="LZk-rE-CiX" id="GSc-i9-gae"/>
                 <outlet property="speedLimitDescriptionLabel" destination="Oy9-uc-mSx" id="bN6-pT-QGI"/>
                 <outlet property="speedLimitLabel" destination="T2p-VV-OTS" id="G0A-NB-7bQ"/>
-                <outlet property="speedLimitStackView" destination="sfe-MD-3uh" id="ipN-gU-Lfr"/>
-                <outlet property="speedStackView" destination="DGr-na-3Vj" id="PCC-wX-Ypq"/>
+                <outlet property="speedStackView" destination="I8g-Of-vte" id="YOC-Q4-oCh"/>
                 <outlet property="unitLabel" destination="RNh-OI-jDg" id="G5K-ph-Ia4"/>
                 <outlet property="unitSegmentedControl" destination="bzB-ww-Om0" id="Frq-fn-6nd"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kPs-0p-S3A"/>
@@ -53,60 +52,65 @@
                         </label>
                     </subviews>
                 </stackView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSB-jW-SZA" customClass="CircleView" customModule="Speedometer" customModuleProvider="target">
-                    <rect key="frame" x="20" y="84" width="335" height="335"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="I8g-Of-vte">
+                    <rect key="frame" x="40" y="155.33333333333334" width="295" height="381.33333333333326"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DGr-na-3Vj">
-                            <rect key="frame" x="59.666666666666686" y="48.000000000000014" width="216" height="239.33333333333337"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSB-jW-SZA" customClass="CircleView" customModule="Speedometer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="295" height="295"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="Nkq-sX-cWL">
-                                    <rect key="frame" x="0.0" y="0.0" width="216" height="181.33333333333334"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DGr-na-3Vj">
+                                    <rect key="frame" x="57.666666666666686" y="69.666666666666671" width="180" height="195.66666666666663"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZk-rE-CiX">
-                                            <rect key="frame" x="0.0" y="0.0" width="216" height="151"/>
-                                            <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="120"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNh-OI-jDg">
-                                            <rect key="frame" x="59.999999999999986" y="131" width="96.000000000000014" height="50.333333333333343"/>
-                                            <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="40"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="Nkq-sX-cWL">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="137.66666666666666"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZk-rE-CiX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="126"/>
+                                                    <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="100"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNh-OI-jDg">
+                                                    <rect key="frame" x="59.999999999999986" y="106" width="60" height="31.666666666666657"/>
+                                                    <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordinates" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5f-12-Hbi">
+                                            <rect key="frame" x="48.333333333333336" y="177.66666666666669" width="83.333333333333314" height="18"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordinates" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5f-12-Hbi">
-                                    <rect key="frame" x="66.333333333333343" y="221.33333333333331" width="83.333333333333343" height="18"/>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="DGr-na-3Vj" firstAttribute="centerX" secondItem="wSB-jW-SZA" secondAttribute="centerX" id="3NV-u2-vCp"/>
+                                <constraint firstAttribute="width" secondItem="wSB-jW-SZA" secondAttribute="height" multiplier="1:1" id="5GU-hT-pNq"/>
+                                <constraint firstItem="DGr-na-3Vj" firstAttribute="centerY" secondItem="wSB-jW-SZA" secondAttribute="centerY" constant="20" id="xJm-Nf-x4L"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sfe-MD-3uh">
+                            <rect key="frame" x="0.0" y="335" width="295" height="46.333333333333314"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed Limit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2p-VV-OTS">
+                                    <rect key="frame" x="100.33333333333334" y="0.0" width="94.666666666666657" height="20.333333333333332"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed Limit Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oy9-uc-mSx">
+                                    <rect key="frame" x="65.666666666666671" y="28.333333333333314" width="163.66666666666663" height="18"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                         </stackView>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="wSB-jW-SZA" secondAttribute="height" multiplier="1:1" id="5GU-hT-pNq"/>
-                        <constraint firstItem="DGr-na-3Vj" firstAttribute="centerX" secondItem="wSB-jW-SZA" secondAttribute="centerX" id="CJm-Pt-FcN"/>
-                        <constraint firstItem="DGr-na-3Vj" firstAttribute="centerY" secondItem="wSB-jW-SZA" secondAttribute="centerY" id="DMM-Ys-HmJ"/>
-                    </constraints>
-                </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sfe-MD-3uh">
-                    <rect key="frame" x="20" y="625.66666666666663" width="335" height="46.333333333333371"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed Limit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2p-VV-OTS">
-                            <rect key="frame" x="120.33333333333334" y="0.0" width="94.666666666666657" height="20.333333333333332"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed Limit Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oy9-uc-mSx">
-                            <rect key="frame" x="85.666666666666671" y="28.333333333333371" width="163.66666666666663" height="18"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="srP-bX-IF6" userLabel="Canvas">
@@ -152,16 +156,13 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="I8g-Of-vte" secondAttribute="trailing" constant="40" id="By9-4L-qTI"/>
                 <constraint firstItem="FNW-QK-w6v" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-60" id="Ecf-G5-IVp"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wSB-jW-SZA" secondAttribute="trailing" constant="20" id="F4U-aw-Lsr"/>
-                <constraint firstItem="srP-bX-IF6" firstAttribute="top" secondItem="sfe-MD-3uh" secondAttribute="bottom" constant="20" id="FfI-7t-YOr"/>
                 <constraint firstItem="srP-bX-IF6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bfy-Tu-Ugz"/>
                 <constraint firstAttribute="trailing" secondItem="srP-bX-IF6" secondAttribute="trailing" id="c1e-XO-Qd8"/>
                 <constraint firstItem="FNW-QK-w6v" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cdY-gB-cXg"/>
-                <constraint firstItem="wSB-jW-SZA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="etk-Yo-8oH"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sfe-MD-3uh" secondAttribute="trailing" constant="20" id="r5o-0r-yTn"/>
-                <constraint firstItem="sfe-MD-3uh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="sEM-lg-faL"/>
-                <constraint firstItem="wSB-jW-SZA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="uDN-A8-LJB"/>
+                <constraint firstItem="I8g-Of-vte" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="gUx-gc-nBA"/>
+                <constraint firstItem="I8g-Of-vte" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-60" id="iR6-0x-B8E"/>
                 <constraint firstAttribute="bottom" secondItem="srP-bX-IF6" secondAttribute="bottom" id="uph-2o-37d"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

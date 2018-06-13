@@ -85,7 +85,6 @@ class SpeedometerViewController: UIViewController {
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var unitLabel: UILabel!
     @IBOutlet weak var coordinatesLabel: UILabel!
-    @IBOutlet weak var speedLimitStackView: UIStackView!
     @IBOutlet weak var speedLimitLabel: UILabel!
     @IBOutlet weak var speedLimitDescriptionLabel: UILabel!
     @IBOutlet weak var settingsButton: UIButton!
@@ -117,7 +116,7 @@ class SpeedometerViewController: UIViewController {
 
 extension SpeedometerViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last, location.horizontalAccuracy <= Configuration.minimumHorizontalAccuracy else {
+        guard let location = locations.last, location.horizontalAccuracy <= Double(Configuration.minimumHorizontalAccuracy) else {
             setDisplayMode(to: .loadingIndicator)
 
             return
@@ -163,14 +162,10 @@ private extension SpeedometerViewController {
         switch displayMode {
         case .loadingIndicator:
             loadingStackView.isHidden = false
-            circleView.isHidden = true
             speedStackView.isHidden = true
-            speedLimitStackView.isHidden = true
         case .speed:
             loadingStackView.isHidden = true
-            circleView.isHidden = false
             speedStackView.isHidden = false
-            speedLimitStackView.isHidden = false
         }
     }
 
