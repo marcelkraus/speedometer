@@ -9,9 +9,11 @@
 "RootViewController.OnboardingInformation.Message" = "Speedometer is just a small ad-free app which shows you your current speed.\n\nTherefore, this app needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease press the button below and confirm access within the popup.";
 
 "SettingsViewController.Button.Close" = "Close";
-"SettingsViewController.Imprint.AppVersion" = "App Version";
-"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nMany thanks to Marc and Thomas for their support. \"Speedometer\" part of app icon designed by Freepik from Flaticon.";
+"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nMany thanks to Marc and Thomas for their support.\n\n\"Speedometer\" part of app icon designed by Freepik from Flaticon.";
 "SettingsViewController.Imprint.Heading" = "Imprint";
+"SettingsViewController.Version.Build" = "Build";
+"SettingsViewController.Version.Heading" = "App Version";
+"SettingsViewController.Version.Version" = "Version";
 
 "SpeedometerViewController.Indicator" = "Waiting for GPS signal…";
 "SpeedometerViewController.NoCoordinates" = "– No Coordinates –";

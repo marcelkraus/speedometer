@@ -12,8 +12,9 @@ class ImprintViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imprintHeading.textColor = view.tintColor
+        versionHeading.textColor = view.tintColor
         view.backgroundColor = UIColor.clear.withAlphaComponent(0.7)
-        heading.textColor = view.tintColor
     }
 
     // MARK: - Outlets & Actions
@@ -24,17 +25,27 @@ class ImprintViewController: UIViewController {
             backgroundView.layer.cornerRadius = 20
         }
     }
-    @IBOutlet weak var heading: UILabel! {
+    @IBOutlet weak var imprintHeading: UILabel! {
         didSet {
-            heading.text = "SettingsViewController.Imprint.Heading".localized
+            imprintHeading.text = "SettingsViewController.Imprint.Heading".localized
         }
     }
-    @IBOutlet weak var contents: UILabel! {
+    @IBOutlet weak var imprintContents: UILabel! {
         didSet {
-            contents.text = "SettingsViewController.Imprint.Contents".localized
+            imprintContents.text = "SettingsViewController.Imprint.Contents".localized
+        }
+    }
+    @IBOutlet weak var versionHeading: UILabel! {
+        didSet {
+            versionHeading.text = "SettingsViewController.Version.Heading".localized
+        }
+    }
+    @IBOutlet weak var versionContents: UILabel! {
+        didSet {
+            versionContents.text = "–"
 
             if let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String {
-                contents.text?.append("\n\n\("SettingsViewController.Imprint.AppVersion".localized): \(versionNumber) (\(buildNumber))")
+                versionContents.text = "\("SettingsViewController.Version.Version".localized) \(versionNumber) (\("SettingsViewController.Version.Build".localized) \(buildNumber))"
             }
         }
     }
