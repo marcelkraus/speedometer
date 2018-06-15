@@ -14,8 +14,8 @@ struct Coordinates {
         let lonSeconds = Double(abs((longitude * 3600).truncatingRemainder(dividingBy: 3600).truncatingRemainder(dividingBy: 60) ))
 
         return (
-            String(format: "%d° %d' %.4f\" %@", latDegrees, latMinutes, latSeconds, latitude >= 0 ? "N" : "S"),
-            String(format: "%d° %d' %.4f\" %@", lonDegrees, lonMinutes, lonSeconds, longitude >= 0 ? "E" : "W")
+            String(format: "%d° %d' %.0f\" %@", latDegrees, latMinutes, latSeconds, latitude >= 0 ? "SpeedometerViewController.Orientation.North".localized : "SpeedometerViewController.Orientation.South".localized),
+            String(format: "%d° %d' %.0f\" %@", lonDegrees, lonMinutes, lonSeconds, longitude >= 0 ? "SpeedometerViewController.Orientation.East".localized : "SpeedometerViewController.Orientation.West".localized)
         )
     }
 }

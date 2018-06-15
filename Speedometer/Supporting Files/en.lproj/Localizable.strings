@@ -15,6 +15,10 @@
 
 "SpeedometerViewController.Indicator" = "Waiting for GPS signal…";
 "SpeedometerViewController.NoCoordinates" = "– No Coordinates –";
+"SpeedometerViewController.Orientation.East" = "East";
+"SpeedometerViewController.Orientation.North" = "North";
+"SpeedometerViewController.Orientation.South" = "South";
+"SpeedometerViewController.Orientation.West" = "West";
 "SpeedometerViewController.SpeedLimit.Button.TapToReleaseSpeedLimit" = "Tap here to release";
 "SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit" = "Tap here to set";
 "SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Speed limit set to";
