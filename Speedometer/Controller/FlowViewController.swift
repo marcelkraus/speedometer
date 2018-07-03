@@ -45,7 +45,7 @@ private extension FlowViewController {
                 messageViewController.messageType = .locationAuthorizationStatusDenied
                 self.transition(to: messageViewController)
             case .authorizedWhenInUse, .authorizedAlways:
-                self.transition(to: SpeedometerViewController(locationManager: self.locationManager, unit: Unit(rawValue: UserDefaults.standard.string(forKey: Configuration.currentUnitDefaultsKey)!)!))
+                self.transition(to: storyboard.instantiateViewController(withIdentifier: "SpeedometerViewControllerIdentifier"))
             }
         }
     }

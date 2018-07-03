@@ -2,7 +2,7 @@ import CoreLocation
 import UIKit
 
 class SpeedometerViewController: UIViewController {
-    private let locationManager: CLLocationManager
+    private let locationManager = CLLocationManager()
 
     private var speed: Speed? {
         didSet {
@@ -25,7 +25,7 @@ class SpeedometerViewController: UIViewController {
 
     private var coordinates: Coordinates? {
         didSet {
-            guard let coordinates = coordinates  else {
+            guard let coordinates = coordinates else {
                 return
             }
 
@@ -47,7 +47,7 @@ class SpeedometerViewController: UIViewController {
         }
     }
 
-    private var unit: Unit {
+    private var unit: Unit = Unit.milesPerHour {
         didSet {
             UserDefaults.standard.removeObject(forKey: Configuration.currentSpeedLimitDefaultsKey)
 
@@ -58,33 +58,34 @@ class SpeedometerViewController: UIViewController {
 
     // MARK: - Controller Lifecycle
 
-    init(locationManager: CLLocationManager, unit: Unit) {
-        self.locationManager = locationManager
-        self.unit = unit
-
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("Not implemented")
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureView()
         configureLocationManager()
+        configureView()
     }
 
     // MARK: - Outlets & Actions
 
     @IBOutlet weak var circleView: CircleView!
-    @IBOutlet weak var inaccurateSignalIndicatorLabel: UILabel!
+    @IBOutlet weak var inaccurateSignalIndicatorLabel: UILabel! {
+        didSet {
+            inaccurateSignalIndicatorLabel.text = "SpeedometerViewController.Indicator".localized
+        }
+    }
     @IBOutlet weak var loadingStackView: UIStackView!
     @IBOutlet weak var speedStackView: UIStackView!
     @IBOutlet weak var speedLabel: UILabel!
-    @IBOutlet weak var unitLabel: UILabel!
-    @IBOutlet weak var coordinatesLabel: UILabel!
+    @IBOutlet weak var unitLabel: UILabel! {
+        didSet {
+            unitLabel.text = unit.abbreviation
+        }
+    }
+    @IBOutlet weak var coordinatesLabel: UILabel! {
+        didSet {
+            coordinatesLabel.text = "SpeedometerViewController.NoCoordinates".localized
+        }
+    }
     @IBOutlet weak var speedLimitLabel: UILabel!
     @IBOutlet weak var speedLimitButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
@@ -94,16 +95,7 @@ class SpeedometerViewController: UIViewController {
             units.enumerated().forEach { (index, unit) in
                 unitSegmentedControl.insertSegment(withTitle: unit.abbreviation, at: index, animated: false)
             }
-
-            unitSegmentedControl.selectedSegmentIndex = units.index(where: { $0.abbreviation == unit.abbreviation }) ?? 0
         }
-    }
-
-    // Will be implemented by a seque in storyboard later…
-    @IBAction func presentImprint(_ sender: UIButton) {
-        let storyboard = UIStoryboard.init(name: "Speedometer", bundle: nil)
-
-        present(storyboard.instantiateViewController(withIdentifier: "ImprintViewControllerIdentifier"), animated: true, completion: nil)
     }
 
     @IBAction func updateUnit(_ sender: UISegmentedControl) {
@@ -134,28 +126,28 @@ extension SpeedometerViewController: CLLocationManagerDelegate {
     }
 }
 
-// MARK: - Private Methods
+// MARK: - View Controller Configuration
+
+private extension SpeedometerViewController {
+    func configureLocationManager() {
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+    }
+
+    func configureView() {
+        setDisplayMode(to: .loadingIndicator)
+        updateUnit(Unit(rawValue: UserDefaults.standard.string(forKey: Configuration.currentUnitDefaultsKey)!)!)
+        resetSpeedLimitLabels()
+        StoreReviewHelper.askForReview()
+    }
+}
+
+// MARK: - Internal
 
 private extension SpeedometerViewController {
     enum DisplayMode {
         case loadingIndicator
         case speed
-    }
-
-    func configureView() {
-        setDisplayMode(to: .loadingIndicator)
-
-        inaccurateSignalIndicatorLabel.text = "SpeedometerViewController.Indicator".localized
-        coordinatesLabel.text = "SpeedometerViewController.NoCoordinates".localized
-        unitLabel.text = unit.abbreviation
-        resetSpeedLimitLabels()
-
-        StoreReviewHelper.askForReview()
-    }
-
-    func resetSpeedLimitLabels() {
-        speedLimitLabel.text = "SpeedometerViewController.SpeedLimit.NoSpeedLimit".localized
-        speedLimitButton.setTitle("SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit".localized, for: .normal)
     }
 
     func setDisplayMode(to displayMode: DisplayMode) {
@@ -171,6 +163,7 @@ private extension SpeedometerViewController {
 
     func updateUnit(_ unit: Unit) {
         self.unit = unit
+        unitSegmentedControl.selectedSegmentIndex = units.index(where: { $0.abbreviation == unit.abbreviation }) ?? 0
 
         guard let speedLimit = speedLimit else {
             return
@@ -189,8 +182,8 @@ private extension SpeedometerViewController {
         speedLimit = speed
     }
 
-    func configureLocationManager() {
-        locationManager.startUpdatingLocation()
-        locationManager.delegate = self
+    func resetSpeedLimitLabels() {
+        speedLimitLabel.text = "SpeedometerViewController.SpeedLimit.NoSpeedLimit".localized
+        speedLimitButton.setTitle("SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit".localized, for: .normal)
     }
 }

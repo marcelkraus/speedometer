@@ -21,7 +21,6 @@
 		DF8FDCEA2008FD0500140DA9 /* ImprintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FDCE82008FD0500140DA9 /* ImprintViewController.swift */; };
 		DF94839D20D16C7E009B120B /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94839C20D16C7E009B120B /* Coordinates.swift */; };
 		DF962C4F1FD5A41300514B06 /* SpeedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */; };
-		DF962C511FD5A42B00514B06 /* SpeedometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */; };
 		DF9DCB0220ADD770008BAE8B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DCB0120ADD770008BAE8B /* Configuration.swift */; };
 		DF9DCB0A20ADD8EC008BAE8B /* SpeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DCB0920ADD8EC008BAE8B /* SpeedTests.swift */; };
 		DF9DCB1320ADDAED008BAE8B /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DCB1220ADDAED008BAE8B /* UnitTests.swift */; };
@@ -61,7 +60,6 @@
 		DF8FDCE82008FD0500140DA9 /* ImprintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprintViewController.swift; sourceTree = "<group>"; };
 		DF94839C20D16C7E009B120B /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerViewController.swift; sourceTree = "<group>"; };
-		DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeedometerViewController.xib; sourceTree = "<group>"; };
 		DF9DCB0120ADD770008BAE8B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		DF9DCB0720ADD8EC008BAE8B /* SpeedometerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedometerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9DCB0920ADD8EC008BAE8B /* SpeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTests.swift; sourceTree = "<group>"; };
@@ -161,15 +159,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DF78E6AB2008BDB0009038B6 /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */,
-				DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
 		DF7CF24D20EBD31E0058823B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +166,7 @@
 				DF8FDCE82008FD0500140DA9 /* ImprintViewController.swift */,
 				DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */,
 				DFCA0C661FD5E84400260E24 /* MessageViewController.swift */,
+				DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */,
 				DF7CF24E20EBDA480058823B /* WelcomeViewController.swift */,
 			);
 			path = Controller;
@@ -235,7 +225,6 @@
 				DF7CF24D20EBD31E0058823B /* Controller */,
 				DF8FDCE72008DD6200140DA9 /* Extensions */,
 				DF5F138B202A5AAE006D51DA /* Model */,
-				DF78E6AB2008BDB0009038B6 /* Screens */,
 				DF568E471FD0119600D546B8 /* Supporting Files */,
 				DF4C364F20D133B500A9E1B7 /* Views */,
 				DF7CF24B20EBD24A0058823B /* Speedometer.storyboard */,
@@ -342,7 +331,6 @@
 			files = (
 				DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */,
 				DF7CF24C20EBD24A0058823B /* Speedometer.storyboard in Resources */,
-				DF962C511FD5A42B00514B06 /* SpeedometerViewController.xib in Resources */,
 				DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */,
 				DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */,
 				DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */,
