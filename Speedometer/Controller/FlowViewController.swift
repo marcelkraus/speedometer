@@ -2,7 +2,6 @@ import CoreLocation
 import UIKit
 
 class FlowViewController: UIViewController {
-    private let appStoryboard = UIStoryboard.init(name: "Speedometer", bundle: nil)
     private let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
@@ -30,17 +29,19 @@ extension FlowViewController: CLLocationManagerDelegate {
 
 private extension FlowViewController {
     func chooseViewController() {
-        let loadingViewController = appStoryboard.instantiateViewController(withIdentifier: "LoadingViewControllerIdentifier")
+        let storyboard = UIStoryboard.init(name: "Speedometer", bundle: nil)
+
+        let loadingViewController = storyboard.instantiateViewController(withIdentifier: "LoadingViewControllerIdentifier")
         transition(to: loadingViewController) { _ in
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
-                self.transition(to: self.appStoryboard.instantiateViewController(withIdentifier: "WelcomeViewControllerIdentifier"))
+                self.transition(to: storyboard.instantiateViewController(withIdentifier: "WelcomeViewControllerIdentifier"))
             case .restricted:
-                let messageViewController = self.appStoryboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
+                let messageViewController = storyboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
                 messageViewController.messageType = .locationAuthorizationStatusRestricted
                 self.transition(to: messageViewController)
             case .denied:
-                let messageViewController = self.appStoryboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
+                let messageViewController = storyboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
                 messageViewController.messageType = .locationAuthorizationStatusDenied
                 self.transition(to: messageViewController)
             case .authorizedWhenInUse, .authorizedAlways:
