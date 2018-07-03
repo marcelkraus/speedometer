@@ -13,18 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         application.isIdleTimerDisabled = true
         StoreReviewHelper.incrementAppStartCounter()
-        setupRootViewController()
 
         return true
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        setupRootViewController()
-    }
-
-    private func setupRootViewController() {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = RootViewController()
-        window?.makeKeyAndVisible()
     }
 }

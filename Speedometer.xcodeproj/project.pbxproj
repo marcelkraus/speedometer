@@ -131,6 +131,7 @@
 		DF568E471FD0119600D546B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */,
 				DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */,
 				DF9DCB0120ADD770008BAE8B /* Configuration.swift */,
 				DF58A64A2057FAC900005A07 /* Fonts */,
@@ -178,6 +179,7 @@
 			children = (
 				DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */,
 				DFCA0C661FD5E84400260E24 /* MessageViewController.swift */,
+				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
 				DF7CF24E20EBDA480058823B /* WelcomeViewController.swift */,
 			);
 			path = Controller;
@@ -239,8 +241,6 @@
 				DF78E6AB2008BDB0009038B6 /* Screens */,
 				DF568E471FD0119600D546B8 /* Supporting Files */,
 				DF4C364F20D133B500A9E1B7 /* Views */,
-				DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */,
-				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
 				DF7CF24B20EBD24A0058823B /* Speedometer.storyboard */,
 			);
 			path = Speedometer;

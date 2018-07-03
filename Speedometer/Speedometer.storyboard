@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GRy-22-fOU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l4l-Nh-XnS">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -57,7 +57,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1Q-N4-GKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="302" y="-177"/>
+            <point key="canvasLocation" x="778" y="-181"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="GBF-Ln-TbM">
+            <objects>
+                <viewController id="l4l-Nh-XnS" customClass="RootViewController" customModule="Speedometer" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Z8-SP-8Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1308" y="-181"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="8ik-sS-2HN">
@@ -133,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3aP-zL-Lv5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-367" y="-177"/>
+            <point key="canvasLocation" x="-503" y="-181"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="IEW-2K-gb6">
@@ -195,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="urh-qS-XQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="-177"/>
+            <point key="canvasLocation" x="138" y="-181"/>
         </scene>
     </scenes>
 </document>
