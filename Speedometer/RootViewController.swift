@@ -3,6 +3,7 @@ import UIKit
 
 class RootViewController: UIViewController {
     private let locationManager = CLLocationManager()
+    private let currentStoryboard = UIStoryboard.init(name: "Speedometer", bundle: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,20 +12,17 @@ class RootViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        let messageViewController = currentStoryboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
+        messageViewController.locationManager = locationManager
+        messageViewController.heading = "RootViewController.OnboardingInformation.Heading".localized
+        messageViewController.message = "RootViewController.OnboardingInformation.Message".localized
+        messageViewController.buttonTitle = "RootViewController.OnboardingInformation.Button".localized
+
         guard CLLocationManager.authorizationStatus() != .notDetermined else {
-            return transition(to:
-                MessageViewController(
-                    locationManager: locationManager,
-                    heading: "RootViewController.OnboardingInformation.Heading".localized,
-                    message: "RootViewController.OnboardingInformation.Message".localized,
-                    buttonTitle: "RootViewController.OnboardingInformation.Button".localized
-                )
-            )
+            return transition(to: messageViewController)
         }
 
-        let storyboard = UIStoryboard.init(name: "Speedometer", bundle: nil)
-        let loadingViewController = storyboard.instantiateViewController(withIdentifier: "LoadingViewControllerIdentifier")
-
+        let loadingViewController = currentStoryboard.instantiateViewController(withIdentifier: "LoadingViewControllerIdentifier")
         transition(to: loadingViewController) { _ in
             self.chooseViewController()
         }
@@ -45,21 +43,15 @@ private extension RootViewController {
     func chooseViewController() {
         switch CLLocationManager.authorizationStatus() {
         case .restricted:
-            self.transition(to:
-                MessageViewController(
-                    locationManager: locationManager,
-                    heading: "RootViewController.LocationAuthorizationStatusRestricted.Heading".localized,
-                    message: "RootViewController.LocationAuthorizationStatusRestricted.Message".localized
-                )
-            )
+            let messageViewController = currentStoryboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
+            messageViewController.heading = "RootViewController.LocationAuthorizationStatusRestricted.Heading".localized
+            messageViewController.message = "RootViewController.LocationAuthorizationStatusRestricted.Message".localized
+            self.transition(to: messageViewController)
         case .denied:
-            self.transition(to:
-                MessageViewController(
-                    locationManager: locationManager,
-                    heading: "RootViewController.LocationAuthorizationStatusDenied.Heading".localized,
-                    message: "RootViewController.LocationAuthorizationStatusRestricted.Message".localized
-                )
-            )
+            let messageViewController = currentStoryboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
+            messageViewController.heading = "RootViewController.LocationAuthorizationStatusDenied.Heading".localized
+            messageViewController.message = "RootViewController.LocationAuthorizationStatusRestricted.Message".localized
+            self.transition(to: messageViewController)
         case .authorizedWhenInUse:
             self.transition(to: SpeedometerViewController(locationManager: self.locationManager, unit: Unit(rawValue: UserDefaults.standard.string(forKey: Configuration.currentUnitDefaultsKey)!)!))
         default:

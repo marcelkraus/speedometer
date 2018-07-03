@@ -59,5 +59,81 @@
             </objects>
             <point key="canvasLocation" x="-305" y="-176"/>
         </scene>
+        <!--Message View Controller-->
+        <scene sceneID="8ik-sS-2HN">
+            <objects>
+                <viewController storyboardIdentifier="MessageViewControllerIdentifier" id="GRy-22-fOU" customClass="MessageViewController" customModule="Speedometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WGA-qy-xE2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Ncr-aR-bec">
+                                <rect key="frame" x="40" y="277" width="295" height="138.33333333333337"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Imw-JZ-pwU">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="58.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztl-oX-EHP">
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="20.333333333333332"/>
+                                                <color key="tintColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents of message." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTF-1n-u1q">
+                                                <rect key="frame" x="0.0" y="40.333333333333314" width="295" height="18"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c14-vH-0Sb">
+                                        <rect key="frame" x="0.0" y="98.333333333333314" width="295" height="40"/>
+                                        <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="3Oa-xt-usI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Call To Action"/>
+                                        <connections>
+                                            <action selector="authorizeApp:" destination="GRy-22-fOU" eventType="touchUpInside" id="Xe5-dL-kHd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epk-dm-206" userLabel="Canvas">
+                                <rect key="frame" x="0.0" y="692" width="375" height="120"/>
+                                <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Ecd-cM-tdF"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="KWm-Ev-0dw"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="ucH-hg-xWy"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="epk-dm-206" secondAttribute="trailing" id="FP0-OI-UER"/>
+                            <constraint firstItem="Ncr-aR-bec" firstAttribute="leading" secondItem="EQ6-9P-lY8" secondAttribute="leading" constant="40" id="MhM-og-56Y"/>
+                            <constraint firstAttribute="trailing" secondItem="Ncr-aR-bec" secondAttribute="trailing" constant="40" id="fYM-gF-1VQ"/>
+                            <constraint firstItem="Ncr-aR-bec" firstAttribute="centerY" secondItem="WGA-qy-xE2" secondAttribute="centerY" constant="-60" id="sfn-cG-dS8"/>
+                            <constraint firstAttribute="bottom" secondItem="epk-dm-206" secondAttribute="bottom" id="tYd-ua-bEv"/>
+                            <constraint firstItem="epk-dm-206" firstAttribute="leading" secondItem="WGA-qy-xE2" secondAttribute="leading" id="wk0-pw-Wvj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EQ6-9P-lY8"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="c14-vH-0Sb" id="JCR-QZ-uPE"/>
+                        <outlet property="headingLabel" destination="ztl-oX-EHP" id="VWB-j3-vGA"/>
+                        <outlet property="messageLabel" destination="VTF-1n-u1q" id="uSL-LB-moe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3aP-zL-Lv5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="361" y="-177"/>
+        </scene>
     </scenes>
 </document>
