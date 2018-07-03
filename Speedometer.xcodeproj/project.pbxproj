@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DB42B48D5A357451A42C6030 /* Pods_Speedometer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3678B8DD1591CDACFF17F21D /* Pods_Speedometer.framework */; };
-		DF1F79DA2059EAA500BAFC11 /* ImprintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF1F79D72059EA9E00BAFC11 /* ImprintViewController.xib */; };
 		DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */; };
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
 		DF3010D8205A929E005B493D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3010D7205A929E005B493D /* String.swift */; };
@@ -49,7 +48,6 @@
 /* Begin PBXFileReference section */
 		0A3BDD7AE02C355FDC6B2A24 /* Pods-Speedometer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Speedometer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Speedometer/Pods-Speedometer.debug.xcconfig"; sourceTree = "<group>"; };
 		3678B8DD1591CDACFF17F21D /* Pods_Speedometer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Speedometer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF1F79D72059EA9E00BAFC11 /* ImprintViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImprintViewController.xib; sourceTree = "<group>"; };
 		DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF2C45AE1FCC2EF0005C8906 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		DF3010D7205A929E005B493D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -166,8 +164,6 @@
 		DF78E6AB2008BDB0009038B6 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				DF8FDCE82008FD0500140DA9 /* ImprintViewController.swift */,
-				DF1F79D72059EA9E00BAFC11 /* ImprintViewController.xib */,
 				DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */,
 				DF962C501FD5A42B00514B06 /* SpeedometerViewController.xib */,
 			);
@@ -178,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				DFCA0C601FD5E17300260E24 /* FlowViewController.swift */,
+				DF8FDCE82008FD0500140DA9 /* ImprintViewController.swift */,
 				DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */,
 				DFCA0C661FD5E84400260E24 /* MessageViewController.swift */,
 				DF7CF24E20EBDA480058823B /* WelcomeViewController.swift */,
@@ -345,7 +342,6 @@
 			files = (
 				DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */,
 				DF7CF24C20EBD24A0058823B /* Speedometer.storyboard in Resources */,
-				DF1F79DA2059EAA500BAFC11 /* ImprintViewController.xib in Resources */,
 				DF962C511FD5A42B00514B06 /* SpeedometerViewController.xib in Resources */,
 				DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */,
 				DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */,

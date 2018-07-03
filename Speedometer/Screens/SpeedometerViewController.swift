@@ -99,12 +99,11 @@ class SpeedometerViewController: UIViewController {
         }
     }
 
-    @IBAction func presentSettings(_ sender: UIButton) {
-        let imprintViewController = ImprintViewController()
-        imprintViewController.modalPresentationStyle = .overCurrentContext
-        imprintViewController.modalTransitionStyle = .crossDissolve
+    // Will be implemented by a seque in storyboard later…
+    @IBAction func presentImprint(_ sender: UIButton) {
+        let storyboard = UIStoryboard.init(name: "Speedometer", bundle: nil)
 
-        present(imprintViewController, animated: true, completion: nil)
+        present(storyboard.instantiateViewController(withIdentifier: "ImprintViewControllerIdentifier"), animated: true, completion: nil)
     }
 
     @IBAction func updateUnit(_ sender: UISegmentedControl) {

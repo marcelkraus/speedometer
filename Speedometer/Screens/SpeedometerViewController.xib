@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,14 +35,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FNW-QK-w6v">
-                    <rect key="frame" x="81.666666666666686" y="310.33333333333331" width="212" height="71.333333333333314"/>
+                    <rect key="frame" x="81.5" y="310.5" width="212" height="71.5"/>
                     <subviews>
                         <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dtP-dW-3ae">
-                            <rect key="frame" x="87.333333333333329" y="0.0" width="37" height="37"/>
+                            <rect key="frame" x="87.5" y="0.0" width="37" height="37"/>
                             <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </activityIndicatorView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SpeedometerViewController.Indicator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCG-c3-4MX">
-                            <rect key="frame" x="0.0" y="57.000000000000007" width="212" height="14.333333333333336"/>
+                            <rect key="frame" x="0.0" y="57" width="212" height="14.5"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -53,25 +50,25 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="I8g-Of-vte">
-                    <rect key="frame" x="40" y="149.33333333333334" width="295" height="393.33333333333326"/>
+                    <rect key="frame" x="40" y="149.5" width="295" height="393.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSB-jW-SZA" customClass="CircleView" customModule="Speedometer" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="295" height="295"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DGr-na-3Vj">
-                                    <rect key="frame" x="57.666666666666686" y="69.666666666666671" width="180" height="195.66666666666663"/>
+                                    <rect key="frame" x="64" y="75.5" width="167" height="184"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="Nkq-sX-cWL">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="137.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="167" height="126"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZk-rE-CiX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="126"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="167" height="116.5"/>
                                                     <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="100"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNh-OI-jDg">
-                                                    <rect key="frame" x="59.999999999999986" y="106" width="60" height="31.666666666666657"/>
+                                                    <rect key="frame" x="61" y="96.5" width="45.5" height="29.5"/>
                                                     <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -79,7 +76,7 @@
                                             </subviews>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordinates" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5f-12-Hbi">
-                                            <rect key="frame" x="48.333333333333336" y="177.66666666666669" width="83.333333333333314" height="18"/>
+                                            <rect key="frame" x="42" y="166" width="83.5" height="18"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -95,16 +92,16 @@
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sfe-MD-3uh">
-                            <rect key="frame" x="0.0" y="335" width="295" height="58.333333333333314"/>
+                            <rect key="frame" x="0.0" y="335" width="295" height="58.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed Limit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2p-VV-OTS">
-                                    <rect key="frame" x="100.33333333333334" y="0.0" width="94.666666666666657" height="20.333333333333332"/>
+                                    <rect key="frame" x="100.5" y="0.0" width="94.5" height="20.5"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9p-UN-lmF">
-                                    <rect key="frame" x="113.66666666666666" y="28.333333333333314" width="68" height="30"/>
+                                    <rect key="frame" x="113.5" y="28.5" width="68" height="30"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                     <state key="normal" title="Tap to set"/>
                                     <connections>
@@ -140,7 +137,7 @@
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="presentSettings:" destination="-1" eventType="touchUpInside" id="LVa-l5-g8v"/>
+                                <action selector="presentImprint:" destination="-1" eventType="touchUpInside" id="LVa-l5-g8v"/>
                             </connections>
                         </button>
                     </subviews>
