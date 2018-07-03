@@ -120,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				DF4C365020D133CD00A9E1B7 /* CircleView.swift */,
+				DF7CF24B20EBD24A0058823B /* Speedometer.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,7 +228,6 @@
 				DF5F138B202A5AAE006D51DA /* Model */,
 				DF568E471FD0119600D546B8 /* Supporting Files */,
 				DF4C364F20D133B500A9E1B7 /* Views */,
-				DF7CF24B20EBD24A0058823B /* Speedometer.storyboard */,
 			);
 			path = Speedometer;
 			sourceTree = "<group>";
