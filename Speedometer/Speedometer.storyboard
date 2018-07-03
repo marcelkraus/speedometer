@@ -197,8 +197,8 @@
                         <viewLayoutGuide key="safeArea" id="iI2-YV-9Xd"/>
                     </view>
                     <connections>
-                        <outlet property="headingLabel" destination="Q81-pa-VQw" id="Taw-5l-ihj"/>
-                        <outlet property="messageLabel" destination="vwp-rf-gMu" id="Oie-yR-qSD"/>
+                        <outlet property="messageContents" destination="vwp-rf-gMu" id="Oie-yR-qSD"/>
+                        <outlet property="messageTitle" destination="Q81-pa-VQw" id="Taw-5l-ihj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="urh-qS-XQu" userLabel="First Responder" sceneMemberID="firstResponder"/>

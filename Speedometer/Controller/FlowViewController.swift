@@ -34,17 +34,14 @@ private extension FlowViewController {
         transition(to: loadingViewController) { _ in
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
-                let welcomeViewController = self.appStoryboard.instantiateViewController(withIdentifier: "WelcomeViewControllerIdentifier") as! WelcomeViewController
-                self.transition(to: welcomeViewController)
+                self.transition(to: self.appStoryboard.instantiateViewController(withIdentifier: "WelcomeViewControllerIdentifier"))
             case .restricted:
                 let messageViewController = self.appStoryboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
-                messageViewController.heading = "FlowViewController.LocationAuthorizationStatusRestricted.Heading".localized
-                messageViewController.message = "FlowViewController.LocationAuthorizationStatusRestricted.Message".localized
+                messageViewController.messageType = .locationAuthorizationStatusRestricted
                 self.transition(to: messageViewController)
             case .denied:
                 let messageViewController = self.appStoryboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
-                messageViewController.heading = "FlowViewController.LocationAuthorizationStatusDenied.Heading".localized
-                messageViewController.message = "FlowViewController.LocationAuthorizationStatusRestricted.Message".localized
+                messageViewController.messageType = .locationAuthorizationStatusDenied
                 self.transition(to: messageViewController)
             case .authorizedWhenInUse, .authorizedAlways:
                 self.transition(to: SpeedometerViewController(locationManager: self.locationManager, unit: Unit(rawValue: UserDefaults.standard.string(forKey: Configuration.currentUnitDefaultsKey)!)!))
