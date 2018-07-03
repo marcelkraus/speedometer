@@ -2,7 +2,7 @@ import CoreLocation
 import UIKit
 
 class WelcomeViewController: UIViewController {
-    private lazy var locationManager = CLLocationManager()
+    private let locationManager = CLLocationManager()
 
     @IBOutlet private weak var welcomeMessageTitle: UILabel! {
         didSet {
