@@ -1,9 +1,9 @@
-"LoadingViewController.Indicator" = "Loading…";
+"FlowViewController.LocationAuthorizationStatusDenied.Heading" = "Houston, we've had a problem here!";
+"FlowViewController.LocationAuthorizationStatusDenied.Message" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
+"FlowViewController.LocationAuthorizationStatusRestricted.Heading" = "Houston, we've had a problem here!";
+"FlowViewController.LocationAuthorizationStatusRestricted.Message" = "Please allow access to your location data to use Speedometer\n\nPlease check the following settings:\n\nSettings > Privacy > Location Services > Speedometer > While Using";
 
-"RootViewController.LocationAuthorizationStatusDenied.Heading" = "Houston, we've had a problem here!";
-"RootViewController.LocationAuthorizationStatusDenied.Message" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
-"RootViewController.LocationAuthorizationStatusRestricted.Heading" = "Houston, we've had a problem here!";
-"RootViewController.LocationAuthorizationStatusRestricted.Message" = "Please allow access to your location data to use Speedometer\n\nPlease check the following settings:\n\nSettings > Privacy > Location Services > Speedometer > While Using";
+"LoadingViewController.Indicator" = "Loading…";
 
 "SettingsViewController.Button.Close" = "Close";
 "SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nMany thanks to Marc and Thomas for their support.\n\n\"Speedometer\" part of app icon designed by Freepik from Flaticon.";

@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="809" y="-181"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Flow View Controller-->
         <scene sceneID="GBF-Ln-TbM">
             <objects>
-                <viewController id="l4l-Nh-XnS" customClass="RootViewController" customModule="Speedometer" customModuleProvider="target" sceneMemberID="viewController"/>
+                <viewController id="l4l-Nh-XnS" customClass="FlowViewController" customModule="Speedometer" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Z8-SP-8Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1308" y="-181"/>

@@ -1,7 +1,7 @@
 import CoreLocation
 import UIKit
 
-class RootViewController: UIViewController {
+class FlowViewController: UIViewController {
     private let appStoryboard = UIStoryboard.init(name: "Speedometer", bundle: nil)
     private let locationManager = CLLocationManager()
 
@@ -20,7 +20,7 @@ class RootViewController: UIViewController {
 
 // MARK: - CLLocationManagerDelegate
 
-extension RootViewController: CLLocationManagerDelegate {
+extension FlowViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         self.chooseViewController()
     }
@@ -28,7 +28,7 @@ extension RootViewController: CLLocationManagerDelegate {
 
 // MARK: - Private Methods
 
-private extension RootViewController {
+private extension FlowViewController {
     func chooseViewController() {
         let loadingViewController = appStoryboard.instantiateViewController(withIdentifier: "LoadingViewControllerIdentifier")
         transition(to: loadingViewController) { _ in
@@ -38,13 +38,13 @@ private extension RootViewController {
                 self.transition(to: welcomeViewController)
             case .restricted:
                 let messageViewController = self.appStoryboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
-                messageViewController.heading = "RootViewController.LocationAuthorizationStatusRestricted.Heading".localized
-                messageViewController.message = "RootViewController.LocationAuthorizationStatusRestricted.Message".localized
+                messageViewController.heading = "FlowViewController.LocationAuthorizationStatusRestricted.Heading".localized
+                messageViewController.message = "FlowViewController.LocationAuthorizationStatusRestricted.Message".localized
                 self.transition(to: messageViewController)
             case .denied:
                 let messageViewController = self.appStoryboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
-                messageViewController.heading = "RootViewController.LocationAuthorizationStatusDenied.Heading".localized
-                messageViewController.message = "RootViewController.LocationAuthorizationStatusRestricted.Message".localized
+                messageViewController.heading = "FlowViewController.LocationAuthorizationStatusDenied.Heading".localized
+                messageViewController.message = "FlowViewController.LocationAuthorizationStatusRestricted.Message".localized
                 self.transition(to: messageViewController)
             case .authorizedWhenInUse, .authorizedAlways:
                 self.transition(to: SpeedometerViewController(locationManager: self.locationManager, unit: Unit(rawValue: UserDefaults.standard.string(forKey: Configuration.currentUnitDefaultsKey)!)!))

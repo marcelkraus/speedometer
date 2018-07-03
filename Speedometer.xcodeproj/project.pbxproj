@@ -28,7 +28,7 @@
 		DF9DCB1320ADDAED008BAE8B /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DCB1220ADDAED008BAE8B /* UnitTests.swift */; };
 		DFB6D73820815E2700BFC1F3 /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB6D73720815E2700BFC1F3 /* Speed.swift */; };
 		DFC358F4205A9BCF00DEDB9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFC358F6205A9BCF00DEDB9E /* InfoPlist.strings */; };
-		DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C601FD5E17300260E24 /* RootViewController.swift */; };
+		DFCA0C611FD5E17300260E24 /* FlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C601FD5E17300260E24 /* FlowViewController.swift */; };
 		DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */; };
 		DFCA0C671FD5E84400260E24 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C661FD5E84400260E24 /* MessageViewController.swift */; };
 		DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFE69BD7205A904000FA0CE3 /* Localizable.strings */; };
@@ -72,7 +72,7 @@
 		DFB6D73720815E2700BFC1F3 /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		DFC358F8205A9BDD00DEDB9E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DFC358F9205A9BE800DEDB9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DFCA0C601FD5E17300260E24 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		DFCA0C601FD5E17300260E24 /* FlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowViewController.swift; sourceTree = "<group>"; };
 		DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		DFCA0C661FD5E84400260E24 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		DFE69BD6205A904000FA0CE3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -177,9 +177,9 @@
 		DF7CF24D20EBD31E0058823B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DFCA0C601FD5E17300260E24 /* FlowViewController.swift */,
 				DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */,
 				DFCA0C661FD5E84400260E24 /* MessageViewController.swift */,
-				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
 				DF7CF24E20EBDA480058823B /* WelcomeViewController.swift */,
 			);
 			path = Controller;
@@ -443,7 +443,7 @@
 				DFB6D73820815E2700BFC1F3 /* Speed.swift in Sources */,
 				DF8FDCEA2008FD0500140DA9 /* ImprintViewController.swift in Sources */,
 				DF7CF24F20EBDA480058823B /* WelcomeViewController.swift in Sources */,
-				DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */,
+				DFCA0C611FD5E17300260E24 /* FlowViewController.swift in Sources */,
 				DFCA0C671FD5E84400260E24 /* MessageViewController.swift in Sources */,
 				DF4C365120D133CD00A9E1B7 /* CircleView.swift in Sources */,
 				DF94839D20D16C7E009B120B /* Coordinates.swift in Sources */,
