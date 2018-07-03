@@ -4,21 +4,21 @@ import UIKit
 class WelcomeViewController: UIViewController {
     private let locationManager = CLLocationManager()
 
-    @IBOutlet private weak var welcomeMessageTitle: UILabel! {
+    @IBOutlet private weak var messageTitle: UILabel! {
         didSet {
-            welcomeMessageTitle.text = "WelcomeViewController.WelcomeMessageTitle".localized
+            messageTitle.text = "WelcomeViewController.Title".localized
         }
     }
 
-    @IBOutlet private weak var welcomeMessageContents: UILabel! {
+    @IBOutlet private weak var messageContents: UILabel! {
         didSet {
-            welcomeMessageContents.text = "WelcomeViewController.WelcomeMessageContents".localized
+            messageContents.text = "WelcomeViewController.Contents".localized
         }
     }
 
-    @IBOutlet private weak var authorizeLocationDataButton: UIButton! {
+    @IBOutlet private weak var authorizationButton: UIButton! {
         didSet {
-            authorizeLocationDataButton.setTitle("WelcomeViewController.ButtonTitle".localized, for: .normal)
+            authorizationButton.setTitle("WelcomeViewController.Button".localized, for: .normal)
         }
     }
 

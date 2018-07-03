@@ -25,6 +25,6 @@
 "SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Limit bei";
 "SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "Kein Geschwindigkeitslimit";
 
-"WelcomeViewController.ButtonTitle" = "OK, leg los!";
-"WelcomeViewController.WelcomeMessageTitle" = "Herzlich Willkommen!";
-"WelcomeViewController.WelcomeMessageContents" = "Tacho ist eine kostenlose, werbefreie App, die dir deine aktuelle Geschwindigkeit anzeigt.\n\nAus diesem Grund benötigt Tacho Zugriff auf deine Standortdaten, die nur für diese Zwecke verwendet und mit niemandem geteilt werden.\n\nBitte betätige den untenstehenden Button und bestätige den Hinweis im sich öffnenden Fenster.";
+"WelcomeViewController.Button" = "OK, leg los!";
+"WelcomeViewController.Title" = "Herzlich Willkommen!";
+"WelcomeViewController.Contents" = "Tacho ist eine kostenlose, werbefreie App, die dir deine aktuelle Geschwindigkeit anzeigt.\n\nAus diesem Grund benötigt Tacho Zugriff auf deine Standortdaten, die nur für diese Zwecke verwendet und mit niemandem geteilt werden.\n\nBitte betätige den untenstehenden Button und bestätige den Hinweis im sich öffnenden Fenster.";
