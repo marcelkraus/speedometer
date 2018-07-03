@@ -12,14 +12,9 @@ class RootViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        let messageViewController = currentStoryboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
-        messageViewController.locationManager = locationManager
-        messageViewController.heading = "RootViewController.OnboardingInformation.Heading".localized
-        messageViewController.message = "RootViewController.OnboardingInformation.Message".localized
-        messageViewController.buttonTitle = "RootViewController.OnboardingInformation.Button".localized
-
+        let welcomeViewController = currentStoryboard.instantiateViewController(withIdentifier: "WelcomeViewControllerIdentifier") as! WelcomeViewController
         guard CLLocationManager.authorizationStatus() != .notDetermined else {
-            return transition(to: messageViewController)
+            return transition(to: welcomeViewController)
         }
 
         let loadingViewController = currentStoryboard.instantiateViewController(withIdentifier: "LoadingViewControllerIdentifier")

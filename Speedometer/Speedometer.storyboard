@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GRy-22-fOU">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -57,31 +57,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1Q-N4-GKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-305" y="-176"/>
+            <point key="canvasLocation" x="302" y="-177"/>
         </scene>
-        <!--Message View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="8ik-sS-2HN">
             <objects>
-                <viewController storyboardIdentifier="MessageViewControllerIdentifier" id="GRy-22-fOU" customClass="MessageViewController" customModule="Speedometer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewControllerIdentifier" id="GRy-22-fOU" customClass="WelcomeViewController" customModule="Speedometer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WGA-qy-xE2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Ncr-aR-bec">
-                                <rect key="frame" x="40" y="277" width="295" height="138.33333333333337"/>
+                                <rect key="frame" x="40" y="267" width="295" height="158.33333333333337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Imw-JZ-pwU">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="58.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="78.333333333333329"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztl-oX-EHP">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Speedometer" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztl-oX-EHP">
                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="20.333333333333332"/>
                                                 <color key="tintColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents of message." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTF-1n-u1q">
-                                                <rect key="frame" x="0.0" y="40.333333333333314" width="295" height="18"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the welcome information after the first start of the app." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTF-1n-u1q">
+                                                <rect key="frame" x="0.0" y="40.333333333333314" width="295" height="38"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -89,16 +89,16 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c14-vH-0Sb">
-                                        <rect key="frame" x="0.0" y="98.333333333333314" width="295" height="40"/>
+                                        <rect key="frame" x="0.0" y="118.33333333333331" width="295" height="40"/>
                                         <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="3Oa-xt-usI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Call To Action"/>
+                                        <state key="normal" title="Authorize location access"/>
                                         <connections>
-                                            <action selector="authorizeApp:" destination="GRy-22-fOU" eventType="touchUpInside" id="Xe5-dL-kHd"/>
+                                            <action selector="authorizeApp:" destination="GRy-22-fOU" eventType="touchUpInside" id="KLt-ck-P9U"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -126,14 +126,76 @@
                         <viewLayoutGuide key="safeArea" id="EQ6-9P-lY8"/>
                     </view>
                     <connections>
-                        <outlet property="button" destination="c14-vH-0Sb" id="JCR-QZ-uPE"/>
-                        <outlet property="headingLabel" destination="ztl-oX-EHP" id="VWB-j3-vGA"/>
-                        <outlet property="messageLabel" destination="VTF-1n-u1q" id="uSL-LB-moe"/>
+                        <outlet property="authorizeLocationDataButton" destination="c14-vH-0Sb" id="Eyc-9S-t85"/>
+                        <outlet property="welcomeMessageContents" destination="VTF-1n-u1q" id="Bqx-dy-Odk"/>
+                        <outlet property="welcomeMessageTitle" destination="ztl-oX-EHP" id="EHQ-oK-bQI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3aP-zL-Lv5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="361" y="-177"/>
+            <point key="canvasLocation" x="-367" y="-177"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="IEW-2K-gb6">
+            <objects>
+                <viewController storyboardIdentifier="MessageViewControllerIdentifier" id="w8A-XS-I8M" customClass="MessageViewController" customModule="Speedometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kc5-Mr-pgG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ljz-YO-zYi">
+                                <rect key="frame" x="40" y="317" width="295" height="58.333333333333314"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ttm-cW-T9e">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="58.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q81-pa-VQw">
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="20.333333333333332"/>
+                                                <color key="tintColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents of message." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwp-rf-gMu">
+                                                <rect key="frame" x="0.0" y="40.333333333333314" width="295" height="18"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dL0-m1-2aU" userLabel="Canvas">
+                                <rect key="frame" x="0.0" y="692" width="375" height="120"/>
+                                <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="70S-CC-ihk"/>
+                                    <constraint firstAttribute="height" constant="120" id="hK6-lT-k6R"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="TQW-1k-hfR"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dL0-m1-2aU" secondAttribute="bottom" id="8NG-Ep-kCz"/>
+                            <constraint firstItem="ljz-YO-zYi" firstAttribute="leading" secondItem="iI2-YV-9Xd" secondAttribute="leading" constant="40" id="AoP-5F-wzs"/>
+                            <constraint firstAttribute="trailing" secondItem="dL0-m1-2aU" secondAttribute="trailing" id="J2C-cy-q2g"/>
+                            <constraint firstItem="ljz-YO-zYi" firstAttribute="centerY" secondItem="Kc5-Mr-pgG" secondAttribute="centerY" constant="-60" id="KlK-zF-Zq8"/>
+                            <constraint firstAttribute="trailing" secondItem="ljz-YO-zYi" secondAttribute="trailing" constant="40" id="SYG-xF-Dhn"/>
+                            <constraint firstItem="dL0-m1-2aU" firstAttribute="leading" secondItem="Kc5-Mr-pgG" secondAttribute="leading" id="ZuP-9E-w45"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iI2-YV-9Xd"/>
+                    </view>
+                    <connections>
+                        <outlet property="headingLabel" destination="Q81-pa-VQw" id="Taw-5l-ihj"/>
+                        <outlet property="messageLabel" destination="vwp-rf-gMu" id="Oie-yR-qSD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="urh-qS-XQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020" y="-177"/>
         </scene>
     </scenes>
 </document>
