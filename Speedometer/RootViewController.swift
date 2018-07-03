@@ -22,7 +22,10 @@ class RootViewController: UIViewController {
             )
         }
 
-        transition(to: LoadingViewController()) { _ in
+        let storyboard = UIStoryboard.init(name: "Speedometer", bundle: nil)
+        let loadingViewController = storyboard.instantiateViewController(withIdentifier: "LoadingViewControllerIdentifier")
+
+        transition(to: loadingViewController) { _ in
             self.chooseViewController()
         }
     }

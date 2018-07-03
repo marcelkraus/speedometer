@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Loading View Controller-->
+        <scene sceneID="Ygv-cW-pl4">
+            <objects>
+                <viewController storyboardIdentifier="LoadingViewControllerIdentifier" id="Rvt-CP-njl" customClass="LoadingViewController" customModule="Speedometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U1O-Ul-3pl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4u3-nu-BcQ">
+                                <rect key="frame" x="145.66666666666666" y="310.33333333333331" width="84" height="71.333333333333314"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="p0i-q2-I1r">
+                                        <rect key="frame" x="23.666666666666686" y="0.0" width="37" height="37"/>
+                                        <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indicator Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaO-Qd-YCo">
+                                        <rect key="frame" x="0.0" y="57.000000000000007" width="84" height="14.333333333333336"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phw-5g-m5d" userLabel="Canvas">
+                                <rect key="frame" x="0.0" y="692" width="375" height="120"/>
+                                <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Zsu-YU-egF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="phw-5g-m5d" firstAttribute="bottom" secondItem="U1O-Ul-3pl" secondAttribute="bottom" id="HSX-s9-79Z"/>
+                            <constraint firstItem="4u3-nu-BcQ" firstAttribute="centerX" secondItem="U1O-Ul-3pl" secondAttribute="centerX" id="LPb-Gz-tYz"/>
+                            <constraint firstItem="phw-5g-m5d" firstAttribute="trailing" secondItem="U1O-Ul-3pl" secondAttribute="trailing" id="e6L-MY-Bf5"/>
+                            <constraint firstItem="phw-5g-m5d" firstAttribute="leading" secondItem="U1O-Ul-3pl" secondAttribute="leading" id="fzo-vb-E6t"/>
+                            <constraint firstItem="4u3-nu-BcQ" firstAttribute="centerY" secondItem="U1O-Ul-3pl" secondAttribute="centerY" constant="-60" id="yHQ-N0-O7C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="84c-KA-RgI"/>
+                    </view>
+                    <connections>
+                        <outlet property="loadingIndicatorLabel" destination="zaO-Qd-YCo" id="DSr-NS-d91"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1Q-N4-GKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-305" y="-176"/>
+        </scene>
+    </scenes>
+</document>
