@@ -29,23 +29,21 @@ extension FlowViewController: CLLocationManagerDelegate {
 
 private extension FlowViewController {
     func chooseViewController() {
-        let storyboard = UIStoryboard.init(name: "Speedometer", bundle: nil)
-
-        let loadingViewController = storyboard.instantiateViewController(withIdentifier: "LoadingViewControllerIdentifier")
+        let loadingViewController = storyboard!.instantiateViewController(withIdentifier: "LoadingViewControllerIdentifier")
         transition(to: loadingViewController) { _ in
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
-                self.transition(to: storyboard.instantiateViewController(withIdentifier: "WelcomeViewControllerIdentifier"))
+                self.transition(to: self.storyboard!.instantiateViewController(withIdentifier: "WelcomeViewControllerIdentifier"))
             case .restricted:
-                let messageViewController = storyboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
+                let messageViewController = self.storyboard!.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
                 messageViewController.messageType = .locationAuthorizationStatusRestricted
                 self.transition(to: messageViewController)
             case .denied:
-                let messageViewController = storyboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
+                let messageViewController = self.storyboard!.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
                 messageViewController.messageType = .locationAuthorizationStatusDenied
                 self.transition(to: messageViewController)
             case .authorizedWhenInUse, .authorizedAlways:
-                self.transition(to: storyboard.instantiateViewController(withIdentifier: "SpeedometerViewControllerIdentifier"))
+                self.transition(to: self.storyboard!.instantiateViewController(withIdentifier: "SpeedometerViewControllerIdentifier"))
             }
         }
     }
