@@ -16,6 +16,7 @@
 		DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */; };
 		DF5F4C5F1FD5DAA10043F97E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */; };
 		DF602D1520AEE3C00083532A /* StoreKitReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */; };
+		DF64A52320EE621A00063BBD /* CoordinatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64A52220EE621A00063BBD /* CoordinatesTests.swift */; };
 		DF7CF24C20EBD24A0058823B /* Speedometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7CF24B20EBD24A0058823B /* Speedometer.storyboard */; };
 		DF7CF24F20EBDA480058823B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7CF24E20EBDA480058823B /* WelcomeViewController.swift */; };
 		DF8FDCEA2008FD0500140DA9 /* ImprintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FDCE82008FD0500140DA9 /* ImprintViewController.swift */; };
@@ -55,6 +56,7 @@
 		DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Medium.ttf"; sourceTree = "<group>"; };
 		DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitReviewHelper.swift; sourceTree = "<group>"; };
+		DF64A52220EE621A00063BBD /* CoordinatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesTests.swift; sourceTree = "<group>"; };
 		DF7CF24B20EBD24A0058823B /* Speedometer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Speedometer.storyboard; sourceTree = "<group>"; };
 		DF7CF24E20EBDA480058823B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		DF8FDCE82008FD0500140DA9 /* ImprintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprintViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		DF9DCB1120ADD99B008BAE8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DF64A52220EE621A00063BBD /* CoordinatesTests.swift */,
 				DF9DCB0920ADD8EC008BAE8B /* SpeedTests.swift */,
 				DF9DCB1220ADDAED008BAE8B /* UnitTests.swift */,
 			);
@@ -412,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF9DCB0A20ADD8EC008BAE8B /* SpeedTests.swift in Sources */,
+				DF64A52320EE621A00063BBD /* CoordinatesTests.swift in Sources */,
 				DF9DCB1320ADDAED008BAE8B /* UnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
