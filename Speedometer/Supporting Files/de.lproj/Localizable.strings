@@ -20,11 +20,11 @@
 "SpeedometerViewController.Orientation.North" = "Nord";
 "SpeedometerViewController.Orientation.South" = "Süd";
 "SpeedometerViewController.Orientation.West" = "West";
-"SpeedometerViewController.SpeedLimit.Button.TapToReleaseSpeedLimit" = "Tappe hier zum löschen";
-"SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit" = "Tappe hier zum setzen";
+"SpeedometerViewController.SpeedLimit.Button.TapToReleaseSpeedLimit" = "Aktuelles Limit löschen";
+"SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit" = "Geschwindigkeit übernehmen";
 "SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Limit bei";
 "SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "Kein Geschwindigkeitslimit";
 
 "WelcomeViewController.Button" = "OK, leg los!";
 "WelcomeViewController.Title" = "Herzlich Willkommen!";
-"WelcomeViewController.Contents" = "Tacho ist eine kostenlose, werbefreie App, die dir deine aktuelle Geschwindigkeit anzeigt.\n\nAus diesem Grund benötigt Tacho Zugriff auf deine Standortdaten, die nur für diese Zwecke verwendet und mit niemandem geteilt werden.\n\nBitte betätige den untenstehenden Button und bestätige den Hinweis im sich öffnenden Fenster.";
+"WelcomeViewController.Contents" = "Tacho zeigt dir deine aktuelle Geschwindigkeit an, kostenlos und werbefrei.\n\nTacho benötigt daher Zugriff auf deine Standortdaten, die nur für diese Zwecke verwendet und mit niemandem geteilt werden.\n\nBitte betätige den untenstehenden Button und bestätige den Hinweis im darauf folgenden Dialog.";

@@ -20,11 +20,11 @@
 "SpeedometerViewController.Orientation.North" = "North";
 "SpeedometerViewController.Orientation.South" = "South";
 "SpeedometerViewController.Orientation.West" = "West";
-"SpeedometerViewController.SpeedLimit.Button.TapToReleaseSpeedLimit" = "Tap here to release";
-"SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit" = "Tap here to set";
+"SpeedometerViewController.SpeedLimit.Button.TapToReleaseSpeedLimit" = "Release current speed limit";
+"SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit" = "Apply current speed";
 "SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Speed limit set to";
 "SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "No Speed Limit";
 
 "WelcomeViewController.Button" = "I've got it!";
 "WelcomeViewController.Title" = "Welcome!";
-"WelcomeViewController.Contents" = "Speedometer is just a small ad-free app which shows you your current speed.\n\nTherefore, this app needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease press the button below and confirm access within the popup.";
+"WelcomeViewController.Contents" = "Speedometer shows your current speed, cost-free and without any advertisements.\n\nTherefore, Speedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease press the button below and confirm access within the popup.";
