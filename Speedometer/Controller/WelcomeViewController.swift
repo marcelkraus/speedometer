@@ -19,6 +19,8 @@ class WelcomeViewController: UIViewController {
     @IBOutlet private weak var authorizationButton: UIButton! {
         didSet {
             authorizationButton.setTitle("WelcomeViewController.Button".localized, for: .normal)
+            authorizationButton.layer.masksToBounds = true
+            authorizationButton.layer.cornerRadius = 10
         }
     }
 

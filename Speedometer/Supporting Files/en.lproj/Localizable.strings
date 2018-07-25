@@ -8,7 +8,7 @@
 "MessageViewController.UnknownError.Contents" = "The usage of the app is not possible at the moment. Please try again in a few moments.";
 
 "SettingsViewController.Button.Close" = "Close";
-"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nGermany\n\nMany thanks to Marc and Thomas for their support.\n\n\"Speedometer\" part of app icon designed by Freepik from Flaticon.";
+"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nGermany\n\nMany thanks to Marc and Thomas for their support.\n\n\Parts of app icon designed by Freepik from Flaticon.";
 "SettingsViewController.Imprint.Heading" = "Imprint";
 "SettingsViewController.Version.Build" = "Build";
 "SettingsViewController.Version.Heading" = "App Version";

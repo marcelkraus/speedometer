@@ -8,7 +8,7 @@
 "MessageViewController.UnknownError.Contents" = "Die Nutzung der App ist aktuell nicht möglich. Bitte probiere es in wenigen Minuten erneut.";
 
 "SettingsViewController.Button.Close" = "Schließen";
-"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nDeutschland\n\nVielen Dank an Marc und Thomas für ihre Unterstützung.\n\n\"Tacho\"-Bestandteil des App-Icons designed durch Freepik von Flaticon.";
+"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nDeutschland\n\nVielen Dank an Marc und Thomas für ihre Unterstützung.\n\n\Bestandteile des App-Icons designed durch Freepik von Flaticon.";
 "SettingsViewController.Imprint.Heading" = "Impressum";
 "SettingsViewController.Version.Build" = "Build";
 "SettingsViewController.Version.Heading" = "App-Version";
