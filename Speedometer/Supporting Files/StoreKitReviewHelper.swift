@@ -8,7 +8,7 @@ struct StoreReviewHelper {
 
     static func askForReview() {
         let appStartCounter = UserDefaults.standard.integer(forKey: Configuration.appStartCounterKey)
-        guard appStartCounter % 10 == 0 else {
+        guard appStartCounter == 5 || (appStartCounter % 10 == 0 && appStartCounter != 10) else {
             return
         }
 
