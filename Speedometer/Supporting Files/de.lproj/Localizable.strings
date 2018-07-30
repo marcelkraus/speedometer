@@ -1,15 +1,14 @@
 "LoadingViewController.Indicator" = "Laden…";
 
-"RootViewController.LocationAuthorizationStatusDenied.Heading" = "Houston, wir haben ein Problem!";
-"RootViewController.LocationAuthorizationStatusDenied.Message" = "Die Nutzung von Tacho ist nicht möglich, da der Zugriff auf deine Standortdaten beschränkt wurde.\n\nBitte entferne alle Einschränkungen in deinen Einstellungen:\n\nEinstellungen > Allgemein > Einschränkungen > Ortungsdienste";
-"RootViewController.LocationAuthorizationStatusRestricted.Heading" = "Houston, wir haben ein Problem!";
-"RootViewController.LocationAuthorizationStatusRestricted.Message" = "Bitte erlaube Zugriff auf deine Standortdaten, um Tacho nutzen zu können.\n\nDu findest die notwendigen Einstellungen hier:\n\nEinstellungen > Datenschutz > Ortungsdienste > Tacho > Beim Verwenden der App";
-"RootViewController.OnboardingInformation.Button" = "OK, leg los!";
-"RootViewController.OnboardingInformation.Heading" = "Herzlich Willkommen!";
-"RootViewController.OnboardingInformation.Message" = "Tacho ist eine kostenlose, werbefreie App, die dir deine aktuelle Geschwindigkeit anzeigt.\n\nAus diesem Grund benötigt Tacho Zugriff auf deine Standortdaten, die nur für diese Zwecke verwendet und mit niemandem geteilt werden.\n\nBitte betätige den untenstehenden Button und bestätige den Hinweis im sich öffnenden Fenster.";
+"MessageViewController.LocationAuthorizationStatusDenied.Title" = "Houston, wir haben ein Problem!";
+"MessageViewController.LocationAuthorizationStatusDenied.Contents" = "Die Nutzung von Tacho ist nicht möglich, da der Zugriff auf deine Standortdaten beschränkt wurde.\n\nBitte entferne alle Einschränkungen in deinen Einstellungen:\n\nEinstellungen > Allgemein > Einschränkungen > Ortungsdienste";
+"MessageViewController.LocationAuthorizationStatusRestricted.Title" = "Houston, wir haben ein Problem!";
+"MessageViewController.LocationAuthorizationStatusRestricted.Contents" = "Bitte erlaube Zugriff auf deine Standortdaten, um Tacho nutzen zu können.\n\nDu findest die notwendigen Einstellungen hier:\n\nEinstellungen > Datenschutz > Ortungsdienste > Tacho > Beim Verwenden der App";
+"MessageViewController.UnknownError.Title" = "Ein unbekannter Fehler ist aufgetreten.";
+"MessageViewController.UnknownError.Contents" = "Die Nutzung der App ist aktuell nicht möglich. Bitte probiere es in wenigen Minuten erneut.";
 
 "SettingsViewController.Button.Close" = "Schließen";
-"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nVielen Dank an Marc und Thomas für ihre Unterstützung.\n\n\"Tacho\"-Bestandteil des App-Icons designed durch Freepik von Flaticon.";
+"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nDeutschland\n\nVielen Dank an Marc und Thomas für ihre Unterstützung.\n\n\Bestandteile des App-Icons designed durch Freepik von Flaticon.";
 "SettingsViewController.Imprint.Heading" = "Impressum";
 "SettingsViewController.Version.Build" = "Build";
 "SettingsViewController.Version.Heading" = "App-Version";
@@ -21,7 +20,11 @@
 "SpeedometerViewController.Orientation.North" = "Nord";
 "SpeedometerViewController.Orientation.South" = "Süd";
 "SpeedometerViewController.Orientation.West" = "West";
-"SpeedometerViewController.SpeedLimit.Button.TapToReleaseSpeedLimit" = "Tappe hier zum löschen";
-"SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit" = "Tappe hier zum setzen";
+"SpeedometerViewController.SpeedLimit.Button.TapToReleaseSpeedLimit" = "Aktuelles Limit löschen";
+"SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit" = "Geschwindigkeit übernehmen";
 "SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Limit bei";
 "SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "Kein Geschwindigkeitslimit";
+
+"WelcomeViewController.Button" = "OK, leg los!";
+"WelcomeViewController.Title" = "Herzlich Willkommen!";
+"WelcomeViewController.Contents" = "Tacho zeigt dir deine aktuelle Geschwindigkeit an, kostenlos und werbefrei.\n\nTacho benötigt daher Zugriff auf deine Standortdaten, die nur für diese Zwecke verwendet und mit niemandem geteilt werden.\n\nBitte betätige den untenstehenden Button und bestätige den Hinweis im darauf folgenden Dialog.";
