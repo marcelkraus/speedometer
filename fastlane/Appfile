@@ -1,2 +1,2 @@
-app_identifier("de.marcelkraus.speedometer")
-apple_id("marcel@marcelkraus.de")
+app_identifier(ENV["FASTLANE_BUNDLE_ID"] || "de.marcelkraus.speedometer")
+apple_id(ENV["FASTLANE_APPLE_ID"] || "marcel@marcelkraus.de")
