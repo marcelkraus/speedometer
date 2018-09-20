@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4u3-nu-BcQ">
-                                <rect key="frame" x="145.66666666666666" y="310.33333333333331" width="84" height="71.333333333333314"/>
+                                <rect key="frame" x="145.66666666666666" y="340.33333333333331" width="84" height="71.333333333333314"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="p0i-q2-I1r">
                                         <rect key="frame" x="23.333333333333343" y="0.0" width="37" height="37"/>
@@ -39,10 +39,10 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phw-5g-m5d" userLabel="Canvas">
-                                <rect key="frame" x="0.0" y="692" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="752" width="375" height="60"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="Zsu-YU-egF"/>
+                                    <constraint firstAttribute="height" constant="60" id="Zsu-YU-egF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -53,7 +53,7 @@
                             <constraint firstItem="4u3-nu-BcQ" firstAttribute="centerX" secondItem="U1O-Ul-3pl" secondAttribute="centerX" id="LPb-Gz-tYz"/>
                             <constraint firstItem="phw-5g-m5d" firstAttribute="trailing" secondItem="U1O-Ul-3pl" secondAttribute="trailing" id="e6L-MY-Bf5"/>
                             <constraint firstItem="phw-5g-m5d" firstAttribute="leading" secondItem="U1O-Ul-3pl" secondAttribute="leading" id="fzo-vb-E6t"/>
-                            <constraint firstItem="4u3-nu-BcQ" firstAttribute="centerY" secondItem="U1O-Ul-3pl" secondAttribute="centerY" constant="-60" id="yHQ-N0-O7C"/>
+                            <constraint firstItem="4u3-nu-BcQ" firstAttribute="centerY" secondItem="U1O-Ul-3pl" secondAttribute="centerY" constant="-30" id="yHQ-N0-O7C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="84c-KA-RgI"/>
                     </view>
@@ -73,11 +73,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dl5-CF-YkT">
-                                <rect key="frame" x="20" y="64" width="335" height="574"/>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dl5-CF-YkT">
+                                <rect key="frame" x="20" y="64" width="335" height="634"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hL4-LX-wBh">
-                                        <rect key="frame" x="20" y="20" width="295" height="534"/>
+                                        <rect key="frame" x="20" y="20" width="295" height="594"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mdU-2X-FLj">
                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="188.66666666666666"/>
@@ -144,7 +144,7 @@
                         <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Dl5-CF-YkT" firstAttribute="leading" secondItem="3ss-fN-9IK" secondAttribute="leading" constant="20" id="2Ij-sB-b9R"/>
-                            <constraint firstItem="3ss-fN-9IK" firstAttribute="bottom" secondItem="Dl5-CF-YkT" secondAttribute="bottom" constant="140" id="76N-9z-Fn0"/>
+                            <constraint firstItem="3ss-fN-9IK" firstAttribute="bottom" secondItem="Dl5-CF-YkT" secondAttribute="bottom" constant="80" id="76N-9z-Fn0"/>
                             <constraint firstItem="Dl5-CF-YkT" firstAttribute="top" secondItem="3ss-fN-9IK" secondAttribute="top" constant="20" id="9Su-su-eGT"/>
                             <constraint firstItem="3ss-fN-9IK" firstAttribute="trailing" secondItem="Dl5-CF-YkT" secondAttribute="trailing" constant="20" id="pqr-S0-VWw"/>
                         </constraints>
@@ -179,7 +179,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vg4-YT-3D7">
-                                <rect key="frame" x="20" y="64" width="335" height="608"/>
+                                <rect key="frame" x="20" y="64" width="335" height="668"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Ncr-aR-bec">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="158.33333333333334"/>
@@ -227,11 +227,10 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epk-dm-206" userLabel="Canvas">
-                                <rect key="frame" x="0.0" y="692" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="752" width="375" height="60"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="Ecd-cM-tdF"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="KWm-Ev-0dw"/>
+                                    <constraint firstAttribute="height" constant="60" id="Ecd-cM-tdF"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="ucH-hg-xWy"/>
                             </view>
@@ -268,7 +267,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcd-9O-2Ih">
-                                <rect key="frame" x="20" y="64" width="335" height="608"/>
+                                <rect key="frame" x="20" y="64" width="335" height="668"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ljz-YO-zYi">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="58.333333333333336"/>
@@ -303,11 +302,10 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dL0-m1-2aU" userLabel="Canvas">
-                                <rect key="frame" x="0.0" y="692" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="752" width="375" height="60"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="70S-CC-ihk"/>
-                                    <constraint firstAttribute="height" constant="120" id="hK6-lT-k6R"/>
+                                    <constraint firstAttribute="height" constant="60" id="hK6-lT-k6R"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="TQW-1k-hfR"/>
                             </view>
@@ -343,7 +341,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pv1-VM-IJN">
-                                <rect key="frame" x="81.666666666666686" y="310.33333333333331" width="212" height="71.333333333333314"/>
+                                <rect key="frame" x="81.666666666666686" y="340.33333333333331" width="212" height="71.333333333333314"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ybc-yv-aVa">
                                         <rect key="frame" x="87.333333333333329" y="0.0" width="37" height="37"/>
@@ -358,7 +356,7 @@
                                 </subviews>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2O-qC-RfP">
-                                <rect key="frame" x="20" y="64" width="335" height="608"/>
+                                <rect key="frame" x="20" y="64" width="335" height="668"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NgI-bm-UHt">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="405.33333333333331"/>
@@ -433,12 +431,12 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHL-9a-BRa" userLabel="Canvas">
-                                <rect key="frame" x="0.0" y="692" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="752" width="375" height="60"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IsN-Jg-IC9">
-                                        <rect key="frame" x="20" y="40" width="295" height="41"/>
+                                        <rect key="frame" x="20" y="15" width="285" height="31"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="N8F-XG-IuZ"/>
+                                            <constraint firstAttribute="height" constant="30" id="N8F-XG-IuZ"/>
                                         </constraints>
                                         <segments>
                                             <segment title="First Unit"/>
@@ -450,10 +448,10 @@
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfm-M5-ytS">
-                                        <rect key="frame" x="335" y="50" width="20" height="20"/>
+                                        <rect key="frame" x="325" y="15" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="fby-pT-EQX"/>
-                                            <constraint firstAttribute="width" constant="20" id="uvm-2x-SUa"/>
+                                            <constraint firstAttribute="height" constant="30" id="fby-pT-EQX"/>
+                                            <constraint firstAttribute="width" constant="30" id="uvm-2x-SUa"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
@@ -465,7 +463,7 @@
                                 <constraints>
                                     <constraint firstItem="nfm-M5-ytS" firstAttribute="centerY" secondItem="hHL-9a-BRa" secondAttribute="centerY" id="DlG-lf-87x"/>
                                     <constraint firstItem="IsN-Jg-IC9" firstAttribute="centerY" secondItem="hHL-9a-BRa" secondAttribute="centerY" id="do6-ve-iC4"/>
-                                    <constraint firstAttribute="height" constant="120" id="eay-NS-zir"/>
+                                    <constraint firstAttribute="height" constant="60" id="eay-NS-zir"/>
                                     <constraint firstItem="IsN-Jg-IC9" firstAttribute="leading" secondItem="hHL-9a-BRa" secondAttribute="leading" constant="20" id="g2a-Ib-2dC"/>
                                     <constraint firstAttribute="trailing" secondItem="nfm-M5-ytS" secondAttribute="trailing" constant="20" id="pjQ-ap-ide"/>
                                     <constraint firstItem="nfm-M5-ytS" firstAttribute="leading" secondItem="IsN-Jg-IC9" secondAttribute="trailing" constant="20" id="vyz-h1-Rwn"/>
@@ -475,7 +473,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="pv1-VM-IJN" firstAttribute="centerY" secondItem="aRX-tf-4oJ" secondAttribute="centerY" constant="-60" id="1A5-YM-Ehn"/>
+                            <constraint firstItem="pv1-VM-IJN" firstAttribute="centerY" secondItem="aRX-tf-4oJ" secondAttribute="centerY" constant="-30" id="1A5-YM-Ehn"/>
                             <constraint firstItem="e2O-qC-RfP" firstAttribute="leading" secondItem="zHt-Pi-3nm" secondAttribute="leading" constant="20" id="Dvh-t2-ZMH"/>
                             <constraint firstAttribute="trailing" secondItem="hHL-9a-BRa" secondAttribute="trailing" id="G6S-Xn-4L2"/>
                             <constraint firstItem="hHL-9a-BRa" firstAttribute="top" secondItem="e2O-qC-RfP" secondAttribute="bottom" constant="20" id="Gfj-R8-Z5g"/>
