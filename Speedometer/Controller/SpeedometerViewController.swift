@@ -131,7 +131,7 @@ extension SpeedometerViewController: CLLocationManagerDelegate {
 private extension SpeedometerViewController {
     func configureLocationManager() {
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
     }
 
