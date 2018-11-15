@@ -29,7 +29,7 @@ extension FlowViewController: CLLocationManagerDelegate {
 
 private extension FlowViewController {
     func chooseViewController() {
-        let loadingViewController = storyboard!.instantiateViewController(withIdentifier: "LoadingViewControllerIdentifier")
+        let loadingViewController = LoadingViewController()
         transition(to: loadingViewController) { _ in
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:

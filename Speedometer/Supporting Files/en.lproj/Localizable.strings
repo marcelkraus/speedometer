@@ -1,4 +1,4 @@
-"LoadingViewController.Indicator" = "Loading…";
+"LoadingIndicatorViewController.Indicator" = "Loading…";
 
 "MessageViewController.LocationAuthorizationStatusDenied.Title" = "Houston, we've had a problem here!";
 "MessageViewController.LocationAuthorizationStatusDenied.Contents" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
