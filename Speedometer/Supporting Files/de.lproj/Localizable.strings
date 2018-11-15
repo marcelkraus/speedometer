@@ -1,4 +1,4 @@
-"LoadingViewController.Indicator" = "Laden…";
+"LoadingIndicatorViewController.Indicator" = "Laden…";
 
 "MessageViewController.LocationAuthorizationStatusDenied.Title" = "Houston, wir haben ein Problem!";
 "MessageViewController.LocationAuthorizationStatusDenied.Contents" = "Die Nutzung von Tacho ist nicht möglich, da der Zugriff auf deine Standortdaten beschränkt wurde.\n\nBitte entferne alle Einschränkungen in deinen Einstellungen:\n\nEinstellungen > Allgemein > Einschränkungen > Ortungsdienste";
