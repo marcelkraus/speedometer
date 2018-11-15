@@ -29,21 +29,23 @@ extension FlowViewController: CLLocationManagerDelegate {
 
 private extension FlowViewController {
     func chooseViewController() {
+        let storyboard = UIStoryboard(name: "Speedometer", bundle: Bundle.main)
         let loadingViewController = LoadingViewController()
+
         transition(to: loadingViewController) { _ in
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
-                self.transition(to: self.storyboard!.instantiateViewController(withIdentifier: "WelcomeViewControllerIdentifier"))
+                self.transition(to: storyboard.instantiateViewController(withIdentifier: "WelcomeViewControllerIdentifier"))
             case .restricted:
-                let messageViewController = self.storyboard!.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
+                let messageViewController = storyboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
                 messageViewController.messageType = .locationAuthorizationStatusRestricted
                 self.transition(to: messageViewController)
             case .denied:
-                let messageViewController = self.storyboard!.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
+                let messageViewController = storyboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
                 messageViewController.messageType = .locationAuthorizationStatusDenied
                 self.transition(to: messageViewController)
             case .authorizedWhenInUse, .authorizedAlways:
-                self.transition(to: self.storyboard!.instantiateViewController(withIdentifier: "SpeedometerViewControllerIdentifier"))
+                self.transition(to: storyboard.instantiateViewController(withIdentifier: "SpeedometerViewControllerIdentifier"))
             }
         }
     }
