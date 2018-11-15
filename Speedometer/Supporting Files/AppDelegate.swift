@@ -4,16 +4,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = FlowViewController()
+        window?.makeKeyAndVisible()
+
         UserDefaults.standard.register(defaults: [
             Configuration.appStartCounterKey: 0,
             Configuration.currentUnitDefaultsKey: Locale.current.usesMetricSystem ? Unit.kilometersPerHour.rawValue : Unit.milesPerHour.rawValue,
             Configuration.currentSpeedLimitDefaultsKey: "0"
-        ])
+            ])
 
         application.isIdleTimerDisabled = true
         StoreReviewHelper.incrementAppStartCounter()
-
-        return true
     }
 }
