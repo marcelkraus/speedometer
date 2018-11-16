@@ -35,7 +35,7 @@ private extension FlowViewController {
         transition(to: loadingViewController) { _ in
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
-                self.transition(to: storyboard.instantiateViewController(withIdentifier: "WelcomeViewControllerIdentifier"))
+                self.transition(to: WelcomeViewController())
             case .restricted:
                 let messageViewController = storyboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
                 messageViewController.messageType = .locationAuthorizationStatusRestricted
