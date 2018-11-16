@@ -2,6 +2,8 @@ import CoreLocation
 import UIKit
 
 class SpeedometerViewController: UIViewController {
+    @IBOutlet weak var unitSelectionView: UIView!
+
     private let locationManager = CLLocationManager()
 
     private var speed: Speed? {
@@ -49,10 +51,8 @@ class SpeedometerViewController: UIViewController {
 
     private var unit: Unit = Unit.milesPerHour {
         didSet {
-            UserDefaults.standard.removeObject(forKey: Configuration.currentSpeedLimitDefaultsKey)
-
             unitLabel.text = unit.abbreviation
-            UserDefaults.standard.set(unit.rawValue, forKey: Configuration.currentUnitDefaultsKey)
+            UserDefaults.standard.removeObject(forKey: Configuration.currentSpeedLimitDefaultsKey)
         }
     }
 
@@ -89,18 +89,6 @@ class SpeedometerViewController: UIViewController {
     @IBOutlet weak var speedLimitLabel: UILabel!
     @IBOutlet weak var speedLimitButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
-    @IBOutlet weak var unitSegmentedControl: UISegmentedControl! {
-        didSet {
-            unitSegmentedControl.removeAllSegments()
-            units.enumerated().forEach { (index, unit) in
-                unitSegmentedControl.insertSegment(withTitle: unit.abbreviation, at: index, animated: false)
-            }
-        }
-    }
-
-    @IBAction func updateUnit(_ sender: UISegmentedControl) {
-        updateUnit(units[sender.selectedSegmentIndex])
-    }
 
     @IBAction func updateSpeedLimit(_ sender: UIButton) {
         updateSpeedLimit()
@@ -136,8 +124,13 @@ private extension SpeedometerViewController {
     }
 
     func configureView() {
+        let unitSelectionViewController = UnitSelectionViewController()
+        unitSelectionViewController.delegate = self
+        addChild(unitSelectionViewController)
+        unitSelectionView.addSubview(unitSelectionViewController.view)
+        unitSelectionViewController.didMove(toParent: self)
+
         setDisplayMode(to: .loadingIndicator)
-        updateUnit(Unit(rawValue: UserDefaults.standard.string(forKey: Configuration.currentUnitDefaultsKey)!)!)
         resetSpeedLimitLabels()
         StoreReviewHelper.askForReview()
     }
@@ -162,17 +155,6 @@ private extension SpeedometerViewController {
         }
     }
 
-    func updateUnit(_ unit: Unit) {
-        self.unit = unit
-        unitSegmentedControl.selectedSegmentIndex = units.index(where: { $0.abbreviation == unit.abbreviation }) ?? 0
-
-        guard let speedLimit = speedLimit else {
-            return
-        }
-
-        self.speedLimit = Speed(speed: speedLimit, unit: unit)
-    }
-
     func updateSpeedLimit() {
         guard speedLimit == nil else {
             speedLimit = nil
@@ -186,5 +168,19 @@ private extension SpeedometerViewController {
     func resetSpeedLimitLabels() {
         speedLimitLabel.text = "SpeedometerViewController.SpeedLimit.NoSpeedLimit".localized
         speedLimitButton.setTitle("SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit".localized, for: .normal)
+    }
+}
+
+// MARK: - UnitSelectionViewControllerDelegate
+
+extension SpeedometerViewController: UnitSelectionViewControllerDelegate {
+    func didSetUnit(_ unit: Unit) {
+        self.unit = unit
+
+        guard let speedLimit = speedLimit else {
+            return
+        }
+
+        self.speedLimit = Speed(speed: speedLimit, unit: unit)
     }
 }

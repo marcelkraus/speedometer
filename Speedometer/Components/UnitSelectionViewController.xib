@@ -36,6 +36,9 @@
                                 <segment title="Second Unit"/>
                             </segments>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didChangeValue:" destination="-1" eventType="valueChanged" id="LZw-Fk-6pM"/>
+                            </connections>
                         </segmentedControl>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alh-9c-9zj">
                             <rect key="frame" x="305" y="0.0" width="30" height="30"/>
@@ -44,6 +47,9 @@
                                 <constraint firstAttribute="width" constant="30" id="fpj-gO-lMi"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didTapButton:" destination="-1" eventType="touchUpInside" id="lDH-2a-3KX"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>
