@@ -128,6 +128,13 @@ private extension SpeedometerViewController {
         unitSelectionViewController.delegate = self
         addChild(unitSelectionViewController)
         unitSelectionView.addSubview(unitSelectionViewController.view)
+        unitSelectionViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            unitSelectionView.leadingAnchor.constraint(equalTo: unitSelectionViewController.view.leadingAnchor),
+            unitSelectionView.topAnchor.constraint(equalTo: unitSelectionViewController.view.topAnchor),
+            unitSelectionView.bottomAnchor.constraint(equalTo: unitSelectionViewController.view.bottomAnchor),
+            unitSelectionView.trailingAnchor.constraint(equalTo: unitSelectionViewController.view.trailingAnchor),
+            ])
         unitSelectionViewController.didMove(toParent: self)
 
         setDisplayMode(to: .loadingIndicator)

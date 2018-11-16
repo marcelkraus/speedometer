@@ -32,11 +32,25 @@ private extension LoadingViewController {
         unitSelectionViewController.hideStackView = true
         addChild(unitSelectionViewController)
         unitSelectionView.addSubview(unitSelectionViewController.view)
+        unitSelectionViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            unitSelectionView.leadingAnchor.constraint(equalTo: unitSelectionViewController.view.leadingAnchor),
+            unitSelectionView.topAnchor.constraint(equalTo: unitSelectionViewController.view.topAnchor),
+            unitSelectionView.bottomAnchor.constraint(equalTo: unitSelectionViewController.view.bottomAnchor),
+            unitSelectionView.trailingAnchor.constraint(equalTo: unitSelectionViewController.view.trailingAnchor),
+            ])
         unitSelectionViewController.didMove(toParent: self)
 
         let loadingIndicatorViewController = LoadingIndicatorViewController()
         addChild(loadingIndicatorViewController)
         loadingIndicatorView.addSubview(loadingIndicatorViewController.view)
+        loadingIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            loadingIndicatorView.leadingAnchor.constraint(equalTo: loadingIndicatorViewController.view.leadingAnchor),
+            loadingIndicatorView.topAnchor.constraint(equalTo: loadingIndicatorViewController.view.topAnchor),
+            loadingIndicatorView.bottomAnchor.constraint(equalTo: loadingIndicatorViewController.view.bottomAnchor),
+            loadingIndicatorView.trailingAnchor.constraint(equalTo: loadingIndicatorViewController.view.trailingAnchor),
+            ])
         loadingIndicatorViewController.didMove(toParent: self)
     }
 }
