@@ -16,7 +16,7 @@ class UnitSelectionViewController: UIViewController {
 
     var delegate: UnitSelectionViewControllerDelegate?
 
-    // MARK: - Outlets
+    // MARK: - Outlets & Actions
 
     @IBOutlet private weak var stackView: UIStackView!
 
@@ -42,7 +42,7 @@ class UnitSelectionViewController: UIViewController {
         present(imprintViewController, animated: true, completion: nil)
     }
 
-    // MARK: - Controller Lifecycle
+    // MARK: - View Controller Lifecycle
 
     init() {
         unit = Unit(rawValue: UserDefaults.standard.string(forKey: Configuration.currentUnitDefaultsKey)!)!
@@ -60,6 +60,8 @@ class UnitSelectionViewController: UIViewController {
         updateUnit(unit)
     }
 }
+
+// MARK: - Private Methods
 
 private extension UnitSelectionViewController {
     func updateUnit(_ unit: Unit) {

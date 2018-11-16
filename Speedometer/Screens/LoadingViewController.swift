@@ -1,8 +1,21 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
+
+    // MARK: - Outlets & Actions
+
     @IBOutlet weak var unitSelectionView: UIView!
     @IBOutlet weak var loadingIndicatorView: UIView!
+
+    // MARK: - View Controller Lifecycle
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -10,6 +23,8 @@ class LoadingViewController: UIViewController {
         setupContainerViewControllers()
     }
 }
+
+// MARK: - Private Methods
 
 private extension LoadingViewController {
     func setupContainerViewControllers() {
