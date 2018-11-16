@@ -3,20 +3,9 @@ import UIKit
 
 class MessageViewController: UIViewController {
 
-    // MARK: - Enums
-
-    enum MessageType {
-        case locationAuthorizationStatusDenied
-        case locationAuthorizationStatusRestricted
-    }
-
     // MARK: - Properties
 
-    var messageType: MessageType {
-        didSet {
-
-        }
-    }
+    private var informationType: InformationType
 
     // MARK: - Outlets & Actions
 
@@ -26,8 +15,8 @@ class MessageViewController: UIViewController {
 
     // MARK: - View Controller Lifecycle
 
-    init(messageType: MessageType) {
-        self.messageType = messageType
+    init(informationType: InformationType) {
+        self.informationType = informationType
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -60,17 +49,7 @@ private extension MessageViewController {
             ])
         unitSelectionViewController.didMove(toParent: self)
 
-        var messageContent: (heading: String, text: String)
-        switch messageType {
-        case .locationAuthorizationStatusDenied:
-            messageContent.heading = "MessageViewController.LocationAuthorizationStatusRestricted.Title".localized
-            messageContent.text = "MessageViewController.LocationAuthorizationStatusRestricted.Contents".localized
-        case .locationAuthorizationStatusRestricted:
-            messageContent.heading = "MessageViewController.LocationAuthorizationStatusDenied.Title".localized
-            messageContent.text = "MessageViewController.LocationAuthorizationStatusRestricted.Contents".localized
-        }
-
-        let paragraphViewController = ParagraphViewController(heading: messageContent.heading, text: messageContent.text)
+        let paragraphViewController = InformationViewController(informationType: informationType)
         addChild(paragraphViewController)
         paragraphView.addSubview(paragraphViewController.view)
         paragraphViewController.view.translatesAutoresizingMaskIntoConstraints = false

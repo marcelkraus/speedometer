@@ -35,11 +35,11 @@ private extension FlowViewController {
         transition(to: loadingViewController) { _ in
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
-                self.transition(to: WelcomeViewController())
+                self.transition(to: OnboardingViewController())
             case .restricted:
-                self.transition(to: MessageViewController(messageType: .locationAuthorizationStatusRestricted))
+                self.transition(to: MessageViewController(informationType: .locationAuthorizationStatusRestricted))
             case .denied:
-                self.transition(to: MessageViewController(messageType: .locationAuthorizationStatusDenied))
+                self.transition(to: MessageViewController(informationType: .locationAuthorizationStatusDenied))
             case .authorizedWhenInUse, .authorizedAlways:
                 self.transition(to: storyboard.instantiateViewController(withIdentifier: "SpeedometerViewControllerIdentifier"))
             }
