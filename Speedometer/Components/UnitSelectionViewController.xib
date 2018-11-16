@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UnitSelectionViewController" customModule="Speedometer" customModuleProvider="target">
             <connections>
+                <outlet property="informationButton" destination="alh-9c-9zj" id="RBj-aY-lNW"/>
+                <outlet property="segmentedControl" destination="4rU-Sr-Fwj" id="17d-PO-sFw"/>
+                <outlet property="stackView" destination="Lxk-XT-onr" id="e8V-7V-jvl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +22,38 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Lxk-XT-onr">
+                    <rect key="frame" x="20" y="15" width="335" height="30"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4rU-Sr-Fwj">
+                            <rect key="frame" x="0.0" y="0.0" width="285" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="9nc-pI-mHq"/>
+                            </constraints>
+                            <segments>
+                                <segment title="First Unit"/>
+                                <segment title="Second Unit"/>
+                            </segments>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </segmentedControl>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alh-9c-9zj">
+                            <rect key="frame" x="305" y="0.0" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Ol7-eT-Wir"/>
+                                <constraint firstAttribute="width" constant="30" id="fpj-gO-lMi"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
             <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Lxk-XT-onr" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="S8U-GN-CCL"/>
+                <constraint firstItem="Lxk-XT-onr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="oXd-tt-UOQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Lxk-XT-onr" secondAttribute="trailing" constant="20" id="xRx-X9-3fd"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="53.600000000000001" y="143.92803598200899"/>
