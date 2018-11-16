@@ -50,6 +50,13 @@ private extension WelcomeViewController {
         unitSelectionViewController.hideStackView = true
         addChild(unitSelectionViewController)
         unitSelectionView.addSubview(unitSelectionViewController.view)
+        unitSelectionViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            unitSelectionView.leadingAnchor.constraint(equalTo: unitSelectionViewController.view.leadingAnchor),
+            unitSelectionView.topAnchor.constraint(equalTo: unitSelectionViewController.view.topAnchor),
+            unitSelectionView.bottomAnchor.constraint(equalTo: unitSelectionViewController.view.bottomAnchor),
+            unitSelectionView.trailingAnchor.constraint(equalTo: unitSelectionViewController.view.trailingAnchor),
+            ])
         unitSelectionViewController.didMove(toParent: self)
 
         let paragraphViewController = ParagraphViewController(
@@ -60,10 +67,10 @@ private extension WelcomeViewController {
         paragraphView.addSubview(paragraphViewController.view)
         paragraphViewController.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+            paragraphView.leadingAnchor.constraint(equalTo: paragraphViewController.view.leadingAnchor),
             paragraphView.topAnchor.constraint(equalTo: paragraphViewController.view.topAnchor),
             paragraphView.bottomAnchor.constraint(equalTo: paragraphViewController.view.bottomAnchor),
             paragraphView.trailingAnchor.constraint(equalTo: paragraphViewController.view.trailingAnchor),
-            paragraphView.leadingAnchor.constraint(equalTo: paragraphViewController.view.leadingAnchor),
             ])
         paragraphViewController.didMove(toParent: self)
     }
