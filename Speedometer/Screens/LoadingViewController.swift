@@ -29,6 +29,7 @@ class LoadingViewController: UIViewController {
 private extension LoadingViewController {
     func setupContainerViewControllers() {
         let unitSelectionViewController = UnitSelectionViewController()
+        unitSelectionViewController.hideStackView = true
         addChild(unitSelectionViewController)
         unitSelectionView.addSubview(unitSelectionViewController.view)
         unitSelectionViewController.didMove(toParent: self)

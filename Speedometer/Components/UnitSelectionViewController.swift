@@ -14,11 +14,17 @@ class UnitSelectionViewController: UIViewController {
         }
     }
 
+    var hideStackView = false
+
     var delegate: UnitSelectionViewControllerDelegate?
 
     // MARK: - Outlets & Actions
 
-    @IBOutlet private weak var stackView: UIStackView!
+    @IBOutlet private weak var stackView: UIStackView! {
+        didSet {
+            stackView.isHidden = hideStackView
+        }
+    }
 
     @IBOutlet private weak var segmentedControl: UISegmentedControl! {
         didSet {
