@@ -32,11 +32,12 @@
 		DFC358F4205A9BCF00DEDB9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFC358F6205A9BCF00DEDB9E /* InfoPlist.strings */; };
 		DFCA0C611FD5E17300260E24 /* FlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C601FD5E17300260E24 /* FlowViewController.swift */; };
 		DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */; };
-		DFCA0C671FD5E84400260E24 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C661FD5E84400260E24 /* MessageViewController.swift */; };
 		DFD30993219F240E005CE3B9 /* ParagraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */; };
 		DFD30994219F240E005CE3B9 /* ParagraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD30992219F240E005CE3B9 /* ParagraphViewController.xib */; };
 		DFD30999219F252C005CE3B9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD30997219F252C005CE3B9 /* WelcomeViewController.swift */; };
 		DFD3099A219F252C005CE3B9 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD30998219F252C005CE3B9 /* WelcomeViewController.xib */; };
+		DFDB367E219F76BC002B7D53 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFDB367D219F76BC002B7D53 /* MessageViewController.xib */; };
+		DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB367F219F770B002B7D53 /* MessageViewController.swift */; };
 		DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFE69BD7205A904000FA0CE3 /* Localizable.strings */; };
 		DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */; };
 		DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */; };
@@ -81,11 +82,12 @@
 		DFC358F9205A9BE800DEDB9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DFCA0C601FD5E17300260E24 /* FlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowViewController.swift; sourceTree = "<group>"; };
 		DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		DFCA0C661FD5E84400260E24 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphViewController.swift; sourceTree = "<group>"; };
 		DFD30992219F240E005CE3B9 /* ParagraphViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParagraphViewController.xib; sourceTree = "<group>"; };
 		DFD30997219F252C005CE3B9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		DFD30998219F252C005CE3B9 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		DFDB367D219F76BC002B7D53 /* MessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
+		DFDB367F219F770B002B7D53 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		DFE69BD6205A904000FA0CE3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DFE69BD8205A904C00FA0CE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DFEB62221F30B5EA00FEC555 /* Speedometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Speedometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,8 @@
 			children = (
 				DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */,
 				DF511032219D982A000321E8 /* LoadingViewController.xib */,
+				DFDB367F219F770B002B7D53 /* MessageViewController.swift */,
+				DFDB367D219F76BC002B7D53 /* MessageViewController.xib */,
 				DFD30997219F252C005CE3B9 /* WelcomeViewController.swift */,
 				DFD30998219F252C005CE3B9 /* WelcomeViewController.xib */,
 			);
@@ -185,7 +189,6 @@
 			children = (
 				DFCA0C601FD5E17300260E24 /* FlowViewController.swift */,
 				DF8FDCE82008FD0500140DA9 /* ImprintViewController.swift */,
-				DFCA0C661FD5E84400260E24 /* MessageViewController.swift */,
 				DF962C4E1FD5A41300514B06 /* SpeedometerViewController.swift */,
 			);
 			path = Controller;
@@ -354,6 +357,7 @@
 				DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */,
 				DF51103C219D9B83000321E8 /* UnitSelectionViewController.xib in Resources */,
 				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
+				DFDB367E219F76BC002B7D53 /* MessageViewController.xib in Resources */,
 				DFC358F4205A9BCF00DEDB9E /* InfoPlist.strings in Resources */,
 				DFD30994219F240E005CE3B9 /* ParagraphViewController.xib in Resources */,
 				DF511033219D982A000321E8 /* LoadingViewController.xib in Resources */,
@@ -385,12 +389,12 @@
 				DFB6D73820815E2700BFC1F3 /* Speed.swift in Sources */,
 				DF8FDCEA2008FD0500140DA9 /* ImprintViewController.swift in Sources */,
 				DFCA0C611FD5E17300260E24 /* FlowViewController.swift in Sources */,
-				DFCA0C671FD5E84400260E24 /* MessageViewController.swift in Sources */,
 				DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */,
 				DF51103B219D9B83000321E8 /* UnitSelectionViewController.swift in Sources */,
 				DF4C365120D133CD00A9E1B7 /* CircleView.swift in Sources */,
 				DF94839D20D16C7E009B120B /* Coordinates.swift in Sources */,
 				DF962C4F1FD5A41300514B06 /* SpeedometerViewController.swift in Sources */,
+				DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */,
 				DF3010D8205A929E005B493D /* String.swift in Sources */,
 				DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */,
 				DF9DCB0220ADD770008BAE8B /* Configuration.swift in Sources */,

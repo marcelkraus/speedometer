@@ -37,13 +37,9 @@ private extension FlowViewController {
             case .notDetermined:
                 self.transition(to: WelcomeViewController())
             case .restricted:
-                let messageViewController = storyboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
-                messageViewController.messageType = .locationAuthorizationStatusRestricted
-                self.transition(to: messageViewController)
+                self.transition(to: MessageViewController(messageType: .locationAuthorizationStatusRestricted))
             case .denied:
-                let messageViewController = storyboard.instantiateViewController(withIdentifier: "MessageViewControllerIdentifier") as! MessageViewController
-                messageViewController.messageType = .locationAuthorizationStatusDenied
-                self.transition(to: messageViewController)
+                self.transition(to: MessageViewController(messageType: .locationAuthorizationStatusDenied))
             case .authorizedWhenInUse, .authorizedAlways:
                 self.transition(to: storyboard.instantiateViewController(withIdentifier: "SpeedometerViewControllerIdentifier"))
             }
