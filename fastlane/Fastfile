@@ -14,7 +14,7 @@ lane :beta do
 
   increment_build_number(build_number: latest_testflight_build_number(version: get_version_number, initial_build_number: 0) + 1)
 
-  build_app(workspace: "Speedometer.xcworkspace", scheme: "Speedometer")
+  build_app(project: "Speedometer.xcodeproj", scheme: "Speedometer")
 
   upload_to_testflight(skip_waiting_for_build_processing: true)
 
