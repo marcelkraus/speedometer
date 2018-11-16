@@ -26,5 +26,5 @@
 "SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "Kein Geschwindigkeitslimit";
 
 "WelcomeViewController.Button" = "OK, leg los!";
-"WelcomeViewController.Title" = "Herzlich Willkommen!";
-"WelcomeViewController.Contents" = "Tacho zeigt dir deine aktuelle Geschwindigkeit an, kostenlos und werbefrei.\n\nTacho benötigt daher Zugriff auf deine Standortdaten, die nur für diese Zwecke verwendet und mit niemandem geteilt werden.\n\nBitte betätige den untenstehenden Button und bestätige den Hinweis im darauf folgenden Dialog.";
+"WelcomeViewController.Heading" = "Herzlich Willkommen!";
+"WelcomeViewController.Text" = "Tacho zeigt dir deine aktuelle Geschwindigkeit an, kostenlos und werbefrei.\n\nTacho benötigt daher Zugriff auf deine Standortdaten, die nur für diese Zwecke verwendet und mit niemandem geteilt werden.\n\nBitte betätige den untenstehenden Button und bestätige den Hinweis im darauf folgenden Dialog.";

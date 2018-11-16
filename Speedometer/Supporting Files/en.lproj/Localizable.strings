@@ -26,5 +26,5 @@
 "SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "No Speed Limit";
 
 "WelcomeViewController.Button" = "I've got it!";
-"WelcomeViewController.Title" = "Welcome!";
-"WelcomeViewController.Contents" = "Speedometer shows your current speed, cost-free and without any advertisements.\n\nTherefore, Speedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease press the button below and confirm access within the popup.";
+"WelcomeViewController.Heading" = "Welcome!";
+"WelcomeViewController.Text" = "Speedometer shows your current speed, cost-free and without any advertisements.\n\nTherefore, Speedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease press the button below and confirm access within the popup.";
