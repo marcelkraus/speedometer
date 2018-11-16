@@ -1,7 +1,7 @@
 import CoreLocation
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class OnboardingViewController: UIViewController {
 
     // MARK: - Properties
 
@@ -15,7 +15,7 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet private weak var authorizationButton: UIButton! {
         didSet {
-            authorizationButton.setTitle("WelcomeViewController.Button".localized, for: .normal)
+            authorizationButton.setTitle("OnboardingViewController.Button".localized, for: .normal)
             authorizationButton.layer.masksToBounds = true
             authorizationButton.layer.cornerRadius = 10
         }
@@ -44,7 +44,7 @@ class WelcomeViewController: UIViewController {
 
 // MARK: - Private Methods
 
-private extension WelcomeViewController {
+private extension OnboardingViewController {
     func setupContainerViewControllers() {
         let unitSelectionViewController = UnitSelectionViewController()
         unitSelectionViewController.hideStackView = true
@@ -59,10 +59,7 @@ private extension WelcomeViewController {
             ])
         unitSelectionViewController.didMove(toParent: self)
 
-        let paragraphViewController = ParagraphViewController(
-            heading: "WelcomeViewController.Heading".localized,
-            text: "WelcomeViewController.Text".localized
-        )
+        let paragraphViewController = InformationViewController(informationType: .onboardingInformation)
         addChild(paragraphViewController)
         paragraphView.addSubview(paragraphViewController.view)
         paragraphViewController.view.translatesAutoresizingMaskIntoConstraints = false

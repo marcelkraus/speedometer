@@ -1,19 +1,18 @@
+"Information.LocationAuthorizationStatusDenied.Heading" = "Houston, we've had a problem here!";
+"Information.LocationAuthorizationStatusDenied.Text" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
+"Information.LocationAuthorizationStatusRestricted.Heading" = "Houston, we've had a problem here!";
+"Information.LocationAuthorizationStatusRestricted.Text" = "Please allow access to your location data to use Speedometer\n\nPlease check the following settings:\n\nSettings > Privacy > Location Services > Speedometer > While Using";
+"Information.OnboardingInformation.Heading" = "Welcome!";
+"Information.OnboardingInformation.Text" = "Speedometer shows your current speed, cost-free and without any advertisements.\n\nTherefore, Speedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease press the button below and confirm access within the popup.";
+
 "LoadingIndicatorViewController.Indicator" = "Loading…";
-
-"MessageViewController.LocationAuthorizationStatusDenied.Title" = "Houston, we've had a problem here!";
-"MessageViewController.LocationAuthorizationStatusDenied.Contents" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
-"MessageViewController.LocationAuthorizationStatusRestricted.Title" = "Houston, we've had a problem here!";
-"MessageViewController.LocationAuthorizationStatusRestricted.Contents" = "Please allow access to your location data to use Speedometer\n\nPlease check the following settings:\n\nSettings > Privacy > Location Services > Speedometer > While Using";
-"MessageViewController.UnknownError.Title" = "An unknown error occured.";
-"MessageViewController.UnknownError.Contents" = "The usage of the app is not possible at the moment. Please try again in a few moments.";
-
+"OnboardingViewController.Button" = "I've got it!";
 "SettingsViewController.Button.Close" = "Close";
 "SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nGermany\n\nMany thanks to Marc and Thomas for their support.\n\n\Parts of app icon designed by Freepik from Flaticon.";
 "SettingsViewController.Imprint.Heading" = "Imprint";
 "SettingsViewController.Version.Build" = "Build";
 "SettingsViewController.Version.Heading" = "App Version";
 "SettingsViewController.Version.Version" = "Version";
-
 "SpeedometerViewController.Indicator" = "Waiting for GPS signal…";
 "SpeedometerViewController.NoCoordinates" = "– No Coordinates –";
 "SpeedometerViewController.Orientation.East" = "East";
@@ -24,7 +23,3 @@
 "SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit" = "Apply current speed";
 "SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Speed limit set to";
 "SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "No Speed Limit";
-
-"WelcomeViewController.Button" = "I've got it!";
-"WelcomeViewController.Heading" = "Welcome!";
-"WelcomeViewController.Text" = "Speedometer shows your current speed, cost-free and without any advertisements.\n\nTherefore, Speedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease press the button below and confirm access within the popup.";
