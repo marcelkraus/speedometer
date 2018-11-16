@@ -14,8 +14,8 @@
 		DF511033219D982A000321E8 /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF511032219D982A000321E8 /* LoadingViewController.xib */; };
 		DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */; };
 		DF511038219D9B05000321E8 /* LoadingIndicatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF511036219D9B05000321E8 /* LoadingIndicatorViewController.xib */; };
-		DF51103B219D9B83000321E8 /* BottomBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511039219D9B83000321E8 /* BottomBarViewController.swift */; };
-		DF51103C219D9B83000321E8 /* BottomBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF51103A219D9B83000321E8 /* BottomBarViewController.xib */; };
+		DF51103B219D9B83000321E8 /* UnitSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511039219D9B83000321E8 /* UnitSelectionViewController.swift */; };
+		DF51103C219D9B83000321E8 /* UnitSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF51103A219D9B83000321E8 /* UnitSelectionViewController.xib */; };
 		DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */; };
 		DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */; };
 		DF5F4C5F1FD5DAA10043F97E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */; };
@@ -57,8 +57,8 @@
 		DF511032219D982A000321E8 /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
 		DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewController.swift; sourceTree = "<group>"; };
 		DF511036219D9B05000321E8 /* LoadingIndicatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingIndicatorViewController.xib; sourceTree = "<group>"; };
-		DF511039219D9B83000321E8 /* BottomBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarViewController.swift; sourceTree = "<group>"; };
-		DF51103A219D9B83000321E8 /* BottomBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomBarViewController.xib; sourceTree = "<group>"; };
+		DF511039219D9B83000321E8 /* UnitSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSelectionViewController.swift; sourceTree = "<group>"; };
+		DF51103A219D9B83000321E8 /* UnitSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnitSelectionViewController.xib; sourceTree = "<group>"; };
 		DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.ttf"; sourceTree = "<group>"; };
 		DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Medium.ttf"; sourceTree = "<group>"; };
 		DF5F4C5E1FD5DAA10043F97E /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -127,10 +127,10 @@
 		DF511034219D9AE6000321E8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				DF511039219D9B83000321E8 /* BottomBarViewController.swift */,
-				DF51103A219D9B83000321E8 /* BottomBarViewController.xib */,
 				DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */,
 				DF511036219D9B05000321E8 /* LoadingIndicatorViewController.xib */,
+				DF511039219D9B83000321E8 /* UnitSelectionViewController.swift */,
+				DF51103A219D9B83000321E8 /* UnitSelectionViewController.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -342,7 +342,7 @@
 				DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */,
 				DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */,
 				DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */,
-				DF51103C219D9B83000321E8 /* BottomBarViewController.xib in Resources */,
+				DF51103C219D9B83000321E8 /* UnitSelectionViewController.xib in Resources */,
 				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
 				DFC358F4205A9BCF00DEDB9E /* InfoPlist.strings in Resources */,
 				DF511033219D982A000321E8 /* LoadingViewController.xib in Resources */,
@@ -376,7 +376,7 @@
 				DFCA0C611FD5E17300260E24 /* FlowViewController.swift in Sources */,
 				DFCA0C671FD5E84400260E24 /* MessageViewController.swift in Sources */,
 				DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */,
-				DF51103B219D9B83000321E8 /* BottomBarViewController.swift in Sources */,
+				DF51103B219D9B83000321E8 /* UnitSelectionViewController.swift in Sources */,
 				DF4C365120D133CD00A9E1B7 /* CircleView.swift in Sources */,
 				DF94839D20D16C7E009B120B /* Coordinates.swift in Sources */,
 				DF962C4F1FD5A41300514B06 /* SpeedometerViewController.swift in Sources */,
