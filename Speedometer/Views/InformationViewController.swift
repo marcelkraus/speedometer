@@ -8,9 +8,9 @@ class InformationViewController: UIViewController {
 
     // MARK: - Outlets & Actions
 
-    @IBOutlet private weak var headingLabel: UILabel!
+    @IBOutlet weak var headingLabel: UILabel!
 
-    @IBOutlet private weak var textLabel: UILabel!
+    @IBOutlet weak var textLabel: UILabel!
 
     // MARK: - View Controller Lifecycle
 
