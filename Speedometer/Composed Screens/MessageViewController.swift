@@ -49,8 +49,7 @@ private extension MessageViewController {
     }
 
     func setupUnitSelectionView() {
-        let unitSelectionViewController = UnitSelectionViewController()
-        unitSelectionViewController.hideStackView = true
+        let unitSelectionViewController = UnitSelectionViewController(hideStackView: true)
         addChild(unitSelectionViewController)
 
         let unitSelectionView = unitSelectionViewController.view!
