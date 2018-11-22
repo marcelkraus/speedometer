@@ -4,7 +4,7 @@ class OnboardingViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var paragraphView: UIView!
+    private var informationView: UIView!
 
     // MARK: - View Controller Lifecycle
 
@@ -14,7 +14,7 @@ class OnboardingViewController: UIViewController {
         view.backgroundColor = .white
 
         setupUnitSelectionView()
-        setupParagraphView()
+        setupInformationView()
         setupAuthorizationButton()
     }
 
@@ -27,24 +27,24 @@ private extension OnboardingViewController {
 
     // MARK: - Private Methods
 
-    func setupParagraphView() {
-        let paragraphViewController = InformationViewController(informationType: .onboardingInformation)
-        addChild(paragraphViewController)
+    func setupInformationView() {
+        let informationViewController = InformationViewController(informationType: .onboardingInformation)
+        addChild(informationViewController)
 
-        paragraphView = paragraphViewController.view!
-        view.addSubview(paragraphView)
+        informationView = informationViewController.view!
+        view.addSubview(informationView)
 
-        paragraphView.translatesAutoresizingMaskIntoConstraints = false
+        informationView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            paragraphView.leadingAnchor.constraint(equalTo: paragraphView.leadingAnchor),
-            paragraphView.topAnchor.constraint(equalTo: paragraphView.topAnchor),
-            paragraphView.bottomAnchor.constraint(equalTo: paragraphView.bottomAnchor),
-            paragraphView.trailingAnchor.constraint(equalTo: paragraphView.trailingAnchor),
-            paragraphView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
-            paragraphView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
-            paragraphView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
+            informationView.leadingAnchor.constraint(equalTo: informationView.leadingAnchor),
+            informationView.topAnchor.constraint(equalTo: informationView.topAnchor),
+            informationView.bottomAnchor.constraint(equalTo: informationView.bottomAnchor),
+            informationView.trailingAnchor.constraint(equalTo: informationView.trailingAnchor),
+            informationView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
+            informationView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
+            informationView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
             ])
-        paragraphViewController.didMove(toParent: self)
+        informationViewController.didMove(toParent: self)
     }
 
     func setupAuthorizationButton() {
@@ -57,9 +57,9 @@ private extension OnboardingViewController {
         authorizationButtonView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             authorizationButtonView.heightAnchor.constraint(equalToConstant: 40.0),
-            authorizationButtonView.leadingAnchor.constraint(equalTo: paragraphView.leadingAnchor),
-            authorizationButtonView.topAnchor.constraint(equalTo: paragraphView.bottomAnchor, constant: 20.0),
-            authorizationButtonView.trailingAnchor.constraint(equalTo: paragraphView.trailingAnchor),
+            authorizationButtonView.leadingAnchor.constraint(equalTo: informationView.leadingAnchor),
+            authorizationButtonView.topAnchor.constraint(equalTo: informationView.bottomAnchor, constant: 20.0),
+            authorizationButtonView.trailingAnchor.constraint(equalTo: informationView.trailingAnchor),
             ])
     }
 

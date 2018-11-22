@@ -16,7 +16,7 @@ class MessageViewController: UIViewController {
 
         view.backgroundColor = .white
         setupUnitSelectionView()
-        setupParagraphView()
+        setupInformationView()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -28,24 +28,24 @@ private extension MessageViewController {
 
     // MARK: - Private Methods
 
-    func setupParagraphView() {
-        let paragraphViewController = InformationViewController(informationType: informationType)
-        addChild(paragraphViewController)
+    func setupInformationView() {
+        let informationViewController = InformationViewController(informationType: informationType)
+        addChild(informationViewController)
 
-        let paragraphView = paragraphViewController.view!
-        view.addSubview(paragraphView)
+        let informationView = informationViewController.view!
+        view.addSubview(informationView)
 
-        paragraphView.translatesAutoresizingMaskIntoConstraints = false
+        informationView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            paragraphView.leadingAnchor.constraint(equalTo: paragraphView.leadingAnchor),
-            paragraphView.topAnchor.constraint(equalTo: paragraphView.topAnchor),
-            paragraphView.bottomAnchor.constraint(equalTo: paragraphView.bottomAnchor),
-            paragraphView.trailingAnchor.constraint(equalTo: paragraphView.trailingAnchor),
-            paragraphView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
-            paragraphView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
-            paragraphView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
+            informationView.leadingAnchor.constraint(equalTo: informationView.leadingAnchor),
+            informationView.topAnchor.constraint(equalTo: informationView.topAnchor),
+            informationView.bottomAnchor.constraint(equalTo: informationView.bottomAnchor),
+            informationView.trailingAnchor.constraint(equalTo: informationView.trailingAnchor),
+            informationView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
+            informationView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
+            informationView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
             ])
-        paragraphViewController.didMove(toParent: self)
+        informationViewController.didMove(toParent: self)
     }
 
     func setupUnitSelectionView() {
