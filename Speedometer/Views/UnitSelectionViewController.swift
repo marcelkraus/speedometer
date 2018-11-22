@@ -38,8 +38,9 @@ class UnitSelectionViewController: UIViewController {
     }
 
     @IBAction func didTapButton(_ button: UIButton) {
-        let storyboard = UIStoryboard(name: "Speedometer", bundle: Bundle.main)
-        let imprintViewController = storyboard.instantiateViewController(withIdentifier: "ImprintViewControllerIdentifier")
+        let imprintViewController = ImprintViewController()
+        imprintViewController.modalPresentationStyle = .overCurrentContext
+        imprintViewController.modalTransitionStyle = .crossDissolve
 
         present(imprintViewController, animated: true, completion: nil)
     }
