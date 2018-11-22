@@ -67,9 +67,10 @@ class UnitSelectionViewController: UIViewController {
     }
 }
 
-// MARK: - Private Methods
-
 private extension UnitSelectionViewController {
+
+    // MARK: - Private Methods
+
     func updateUnit(_ unit: Unit) {
         UserDefaults.standard.set(unit.rawValue, forKey: Configuration.currentUnitDefaultsKey)
         segmentedControl.selectedSegmentIndex = units.index(where: { $0.abbreviation == unit.abbreviation }) ?? 0

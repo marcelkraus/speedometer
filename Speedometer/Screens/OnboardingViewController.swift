@@ -42,9 +42,10 @@ class OnboardingViewController: UIViewController {
     }
 }
 
-// MARK: - Private Methods
-
 private extension OnboardingViewController {
+
+    // MARK: - Private Methods
+
     func setupContainerViewControllers() {
         let unitSelectionViewController = UnitSelectionViewController()
         unitSelectionViewController.hideStackView = true
