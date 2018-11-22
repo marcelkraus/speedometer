@@ -20,9 +20,9 @@ class UnitSelectionViewController: UIViewController {
 
     // MARK: - Outlets & Actions
 
-    @IBOutlet private weak var stackView: UIStackView!
+    @IBOutlet weak var stackView: UIStackView!
 
-    @IBOutlet private weak var segmentedControl: UISegmentedControl! {
+    @IBOutlet weak var segmentedControl: UISegmentedControl! {
         didSet {
             segmentedControl.removeAllSegments()
             units.enumerated().forEach { (index, unit) in
@@ -31,7 +31,7 @@ class UnitSelectionViewController: UIViewController {
         }
     }
 
-    @IBOutlet private weak var informationButton: UIButton!
+    @IBOutlet weak var informationButton: UIButton!
 
     @IBAction func didChangeValue(_ sender: UISegmentedControl) {
         updateUnit(units[sender.selectedSegmentIndex])
