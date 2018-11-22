@@ -3,6 +3,10 @@ import UIKit
 
 class AuthorizationButtonViewController: UIViewController {
 
+    // MARK: - Properties
+
+    private let locationManager = CLLocationManager()
+
     // MARK: - Outlets & Actions
 
     @IBOutlet weak var button: UIButton! {
@@ -14,7 +18,6 @@ class AuthorizationButtonViewController: UIViewController {
     }
 
     @IBAction func didTapButton(_ sender: Any) {
-        let locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
     }
 
