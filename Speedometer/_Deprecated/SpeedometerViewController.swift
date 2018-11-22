@@ -43,7 +43,7 @@ class SpeedometerViewController: UIViewController {
                 return
             }
 
-            UserDefaults.standard.set(speedLimit.asString, forKey: Configuration.currentSpeedLimitDefaultsKey)
+            UserDefaults.standard.set(speedLimit.asString, forKey: AppConfiguration.currentSpeedLimitDefaultsKey)
             speedLimitLabel.text = "\("SpeedometerViewController.SpeedLimit.CurrentSpeedLimit".localized) \(speedLimit.asStringWithUnit)"
             speedLimitButton.setTitle("SpeedometerViewController.SpeedLimit.Button.TapToReleaseSpeedLimit".localized, for: .normal)
         }
@@ -52,7 +52,7 @@ class SpeedometerViewController: UIViewController {
     private var unit: Unit = Unit.milesPerHour {
         didSet {
             unitLabel.text = unit.abbreviation
-            UserDefaults.standard.removeObject(forKey: Configuration.currentSpeedLimitDefaultsKey)
+            UserDefaults.standard.removeObject(forKey: AppConfiguration.currentSpeedLimitDefaultsKey)
         }
     }
 
@@ -99,7 +99,7 @@ class SpeedometerViewController: UIViewController {
 
 extension SpeedometerViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last, location.horizontalAccuracy <= Double(Configuration.minimumHorizontalAccuracy) else {
+        guard let location = locations.last, location.horizontalAccuracy <= Double(AppConfiguration.minimumHorizontalAccuracy) else {
             setDisplayMode(to: .loadingIndicator)
 
             return

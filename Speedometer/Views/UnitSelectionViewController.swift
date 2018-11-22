@@ -51,7 +51,7 @@ class UnitSelectionViewController: UIViewController {
     // MARK: - View Controller Lifecycle
 
     init() {
-        unit = Unit(rawValue: UserDefaults.standard.string(forKey: Configuration.currentUnitDefaultsKey)!)!
+        unit = Unit(rawValue: UserDefaults.standard.string(forKey: AppConfiguration.currentUnitDefaultsKey)!)!
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -72,7 +72,7 @@ private extension UnitSelectionViewController {
     // MARK: - Private Methods
 
     func updateUnit(_ unit: Unit) {
-        UserDefaults.standard.set(unit.rawValue, forKey: Configuration.currentUnitDefaultsKey)
+        UserDefaults.standard.set(unit.rawValue, forKey: AppConfiguration.currentUnitDefaultsKey)
         segmentedControl.selectedSegmentIndex = units.index(where: { $0.abbreviation == unit.abbreviation }) ?? 0
 
         delegate?.didSetUnit(unit)
