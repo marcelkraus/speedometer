@@ -11,7 +11,6 @@
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
 		DF3010D8205A929E005B493D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3010D7205A929E005B493D /* String.swift */; };
 		DF4C365120D133CD00A9E1B7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C365020D133CD00A9E1B7 /* CircleView.swift */; };
-		DF511033219D982A000321E8 /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF511032219D982A000321E8 /* LoadingViewController.xib */; };
 		DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */; };
 		DF511038219D9B05000321E8 /* LoadingIndicatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF511036219D9B05000321E8 /* LoadingIndicatorViewController.xib */; };
 		DF51103B219D9B83000321E8 /* UnitSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511039219D9B83000321E8 /* UnitSelectionViewController.swift */; };
@@ -35,10 +34,10 @@
 		DFD30993219F240E005CE3B9 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD30991219F240E005CE3B9 /* InformationViewController.swift */; };
 		DFD30994219F240E005CE3B9 /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD30992219F240E005CE3B9 /* InformationViewController.xib */; };
 		DFD30999219F252C005CE3B9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */; };
-		DFD3099A219F252C005CE3B9 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD30998219F252C005CE3B9 /* OnboardingViewController.xib */; };
-		DFDB367E219F76BC002B7D53 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFDB367D219F76BC002B7D53 /* MessageViewController.xib */; };
 		DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB367F219F770B002B7D53 /* MessageViewController.swift */; };
 		DFDB3682219F7B4D002B7D53 /* InformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB3681219F7B4D002B7D53 /* InformationType.swift */; };
+		DFE3BB6121A6C564001EDCAE /* AuthorizationButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3BB5F21A6C564001EDCAE /* AuthorizationButtonViewController.swift */; };
+		DFE3BB6221A6C564001EDCAE /* AuthorizationButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE3BB6021A6C564001EDCAE /* AuthorizationButtonViewController.xib */; };
 		DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFE69BD7205A904000FA0CE3 /* Localizable.strings */; };
 		DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */; };
 		DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */; };
@@ -59,7 +58,6 @@
 		DF2C45AE1FCC2EF0005C8906 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		DF3010D7205A929E005B493D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		DF4C365020D133CD00A9E1B7 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		DF511032219D982A000321E8 /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
 		DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewController.swift; sourceTree = "<group>"; };
 		DF511036219D9B05000321E8 /* LoadingIndicatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingIndicatorViewController.xib; sourceTree = "<group>"; };
 		DF511039219D9B83000321E8 /* UnitSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSelectionViewController.swift; sourceTree = "<group>"; };
@@ -86,10 +84,10 @@
 		DFD30991219F240E005CE3B9 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		DFD30992219F240E005CE3B9 /* InformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
 		DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		DFD30998219F252C005CE3B9 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
-		DFDB367D219F76BC002B7D53 /* MessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
 		DFDB367F219F770B002B7D53 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		DFDB3681219F7B4D002B7D53 /* InformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationType.swift; sourceTree = "<group>"; };
+		DFE3BB5F21A6C564001EDCAE /* AuthorizationButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationButtonViewController.swift; sourceTree = "<group>"; };
+		DFE3BB6021A6C564001EDCAE /* AuthorizationButtonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorizationButtonViewController.xib; sourceTree = "<group>"; };
 		DFE69BD6205A904000FA0CE3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DFE69BD8205A904C00FA0CE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DFEB62221F30B5EA00FEC555 /* Speedometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Speedometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,11 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */,
-				DF511032219D982A000321E8 /* LoadingViewController.xib */,
 				DFDB367F219F770B002B7D53 /* MessageViewController.swift */,
-				DFDB367D219F76BC002B7D53 /* MessageViewController.xib */,
 				DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */,
-				DFD30998219F252C005CE3B9 /* OnboardingViewController.xib */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -141,10 +136,12 @@
 		DF511034219D9AE6000321E8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */,
-				DF511036219D9B05000321E8 /* LoadingIndicatorViewController.xib */,
+				DFE3BB5F21A6C564001EDCAE /* AuthorizationButtonViewController.swift */,
+				DFE3BB6021A6C564001EDCAE /* AuthorizationButtonViewController.xib */,
 				DFD30991219F240E005CE3B9 /* InformationViewController.swift */,
 				DFD30992219F240E005CE3B9 /* InformationViewController.xib */,
+				DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */,
+				DF511036219D9B05000321E8 /* LoadingIndicatorViewController.xib */,
 				DF511039219D9B83000321E8 /* UnitSelectionViewController.swift */,
 				DF51103A219D9B83000321E8 /* UnitSelectionViewController.xib */,
 			);
@@ -351,19 +348,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFE3BB6221A6C564001EDCAE /* AuthorizationButtonViewController.xib in Resources */,
 				DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */,
 				DF511038219D9B05000321E8 /* LoadingIndicatorViewController.xib in Resources */,
 				DF7CF24C20EBD24A0058823B /* Speedometer.storyboard in Resources */,
 				DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */,
 				DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */,
-				DFD3099A219F252C005CE3B9 /* OnboardingViewController.xib in Resources */,
 				DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */,
 				DF51103C219D9B83000321E8 /* UnitSelectionViewController.xib in Resources */,
 				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
-				DFDB367E219F76BC002B7D53 /* MessageViewController.xib in Resources */,
 				DFC358F4205A9BCF00DEDB9E /* InfoPlist.strings in Resources */,
 				DFD30994219F240E005CE3B9 /* InformationViewController.xib in Resources */,
-				DF511033219D982A000321E8 /* LoadingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +385,7 @@
 				DF5F4C5F1FD5DAA10043F97E /* UIViewController.swift in Sources */,
 				DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */,
 				DFB6D73820815E2700BFC1F3 /* Speed.swift in Sources */,
+				DFE3BB6121A6C564001EDCAE /* AuthorizationButtonViewController.swift in Sources */,
 				DFDB3682219F7B4D002B7D53 /* InformationType.swift in Sources */,
 				DF8FDCEA2008FD0500140DA9 /* ImprintViewController.swift in Sources */,
 				DFCA0C611FD5E17300260E24 /* FlowViewController.swift in Sources */,

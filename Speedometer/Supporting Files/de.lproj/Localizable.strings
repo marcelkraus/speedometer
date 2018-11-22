@@ -5,8 +5,8 @@
 "Information.OnboardingInformation.Heading" = "Herzlich Willkommen!";
 "Information.OnboardingInformation.Text" = "Tacho zeigt dir deine aktuelle Geschwindigkeit an, kostenlos und werbefrei.\n\nTacho benötigt daher Zugriff auf deine Standortdaten, die nur für diese Zwecke verwendet und mit niemandem geteilt werden.\n\nBitte betätige den untenstehenden Button und bestätige den Hinweis im darauf folgenden Dialog.";
 
+"AuthorizationButtonViewController.Label" = "OK, leg los!";
 "LoadingIndicatorViewController.Indicator" = "Laden…";
-"OnboardingViewController.Button" = "OK, leg los!";
 "SettingsViewController.Button.Close" = "Schließen";
 "SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nDeutschland\n\nVielen Dank an Marc und Thomas für ihre Unterstützung.\n\n\Bestandteile des App-Icons designed durch Freepik von Flaticon.";
 "SettingsViewController.Imprint.Heading" = "Impressum";

@@ -5,8 +5,8 @@
 "Information.OnboardingInformation.Heading" = "Welcome!";
 "Information.OnboardingInformation.Text" = "Speedometer shows your current speed, cost-free and without any advertisements.\n\nTherefore, Speedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease press the button below and confirm access within the popup.";
 
+"AuthorizationButtonViewController.Label" = "I've got it!";
 "LoadingIndicatorViewController.Indicator" = "Loading…";
-"OnboardingViewController.Button" = "I've got it!";
 "SettingsViewController.Button.Close" = "Close";
 "SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nGermany\n\nMany thanks to Marc and Thomas for their support.\n\n\Parts of app icon designed by Freepik from Flaticon.";
 "SettingsViewController.Imprint.Heading" = "Imprint";
