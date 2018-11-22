@@ -6,9 +6,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
         UserDefaults.standard.register(defaults: [
-            Configuration.appStartCounterKey: 0,
-            Configuration.currentUnitDefaultsKey: Configuration.defaultUnit,
-            Configuration.currentSpeedLimitDefaultsKey: "0"
+            AppConfiguration.appStartCounterKey: 0,
+            AppConfiguration.currentUnitDefaultsKey: AppConfiguration.defaultUnit,
+            AppConfiguration.currentSpeedLimitDefaultsKey: "0"
             ])
 
         application.isIdleTimerDisabled = true

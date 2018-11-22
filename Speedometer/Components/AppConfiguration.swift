@@ -1,6 +1,6 @@
 import Foundation
 
-struct Configuration {
+struct AppConfiguration {
     static let appStartCounterKey = "app_start_counter"
     static let buttonBorderRadius = 10
     static let currentSpeedLimitDefaultsKey = "speed"
