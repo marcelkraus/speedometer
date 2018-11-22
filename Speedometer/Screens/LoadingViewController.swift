@@ -24,9 +24,10 @@ class LoadingViewController: UIViewController {
     }
 }
 
-// MARK: - Private Methods
-
 private extension LoadingViewController {
+
+    // MARK: - Private Methods
+
     func setupContainerViewControllers() {
         let unitSelectionViewController = UnitSelectionViewController()
         unitSelectionViewController.hideStackView = true

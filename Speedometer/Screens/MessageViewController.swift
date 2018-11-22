@@ -32,9 +32,10 @@ class MessageViewController: UIViewController {
     }
 }
 
-// MARK: - Private Methods
-
 private extension MessageViewController {
+
+    // MARK: - Private Methods
+
     func setupContainerViewControllers() {
         let unitSelectionViewController = UnitSelectionViewController()
         unitSelectionViewController.hideStackView = true
