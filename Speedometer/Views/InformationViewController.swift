@@ -4,7 +4,8 @@ class InformationViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var informationType: InformationType
+    private var heading: String?
+    private var text: String?
 
     // MARK: - Outlets & Actions
 
@@ -14,10 +15,17 @@ class InformationViewController: UIViewController {
 
     // MARK: - View Controller Lifecycle
 
-    init(informationType: InformationType) {
-        self.informationType = informationType
+    init(heading: String, text: String) {
+        self.heading = heading
+        self.text = text
 
         super.init(nibName: nil, bundle: nil)
+    }
+
+    init(informationType: InformationType) {
+        super.init(nibName: nil, bundle: nil)
+
+        setupWithTextBlock(ofType: informationType)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -29,16 +37,26 @@ class InformationViewController: UIViewController {
 
         headingLabel.textColor = view.tintColor
 
+        headingLabel.text = heading
+        textLabel.text = text
+    }
+}
+
+private extension InformationViewController {
+
+    // MARK: - Private Methods
+
+    func setupWithTextBlock(ofType informationType: InformationType) {
         switch informationType {
         case .locationAuthorizationStatusDenied:
-            headingLabel.text = "Information.LocationAuthorizationStatusRestricted.Heading".localized
-            textLabel.text = "Information.LocationAuthorizationStatusRestricted.Text".localized
+            heading = "Information.LocationAuthorizationStatusRestricted.Heading".localized
+            text = "Information.LocationAuthorizationStatusRestricted.Text".localized
         case .locationAuthorizationStatusRestricted:
-            headingLabel.text = "Information.LocationAuthorizationStatusDenied.Heading".localized
-            textLabel.text = "Information.LocationAuthorizationStatusRestricted.Text".localized
+            heading = "Information.LocationAuthorizationStatusDenied.Heading".localized
+            text = "Information.LocationAuthorizationStatusRestricted.Text".localized
         case .onboardingInformation:
-            headingLabel.text = "Information.OnboardingInformation.Heading".localized
-            textLabel.text = "Information.OnboardingInformation.Text".localized
+            heading = "Information.OnboardingInformation.Heading".localized
+            text = "Information.OnboardingInformation.Text".localized
         }
     }
 }
