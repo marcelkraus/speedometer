@@ -14,17 +14,13 @@ class UnitSelectionViewController: UIViewController {
         }
     }
 
-    var hideStackView = false
+    private var hideStackView: Bool
 
     var delegate: UnitSelectionViewControllerDelegate?
 
     // MARK: - Outlets & Actions
 
-    @IBOutlet private weak var stackView: UIStackView! {
-        didSet {
-            stackView.isHidden = hideStackView
-        }
-    }
+    @IBOutlet private weak var stackView: UIStackView!
 
     @IBOutlet private weak var segmentedControl: UISegmentedControl! {
         didSet {
@@ -50,7 +46,8 @@ class UnitSelectionViewController: UIViewController {
 
     // MARK: - View Controller Lifecycle
 
-    init() {
+    init(hideStackView: Bool) {
+        self.hideStackView = hideStackView
         unit = Unit(rawValue: UserDefaults.standard.string(forKey: AppConfiguration.currentUnitDefaultsKey)!)!
 
         super.init(nibName: nil, bundle: nil)
@@ -63,6 +60,7 @@ class UnitSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        stackView.isHidden = hideStackView
         updateUnit(unit)
     }
 }

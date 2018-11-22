@@ -124,7 +124,7 @@ private extension SpeedometerViewController {
     }
 
     func configureView() {
-        let unitSelectionViewController = UnitSelectionViewController()
+        let unitSelectionViewController = UnitSelectionViewController(hideStackView: false)
         unitSelectionViewController.delegate = self
         addChild(unitSelectionViewController)
         unitSelectionView.addSubview(unitSelectionViewController.view)
