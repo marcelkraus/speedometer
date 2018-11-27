@@ -1,7 +1,7 @@
 import CoreLocation
 import UIKit
 
-class SpeedometerViewController: UIViewController {
+class DeprecatedSpeedometerViewController: UIViewController {
     @IBOutlet weak var unitSelectionView: UIView!
 
     private let locationManager = CLLocationManager()
@@ -97,7 +97,7 @@ class SpeedometerViewController: UIViewController {
 
 // MARK: - CLLocationManagerDelegate
 
-extension SpeedometerViewController: CLLocationManagerDelegate {
+extension DeprecatedSpeedometerViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last, location.horizontalAccuracy <= Double(AppConfiguration.minimumHorizontalAccuracy) else {
             setDisplayMode(to: .loadingIndicator)
@@ -116,7 +116,7 @@ extension SpeedometerViewController: CLLocationManagerDelegate {
 
 // MARK: - View Controller Configuration
 
-private extension SpeedometerViewController {
+private extension DeprecatedSpeedometerViewController {
     func configureLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -145,7 +145,7 @@ private extension SpeedometerViewController {
 
 // MARK: - Internal
 
-private extension SpeedometerViewController {
+private extension DeprecatedSpeedometerViewController {
     enum DisplayMode {
         case loadingIndicator
         case speed
@@ -180,7 +180,7 @@ private extension SpeedometerViewController {
 
 // MARK: - UnitSelectionViewControllerDelegate
 
-extension SpeedometerViewController: UnitSelectionViewControllerDelegate {
+extension DeprecatedSpeedometerViewController: UnitSelectionViewControllerDelegate {
     func didSetUnit(_ unit: Unit) {
         self.unit = unit
 
