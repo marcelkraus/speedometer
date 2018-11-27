@@ -13,7 +13,7 @@ class FlowViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        chooseViewController()
+        selectViewController()
     }
 }
 
@@ -21,18 +21,15 @@ class FlowViewController: UIViewController {
 
 extension FlowViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        self.chooseViewController()
+        self.selectViewController()
     }
 }
 
 // MARK: - Private Methods
 
 private extension FlowViewController {
-    func chooseViewController() {
-        let storyboard = UIStoryboard(name: "Speedometer", bundle: Bundle.main)
-        let loadingViewController = LoadingViewController()
-
-        transition(to: loadingViewController) { _ in
+    func selectViewController() {
+        transition(to: LoadingViewController()) { _ in
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
                 self.transition(to: OnboardingViewController())
@@ -41,7 +38,7 @@ private extension FlowViewController {
             case .denied:
                 self.transition(to: MessageViewController(informationType: .locationAuthorizationStatusDenied))
             case .authorizedWhenInUse, .authorizedAlways:
-                self.transition(to: storyboard.instantiateViewController(withIdentifier: "SpeedometerViewControllerIdentifier"))
+                self.transition(to: SpeedometerViewController())
             }
         }
     }
