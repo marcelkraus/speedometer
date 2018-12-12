@@ -11,7 +11,8 @@
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
 		DF2F6BD321ADA4A400AC75BE /* SpeedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */; };
 		DF3010D8205A929E005B493D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3010D7205A929E005B493D /* String+Localization.swift */; };
-		DF4C365120D133CD00A9E1B7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C365020D133CD00A9E1B7 /* CircleView.swift */; };
+		DF4C365120D133CD00A9E1B7 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C365020D133CD00A9E1B7 /* CircularView.swift */; };
+		DF4E314321C16D9F00ADE39F /* CircularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E314221C16D9F00ADE39F /* CircularViewController.swift */; };
 		DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */; };
 		DF511038219D9B05000321E8 /* LoadingIndicatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF511036219D9B05000321E8 /* LoadingIndicatorViewController.xib */; };
 		DF51103B219D9B83000321E8 /* UnitSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511039219D9B83000321E8 /* UnitSelectionViewController.swift */; };
@@ -62,7 +63,8 @@
 		DF2C45AE1FCC2EF0005C8906 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerViewController.swift; sourceTree = "<group>"; };
 		DF3010D7205A929E005B493D /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
-		DF4C365020D133CD00A9E1B7 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		DF4C365020D133CD00A9E1B7 /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
+		DF4E314221C16D9F00ADE39F /* CircularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularViewController.swift; sourceTree = "<group>"; };
 		DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewController.swift; sourceTree = "<group>"; };
 		DF511036219D9B05000321E8 /* LoadingIndicatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingIndicatorViewController.xib; sourceTree = "<group>"; };
 		DF511039219D9B83000321E8 /* UnitSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSelectionViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,8 @@
 			children = (
 				DFE3BB5F21A6C564001EDCAE /* AuthorizationButtonViewController.swift */,
 				DFE3BB6021A6C564001EDCAE /* AuthorizationButtonViewController.xib */,
+				DF4C365020D133CD00A9E1B7 /* CircularView.swift */,
+				DF4E314221C16D9F00ADE39F /* CircularViewController.swift */,
 				DF76227621A6F2250073CEBC /* CloseButtonViewController.swift */,
 				DF76227721A6F2250073CEBC /* CloseButtonViewController.xib */,
 				DFD30991219F240E005CE3B9 /* InformationViewController.swift */,
@@ -227,7 +231,6 @@
 		DFE3BB6321A6DAB0001EDCAE /* _Deprecated */ = {
 			isa = PBXGroup;
 			children = (
-				DF4C365020D133CD00A9E1B7 /* CircleView.swift */,
 				DF7CF24B20EBD24A0058823B /* Speedometer.storyboard */,
 				DF962C4E1FD5A41300514B06 /* DeprecatedSpeedometerViewController.swift */,
 			);
@@ -408,13 +411,14 @@
 				DF76227321A6E9AE0073CEBC /* ImprintViewController.swift in Sources */,
 				DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */,
 				DFB6D73820815E2700BFC1F3 /* Speed.swift in Sources */,
+				DF4E314321C16D9F00ADE39F /* CircularViewController.swift in Sources */,
 				DF76227821A6F2250073CEBC /* CloseButtonViewController.swift in Sources */,
 				DFE3BB6121A6C564001EDCAE /* AuthorizationButtonViewController.swift in Sources */,
 				DFDB3682219F7B4D002B7D53 /* InformationType.swift in Sources */,
 				DFCA0C611FD5E17300260E24 /* FlowViewController.swift in Sources */,
 				DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */,
 				DF51103B219D9B83000321E8 /* UnitSelectionViewController.swift in Sources */,
-				DF4C365120D133CD00A9E1B7 /* CircleView.swift in Sources */,
+				DF4C365120D133CD00A9E1B7 /* CircularView.swift in Sources */,
 				DF94839D20D16C7E009B120B /* Coordinates.swift in Sources */,
 				DF962C4F1FD5A41300514B06 /* DeprecatedSpeedometerViewController.swift in Sources */,
 				DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */,
