@@ -1,4 +1,3 @@
-import CoreLocation
 import UIKit
 
 class MessageViewController: UIViewController {

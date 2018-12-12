@@ -14,12 +14,12 @@ class DeprecatedSpeedometerViewController: UIViewController {
 
             speedLabel.text = speed.asString
             circleView.fillmentLevel = speed.fillment
-            circleView.fillColor = view.tintColor
+            //circleView.fillColor = view.tintColor
             speedLabel.textColor = nil
 
             if let speedLimit = speedLimit, speed.roundedSpeed > speedLimit.roundedSpeed {
                 let warningColor = UIColor(red: 0.6196, green: 0, blue: 0, alpha: 1.0)
-                circleView.fillColor = warningColor
+                //circleView.fillColor = warningColor
                 speedLabel.textColor = warningColor
             }
         }
@@ -67,7 +67,7 @@ class DeprecatedSpeedometerViewController: UIViewController {
 
     // MARK: - Outlets & Actions
 
-    @IBOutlet weak var circleView: CircleView!
+    @IBOutlet weak var circleView: CircularView!
     @IBOutlet weak var inaccurateSignalIndicatorLabel: UILabel! {
         didSet {
             inaccurateSignalIndicatorLabel.text = "SpeedometerViewController.Indicator".localized
