@@ -10,6 +10,8 @@ class SpeedometerViewController: UIViewController {
 
     var speedView: UIView!
 
+    var coordinatesView: UIView!
+
     // MARK: - View Controller Lifecycle
 
     init() {
@@ -19,6 +21,7 @@ class SpeedometerViewController: UIViewController {
         setupUnitSelectionView()
         setupCircularView()
         setupSpeedView()
+        setupCoordinatesView()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -78,6 +81,20 @@ private extension SpeedometerViewController {
         NSLayoutConstraint.activate([
             speedView.trailingAnchor.constraint(equalTo: circularView.trailingAnchor),
             speedView.bottomAnchor.constraint(equalTo: circularView.bottomAnchor),
+            ])
+    }
+
+    func setupCoordinatesView() {
+        let coordinatesViewController = CoordinatesViewController()
+        addChild(coordinatesViewController)
+
+        coordinatesView = coordinatesViewController.view!
+        view.addSubview(coordinatesView)
+
+        coordinatesView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            coordinatesView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            coordinatesView.topAnchor.constraint(equalTo: speedView.bottomAnchor, constant: 40)
             ])
     }
 }
