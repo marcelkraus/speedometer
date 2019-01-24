@@ -40,6 +40,8 @@
 		DFD30999219F252C005CE3B9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */; };
 		DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB367F219F770B002B7D53 /* MessageViewController.swift */; };
 		DFDB3682219F7B4D002B7D53 /* InformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB3681219F7B4D002B7D53 /* InformationType.swift */; };
+		DFDBDE5021F9D93500F3E858 /* CoordinatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */; };
+		DFDBDE5121F9D93500F3E858 /* CoordinatesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFDBDE4F21F9D93500F3E858 /* CoordinatesViewController.xib */; };
 		DFE3BB6121A6C564001EDCAE /* AuthorizationButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3BB5F21A6C564001EDCAE /* AuthorizationButtonViewController.swift */; };
 		DFE3BB6221A6C564001EDCAE /* AuthorizationButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE3BB6021A6C564001EDCAE /* AuthorizationButtonViewController.xib */; };
 		DFE3BB6621A6DD8E001EDCAE /* UnitSelectionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3BB6521A6DD8E001EDCAE /* UnitSelectionViewControllerTests.swift */; };
@@ -95,6 +97,8 @@
 		DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		DFDB367F219F770B002B7D53 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		DFDB3681219F7B4D002B7D53 /* InformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationType.swift; sourceTree = "<group>"; };
+		DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesViewController.swift; sourceTree = "<group>"; };
+		DFDBDE4F21F9D93500F3E858 /* CoordinatesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoordinatesViewController.xib; sourceTree = "<group>"; };
 		DFE3BB5F21A6C564001EDCAE /* AuthorizationButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationButtonViewController.swift; sourceTree = "<group>"; };
 		DFE3BB6021A6C564001EDCAE /* AuthorizationButtonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorizationButtonViewController.xib; sourceTree = "<group>"; };
 		DFE3BB6521A6DD8E001EDCAE /* UnitSelectionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSelectionViewControllerTests.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 				DF4E314221C16D9F00ADE39F /* CircularViewController.swift */,
 				DF76227621A6F2250073CEBC /* CloseButtonViewController.swift */,
 				DF76227721A6F2250073CEBC /* CloseButtonViewController.xib */,
+				DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */,
+				DFDBDE4F21F9D93500F3E858 /* CoordinatesViewController.xib */,
 				DFD30991219F240E005CE3B9 /* InformationViewController.swift */,
 				DFD30992219F240E005CE3B9 /* InformationViewController.xib */,
 				DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */,
@@ -372,6 +378,7 @@
 				DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */,
 				DF51103C219D9B83000321E8 /* UnitSelectionViewController.xib in Resources */,
 				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
+				DFDBDE5121F9D93500F3E858 /* CoordinatesViewController.xib in Resources */,
 				DF76227921A6F2250073CEBC /* CloseButtonViewController.xib in Resources */,
 				DFC358F4205A9BCF00DEDB9E /* InfoPlist.strings in Resources */,
 				DFD30994219F240E005CE3B9 /* InformationViewController.xib in Resources */,
@@ -400,6 +407,7 @@
 				DFD30993219F240E005CE3B9 /* InformationViewController.swift in Sources */,
 				DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */,
 				DF5F4C5F1FD5DAA10043F97E /* UIViewController+Transition.swift in Sources */,
+				DFDBDE5021F9D93500F3E858 /* CoordinatesViewController.swift in Sources */,
 				DF76227321A6E9AE0073CEBC /* ImprintViewController.swift in Sources */,
 				DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */,
 				DFB6D73820815E2700BFC1F3 /* Speed.swift in Sources */,
