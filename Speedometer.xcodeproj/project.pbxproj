@@ -25,11 +25,9 @@
 		DF76227321A6E9AE0073CEBC /* ImprintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF76227221A6E9AE0073CEBC /* ImprintViewController.swift */; };
 		DF76227821A6F2250073CEBC /* CloseButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF76227621A6F2250073CEBC /* CloseButtonViewController.swift */; };
 		DF76227921A6F2250073CEBC /* CloseButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF76227721A6F2250073CEBC /* CloseButtonViewController.xib */; };
-		DF7CF24C20EBD24A0058823B /* Speedometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7CF24B20EBD24A0058823B /* Speedometer.storyboard */; };
 		DF7D820221C2B073004A37C8 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D820021C2B073004A37C8 /* SpeedViewController.swift */; };
 		DF7D820321C2B073004A37C8 /* SpeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF7D820121C2B073004A37C8 /* SpeedViewController.xib */; };
 		DF94839D20D16C7E009B120B /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94839C20D16C7E009B120B /* Coordinates.swift */; };
-		DF962C4F1FD5A41300514B06 /* DeprecatedSpeedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF962C4E1FD5A41300514B06 /* DeprecatedSpeedometerViewController.swift */; };
 		DF9DCB0220ADD770008BAE8B /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DCB0120ADD770008BAE8B /* AppConfiguration.swift */; };
 		DF9DCB0A20ADD8EC008BAE8B /* SpeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DCB0920ADD8EC008BAE8B /* SpeedTests.swift */; };
 		DF9DCB1320ADDAED008BAE8B /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DCB1220ADDAED008BAE8B /* UnitTests.swift */; };
@@ -79,11 +77,9 @@
 		DF76227221A6E9AE0073CEBC /* ImprintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprintViewController.swift; sourceTree = "<group>"; };
 		DF76227621A6F2250073CEBC /* CloseButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButtonViewController.swift; sourceTree = "<group>"; };
 		DF76227721A6F2250073CEBC /* CloseButtonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CloseButtonViewController.xib; sourceTree = "<group>"; };
-		DF7CF24B20EBD24A0058823B /* Speedometer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Speedometer.storyboard; sourceTree = "<group>"; };
 		DF7D820021C2B073004A37C8 /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
 		DF7D820121C2B073004A37C8 /* SpeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeedViewController.xib; sourceTree = "<group>"; };
 		DF94839C20D16C7E009B120B /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
-		DF962C4E1FD5A41300514B06 /* DeprecatedSpeedometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeprecatedSpeedometerViewController.swift; sourceTree = "<group>"; };
 		DF9DCB0120ADD770008BAE8B /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		DF9DCB0720ADD8EC008BAE8B /* SpeedometerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedometerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9DCB0920ADD8EC008BAE8B /* SpeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTests.swift; sourceTree = "<group>"; };
@@ -234,15 +230,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DFE3BB6321A6DAB0001EDCAE /* _Deprecated */ = {
-			isa = PBXGroup;
-			children = (
-				DF7CF24B20EBD24A0058823B /* Speedometer.storyboard */,
-				DF962C4E1FD5A41300514B06 /* DeprecatedSpeedometerViewController.swift */,
-			);
-			path = _Deprecated;
-			sourceTree = "<group>";
-		};
 		DFE3BB6421A6DD77001EDCAE /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,7 +259,6 @@
 		DFEB62241F30B5EA00FEC555 /* Speedometer */ = {
 			isa = PBXGroup;
 			children = (
-				DFE3BB6321A6DAB0001EDCAE /* _Deprecated */,
 				DF511034219D9AE6000321E8 /* Components */,
 				DF511031219D97EE000321E8 /* Composed Screens */,
 				DF8FDCE72008DD6200140DA9 /* Extensions */,
@@ -380,7 +366,6 @@
 				DFE3BB6221A6C564001EDCAE /* AuthorizationButtonViewController.xib in Resources */,
 				DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */,
 				DF511038219D9B05000321E8 /* LoadingIndicatorViewController.xib in Resources */,
-				DF7CF24C20EBD24A0058823B /* Speedometer.storyboard in Resources */,
 				DF7D820321C2B073004A37C8 /* SpeedViewController.xib in Resources */,
 				DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */,
 				DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */,
@@ -428,7 +413,6 @@
 				DF51103B219D9B83000321E8 /* UnitSelectionViewController.swift in Sources */,
 				DF4C365120D133CD00A9E1B7 /* CircularView.swift in Sources */,
 				DF94839D20D16C7E009B120B /* Coordinates.swift in Sources */,
-				DF962C4F1FD5A41300514B06 /* DeprecatedSpeedometerViewController.swift in Sources */,
 				DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */,
 				DF3010D8205A929E005B493D /* String+Localization.swift in Sources */,
 				DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */,
