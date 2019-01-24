@@ -2,6 +2,14 @@ import UIKit
 
 class SpeedometerViewController: UIViewController {
 
+    // MARK: - Properties
+
+    var unitSelectionView: UIView!
+
+    var circularView: UIView!
+
+    var speedView: UIView!
+
     // MARK: - View Controller Lifecycle
 
     init() {
@@ -10,6 +18,7 @@ class SpeedometerViewController: UIViewController {
         view.backgroundColor = .white
         setupUnitSelectionView()
         setupCircularView()
+        setupSpeedView()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -21,28 +30,11 @@ private extension SpeedometerViewController {
 
     // MARK: - Private Methods
 
-    func setupCircularView() {
-        let circularViewController = CircularViewController()
-        addChild(circularViewController)
-
-        let circularView = circularViewController.view!
-        view.addSubview(circularView)
-
-        circularView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            circularView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
-            circularView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
-            circularView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
-            circularView.heightAnchor.constraint(equalTo: circularView.widthAnchor, multiplier: 1.0),
-            ])
-        circularViewController.didMove(toParent: self)
-    }
-
     func setupUnitSelectionView() {
         let unitSelectionViewController = UnitSelectionViewController(hideStackView: false)
         addChild(unitSelectionViewController)
 
-        let unitSelectionView = unitSelectionViewController.view!
+        unitSelectionView = unitSelectionViewController.view!
         view.addSubview(unitSelectionView)
 
         unitSelectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -56,5 +48,36 @@ private extension SpeedometerViewController {
             unitSelectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             ])
         unitSelectionViewController.didMove(toParent: self)
+    }
+
+    func setupCircularView() {
+        let circularViewController = CircularViewController()
+        addChild(circularViewController)
+
+        circularView = circularViewController.view! as? CircularView
+        view.addSubview(circularView)
+
+        circularView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            circularView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
+            circularView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
+            circularView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
+            circularView.heightAnchor.constraint(equalTo: circularView.widthAnchor, multiplier: 1.0),
+            ])
+        circularViewController.didMove(toParent: self)
+    }
+
+    func setupSpeedView() {
+        let speedViewController = SpeedViewController()
+        addChild(speedViewController)
+
+        speedView = speedViewController.view!
+        view.addSubview(speedView)
+
+        speedView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            speedView.trailingAnchor.constraint(equalTo: circularView.trailingAnchor),
+            speedView.bottomAnchor.constraint(equalTo: circularView.bottomAnchor),
+            ])
     }
 }
