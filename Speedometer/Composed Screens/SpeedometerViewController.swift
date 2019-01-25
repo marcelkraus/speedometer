@@ -1,30 +1,24 @@
 import UIKit
 
 class SpeedometerViewController: UIViewController {
-
-    // MARK: - Properties
-
+    var imprintButtonView: UIView!
     var unitSelectionView: UIView!
-
     var circularView: UIView!
-
     var speedView: UIView!
-
     var coordinatesView: UIView!
-
     var speedLimiterView: UIView!
-
-    // MARK: - View Controller Lifecycle
 
     init() {
         super.init(nibName: nil, bundle: nil)
 
         view.backgroundColor = .white
+
         setupUnitSelectionView()
         setupCircularView()
         setupSpeedView()
         setupCoordinatesView()
         setupSpeedLimiterView()
+        setupImprintButtonView()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -33,8 +27,20 @@ class SpeedometerViewController: UIViewController {
 }
 
 private extension SpeedometerViewController {
+    func setupImprintButtonView() {
+        let imprintButtonViewController = ImprintButtonViewController()
+        addChild(imprintButtonViewController)
 
-    // MARK: - Private Methods
+        imprintButtonView = imprintButtonViewController.view!
+        view.addSubview(imprintButtonView)
+
+        imprintButtonView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imprintButtonView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
+            imprintButtonView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
+            ])
+        imprintButtonViewController.didMove(toParent: self)
+    }
 
     func setupUnitSelectionView() {
         let unitSelectionViewController = UnitSelectionViewController(hideStackView: false)

@@ -37,14 +37,6 @@ class UnitSelectionViewController: UIViewController {
         updateUnit(units[sender.selectedSegmentIndex])
     }
 
-    @IBAction func didTapButton(_ button: UIButton) {
-        let imprintViewController = ImprintViewController()
-        imprintViewController.modalPresentationStyle = .overCurrentContext
-        imprintViewController.modalTransitionStyle = .crossDissolve
-
-        present(imprintViewController, animated: true, completion: nil)
-    }
-
     // MARK: - View Controller Lifecycle
 
     init(hideStackView: Bool) {
