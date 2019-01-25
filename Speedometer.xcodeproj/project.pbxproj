@@ -17,8 +17,6 @@
 		DF4E314321C16D9F00ADE39F /* CircularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E314221C16D9F00ADE39F /* CircularViewController.swift */; };
 		DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */; };
 		DF511038219D9B05000321E8 /* LoadingIndicatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF511036219D9B05000321E8 /* LoadingIndicatorViewController.xib */; };
-		DF51103B219D9B83000321E8 /* UnitSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511039219D9B83000321E8 /* UnitSelectionViewController.swift */; };
-		DF51103C219D9B83000321E8 /* UnitSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF51103A219D9B83000321E8 /* UnitSelectionViewController.xib */; };
 		DF51433821F9F3400061BEAA /* SpeedLimiterButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51433621F9F3400061BEAA /* SpeedLimiterButtonViewController.swift */; };
 		DF51433921F9F3400061BEAA /* SpeedLimiterButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF51433721F9F3400061BEAA /* SpeedLimiterButtonViewController.xib */; };
 		DF51433B21F9F5390061BEAA /* SpeedLimiterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51433A21F9F5390061BEAA /* SpeedLimiterViewController.swift */; };
@@ -50,7 +48,6 @@
 		DFDBDE5021F9D93500F3E858 /* CoordinatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */; };
 		DFDBDE5121F9D93500F3E858 /* CoordinatesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFDBDE4F21F9D93500F3E858 /* CoordinatesViewController.xib */; };
 		DFE3BB6121A6C564001EDCAE /* AuthorizationButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3BB5F21A6C564001EDCAE /* AuthorizationButtonViewController.swift */; };
-		DFE3BB6621A6DD8E001EDCAE /* UnitSelectionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3BB6521A6DD8E001EDCAE /* UnitSelectionViewControllerTests.swift */; };
 		DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFE69BD7205A904000FA0CE3 /* Localizable.strings */; };
 		DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */; };
 		DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */; };
@@ -77,8 +74,6 @@
 		DF4E314221C16D9F00ADE39F /* CircularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularViewController.swift; sourceTree = "<group>"; };
 		DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewController.swift; sourceTree = "<group>"; };
 		DF511036219D9B05000321E8 /* LoadingIndicatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingIndicatorViewController.xib; sourceTree = "<group>"; };
-		DF511039219D9B83000321E8 /* UnitSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSelectionViewController.swift; sourceTree = "<group>"; };
-		DF51103A219D9B83000321E8 /* UnitSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnitSelectionViewController.xib; sourceTree = "<group>"; };
 		DF51433621F9F3400061BEAA /* SpeedLimiterButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedLimiterButtonViewController.swift; sourceTree = "<group>"; };
 		DF51433721F9F3400061BEAA /* SpeedLimiterButtonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeedLimiterButtonViewController.xib; sourceTree = "<group>"; };
 		DF51433A21F9F5390061BEAA /* SpeedLimiterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedLimiterViewController.swift; sourceTree = "<group>"; };
@@ -113,7 +108,6 @@
 		DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesViewController.swift; sourceTree = "<group>"; };
 		DFDBDE4F21F9D93500F3E858 /* CoordinatesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoordinatesViewController.xib; sourceTree = "<group>"; };
 		DFE3BB5F21A6C564001EDCAE /* AuthorizationButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationButtonViewController.swift; sourceTree = "<group>"; };
-		DFE3BB6521A6DD8E001EDCAE /* UnitSelectionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSelectionViewControllerTests.swift; sourceTree = "<group>"; };
 		DFE69BD6205A904000FA0CE3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DFE69BD8205A904C00FA0CE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DFEB62221F30B5EA00FEC555 /* Speedometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Speedometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,8 +157,6 @@
 				DFBB2BC321FA1A4C009BD016 /* SpeedLimiterInfoViewController.xib */,
 				DF7D820021C2B073004A37C8 /* SpeedViewController.swift */,
 				DF7D820121C2B073004A37C8 /* SpeedViewController.xib */,
-				DF511039219D9B83000321E8 /* UnitSelectionViewController.swift */,
-				DF51103A219D9B83000321E8 /* UnitSelectionViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,7 +231,6 @@
 			children = (
 				DF9DCB0B20ADD8EC008BAE8B /* Info.plist */,
 				DF9DCB1120ADD99B008BAE8B /* Model */,
-				DFE3BB6421A6DD77001EDCAE /* Views */,
 			);
 			path = SpeedometerTests;
 			sourceTree = "<group>";
@@ -252,14 +243,6 @@
 				DF9DCB1220ADDAED008BAE8B /* UnitTests.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		DFE3BB6421A6DD77001EDCAE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DFE3BB6521A6DD8E001EDCAE /* UnitSelectionViewControllerTests.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		DFEB62191F30B5E900FEC555 = {
@@ -394,7 +377,6 @@
 				DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */,
 				DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */,
 				DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */,
-				DF51103C219D9B83000321E8 /* UnitSelectionViewController.xib in Resources */,
 				DFBB2BC521FA1A4C009BD016 /* SpeedLimiterInfoViewController.xib in Resources */,
 				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
 				DFDBDE5121F9D93500F3E858 /* CoordinatesViewController.xib in Resources */,
@@ -412,7 +394,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF9DCB0A20ADD8EC008BAE8B /* SpeedTests.swift in Sources */,
-				DFE3BB6621A6DD8E001EDCAE /* UnitSelectionViewControllerTests.swift in Sources */,
 				DF64A52320EE621A00063BBD /* CoordinatesTests.swift in Sources */,
 				DF9DCB1320ADDAED008BAE8B /* UnitTests.swift in Sources */,
 			);
@@ -441,7 +422,6 @@
 				DF17A23321FB544A00DE901A /* ImprintButtonViewController.swift in Sources */,
 				DF7D820221C2B073004A37C8 /* SpeedViewController.swift in Sources */,
 				DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */,
-				DF51103B219D9B83000321E8 /* UnitSelectionViewController.swift in Sources */,
 				DF4C365120D133CD00A9E1B7 /* CircularView.swift in Sources */,
 				DF94839D20D16C7E009B120B /* Coordinates.swift in Sources */,
 				DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */,
