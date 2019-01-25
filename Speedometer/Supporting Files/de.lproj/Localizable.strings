@@ -4,6 +4,10 @@
 "Information.LocationAuthorizationStatusRestricted.Text" = "Bitte erlaube Zugriff auf deine Standortdaten, um Tacho nutzen zu können.\n\nDu findest die notwendigen Einstellungen hier:\n\nEinstellungen > Datenschutz > Ortungsdienste > Tacho > Beim Verwenden der App";
 "Information.OnboardingInformation.Heading" = "Herzlich Willkommen!";
 "Information.OnboardingInformation.Text" = "Tacho zeigt dir deine aktuelle Geschwindigkeit an, kostenlos und werbefrei.\n\nTacho benötigt daher Zugriff auf deine Standortdaten, die nur für diese Zwecke verwendet und mit niemandem geteilt werden.\n\nBitte betätige den untenstehenden Button und bestätige den Hinweis im darauf folgenden Dialog.";
+"SpeedLimiterButtonViewController.Button" = "Geschwindigkeitsbegrenzer einschalten";
+"SpeedLimiterButtonViewController.Status" = "Geschwindigkeitsbegrenzer";
+"SpeedLimiterInfoViewController.Button" = "Geschwindigkeitsbegrenzer ausschalten";
+"SpeedLimiterInfoViewController.Status" = "Geschwindigkeitsbegrenzung auf";
 
 "AuthorizationButtonViewController.Label" = "OK, leg los!";
 "CloseButtonViewController.Label" = "Schließen";
@@ -19,7 +23,3 @@
 "SpeedometerViewController.Orientation.North" = "Nord";
 "SpeedometerViewController.Orientation.South" = "Süd";
 "SpeedometerViewController.Orientation.West" = "West";
-"SpeedometerViewController.SpeedLimit.Button.TapToReleaseSpeedLimit" = "Aktuelles Limit löschen";
-"SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit" = "Geschwindigkeit übernehmen";
-"SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Limit bei";
-"SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "Kein Geschwindigkeitslimit";
