@@ -161,7 +161,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		DF511031219D97EE000321E8 /* Composed Screens */ = {
+		DF511031219D97EE000321E8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				DF76227221A6E9AE0073CEBC /* ImprintViewController.swift */,
@@ -171,7 +171,7 @@
 				DF51433A21F9F5390061BEAA /* SpeedLimiterViewController.swift */,
 				DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */,
 			);
-			path = "Composed Screens";
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		DF511034219D9AE6000321E8 /* Components */ = {
@@ -267,9 +267,9 @@
 			isa = PBXGroup;
 			children = (
 				DF511034219D9AE6000321E8 /* Components */,
-				DF511031219D97EE000321E8 /* Composed Screens */,
 				DF8FDCE72008DD6200140DA9 /* Extensions */,
 				DF5F138B202A5AAE006D51DA /* Model */,
+				DF511031219D97EE000321E8 /* Screens */,
 				DF568E471FD0119600D546B8 /* Supporting Files */,
 				DF4C364F20D133B500A9E1B7 /* Views */,
 			);
