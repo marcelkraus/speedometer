@@ -23,7 +23,7 @@ struct Speed {
     }
 
     var asString: String {
-        return String(format: AppConfiguration.speedStringFormat, speed)
+        return String(format: AppConfig.speedStringFormat, speed)
     }
 
     var asStringWithUnit: String {
