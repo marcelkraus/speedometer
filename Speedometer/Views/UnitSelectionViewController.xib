@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UnitSelectionViewController" customModule="Speedometer" customModuleProvider="target">
             <connections>
-                <outlet property="informationButton" destination="alh-9c-9zj" id="RBj-aY-lNW"/>
                 <outlet property="segmentedControl" destination="4rU-Sr-Fwj" id="17d-PO-sFw"/>
                 <outlet property="stackView" destination="Lxk-XT-onr" id="e8V-7V-jvl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -30,7 +29,7 @@
                             <rect key="frame" x="15" y="15" width="345" height="30"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4rU-Sr-Fwj">
-                                    <rect key="frame" x="0.0" y="0.0" width="295" height="31"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="345" height="31"/>
                                     <segments>
                                         <segment title="First Unit"/>
                                         <segment title="Second Unit"/>
@@ -40,16 +39,6 @@
                                         <action selector="didChangeValue:" destination="-1" eventType="valueChanged" id="LZw-Fk-6pM"/>
                                     </connections>
                                 </segmentedControl>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alh-9c-9zj">
-                                    <rect key="frame" x="315" y="0.0" width="30" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="alh-9c-9zj" secondAttribute="height" multiplier="1:1" id="5m6-z6-cbA"/>
-                                    </constraints>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <connections>
-                                        <action selector="didTapButton:" destination="-1" eventType="touchUpInside" id="lDH-2a-3KX"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="P3q-yj-gtJ"/>

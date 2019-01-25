@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF17A23121FB4D3200DE901A /* SeparatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF17A23021FB4D3200DE901A /* SeparatorViewController.swift */; };
+		DF17A23321FB544A00DE901A /* ImprintButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF17A23221FB544A00DE901A /* ImprintButtonViewController.swift */; };
 		DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */; };
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
 		DF2F6BD321ADA4A400AC75BE /* SpeedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		DF17A23021FB4D3200DE901A /* SeparatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorViewController.swift; sourceTree = "<group>"; };
+		DF17A23221FB544A00DE901A /* ImprintButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprintButtonViewController.swift; sourceTree = "<group>"; };
 		DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF2C45AE1FCC2EF0005C8906 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				DF76227721A6F2250073CEBC /* CloseButtonViewController.xib */,
 				DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */,
 				DFDBDE4F21F9D93500F3E858 /* CoordinatesViewController.xib */,
+				DF17A23221FB544A00DE901A /* ImprintButtonViewController.swift */,
 				DFD30991219F240E005CE3B9 /* InformationViewController.swift */,
 				DFD30992219F240E005CE3B9 /* InformationViewController.xib */,
 				DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */,
@@ -435,6 +438,7 @@
 				DFE3BB6121A6C564001EDCAE /* AuthorizationButtonViewController.swift in Sources */,
 				DFDB3682219F7B4D002B7D53 /* InformationType.swift in Sources */,
 				DFCA0C611FD5E17300260E24 /* FlowViewController.swift in Sources */,
+				DF17A23321FB544A00DE901A /* ImprintButtonViewController.swift in Sources */,
 				DF7D820221C2B073004A37C8 /* SpeedViewController.swift in Sources */,
 				DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */,
 				DF51103B219D9B83000321E8 /* UnitSelectionViewController.swift in Sources */,
