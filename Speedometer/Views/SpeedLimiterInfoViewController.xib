@@ -22,17 +22,25 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XF8-gr-QzN" userLabel="Separator View">
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="2"/>
+                    <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="ap6-oa-aZj"/>
+                        <constraint firstAttribute="width" constant="80" id="zfn-Bh-LBn"/>
+                    </constraints>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zWu-Aq-or0">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                    <rect key="frame" x="20" y="12" width="280" height="68"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Speed Limiter Status]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKA-rj-Tvi">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="20.5"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JP-JU-IPc">
-                            <rect key="frame" x="0.0" y="30.5" width="320" height="49.5"/>
+                            <rect key="frame" x="0.0" y="30.5" width="280" height="37.5"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                             <state key="normal" title="[Speed Limiter Button]"/>
                             <connections>
@@ -44,10 +52,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="zWu-Aq-or0" firstAttribute="top" secondItem="XF8-gr-QzN" secondAttribute="bottom" constant="10" id="59J-EJ-g05"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zWu-Aq-or0" secondAttribute="bottom" id="6XI-D0-tk5"/>
-                <constraint firstItem="zWu-Aq-or0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="LAi-9l-9dw"/>
-                <constraint firstItem="zWu-Aq-or0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="r9i-Gi-Sax"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zWu-Aq-or0" secondAttribute="trailing" id="zJe-Hm-qe5"/>
+                <constraint firstItem="XF8-gr-QzN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OAi-oz-eKe"/>
+                <constraint firstItem="XF8-gr-QzN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Uj8-CE-P5Y"/>
+                <constraint firstItem="zWu-Aq-or0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="r9i-Gi-Sax"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zWu-Aq-or0" secondAttribute="trailing" constant="20" id="zJe-Hm-qe5"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

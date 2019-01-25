@@ -7,6 +7,12 @@ class CoordinatesViewController: UIViewController {
 
     private let locationManager = CLLocationManager()
 
+    @IBOutlet weak var statusLabel: UILabel! {
+        didSet {
+            statusLabel.text = "CoordinatesViewController.Status".localized
+        }
+    }
+
     private var coordinates: Coordinates? {
         didSet {
             guard let coordinates = coordinates else {

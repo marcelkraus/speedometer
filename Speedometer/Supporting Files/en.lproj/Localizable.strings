@@ -1,3 +1,4 @@
+"CoordinatesViewController.Status" = "Your Location";
 "Information.LocationAuthorizationStatusDenied.Heading" = "Houston, we've had a problem here!";
 "Information.LocationAuthorizationStatusDenied.Text" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
 "Information.LocationAuthorizationStatusRestricted.Heading" = "Houston, we've had a problem here!";
