@@ -1,24 +1,32 @@
 import UIKit
 
 class ImprintViewController: UIViewController {
+    private let backgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 20.0
 
-    // MARK: - Properties
+        return view
+    }()
 
-    let backgroundView = UIView()
+    private let informationStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 20.0
 
-    var closeButtonView: UIView!
+        return stackView
+    }()
 
-    let informationStackView = UIStackView()
+    private var closeButtonView: UIView!
 
-    var versionNumberString: String {
+    private var versionNumberString: String {
         guard let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String else {
             return "-"
         }
 
         return "\("ImprintViewController.Version.Version".localized) \(versionNumber) (\("ImprintViewController.Version.Build".localized) \(buildNumber))"
     }
-
-    // MARK: - View Controller Lifecycle
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -27,7 +35,6 @@ class ImprintViewController: UIViewController {
         setupBackgroundView()
         setupCloseButtonView()
         setupInformationStackView()
-        setupInformationViews()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -36,14 +43,7 @@ class ImprintViewController: UIViewController {
 }
 
 private extension ImprintViewController {
-
-    // MARK: - Private Methods
-
     func setupBackgroundView() {
-        backgroundView.backgroundColor = .white
-        backgroundView.layer.masksToBounds = true
-        backgroundView.layer.cornerRadius = 20.0
-
         view.addSubview(backgroundView)
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -70,9 +70,6 @@ private extension ImprintViewController {
     }
 
     func setupInformationStackView() {
-        informationStackView.axis = .vertical
-        informationStackView.spacing = 20.0
-
         backgroundView.addSubview(informationStackView)
         informationStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -80,9 +77,7 @@ private extension ImprintViewController {
             informationStackView.topAnchor.constraint(equalTo: closeButtonView.bottomAnchor, constant: 20.0),
             informationStackView.trailingAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.trailingAnchor, constant: -20.0)
             ])
-    }
 
-    func setupInformationViews() {
         let imprintViewController = InformationViewController(heading: "ImprintViewController.Imprint.Heading".localized, text: "ImprintViewController.Imprint.Text".localized)
         addChild(imprintViewController)
         let imprintView = imprintViewController.view!

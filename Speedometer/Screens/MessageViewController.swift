@@ -1,12 +1,7 @@
 import UIKit
 
 class MessageViewController: UIViewController {
-
-    // MARK: - Properties
-
     private var informationType: InformationType
-
-    // MARK: - View Controller Lifecycle
 
     init(informationType: InformationType) {
         self.informationType = informationType
@@ -14,7 +9,6 @@ class MessageViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
 
         view.backgroundColor = .white
-
         setupInformationView()
     }
 
@@ -24,9 +18,6 @@ class MessageViewController: UIViewController {
 }
 
 private extension MessageViewController {
-
-    // MARK: - Private Methods
-
     func setupInformationView() {
         let informationViewController = InformationViewController(informationType: informationType)
         addChild(informationViewController)

@@ -1,16 +1,15 @@
 import UIKit
 
 class OnboardingViewController: UIViewController {
-    private var primarySeparatorView: UIView!
+    private var headlineSeparatorView: UIView!
     private var informationView: UIView!
-    private var secondarySeparatorView: UIView!
+    private var buttonSeparatorView: UIView!
     private var authorizationButtonView: UIView!
 
     init() {
         super.init(nibName: nil, bundle: nil)
 
         view.backgroundColor = .white
-
         setupPrimarySeparatorView()
         setupInformationView()
         setupSecondarySeparatorView()
@@ -27,15 +26,15 @@ private extension OnboardingViewController {
         let separatorViewController = SeparatorViewController()
         addChild(separatorViewController)
 
-        primarySeparatorView = separatorViewController.view!
-        view.addSubview(primarySeparatorView)
+        headlineSeparatorView = separatorViewController.view!
+        view.addSubview(headlineSeparatorView)
 
-        primarySeparatorView.translatesAutoresizingMaskIntoConstraints = false
+        headlineSeparatorView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            primarySeparatorView.heightAnchor.constraint(equalToConstant: 10.0),
-            primarySeparatorView.widthAnchor.constraint(equalToConstant: 180.0),
-            primarySeparatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -40.0),
-            primarySeparatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0)
+            headlineSeparatorView.heightAnchor.constraint(equalToConstant: 10.0),
+            headlineSeparatorView.widthAnchor.constraint(equalToConstant: 180.0),
+            headlineSeparatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -40.0),
+            headlineSeparatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0)
             ])
     }
 
@@ -49,7 +48,7 @@ private extension OnboardingViewController {
         informationView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             informationView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
-            informationView.topAnchor.constraint(equalTo: primarySeparatorView.bottomAnchor, constant: 40.0),
+            informationView.topAnchor.constraint(equalTo: headlineSeparatorView.bottomAnchor, constant: 40.0),
             informationView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
             ])
         informationViewController.didMove(toParent: self)
@@ -59,15 +58,15 @@ private extension OnboardingViewController {
         let separatorViewController = SeparatorViewController()
         addChild(separatorViewController)
 
-        secondarySeparatorView = separatorViewController.view!
-        view.addSubview(secondarySeparatorView)
+        buttonSeparatorView = separatorViewController.view!
+        view.addSubview(buttonSeparatorView)
 
-        secondarySeparatorView.translatesAutoresizingMaskIntoConstraints = false
+        buttonSeparatorView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            secondarySeparatorView.heightAnchor.constraint(equalToConstant: 5.0),
-            secondarySeparatorView.widthAnchor.constraint(equalToConstant: 90.0),
-            secondarySeparatorView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            secondarySeparatorView.topAnchor.constraint(equalTo: informationView.bottomAnchor, constant: 40.0)
+            buttonSeparatorView.heightAnchor.constraint(equalToConstant: 5.0),
+            buttonSeparatorView.widthAnchor.constraint(equalToConstant: 90.0),
+            buttonSeparatorView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            buttonSeparatorView.topAnchor.constraint(equalTo: informationView.bottomAnchor, constant: 40.0)
             ])
     }
 
@@ -80,7 +79,7 @@ private extension OnboardingViewController {
 
         authorizationButtonView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            authorizationButtonView.topAnchor.constraint(equalTo: secondarySeparatorView.bottomAnchor, constant: 40.0),
+            authorizationButtonView.topAnchor.constraint(equalTo: buttonSeparatorView.bottomAnchor, constant: 40.0),
             authorizationButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             ])
     }

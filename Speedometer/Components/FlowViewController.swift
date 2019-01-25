@@ -17,16 +17,6 @@ class FlowViewController: UIViewController {
     }
 }
 
-// MARK: - CLLocationManagerDelegate
-
-extension FlowViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        self.selectViewController()
-    }
-}
-
-// MARK: - Private Methods
-
 private extension FlowViewController {
     func selectViewController() {
         transition(to: LoadingViewController()) { _ in
@@ -43,3 +33,12 @@ private extension FlowViewController {
         }
     }
 }
+
+// MARK: - CLLocationManagerDelegate
+
+extension FlowViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        self.selectViewController()
+    }
+}
+
