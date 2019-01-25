@@ -1,3 +1,4 @@
+"AuthorizationButtonViewController.Label" = "OK, leg los!";
 "CoordinatesViewController.Status" = "Deine Position";
 "Information.LocationAuthorizationStatusDenied.Heading" = "Houston, wir haben ein Problem!";
 "Information.LocationAuthorizationStatusDenied.Text" = "Die Nutzung von Tacho ist nicht möglich, da der Zugriff auf deine Standortdaten beschränkt wurde.\n\nBitte entferne alle Einschränkungen in deinen Einstellungen:\n\nEinstellungen > Allgemein > Einschränkungen > Ortungsdienste";
@@ -10,7 +11,6 @@
 "SpeedLimiterInfoViewController.Button" = "Geschwindigkeitsbegrenzer ausschalten";
 "SpeedLimiterInfoViewController.Status" = "Geschwindigkeitsbegrenzung auf";
 
-"AuthorizationButtonViewController.Label" = "OK, leg los!";
 "CloseButtonViewController.Label" = "Schließen";
 "ImprintViewController.Imprint.Heading" = "Impressum";
 "ImprintViewController.Imprint.Text" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nDeutschland\n\nVielen Dank an Marc und Thomas für ihre Unterstützung.\n\n\Bestandteile des App-Icons designed durch Freepik von Flaticon.";
