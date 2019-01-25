@@ -27,7 +27,6 @@
 		DF64A52320EE621A00063BBD /* CoordinatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64A52220EE621A00063BBD /* CoordinatesTests.swift */; };
 		DF76227321A6E9AE0073CEBC /* ImprintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF76227221A6E9AE0073CEBC /* ImprintViewController.swift */; };
 		DF76227821A6F2250073CEBC /* CloseButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF76227621A6F2250073CEBC /* CloseButtonViewController.swift */; };
-		DF76227921A6F2250073CEBC /* CloseButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF76227721A6F2250073CEBC /* CloseButtonViewController.xib */; };
 		DF7D820221C2B073004A37C8 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D820021C2B073004A37C8 /* SpeedViewController.swift */; };
 		DF7D820321C2B073004A37C8 /* SpeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF7D820121C2B073004A37C8 /* SpeedViewController.xib */; };
 		DF94839D20D16C7E009B120B /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94839C20D16C7E009B120B /* Coordinates.swift */; };
@@ -84,7 +83,6 @@
 		DF64A52220EE621A00063BBD /* CoordinatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesTests.swift; sourceTree = "<group>"; };
 		DF76227221A6E9AE0073CEBC /* ImprintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprintViewController.swift; sourceTree = "<group>"; };
 		DF76227621A6F2250073CEBC /* CloseButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButtonViewController.swift; sourceTree = "<group>"; };
-		DF76227721A6F2250073CEBC /* CloseButtonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CloseButtonViewController.xib; sourceTree = "<group>"; };
 		DF7D820021C2B073004A37C8 /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
 		DF7D820121C2B073004A37C8 /* SpeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeedViewController.xib; sourceTree = "<group>"; };
 		DF94839C20D16C7E009B120B /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 				DF4C365020D133CD00A9E1B7 /* CircularView.swift */,
 				DF4E314221C16D9F00ADE39F /* CircularViewController.swift */,
 				DF76227621A6F2250073CEBC /* CloseButtonViewController.swift */,
-				DF76227721A6F2250073CEBC /* CloseButtonViewController.xib */,
 				DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */,
 				DFDBDE4F21F9D93500F3E858 /* CoordinatesViewController.xib */,
 				DF17A23221FB544A00DE901A /* ImprintButtonViewController.swift */,
@@ -380,7 +377,6 @@
 				DFBB2BC521FA1A4C009BD016 /* SpeedLimiterInfoViewController.xib in Resources */,
 				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
 				DFDBDE5121F9D93500F3E858 /* CoordinatesViewController.xib in Resources */,
-				DF76227921A6F2250073CEBC /* CloseButtonViewController.xib in Resources */,
 				DFC358F4205A9BCF00DEDB9E /* InfoPlist.strings in Resources */,
 				DFD30994219F240E005CE3B9 /* InformationViewController.xib in Resources */,
 			);

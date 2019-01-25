@@ -10,10 +10,7 @@ class SpeedLimiterViewController: UIViewController {
         case disabled, enabled
     }
 
-    // MARK: - Properties
-
     private var speedLimiterButtonView: UIView!
-
     private var speedLimiterInfoView: UIView!
 
     private var status: Status = .disabled {
@@ -29,13 +26,10 @@ class SpeedLimiterViewController: UIViewController {
         }
     }
 
-    // MARK: - View Controller Lifecycle
-
     init() {
         super.init(nibName: nil, bundle: nil)
 
         view.backgroundColor = .white
-
         setupSpeedLimiterButtonView()
         setupSpeedLimiterInfoView()
     }
@@ -46,9 +40,6 @@ class SpeedLimiterViewController: UIViewController {
 }
 
 private extension SpeedLimiterViewController {
-
-    // MARK: - Private Methods
-
     func setupSpeedLimiterButtonView() {
         let speedLimiterButtonViewController = SpeedLimiterButtonViewController()
         addChild(speedLimiterButtonViewController)
@@ -90,10 +81,9 @@ private extension SpeedLimiterViewController {
     }
 }
 
+// MARK: - SpeedLimiterViewControllerDelegate
+
 extension SpeedLimiterViewController: SpeedLimiterViewControllerDelegate {
-
-    // MARK: - SpeedLimiterViewControllerDelegate
-
     func didEnableSpeedLimiter() {
         status = .enabled
     }

@@ -1,17 +1,16 @@
 import UIKit
 
 class SpeedometerViewController: UIViewController {
-    var imprintButtonView: UIView!
-    var circularView: UIView!
-    var speedView: UIView!
-    var coordinatesView: UIView!
-    var speedLimiterView: UIView!
+    private var imprintButtonView: UIView!
+    private var circularView: UIView!
+    private var speedView: UIView!
+    private var coordinatesView: UIView!
+    private var speedLimiterView: UIView!
 
     init() {
         super.init(nibName: nil, bundle: nil)
 
         view.backgroundColor = .white
-
         setupCircularView()
         setupSpeedView()
         setupCoordinatesView()
@@ -34,8 +33,8 @@ private extension SpeedometerViewController {
 
         imprintButtonView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            imprintButtonView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
-            imprintButtonView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
+            imprintButtonView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
+            imprintButtonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
             ])
         imprintButtonViewController.didMove(toParent: self)
     }

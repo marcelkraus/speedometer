@@ -1,14 +1,10 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
-
-    // MARK: - View Controller Lifecycle
-
     init() {
         super.init(nibName: nil, bundle: nil)
 
         view.backgroundColor = .white
-
         setupLoadingIndicatorView()
     }
 
@@ -18,9 +14,6 @@ class LoadingViewController: UIViewController {
 }
 
 private extension LoadingViewController {
-
-    // MARK: - Private Methods
-
     func setupLoadingIndicatorView() {
         let loadingIndicatorViewController = LoadingIndicatorViewController()
         addChild(loadingIndicatorViewController)
