@@ -97,8 +97,9 @@ private extension SpeedometerViewController {
 
         coordinatesView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            coordinatesView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            coordinatesView.topAnchor.constraint(equalTo: speedView.bottomAnchor, constant: 20)
+            coordinatesView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            coordinatesView.topAnchor.constraint(equalTo: speedView.bottomAnchor, constant: 20),
+            coordinatesView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
             ])
         coordinatesViewController.didMove(toParent: self)
     }
@@ -112,9 +113,9 @@ private extension SpeedometerViewController {
 
         speedLimiterView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            speedLimiterView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            speedLimiterView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             speedLimiterView.topAnchor.constraint(equalTo: coordinatesView.bottomAnchor, constant: 20),
-            speedLimiterView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+            speedLimiterView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
             ])
         speedLimiterViewController.didMove(toParent: self)
     }
