@@ -4,6 +4,10 @@
 "Information.LocationAuthorizationStatusRestricted.Text" = "Please allow access to your location data to use Speedometer\n\nPlease check the following settings:\n\nSettings > Privacy > Location Services > Speedometer > While Using";
 "Information.OnboardingInformation.Heading" = "Welcome!";
 "Information.OnboardingInformation.Text" = "Speedometer shows your current speed, cost-free and without any advertisements.\n\nTherefore, Speedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease press the button below and confirm access within the popup.";
+"SpeedLimiterButtonViewController.Button" = "Enable Speed Limiter";
+"SpeedLimiterButtonViewController.Status" = "Speed Limiter";
+"SpeedLimiterInfoViewController.Button" = "Disable Speed Limiter";
+"SpeedLimiterInfoViewController.Status" = "Speed Limiter Set To";
 
 "AuthorizationButtonViewController.Label" = "I've got it!";
 "CloseButtonViewController.Label" = "Close";
@@ -19,7 +23,3 @@
 "SpeedometerViewController.Orientation.North" = "North";
 "SpeedometerViewController.Orientation.South" = "South";
 "SpeedometerViewController.Orientation.West" = "West";
-"SpeedometerViewController.SpeedLimit.Button.TapToReleaseSpeedLimit" = "Release current speed limit";
-"SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit" = "Apply current speed";
-"SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Speed limit set to";
-"SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "No Speed Limit";

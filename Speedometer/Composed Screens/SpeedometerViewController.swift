@@ -12,6 +12,8 @@ class SpeedometerViewController: UIViewController {
 
     var coordinatesView: UIView!
 
+    var speedLimiterView: UIView!
+
     // MARK: - View Controller Lifecycle
 
     init() {
@@ -22,6 +24,7 @@ class SpeedometerViewController: UIViewController {
         setupCircularView()
         setupSpeedView()
         setupCoordinatesView()
+        setupSpeedLimiterView()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -82,6 +85,7 @@ private extension SpeedometerViewController {
             speedView.trailingAnchor.constraint(equalTo: circularView.trailingAnchor),
             speedView.bottomAnchor.constraint(equalTo: circularView.bottomAnchor),
             ])
+        speedViewController.didMove(toParent: self)
     }
 
     func setupCoordinatesView() {
@@ -94,7 +98,24 @@ private extension SpeedometerViewController {
         coordinatesView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             coordinatesView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            coordinatesView.topAnchor.constraint(equalTo: speedView.bottomAnchor, constant: 40)
+            coordinatesView.topAnchor.constraint(equalTo: speedView.bottomAnchor, constant: 20)
             ])
+        coordinatesViewController.didMove(toParent: self)
+    }
+
+    func setupSpeedLimiterView() {
+        let speedLimiterViewController = SpeedLimiterViewController()
+        addChild(speedLimiterViewController)
+
+        speedLimiterView = speedLimiterViewController.view!
+        view.addSubview(speedLimiterView)
+
+        speedLimiterView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            speedLimiterView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            speedLimiterView.topAnchor.constraint(equalTo: coordinatesView.bottomAnchor, constant: 20),
+            speedLimiterView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+            ])
+        speedLimiterViewController.didMove(toParent: self)
     }
 }
