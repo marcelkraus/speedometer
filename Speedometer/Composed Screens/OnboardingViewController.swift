@@ -1,20 +1,19 @@
 import UIKit
 
 class OnboardingViewController: UIViewController {
-
-    // MARK: - Properties
-
+    private var primarySeparatorView: UIView!
     private var informationView: UIView!
-
-    // MARK: - View Controller Lifecycle
+    private var secondarySeparatorView: UIView!
+    private var authorizationButtonView: UIView!
 
     init() {
         super.init(nibName: nil, bundle: nil)
 
         view.backgroundColor = .white
 
-        setupUnitSelectionView()
+        setupPrimarySeparatorView()
         setupInformationView()
+        setupSecondarySeparatorView()
         setupAuthorizationButton()
     }
 
@@ -24,8 +23,21 @@ class OnboardingViewController: UIViewController {
 }
 
 private extension OnboardingViewController {
+    func setupPrimarySeparatorView() {
+        let separatorViewController = SeparatorViewController()
+        addChild(separatorViewController)
 
-    // MARK: - Private Methods
+        primarySeparatorView = separatorViewController.view!
+        view.addSubview(primarySeparatorView)
+
+        primarySeparatorView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            primarySeparatorView.heightAnchor.constraint(equalToConstant: 10.0),
+            primarySeparatorView.widthAnchor.constraint(equalToConstant: 180.0),
+            primarySeparatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -40.0),
+            primarySeparatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0)
+            ])
+    }
 
     func setupInformationView() {
         let informationViewController = InformationViewController(informationType: .onboardingInformation)
@@ -36,50 +48,40 @@ private extension OnboardingViewController {
 
         informationView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            informationView.leadingAnchor.constraint(equalTo: informationView.leadingAnchor),
-            informationView.topAnchor.constraint(equalTo: informationView.topAnchor),
-            informationView.bottomAnchor.constraint(equalTo: informationView.bottomAnchor),
-            informationView.trailingAnchor.constraint(equalTo: informationView.trailingAnchor),
-            informationView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
-            informationView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
-            informationView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
+            informationView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
+            informationView.topAnchor.constraint(equalTo: primarySeparatorView.bottomAnchor, constant: 40.0),
+            informationView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
             ])
         informationViewController.didMove(toParent: self)
+    }
+
+    func setupSecondarySeparatorView() {
+        let separatorViewController = SeparatorViewController()
+        addChild(separatorViewController)
+
+        secondarySeparatorView = separatorViewController.view!
+        view.addSubview(secondarySeparatorView)
+
+        secondarySeparatorView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            secondarySeparatorView.heightAnchor.constraint(equalToConstant: 5.0),
+            secondarySeparatorView.widthAnchor.constraint(equalToConstant: 90.0),
+            secondarySeparatorView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            secondarySeparatorView.topAnchor.constraint(equalTo: informationView.bottomAnchor, constant: 40.0)
+            ])
     }
 
     func setupAuthorizationButton() {
         let authorizationButtonViewController = AuthorizationButtonViewController()
         addChild(authorizationButtonViewController)
 
-        let authorizationButtonView = authorizationButtonViewController.view!
+        authorizationButtonView = authorizationButtonViewController.view!
         view.addSubview(authorizationButtonView)
 
         authorizationButtonView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            authorizationButtonView.heightAnchor.constraint(equalToConstant: 40.0),
-            authorizationButtonView.leadingAnchor.constraint(equalTo: informationView.leadingAnchor),
-            authorizationButtonView.topAnchor.constraint(equalTo: informationView.bottomAnchor, constant: 20.0),
-            authorizationButtonView.trailingAnchor.constraint(equalTo: informationView.trailingAnchor),
+            authorizationButtonView.topAnchor.constraint(equalTo: secondarySeparatorView.bottomAnchor, constant: 40.0),
+            authorizationButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             ])
-    }
-
-    func setupUnitSelectionView() {
-        let unitSelectionViewController = UnitSelectionViewController(hideStackView: true)
-        addChild(unitSelectionViewController)
-
-        let unitSelectionView = unitSelectionViewController.view!
-        view.addSubview(unitSelectionView)
-
-        unitSelectionView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            unitSelectionView.leadingAnchor.constraint(equalTo: unitSelectionView.leadingAnchor),
-            unitSelectionView.topAnchor.constraint(equalTo: unitSelectionView.topAnchor),
-            unitSelectionView.bottomAnchor.constraint(equalTo: unitSelectionView.bottomAnchor),
-            unitSelectionView.trailingAnchor.constraint(equalTo: unitSelectionView.trailingAnchor),
-            unitSelectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            unitSelectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            unitSelectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            ])
-        unitSelectionViewController.didMove(toParent: self)
     }
 }

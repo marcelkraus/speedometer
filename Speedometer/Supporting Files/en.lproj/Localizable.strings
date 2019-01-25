@@ -1,3 +1,4 @@
+"AuthorizationButtonViewController.Label" = "I've got it!";
 "CoordinatesViewController.Status" = "Your Location";
 "Information.LocationAuthorizationStatusDenied.Heading" = "Houston, we've had a problem here!";
 "Information.LocationAuthorizationStatusDenied.Text" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
@@ -10,7 +11,6 @@
 "SpeedLimiterInfoViewController.Button" = "Disable Speed Limiter";
 "SpeedLimiterInfoViewController.Status" = "Speed Limiter Set To";
 
-"AuthorizationButtonViewController.Label" = "I've got it!";
 "CloseButtonViewController.Label" = "Close";
 "ImprintViewController.Imprint.Heading" = "Imprint";
 "ImprintViewController.Imprint.Text" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nGermany\n\nMany thanks to Marc and Thomas for their support.\n\n\Parts of app icon designed by Freepik from Flaticon.";
