@@ -39,7 +39,7 @@ class CircularViewController: UIViewController {
 extension CircularViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         var unit: Unit {
-            return Unit(rawValue: UserDefaults.standard.string(forKey: AppConfiguration.currentUnitDefaultsKey)!)!
+            return Unit(rawValue: UserDefaults.standard.string(forKey: AppConfig.UserDefaultsKey.unit)!)!
         }
 
         guard let location = locations.last else {
