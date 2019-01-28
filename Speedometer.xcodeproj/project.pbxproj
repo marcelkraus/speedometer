@@ -628,7 +628,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.marcelkraus.speedometer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "62843f82-696b-4ca1-89b7-71dac72e6015";
-				PROVISIONING_PROFILE_SPECIFIER = "Speedometer Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Speedometer – Development";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -648,7 +648,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.marcelkraus.speedometer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "51df5708-c910-4b4c-b210-707bcc7630c6";
-				PROVISIONING_PROFILE_SPECIFIER = "Speedometer Distribution";
+				PROVISIONING_PROFILE_SPECIFIER = "Speedometer – Distribution";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
