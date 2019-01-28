@@ -33,15 +33,6 @@ enum Unit: String, CaseIterable {
         return Int(self.factor * 66.7)
     }
 
-    var speedLimitSliderSteps: Int {
-        switch self {
-        case .metersPerSecond:
-            return 1
-        default:
-            return 5
-        }
-    }
-
     var next: Unit {
         let units = Unit.allCases
 
