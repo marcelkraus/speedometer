@@ -23,7 +23,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="[Coordinates]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFk-As-2et">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>

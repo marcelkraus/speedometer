@@ -24,11 +24,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enb-Oq-oQ2" userLabel="Unit Background View">
-                    <rect key="frame" x="153.5" y="20.5" width="46.5" height="29.5"/>
+                    <rect key="frame" x="141.5" y="9.5" width="88.5" height="30.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km/h" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKz-eK-6Ee">
-                            <rect key="frame" x="5" y="5" width="36.5" height="19.5"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                            <rect key="frame" x="20" y="5" width="38.5" height="20.5"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -36,29 +36,27 @@
                     <color key="backgroundColor" red="0.08235294118" green="0.56862745100000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="NKz-eK-6Ee" firstAttribute="top" secondItem="enb-Oq-oQ2" secondAttribute="top" constant="5" id="GGY-mO-CdF"/>
-                        <constraint firstAttribute="trailing" secondItem="NKz-eK-6Ee" secondAttribute="trailing" constant="5" id="R13-mz-G0q"/>
-                        <constraint firstItem="NKz-eK-6Ee" firstAttribute="leading" secondItem="enb-Oq-oQ2" secondAttribute="leading" constant="5" id="gnp-qh-VSk"/>
+                        <constraint firstAttribute="trailing" secondItem="NKz-eK-6Ee" secondAttribute="trailing" constant="30" id="R13-mz-G0q"/>
+                        <constraint firstItem="NKz-eK-6Ee" firstAttribute="leading" secondItem="enb-Oq-oQ2" secondAttribute="leading" constant="20" id="gnp-qh-VSk"/>
                         <constraint firstAttribute="bottom" secondItem="NKz-eK-6Ee" secondAttribute="bottom" constant="5" id="jum-mg-vCT"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRr-cf-iDs">
-                    <rect key="frame" x="20" y="60" width="180" height="90"/>
+                    <rect key="frame" x="17.5" y="60" width="182.5" height="90"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="p98-JO-ceo"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="120"/>
-                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="120"/>
+                    <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <constraints>
-                <constraint firstItem="enb-Oq-oQ2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FMY-4k-cWv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZRr-cf-iDs" secondAttribute="bottom" id="J0f-ra-sry"/>
                 <constraint firstItem="ZRr-cf-iDs" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="PGC-Ke-Nj5"/>
                 <constraint firstItem="enb-Oq-oQ2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Yrs-kr-C2q"/>
-                <constraint firstItem="ZRr-cf-iDs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aYd-Ux-eFP"/>
-                <constraint firstItem="enb-Oq-oQ2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="gaX-ID-Jt3"/>
-                <constraint firstItem="ZRr-cf-iDs" firstAttribute="top" secondItem="enb-Oq-oQ2" secondAttribute="bottom" constant="10" id="xQS-0J-agd"/>
+                <constraint firstItem="enb-Oq-oQ2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="30" id="gaX-ID-Jt3"/>
+                <constraint firstItem="ZRr-cf-iDs" firstAttribute="top" secondItem="enb-Oq-oQ2" secondAttribute="bottom" constant="20" id="xQS-0J-agd"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
