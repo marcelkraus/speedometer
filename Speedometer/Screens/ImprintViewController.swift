@@ -9,9 +9,19 @@ class ImprintViewController: UIViewController {
 
         return view
     }()
+
     private var separatorView: UIView!
+
     private var imprintView: UIView!
-    private var closeButtonView: UIView!
+
+    private lazy var closeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "↓ " + "ImprintViewController.CloseInformation".localized + " ↓"
+        label.font = .preferredFont(forTextStyle: .caption1)
+        label.textColor = .darkGray
+
+        return label
+    }()
 
     private var versionNumber: String {
         guard let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
@@ -32,11 +42,12 @@ class ImprintViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
 
-        view.backgroundColor = UIColor.clear.withAlphaComponent(0.75)
+        setupView()
         setupBackgroundView()
         setupSeparatorView()
         setupImprintView()
-        setupCloseButtonView()
+        setupCloseLabel()
+        setupGestureRecognizer()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -44,7 +55,15 @@ class ImprintViewController: UIViewController {
     }
 }
 
+// MARK: - UI Setup
+
 private extension ImprintViewController {
+    func setupView() {
+        modalPresentationStyle = .overCurrentContext
+        modalTransitionStyle = .crossDissolve
+        view.backgroundColor = UIColor.clear.withAlphaComponent(0.75)
+    }
+
     func setupBackgroundView() {
         view.addSubview(backgroundView)
 
@@ -90,18 +109,27 @@ private extension ImprintViewController {
         imprintViewController.didMove(toParent: self)
     }
 
-    func setupCloseButtonView() {
-        let closeViewController = CloseButtonViewController()
-        addChild(closeViewController)
+    func setupCloseLabel() {
+        view.addSubview(closeLabel)
 
-        closeButtonView = closeViewController.view!
-        view.addSubview(closeButtonView)
-
-        closeButtonView.translatesAutoresizingMaskIntoConstraints = false
+        closeLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            closeButtonView.topAnchor.constraint(equalTo: imprintView.bottomAnchor, constant: 40.0),
-            closeButtonView.centerXAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.centerXAnchor)
+            closeLabel.topAnchor.constraint(equalTo: imprintView.bottomAnchor, constant: 40.0),
+            closeLabel.centerXAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.centerXAnchor)
             ])
-        closeViewController.didMove(toParent: self)
+    }
+
+    func setupGestureRecognizer() {
+        let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(dismissImprint))
+        gestureRecognizer.direction = .down
+        view.addGestureRecognizer(gestureRecognizer)
+    }
+}
+
+// MARK: - Obj-C Selectors
+
+private extension ImprintViewController {
+    @objc func dismissImprint() {
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }

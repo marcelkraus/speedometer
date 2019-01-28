@@ -22,8 +22,6 @@ class ImprintButtonViewController: UIViewController {
 
     @objc func handleImprint() {
         let imprintViewController = ImprintViewController()
-        imprintViewController.modalPresentationStyle = .overCurrentContext
-        imprintViewController.modalTransitionStyle = .crossDissolve
 
         present(imprintViewController, animated: true, completion: nil)
     }
