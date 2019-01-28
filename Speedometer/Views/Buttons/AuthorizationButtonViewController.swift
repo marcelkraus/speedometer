@@ -9,7 +9,7 @@ class AuthorizationButtonViewController: UIViewController {
         button.setTitle("AuthorizationButtonViewController.Label".localized, for: .normal)
         button.setTitleColor(UIColor(red: 0.012, green: 0.569, blue: 0.576, alpha: 1.00), for: .normal)
         button.addTarget(self, action: #selector(handleAuthorization), for: .touchUpInside)
-        button.titleLabel?.font = .preferredFont(forTextStyle: .callout)
+        button.titleLabel?.font = .preferredFont(forTextStyle: .title3)
 
         return button
     }()
