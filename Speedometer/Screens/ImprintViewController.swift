@@ -5,27 +5,28 @@ class ImprintViewController: UIViewController {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.masksToBounds = true
-        view.layer.cornerRadius = 20.0
+        view.layer.cornerRadius = 10.0
 
         return view
     }()
-
-    private let informationStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 20.0
-
-        return stackView
-    }()
-
+    private var separatorView: UIView!
+    private var imprintView: UIView!
     private var closeButtonView: UIView!
 
-    private var versionNumberString: String {
-        guard let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String, let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String else {
-            return "-"
+    private var versionNumber: String {
+        guard let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
+            return "–"
         }
 
-        return "\("ImprintViewController.Version.Version".localized) \(versionNumber) (\("ImprintViewController.Version.Build".localized) \(buildNumber))"
+        return versionNumber
+    }
+
+    private var buildNumber: String {
+        guard let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String else {
+            return "–"
+        }
+
+        return buildNumber
     }
 
     init() {
@@ -33,8 +34,9 @@ class ImprintViewController: UIViewController {
 
         view.backgroundColor = UIColor.clear.withAlphaComponent(0.75)
         setupBackgroundView()
+        setupSeparatorView()
+        setupImprintView()
         setupCloseButtonView()
-        setupInformationStackView()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -45,13 +47,47 @@ class ImprintViewController: UIViewController {
 private extension ImprintViewController {
     func setupBackgroundView() {
         view.addSubview(backgroundView)
+
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             backgroundView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
             backgroundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
             backgroundView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
-            backgroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
+            backgroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
             ])
+    }
+
+    func setupSeparatorView() {
+        let separatorViewController = SeparatorViewController()
+        addChild(separatorViewController)
+
+        separatorView = separatorViewController.view!
+        view.addSubview(separatorView)
+
+        separatorView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            separatorView.heightAnchor.constraint(equalToConstant: 10.0),
+            separatorView.widthAnchor.constraint(equalToConstant: 180.0),
+            separatorView.leadingAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.leadingAnchor, constant: -40.0),
+            separatorView.topAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.topAnchor, constant: 40.0)
+            ])
+        separatorViewController.didMove(toParent: self)
+    }
+
+    func setupImprintView() {
+        let imprintViewController = InformationViewController(heading: "ImprintViewController.Heading".localized, text: String(format: "ImprintViewController.Text".localized, versionNumber, buildNumber))
+        addChild(imprintViewController)
+
+        imprintView = imprintViewController.view!
+        view.addSubview(imprintView)
+
+        imprintView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imprintView.leadingAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
+            imprintView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
+            imprintView.trailingAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.trailingAnchor, constant: -40.0)
+            ])
+        imprintViewController.didMove(toParent: self)
     }
 
     func setupCloseButtonView() {
@@ -63,31 +99,9 @@ private extension ImprintViewController {
 
         closeButtonView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            closeButtonView.topAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.topAnchor, constant: 20.0),
-            closeButtonView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20.0),
+            closeButtonView.topAnchor.constraint(equalTo: imprintView.bottomAnchor, constant: 40.0),
+            closeButtonView.centerXAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.centerXAnchor)
             ])
         closeViewController.didMove(toParent: self)
-    }
-
-    func setupInformationStackView() {
-        backgroundView.addSubview(informationStackView)
-        informationStackView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            informationStackView.leadingAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
-            informationStackView.topAnchor.constraint(equalTo: closeButtonView.bottomAnchor, constant: 20.0),
-            informationStackView.trailingAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.trailingAnchor, constant: -20.0)
-            ])
-
-        let imprintViewController = InformationViewController(heading: "ImprintViewController.Imprint.Heading".localized, text: "ImprintViewController.Imprint.Text".localized)
-        addChild(imprintViewController)
-        let imprintView = imprintViewController.view!
-        informationStackView.addArrangedSubview(imprintView)
-        imprintViewController.didMove(toParent: self)
-
-        let versionViewController = InformationViewController(heading: "ImprintViewController.Version.Heading".localized, text: versionNumberString)
-        addChild(versionViewController)
-        let versionView = versionViewController.view!
-        informationStackView.addArrangedSubview(versionView)
-        versionViewController.didMove(toParent: self)
     }
 }

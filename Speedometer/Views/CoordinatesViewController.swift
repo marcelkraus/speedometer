@@ -2,16 +2,7 @@ import CoreLocation
 import UIKit
 
 class CoordinatesViewController: UIViewController {
-
-    // MARK: - Properties
-
     private let locationManager = CLLocationManager()
-
-    @IBOutlet weak var statusLabel: UILabel! {
-        didSet {
-            statusLabel.text = "CoordinatesViewController.Status".localized
-        }
-    }
 
     private var coordinates: Coordinates? {
         didSet {
@@ -23,11 +14,7 @@ class CoordinatesViewController: UIViewController {
         }
     }
 
-    // MARK: - Outlets & Actions
-
     @IBOutlet weak var coordinatesLabel: UILabel!
-
-    // MARK: - View Controller Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()

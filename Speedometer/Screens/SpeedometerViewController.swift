@@ -5,17 +5,15 @@ class SpeedometerViewController: UIViewController {
     private var circularView: UIView!
     private var speedView: UIView!
     private var coordinatesView: UIView!
-    private var speedLimiterView: UIView!
 
     init() {
         super.init(nibName: nil, bundle: nil)
 
         view.backgroundColor = .white
+        setupImprintButtonView()
         setupCircularView()
         setupSpeedView()
         setupCoordinatesView()
-        setupSpeedLimiterView()
-        setupImprintButtonView()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -49,9 +47,9 @@ private extension SpeedometerViewController {
         circularView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             circularView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
-            circularView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
             circularView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
-            circularView.heightAnchor.constraint(equalTo: circularView.widthAnchor, multiplier: 1.0),
+            circularView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            circularView.heightAnchor.constraint(equalTo: circularView.widthAnchor, multiplier: 1.0)
             ])
         circularViewController.didMove(toParent: self)
     }
@@ -80,26 +78,10 @@ private extension SpeedometerViewController {
 
         coordinatesView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            coordinatesView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            coordinatesView.topAnchor.constraint(equalTo: speedView.bottomAnchor, constant: 20),
-            coordinatesView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+            coordinatesView.topAnchor.constraint(equalTo: circularView.bottomAnchor),
+            coordinatesView.bottomAnchor.constraint(equalTo: imprintButtonView.topAnchor),
+            coordinatesView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
             ])
         coordinatesViewController.didMove(toParent: self)
-    }
-
-    func setupSpeedLimiterView() {
-        let speedLimiterViewController = SpeedLimiterViewController()
-        addChild(speedLimiterViewController)
-
-        speedLimiterView = speedLimiterViewController.view!
-        view.addSubview(speedLimiterView)
-
-        speedLimiterView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            speedLimiterView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            speedLimiterView.topAnchor.constraint(equalTo: coordinatesView.bottomAnchor, constant: 20),
-            speedLimiterView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
-            ])
-        speedLimiterViewController.didMove(toParent: self)
     }
 }

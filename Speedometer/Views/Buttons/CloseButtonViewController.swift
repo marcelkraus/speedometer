@@ -3,10 +3,10 @@ import UIKit
 class CloseButtonViewController: UIViewController {
     private lazy var closeButton: UIButton = {
         let button = UIButton()
-        button.setTitle("ⓧ", for: .normal)
+        button.setTitle("CloseButtonViewController.Button".localized, for: .normal)
         button.setTitleColor(UIColor(red: 0.012, green: 0.569, blue: 0.576, alpha: 1.00), for: .normal)
         button.addTarget(self, action: #selector(handleClose), for: .touchUpInside)
-        button.titleLabel?.font = .preferredFont(forTextStyle: .callout)
+        button.titleLabel?.font = .preferredFont(forTextStyle: .title3)
 
         return button
     }()

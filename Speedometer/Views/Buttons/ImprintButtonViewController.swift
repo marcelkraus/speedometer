@@ -5,6 +5,7 @@ class ImprintButtonViewController: UIViewController {
         let button = UIButton(type: .infoDark)
         button.addTarget(self, action: #selector(handleImprint), for: .touchUpInside)
         button.tintColor = UIColor(red: 0.012, green: 0.569, blue: 0.576, alpha: 1.00)
+        button.titleLabel?.font = .preferredFont(forTextStyle: .title3)
 
         return button
     }()
