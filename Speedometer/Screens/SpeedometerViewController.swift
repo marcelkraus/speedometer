@@ -1,15 +1,28 @@
 import UIKit
 
 class SpeedometerViewController: UIViewController {
+    private var swipeInfoLabel: UILabel = {
+        let label = UILabel()
+        label.text = "↓ " + "SpeedometerViewController.SwipeInfo".localized + " ↓"
+        label.font = .preferredFont(forTextStyle: .caption2)
+        label.textColor = .darkGray
+
+        return label
+    }()
+
     private var imprintButtonView: UIView!
+
     private var circularView: UIView!
+
     private var speedView: UIView!
+
     private var coordinatesView: UIView!
 
     init() {
         super.init(nibName: nil, bundle: nil)
 
         view.backgroundColor = .white
+        setupSwipeInfoLabel()
         setupImprintButtonView()
         setupCircularView()
         setupSpeedView()
@@ -22,6 +35,16 @@ class SpeedometerViewController: UIViewController {
 }
 
 private extension SpeedometerViewController {
+    func setupSwipeInfoLabel() {
+        view.addSubview(swipeInfoLabel)
+        swipeInfoLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            swipeInfoLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            swipeInfoLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
+            ])
+    }
+
     func setupImprintButtonView() {
         let imprintButtonViewController = ImprintButtonViewController()
         addChild(imprintButtonViewController)
