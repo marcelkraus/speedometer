@@ -1,6 +1,7 @@
 "AuthorizationButtonViewController.Label" = "Verstanden, leg los!";
 "CloseButtonViewController.Button" = "Schließen";
 "CoordinatesViewController.Status" = "Deine Position";
+"ImprintViewController.CloseInformation" = "Zum Schließen runter swipen";
 "ImprintViewController.Heading" = "Impressum";
 "ImprintViewController.Text" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nDeutschland\n\nVielen Dank an Marc und Thomas für ihre Unterstützung.\n\n\Bestandteile des App-Icons designed durch Freepik von Flaticon.\n\nAktuell installierte App-Version ist %@ (Build %@).";
 "Information.LocationAuthorizationStatusDenied.Heading" = "Okay, Houston, we've had a problem here.";

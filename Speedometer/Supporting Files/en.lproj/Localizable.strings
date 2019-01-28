@@ -1,6 +1,7 @@
 "AuthorizationButtonViewController.Label" = "Gotcha, let's go!";
 "CloseButtonViewController.Button" = "Close";
 "CoordinatesViewController.Status" = "Your Location";
+"ImprintViewController.CloseInformation" = "Swipe Down to Close";
 "ImprintViewController.Heading" = "Imprint";
 "ImprintViewController.Text" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nGermany\n\nMany thanks to Marc and Thomas for their support.\n\n\Parts of app icon designed by Freepik from Flaticon.\n\nCurrent installed app version is %@ (Build %@).";
 "Information.LocationAuthorizationStatusDenied.Heading" = "Okay, Houston, we've had a problem here.";
