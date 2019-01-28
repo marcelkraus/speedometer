@@ -14,10 +14,10 @@ class ImprintViewController: UIViewController {
 
     private var imprintView: UIView!
 
-    private lazy var closeLabel: UILabel = {
+    private lazy var swipeInfoLabel: UILabel = {
         let label = UILabel()
-        label.text = "↓ " + "ImprintViewController.CloseInformation".localized + " ↓"
-        label.font = .preferredFont(forTextStyle: .caption1)
+        label.text = "↓ " + "ImprintViewController.SwipeInfo".localized + " ↓"
+        label.font = .preferredFont(forTextStyle: .caption2)
         label.textColor = .darkGray
 
         return label
@@ -46,7 +46,7 @@ class ImprintViewController: UIViewController {
         setupBackgroundView()
         setupSeparatorView()
         setupImprintView()
-        setupCloseLabel()
+        setupSwipeInfoLabel()
         setupGestureRecognizer()
     }
 
@@ -109,13 +109,13 @@ private extension ImprintViewController {
         imprintViewController.didMove(toParent: self)
     }
 
-    func setupCloseLabel() {
-        view.addSubview(closeLabel)
+    func setupSwipeInfoLabel() {
+        view.addSubview(swipeInfoLabel)
 
-        closeLabel.translatesAutoresizingMaskIntoConstraints = false
+        swipeInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            closeLabel.topAnchor.constraint(equalTo: imprintView.bottomAnchor, constant: 40.0),
-            closeLabel.centerXAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.centerXAnchor)
+            swipeInfoLabel.topAnchor.constraint(equalTo: imprintView.bottomAnchor, constant: 40.0),
+            swipeInfoLabel.centerXAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.centerXAnchor)
             ])
     }
 

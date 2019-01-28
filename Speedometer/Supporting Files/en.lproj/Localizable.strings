@@ -1,9 +1,9 @@
 "AuthorizationButtonViewController.Label" = "Gotcha, let's go!";
 "CloseButtonViewController.Button" = "Close";
 "CoordinatesViewController.Status" = "Your Location";
-"ImprintViewController.CloseInformation" = "Swipe Down to Close";
 "ImprintViewController.Heading" = "Imprint";
-"ImprintViewController.Text" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nGermany\n\nMany thanks to Marc and Thomas for their support.\n\n\Parts of app icon designed by Freepik from Flaticon.\n\nCurrent installed app version is %@ (Build %@).";
+"ImprintViewController.SwipeInfo" = "Swipe to Close";
+"ImprintViewController.Text" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nThanks to Marc and Thomas for their support.\n\n\Parts of Icon designed by Freepik/Flaticon.\n\nApp version v%@:%@.";
 "Information.LocationAuthorizationStatusDenied.Heading" = "Okay, Houston, we've had a problem here.";
 "Information.LocationAuthorizationStatusDenied.Text" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
 "Information.LocationAuthorizationStatusRestricted.Heading" = "Okay, Houston, we've had a problem here.";
@@ -18,3 +18,4 @@
 "SpeedometerViewController.Orientation.North" = "North";
 "SpeedometerViewController.Orientation.South" = "South";
 "SpeedometerViewController.Orientation.West" = "West";
+"SpeedometerViewController.SwipeInfo" = "Swipe for next Unit";
