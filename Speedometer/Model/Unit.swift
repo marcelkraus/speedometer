@@ -1,21 +1,18 @@
 import Foundation
 
-// Global list of available units in the desired order, should be refactored
-let units = [Unit.milesPerHour, Unit.kilometersPerHour, Unit.metersPerSecond, Unit.knots]
-
-enum Unit: String {
-    case kilometersPerHour, knots, metersPerSecond, milesPerHour
+enum Unit: String, CaseIterable {
+    case kilometersPerHour, milesPerHour, metersPerSecond, knots
 
     var abbreviation: String {
         switch self {
         case .kilometersPerHour:
             return "km/h"
-        case .knots:
-            return "kn"
-        case .metersPerSecond:
-            return "m/s"
         case .milesPerHour:
             return "mph"
+        case .metersPerSecond:
+            return "m/s"
+        case .knots:
+            return "kn"
         }
     }
 
@@ -23,12 +20,12 @@ enum Unit: String {
         switch self {
         case .kilometersPerHour:
             return 3.6
-        case .knots:
-            return 1.944
-        case .metersPerSecond:
-            return 1.0
         case .milesPerHour:
             return 2.23694
+        case .metersPerSecond:
+            return 1.0
+        case .knots:
+            return 1.944
         }
     }
 
@@ -43,5 +40,16 @@ enum Unit: String {
         default:
             return 5
         }
+    }
+
+    var next: Unit {
+        let units = Unit.allCases
+
+        let index = units.firstIndex(of: self)! + 1
+        guard index < units.count else {
+            return units.first!
+        }
+
+        return units[index]
     }
 }
