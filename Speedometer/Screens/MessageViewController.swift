@@ -29,9 +29,9 @@ private extension MessageViewController {
 
         separatorView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            separatorView.heightAnchor.constraint(equalToConstant: 10.0),
-            separatorView.widthAnchor.constraint(equalToConstant: 180.0),
-            separatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -40.0),
+            separatorView.heightAnchor.constraint(equalToConstant: 20.0),
+            separatorView.widthAnchor.constraint(equalToConstant: 170.0),
+            separatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -30.0),
             separatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0)
             ])
         separatorViewController.didMove(toParent: self)

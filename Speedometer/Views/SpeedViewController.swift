@@ -16,7 +16,7 @@ class SpeedViewController: UIViewController {
     @IBOutlet weak var unitBackgroundView: UIView! {
         didSet {
             unitBackgroundView.layer.masksToBounds = true
-            unitBackgroundView.layer.cornerRadius = unitBackgroundView.frame.height/4
+            unitBackgroundView.layer.cornerRadius = 20.0
         }
     }
 
