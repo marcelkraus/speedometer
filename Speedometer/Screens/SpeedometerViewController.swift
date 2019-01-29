@@ -27,12 +27,27 @@ class SpeedometerViewController: UIViewController {
         setupCircularView()
         setupSpeedView()
         setupCoordinatesView()
+        setupGestureRecognizer()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+extension SpeedometerViewController {
+    @objc func nextUnit() {
+        var unit: Unit {
+            return Unit(rawValue: UserDefaults.standard.string(forKey: AppConfig.UserDefaultsKey.unit)!)!
+        }
+
+        UserDefaults.standard.set(unit.next.rawValue, forKey: AppConfig.UserDefaultsKey.unit)
+
+        view.setNeedsLayout()
+    }
+}
+
+// MARK: - UI Setup
 
 private extension SpeedometerViewController {
     func setupSwipeInfoLabel() {
@@ -106,5 +121,11 @@ private extension SpeedometerViewController {
             coordinatesView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
             ])
         coordinatesViewController.didMove(toParent: self)
+    }
+
+    func setupGestureRecognizer() {
+        let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(nextUnit))
+        gestureRecognizer.direction = .down
+        view.addGestureRecognizer(gestureRecognizer)
     }
 }
