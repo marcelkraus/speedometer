@@ -1,6 +1,9 @@
+import CoreLocation
 import UIKit
 
 class SpeedometerViewController: UIViewController {
+    private let locationManager = CLLocationManager()
+
     private var swipeInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "↓ " + "SpeedometerViewController.SwipeInfo".localized + " ↓"
@@ -10,13 +13,26 @@ class SpeedometerViewController: UIViewController {
         return label
     }()
 
+    private var circularViewController: CircularViewController!
+
+    private var speedViewController: SpeedViewController!
+
+    private var coordinatesViewController: CoordinatesViewController!
+
     private var imprintButtonView: UIView!
 
-    private var circularView: UIView!
+    private var circularView: CircularView!
 
     private var speedView: UIView!
 
     private var coordinatesView: UIView!
+
+    var unit: Unit = Unit(rawValue: UserDefaults.standard.string(forKey: AppConfig.UserDefaultsKey.unit)!)! {
+        didSet {
+            UserDefaults.standard.set(unit.next.rawValue, forKey: AppConfig.UserDefaultsKey.unit)
+            speedViewController.unit = unit
+        }
+    }
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -28,6 +44,9 @@ class SpeedometerViewController: UIViewController {
         setupSpeedView()
         setupCoordinatesView()
         setupGestureRecognizer()
+
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -35,15 +54,28 @@ class SpeedometerViewController: UIViewController {
     }
 }
 
-extension SpeedometerViewController {
-    @objc func nextUnit() {
-        var unit: Unit {
-            return Unit(rawValue: UserDefaults.standard.string(forKey: AppConfig.UserDefaultsKey.unit)!)!
+// MARK: - Obj-C Selectors
+
+private extension SpeedometerViewController {
+    @objc func selectNextUnit() {
+        unit = unit.next
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+
+extension SpeedometerViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else {
+            return
         }
 
-        UserDefaults.standard.set(unit.next.rawValue, forKey: AppConfig.UserDefaultsKey.unit)
+        let speed = Speed(speed: location.speed, unit: unit)
 
-        view.setNeedsLayout()
+        circularViewController.speed = speed
+        speedViewController.speed = speed
+        speedViewController.unit = unit
+        coordinatesViewController.coordinates = Coordinates(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
     }
 }
 
@@ -70,13 +102,13 @@ private extension SpeedometerViewController {
         imprintButtonView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             imprintButtonView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
-            imprintButtonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
+            imprintButtonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
             ])
         imprintButtonViewController.didMove(toParent: self)
     }
 
     func setupCircularView() {
-        let circularViewController = CircularViewController()
+        circularViewController = CircularViewController()
         addChild(circularViewController)
 
         circularView = circularViewController.view! as? CircularView
@@ -93,7 +125,7 @@ private extension SpeedometerViewController {
     }
 
     func setupSpeedView() {
-        let speedViewController = SpeedViewController()
+        speedViewController = SpeedViewController()
         addChild(speedViewController)
 
         speedView = speedViewController.view!
@@ -102,13 +134,13 @@ private extension SpeedometerViewController {
         speedView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             speedView.trailingAnchor.constraint(equalTo: circularView.trailingAnchor),
-            speedView.bottomAnchor.constraint(equalTo: circularView.bottomAnchor),
+            speedView.bottomAnchor.constraint(equalTo: circularView.bottomAnchor)
             ])
         speedViewController.didMove(toParent: self)
     }
 
     func setupCoordinatesView() {
-        let coordinatesViewController = CoordinatesViewController()
+        coordinatesViewController = CoordinatesViewController()
         addChild(coordinatesViewController)
 
         coordinatesView = coordinatesViewController.view!
@@ -124,7 +156,7 @@ private extension SpeedometerViewController {
     }
 
     func setupGestureRecognizer() {
-        let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(nextUnit))
+        let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(selectNextUnit))
         gestureRecognizer.direction = .down
         view.addGestureRecognizer(gestureRecognizer)
     }

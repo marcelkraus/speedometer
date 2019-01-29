@@ -1,47 +1,42 @@
-import CoreLocation
 import UIKit
 
 class SpeedViewController: UIViewController {
+    var speed: Speed? {
+        didSet {
+            guard let speed = speed else {
+                return
+            }
 
-    // MARK: - Properties
+            speedLabel.text = speed.asString
+        }
+    }
 
-    let locationManager = CLLocationManager()
+    var unit: Unit? {
+        didSet {
+            guard let unit = unit else {
+                return
+            }
 
-    // MARK: - Outlets & Actions
+            unitLabel.text = unit.abbreviation
+        }
+    }
 
-    @IBOutlet weak var speedLabel: UILabel!
+    @IBOutlet private weak var speedLabel: UILabel!
 
-    @IBOutlet weak var unitLabel: UILabel!
+    @IBOutlet private weak var unitLabel: UILabel!
 
-    @IBOutlet weak var unitBackgroundView: UIView! {
+    @IBOutlet private weak var unitBackgroundView: UIView! {
         didSet {
             unitBackgroundView.layer.masksToBounds = true
             unitBackgroundView.layer.cornerRadius = 20.0
         }
     }
 
-    // MARK: - View Controller Lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        locationManager.delegate = self
-        locationManager.startUpdatingLocation()
+    init() {
+        super.init(nibName: nil, bundle: nil)
     }
-}
 
-extension SpeedViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        var unit: Unit {
-            return Unit(rawValue: UserDefaults.standard.string(forKey: AppConfig.UserDefaultsKey.unit)!)!
-        }
-
-        guard let location = locations.last else {
-            return
-        }
-
-        let speed = Speed(speed: location.speed, unit: unit)
-        speedLabel.text = speed.asString
-        unitLabel.text = speed.unit.abbreviation
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
