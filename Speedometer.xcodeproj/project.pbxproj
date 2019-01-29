@@ -17,8 +17,6 @@
 		DF4E314321C16D9F00ADE39F /* CircularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E314221C16D9F00ADE39F /* CircularViewController.swift */; };
 		DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */; };
 		DF511038219D9B05000321E8 /* LoadingIndicatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF511036219D9B05000321E8 /* LoadingIndicatorViewController.xib */; };
-		DF51433821F9F3400061BEAA /* SpeedLimiterButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51433621F9F3400061BEAA /* SpeedLimiterButtonViewController.swift */; };
-		DF51433B21F9F5390061BEAA /* SpeedLimiterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51433A21F9F5390061BEAA /* SpeedLimiterViewController.swift */; };
 		DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */; };
 		DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */; };
 		DF5F4C5F1FD5DAA10043F97E /* UIViewController+Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */; };
@@ -69,8 +67,6 @@
 		DF4E314221C16D9F00ADE39F /* CircularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularViewController.swift; sourceTree = "<group>"; };
 		DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewController.swift; sourceTree = "<group>"; };
 		DF511036219D9B05000321E8 /* LoadingIndicatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingIndicatorViewController.xib; sourceTree = "<group>"; };
-		DF51433621F9F3400061BEAA /* SpeedLimiterButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedLimiterButtonViewController.swift; sourceTree = "<group>"; };
-		DF51433A21F9F5390061BEAA /* SpeedLimiterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedLimiterViewController.swift; sourceTree = "<group>"; };
 		DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.ttf"; sourceTree = "<group>"; };
 		DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Medium.ttf"; sourceTree = "<group>"; };
 		DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Transition.swift"; sourceTree = "<group>"; };
@@ -151,7 +147,6 @@
 				DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */,
 				DFDB367F219F770B002B7D53 /* MessageViewController.swift */,
 				DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */,
-				DF51433A21F9F5390061BEAA /* SpeedLimiterViewController.swift */,
 				DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */,
 			);
 			path = Screens;
@@ -233,7 +228,6 @@
 			children = (
 				DFE3BB5F21A6C564001EDCAE /* AuthorizationButtonViewController.swift */,
 				DF17A23221FB544A00DE901A /* ImprintButtonViewController.swift */,
-				DF51433621F9F3400061BEAA /* SpeedLimiterButtonViewController.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -403,7 +397,6 @@
 				DFB6D73820815E2700BFC1F3 /* Speed.swift in Sources */,
 				DF4E314321C16D9F00ADE39F /* CircularViewController.swift in Sources */,
 				DF17A23121FB4D3200DE901A /* SeparatorViewController.swift in Sources */,
-				DF51433B21F9F5390061BEAA /* SpeedLimiterViewController.swift in Sources */,
 				DFE3BB6121A6C564001EDCAE /* AuthorizationButtonViewController.swift in Sources */,
 				DFDB3682219F7B4D002B7D53 /* InformationType.swift in Sources */,
 				DFCA0C611FD5E17300260E24 /* FlowViewController.swift in Sources */,
@@ -415,7 +408,6 @@
 				DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */,
 				DF3010D8205A929E005B493D /* String+Localization.swift in Sources */,
 				DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */,
-				DF51433821F9F3400061BEAA /* SpeedLimiterButtonViewController.swift in Sources */,
 				DF9DCB0220ADD770008BAE8B /* AppConfig.swift in Sources */,
 				DF2F6BD321ADA4A400AC75BE /* SpeedometerViewController.swift in Sources */,
 				DFD30999219F252C005CE3B9 /* OnboardingViewController.swift in Sources */,

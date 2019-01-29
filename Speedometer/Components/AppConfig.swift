@@ -3,7 +3,6 @@ import Foundation
 struct AppConfig {
     struct UserDefaultsKey {
         static let appStartCounter = "app_start_counter"
-        static let speedLimit = "speed"
         static let unit = "unit"
     }
     struct Default {

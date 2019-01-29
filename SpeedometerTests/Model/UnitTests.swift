@@ -17,7 +17,7 @@ class UnitTests: XCTestCase {
     func testUnitMaxiumSpeed() {
         let unit = Unit.kilometersPerHour
 
-        XCTAssertEqual(unit.maximumSpeed, 240, "Maximum speed limit of km/h should equal 160")
+        XCTAssertEqual(unit.maximumSpeed, 240, "Maximum speed of km/h should equal 160")
     }
 
     func testMilesPerHourIsNextUnitAfterKilometersPerHour() {

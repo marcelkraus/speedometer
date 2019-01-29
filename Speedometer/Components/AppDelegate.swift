@@ -8,7 +8,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.register(defaults: [
             AppConfig.UserDefaultsKey.appStartCounter: 0,
             AppConfig.UserDefaultsKey.unit: AppConfig.Default.unit,
-            AppConfig.UserDefaultsKey.speedLimit: "0"
             ])
 
         application.isIdleTimerDisabled = true
