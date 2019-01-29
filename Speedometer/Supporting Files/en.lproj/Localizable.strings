@@ -11,7 +11,6 @@
 "Information.OnboardingInformation.Heading" = "Hello World!\nThis is Speedometer.";
 "Information.OnboardingInformation.Text" = "Speedometer shows your current speed. Simple, cost-free and without any advertisements.\n\nSpeedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease confirm access within the popup after you tapped the button below.";
 "LoadingIndicatorViewController.Indicator" = "Loading…";
-"SpeedLimiterButtonViewController.Button" = "Enable Speed Limiter";
 "SpeedometerViewController.Indicator" = "Waiting for GPS signal…";
 "SpeedometerViewController.NoCoordinates" = "– No Coordinates –";
 "SpeedometerViewController.Orientation.East" = "East";
