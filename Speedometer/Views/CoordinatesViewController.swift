@@ -1,10 +1,7 @@
-import CoreLocation
 import UIKit
 
 class CoordinatesViewController: UIViewController {
-    private let locationManager = CLLocationManager()
-
-    private var coordinates: Coordinates? {
+    var coordinates: Coordinates? {
         didSet {
             guard let coordinates = coordinates else {
                 return
@@ -16,20 +13,11 @@ class CoordinatesViewController: UIViewController {
 
     @IBOutlet weak var coordinatesLabel: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        locationManager.delegate = self
-        locationManager.startUpdatingLocation()
+    init() {
+        super.init(nibName: nil, bundle: nil)
     }
-}
 
-extension CoordinatesViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else {
-            return
-        }
-
-        coordinates = Coordinates(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
