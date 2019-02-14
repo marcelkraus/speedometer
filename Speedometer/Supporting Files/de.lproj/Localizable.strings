@@ -3,7 +3,7 @@
 "CoordinatesViewController.Status" = "Deine Position";
 "ImprintViewController.Heading" = "Impressum";
 "ImprintViewController.SwipeInfo" = "Swipen zum schließen";
-"ImprintViewController.Text" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nDanke an Marc und Thomas für ihre Unterstützung.\n\n\Teile des Icons gestaltet von Freepik/Flaticon.\n\nApp-Version v%@:%@.";
+"ImprintViewController.Text" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nVielen Dank ♡ an Manuela, Marc und Thomas.\n\n\Teile des Icons gestaltet von Freepik/Flaticon.\n\nApp-Version v%@:%@.";
 "Information.LocationAuthorizationStatusDenied.Heading" = "Okay, Houston, we've had a problem here.";
 "Information.LocationAuthorizationStatusDenied.Text" = "Die Nutzung von Tacho ist nicht möglich, da der Zugriff auf deine Standortdaten beschränkt wurde.\n\nBitte entferne alle Einschränkungen in deinen Einstellungen:\n\nEinstellungen > Allgemein > Einschränkungen > Ortungsdienste";
 "Information.LocationAuthorizationStatusRestricted.Heading" = "Okay, Houston, we've had a problem here.";
