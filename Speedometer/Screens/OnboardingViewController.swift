@@ -1,9 +1,13 @@
 import UIKit
 
 class OnboardingViewController: UIViewController {
-    private var separatorView: UIView!
-    private var informationView: UIView!
+    var authorizationButtonViewController: ButtonViewController!
+    private var informationViewController: InformationViewController!
+    private var separatorViewController: SeparatorViewController!
+
     private var authorizationButtonView: UIView!
+    private var informationView: UIView!
+    private var separatorView: UIView!
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -21,7 +25,7 @@ class OnboardingViewController: UIViewController {
 
 private extension OnboardingViewController {
     func setupSeparatorView() {
-        let separatorViewController = SeparatorViewController()
+        separatorViewController = SeparatorViewController()
         addChild(separatorViewController)
 
         separatorView = separatorViewController.view!
@@ -38,7 +42,7 @@ private extension OnboardingViewController {
     }
 
     func setupInformationView() {
-        let informationViewController = InformationViewController(informationType: .onboardingInformation)
+        informationViewController = InformationViewController(informationType: .onboardingInformation)
         addChild(informationViewController)
 
         informationView = informationViewController.view!
@@ -54,7 +58,7 @@ private extension OnboardingViewController {
     }
 
     func setupAuthorizationButton() {
-        let authorizationButtonViewController = AuthorizationButtonViewController()
+        authorizationButtonViewController = ButtonViewController(type: .plain("AuthorizationButtonViewController.Label".localized))
         addChild(authorizationButtonViewController)
 
         authorizationButtonView = authorizationButtonViewController.view!
