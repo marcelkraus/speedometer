@@ -1,6 +1,8 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
+    var loadingIndicatorViewController: LoadingIndicatorViewController!
+
     init() {
         super.init(nibName: nil, bundle: nil)
 
@@ -13,9 +15,11 @@ class LoadingViewController: UIViewController {
     }
 }
 
+// MARK: - UI Setup
+
 private extension LoadingViewController {
     func setupLoadingIndicatorView() {
-        let loadingIndicatorViewController = LoadingIndicatorViewController()
+        loadingIndicatorViewController = LoadingIndicatorViewController()
         addChild(loadingIndicatorViewController)
 
         let loadingIndicatorView = loadingIndicatorViewController.view!

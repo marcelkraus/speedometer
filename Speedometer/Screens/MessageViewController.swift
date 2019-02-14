@@ -1,8 +1,10 @@
 import UIKit
 
 class MessageViewController: UIViewController {
-    private var informationType: InformationType
-    private var separatorView: UIView!
+    var informationType: InformationType
+
+    private var informationViewController: InformationViewController!
+    private var separatorViewController: SeparatorViewController!
 
     init(informationType: InformationType) {
         self.informationType = informationType
@@ -19,12 +21,14 @@ class MessageViewController: UIViewController {
     }
 }
 
+// MARK: - UI Setup
+
 private extension MessageViewController {
     func setupSeparatorView() {
-        let separatorViewController = SeparatorViewController()
+        separatorViewController = SeparatorViewController()
         addChild(separatorViewController)
 
-        separatorView = separatorViewController.view!
+        let separatorView = separatorViewController.view!
         view.addSubview(separatorView)
 
         separatorView.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +42,7 @@ private extension MessageViewController {
     }
 
     func setupInformationView() {
-        let informationViewController = InformationViewController(informationType: informationType)
+        informationViewController = InformationViewController(informationType: informationType)
         addChild(informationViewController)
 
         let informationView = informationViewController.view!
@@ -47,7 +51,7 @@ private extension MessageViewController {
         informationView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             informationView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
-            informationView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
+            informationView.topAnchor.constraint(equalTo: separatorViewController.view.bottomAnchor, constant: 40.0),
             informationView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
             ])
         informationViewController.didMove(toParent: self)

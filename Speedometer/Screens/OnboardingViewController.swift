@@ -2,12 +2,8 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     var authorizationButtonViewController: ButtonViewController!
-    private var informationViewController: InformationViewController!
-    private var separatorViewController: SeparatorViewController!
-
-    private var authorizationButtonView: UIView!
-    private var informationView: UIView!
-    private var separatorView: UIView!
+    var informationViewController: InformationViewController!
+    var separatorViewController: SeparatorViewController!
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -23,12 +19,14 @@ class OnboardingViewController: UIViewController {
     }
 }
 
+// MARK: - UI Setup
+
 private extension OnboardingViewController {
     func setupSeparatorView() {
         separatorViewController = SeparatorViewController()
         addChild(separatorViewController)
 
-        separatorView = separatorViewController.view!
+        let separatorView = separatorViewController.view!
         view.addSubview(separatorView)
 
         separatorView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,13 +43,13 @@ private extension OnboardingViewController {
         informationViewController = InformationViewController(informationType: .onboardingInformation)
         addChild(informationViewController)
 
-        informationView = informationViewController.view!
+        let informationView = informationViewController.view!
         view.addSubview(informationView)
 
         informationView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             informationView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
-            informationView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
+            informationView.topAnchor.constraint(equalTo: separatorViewController.view.bottomAnchor, constant: 40.0),
             informationView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
             ])
         informationViewController.didMove(toParent: self)
@@ -61,12 +59,12 @@ private extension OnboardingViewController {
         authorizationButtonViewController = ButtonViewController(type: .plain("AuthorizationButtonViewController.Label".localized))
         addChild(authorizationButtonViewController)
 
-        authorizationButtonView = authorizationButtonViewController.view!
+        let authorizationButtonView = authorizationButtonViewController.view!
         view.addSubview(authorizationButtonView)
 
         authorizationButtonView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            authorizationButtonView.topAnchor.constraint(equalTo: informationView.bottomAnchor, constant: 40.0),
+            authorizationButtonView.topAnchor.constraint(equalTo: informationViewController.view.bottomAnchor, constant: 40.0),
             authorizationButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             ])
         authorizationButtonViewController.didMove(toParent: self)

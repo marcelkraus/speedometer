@@ -1,6 +1,9 @@
 import UIKit
 
 class ImprintViewController: UIViewController {
+    var imprintViewController: InformationViewController!
+    var separatorViewController: SeparatorViewController!
+
     private let backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -9,10 +12,6 @@ class ImprintViewController: UIViewController {
 
         return view
     }()
-
-    private var separatorView: UIView!
-
-    private var imprintView: UIView!
 
     private lazy var swipeInfoLabel: UILabel = {
         let label = UILabel()
@@ -77,10 +76,10 @@ private extension ImprintViewController {
     }
 
     func setupSeparatorView() {
-        let separatorViewController = SeparatorViewController()
+        separatorViewController = SeparatorViewController()
         addChild(separatorViewController)
 
-        separatorView = separatorViewController.view!
+        let separatorView = separatorViewController.view!
         view.addSubview(separatorView)
 
         separatorView.translatesAutoresizingMaskIntoConstraints = false
@@ -94,16 +93,16 @@ private extension ImprintViewController {
     }
 
     func setupImprintView() {
-        let imprintViewController = InformationViewController(heading: "ImprintViewController.Heading".localized, text: String(format: "ImprintViewController.Text".localized, versionNumber, buildNumber))
+        imprintViewController = InformationViewController(heading: "ImprintViewController.Heading".localized, text: String(format: "ImprintViewController.Text".localized, versionNumber, buildNumber))
         addChild(imprintViewController)
 
-        imprintView = imprintViewController.view!
+        let imprintView = imprintViewController.view!
         view.addSubview(imprintView)
 
         imprintView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             imprintView.leadingAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
-            imprintView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
+            imprintView.topAnchor.constraint(equalTo: separatorViewController.view.bottomAnchor, constant: 40.0),
             imprintView.trailingAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.trailingAnchor, constant: -40.0)
             ])
         imprintViewController.didMove(toParent: self)
@@ -114,7 +113,7 @@ private extension ImprintViewController {
 
         swipeInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            swipeInfoLabel.topAnchor.constraint(equalTo: imprintView.bottomAnchor, constant: 40.0),
+            swipeInfoLabel.topAnchor.constraint(equalTo: imprintViewController.view.bottomAnchor, constant: 40.0),
             swipeInfoLabel.centerXAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.centerXAnchor)
             ])
     }
