@@ -17,19 +17,15 @@ class FlowViewController: UIViewController {
     }
 }
 
-private extension FlowViewController {
-    func selectViewController() {
-        transition(to: LoadingViewController()) { _ in
-            switch CLLocationManager.authorizationStatus() {
-            case .notDetermined:
-                self.transition(to: OnboardingViewController())
-            case .restricted:
-                self.transition(to: MessageViewController(informationType: .locationAuthorizationStatusRestricted))
-            case .denied:
-                self.transition(to: MessageViewController(informationType: .locationAuthorizationStatusDenied))
-            case .authorizedWhenInUse, .authorizedAlways:
-                self.transition(to: SpeedometerViewController())
-            }
+// MARK: - ButtonViewControllerDelegate
+
+extension FlowViewController: ButtonViewControllerDelegate {
+    func didTapButton(type: ButtonType) {
+        switch type {
+        case .info:
+            present(ImprintViewController(), animated: true, completion: nil)
+        case .plain(_):
+            locationManager.requestWhenInUseAuthorization()
         }
     }
 }
@@ -42,3 +38,25 @@ extension FlowViewController: CLLocationManagerDelegate {
     }
 }
 
+// MARK: - Private Methods
+
+private extension FlowViewController {
+    func selectViewController() {
+        transition(to: LoadingViewController()) { _ in
+            switch CLLocationManager.authorizationStatus() {
+            case .notDetermined:
+                let onboardingViewController = OnboardingViewController()
+                onboardingViewController.authorizationButtonViewController.delegate = self
+                self.transition(to: onboardingViewController)
+            case .restricted:
+                self.transition(to: MessageViewController(informationType: .locationAuthorizationStatusRestricted))
+            case .denied:
+                self.transition(to: MessageViewController(informationType: .locationAuthorizationStatusDenied))
+            case .authorizedWhenInUse, .authorizedAlways:
+                let speedometerViewController = SpeedometerViewController()
+                speedometerViewController.imprintButtonViewController.delegate = self
+                self.transition(to: speedometerViewController)
+            }
+        }
+    }
+}

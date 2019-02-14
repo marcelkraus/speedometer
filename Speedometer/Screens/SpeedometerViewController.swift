@@ -14,18 +14,14 @@ class SpeedometerViewController: UIViewController {
     }()
 
     private var circularViewController: CircularViewController!
-
+    private var coordinatesViewController: CoordinatesViewController!
+    var imprintButtonViewController: ButtonViewController!
     private var speedViewController: SpeedViewController!
 
-    private var coordinatesViewController: CoordinatesViewController!
-
-    private var imprintButtonView: UIView!
-
     private var circularView: CircularView!
-
-    private var speedView: UIView!
-
     private var coordinatesView: UIView!
+    private var imprintButtonView: UIView!
+    private var speedView: UIView!
 
     var unit: Unit = Unit(rawValue: UserDefaults.standard.string(forKey: AppConfig.UserDefaultsKey.unit)!)! {
         didSet {
@@ -93,7 +89,7 @@ private extension SpeedometerViewController {
     }
 
     func setupImprintButtonView() {
-        let imprintButtonViewController = ImprintButtonViewController()
+        imprintButtonViewController = ButtonViewController(type: .info)
         addChild(imprintButtonViewController)
 
         imprintButtonView = imprintButtonViewController.view!
