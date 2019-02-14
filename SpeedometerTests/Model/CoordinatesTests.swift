@@ -2,15 +2,15 @@ import XCTest
 @testable import Speedometer
 
 class CoordinatesTests: XCTestCase {
-    func testLatitude() {
+    func testNumericalPartOfLatitude() {
         let coordinates = Coordinates(latitude: 38.898556, longitude: 0)
 
-        XCTAssertEqual("38° 53\' 55\" North", coordinates.formatted.latitude)
+        XCTAssertTrue(coordinates.formatted.latitude.starts(with: "38° 53\' 55\""))
     }
 
-    func testLongitude() {
+    func testNumericalPartOfLongitude() {
         let coordinates = Coordinates(latitude: 0, longitude: -77.037852)
 
-        XCTAssertEqual("77° 2\' 16\" West", coordinates.formatted.longitude)
+        XCTAssertTrue(coordinates.formatted.longitude.starts(with: "77° 2\' 16\""))
     }
 }

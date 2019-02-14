@@ -5,19 +5,19 @@ class UnitTests: XCTestCase {
     func testUnitAbbreviation() {
         let unit = Unit.kilometersPerHour
 
-        XCTAssertEqual(unit.abbreviation, "km/h", "Abbreviation of kilometers per hour should equal km/h")
+        XCTAssertEqual(unit.abbreviation, "km/h")
     }
 
     func testUnitFactor() {
         let unit = Unit.kilometersPerHour
 
-        XCTAssertEqual(unit.factor, 3.6, "Factor of km/h should equal 3.6")
+        XCTAssertEqual(unit.factor, 3.6)
     }
 
     func testUnitMaxiumSpeed() {
         let unit = Unit.kilometersPerHour
 
-        XCTAssertEqual(unit.maximumSpeed, 240, "Maximum speed of km/h should equal 160")
+        XCTAssertEqual(unit.maximumSpeed, 240)
     }
 
     func testMilesPerHourIsNextUnitAfterKilometersPerHour() {
