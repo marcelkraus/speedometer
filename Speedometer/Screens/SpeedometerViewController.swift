@@ -1,6 +1,11 @@
 import UIKit
 
 class SpeedometerViewController: UIViewController {
+    var circularViewController: CircularViewController!
+    var coordinatesViewController: CoordinatesViewController!
+    var imprintButtonViewController: ButtonViewController!
+    var speedViewController: SpeedViewController!
+
     private var swipeInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "↓ " + "SpeedometerViewController.SwipeInfo".localized + " ↓"
@@ -9,16 +14,6 @@ class SpeedometerViewController: UIViewController {
 
         return label
     }()
-
-    private var circularViewController: CircularViewController!
-    private var coordinatesViewController: CoordinatesViewController!
-    var imprintButtonViewController: ButtonViewController!
-    private var speedViewController: SpeedViewController!
-
-    private var circularView: CircularView!
-    private var coordinatesView: UIView!
-    private var imprintButtonView: UIView!
-    private var speedView: UIView!
 
     var unit: Unit = Unit(rawValue: UserDefaults.standard.string(forKey: AppConfig.UserDefaultsKey.unit)!)! {
         didSet {
@@ -76,7 +71,7 @@ private extension SpeedometerViewController {
         imprintButtonViewController = ButtonViewController(type: .info)
         addChild(imprintButtonViewController)
 
-        imprintButtonView = imprintButtonViewController.view!
+        let imprintButtonView = imprintButtonViewController.view!
         view.addSubview(imprintButtonView)
 
         imprintButtonView.translatesAutoresizingMaskIntoConstraints = false
@@ -91,7 +86,7 @@ private extension SpeedometerViewController {
         circularViewController = CircularViewController()
         addChild(circularViewController)
 
-        circularView = circularViewController.view! as? CircularView
+        let circularView = circularViewController.view! as! CircularView
         view.addSubview(circularView)
 
         circularView.translatesAutoresizingMaskIntoConstraints = false
@@ -108,13 +103,13 @@ private extension SpeedometerViewController {
         speedViewController = SpeedViewController()
         addChild(speedViewController)
 
-        speedView = speedViewController.view!
+        let speedView = speedViewController.view!
         view.addSubview(speedView)
 
         speedView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            speedView.trailingAnchor.constraint(equalTo: circularView.trailingAnchor),
-            speedView.bottomAnchor.constraint(equalTo: circularView.bottomAnchor)
+            speedView.trailingAnchor.constraint(equalTo: circularViewController.view.trailingAnchor),
+            speedView.bottomAnchor.constraint(equalTo: circularViewController.view.bottomAnchor)
             ])
         speedViewController.didMove(toParent: self)
     }
@@ -123,13 +118,13 @@ private extension SpeedometerViewController {
         coordinatesViewController = CoordinatesViewController()
         addChild(coordinatesViewController)
 
-        coordinatesView = coordinatesViewController.view!
+        let coordinatesView = coordinatesViewController.view!
         view.addSubview(coordinatesView)
 
         coordinatesView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            coordinatesView.topAnchor.constraint(equalTo: circularView.bottomAnchor),
-            coordinatesView.bottomAnchor.constraint(equalTo: imprintButtonView.topAnchor),
+            coordinatesView.topAnchor.constraint(equalTo: circularViewController.view.bottomAnchor),
+            coordinatesView.bottomAnchor.constraint(equalTo: imprintButtonViewController.view.topAnchor),
             coordinatesView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
             ])
         coordinatesViewController.didMove(toParent: self)
