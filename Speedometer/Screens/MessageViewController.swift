@@ -24,6 +24,22 @@ class MessageViewController: UIViewController {
 // MARK: - UI Setup
 
 private extension MessageViewController {
+    func setupInformationView() {
+        informationViewController = InformationViewController(informationType: informationType)
+        addChild(informationViewController)
+
+        let informationView = informationViewController.view!
+        view.addSubview(informationView)
+
+        informationView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            informationView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
+            informationView.topAnchor.constraint(equalTo: separatorViewController.view.bottomAnchor, constant: 40.0),
+            informationView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
+            ])
+        informationViewController.didMove(toParent: self)
+    }
+
     func setupSeparatorView() {
         separatorViewController = SeparatorViewController()
         addChild(separatorViewController)
@@ -39,21 +55,5 @@ private extension MessageViewController {
             separatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0)
             ])
         separatorViewController.didMove(toParent: self)
-    }
-
-    func setupInformationView() {
-        informationViewController = InformationViewController(informationType: informationType)
-        addChild(informationViewController)
-
-        let informationView = informationViewController.view!
-        view.addSubview(informationView)
-
-        informationView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            informationView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
-            informationView.topAnchor.constraint(equalTo: separatorViewController.view.bottomAnchor, constant: 40.0),
-            informationView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
-            ])
-        informationViewController.didMove(toParent: self)
     }
 }

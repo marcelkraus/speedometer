@@ -54,15 +54,17 @@ class ImprintViewController: UIViewController {
     }
 }
 
+// MARK: - Obj-C Selectors
+
+private extension ImprintViewController {
+    @objc func dismissImprint() {
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+}
+
 // MARK: - UI Setup
 
 private extension ImprintViewController {
-    func setupView() {
-        modalPresentationStyle = .overCurrentContext
-        modalTransitionStyle = .crossDissolve
-        view.backgroundColor = UIColor.clear.withAlphaComponent(0.75)
-    }
-
     func setupBackgroundView() {
         view.addSubview(backgroundView)
 
@@ -73,6 +75,28 @@ private extension ImprintViewController {
             backgroundView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
             backgroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
             ])
+    }
+
+    func setupGestureRecognizer() {
+        let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(dismissImprint))
+        gestureRecognizer.direction = .down
+        view.addGestureRecognizer(gestureRecognizer)
+    }
+
+    func setupImprintView() {
+        imprintViewController = InformationViewController(heading: "ImprintViewController.Heading".localized, text: String(format: "ImprintViewController.Text".localized, versionNumber, buildNumber))
+        addChild(imprintViewController)
+
+        let imprintView = imprintViewController.view!
+        view.addSubview(imprintView)
+
+        imprintView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imprintView.leadingAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
+            imprintView.topAnchor.constraint(equalTo: separatorViewController.view.bottomAnchor, constant: 40.0),
+            imprintView.trailingAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.trailingAnchor, constant: -40.0)
+            ])
+        imprintViewController.didMove(toParent: self)
     }
 
     func setupSeparatorView() {
@@ -92,22 +116,6 @@ private extension ImprintViewController {
         separatorViewController.didMove(toParent: self)
     }
 
-    func setupImprintView() {
-        imprintViewController = InformationViewController(heading: "ImprintViewController.Heading".localized, text: String(format: "ImprintViewController.Text".localized, versionNumber, buildNumber))
-        addChild(imprintViewController)
-
-        let imprintView = imprintViewController.view!
-        view.addSubview(imprintView)
-
-        imprintView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            imprintView.leadingAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
-            imprintView.topAnchor.constraint(equalTo: separatorViewController.view.bottomAnchor, constant: 40.0),
-            imprintView.trailingAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.trailingAnchor, constant: -40.0)
-            ])
-        imprintViewController.didMove(toParent: self)
-    }
-
     func setupSwipeInfoLabel() {
         view.addSubview(swipeInfoLabel)
 
@@ -118,17 +126,9 @@ private extension ImprintViewController {
             ])
     }
 
-    func setupGestureRecognizer() {
-        let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(dismissImprint))
-        gestureRecognizer.direction = .down
-        view.addGestureRecognizer(gestureRecognizer)
-    }
-}
-
-// MARK: - Obj-C Selectors
-
-private extension ImprintViewController {
-    @objc func dismissImprint() {
-        presentingViewController?.dismiss(animated: true, completion: nil)
+    func setupView() {
+        modalPresentationStyle = .overCurrentContext
+        modalTransitionStyle = .crossDissolve
+        view.backgroundColor = UIColor.clear.withAlphaComponent(0.75)
     }
 }
