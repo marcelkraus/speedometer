@@ -1,9 +1,6 @@
-import CoreLocation
 import UIKit
 
 class SpeedometerViewController: UIViewController {
-    private let locationManager = CLLocationManager()
-
     private var swipeInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "↓ " + "SpeedometerViewController.SwipeInfo".localized + " ↓"
@@ -40,13 +37,17 @@ class SpeedometerViewController: UIViewController {
         setupSpeedView()
         setupCoordinatesView()
         setupGestureRecognizer()
-
-        locationManager.delegate = self
-        locationManager.startUpdatingLocation()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func update(speed: Speed, coordinates: Coordinates) {
+        circularViewController.speed = speed
+        speedViewController.speed = speed
+        speedViewController.unit = unit
+        coordinatesViewController.coordinates = coordinates
     }
 }
 
@@ -55,23 +56,6 @@ class SpeedometerViewController: UIViewController {
 private extension SpeedometerViewController {
     @objc func selectNextUnit() {
         unit = unit.next
-    }
-}
-
-// MARK: - CLLocationManagerDelegate
-
-extension SpeedometerViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else {
-            return
-        }
-
-        let speed = Speed(speed: location.speed, unit: unit)
-
-        circularViewController.speed = speed
-        speedViewController.speed = speed
-        speedViewController.unit = unit
-        coordinatesViewController.coordinates = Coordinates(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
     }
 }
 

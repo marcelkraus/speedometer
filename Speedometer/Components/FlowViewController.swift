@@ -4,6 +4,9 @@ import UIKit
 class FlowViewController: UIViewController {
     private let locationManager = CLLocationManager()
 
+    private var onboardingViewController: OnboardingViewController!
+    private var speedometerViewController: SpeedometerViewController!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,6 +39,17 @@ extension FlowViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         self.selectViewController()
     }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else {
+            return
+        }
+
+        let speed = Speed(speed: location.speed, unit: speedometerViewController.unit)
+        let coordinates = Coordinates(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+
+        speedometerViewController.update(speed: speed, coordinates: coordinates)
+    }
 }
 
 // MARK: - Private Methods
@@ -45,17 +59,21 @@ private extension FlowViewController {
         transition(to: LoadingViewController()) { _ in
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
-                let onboardingViewController = OnboardingViewController()
-                onboardingViewController.authorizationButtonViewController.delegate = self
-                self.transition(to: onboardingViewController)
+                self.locationManager.stopUpdatingLocation()
+                self.onboardingViewController = OnboardingViewController()
+                self.onboardingViewController.authorizationButtonViewController.delegate = self
+                self.transition(to: self.onboardingViewController)
             case .restricted:
+                self.locationManager.stopUpdatingLocation()
                 self.transition(to: MessageViewController(informationType: .locationAuthorizationStatusRestricted))
             case .denied:
+                self.locationManager.stopUpdatingLocation()
                 self.transition(to: MessageViewController(informationType: .locationAuthorizationStatusDenied))
             case .authorizedWhenInUse, .authorizedAlways:
-                let speedometerViewController = SpeedometerViewController()
-                speedometerViewController.imprintButtonViewController.delegate = self
-                self.transition(to: speedometerViewController)
+                self.locationManager.startUpdatingLocation()
+                self.speedometerViewController = SpeedometerViewController()
+                self.speedometerViewController.imprintButtonViewController.delegate = self
+                self.transition(to: self.speedometerViewController)
             }
         }
     }
