@@ -22,21 +22,19 @@ class OnboardingViewController: UIViewController {
 // MARK: - UI Setup
 
 private extension OnboardingViewController {
-    func setupSeparatorView() {
-        separatorViewController = SeparatorViewController()
-        addChild(separatorViewController)
+    func setupAuthorizationButton() {
+        authorizationButtonViewController = ButtonViewController(type: .plain("AuthorizationButtonViewController.Label".localized))
+        addChild(authorizationButtonViewController)
 
-        let separatorView = separatorViewController.view!
-        view.addSubview(separatorView)
+        let authorizationButtonView = authorizationButtonViewController.view!
+        view.addSubview(authorizationButtonView)
 
-        separatorView.translatesAutoresizingMaskIntoConstraints = false
+        authorizationButtonView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            separatorView.heightAnchor.constraint(equalToConstant: 20.0),
-            separatorView.widthAnchor.constraint(equalToConstant: 170.0),
-            separatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -30.0),
-            separatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0)
+            authorizationButtonView.topAnchor.constraint(equalTo: informationViewController.view.bottomAnchor, constant: 40.0),
+            authorizationButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             ])
-        separatorViewController.didMove(toParent: self)
+        authorizationButtonViewController.didMove(toParent: self)
     }
 
     func setupInformationView() {
@@ -55,18 +53,20 @@ private extension OnboardingViewController {
         informationViewController.didMove(toParent: self)
     }
 
-    func setupAuthorizationButton() {
-        authorizationButtonViewController = ButtonViewController(type: .plain("AuthorizationButtonViewController.Label".localized))
-        addChild(authorizationButtonViewController)
+    func setupSeparatorView() {
+        separatorViewController = SeparatorViewController()
+        addChild(separatorViewController)
 
-        let authorizationButtonView = authorizationButtonViewController.view!
-        view.addSubview(authorizationButtonView)
+        let separatorView = separatorViewController.view!
+        view.addSubview(separatorView)
 
-        authorizationButtonView.translatesAutoresizingMaskIntoConstraints = false
+        separatorView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            authorizationButtonView.topAnchor.constraint(equalTo: informationViewController.view.bottomAnchor, constant: 40.0),
-            authorizationButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            separatorView.heightAnchor.constraint(equalToConstant: 20.0),
+            separatorView.widthAnchor.constraint(equalToConstant: 170.0),
+            separatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -30.0),
+            separatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0)
             ])
-        authorizationButtonViewController.didMove(toParent: self)
+        separatorViewController.didMove(toParent: self)
     }
 }

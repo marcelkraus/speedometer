@@ -57,31 +57,6 @@ private extension SpeedometerViewController {
 // MARK: - UI Setup
 
 private extension SpeedometerViewController {
-    func setupSwipeInfoLabel() {
-        view.addSubview(swipeInfoLabel)
-        swipeInfoLabel.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            swipeInfoLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            swipeInfoLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
-            ])
-    }
-
-    func setupImprintButtonView() {
-        imprintButtonViewController = ButtonViewController(type: .info)
-        addChild(imprintButtonViewController)
-
-        let imprintButtonView = imprintButtonViewController.view!
-        view.addSubview(imprintButtonView)
-
-        imprintButtonView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            imprintButtonView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
-            imprintButtonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
-            ])
-        imprintButtonViewController.didMove(toParent: self)
-    }
-
     func setupCircularView() {
         circularViewController = CircularViewController()
         addChild(circularViewController)
@@ -99,21 +74,6 @@ private extension SpeedometerViewController {
         circularViewController.didMove(toParent: self)
     }
 
-    func setupSpeedView() {
-        speedViewController = SpeedViewController()
-        addChild(speedViewController)
-
-        let speedView = speedViewController.view!
-        view.addSubview(speedView)
-
-        speedView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            speedView.trailingAnchor.constraint(equalTo: circularViewController.view.trailingAnchor),
-            speedView.bottomAnchor.constraint(equalTo: circularViewController.view.bottomAnchor)
-            ])
-        speedViewController.didMove(toParent: self)
-    }
-
     func setupCoordinatesView() {
         coordinatesViewController = CoordinatesViewController()
         addChild(coordinatesViewController)
@@ -129,10 +89,50 @@ private extension SpeedometerViewController {
             ])
         coordinatesViewController.didMove(toParent: self)
     }
-
+    
     func setupGestureRecognizer() {
         let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(selectNextUnit))
         gestureRecognizer.direction = .down
         view.addGestureRecognizer(gestureRecognizer)
+    }
+
+    func setupImprintButtonView() {
+        imprintButtonViewController = ButtonViewController(type: .info)
+        addChild(imprintButtonViewController)
+
+        let imprintButtonView = imprintButtonViewController.view!
+        view.addSubview(imprintButtonView)
+
+        imprintButtonView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imprintButtonView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
+            imprintButtonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
+            ])
+        imprintButtonViewController.didMove(toParent: self)
+    }
+
+    func setupSpeedView() {
+        speedViewController = SpeedViewController()
+        addChild(speedViewController)
+
+        let speedView = speedViewController.view!
+        view.addSubview(speedView)
+
+        speedView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            speedView.trailingAnchor.constraint(equalTo: circularViewController.view.trailingAnchor),
+            speedView.bottomAnchor.constraint(equalTo: circularViewController.view.bottomAnchor)
+            ])
+        speedViewController.didMove(toParent: self)
+    }
+
+    func setupSwipeInfoLabel() {
+        view.addSubview(swipeInfoLabel)
+        swipeInfoLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            swipeInfoLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            swipeInfoLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
+            ])
     }
 }
