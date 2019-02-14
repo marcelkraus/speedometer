@@ -3,7 +3,7 @@
 "CoordinatesViewController.Status" = "Your Location";
 "ImprintViewController.Heading" = "Imprint";
 "ImprintViewController.SwipeInfo" = "Swipe to Close";
-"ImprintViewController.Text" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\n\nMany Thanks ♡ to Manuela, Marc and Thomas.\n\n\Parts of Icon designed by Freepik/Flaticon.\n\nApp version v%@:%@.";
+"ImprintViewController.Text" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\nwww.marcelkraus.de\n\nMany Thanks ♡ to Manuela, Marc and Thomas.\n\n\Parts of Icon designed by Freepik/Flaticon.\n\nApp version v%@:%@.";
 "Information.LocationAuthorizationStatusDenied.Heading" = "Okay, Houston, we've had a problem here.";
 "Information.LocationAuthorizationStatusDenied.Text" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
 "Information.LocationAuthorizationStatusRestricted.Heading" = "Okay, Houston, we've had a problem here.";
