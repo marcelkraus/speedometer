@@ -1,7 +1,7 @@
 import Foundation
 
-enum InformationType {
+enum MessageType {
     case locationAuthorizationStatusDenied
     case locationAuthorizationStatusRestricted
-    case onboardingInformation
+    case onboarding
 }

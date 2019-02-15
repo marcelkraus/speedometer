@@ -1,7 +1,7 @@
 import UIKit
 
 class ImprintViewController: UIViewController {
-    var imprintViewController: InformationViewController!
+    var imprintViewController: ParagraphViewController!
     var separatorViewController: SeparatorViewController!
 
     private let backgroundView: UIView = {
@@ -84,7 +84,7 @@ private extension ImprintViewController {
     }
 
     func setupImprintView() {
-        imprintViewController = InformationViewController(heading: "ImprintViewController.Heading".localized, text: String(format: "ImprintViewController.Text".localized, versionNumber, buildNumber))
+        imprintViewController = ParagraphViewController(heading: "ImprintViewController.Heading".localized, text: String(format: "ImprintViewController.Text".localized, versionNumber, buildNumber))
         addChild(imprintViewController)
 
         let imprintView = imprintViewController.view!

@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         StoreReviewHelper.incrementAppStartCounter()
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = FlowViewController()
+        window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
     }
 }

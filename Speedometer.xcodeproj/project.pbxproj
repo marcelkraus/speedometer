@@ -30,12 +30,12 @@
 		DFC358F4205A9BCF00DEDB9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFC358F6205A9BCF00DEDB9E /* InfoPlist.strings */; };
 		DFC6DD7A2215C79F001675AB /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6DD792215C79F001675AB /* ButtonViewController.swift */; };
 		DFC6DD7C2215D092001675AB /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6DD7B2215D092001675AB /* ButtonType.swift */; };
-		DFCA0C611FD5E17300260E24 /* FlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C601FD5E17300260E24 /* FlowViewController.swift */; };
+		DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C601FD5E17300260E24 /* RootViewController.swift */; };
 		DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */; };
-		DFD30993219F240E005CE3B9 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD30991219F240E005CE3B9 /* InformationViewController.swift */; };
+		DFD30993219F240E005CE3B9 /* ParagraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */; };
 		DFD30999219F252C005CE3B9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */; };
 		DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB367F219F770B002B7D53 /* MessageViewController.swift */; };
-		DFDB3682219F7B4D002B7D53 /* InformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB3681219F7B4D002B7D53 /* InformationType.swift */; };
+		DFDB3682219F7B4D002B7D53 /* MessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB3681219F7B4D002B7D53 /* MessageType.swift */; };
 		DFDBDE5021F9D93500F3E858 /* CoordinatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */; };
 		DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFE69BD7205A904000FA0CE3 /* Localizable.strings */; };
 		DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */; };
@@ -79,12 +79,12 @@
 		DFC358F9205A9BE800DEDB9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DFC6DD792215C79F001675AB /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		DFC6DD7B2215D092001675AB /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
-		DFCA0C601FD5E17300260E24 /* FlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowViewController.swift; sourceTree = "<group>"; };
+		DFCA0C601FD5E17300260E24 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		DFD30991219F240E005CE3B9 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphViewController.swift; sourceTree = "<group>"; };
 		DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		DFDB367F219F770B002B7D53 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		DFDB3681219F7B4D002B7D53 /* InformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationType.swift; sourceTree = "<group>"; };
+		DFDB3681219F7B4D002B7D53 /* MessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageType.swift; sourceTree = "<group>"; };
 		DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesViewController.swift; sourceTree = "<group>"; };
 		DFE69BD6205A904000FA0CE3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DFE69BD8205A904C00FA0CE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -115,15 +115,8 @@
 		DF4C364F20D133B500A9E1B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DFC6DD792215C79F001675AB /* ButtonViewController.swift */,
-				DF4C365020D133CD00A9E1B7 /* CircularView.swift */,
-				DF4E314221C16D9F00ADE39F /* CircularViewController.swift */,
-				DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */,
-				DFD30991219F240E005CE3B9 /* InformationViewController.swift */,
-				DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */,
-				DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */,
-				DF17A23021FB4D3200DE901A /* SeparatorViewController.swift */,
-				DF7D820021C2B073004A37C8 /* SpeedViewController.swift */,
+				DFE6E19B2216DC8400623E34 /* Components */,
+				DF511031219D97EE000321E8 /* Screens */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,22 +133,10 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		DF511034219D9AE6000321E8 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				DF9DCB0120ADD770008BAE8B /* AppConfig.swift */,
-				DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */,
-				DFC6DD7B2215D092001675AB /* ButtonType.swift */,
-				DFCA0C601FD5E17300260E24 /* FlowViewController.swift */,
-				DFDB3681219F7B4D002B7D53 /* InformationType.swift */,
-				DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		DF568E471FD0119600D546B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DF9DCB0120ADD770008BAE8B /* AppConfig.swift */,
 				DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */,
 				DF58A64A2057FAC900005A07 /* Fonts */,
 				DFEB62311F30B5EA00FEC555 /* Info.plist */,
@@ -177,7 +158,9 @@
 		DF5F138B202A5AAE006D51DA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DFC6DD7B2215D092001675AB /* ButtonType.swift */,
 				DF94839C20D16C7E009B120B /* Coordinates.swift */,
+				DFDB3681219F7B4D002B7D53 /* MessageType.swift */,
 				DFB6D73720815E2700BFC1F3 /* Speed.swift */,
 				DF2C45AE1FCC2EF0005C8906 /* Unit.swift */,
 			);
@@ -212,6 +195,30 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DFE6E19B2216DC8400623E34 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DFC6DD792215C79F001675AB /* ButtonViewController.swift */,
+				DF4C365020D133CD00A9E1B7 /* CircularView.swift */,
+				DF4E314221C16D9F00ADE39F /* CircularViewController.swift */,
+				DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */,
+				DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */,
+				DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */,
+				DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */,
+				DF17A23021FB4D3200DE901A /* SeparatorViewController.swift */,
+				DF7D820021C2B073004A37C8 /* SpeedViewController.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		DFE6E19C2216DCC300623E34 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		DFEB62191F30B5E900FEC555 = {
 			isa = PBXGroup;
 			children = (
@@ -233,12 +240,13 @@
 		DFEB62241F30B5EA00FEC555 /* Speedometer */ = {
 			isa = PBXGroup;
 			children = (
-				DF511034219D9AE6000321E8 /* Components */,
 				DF8FDCE72008DD6200140DA9 /* Extensions */,
+				DFE6E19C2216DCC300623E34 /* Helpers */,
 				DF5F138B202A5AAE006D51DA /* Model */,
-				DF511031219D97EE000321E8 /* Screens */,
 				DF568E471FD0119600D546B8 /* Supporting Files */,
 				DF4C364F20D133B500A9E1B7 /* Views */,
+				DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */,
+				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
 			);
 			path = Speedometer;
 			sourceTree = "<group>";
@@ -365,7 +373,7 @@
 			files = (
 				DF602D1520AEE3C00083532A /* StoreKitReviewHelper.swift in Sources */,
 				DFC6DD7C2215D092001675AB /* ButtonType.swift in Sources */,
-				DFD30993219F240E005CE3B9 /* InformationViewController.swift in Sources */,
+				DFD30993219F240E005CE3B9 /* ParagraphViewController.swift in Sources */,
 				DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */,
 				DF5F4C5F1FD5DAA10043F97E /* UIViewController+Transition.swift in Sources */,
 				DFDBDE5021F9D93500F3E858 /* CoordinatesViewController.swift in Sources */,
@@ -374,8 +382,8 @@
 				DFB6D73820815E2700BFC1F3 /* Speed.swift in Sources */,
 				DF4E314321C16D9F00ADE39F /* CircularViewController.swift in Sources */,
 				DF17A23121FB4D3200DE901A /* SeparatorViewController.swift in Sources */,
-				DFDB3682219F7B4D002B7D53 /* InformationType.swift in Sources */,
-				DFCA0C611FD5E17300260E24 /* FlowViewController.swift in Sources */,
+				DFDB3682219F7B4D002B7D53 /* MessageType.swift in Sources */,
+				DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */,
 				DF7D820221C2B073004A37C8 /* SpeedViewController.swift in Sources */,
 				DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */,
 				DF4C365120D133CD00A9E1B7 /* CircularView.swift in Sources */,

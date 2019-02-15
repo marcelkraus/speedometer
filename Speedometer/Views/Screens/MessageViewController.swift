@@ -1,19 +1,19 @@
 import UIKit
 
 class MessageViewController: UIViewController {
-    var informationType: InformationType
+    var messageType: MessageType
 
-    private var informationViewController: InformationViewController!
+    private var paragraphViewController: ParagraphViewController!
     private var separatorViewController: SeparatorViewController!
 
-    init(informationType: InformationType) {
-        self.informationType = informationType
+    init(messageType: MessageType) {
+        self.messageType = messageType
 
         super.init(nibName: nil, bundle: nil)
 
         view.backgroundColor = .white
         setupSeparatorView()
-        setupInformationView()
+        setupParagraphView()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -24,20 +24,20 @@ class MessageViewController: UIViewController {
 // MARK: - UI Setup
 
 private extension MessageViewController {
-    func setupInformationView() {
-        informationViewController = InformationViewController(informationType: informationType)
-        addChild(informationViewController)
+    func setupParagraphView() {
+        paragraphViewController = ParagraphViewController(messageType: messageType)
+        addChild(paragraphViewController)
 
-        let informationView = informationViewController.view!
-        view.addSubview(informationView)
+        let paragraphView = paragraphViewController.view!
+        view.addSubview(paragraphView)
 
-        informationView.translatesAutoresizingMaskIntoConstraints = false
+        paragraphView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            informationView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
-            informationView.topAnchor.constraint(equalTo: separatorViewController.view.bottomAnchor, constant: 40.0),
-            informationView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
+            paragraphView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
+            paragraphView.topAnchor.constraint(equalTo: separatorViewController.view.bottomAnchor, constant: 40.0),
+            paragraphView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
             ])
-        informationViewController.didMove(toParent: self)
+        paragraphViewController.didMove(toParent: self)
     }
 
     func setupSeparatorView() {
