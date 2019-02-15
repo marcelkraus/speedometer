@@ -1,62 +1,82 @@
 import UIKit
 
 class InformationViewController: UIViewController {
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.spacing = 40.0
 
-    // MARK: - Properties
+        return stackView
+    }()
 
-    private var heading: String?
-    private var text: String?
+    private lazy var headingLabel: UILabel = {
+        let label = UILabel()
+        label.font = .preferredFont(forTextStyle: .title1)
+        label.numberOfLines = 2
+        label.textColor = UIColor(red: 0.012, green: 0.569, blue: 0.576, alpha: 1.00)
 
-    // MARK: - Outlets & Actions
+        return label
+    }()
 
-    @IBOutlet weak var headingLabel: UILabel!
+    private lazy var textLabel: UILabel = {
+        let label = UILabel()
+        label.font = .preferredFont(forTextStyle: .subheadline)
+        label.numberOfLines = 0
 
-    @IBOutlet weak var textLabel: UILabel!
-
-    // MARK: - View Controller Lifecycle
+        return label
+    }()
 
     init(heading: String, text: String) {
-        self.heading = heading
-        self.text = text
-
         super.init(nibName: nil, bundle: nil)
+
+        self.headingLabel.text = heading
+        self.textLabel.text = text
+
+        setupStackView()
     }
 
     init(informationType: InformationType) {
         super.init(nibName: nil, bundle: nil)
 
-        setupWithTextBlock(ofType: informationType)
+        setupWithInformationTemplate(ofType: informationType)
+        setupStackView()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        headingLabel.textColor = view.tintColor
-
-        headingLabel.text = heading
-        textLabel.text = text
+private extension InformationViewController {
+    func setupWithInformationTemplate(ofType informationType: InformationType) {
+        switch informationType {
+        case .locationAuthorizationStatusDenied:
+            headingLabel.text = "Information.LocationAuthorizationStatusRestricted.Heading".localized
+            textLabel.text = "Information.LocationAuthorizationStatusRestricted.Text".localized
+        case .locationAuthorizationStatusRestricted:
+            headingLabel.text = "Information.LocationAuthorizationStatusDenied.Heading".localized
+            textLabel.text = "Information.LocationAuthorizationStatusRestricted.Text".localized
+        case .onboardingInformation:
+            headingLabel.text = "Information.OnboardingInformation.Heading".localized
+            textLabel.text = "Information.OnboardingInformation.Text".localized
+        }
     }
 }
 
 private extension InformationViewController {
+    func setupStackView() {
+        stackView.addArrangedSubview(headingLabel)
+        stackView.addArrangedSubview(textLabel)
 
-    // MARK: - Private Methods
-
-    func setupWithTextBlock(ofType informationType: InformationType) {
-        switch informationType {
-        case .locationAuthorizationStatusDenied:
-            heading = "Information.LocationAuthorizationStatusRestricted.Heading".localized
-            text = "Information.LocationAuthorizationStatusRestricted.Text".localized
-        case .locationAuthorizationStatusRestricted:
-            heading = "Information.LocationAuthorizationStatusDenied.Heading".localized
-            text = "Information.LocationAuthorizationStatusRestricted.Text".localized
-        case .onboardingInformation:
-            heading = "Information.OnboardingInformation.Heading".localized
-            text = "Information.OnboardingInformation.Text".localized
-        }
+        view.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            ])
     }
 }
