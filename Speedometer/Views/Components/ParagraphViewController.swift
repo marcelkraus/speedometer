@@ -1,6 +1,6 @@
 import UIKit
 
-class InformationViewController: UIViewController {
+class ParagraphViewController: UIViewController {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -37,10 +37,10 @@ class InformationViewController: UIViewController {
         setupStackView()
     }
 
-    init(informationType: InformationType) {
+    init(messageType: MessageType) {
         super.init(nibName: nil, bundle: nil)
 
-        setupWithInformationTemplate(ofType: informationType)
+        setupFromMessage(ofType: messageType)
         setupStackView()
     }
 
@@ -49,23 +49,23 @@ class InformationViewController: UIViewController {
     }
 }
 
-private extension InformationViewController {
-    func setupWithInformationTemplate(ofType informationType: InformationType) {
-        switch informationType {
+private extension ParagraphViewController {
+    func setupFromMessage(ofType messageType: MessageType) {
+        switch messageType {
         case .locationAuthorizationStatusDenied:
-            headingLabel.text = "Information.LocationAuthorizationStatusRestricted.Heading".localized
-            textLabel.text = "Information.LocationAuthorizationStatusRestricted.Text".localized
+            headingLabel.text = "Message.LocationAuthorizationStatusRestricted.Heading".localized
+            textLabel.text = "Message.LocationAuthorizationStatusRestricted.Text".localized
         case .locationAuthorizationStatusRestricted:
-            headingLabel.text = "Information.LocationAuthorizationStatusDenied.Heading".localized
-            textLabel.text = "Information.LocationAuthorizationStatusRestricted.Text".localized
-        case .onboardingInformation:
-            headingLabel.text = "Information.OnboardingInformation.Heading".localized
-            textLabel.text = "Information.OnboardingInformation.Text".localized
+            headingLabel.text = "Message.LocationAuthorizationStatusDenied.Heading".localized
+            textLabel.text = "Message.LocationAuthorizationStatusRestricted.Text".localized
+        case .onboarding:
+            headingLabel.text = "Message.Onboarding.Heading".localized
+            textLabel.text = "Message.Onboarding.Text".localized
         }
     }
 }
 
-private extension InformationViewController {
+private extension ParagraphViewController {
     func setupStackView() {
         stackView.addArrangedSubview(headingLabel)
         stackView.addArrangedSubview(textLabel)
