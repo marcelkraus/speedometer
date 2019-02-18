@@ -11,7 +11,6 @@ class MessageViewController: UIViewController {
 
         super.init(nibName: nil, bundle: nil)
 
-        view.backgroundColor = .white
         setupSeparatorView()
         setupParagraphView()
     }

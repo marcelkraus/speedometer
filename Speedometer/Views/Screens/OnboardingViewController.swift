@@ -8,7 +8,6 @@ class OnboardingViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
 
-        view.backgroundColor = .white
         setupSeparatorView()
         setupParagraphView()
         setupAuthorizationButton()

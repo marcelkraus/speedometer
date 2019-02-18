@@ -5,6 +5,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
+        UIView.appearance().backgroundColor = .white
+
         UserDefaults.standard.register(defaults: [
             AppConfig.UserDefaultsKey.appStartCounter: 0,
             AppConfig.UserDefaultsKey.unit: AppConfig.Default.unit,

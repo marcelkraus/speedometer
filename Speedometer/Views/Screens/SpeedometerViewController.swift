@@ -25,7 +25,6 @@ class SpeedometerViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
 
-        view.backgroundColor = .white
         setupSwipeInfoLabel()
         setupImprintButtonView()
         setupCircularView()
