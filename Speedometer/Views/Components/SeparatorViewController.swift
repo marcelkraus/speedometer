@@ -1,13 +1,7 @@
 import UIKit
 
 class SeparatorViewController: UIViewController {
-    private lazy var separatorView: UIView = {
-        let separatorView = UIView()
-        separatorView.backgroundColor = UIColor(red: 0.012, green: 0.569, blue: 0.576, alpha: 0.75)
-        separatorView.layer.cornerRadius = 10.0
-
-        return separatorView
-    }()
+    private let separatorView = SeparatorView()
 
     init() {
         super.init(nibName: nil, bundle: nil)

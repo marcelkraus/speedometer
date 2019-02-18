@@ -40,6 +40,8 @@
 		DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFE69BD7205A904000FA0CE3 /* Localizable.strings */; };
 		DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */; };
 		DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */; };
+		DFFBA784221B1B8900801688 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBA783221B1B8900801688 /* SeparatorView.swift */; };
+		DFFBA786221B1BC000801688 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBA785221B1BC000801688 /* UIColor+Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFEB62311F30B5EA00FEC555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFFBA783221B1B8900801688 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		DFFBA785221B1BC000801688 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 			children = (
 				DFE6E19B2216DC8400623E34 /* Components */,
 				DF511031219D97EE000321E8 /* Screens */,
+				DFFBA782221B1B6900801688 /* Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				DF3010D7205A929E005B493D /* String+Localization.swift */,
+				DFFBA785221B1BC000801688 /* UIColor+Colors.swift */,
 				DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */,
 			);
 			path = Extensions;
@@ -199,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				DFC6DD792215C79F001675AB /* ButtonViewController.swift */,
-				DF4C365020D133CD00A9E1B7 /* CircularView.swift */,
 				DF4E314221C16D9F00ADE39F /* CircularViewController.swift */,
 				DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */,
 				DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */,
@@ -249,6 +254,15 @@
 				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
 			);
 			path = Speedometer;
+			sourceTree = "<group>";
+		};
+		DFFBA782221B1B6900801688 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DF4C365020D133CD00A9E1B7 /* CircularView.swift */,
+				DFFBA783221B1B8900801688 /* SeparatorView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +390,7 @@
 				DFD30993219F240E005CE3B9 /* ParagraphViewController.swift in Sources */,
 				DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */,
 				DF5F4C5F1FD5DAA10043F97E /* UIViewController+Transition.swift in Sources */,
+				DFFBA786221B1BC000801688 /* UIColor+Colors.swift in Sources */,
 				DFDBDE5021F9D93500F3E858 /* CoordinatesViewController.swift in Sources */,
 				DF76227321A6E9AE0073CEBC /* ImprintViewController.swift in Sources */,
 				DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */,
@@ -388,6 +403,7 @@
 				DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */,
 				DF4C365120D133CD00A9E1B7 /* CircularView.swift in Sources */,
 				DF94839D20D16C7E009B120B /* Coordinates.swift in Sources */,
+				DFFBA784221B1B8900801688 /* SeparatorView.swift in Sources */,
 				DFC6DD7A2215C79F001675AB /* ButtonViewController.swift in Sources */,
 				DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */,
 				DF3010D8205A929E005B493D /* String+Localization.swift in Sources */,

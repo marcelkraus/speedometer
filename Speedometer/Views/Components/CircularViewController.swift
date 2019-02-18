@@ -15,7 +15,7 @@ class CircularViewController: UIViewController {
         }
     }
 
-    init(background: UIColor = .lightGray, filling: UIColor = UIColor(red: 0.012, green: 0.569, blue: 0.576, alpha: 1.00)) {
+    init(background: UIColor = .lightGray, filling: UIColor = .brand) {
         self.background = background
         self.filling = filling
 

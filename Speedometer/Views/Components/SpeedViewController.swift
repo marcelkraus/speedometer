@@ -19,14 +19,7 @@ class SpeedViewController: UIViewController {
         return label
     }()
 
-    private let unitBackgroundView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 0.012, green: 0.569, blue: 0.576, alpha: 1.00)
-        view.layer.masksToBounds = true
-        view.layer.cornerRadius = 20.0
-
-        return view
-    }()
+    private let unitBackgroundView = SeparatorView()
 
     var speed: Speed? {
         didSet {

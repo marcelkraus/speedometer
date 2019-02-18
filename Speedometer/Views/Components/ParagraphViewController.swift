@@ -15,7 +15,7 @@ class ParagraphViewController: UIViewController {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .title1)
         label.numberOfLines = 2
-        label.textColor = UIColor(red: 0.012, green: 0.569, blue: 0.576, alpha: 1.00)
+        label.textColor = .brand
 
         return label
     }()

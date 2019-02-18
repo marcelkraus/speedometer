@@ -6,6 +6,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
         UIView.appearance().backgroundColor = .white
+        SeparatorView.appearance().backgroundColor = .brand
 
         UserDefaults.standard.register(defaults: [
             AppConfig.UserDefaultsKey.appStartCounter: 0,
