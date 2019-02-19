@@ -13,7 +13,7 @@ class SpeedViewController: UIViewController {
     private let unitLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .title2)
-        label.textColor = .white
+        label.textColor = .unit
         label.textAlignment = .center
 
         return label

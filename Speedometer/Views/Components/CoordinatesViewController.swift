@@ -15,7 +15,7 @@ class CoordinatesViewController: UIViewController {
         let label = UILabel()
         label.numberOfLines = 2
         label.font = .preferredFont(forTextStyle: .body)
-        label.textColor = .darkGray
+        label.textColor = .coordinates
 
         return label
     }()

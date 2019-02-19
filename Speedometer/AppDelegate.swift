@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .background
-        window?.tintColor = .brand
+        window?.tintColor = .branding
         window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
     }

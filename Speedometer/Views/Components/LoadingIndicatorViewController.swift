@@ -13,7 +13,7 @@ class LoadingIndicatorViewController: UIViewController {
 
     private lazy var activityIndicatorView: UIActivityIndicatorView = {
         let activityIndicatorView = UIActivityIndicatorView()
-        activityIndicatorView.color = .darkGray
+        activityIndicatorView.color = .activityIndicator
         activityIndicatorView.startAnimating()
 
         return activityIndicatorView
@@ -22,7 +22,7 @@ class LoadingIndicatorViewController: UIViewController {
     private lazy var indicatorLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .caption1)
-        label.textColor = .darkGray
+        label.textColor = .activityIndicator
         label.text = "LoadingIndicatorViewController.Indicator".localized
 
         return label
