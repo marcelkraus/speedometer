@@ -43,6 +43,10 @@ class SpeedometerViewController: UIViewController {
         speedViewController.unit = unit
         coordinatesViewController.coordinates = coordinates
     }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
 }
 
 // MARK: - Obj-C Selectors
@@ -60,7 +64,7 @@ private extension SpeedometerViewController {
         circularViewController = CircularViewController()
         addChild(circularViewController)
 
-        let circularView = circularViewController.view! as! CircularView
+        let circularView = circularViewController.view!
         view.addSubview(circularView)
 
         circularView.translatesAutoresizingMaskIntoConstraints = false

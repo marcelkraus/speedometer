@@ -15,7 +15,6 @@ class ParagraphViewController: UIViewController {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .title1)
         label.numberOfLines = 2
-        label.textColor = .brand
 
         return label
     }()
@@ -46,6 +45,12 @@ class ParagraphViewController: UIViewController {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        headingLabel.textColor = view.tintColor
     }
 }
 

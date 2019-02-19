@@ -11,6 +11,12 @@ class SeparatorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+
+        backgroundColor = tintColor
+    }
+
     override func draw(_ rect: CGRect) {
         self.layer.cornerRadius = rect.height/2
 

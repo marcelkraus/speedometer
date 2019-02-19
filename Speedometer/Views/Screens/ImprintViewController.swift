@@ -6,6 +6,7 @@ class ImprintViewController: UIViewController {
 
     private let backgroundView: UIView = {
         let view = UIView()
+        view.backgroundColor = .background
         view.layer.masksToBounds = true
         view.layer.cornerRadius = 10.0
 
