@@ -12,6 +12,7 @@
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
 		DF2F6BD321ADA4A400AC75BE /* SpeedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */; };
 		DF3010D8205A929E005B493D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3010D7205A929E005B493D /* String+Localization.swift */; };
+		DF302F13221CAA87001FD967 /* UIFont+Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF302F12221CAA87001FD967 /* UIFont+Fonts.swift */; };
 		DF4C365120D133CD00A9E1B7 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C365020D133CD00A9E1B7 /* CircularView.swift */; };
 		DF4E314321C16D9F00ADE39F /* CircularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E314221C16D9F00ADE39F /* CircularViewController.swift */; };
 		DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */; };
@@ -59,6 +60,7 @@
 		DF2C45AE1FCC2EF0005C8906 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerViewController.swift; sourceTree = "<group>"; };
 		DF3010D7205A929E005B493D /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		DF302F12221CAA87001FD967 /* UIFont+Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Fonts.swift"; sourceTree = "<group>"; };
 		DF4C365020D133CD00A9E1B7 /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
 		DF4E314221C16D9F00ADE39F /* CircularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularViewController.swift; sourceTree = "<group>"; };
 		DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				DF3010D7205A929E005B493D /* String+Localization.swift */,
 				DFFBA785221B1BC000801688 /* UIColor+Colors.swift */,
+				DF302F12221CAA87001FD967 /* UIFont+Fonts.swift */,
 				DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */,
 			);
 			path = Extensions;
@@ -405,6 +408,7 @@
 				DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */,
 				DF3010D8205A929E005B493D /* String+Localization.swift in Sources */,
 				DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */,
+				DF302F13221CAA87001FD967 /* UIFont+Fonts.swift in Sources */,
 				DF2F6BD321ADA4A400AC75BE /* SpeedometerViewController.swift in Sources */,
 				DFD30999219F252C005CE3B9 /* OnboardingViewController.swift in Sources */,
 			);

@@ -13,7 +13,7 @@ class ParagraphViewController: UIViewController {
 
     private lazy var headingLabel: UILabel = {
         let label = UILabel()
-        label.font = .preferredFont(forTextStyle: .title1)
+        label.font = .heading
         label.numberOfLines = 2
 
         return label
@@ -21,7 +21,7 @@ class ParagraphViewController: UIViewController {
 
     private lazy var textLabel: UILabel = {
         let label = UILabel()
-        label.font = .preferredFont(forTextStyle: .subheadline)
+        label.font = .text
         label.numberOfLines = 0
 
         return label

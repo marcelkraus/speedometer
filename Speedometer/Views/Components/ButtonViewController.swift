@@ -15,11 +15,10 @@ class ButtonViewController: UIViewController {
         case .plain(let title):
             button = UIButton()
             button.setTitle(title, for: .normal)
-            button.titleLabel?.font = .preferredFont(forTextStyle: .title2)
         case .info:
             button = UIButton(type: .infoDark)
-            button.titleLabel?.font = .preferredFont(forTextStyle: .title3)
         }
+        button.titleLabel?.font = .button
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
 
         return button

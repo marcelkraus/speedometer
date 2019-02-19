@@ -21,7 +21,7 @@ class LoadingIndicatorViewController: UIViewController {
 
     private lazy var indicatorLabel: UILabel = {
         let label = UILabel()
-        label.font = .preferredFont(forTextStyle: .caption1)
+        label.font = .activityIndicator
         label.textColor = .activityIndicator
         label.text = "LoadingIndicatorViewController.Indicator".localized
 

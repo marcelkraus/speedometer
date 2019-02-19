@@ -9,7 +9,7 @@ class SpeedometerViewController: UIViewController {
     private var swipeInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "↓ " + "SpeedometerViewController.SwipeInfo".localized + " ↓"
-        label.font = .preferredFont(forTextStyle: .caption2)
+        label.font = .swipeInfo
         label.textColor = .swipeInfo
 
         return label

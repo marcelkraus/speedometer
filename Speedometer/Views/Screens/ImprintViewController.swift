@@ -16,7 +16,7 @@ class ImprintViewController: UIViewController {
     private lazy var swipeInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "↓ " + "ImprintViewController.SwipeInfo".localized + " ↓"
-        label.font = .preferredFont(forTextStyle: .caption2)
+        label.font = .swipeInfo
         label.textColor = .swipeInfo
 
         return label
