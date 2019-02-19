@@ -31,7 +31,7 @@ class SpeedViewController: UIViewController {
         }
     }
 
-    var unit: Unit = Unit(rawValue: UserDefaults.standard.string(forKey: AppConfig.UserDefaultsKey.unit)!)! {
+    var unit: Unit = Unit.selected {
         didSet {
             unitLabel.text = unit.abbreviation
         }

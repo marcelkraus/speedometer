@@ -15,9 +15,8 @@ class SpeedometerViewController: UIViewController {
         return label
     }()
 
-    var unit: Unit = Unit(rawValue: UserDefaults.standard.string(forKey: AppConfig.UserDefaultsKey.unit)!)! {
+    var unit: Unit = Unit.selected {
         didSet {
-            UserDefaults.standard.set(unit.next.rawValue, forKey: AppConfig.UserDefaultsKey.unit)
             speedViewController.unit = unit
         }
     }

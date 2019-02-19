@@ -1,7 +1,28 @@
 import Foundation
 
-enum Unit: String, CaseIterable {
+enum Unit: Int, CaseIterable {
+    private enum Keys {
+        static let selectedUnit = "unit"
+    }
+
     case kilometersPerHour, milesPerHour, metersPerSecond, knots
+
+    static var selected: Unit {
+        let selectedUnit = UserDefaults.standard.integer(forKey: Keys.selectedUnit)
+        let defaultUnit: Unit = Locale.current.usesMetricSystem ? Unit.kilometersPerHour : Unit.milesPerHour
+
+        return Unit(rawValue: selectedUnit) ?? defaultUnit
+    }
+
+    var next: Unit {
+        let units = Unit.allCases
+
+        let index = units.firstIndex(of: self)! + 1
+        let unit = (index < units.count) ? units[index] : units.first!
+        UserDefaults.standard.set(unit.rawValue, forKey: Keys.selectedUnit)
+
+        return unit
+    }
 
     var abbreviation: String {
         switch self {
@@ -31,16 +52,5 @@ enum Unit: String, CaseIterable {
 
     var maximumSpeed: Int {
         return Int(self.factor * 66.7)
-    }
-
-    var next: Unit {
-        let units = Unit.allCases
-
-        let index = units.firstIndex(of: self)! + 1
-        guard index < units.count else {
-            return units.first!
-        }
-
-        return units[index]
     }
 }
