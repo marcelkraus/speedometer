@@ -5,11 +5,11 @@ enum Unit: Int, CaseIterable {
         static let selectedUnit = "unit"
     }
 
-    case kilometersPerHour, milesPerHour, metersPerSecond, knots
+    case kilometersPerHour = 1, milesPerHour, metersPerSecond, knots
 
-    static var selected: Unit {
+    static func selected(usesMetricSystem: Bool = Locale.current.usesMetricSystem) -> Unit {
         let selectedUnit = UserDefaults.standard.integer(forKey: Keys.selectedUnit)
-        let defaultUnit: Unit = Locale.current.usesMetricSystem ? Unit.kilometersPerHour : Unit.milesPerHour
+        let defaultUnit: Unit = usesMetricSystem ? Unit.kilometersPerHour : Unit.milesPerHour
 
         return Unit(rawValue: selectedUnit) ?? defaultUnit
     }
