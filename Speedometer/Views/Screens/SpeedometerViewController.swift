@@ -6,7 +6,7 @@ class SpeedometerViewController: UIViewController {
     var imprintButtonViewController: ButtonViewController!
     var speedViewController: SpeedViewController!
 
-    private var swipeInfoLabel: UILabel = {
+    private lazy var swipeInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "↓ " + "SpeedometerViewController.SwipeInfo".localized + " ↓"
         label.font = .swipeInfo
@@ -41,10 +41,6 @@ class SpeedometerViewController: UIViewController {
         speedViewController.speed = speed
         speedViewController.unit = unit
         coordinatesViewController.coordinates = coordinates
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
     }
 }
 

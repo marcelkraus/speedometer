@@ -15,8 +15,10 @@ class ButtonViewController: UIViewController {
         case .plain(let title):
             button = UIButton()
             button.setTitle(title, for: .normal)
+            button.setTitleColor(.branding, for: .normal)
         case .info:
             button = UIButton(type: .infoDark)
+            button.tintColor = .branding
         }
         button.titleLabel?.font = .button
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
@@ -33,12 +35,6 @@ class ButtonViewController: UIViewController {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        button.setTitleColor(view.tintColor, for: .normal)
     }
 }
 

@@ -21,11 +21,19 @@ extension UIColor {
         return .darkGray
     }
 
-    static var unit: UIColor {
-        return .white
+    static var speed: UIColor {
+        return .black
     }
 
     static var swipeInfo: UIColor {
         return .darkGray
+    }
+
+    static var text: UIColor {
+        return .black
+    }
+
+    static var unit: UIColor {
+        return .white
     }
 }

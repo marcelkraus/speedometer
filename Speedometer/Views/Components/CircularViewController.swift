@@ -26,7 +26,7 @@ class CircularViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        circularView.updateAppearance(background: .circularViewBackground, filling: view.tintColor)
+        circularView.updateAppearance(background: .circularViewBackground, filling: .branding)
     }
 }
 

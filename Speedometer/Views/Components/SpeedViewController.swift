@@ -1,16 +1,17 @@
 import UIKit
 
 class SpeedViewController: UIViewController {
-    private let speedLabel: UILabel = {
+    private lazy var speedLabel: UILabel = {
         let label = UILabel()
         label.font = .speed
+        label.textColor = .speed
         label.textAlignment = .right
         label.text = "120"
 
         return label
     }()
 
-    private let unitLabel: UILabel = {
+    private lazy var unitLabel: UILabel = {
         let label = UILabel()
         label.font = .unit
         label.textColor = .unit
