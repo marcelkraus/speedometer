@@ -44,6 +44,14 @@ class SpeedometerViewController: UIViewController {
     }
 }
 
+// MARK: - Button Handling
+
+private extension SpeedometerViewController {
+    func showImprint() {
+        present(ImprintViewController(), animated: true, completion: nil)
+    }
+}
+
 // MARK: - Obj-C Selectors
 
 private extension SpeedometerViewController {
@@ -95,7 +103,9 @@ private extension SpeedometerViewController {
     }
 
     func setupImprintButtonView() {
-        imprintButtonViewController = ButtonViewController(type: .info)
+        imprintButtonViewController = ButtonViewController(type: .info) {
+            self.showImprint()
+        }
         addChild(imprintButtonViewController)
 
         let imprintButtonView = imprintButtonViewController.view!

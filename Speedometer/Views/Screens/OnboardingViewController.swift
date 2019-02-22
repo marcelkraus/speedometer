@@ -1,11 +1,16 @@
+import CoreLocation
 import UIKit
 
 class OnboardingViewController: UIViewController {
+    private var locationManager: CLLocationManager
+
     var authorizationButtonViewController: ButtonViewController!
     var paragraphViewController: ParagraphViewController!
     var separatorViewController: SeparatorViewController!
 
-    init() {
+    init(locationManager: CLLocationManager) {
+        self.locationManager = locationManager
+
         super.init(nibName: nil, bundle: nil)
 
         setupSeparatorView()
@@ -18,11 +23,22 @@ class OnboardingViewController: UIViewController {
     }
 }
 
+// MARK: - Button Handling
+
+private extension OnboardingViewController {
+    func handleAuthorization() {
+        locationManager.requestWhenInUseAuthorization()
+    }
+}
+
 // MARK: - UI Setup
 
 private extension OnboardingViewController {
     func setupAuthorizationButton() {
-        authorizationButtonViewController = ButtonViewController(type: .plain("AuthorizationButtonViewController.Label".localized))
+        authorizationButtonViewController = ButtonViewController(type: .plain("AuthorizationButtonViewController.Label".localized)) {
+            self.handleAuthorization()
+        }
+
         addChild(authorizationButtonViewController)
 
         let authorizationButtonView = authorizationButtonViewController.view!

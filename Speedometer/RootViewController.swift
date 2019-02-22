@@ -20,19 +20,6 @@ class RootViewController: UIViewController {
     }
 }
 
-// MARK: - ButtonViewControllerDelegate
-
-extension RootViewController: ButtonViewControllerDelegate {
-    func didTapButton(type: ButtonType) {
-        switch type {
-        case .info:
-            present(ImprintViewController(), animated: true, completion: nil)
-        case .plain(_):
-            locationManager.requestWhenInUseAuthorization()
-        }
-    }
-}
-
 // MARK: - CLLocationManagerDelegate
 
 extension RootViewController: CLLocationManagerDelegate {
@@ -60,8 +47,7 @@ private extension RootViewController {
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
                 self.locationManager.stopUpdatingLocation()
-                self.onboardingViewController = OnboardingViewController()
-                self.onboardingViewController.authorizationButtonViewController.delegate = self
+                self.onboardingViewController = OnboardingViewController(locationManager: self.locationManager)
                 self.transition(to: self.onboardingViewController)
             case .restricted:
                 self.locationManager.stopUpdatingLocation()
@@ -72,7 +58,6 @@ private extension RootViewController {
             case .authorizedWhenInUse, .authorizedAlways:
                 self.locationManager.startUpdatingLocation()
                 self.speedometerViewController = SpeedometerViewController()
-                self.speedometerViewController.imprintButtonViewController.delegate = self
                 self.transition(to: self.speedometerViewController)
             }
         }

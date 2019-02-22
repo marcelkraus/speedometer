@@ -1,13 +1,9 @@
 import UIKit
 
-protocol ButtonViewControllerDelegate {
-    func didTapButton(type: ButtonType)
-}
-
 class ButtonViewController: UIViewController {
-    var delegate: ButtonViewControllerDelegate?
+    private var type: ButtonType
 
-    private(set) var type: ButtonType
+    private var completionHandler: () -> Void
 
     private lazy var button: UIButton = {
         var button: UIButton
@@ -26,8 +22,10 @@ class ButtonViewController: UIViewController {
         return button
     }()
 
-    init(type: ButtonType) {
+    init(type: ButtonType, completionHandler: @escaping () -> Void) {
         self.type = type
+        self.completionHandler = completionHandler
+
         super.init(nibName: nil, bundle: nil)
 
         setupButtonView()
@@ -40,7 +38,7 @@ class ButtonViewController: UIViewController {
 
 @objc private extension ButtonViewController {
     func didTapButton() {
-        delegate?.didTapButton(type: type)
+        completionHandler()
     }
 }
 
