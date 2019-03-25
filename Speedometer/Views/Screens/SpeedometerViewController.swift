@@ -56,7 +56,12 @@ private extension SpeedometerViewController {
 
 private extension SpeedometerViewController {
     @objc func selectNextUnit() {
+        let impactGenerator = UIImpactFeedbackGenerator(style: .medium)
+        impactGenerator.prepare()
+
         unit = unit.next
+
+        impactGenerator.impactOccurred()
     }
 }
 

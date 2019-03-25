@@ -58,6 +58,10 @@ class ImprintViewController: UIViewController {
 
 private extension ImprintViewController {
     @objc func dismissImprint() {
+        let impactGenerator = UIImpactFeedbackGenerator(style: .medium)
+        impactGenerator.prepare()
+        impactGenerator.impactOccurred()
+
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
