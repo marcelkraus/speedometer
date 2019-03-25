@@ -1,7 +1,7 @@
 "ImprintViewController.Heading" = "Imprint";
-"ImprintViewController.SwipeInfo" = "Swipe to Close";
+"ImprintViewController.SwipeInfo" = "Swipe Down to Close";
 "ImprintViewController.Text" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\nwww.marcelkraus.de\n\nMany Thanks ♡ to Manuela, Marc and Thomas.\n\n\Parts of Icon designed by Freepik/Flaticon.\n\nApp version v%@:%@.";
-"LoadingIndicatorViewController.Indicator" = "Laden…";de
+"LoadingIndicatorViewController.Indicator" = "Laden…";
 "OnboardingViewController.Button" = "Gotcha, let's go!";
 "ParagraphViewController.LocationAuthorizationStatusDenied.Heading" = "Okay, Houston, we've had a problem here.";
 "ParagraphViewController.LocationAuthorizationStatusDenied.Text" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
@@ -13,4 +13,4 @@
 "SpeedometerViewController.Orientation.North" = "North";
 "SpeedometerViewController.Orientation.South" = "South";
 "SpeedometerViewController.Orientation.West" = "West";
-"SpeedometerViewController.SwipeInfo" = "Swipe for next Unit";
+"SpeedometerViewController.SwipeInfo" = "Swipe Down for Next Unit";
