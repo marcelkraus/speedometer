@@ -35,7 +35,7 @@ private extension OnboardingViewController {
 
 private extension OnboardingViewController {
     func setupAuthorizationButton() {
-        authorizationButtonViewController = ButtonViewController(type: .plain("AuthorizationButtonViewController.Label".localized)) {
+        authorizationButtonViewController = ButtonViewController(type: .plain("OnboardingViewController.Button".localized)) {
             self.handleAuthorization()
         }
 

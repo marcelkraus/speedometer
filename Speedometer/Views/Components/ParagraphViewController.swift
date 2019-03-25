@@ -54,14 +54,14 @@ private extension ParagraphViewController {
     func setupFromMessage(ofType messageType: MessageType) {
         switch messageType {
         case .locationAuthorizationStatusDenied:
-            headingLabel.text = "Message.LocationAuthorizationStatusRestricted.Heading".localized
-            textLabel.text = "Message.LocationAuthorizationStatusRestricted.Text".localized
+            headingLabel.text = "ParagraphViewController.LocationAuthorizationStatusRestricted.Heading".localized
+            textLabel.text = "ParagraphViewController.LocationAuthorizationStatusRestricted.Text".localized
         case .locationAuthorizationStatusRestricted:
-            headingLabel.text = "Message.LocationAuthorizationStatusDenied.Heading".localized
-            textLabel.text = "Message.LocationAuthorizationStatusRestricted.Text".localized
+            headingLabel.text = "ParagraphViewController.LocationAuthorizationStatusDenied.Heading".localized
+            textLabel.text = "ParagraphViewController.LocationAuthorizationStatusRestricted.Text".localized
         case .onboarding:
-            headingLabel.text = "Message.Onboarding.Heading".localized
-            textLabel.text = "Message.Onboarding.Text".localized
+            headingLabel.text = "ParagraphViewController.Onboarding.Heading".localized
+            textLabel.text = "ParagraphViewController.Onboarding.Text".localized
         }
     }
 }
