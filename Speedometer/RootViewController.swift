@@ -59,6 +59,8 @@ private extension RootViewController {
                 self.locationManager.startUpdatingLocation()
                 self.speedometerViewController = SpeedometerViewController()
                 self.transition(to: self.speedometerViewController)
+            @unknown default:
+                fatalError("selectViewController() has been detected an unsupported authorization status of the CLLocationManager instance")
             }
         }
     }
