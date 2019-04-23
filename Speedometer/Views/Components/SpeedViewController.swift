@@ -6,7 +6,7 @@ class SpeedViewController: UIViewController {
         label.font = .speed
         label.textColor = .speed
         label.textAlignment = .right
-        label.text = "120"
+        label.text = "0"
 
         return label
     }()
