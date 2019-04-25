@@ -23,7 +23,7 @@ struct Speed {
     }
 
     var asString: String {
-        return String(format: Configuration.speedStringFormat, speed)
+        return String(format: "%.0f", speed)
     }
 
     var asStringWithUnit: String {

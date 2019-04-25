@@ -1,30 +1,16 @@
-"LoadingViewController.Indicator" = "Loading…";
-
-"MessageViewController.LocationAuthorizationStatusDenied.Title" = "Houston, we've had a problem here!";
-"MessageViewController.LocationAuthorizationStatusDenied.Contents" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
-"MessageViewController.LocationAuthorizationStatusRestricted.Title" = "Houston, we've had a problem here!";
-"MessageViewController.LocationAuthorizationStatusRestricted.Contents" = "Please allow access to your location data to use Speedometer\n\nPlease check the following settings:\n\nSettings > Privacy > Location Services > Speedometer > While Using";
-"MessageViewController.UnknownError.Title" = "An unknown error occured.";
-"MessageViewController.UnknownError.Contents" = "The usage of the app is not possible at the moment. Please try again in a few moments.";
-
-"SettingsViewController.Button.Close" = "Close";
-"SettingsViewController.Imprint.Contents" = "Marcel Kraus\nDreikönigenweg 8a\n50374 Erftstadt\nGermany\n\nMany thanks to Marc and Thomas for their support.\n\n\Parts of app icon designed by Freepik from Flaticon.";
-"SettingsViewController.Imprint.Heading" = "Imprint";
-"SettingsViewController.Version.Build" = "Build";
-"SettingsViewController.Version.Heading" = "App Version";
-"SettingsViewController.Version.Version" = "Version";
-
-"SpeedometerViewController.Indicator" = "Waiting for GPS signal…";
-"SpeedometerViewController.NoCoordinates" = "– No Coordinates –";
+"ImprintViewController.Heading" = "Imprint";
+"ImprintViewController.SwipeInfo" = "Swipe Down to Close";
+"ImprintViewController.Text" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\nwww.marcelkraus.de\n\nMany Thanks ♡ to Manuela, Marc and Thomas.\n\n\Parts of Icon designed by Freepik/Flaticon.\n\nApp version v%@:%@.";
+"LoadingIndicatorViewController.Indicator" = "Laden…";
+"OnboardingViewController.Button" = "Gotcha, let's go!";
+"ParagraphViewController.LocationAuthorizationStatusDenied.Heading" = "Okay, Houston, we've had a problem here.";
+"ParagraphViewController.LocationAuthorizationStatusDenied.Text" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
+"ParagraphViewController.LocationAuthorizationStatusRestricted.Heading" = "Okay, Houston, we've had a problem here.";
+"ParagraphViewController.LocationAuthorizationStatusRestricted.Text" = "Please allow access to your location data to use Speedometer\n\nPlease check the following settings:\n\nSettings > Privacy > Location Services > Speedometer > While Using";
+"ParagraphViewController.Onboarding.Heading" = "Hello World!\nThis is Speedometer.";
+"ParagraphViewController.Onboarding.Text" = "Speedometer shows your current speed. Simple, cost-free and without any advertisements.\n\nSpeedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease confirm access within the popup after you tapped the button below.";
 "SpeedometerViewController.Orientation.East" = "East";
 "SpeedometerViewController.Orientation.North" = "North";
 "SpeedometerViewController.Orientation.South" = "South";
 "SpeedometerViewController.Orientation.West" = "West";
-"SpeedometerViewController.SpeedLimit.Button.TapToReleaseSpeedLimit" = "Release current speed limit";
-"SpeedometerViewController.SpeedLimit.Button.TapToSetSpeedLimit" = "Apply current speed";
-"SpeedometerViewController.SpeedLimit.CurrentSpeedLimit" = "Speed limit set to";
-"SpeedometerViewController.SpeedLimit.NoSpeedLimit" = "No Speed Limit";
-
-"WelcomeViewController.Button" = "I've got it!";
-"WelcomeViewController.Title" = "Welcome!";
-"WelcomeViewController.Contents" = "Speedometer shows your current speed, cost-free and without any advertisements.\n\nTherefore, Speedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease press the button below and confirm access within the popup.";
+"SpeedometerViewController.SwipeInfo" = "Swipe Down for Next Unit";

@@ -1,26 +1,23 @@
 default_platform(:ios)
 
-lane :tests do
+before_all do
+  ENV["FASTLANE_BUNDLE_ID"] = ENV["FASTLANE_BUNDLE_ID"] || "de.marcelkraus.speedometer"
+  ENV["FASTLANE_APPLE_ID"] = ENV["FASTLANE_APPLE_ID"] || "marcel@marcelkraus.de"
+end
+
+lane :test do
   run_tests(scheme: "Speedometer")
 end
 
 lane :beta do
-  ensure_git_status_clean
+  test
 
-  run_tests(scheme: "Speedometer")
+  date = sh %Q{TZ=Europe/Berlin date +%Y%m%d%H%M}
+  increment_build_number(build_number: date)
 
-  build_number = latest_testflight_build_number(version: get_version_number) + 1
-  increment_build_number(
-    build_number: build_number
-  )
+  build_app(project: "Speedometer.xcodeproj", scheme: "Speedometer")
 
-  increment_build_number(build_number: build_number)
-
-  build_app(workspace: "Speedometer.xcworkspace", scheme: "Speedometer")
-
-  upload_to_testflight
+  upload_to_testflight(skip_waiting_for_build_processing: true)
 
   clean_build_artifacts
-
-  reset_git_repo
 end

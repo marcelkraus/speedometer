@@ -6,6 +6,6 @@ class SpeedTests: XCTestCase {
         let unit = Unit.kilometersPerHour
         let speed = Speed(speed: 10, unit: unit)
 
-        XCTAssertEqual(speed.asString, "36", "Converted speed of 10 m/s should equal 36 km/h")
+        XCTAssertEqual(speed.asString, "36")
     }
 }
