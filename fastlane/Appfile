@@ -1,2 +1,0 @@
-app_identifier(ENV["FASTLANE_BUNDLE_ID"])
-apple_id(ENV["FASTLANE_APPLE_ID"])
