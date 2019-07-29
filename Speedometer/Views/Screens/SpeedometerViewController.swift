@@ -30,6 +30,8 @@ class SpeedometerViewController: UIViewController {
         setupSpeedView()
         setupCoordinatesView()
         setupGestureRecognizer()
+
+        StoreReviewHelper.askForReview()
     }
 
     required init?(coder aDecoder: NSCoder) {
