@@ -21,7 +21,7 @@
 		DF5F4C5F1FD5DAA10043F97E /* UIViewController+Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */; };
 		DF602D1520AEE3C00083532A /* StoreKitReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */; };
 		DF64A52320EE621A00063BBD /* CoordinatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64A52220EE621A00063BBD /* CoordinatesTests.swift */; };
-		DF76227321A6E9AE0073CEBC /* ImprintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF76227221A6E9AE0073CEBC /* ImprintViewController.swift */; };
+		DF76227321A6E9AE0073CEBC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF76227221A6E9AE0073CEBC /* SettingsViewController.swift */; };
 		DF7D820221C2B073004A37C8 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D820021C2B073004A37C8 /* SpeedViewController.swift */; };
 		DF94839D20D16C7E009B120B /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94839C20D16C7E009B120B /* Coordinates.swift */; };
 		DF9D05BD23FE77100033F43D /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D05BC23FE77100033F43D /* Key.swift */; };
@@ -68,7 +68,7 @@
 		DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Transition.swift"; sourceTree = "<group>"; };
 		DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitReviewHelper.swift; sourceTree = "<group>"; };
 		DF64A52220EE621A00063BBD /* CoordinatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesTests.swift; sourceTree = "<group>"; };
-		DF76227221A6E9AE0073CEBC /* ImprintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprintViewController.swift; sourceTree = "<group>"; };
+		DF76227221A6E9AE0073CEBC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DF7D820021C2B073004A37C8 /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
 		DF94839C20D16C7E009B120B /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		DF9D05BC23FE77100033F43D /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
@@ -127,10 +127,10 @@
 		DF511031219D97EE000321E8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				DF76227221A6E9AE0073CEBC /* ImprintViewController.swift */,
 				DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */,
 				DFDB367F219F770B002B7D53 /* MessageViewController.swift */,
 				DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */,
+				DF76227221A6E9AE0073CEBC /* SettingsViewController.swift */,
 				DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */,
 			);
 			path = Screens;
@@ -389,7 +389,7 @@
 				DF5F4C5F1FD5DAA10043F97E /* UIViewController+Transition.swift in Sources */,
 				DFFBA786221B1BC000801688 /* UIColor+Colors.swift in Sources */,
 				DFDBDE5021F9D93500F3E858 /* CoordinatesViewController.swift in Sources */,
-				DF76227321A6E9AE0073CEBC /* ImprintViewController.swift in Sources */,
+				DF76227321A6E9AE0073CEBC /* SettingsViewController.swift in Sources */,
 				DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */,
 				DF4E314321C16D9F00ADE39F /* CircularViewController.swift in Sources */,
 				DF17A23121FB4D3200DE901A /* SeparatorViewController.swift in Sources */,

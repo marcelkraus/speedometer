@@ -1,6 +1,6 @@
 import UIKit
 
-class ImprintViewController: UIViewController {
+class SettingsViewController: UIViewController {
     var imprintViewController: ParagraphViewController!
     var separatorViewController: SeparatorViewController!
 
@@ -15,7 +15,7 @@ class ImprintViewController: UIViewController {
 
     private lazy var swipeInfoLabel: UILabel = {
         let label = UILabel()
-        label.text = "↓ " + "ImprintViewController.SwipeInfo".localized + " ↓"
+        label.text = "↓ " + "SettingsViewController.Imprint.SwipeInfo".localized + " ↓"
         label.font = .swipeInfo
         label.textColor = .swipeInfo
 
@@ -56,8 +56,8 @@ class ImprintViewController: UIViewController {
 
 // MARK: - Obj-C Selectors
 
-private extension ImprintViewController {
-    @objc func dismissImprint() {
+private extension SettingsViewController {
+    @objc func dismissSettings() {
         let impactGenerator = UIImpactFeedbackGenerator(style: .medium)
         impactGenerator.prepare()
         impactGenerator.impactOccurred()
@@ -68,7 +68,7 @@ private extension ImprintViewController {
 
 // MARK: - UI Setup
 
-private extension ImprintViewController {
+private extension SettingsViewController {
     func setupBackgroundView() {
         view.addSubview(backgroundView)
 
@@ -82,13 +82,13 @@ private extension ImprintViewController {
     }
 
     func setupGestureRecognizer() {
-        let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(dismissImprint))
+        let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(dismissSettings))
         gestureRecognizer.direction = .down
         view.addGestureRecognizer(gestureRecognizer)
     }
 
     func setupImprintView() {
-        imprintViewController = ParagraphViewController(heading: "ImprintViewController.Heading".localized, text: String(format: "ImprintViewController.Text".localized, versionNumber, buildNumber))
+        imprintViewController = ParagraphViewController(heading: "SettingsViewController.Imprint.Heading".localized, text: String(format: "SettingsViewController.Imprint.Text".localized, versionNumber, buildNumber))
         addChild(imprintViewController)
 
         let imprintView = imprintViewController.view!

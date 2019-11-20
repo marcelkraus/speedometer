@@ -1,6 +1,3 @@
-"ImprintViewController.Heading" = "Impressum";
-"ImprintViewController.SwipeInfo" = "Runter wischen zum schließen";
-"ImprintViewController.Text" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\nwww.marcelkraus.de\n\nVielen Dank ♡ an Manuela, Marc und Thomas.\n\n\Teile des Icons gestaltet von Freepik/Flaticon.\n\nApp-Version v%@:%@.";
 "LoadingIndicatorViewController.Indicator" = "Laden…";
 "OnboardingViewController.Button" = "Verstanden, leg los!";
 "ParagraphViewController.LocationAuthorizationStatusDenied.Heading" = "Okay, Houston, we've had a problem here.";
@@ -9,6 +6,9 @@
 "ParagraphViewController.LocationAuthorizationStatusRestricted.Text" = "Bitte erlaube Zugriff auf deine Standortdaten, um Tacho nutzen zu können.\n\nDu findest die notwendigen Einstellungen hier:\n\nEinstellungen > Datenschutz > Ortungsdienste > Tacho > Beim Verwenden der App";
 "ParagraphViewController.Onboarding.Heading" = "Hallo Welt!\nDas ist Tacho.";
 "ParagraphViewController.Onboarding.Text" = "Tacho zeigt dir deine aktuelle Geschwindigkeit an. Einfach, kostenlos und werbefrei.\n\nTacho benötigt Zugriff auf deine Standortdaten, die nur für diese Zwecke verwendet und mit niemandem geteilt werden.\n\nBitte bestätige daher den Hinweis nach Tap auf den untenstehenden Button.";
+"SettingsViewController.Imprint.Heading" = "Impressum";
+"SettingsViewController.Imprint.SwipeInfo" = "Runter wischen zum schließen";
+"SettingsViewController.Imprint.Text" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\nwww.marcelkraus.de\n\nVielen Dank ♡ an Manuela, Marc und Thomas.\n\n\Teile des Icons gestaltet von Freepik/Flaticon.\n\nApp-Version v%@:%@.";
 "SpeedometerViewController.Orientation.East" = "Ost";
 "SpeedometerViewController.Orientation.North" = "Nord";
 "SpeedometerViewController.Orientation.South" = "Süd";
