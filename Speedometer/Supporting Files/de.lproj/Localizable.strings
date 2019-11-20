@@ -9,6 +9,8 @@
 "SettingsViewController.Imprint.Heading" = "Impressum";
 "SettingsViewController.Imprint.SwipeInfo" = "Runter wischen zum schließen";
 "SettingsViewController.Imprint.Text" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\nwww.marcelkraus.de\n\nVielen Dank ♡ an Manuela, Marc und Thomas.\n\n\Teile des Icons gestaltet von Freepik/Flaticon.\n\nApp-Version v%@:%@.";
+"SettingsViewController.TipJar.Heading" = "Trinkgeld-Box";
+"SettingsViewController.TipJar.Text" = "Tacho bleibt einfach, kostenlos und werbefrei - versprochen! Solltest du aber besonders zufrieden sein und mir dies zeigen wollen, darfst du mir gerne etwas Trinkgeld zukommen lassen.";
 "SpeedometerViewController.Orientation.East" = "Ost";
 "SpeedometerViewController.Orientation.North" = "Nord";
 "SpeedometerViewController.Orientation.South" = "Süd";

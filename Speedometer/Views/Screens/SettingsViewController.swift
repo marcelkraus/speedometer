@@ -13,10 +13,64 @@ class SettingsViewController: UIViewController {
         contentView.axis = .vertical
         contentView.spacing = 40.0
         contentView.alignment = .center
+        contentView.addArrangedSubview(tipJarStackView)
         contentView.addArrangedSubview(imprintView)
         contentView.addArrangedSubview(swipeInfoLabel)
 
         return contentView
+    }()
+
+    private lazy var tipJarIntroductionView: UIView = {
+        let tipJarIntroductionViewController = ParagraphViewController(heading: "SettingsViewController.TipJar.Heading".localized, text: "SettingsViewController.TipJar.Text".localized)
+        addChild(tipJarIntroductionViewController)
+
+        return tipJarIntroductionViewController.view!
+    }()
+
+    private lazy var tipJarButtonStackView: UIStackView = {
+        let buttonSmall = UIButton()
+        buttonSmall.layer.cornerRadius = 8.0
+        buttonSmall.backgroundColor = .lightGray
+        buttonSmall.titleLabel?.numberOfLines = 0
+        buttonSmall.titleLabel?.textAlignment = .center
+        buttonSmall.setTitle("😀\n\n0,99 €", for: .normal)
+
+        let buttonMedium = UIButton()
+        buttonMedium.layer.cornerRadius = 8.0
+        buttonMedium.backgroundColor = .lightGray
+        buttonMedium.titleLabel?.numberOfLines = 0
+        buttonMedium.titleLabel?.textAlignment = .center
+        buttonMedium.setTitle("😘\n\n2,49 €", for: .normal)
+
+        let buttonLarge = UIButton()
+        buttonLarge.layer.cornerRadius = 8.0
+        buttonLarge.backgroundColor = .lightGray
+        buttonLarge.titleLabel?.numberOfLines = 0
+        buttonLarge.titleLabel?.textAlignment = .center
+        buttonLarge.setTitle("🥳\n\n4,99 €", for: .normal)
+
+        let tipJarButtonStackView = UIStackView()
+        tipJarButtonStackView.spacing = 8.0
+        tipJarButtonStackView.distribution = .fillEqually
+        tipJarButtonStackView.addArrangedSubview(buttonSmall)
+        tipJarButtonStackView.addArrangedSubview(buttonMedium)
+        tipJarButtonStackView.addArrangedSubview(buttonLarge)
+
+        NSLayoutConstraint.activate([
+            tipJarButtonStackView.heightAnchor.constraint(equalTo: buttonSmall.widthAnchor),
+        ])
+
+        return tipJarButtonStackView
+    }()
+
+    private lazy var tipJarStackView: UIStackView = {
+        let tipJarStackView = UIStackView()
+        tipJarStackView.axis = .vertical
+        tipJarStackView.spacing = 20.0
+        tipJarStackView.addArrangedSubview(tipJarIntroductionView)
+        tipJarStackView.addArrangedSubview(tipJarButtonStackView)
+
+        return tipJarStackView
     }()
 
     private lazy var imprintView: UIView = {

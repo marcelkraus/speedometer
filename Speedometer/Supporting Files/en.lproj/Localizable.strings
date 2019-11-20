@@ -9,6 +9,8 @@
 "SettingsViewController.Imprint.Heading" = "Imprint";
 "SettingsViewController.Imprint.SwipeInfo" = "Swipe Down to Close";
 "SettingsViewController.Imprint.Text" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\nwww.marcelkraus.de\n\nMany Thanks ♡ to Manuela, Marc and Thomas.\n\n\Parts of Icon designed by Freepik/Flaticon.\n\nApp version v%@:%@.";
+"SettingsViewController.TipJar.Heading" = "Tip Jar";
+"SettingsViewController.TipJar.Text" = "Tacho stays simple, cost-free and without any advertisements - this is a promise! But if you are really, really satistied with the app, just throw something in my tip jar. I appreciate it!";
 "SpeedometerViewController.Orientation.East" = "East";
 "SpeedometerViewController.Orientation.North" = "North";
 "SpeedometerViewController.Orientation.South" = "South";
