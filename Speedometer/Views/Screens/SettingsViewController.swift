@@ -1,10 +1,10 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    var imprintViewController: ParagraphViewController!
-    var separatorViewController: SeparatorViewController!
+    private var separatorView: UIView!
+    private var imprintView: UIView!
 
-    private lazy var swipeInfoLabel: UILabel = {
+    private var swipeInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "↓ " + "SettingsViewController.Imprint.SwipeInfo".localized + " ↓"
         label.font = .swipeInfo
@@ -67,26 +67,26 @@ private extension SettingsViewController {
 
 private extension SettingsViewController {
     func setupImprintView() {
-        imprintViewController = ParagraphViewController(heading: "SettingsViewController.Imprint.Heading".localized, text: String(format: "SettingsViewController.Imprint.Text".localized, versionNumber, buildNumber))
+        let imprintViewController = ParagraphViewController(heading: "SettingsViewController.Imprint.Heading".localized, text: String(format: "SettingsViewController.Imprint.Text".localized, versionNumber, buildNumber))
         addChild(imprintViewController)
 
-        let imprintView = imprintViewController.view!
+        imprintView = imprintViewController.view!
         view.addSubview(imprintView)
 
         imprintView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             imprintView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
-            imprintView.topAnchor.constraint(equalTo: separatorViewController.view.bottomAnchor, constant: 40.0),
+            imprintView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
             imprintView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0)
             ])
         imprintViewController.didMove(toParent: self)
     }
 
     func setupSeparatorView() {
-        separatorViewController = SeparatorViewController()
+        let separatorViewController = SeparatorViewController()
         addChild(separatorViewController)
 
-        let separatorView = separatorViewController.view!
+        separatorView = separatorViewController.view!
         view.addSubview(separatorView)
 
         separatorView.translatesAutoresizingMaskIntoConstraints = false
@@ -104,7 +104,7 @@ private extension SettingsViewController {
 
         swipeInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            swipeInfoLabel.topAnchor.constraint(equalTo: imprintViewController.view.bottomAnchor, constant: 40.0),
+            swipeInfoLabel.topAnchor.constraint(equalTo: imprintView.bottomAnchor, constant: 40.0),
             swipeInfoLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
             ])
     }
