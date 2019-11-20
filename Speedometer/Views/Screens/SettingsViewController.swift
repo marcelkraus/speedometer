@@ -4,15 +4,6 @@ class SettingsViewController: UIViewController {
     var imprintViewController: ParagraphViewController!
     var separatorViewController: SeparatorViewController!
 
-    private let backgroundView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .background
-        view.layer.masksToBounds = true
-        view.layer.cornerRadius = 10.0
-
-        return view
-    }()
-
     private lazy var swipeInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "↓ " + "SettingsViewController.Imprint.SwipeInfo".localized + " ↓"
@@ -42,11 +33,9 @@ class SettingsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
 
         setupView()
-        setupBackgroundView()
         setupSeparatorView()
         setupImprintView()
         setupSwipeInfoLabel()
-        setupGestureRecognizer()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -69,24 +58,6 @@ private extension SettingsViewController {
 // MARK: - UI Setup
 
 private extension SettingsViewController {
-    func setupBackgroundView() {
-        view.addSubview(backgroundView)
-
-        backgroundView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            backgroundView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
-            backgroundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0),
-            backgroundView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
-            backgroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
-            ])
-    }
-
-    func setupGestureRecognizer() {
-        let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(dismissSettings))
-        gestureRecognizer.direction = .down
-        view.addGestureRecognizer(gestureRecognizer)
-    }
-
     func setupImprintView() {
         imprintViewController = ParagraphViewController(heading: "SettingsViewController.Imprint.Heading".localized, text: String(format: "SettingsViewController.Imprint.Text".localized, versionNumber, buildNumber))
         addChild(imprintViewController)
@@ -96,9 +67,9 @@ private extension SettingsViewController {
 
         imprintView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            imprintView.leadingAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
+            imprintView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
             imprintView.topAnchor.constraint(equalTo: separatorViewController.view.bottomAnchor, constant: 40.0),
-            imprintView.trailingAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.trailingAnchor, constant: -40.0)
+            imprintView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0)
             ])
         imprintViewController.didMove(toParent: self)
     }
@@ -114,8 +85,8 @@ private extension SettingsViewController {
         NSLayoutConstraint.activate([
             separatorView.heightAnchor.constraint(equalToConstant: 20.0),
             separatorView.widthAnchor.constraint(equalToConstant: 170.0),
-            separatorView.leadingAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.leadingAnchor, constant: -30.0),
-            separatorView.topAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.topAnchor, constant: 40.0)
+            separatorView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -30.0),
+            separatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0)
             ])
         separatorViewController.didMove(toParent: self)
     }
@@ -126,13 +97,15 @@ private extension SettingsViewController {
         swipeInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             swipeInfoLabel.topAnchor.constraint(equalTo: imprintViewController.view.bottomAnchor, constant: 40.0),
-            swipeInfoLabel.centerXAnchor.constraint(equalTo: backgroundView.safeAreaLayoutGuide.centerXAnchor)
+            swipeInfoLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
             ])
     }
 
     func setupView() {
-        modalPresentationStyle = .overCurrentContext
-        modalTransitionStyle = .crossDissolve
-        view.backgroundColor = UIColor.clear.withAlphaComponent(0.75)
+        let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(dismissSettings))
+        gestureRecognizer.direction = .down
+
+        view.backgroundColor = .white
+        view.addGestureRecognizer(gestureRecognizer)
     }
 }
