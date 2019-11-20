@@ -1,40 +1,45 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    private var separatorView: UIView!
-    private var imprintView: UIView!
+    private lazy var separatorView: UIView = {
+        let separatorViewController = SeparatorViewController()
+        addChild(separatorViewController)
 
-    private var swipeInfoLabel: UILabel = {
-        let label = UILabel()
-        label.text = "↓ " + "SettingsViewController.Imprint.SwipeInfo".localized + " ↓"
-        label.font = .swipeInfo
-        label.textColor = .swipeInfo
-
-        return label
+        return separatorViewController.view!
     }()
 
-    private var versionNumber: String {
-        guard let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
-            return "–"
-        }
+    private lazy var contentStackView: UIStackView = {
+        let contentView = UIStackView()
+        contentView.axis = .vertical
+        contentView.spacing = 40.0
+        contentView.alignment = .center
+        contentView.addArrangedSubview(imprintView)
+        contentView.addArrangedSubview(swipeInfoLabel)
 
-        return versionNumber
-    }
+        return contentView
+    }()
 
-    private var buildNumber: String {
-        guard let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String else {
-            return "–"
-        }
+    private lazy var imprintView: UIView = {
+        let imprintViewController = ParagraphViewController(heading: "SettingsViewController.Imprint.Heading".localized, text: String(format: "SettingsViewController.Imprint.Text".localized, versionNumber, buildNumber))
+        addChild(imprintViewController)
 
-        return buildNumber
-    }
+        return imprintViewController.view!
+    }()
+
+    private lazy var swipeInfoLabel: UILabel = {
+        let swipeInfoLabel = UILabel()
+        swipeInfoLabel.text = "↓ " + "SettingsViewController.Imprint.SwipeInfo".localized + " ↓"
+        swipeInfoLabel.font = .swipeInfo
+        swipeInfoLabel.textColor = .swipeInfo
+
+        return swipeInfoLabel
+    }()
 
     init() {
         super.init(nibName: nil, bundle: nil)
 
         setupSeparatorView()
-        setupImprintView()
-        setupSwipeInfoLabel()
+        setupContentView()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -63,30 +68,10 @@ private extension SettingsViewController {
     }
 }
 
-// MARK: - UI Setup
+// MARK: - UI Methods
 
 private extension SettingsViewController {
-    func setupImprintView() {
-        let imprintViewController = ParagraphViewController(heading: "SettingsViewController.Imprint.Heading".localized, text: String(format: "SettingsViewController.Imprint.Text".localized, versionNumber, buildNumber))
-        addChild(imprintViewController)
-
-        imprintView = imprintViewController.view!
-        view.addSubview(imprintView)
-
-        imprintView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            imprintView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
-            imprintView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
-            imprintView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0)
-            ])
-        imprintViewController.didMove(toParent: self)
-    }
-
     func setupSeparatorView() {
-        let separatorViewController = SeparatorViewController()
-        addChild(separatorViewController)
-
-        separatorView = separatorViewController.view!
         view.addSubview(separatorView)
 
         separatorView.translatesAutoresizingMaskIntoConstraints = false
@@ -95,17 +80,37 @@ private extension SettingsViewController {
             separatorView.widthAnchor.constraint(equalToConstant: 170.0),
             separatorView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -30.0),
             separatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0)
-            ])
-        separatorViewController.didMove(toParent: self)
+        ])
     }
 
-    func setupSwipeInfoLabel() {
-        view.addSubview(swipeInfoLabel)
+    func setupContentView() {
+        view.addSubview(contentStackView)
 
-        swipeInfoLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            swipeInfoLabel.topAnchor.constraint(equalTo: imprintView.bottomAnchor, constant: 40.0),
-            swipeInfoLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
-            ])
+            contentStackView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
+            contentStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
+            contentStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
+        ])
+    }
+}
+
+// MARK: - Private Methods
+
+private extension SettingsViewController {
+    var versionNumber: String {
+        guard let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
+            return "–"
+        }
+
+        return versionNumber
+    }
+
+    var buildNumber: String {
+        guard let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String else {
+            return "–"
+        }
+
+        return buildNumber
     }
 }
