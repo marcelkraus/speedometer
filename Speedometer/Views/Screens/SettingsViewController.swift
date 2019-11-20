@@ -32,7 +32,6 @@ class SettingsViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
 
-        setupView()
         setupSeparatorView()
         setupImprintView()
         setupSwipeInfoLabel()
@@ -40,6 +39,15 @@ class SettingsViewController: UIViewController {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func loadView() {
+        let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(dismissSettings))
+        gestureRecognizer.direction = .down
+
+        view = UIView()
+        view.backgroundColor = .white
+        view.addGestureRecognizer(gestureRecognizer)
     }
 }
 
@@ -99,13 +107,5 @@ private extension SettingsViewController {
             swipeInfoLabel.topAnchor.constraint(equalTo: imprintViewController.view.bottomAnchor, constant: 40.0),
             swipeInfoLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
             ])
-    }
-
-    func setupView() {
-        let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(dismissSettings))
-        gestureRecognizer.direction = .down
-
-        view.backgroundColor = .white
-        view.addGestureRecognizer(gestureRecognizer)
     }
 }
