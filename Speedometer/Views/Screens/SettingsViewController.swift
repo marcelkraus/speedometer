@@ -1,9 +1,6 @@
-import StoreKit
 import UIKit
 
 class SettingsViewController: UIViewController {
-    private var productRequest: SKProductsRequest!
-
     private lazy var separatorView: UIView = {
         let separatorViewController = SeparatorViewController()
         addChild(separatorViewController)
@@ -30,40 +27,11 @@ class SettingsViewController: UIViewController {
         return tipJarIntroductionViewController.view!
     }()
 
-    private lazy var tipJarButtonStackView: UIStackView = {
-        let buttonSmall = UIButton()
-        buttonSmall.layer.cornerRadius = 8.0
-        buttonSmall.backgroundColor = .lightGray
-        buttonSmall.titleLabel?.numberOfLines = 0
-        buttonSmall.titleLabel?.textAlignment = .center
-        buttonSmall.setTitle("😀", for: .normal)
+    private lazy var tipJarButtonStackView: UIView = {
+        let tipJarButtonStackView = TipSelectionViewController()
+        addChild(tipJarButtonStackView)
 
-        let buttonMedium = UIButton()
-        buttonMedium.layer.cornerRadius = 8.0
-        buttonMedium.backgroundColor = .lightGray
-        buttonMedium.titleLabel?.numberOfLines = 0
-        buttonMedium.titleLabel?.textAlignment = .center
-        buttonMedium.setTitle("😘", for: .normal)
-
-        let buttonLarge = UIButton()
-        buttonLarge.layer.cornerRadius = 8.0
-        buttonLarge.backgroundColor = .lightGray
-        buttonLarge.titleLabel?.numberOfLines = 0
-        buttonLarge.titleLabel?.textAlignment = .center
-        buttonLarge.setTitle("🥳", for: .normal)
-
-        let tipJarButtonStackView = UIStackView()
-        tipJarButtonStackView.spacing = 8.0
-        tipJarButtonStackView.distribution = .fillEqually
-        tipJarButtonStackView.addArrangedSubview(buttonSmall)
-        tipJarButtonStackView.addArrangedSubview(buttonMedium)
-        tipJarButtonStackView.addArrangedSubview(buttonLarge)
-
-        NSLayoutConstraint.activate([
-            tipJarButtonStackView.heightAnchor.constraint(equalTo: buttonSmall.widthAnchor),
-        ])
-
-        return tipJarButtonStackView
+        return tipJarButtonStackView.view!
     }()
 
     private lazy var tipJarStackView: UIStackView = {
@@ -110,28 +78,6 @@ class SettingsViewController: UIViewController {
         view = UIView()
         view.backgroundColor = .white
         view.addGestureRecognizer(gestureRecognizer)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        retrieveProductInformation()
-    }
-}
-
-// MARK: - SKProductsRequestDelegate
-
-extension SettingsViewController: SKProductsRequestDelegate {
-    func retrieveProductInformation() {
-        let identifiers = Set(["de.marcelkraus.speedometer.tip.small", "de.marcelkraus.speedometer.tip.medium", "de.marcelkraus.speedometer.tip.large"])
-
-        productRequest = SKProductsRequest(productIdentifiers: identifiers)
-        productRequest.delegate = self
-        productRequest.start()
-    }
-
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        print(response.products)
     }
 }
 

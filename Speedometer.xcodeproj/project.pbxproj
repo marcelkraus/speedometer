@@ -13,6 +13,7 @@
 		DF2F6BD321ADA4A400AC75BE /* SpeedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */; };
 		DF3010D8205A929E005B493D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3010D7205A929E005B493D /* String+Localization.swift */; };
 		DF302F13221CAA87001FD967 /* UIFont+Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF302F12221CAA87001FD967 /* UIFont+Fonts.swift */; };
+		DF36993F23882D3800BA8C08 /* TipSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36993E23882D3800BA8C08 /* TipSelectionViewController.swift */; };
 		DF4C365120D133CD00A9E1B7 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C365020D133CD00A9E1B7 /* CircularView.swift */; };
 		DF4E314321C16D9F00ADE39F /* CircularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E314221C16D9F00ADE39F /* CircularViewController.swift */; };
 		DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */; };
@@ -61,6 +62,7 @@
 		DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerViewController.swift; sourceTree = "<group>"; };
 		DF3010D7205A929E005B493D /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		DF302F12221CAA87001FD967 /* UIFont+Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Fonts.swift"; sourceTree = "<group>"; };
+		DF36993E23882D3800BA8C08 /* TipSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipSelectionViewController.swift; sourceTree = "<group>"; };
 		DF4C365020D133CD00A9E1B7 /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
 		DF4E314221C16D9F00ADE39F /* CircularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularViewController.swift; sourceTree = "<group>"; };
 		DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */,
 				DF17A23021FB4D3200DE901A /* SeparatorViewController.swift */,
 				DF7D820021C2B073004A37C8 /* SpeedViewController.swift */,
+				DF36993E23882D3800BA8C08 /* TipSelectionViewController.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				DFD30993219F240E005CE3B9 /* ParagraphViewController.swift in Sources */,
 				DF9D05BD23FE77100033F43D /* Key.swift in Sources */,
 				DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */,
+				DF36993F23882D3800BA8C08 /* TipSelectionViewController.swift in Sources */,
 				DF5F4C5F1FD5DAA10043F97E /* UIViewController+Transition.swift in Sources */,
 				DFFBA786221B1BC000801688 /* UIColor+Colors.swift in Sources */,
 				DFDBDE5021F9D93500F3E858 /* CoordinatesViewController.swift in Sources */,
