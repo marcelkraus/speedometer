@@ -3,13 +3,9 @@ import UIKit
 class CircularViewController: UIViewController {
     var circularView = CircularView()
 
-    var speed: Speed? {
+    var fillmentLevel: Double = 0.0 {
         didSet {
-            guard let speed = speed else {
-                return
-            }
-
-            circularView.setFillmentLevel(speed.fillment)
+            circularView.setFillmentLevel(fillmentLevel)
         }
     }
 

@@ -8,8 +8,8 @@ enum Unit: Int, CaseIterable {
     case kilometersPerHour = 1, milesPerHour, metersPerSecond, knots, split500
 
     static func selected(usesMetricSystem: Bool = Locale.current.usesMetricSystem) -> Unit {
-        let selectedUnit = UserDefaults.standard.integer(forKey: Keys.selectedUnit)
         let defaultUnit: Unit = usesMetricSystem ? Unit.kilometersPerHour : Unit.milesPerHour
+        let selectedUnit = UserDefaults.standard.integer(forKey: Keys.selectedUnit)
 
         return Unit(rawValue: selectedUnit) ?? defaultUnit
     }
@@ -39,15 +39,6 @@ enum Unit: Int, CaseIterable {
         }
     }
 
-    var displayFormat: String {
-        switch self {
-        case .split500:
-            return "%.2f"
-        default:
-            return "%.0f"
-        }
-    }
-
     func calculate(for speed: Double) -> Double {
         // There is a minimum of 0.5 m/s needed before the app will return a
         // calculated speed.
@@ -69,7 +60,17 @@ enum Unit: Int, CaseIterable {
         }
     }
 
-    var maximumSpeed: Double {
+    func fillment(for speed: Double) -> Double {
+        return ((speed * 100) / maximumSpeed) * 0.01
+    }
+
+    func format(for speed: Double) -> String {
+        let format = self == .split500 ? "%.2f": "%.0f"
+
+        return String(format: format, speed)
+    }
+
+    private var maximumSpeed: Double {
         switch self {
         case .kilometersPerHour:
             return 240.0

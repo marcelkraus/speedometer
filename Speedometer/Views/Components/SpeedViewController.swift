@@ -22,13 +22,13 @@ class SpeedViewController: UIViewController {
 
     private let unitBackgroundView = SeparatorView()
 
-    var speed: Speed? {
+    var speed: Double? {
         didSet {
             guard let speed = speed else {
                 return
             }
 
-            speedLabel.text = speed.localizedString
+            speedLabel.text = unit.format(for: speed)
         }
     }
 
