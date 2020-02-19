@@ -9,11 +9,6 @@ struct Speed {
         self.unit = unit
     }
 
-    init(speed: Speed, unit: Unit) {
-        self.speed = (speed.speed / speed.unit.factor) * unit.factor
-        self.unit = unit
-    }
-
     var fillment: Double {
         return ((speed * 100) / Double(unit.maximumSpeed)) * 0.01
     }
