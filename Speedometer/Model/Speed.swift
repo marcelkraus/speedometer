@@ -4,13 +4,13 @@ struct Speed {
     let speed: Double
     let unit: Unit
 
-    init(speed: Double, unit: Unit) {
-        self.speed = (speed > 1.0) ? speed * unit.factor : 0
+    init(of value: Double, as unit: Unit) {
         self.unit = unit
+        self.speed = unit.calculate(for: value)
     }
 
     var fillment: Double {
-        return ((speed * 100) / Double(unit.maximumSpeed)) * 0.01
+        return ((speed * 100) / unit.maximumSpeed) * 0.01
     }
 
     var localizedString: String {

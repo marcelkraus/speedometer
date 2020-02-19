@@ -4,7 +4,7 @@ import XCTest
 class SpeedTests: XCTestCase {
     func testConvertedSpeed() {
         let unit = Unit.kilometersPerHour
-        let speed = Speed(speed: 10, unit: unit)
+        let speed = Speed(of: 10, as: unit)
 
         XCTAssertEqual(speed.localizedString, "36")
     }

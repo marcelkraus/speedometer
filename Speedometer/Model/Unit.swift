@@ -41,20 +41,35 @@ enum Unit: Int, CaseIterable {
         return "%.0f"
     }
 
-    var factor: Double {
+    func calculate(for speed: Double) -> Double {
+        // There is a minimum of 0.5 m/s needed before the app will return a
+        // calculated speed.
+        guard speed > 0.5 else {
+            return 0
+        }
+
         switch self {
         case .kilometersPerHour:
-            return 3.6
+            return speed * 3.6
         case .milesPerHour:
-            return 2.23694
+            return speed * 2.23694
         case .metersPerSecond:
-            return 1.0
+            return speed * 1.0
         case .knots:
-            return 1.944
+            return speed * 1.944
         }
     }
 
-    var maximumSpeed: Int {
-        return Int(self.factor * 66.7)
+    var maximumSpeed: Double {
+        switch self {
+        case .kilometersPerHour:
+            return 240.0
+        case .milesPerHour:
+            return 160.0
+        case .metersPerSecond:
+            return 65.0
+        case .knots:
+            return 125.0
+        }
     }
 }

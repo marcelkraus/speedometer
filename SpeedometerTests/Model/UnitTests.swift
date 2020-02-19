@@ -24,10 +24,16 @@ class UnitTests: XCTestCase {
         XCTAssertEqual(unit.abbreviation, "km/h")
     }
 
-    func testUnitFactor() {
+    func testUnitSpeedCalculationRespectsMinimumValue() {
+        let unit = Unit.milesPerHour
+
+        XCTAssertEqual(unit.calculate(for: 0.49), 0.0)
+    }
+
+    func testUnitSpeedCalculationReturnsValidSpeed() {
         let unit = Unit.kilometersPerHour
 
-        XCTAssertEqual(unit.factor, 3.6)
+        XCTAssertEqual(unit.calculate(for: 1.0), 3.6)
     }
 
     func testUnitMaxiumSpeed() {

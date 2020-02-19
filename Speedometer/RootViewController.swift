@@ -32,7 +32,7 @@ extension RootViewController: CLLocationManagerDelegate {
             return
         }
 
-        let speed = Speed(speed: location.speed, unit: speedometerViewController.unit)
+        let speed = Speed(of: location.speed, as: speedometerViewController.unit)
         let coordinates = Coordinates(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
 
         speedometerViewController.update(speed: speed, coordinates: coordinates)
