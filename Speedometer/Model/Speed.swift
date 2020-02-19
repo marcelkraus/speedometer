@@ -13,15 +13,7 @@ struct Speed {
         return ((speed * 100) / Double(unit.maximumSpeed)) * 0.01
     }
 
-    var roundedSpeed: Int {
-        return Int(round(speed))
-    }
-
-    var asString: String {
+    var localizedString: String {
         return String(format: "%.0f", speed)
-    }
-
-    var asStringWithUnit: String {
-        return "\(asString) \(unit.abbreviation)"
     }
 }

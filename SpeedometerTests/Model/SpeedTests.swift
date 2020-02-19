@@ -6,6 +6,6 @@ class SpeedTests: XCTestCase {
         let unit = Unit.kilometersPerHour
         let speed = Speed(speed: 10, unit: unit)
 
-        XCTAssertEqual(speed.asString, "36")
+        XCTAssertEqual(speed.localizedString, "36")
     }
 }
