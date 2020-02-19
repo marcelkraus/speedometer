@@ -1,17 +1,22 @@
 import Foundation
 
-enum Unit: Int, CaseIterable {
+enum Unit: String, CaseIterable {
     private enum Keys {
         static let selectedUnit = "unit"
     }
 
-    case kilometersPerHour = 1, milesPerHour, metersPerSecond, knots, split500
+    case kilometersPerHour = "km/h"
+    case milesPerHour = "mph"
+    case metersPerSecond = "m/s"
+    case knots = "kn"
+    case split500 = "min./500m"
 
     static func selected(usesMetricSystem: Bool = Locale.current.usesMetricSystem) -> Unit {
-        let defaultUnit: Unit = usesMetricSystem ? Unit.kilometersPerHour : Unit.milesPerHour
-        let selectedUnit = UserDefaults.standard.integer(forKey: Keys.selectedUnit)
+        guard let selectedUnit = UserDefaults.standard.string(forKey: Keys.selectedUnit) else {
+            return usesMetricSystem ? Unit.kilometersPerHour : Unit.milesPerHour
+        }
 
-        return Unit(rawValue: selectedUnit) ?? defaultUnit
+        return Unit(rawValue: selectedUnit)!
     }
 
     var next: Unit {
@@ -22,21 +27,6 @@ enum Unit: Int, CaseIterable {
         UserDefaults.standard.set(unit.rawValue, forKey: Keys.selectedUnit)
 
         return unit
-    }
-
-    var abbreviation: String {
-        switch self {
-        case .kilometersPerHour:
-            return "km/h"
-        case .milesPerHour:
-            return "mph"
-        case .metersPerSecond:
-            return "m/s"
-        case .knots:
-            return "kn"
-        case .split500:
-            return "min./500m"
-        }
     }
 
     func calculate(for speed: Double) -> Double {

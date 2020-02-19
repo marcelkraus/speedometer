@@ -21,7 +21,7 @@ class UnitTests: XCTestCase {
     func testUnitAbbreviation() {
         let unit = Unit.kilometersPerHour
 
-        XCTAssertEqual(unit.abbreviation, "km/h")
+        XCTAssertEqual(unit.rawValue, "km/h")
     }
 
     func testUnitSpeedCalculationRespectsMinimumValue() {

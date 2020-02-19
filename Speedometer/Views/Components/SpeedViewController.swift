@@ -34,7 +34,7 @@ class SpeedViewController: UIViewController {
 
     var unit: Unit = Unit.selected() {
         didSet {
-            unitLabel.text = unit.abbreviation
+            unitLabel.text = unit.rawValue
         }
     }
 
