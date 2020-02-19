@@ -5,7 +5,7 @@ enum Unit: Int, CaseIterable {
         static let selectedUnit = "unit"
     }
 
-    case kilometersPerHour = 1, milesPerHour, metersPerSecond, knots
+    case kilometersPerHour = 1, milesPerHour, metersPerSecond, knots, split500
 
     static func selected(usesMetricSystem: Bool = Locale.current.usesMetricSystem) -> Unit {
         let selectedUnit = UserDefaults.standard.integer(forKey: Keys.selectedUnit)
@@ -34,11 +34,18 @@ enum Unit: Int, CaseIterable {
             return "m/s"
         case .knots:
             return "kn"
+        case .split500:
+            return "min./500m"
         }
     }
 
     var displayFormat: String {
-        return "%.0f"
+        switch self {
+        case .split500:
+            return "%.2f"
+        default:
+            return "%.0f"
+        }
     }
 
     func calculate(for speed: Double) -> Double {
@@ -57,6 +64,8 @@ enum Unit: Int, CaseIterable {
             return speed * 1.0
         case .knots:
             return speed * 1.944
+        case .split500:
+            return 500 / (speed * 60)
         }
     }
 
@@ -70,6 +79,8 @@ enum Unit: Int, CaseIterable {
             return 65.0
         case .knots:
             return 125.0
+        case .split500:
+            return 0
         }
     }
 }

@@ -66,8 +66,16 @@ class UnitTests: XCTestCase {
         XCTAssertEqual(nextUnit, Unit.knots)
     }
 
-    func testKilometersPerHourIsNextUnitAfterKnots() {
+    func testSplit500IsNextUnitAfterKnots() {
         let unit = Unit.knots
+
+        let nextUnit = unit.next
+
+        XCTAssertEqual(nextUnit, Unit.split500)
+    }
+
+    func testKilometersPerHourIsNextUnitAfterSplit500() {
+        let unit = Unit.split500
 
         let nextUnit = unit.next
 
