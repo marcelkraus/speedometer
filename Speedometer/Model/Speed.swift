@@ -14,6 +14,6 @@ struct Speed {
     }
 
     var localizedString: String {
-        return String(format: "%.0f", speed)
+        return String(format: unit.displayFormat, speed)
     }
 }

@@ -37,6 +37,10 @@ enum Unit: Int, CaseIterable {
         }
     }
 
+    var displayFormat: String {
+        return "%.0f"
+    }
+
     var factor: Double {
         switch self {
         case .kilometersPerHour:
