@@ -28,7 +28,7 @@ class SpeedViewController: UIViewController {
                 return
             }
 
-            speedLabel.text = unit.format(for: speed)
+            speedLabel.text = unit.localizedString(for: speed)
         }
     }
 

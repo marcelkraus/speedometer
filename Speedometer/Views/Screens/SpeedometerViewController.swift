@@ -38,9 +38,9 @@ class SpeedometerViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func update(speed: Double, coordinates: Coordinates) {
-        circularViewController.fillmentLevel = unit.fillment(for: speed)
-        speedViewController.speed = unit.calculate(for: speed)
+    func update(deviceValue: Double, coordinates: Coordinates) {
+        circularViewController.fillmentLevel = unit.calculcateFillment(for: deviceValue)
+        speedViewController.speed = unit.calculateSpeed(for: deviceValue)
         speedViewController.unit = unit
         coordinatesViewController.coordinates = coordinates
     }

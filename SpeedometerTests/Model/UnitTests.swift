@@ -11,13 +11,13 @@ class UnitTests: XCTestCase {
     func testUnitSpeedCalculationRespectsMinimumValue() {
         let unit = Unit.milesPerHour
 
-        XCTAssertEqual(unit.calculate(for: 0.49), 0.0)
+        XCTAssertEqual(unit.calculateSpeed(for: 0.49), 0.0)
     }
 
     func testUnitSpeedCalculationReturnsValidSpeed() {
         let unit = Unit.kilometersPerHour
 
-        XCTAssertEqual(unit.calculate(for: 1.0), 3.6)
+        XCTAssertEqual(unit.calculateSpeed(for: 1.0), 3.6)
     }
 
     func testMilesPerHourIsNextUnitAfterKilometersPerHour() {
@@ -62,7 +62,7 @@ class UnitTests: XCTestCase {
 
     func testConvertedSpeed() {
         let unit = Unit.kilometersPerHour
-        let speed = unit.calculate(for: 10)
+        let speed = unit.calculateSpeed(for: 10)
 
         XCTAssertEqual(speed, 36)
     }
