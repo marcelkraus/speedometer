@@ -55,7 +55,15 @@ enum Unit: String, CaseIterable {
         let maximumFillment = self == .split500 ? 8.333333 : 66.66667
         let fillment = ((deviceValue * 100) / maximumFillment) * 0.01
 
-        return (fillment > 1.0) ? 1.0 : fillment
+        guard fillment > 0.0 else {
+            return  0.0
+        }
+
+        guard fillment < 1.0 else {
+            return 1.0
+        }
+
+        return fillment
     }
 
     func localizedString(for speed: Double) -> String {
