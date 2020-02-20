@@ -47,7 +47,7 @@ enum Unit: String, CaseIterable {
         case .knots:
             return deviceValue * 1.944
         case .split500:
-            return 500 / (deviceValue * 60)
+            return (500 / (deviceValue * 60)) * 60
         }
     }
 
@@ -67,8 +67,15 @@ enum Unit: String, CaseIterable {
     }
 
     func localizedString(for speed: Double) -> String {
-        let format = self == .split500 ? "%.2f": "%.0f"
+        if (self == .split500) {
+            let formatter = DateComponentsFormatter()
+            formatter.unitsStyle = .positional
+            formatter.allowedUnits = [.minute, .second]
+            formatter.zeroFormattingBehavior = [.pad]
 
-        return String(format: format, speed)
+            return formatter.string(from: speed) ?? "00:00"
+        }
+
+        return String(format: "%.0f", speed)
     }
 }
