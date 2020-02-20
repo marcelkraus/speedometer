@@ -52,7 +52,7 @@ enum Unit: String, CaseIterable {
     }
 
     func calculcateFillment(for deviceValue: Double) -> Double {
-        let maximumFillment = self == .split500 ? 8.333333 : 66.66667
+        let maximumFillment = self == .split500 ? 7.00000 : 66.66667
         let fillment = ((deviceValue * 100) / maximumFillment) * 0.01
 
         guard fillment > 0.0 else {
