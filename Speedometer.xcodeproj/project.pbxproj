@@ -28,8 +28,6 @@
 		DF9D05BD23FE77100033F43D /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D05BC23FE77100033F43D /* Key.swift */; };
 		DF9DCB1320ADDAED008BAE8B /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DCB1220ADDAED008BAE8B /* UnitTests.swift */; };
 		DFC358F4205A9BCF00DEDB9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFC358F6205A9BCF00DEDB9E /* InfoPlist.strings */; };
-		DFC6DD7A2215C79F001675AB /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6DD792215C79F001675AB /* ButtonViewController.swift */; };
-		DFC6DD7C2215D092001675AB /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6DD7B2215D092001675AB /* ButtonType.swift */; };
 		DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C601FD5E17300260E24 /* RootViewController.swift */; };
 		DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */; };
 		DFD30993219F240E005CE3B9 /* ParagraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */; };
@@ -79,8 +77,6 @@
 		DF9DCB1220ADDAED008BAE8B /* UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
 		DFC358F8205A9BDD00DEDB9E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DFC358F9205A9BE800DEDB9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DFC6DD792215C79F001675AB /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
-		DFC6DD7B2215D092001675AB /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
 		DFCA0C601FD5E17300260E24 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphViewController.swift; sourceTree = "<group>"; };
@@ -164,7 +160,6 @@
 		DF5F138B202A5AAE006D51DA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DFC6DD7B2215D092001675AB /* ButtonType.swift */,
 				DF94839C20D16C7E009B120B /* Coordinates.swift */,
 				DFDB3681219F7B4D002B7D53 /* Message.swift */,
 				DF2C45AE1FCC2EF0005C8906 /* Unit.swift */,
@@ -212,7 +207,6 @@
 		DFE6E19B2216DC8400623E34 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				DFC6DD792215C79F001675AB /* ButtonViewController.swift */,
 				DF4E314221C16D9F00ADE39F /* CircularViewController.swift */,
 				DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */,
 				DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */,
@@ -394,7 +388,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF602D1520AEE3C00083532A /* StoreKitReviewHelper.swift in Sources */,
-				DFC6DD7C2215D092001675AB /* ButtonType.swift in Sources */,
 				DFD30993219F240E005CE3B9 /* ParagraphViewController.swift in Sources */,
 				DF9D05BD23FE77100033F43D /* Key.swift in Sources */,
 				DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */,
@@ -412,7 +405,6 @@
 				DF4C365120D133CD00A9E1B7 /* CircularView.swift in Sources */,
 				DF94839D20D16C7E009B120B /* Coordinates.swift in Sources */,
 				DFFBA784221B1B8900801688 /* SeparatorView.swift in Sources */,
-				DFC6DD7A2215C79F001675AB /* ButtonViewController.swift in Sources */,
 				DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */,
 				DF3010D8205A929E005B493D /* String+Localization.swift in Sources */,
 				DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */,

@@ -3,7 +3,6 @@ import UIKit
 class SpeedometerViewController: UIViewController {
     var circularViewController: CircularViewController!
     var coordinatesViewController: CoordinatesViewController!
-    var imprintButtonViewController: ButtonViewController!
     var speedViewController: SpeedViewController!
 
     private lazy var swipeInfoLabel: UILabel = {
@@ -13,6 +12,15 @@ class SpeedometerViewController: UIViewController {
         label.textColor = .swipeInfo
 
         return label
+    }()
+
+    private lazy var settingsButtonView: UIButton = {
+        let settingsButtonView = UIButton(type: .infoDark)
+        settingsButtonView.translatesAutoresizingMaskIntoConstraints  = false
+        settingsButtonView.tintColor = .branding
+        settingsButtonView.addTarget(self, action: #selector(showSettings), for: .touchUpInside)
+
+        return settingsButtonView
     }()
 
     var unit: Unit = Unit.selected {
@@ -46,18 +54,14 @@ class SpeedometerViewController: UIViewController {
     }
 }
 
-// MARK: - Button Handling
+// MARK: - Obj-C Selectors
 
-private extension SpeedometerViewController {
+@objc private extension SpeedometerViewController {
     func showSettings() {
         present(SettingsViewController(), animated: true, completion: nil)
     }
-}
 
-// MARK: - Obj-C Selectors
-
-private extension SpeedometerViewController {
-    @objc func selectNextUnit() {
+    func selectNextUnit() {
         let impactGenerator = UIImpactFeedbackGenerator(style: .medium)
         impactGenerator.prepare()
 
@@ -97,7 +101,7 @@ private extension SpeedometerViewController {
         coordinatesView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             coordinatesView.topAnchor.constraint(equalTo: circularViewController.view.bottomAnchor),
-            coordinatesView.bottomAnchor.constraint(equalTo: imprintButtonViewController.view.topAnchor),
+            coordinatesView.bottomAnchor.constraint(equalTo: settingsButtonView.topAnchor),
             coordinatesView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
             ])
         coordinatesViewController.didMove(toParent: self)
@@ -110,20 +114,11 @@ private extension SpeedometerViewController {
     }
 
     func setupSettingsButtonView() {
-        imprintButtonViewController = ButtonViewController(type: .info) {
-            self.showSettings()
-        }
-        addChild(imprintButtonViewController)
-
-        let imprintButtonView = imprintButtonViewController.view!
-        view.addSubview(imprintButtonView)
-
-        imprintButtonView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(settingsButtonView)
         NSLayoutConstraint.activate([
-            imprintButtonView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
-            imprintButtonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
-            ])
-        imprintButtonViewController.didMove(toParent: self)
+            settingsButtonView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
+            settingsButtonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
+        ])
     }
 
     func setupSpeedView() {

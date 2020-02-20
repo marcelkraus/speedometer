@@ -4,7 +4,15 @@ import UIKit
 class OnboardingViewController: UIViewController {
     private var locationManager: CLLocationManager
 
-    var authorizationButtonViewController: ButtonViewController!
+    private lazy var authorizationButtonView: UIButton = {
+        let authorizationButtonView = UIButton()
+        authorizationButtonView.translatesAutoresizingMaskIntoConstraints = false
+        authorizationButtonView.setTitle("OnboardingViewController.Button".localized, for: .normal)
+        authorizationButtonView.setTitleColor(.branding, for: .normal)
+        authorizationButtonView.addTarget(self, action: #selector(handleAuthorization), for: .touchUpInside)
+
+        return authorizationButtonView
+    }()
 
     var paragraphViewController: ParagraphViewController!
 
@@ -41,33 +49,20 @@ class OnboardingViewController: UIViewController {
     }
 }
 
-// MARK: - Button Handling
-
-private extension OnboardingViewController {
+@objc private extension OnboardingViewController {
     func handleAuthorization() {
         locationManager.requestWhenInUseAuthorization()
     }
 }
 
-// MARK: - UI Setup
-
 private extension OnboardingViewController {
     func setupAuthorizationButton() {
-        authorizationButtonViewController = ButtonViewController(type: .plain("OnboardingViewController.Button".localized)) {
-            self.handleAuthorization()
-        }
-
-        addChild(authorizationButtonViewController)
-
-        let authorizationButtonView = authorizationButtonViewController.view!
         view.addSubview(authorizationButtonView)
 
-        authorizationButtonView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             authorizationButtonView.topAnchor.constraint(equalTo: paragraphViewController.view.bottomAnchor, constant: 40.0),
             authorizationButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            ])
-        authorizationButtonViewController.didMove(toParent: self)
+        ])
     }
 
     func setupParagraphView() {
