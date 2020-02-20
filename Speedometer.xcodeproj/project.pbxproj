@@ -35,7 +35,7 @@
 		DFD30993219F240E005CE3B9 /* ParagraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */; };
 		DFD30999219F252C005CE3B9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */; };
 		DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB367F219F770B002B7D53 /* MessageViewController.swift */; };
-		DFDB3682219F7B4D002B7D53 /* MessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB3681219F7B4D002B7D53 /* MessageType.swift */; };
+		DFDB3682219F7B4D002B7D53 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB3681219F7B4D002B7D53 /* Message.swift */; };
 		DFDBDE5021F9D93500F3E858 /* CoordinatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */; };
 		DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFE69BD7205A904000FA0CE3 /* Localizable.strings */; };
 		DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */; };
@@ -86,7 +86,7 @@
 		DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphViewController.swift; sourceTree = "<group>"; };
 		DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		DFDB367F219F770B002B7D53 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		DFDB3681219F7B4D002B7D53 /* MessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageType.swift; sourceTree = "<group>"; };
+		DFDB3681219F7B4D002B7D53 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesViewController.swift; sourceTree = "<group>"; };
 		DFE69BD6205A904000FA0CE3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DFE69BD8205A904C00FA0CE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 			children = (
 				DFC6DD7B2215D092001675AB /* ButtonType.swift */,
 				DF94839C20D16C7E009B120B /* Coordinates.swift */,
-				DFDB3681219F7B4D002B7D53 /* MessageType.swift */,
+				DFDB3681219F7B4D002B7D53 /* Message.swift */,
 				DF2C45AE1FCC2EF0005C8906 /* Unit.swift */,
 			);
 			path = Model;
@@ -405,7 +405,7 @@
 				DF76227321A6E9AE0073CEBC /* SettingsViewController.swift in Sources */,
 				DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */,
 				DF4E314321C16D9F00ADE39F /* CircularViewController.swift in Sources */,
-				DFDB3682219F7B4D002B7D53 /* MessageType.swift in Sources */,
+				DFDB3682219F7B4D002B7D53 /* Message.swift in Sources */,
 				DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */,
 				DF7D820221C2B073004A37C8 /* SpeedViewController.swift in Sources */,
 				DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */,

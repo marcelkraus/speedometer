@@ -1,7 +1,7 @@
 import UIKit
 
 class MessageViewController: UIViewController {
-    var messageType: MessageType
+    var messageType: Message
 
     private var paragraphViewController: ParagraphViewController!
 
@@ -12,7 +12,7 @@ class MessageViewController: UIViewController {
         return separatorView
     }()
 
-    init(messageType: MessageType) {
+    init(messageType: Message) {
         self.messageType = messageType
 
         super.init(nibName: nil, bundle: nil)
@@ -41,7 +41,7 @@ class MessageViewController: UIViewController {
 
 private extension MessageViewController {
     func setupParagraphView() {
-        paragraphViewController = ParagraphViewController(messageType: messageType)
+        paragraphViewController = ParagraphViewController(heading: messageType.heading, text: messageType.text)
         addChild(paragraphViewController)
 
         let paragraphView = paragraphViewController.view!

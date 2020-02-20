@@ -71,7 +71,7 @@ private extension OnboardingViewController {
     }
 
     func setupParagraphView() {
-        paragraphViewController = ParagraphViewController(messageType: .onboarding)
+        paragraphViewController = ParagraphViewController(heading: Message.onboarding.heading, text: Message.onboarding.text)
         addChild(paragraphViewController)
 
         let paragraphView = paragraphViewController.view!
