@@ -32,7 +32,7 @@ class SpeedViewController: UIViewController {
         }
     }
 
-    var unit: Unit = Unit.selected() {
+    var unit: Unit = Unit.selected {
         didSet {
             unitLabel.text = unit.rawValue
         }

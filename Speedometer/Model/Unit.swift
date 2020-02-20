@@ -1,19 +1,20 @@
 import Foundation
 
 enum Unit: String, CaseIterable {
-    private enum Keys {
-        static let selectedUnit = "unit"
-    }
-
     case kilometersPerHour = "km/h"
     case milesPerHour = "mph"
     case metersPerSecond = "m/s"
     case knots = "kn"
     case split500 = "min./500m"
 
-    static func selected(usesMetricSystem: Bool = Locale.current.usesMetricSystem) -> Unit {
-        guard let selectedUnit = UserDefaults.standard.string(forKey: Keys.selectedUnit) else {
-            return usesMetricSystem ? Unit.kilometersPerHour : Unit.milesPerHour
+    static var selected: Unit {
+        let selectedUnit = UserDefaults.standard.string(forKey: Key.selectedUnit)!
+
+        // This should only happen if there was a migration error and the
+        // NSUserDefaults still contains an Int, we then return the first Unit
+        // defined.
+        guard Int(selectedUnit) == nil else {
+            return Unit.allCases.first!
         }
 
         return Unit(rawValue: selectedUnit)!
@@ -24,7 +25,7 @@ enum Unit: String, CaseIterable {
 
         let index = units.firstIndex(of: self)! + 1
         let unit = (index < units.count) ? units[index] : units.first!
-        UserDefaults.standard.set(unit.rawValue, forKey: Keys.selectedUnit)
+        UserDefaults.standard.set(unit.rawValue, forKey: Key.selectedUnit)
 
         return unit
     }

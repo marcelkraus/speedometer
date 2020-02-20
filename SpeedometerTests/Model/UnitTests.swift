@@ -2,22 +2,6 @@ import XCTest
 @testable import Speedometer
 
 class UnitTests: XCTestCase {
-    override func setUp() {
-        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-    }
-
-    func testSelectedUnitWithMetricSystem() {
-        let unit = Unit.selected(usesMetricSystem: true)
-
-        XCTAssertEqual(unit, Unit.kilometersPerHour)
-    }
-
-    func testSelectedUnitWithImperialSystem() {
-        let unit = Unit.selected(usesMetricSystem: false)
-
-        XCTAssertEqual(unit, Unit.milesPerHour)
-    }
-
     func testUnitAbbreviation() {
         let unit = Unit.kilometersPerHour
 

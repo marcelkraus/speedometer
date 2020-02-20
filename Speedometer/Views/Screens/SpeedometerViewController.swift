@@ -15,7 +15,7 @@ class SpeedometerViewController: UIViewController {
         return label
     }()
 
-    var unit: Unit = Unit.selected() {
+    var unit: Unit = Unit.selected {
         didSet {
             speedViewController.unit = unit
         }
