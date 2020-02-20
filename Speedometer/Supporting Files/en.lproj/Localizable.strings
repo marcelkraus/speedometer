@@ -1,6 +1,3 @@
-"ImprintViewController.Heading" = "Imprint";
-"ImprintViewController.SwipeInfo" = "Swipe Down to Close";
-"ImprintViewController.Text" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\nwww.marcelkraus.de\n\nMany Thanks ♡ to Manuela, Marc and Thomas.\n\n\Parts of Icon designed by Freepik/Flaticon.\n\nApp version v%@:%@.";
 "LoadingIndicatorViewController.Indicator" = "Laden…";
 "OnboardingViewController.Button" = "Gotcha, let's go!";
 "ParagraphViewController.LocationAuthorizationStatusDenied.Heading" = "Okay, Houston, we've had a problem here.";
@@ -9,6 +6,11 @@
 "ParagraphViewController.LocationAuthorizationStatusRestricted.Text" = "Please allow access to your location data to use Speedometer\n\nPlease check the following settings:\n\nSettings > Privacy > Location Services > Speedometer > While Using";
 "ParagraphViewController.Onboarding.Heading" = "Hello World!\nThis is Speedometer.";
 "ParagraphViewController.Onboarding.Text" = "Speedometer shows your current speed. Simple, cost-free and without any advertisements.\n\nSpeedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease confirm access within the popup after you tapped the button below.";
+"SettingsViewController.Imprint.Heading" = "Imprint";
+"SettingsViewController.Imprint.SwipeInfo" = "Swipe Down to Close";
+"SettingsViewController.Imprint.Text" = "Marcel Kraus\nDreikönigenweg 8a\nD-50374 Erftstadt\nwww.marcelkraus.de\n\nMany Thanks ♡ to Manuela, Marc and Thomas.\n\n\Parts of Icon designed by Freepik/Flaticon.\n\nApp version v%@:%@.";
+"SettingsViewController.TipJar.Heading" = "Tip Jar";
+"SettingsViewController.TipJar.Text" = "Tacho stays simple, cost-free and without any advertisements - this is a promise!\n\nBut… if you are really, really satistied with the app, just throw something in my tip jar. I appreciate it!";
 "SpeedometerViewController.Orientation.East" = "East";
 "SpeedometerViewController.Orientation.North" = "North";
 "SpeedometerViewController.Orientation.South" = "South";

@@ -25,7 +25,7 @@ class SpeedometerViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
 
         setupSwipeInfoLabel()
-        setupImprintButtonView()
+        setupSettingsButtonView()
         setupCircularView()
         setupSpeedView()
         setupCoordinatesView()
@@ -49,8 +49,8 @@ class SpeedometerViewController: UIViewController {
 // MARK: - Button Handling
 
 private extension SpeedometerViewController {
-    func showImprint() {
-        present(ImprintViewController(), animated: true, completion: nil)
+    func showSettings() {
+        present(SettingsViewController(), animated: true, completion: nil)
     }
 }
 
@@ -109,9 +109,9 @@ private extension SpeedometerViewController {
         view.addGestureRecognizer(gestureRecognizer)
     }
 
-    func setupImprintButtonView() {
+    func setupSettingsButtonView() {
         imprintButtonViewController = ButtonViewController(type: .info) {
-            self.showImprint()
+            self.showSettings()
         }
         addChild(imprintButtonViewController)
 

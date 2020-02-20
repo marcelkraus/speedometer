@@ -6,7 +6,7 @@ class ParagraphViewController: UIViewController {
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fill
-        stackView.spacing = 40.0
+        stackView.spacing = 20.0
 
         return stackView
     }()
