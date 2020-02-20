@@ -2,13 +2,13 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     private lazy var separatorView: UIView = {
-        let separatorViewController = SeparatorViewController()
-        addChild(separatorViewController)
+        let separatorView = SeparatorView()
+        separatorView.translatesAutoresizingMaskIntoConstraints = false
 
-        return separatorViewController.view!
+        return separatorView
     }()
 
-    private lazy var contentStackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let contentView = UIStackView(arrangedSubviews: [imprintView, swipeInfoLabel])
         contentView.axis = .vertical
         contentView.spacing = 40.0
@@ -57,15 +57,24 @@ class SettingsViewController: UIViewController {
         return swipeInfoLabel
     }()
 
-    init() {
-        super.init(nibName: nil, bundle: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-        setupSeparatorView()
-        setupContentView()
-    }
+        view.addSubview(separatorView)
+        NSLayoutConstraint.activate([
+            separatorView.heightAnchor.constraint(equalToConstant: 20.0),
+            separatorView.widthAnchor.constraint(equalToConstant: 170.0),
+            separatorView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -30.0),
+            separatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0)
+        ])
+        view.addSubview(stackView)
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
+        ])
     }
 
     override func loadView() {
@@ -78,10 +87,8 @@ class SettingsViewController: UIViewController {
     }
 }
 
-// MARK: - Obj-C Selectors
-
-private extension SettingsViewController {
-    @objc func dismissSettings() {
+@objc private extension SettingsViewController {
+    func dismissSettings() {
         let impactGenerator = UIImpactFeedbackGenerator(style: .medium)
         impactGenerator.prepare()
         impactGenerator.impactOccurred()
@@ -89,35 +96,6 @@ private extension SettingsViewController {
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
-
-// MARK: - UI Methods
-
-private extension SettingsViewController {
-    func setupSeparatorView() {
-        view.addSubview(separatorView)
-
-        separatorView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            separatorView.heightAnchor.constraint(equalToConstant: 20.0),
-            separatorView.widthAnchor.constraint(equalToConstant: 170.0),
-            separatorView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -30.0),
-            separatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0)
-        ])
-    }
-
-    func setupContentView() {
-        view.addSubview(contentStackView)
-
-        contentStackView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            contentStackView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
-            contentStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
-            contentStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
-        ])
-    }
-}
-
-// MARK: - Private Methods
 
 private extension SettingsViewController {
     var versionNumber: String {
