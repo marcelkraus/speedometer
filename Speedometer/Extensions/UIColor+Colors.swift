@@ -17,7 +17,7 @@ extension UIColor {
         return .lightGray
     }
 
-    static var coordinates: UIColor {
+    static var location: UIColor {
         return .darkGray
     }
 

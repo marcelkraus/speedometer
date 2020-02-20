@@ -9,12 +9,12 @@ extension UIFont {
         return .preferredFont(forTextStyle: .title2)
     }
 
-    static var coordinates: UIFont {
-        return .preferredFont(forTextStyle: .body)
-    }
-
     static var heading: UIFont {
         return .preferredFont(forTextStyle: .title1)
+    }
+
+    static var location: UIFont {
+        return .preferredFont(forTextStyle: .body)
     }
 
     static var speed: UIFont {

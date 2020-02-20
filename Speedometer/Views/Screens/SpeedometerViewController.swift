@@ -2,7 +2,7 @@ import UIKit
 
 class SpeedometerViewController: UIViewController {
     var circularViewController: CircularViewController!
-    var coordinatesViewController: CoordinatesViewController!
+    var locationViewController: LocationViewController!
     var speedViewController: SpeedViewController!
 
     private lazy var swipeInfoLabel: UILabel = {
@@ -36,7 +36,7 @@ class SpeedometerViewController: UIViewController {
         setupSettingsButtonView()
         setupCircularView()
         setupSpeedView()
-        setupCoordinatesView()
+        setupLocationView()
         setupGestureRecognizer()
 
         StoreReviewHelper.askForReview()
@@ -46,11 +46,11 @@ class SpeedometerViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func update(deviceValue: Double, coordinates: Coordinates) {
+    func update(deviceValue: Double, location: Location) {
         circularViewController.fillmentLevel = unit.calculcateFillment(for: deviceValue)
         speedViewController.speed = unit.calculateSpeed(for: deviceValue)
         speedViewController.unit = unit
-        coordinatesViewController.coordinates = coordinates
+        locationViewController.location = location
     }
 }
 
@@ -91,20 +91,20 @@ private extension SpeedometerViewController {
         circularViewController.didMove(toParent: self)
     }
 
-    func setupCoordinatesView() {
-        coordinatesViewController = CoordinatesViewController()
-        addChild(coordinatesViewController)
+    func setupLocationView() {
+        locationViewController = LocationViewController()
+        addChild(locationViewController)
 
-        let coordinatesView = coordinatesViewController.view!
-        view.addSubview(coordinatesView)
+        let locationView = locationViewController.view!
+        view.addSubview(locationView)
 
-        coordinatesView.translatesAutoresizingMaskIntoConstraints = false
+        locationView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            coordinatesView.topAnchor.constraint(equalTo: circularViewController.view.bottomAnchor),
-            coordinatesView.bottomAnchor.constraint(equalTo: settingsButtonView.topAnchor),
-            coordinatesView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+            locationView.topAnchor.constraint(equalTo: circularViewController.view.bottomAnchor),
+            locationView.bottomAnchor.constraint(equalTo: settingsButtonView.topAnchor),
+            locationView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
             ])
-        coordinatesViewController.didMove(toParent: self)
+        locationViewController.didMove(toParent: self)
     }
     
     func setupGestureRecognizer() {

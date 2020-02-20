@@ -1,10 +1,10 @@
 import Foundation
 
-struct Coordinates {
+struct Location {
     let latitude: Double
     let longitude: Double
 
-    var formatted: (latitude: String, longitude: String) {
+    var localizedString: (latitude: String, longitude: String) {
         let latDegrees = abs(Int(latitude))
         let latMinutes = abs(Int((latitude * 3600).truncatingRemainder(dividingBy: 3600) / 60))
         let latSeconds = Double(abs((latitude * 3600).truncatingRemainder(dividingBy: 3600).truncatingRemainder(dividingBy: 60)))
