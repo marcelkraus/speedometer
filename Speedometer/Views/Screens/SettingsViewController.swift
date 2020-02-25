@@ -1,9 +1,16 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    private lazy var separatorView: UIView = {
+    private lazy var separatorView: SeparatorView = {
         let separatorView = SeparatorView()
         separatorView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(separatorView)
+        NSLayoutConstraint.activate([
+            separatorView.heightAnchor.constraint(equalToConstant: 20.0),
+            separatorView.widthAnchor.constraint(equalToConstant: 170.0),
+            separatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -30.0),
+            separatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0)
+        ])
 
         return separatorView
     }()
@@ -60,13 +67,6 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.addSubview(separatorView)
-        NSLayoutConstraint.activate([
-            separatorView.heightAnchor.constraint(equalToConstant: 20.0),
-            separatorView.widthAnchor.constraint(equalToConstant: 170.0),
-            separatorView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -30.0),
-            separatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0)
-        ])
         view.addSubview(stackView)
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
