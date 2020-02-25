@@ -2,9 +2,13 @@ import UIKit
 
 class CircularView: UIView {
     private let startAngleInDegrees: Double
+
     private let maxAngleInDegrees: Double
+
     private let lineWeight: Double
-    private var color: CGColor
+
+    private let color: CGColor
+
     var fillment: Double {
         didSet {
             setNeedsDisplay()
@@ -30,7 +34,7 @@ class CircularView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
-       let circlePath = UIBezierPath(
+        let circlePath = UIBezierPath(
             arcCenter: CGPoint(x: bounds.maxX, y: bounds.maxY),
             radius: bounds.width - CGFloat(lineWeight) / 2.0,
             startAngle: CGFloat(radians(of: startAngleInDegrees)),
@@ -38,22 +42,20 @@ class CircularView: UIView {
             clockwise: true
         )
 
-         let circleLayer = CAShapeLayer()
-         circleLayer.path = circlePath.cgPath
-         circleLayer.fillColor = UIColor.clear.cgColor
-         circleLayer.strokeColor = color
-         circleLayer.lineWidth = CGFloat(lineWeight)
+        let circleLayer = CAShapeLayer()
+        circleLayer.path = circlePath.cgPath
+        circleLayer.fillColor = UIColor.clear.cgColor
+        circleLayer.strokeColor = color
+        circleLayer.lineWidth = CGFloat(lineWeight)
 
-         layer.addSublayer(circleLayer)
+        layer.addSublayer(circleLayer)
     }
-}
 
-private extension CircularView {
-    func radians(of degrees: Double) -> Double {
+    private func radians(of degrees: Double) -> Double {
         return degrees * (.pi / 180)
     }
 
-    func endAngleInDegrees(forFillmentLevel fillmentLevel: Double) -> Double {
+    private func endAngleInDegrees(forFillmentLevel fillmentLevel: Double) -> Double {
         return (maxAngleInDegrees * fillmentLevel) + startAngleInDegrees
     }
 }
