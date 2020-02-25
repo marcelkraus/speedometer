@@ -5,12 +5,11 @@ class TipSelectionViewController: UIViewController {
     private var productRequest: SKProductsRequest!
 
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView()
+        let stackView = UIStackView(arrangedSubviews: [activityIndicatorView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 20.0
         stackView.distribution = .fillEqually
         stackView.alignment = .center
-        stackView.addArrangedSubview(activityIndicatorView)
 
         return stackView
     }()
@@ -32,31 +31,27 @@ class TipSelectionViewController: UIViewController {
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
 
-        retrieveProductInformation()
+        requestProductInformation()
     }
-}
 
-// MARK: - Private Methods
-
-private extension TipSelectionViewController {
-    func retrieveProductInformation() {
-        let identifiers = Set(["de.marcelkraus.speedometer.tip.small", "de.marcelkraus.speedometer.tip.medium", "de.marcelkraus.speedometer.tip.large"])
+    private func requestProductInformation() {
+        let identifiers = Set([
+            "de.marcelkraus.speedometer.tip.small",
+            "de.marcelkraus.speedometer.tip.medium",
+            "de.marcelkraus.speedometer.tip.large"
+        ])
 
         productRequest = SKProductsRequest(productIdentifiers: identifiers)
         productRequest.delegate = self
         productRequest.start()
     }
 
-    func removePlaceholderView(_ placeholderView: UIView) {
+    private func removePlaceholderView(_ placeholderView: UIView) {
         stackView.removeArrangedSubview(placeholderView)
         placeholderView.removeFromSuperview()
     }
-}
 
-// MARK: - Selectors
-
-@objc extension TipSelectionViewController {
-    func purchaseProduct() {
+    @objc private func purchaseProduct() {
         print("TODO: Purchase Product")
     }
 }

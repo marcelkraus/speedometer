@@ -1,16 +1,6 @@
 import UIKit
 
 class LocationViewController: UIViewController {
-    var location: Location? {
-        didSet {
-            guard let location = location else {
-                return
-            }
-
-            locationLabel.text = "\(location.localizedString.latitude)\n\(location.localizedString.longitude)"
-        }
-    }
-
     private lazy var locationLabel: UILabel = {
         let locationLabel = UILabel()
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -20,6 +10,16 @@ class LocationViewController: UIViewController {
 
         return locationLabel
     }()
+
+    var location: Location? {
+        didSet {
+            guard let location = location else {
+                return
+            }
+
+            locationLabel.text = "\(location.localizedString.latitude)\n\(location.localizedString.longitude)"
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
