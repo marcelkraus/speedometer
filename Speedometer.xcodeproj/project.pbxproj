@@ -174,17 +174,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DF8FDCE72008DD6200140DA9 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				DF3010D7205A929E005B493D /* String+Localization.swift */,
-				DFFBA785221B1BC000801688 /* UIColor+Colors.swift */,
-				DF302F12221CAA87001FD967 /* UIFont+Fonts.swift */,
-				DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		DF9DCB0820ADD8EC008BAE8B /* SpeedometerTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +208,10 @@
 			isa = PBXGroup;
 			children = (
 				DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */,
+				DF3010D7205A929E005B493D /* String+Localization.swift */,
+				DFFBA785221B1BC000801688 /* UIColor+Colors.swift */,
+				DF302F12221CAA87001FD967 /* UIFont+Fonts.swift */,
+				DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -245,7 +238,6 @@
 		DFEB62241F30B5EA00FEC555 /* Speedometer */ = {
 			isa = PBXGroup;
 			children = (
-				DF8FDCE72008DD6200140DA9 /* Extensions */,
 				DFE6E19C2216DCC300623E34 /* Helpers */,
 				DF5F138B202A5AAE006D51DA /* Model */,
 				DF568E471FD0119600D546B8 /* Supporting Files */,
