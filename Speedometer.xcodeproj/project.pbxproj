@@ -141,6 +141,7 @@
 				DFEB62311F30B5EA00FEC555 /* Info.plist */,
 				DFC358F6205A9BCF00DEDB9E /* InfoPlist.strings */,
 				DF9D05BC23FE77100033F43D /* Key.swift */,
+				DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */,
 				DFE69BD7205A904000FA0CE3 /* Localizable.strings */,
 			);
 			path = "Supporting Files";
@@ -206,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				DF4E314221C16D9F00ADE39F /* CircularViewController.swift */,
-				DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */,
 				DFDBDE4E21F9D93500F3E858 /* LocationViewController.swift */,
 				DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */,
 				DF7D820021C2B073004A37C8 /* SpeedViewController.swift */,
