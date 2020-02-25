@@ -3,8 +3,6 @@ import UIKit
 
 class RootViewController: UIViewController {
     private let locationManager = CLLocationManager()
-
-    private var onboardingViewController: OnboardingViewController!
     private var speedometerViewController: SpeedometerViewController!
 
     override func viewDidLoad() {
@@ -43,22 +41,34 @@ private extension RootViewController {
         transition(to: LoadingViewController()) { _ in
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
-                self.locationManager.stopUpdatingLocation()
-                self.onboardingViewController = OnboardingViewController(locationManager: self.locationManager)
-                self.transition(to: self.onboardingViewController)
+                let onboardingViewController = OnboardingViewController()
+                onboardingViewController.delegate = self
+
+                self.transition(to: onboardingViewController)
             case .restricted:
                 self.locationManager.stopUpdatingLocation()
+
                 self.transition(to: MessageViewController(messageType: .locationAuthorizationStatusRestricted))
             case .denied:
                 self.locationManager.stopUpdatingLocation()
+
                 self.transition(to: MessageViewController(messageType: .locationAuthorizationStatusDenied))
             case .authorizedWhenInUse, .authorizedAlways:
                 self.locationManager.startUpdatingLocation()
+
                 self.speedometerViewController = SpeedometerViewController()
                 self.transition(to: self.speedometerViewController)
             @unknown default:
                 fatalError("selectViewController() has been detected an unsupported authorization status of the CLLocationManager instance")
             }
         }
+    }
+}
+
+// MARK: - OnboardingViewControllerDelegate
+
+extension RootViewController: OnboardingViewControllerDelegate {
+    func didTapAuthorizeButton() {
+        locationManager.requestWhenInUseAuthorization()
     }
 }

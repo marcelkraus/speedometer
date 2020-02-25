@@ -1,24 +1,16 @@
-import CoreLocation
 import UIKit
 
+protocol OnboardingViewControllerDelegate: class {
+    func didTapAuthorizeButton()
+}
+
 class OnboardingViewController: UIViewController {
-    private var locationManager: CLLocationManager
-
-    private lazy var authorizationButtonView: UIButton = {
-        let authorizationButtonView = UIButton()
-        authorizationButtonView.translatesAutoresizingMaskIntoConstraints = false
-        authorizationButtonView.setTitle("OnboardingViewController.Button".localized, for: .normal)
-        authorizationButtonView.setTitleColor(.branding, for: .normal)
-        authorizationButtonView.addTarget(self, action: #selector(handleAuthorization), for: .touchUpInside)
-
-        return authorizationButtonView
-    }()
-
-    var paragraphViewController: ParagraphViewController!
+    weak var delegate: OnboardingViewControllerDelegate?
 
     private lazy var separatorView: SeparatorView = {
         let separatorView = SeparatorView()
         separatorView.translatesAutoresizingMaskIntoConstraints = false
+
         view.addSubview(separatorView)
         NSLayoutConstraint.activate([
             separatorView.heightAnchor.constraint(equalToConstant: 20.0),
@@ -30,53 +22,42 @@ class OnboardingViewController: UIViewController {
         return separatorView
     }()
 
-    init(locationManager: CLLocationManager) {
-        self.locationManager = locationManager
+    private lazy var paragraphViewController: ParagraphViewController = {
+        let paragraphViewController = ParagraphViewController(heading: Message.onboarding.heading, text: Message.onboarding.text)
+        paragraphViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-        super.init(nibName: nil, bundle: nil)
-    }
+        return paragraphViewController
+    }()
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private lazy var authorizationButtonView: UIButton = {
+        let authorizationButtonView = UIButton()
+        authorizationButtonView.translatesAutoresizingMaskIntoConstraints = false
+        authorizationButtonView.setTitle("OnboardingViewController.Button".localized, for: .normal)
+        authorizationButtonView.setTitleColor(.branding, for: .normal)
+        authorizationButtonView.addTarget(self, action: #selector(didTapAuthorizeButton), for: .touchUpInside)
+
+        return authorizationButtonView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupParagraphView()
-        setupAuthorizationButton()
-    }
-}
+        addChild(paragraphViewController)
+        view.addSubview(paragraphViewController.view)
+        paragraphViewController.didMove(toParent: self)
 
-@objc private extension OnboardingViewController {
-    func handleAuthorization() {
-        locationManager.requestWhenInUseAuthorization()
-    }
-}
-
-private extension OnboardingViewController {
-    func setupAuthorizationButton() {
         view.addSubview(authorizationButtonView)
 
         NSLayoutConstraint.activate([
+            paragraphViewController.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
+            paragraphViewController.view.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
+            paragraphViewController.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
             authorizationButtonView.topAnchor.constraint(equalTo: paragraphViewController.view.bottomAnchor, constant: 40.0),
             authorizationButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
         ])
     }
 
-    func setupParagraphView() {
-        paragraphViewController = ParagraphViewController(heading: Message.onboarding.heading, text: Message.onboarding.text)
-        addChild(paragraphViewController)
-
-        let paragraphView = paragraphViewController.view!
-        view.addSubview(paragraphView)
-
-        paragraphView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            paragraphView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
-            paragraphView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
-            paragraphView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
-            ])
-        paragraphViewController.didMove(toParent: self)
+    @objc private func didTapAuthorizeButton() {
+        delegate?.didTapAuthorizeButton()
     }
 }
