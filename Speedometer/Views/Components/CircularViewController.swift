@@ -1,40 +1,41 @@
 import UIKit
 
 class CircularViewController: UIViewController {
-    var circularView = CircularView()
+    private lazy var backgroundView: CircularView = {
+        let backgroundView = CircularView(color: .lightGray, fillment: 1.0)
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
 
-    var fillmentLevel: Double = 0.0 {
+        return backgroundView
+    }()
+
+    private lazy var indicatorView: CircularView = {
+        let indicatorView = CircularView(color: .branding, fillment: 0.0)
+        indicatorView.translatesAutoresizingMaskIntoConstraints = false
+
+        return indicatorView
+    }()
+
+    var fillment: Double = 0.0 {
         didSet {
-            circularView.setFillmentLevel(fillmentLevel)
+            indicatorView.fillment = fillment
         }
     }
 
-    init() {
-        super.init(nibName: nil, bundle: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-        setupCircularView()
-    }
+        view.addSubview(backgroundView)
+        view.addSubview(indicatorView)
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        circularView.updateAppearance(background: .circularViewBackground, filling: .branding)
-    }
-}
-
-private extension CircularViewController {
-    func setupCircularView() {
-        view.addSubview(circularView)
-        circularView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            circularView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            circularView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            circularView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            circularView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            ])
+            backgroundView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            backgroundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            indicatorView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor),
+            indicatorView.topAnchor.constraint(equalTo: backgroundView.topAnchor),
+            indicatorView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor),
+            indicatorView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor),
+        ])
     }
 }

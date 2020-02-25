@@ -47,7 +47,7 @@ class SpeedometerViewController: UIViewController {
     }
 
     func update(deviceValue: Double, location: Location) {
-        circularViewController.fillmentLevel = unit.calculcateFillment(for: deviceValue)
+        circularViewController.fillment = unit.calculcateFillment(for: deviceValue)
         speedViewController.speed = unit.calculateSpeed(for: deviceValue)
         speedViewController.unit = unit
         locationViewController.location = location
