@@ -116,7 +116,6 @@
 			children = (
 				DFE6E19B2216DC8400623E34 /* Components */,
 				DF511031219D97EE000321E8 /* Screens */,
-				DFFBA782221B1B6900801688 /* Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,9 +194,11 @@
 		DFE6E19B2216DC8400623E34 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DF4C365020D133CD00A9E1B7 /* CircularView.swift */,
 				DF4E314221C16D9F00ADE39F /* CircularViewController.swift */,
 				DFDBDE4E21F9D93500F3E858 /* LocationViewController.swift */,
 				DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */,
+				DFFBA783221B1B8900801688 /* SeparatorView.swift */,
 				DF7D820021C2B073004A37C8 /* SpeedViewController.swift */,
 				DF36993E23882D3800BA8C08 /* TipSelectionViewController.swift */,
 			);
@@ -246,15 +247,6 @@
 				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
 			);
 			path = Speedometer;
-			sourceTree = "<group>";
-		};
-		DFFBA782221B1B6900801688 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DF4C365020D133CD00A9E1B7 /* CircularView.swift */,
-				DFFBA783221B1B8900801688 /* SeparatorView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
