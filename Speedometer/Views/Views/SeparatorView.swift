@@ -14,7 +14,5 @@ class SeparatorView: UIView {
 
     override func draw(_ rect: CGRect) {
         layer.cornerRadius = rect.height/2
-
-        super.draw(rect)
     }
 }
