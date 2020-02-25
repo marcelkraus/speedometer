@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */; };
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
-		DF2F6BD321ADA4A400AC75BE /* SpeedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */; };
+		DF2F6BD321ADA4A400AC75BE /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F6BD221ADA4A400AC75BE /* ContentViewController.swift */; };
 		DF3010D8205A929E005B493D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3010D7205A929E005B493D /* String+Localization.swift */; };
 		DF302F13221CAA87001FD967 /* UIFont+Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF302F12221CAA87001FD967 /* UIFont+Fonts.swift */; };
 		DF36993F23882D3800BA8C08 /* TipSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36993E23882D3800BA8C08 /* TipSelectionViewController.swift */; };
@@ -54,7 +54,7 @@
 /* Begin PBXFileReference section */
 		DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF2C45AE1FCC2EF0005C8906 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
-		DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerViewController.swift; sourceTree = "<group>"; };
+		DF2F6BD221ADA4A400AC75BE /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		DF3010D7205A929E005B493D /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		DF302F12221CAA87001FD967 /* UIFont+Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Fonts.swift"; sourceTree = "<group>"; };
 		DF36993E23882D3800BA8C08 /* TipSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipSelectionViewController.swift; sourceTree = "<group>"; };
@@ -124,11 +124,11 @@
 		DF511031219D97EE000321E8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				DF2F6BD221ADA4A400AC75BE /* ContentViewController.swift */,
 				DF511035219D9B05000321E8 /* LoadingViewController.swift */,
 				DFDB367F219F770B002B7D53 /* MessageViewController.swift */,
 				DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */,
 				DF76227221A6E9AE0073CEBC /* SettingsViewController.swift */,
-				DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 				DF3010D8205A929E005B493D /* String+Localization.swift in Sources */,
 				DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */,
 				DF302F13221CAA87001FD967 /* UIFont+Fonts.swift in Sources */,
-				DF2F6BD321ADA4A400AC75BE /* SpeedometerViewController.swift in Sources */,
+				DF2F6BD321ADA4A400AC75BE /* ContentViewController.swift in Sources */,
 				DFD30999219F252C005CE3B9 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

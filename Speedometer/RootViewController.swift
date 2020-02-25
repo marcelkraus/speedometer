@@ -3,7 +3,7 @@ import UIKit
 
 class RootViewController: UIViewController {
     private let locationManager = CLLocationManager()
-    private var speedometerViewController: SpeedometerViewController!
+    private var contentViewController: ContentViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ extension RootViewController: CLLocationManagerDelegate {
             return
         }
 
-        speedometerViewController.update(deviceValue: location.speed, location: Location(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
+        contentViewController.update(with: location.speed, at: Location(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
     }
 }
 
@@ -56,8 +56,8 @@ private extension RootViewController {
             case .authorizedWhenInUse, .authorizedAlways:
                 self.locationManager.startUpdatingLocation()
 
-                self.speedometerViewController = SpeedometerViewController()
-                self.transition(to: self.speedometerViewController)
+                self.contentViewController = ContentViewController()
+                self.transition(to: self.contentViewController)
             @unknown default:
                 fatalError("selectViewController() has been detected an unsupported authorization status of the CLLocationManager instance")
             }

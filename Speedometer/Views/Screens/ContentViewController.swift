@@ -1,6 +1,6 @@
 import UIKit
 
-class SpeedometerViewController: UIViewController {
+class ContentViewController: UIViewController {
     var circularViewController: CircularViewController!
     var locationViewController: LocationViewController!
     var speedViewController: SpeedViewController!
@@ -46,9 +46,9 @@ class SpeedometerViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func update(deviceValue: Double, location: Location) {
-        circularViewController.fillment = unit.calculcateFillment(for: deviceValue)
-        speedViewController.speed = unit.calculateSpeed(for: deviceValue)
+    func update(with speedProvidedByDevice: Double, at location: Location) {
+        circularViewController.fillment = unit.calculcateFillment(for: speedProvidedByDevice)
+        speedViewController.speed = unit.calculateSpeed(for: speedProvidedByDevice)
         speedViewController.unit = unit
         locationViewController.location = location
     }
@@ -56,7 +56,7 @@ class SpeedometerViewController: UIViewController {
 
 // MARK: - Obj-C Selectors
 
-@objc private extension SpeedometerViewController {
+@objc private extension ContentViewController {
     func showSettings() {
         present(SettingsViewController(), animated: true, completion: nil)
     }
@@ -73,7 +73,7 @@ class SpeedometerViewController: UIViewController {
 
 // MARK: - UI Setup
 
-private extension SpeedometerViewController {
+private extension ContentViewController {
     func setupCircularView() {
         circularViewController = CircularViewController()
         addChild(circularViewController)
