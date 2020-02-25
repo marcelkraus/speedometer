@@ -4,31 +4,32 @@ import UIKit
 class TipSelectionViewController: UIViewController {
     private var productRequest: SKProductsRequest!
 
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.spacing = 20.0
+        stackView.distribution = .fillEqually
+        stackView.alignment = .center
+        stackView.addArrangedSubview(activityIndicatorView)
+
+        return stackView
+    }()
+
     private lazy var activityIndicatorView: UIActivityIndicatorView = {
         let activityIndicatorView = UIActivityIndicatorView()
+        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
         activityIndicatorView.startAnimating()
 
         return activityIndicatorView
     }()
 
-    private lazy var contentStackView: UIStackView = {
-        let contentStackView = UIStackView()
-        contentStackView.spacing = 20.0
-        contentStackView.distribution = .fillEqually
-        contentStackView.alignment = .center
-        contentStackView.addArrangedSubview(activityIndicatorView)
-
-        return contentStackView
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.addSubview(contentStackView)
-        contentStackView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(stackView)
         NSLayoutConstraint.activate([
-            contentStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            contentStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
 
         retrieveProductInformation()
@@ -47,7 +48,7 @@ private extension TipSelectionViewController {
     }
 
     func removePlaceholderView(_ placeholderView: UIView) {
-        contentStackView.removeArrangedSubview(placeholderView)
+        stackView.removeArrangedSubview(placeholderView)
         placeholderView.removeFromSuperview()
     }
 }
@@ -65,7 +66,7 @@ private extension TipSelectionViewController {
 extension TipSelectionViewController: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         DispatchQueue.main.asyncAfter(deadline: .now()) {
-            guard response.products.count > 0, let placeholderView = self.contentStackView.arrangedSubviews.first else {
+            guard response.products.count > 0, let placeholderView = self.stackView.arrangedSubviews.first else {
                 return
             }
 
@@ -91,14 +92,14 @@ extension TipSelectionViewController: SKProductsRequestDelegate {
                     purchaseButton.heightAnchor.constraint(equalToConstant: 40),
                 ])
 
-                self.contentStackView.addArrangedSubview(purchaseButton)
+                self.stackView.addArrangedSubview(purchaseButton)
             }
 
             NSLayoutConstraint.activate([
-                self.contentStackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-                self.contentStackView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
-                self.contentStackView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
-                self.contentStackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+                self.stackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+                self.stackView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+                self.stackView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+                self.stackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
             ])
         }
     }
