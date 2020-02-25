@@ -1,4 +1,8 @@
 "LoadingIndicatorViewController.Indicator" = "Laden…";
+"Location.East" = "East";
+"Location.North" = "North";
+"Location.South" = "South";
+"Location.West" = "West";
 "Message.LocationAuthorizationStatusDenied.Heading" = "Okay, Houston, we've had a problem here.";
 "Message.LocationAuthorizationStatusDenied.Text" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
 "Message.LocationAuthorizationStatusRestricted.Heading" = "Okay, Houston, we've had a problem here.";
@@ -11,8 +15,4 @@
 "SettingsViewController.Imprint.Text" = "Marcel Kraus\nBonner Straße 88\nD-50374 Erftstadt\nspeedometer.marcelkraus.de\n\nMany Thanks ♡ to Manuela, Marc and Thomas.\n\n\Parts of Icon designed by Freepik/Flaticon.\n\nApp version v%@:%@.";
 "SettingsViewController.TipJar.Heading" = "Tip Jar";
 "SettingsViewController.TipJar.Text" = "Tacho stays simple, cost-free and without any advertisements - this is a promise!\n\nBut… if you are really, really satistied with the app, just throw something in my tip jar. I appreciate it!";
-"SpeedometerViewController.Orientation.East" = "East";
-"SpeedometerViewController.Orientation.North" = "North";
-"SpeedometerViewController.Orientation.South" = "South";
-"SpeedometerViewController.Orientation.West" = "West";
 "SpeedometerViewController.SwipeInfo" = "Swipe Down for Next Unit";

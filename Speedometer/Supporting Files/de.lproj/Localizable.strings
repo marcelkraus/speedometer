@@ -1,4 +1,8 @@
 "LoadingIndicatorViewController.Indicator" = "Laden…";
+"Location.East" = "Ost";
+"Location.North" = "Nord";
+"Location.South" = "Süd";
+"Location.West" = "West";
 "Message.LocationAuthorizationStatusDenied.Heading" = "Okay, Houston, we've had a problem here.";
 "Message.LocationAuthorizationStatusDenied.Text" = "Die Nutzung von Tacho ist nicht möglich, da der Zugriff auf deine Standortdaten beschränkt wurde.\n\nBitte entferne alle Einschränkungen in deinen Einstellungen:\n\nEinstellungen > Allgemein > Einschränkungen > Ortungsdienste";
 "Message.LocationAuthorizationStatusRestricted.Heading" = "Okay, Houston, we've had a problem here.";
@@ -11,8 +15,4 @@
 "SettingsViewController.Imprint.Text" = "Marcel Kraus\nBonner Straße 88\nD-50374 Erftstadt\ntacho.marcelkraus.de\n\nVielen Dank ♡ an Manuela, Marc und Thomas.\n\n\Teile des Icons gestaltet von Freepik/Flaticon.\n\nApp-Version v%@:%@.";
 "SettingsViewController.TipJar.Heading" = "Trinkgeld-Box";
 "SettingsViewController.TipJar.Text" = "Tacho bleibt einfach, kostenlos und werbefrei - versprochen!\n\nAber… solltest du ganz besonders zufrieden sein und mir dies zeigen wollen, darfst du mir gerne etwas Trinkgeld zukommen lassen.";
-"SpeedometerViewController.Orientation.East" = "Ost";
-"SpeedometerViewController.Orientation.North" = "Nord";
-"SpeedometerViewController.Orientation.South" = "Süd";
-"SpeedometerViewController.Orientation.West" = "West";
 "SpeedometerViewController.SwipeInfo" = "Runter wischen für nächste Einheit";
