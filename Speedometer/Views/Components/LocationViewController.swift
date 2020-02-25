@@ -13,6 +13,7 @@ class LocationViewController: UIViewController {
 
     private lazy var locationLabel: UILabel = {
         let locationLabel = UILabel()
+        locationLabel.translatesAutoresizingMaskIntoConstraints = false
         locationLabel.numberOfLines = 2
         locationLabel.font = .location
         locationLabel.textColor = .location
@@ -20,26 +21,15 @@ class LocationViewController: UIViewController {
         return locationLabel
     }()
 
-    init() {
-        super.init(nibName: nil, bundle: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-        setupLocationLabel()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-private extension LocationViewController {
-    func setupLocationLabel() {
         view.addSubview(locationLabel)
-        locationLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             locationLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             locationLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             locationLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             locationLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-            ])
+        ])
     }
 }
