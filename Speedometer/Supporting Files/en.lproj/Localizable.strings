@@ -1,11 +1,11 @@
 "LoadingIndicatorViewController.Indicator" = "Laden…";
+"Message.LocationAuthorizationStatusDenied.Heading" = "Okay, Houston, we've had a problem here.";
+"Message.LocationAuthorizationStatusDenied.Text" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
+"Message.LocationAuthorizationStatusRestricted.Heading" = "Okay, Houston, we've had a problem here.";
+"Message.LocationAuthorizationStatusRestricted.Text" = "Please allow access to your location data to use Speedometer\n\nPlease check the following settings:\n\nSettings > Privacy > Location Services > Speedometer > While Using";
+"Message.Onboarding.Heading" = "Hello World!\nThis is Speedometer.";
+"Message.Onboarding.Text" = "Speedometer shows your current speed. Simple, cost-free and without any advertisements.\n\nSpeedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease confirm access within the popup after you tapped the button below.";
 "OnboardingViewController.Button" = "Gotcha, let's go!";
-"ParagraphViewController.LocationAuthorizationStatusDenied.Heading" = "Okay, Houston, we've had a problem here.";
-"ParagraphViewController.LocationAuthorizationStatusDenied.Text" = "Usage of Speedometer is not possible due to restrictions of Location Services.\n\nPlease remove the restrictions here:\n\nSettings > General > Restrictions > Location Services";
-"ParagraphViewController.LocationAuthorizationStatusRestricted.Heading" = "Okay, Houston, we've had a problem here.";
-"ParagraphViewController.LocationAuthorizationStatusRestricted.Text" = "Please allow access to your location data to use Speedometer\n\nPlease check the following settings:\n\nSettings > Privacy > Location Services > Speedometer > While Using";
-"ParagraphViewController.Onboarding.Heading" = "Hello World!\nThis is Speedometer.";
-"ParagraphViewController.Onboarding.Text" = "Speedometer shows your current speed. Simple, cost-free and without any advertisements.\n\nSpeedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease confirm access within the popup after you tapped the button below.";
 "SettingsViewController.Imprint.Heading" = "Imprint";
 "SettingsViewController.Imprint.SwipeInfo" = "Swipe Down to Close";
 "SettingsViewController.Imprint.Text" = "Marcel Kraus\nBonner Straße 88\nD-50374 Erftstadt\nspeedometer.marcelkraus.de\n\nMany Thanks ♡ to Manuela, Marc and Thomas.\n\n\Parts of Icon designed by Freepik/Flaticon.\n\nApp version v%@:%@.";

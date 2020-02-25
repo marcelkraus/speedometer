@@ -1,27 +1,15 @@
 import Foundation
 
-enum Message {
-    case locationAuthorizationStatusDenied, locationAuthorizationStatusRestricted, onboarding
+enum Message: String {
+    case locationAuthorizationStatusDenied = "LocationAuthorizationStatusDenied"
+    case locationAuthorizationStatusRestricted = "LocationAuthorizationStatusRestricted"
+    case onboarding = "Onboarding"
 
     var heading: String {
-        switch self {
-        case .locationAuthorizationStatusDenied:
-            return "ParagraphViewController.LocationAuthorizationStatusRestricted.Heading".localized
-        case .locationAuthorizationStatusRestricted:
-            return "ParagraphViewController.LocationAuthorizationStatusDenied.Heading".localized
-        case .onboarding:
-            return "ParagraphViewController.Onboarding.Heading".localized
-        }
+        return "Message.\(self.rawValue).Heading".localized
     }
 
     var text: String {
-        switch self {
-        case .locationAuthorizationStatusDenied:
-            return "ParagraphViewController.LocationAuthorizationStatusRestricted.Text".localized
-        case .locationAuthorizationStatusRestricted:
-            return "ParagraphViewController.LocationAuthorizationStatusDenied.Text".localized
-        case .onboarding:
-            return "ParagraphViewController.Onboarding.Text".localized
-        }
+        return "Message.\(self.rawValue).Text".localized
     }
 }
