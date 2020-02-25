@@ -18,7 +18,7 @@ extension UIFont {
     }
 
     static var speed: UIFont {
-        return .systemFont(ofSize: 120.0, weight: .thin)
+        return .systemFont(ofSize: 92.0, weight: .thin)
     }
 
     static var swipeInfo: UIFont {
