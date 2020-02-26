@@ -12,9 +12,12 @@ class SpeedViewController: UIViewController {
         return speedLabel
     }()
 
-    private lazy var unitBackgroundView: SeparatorView = {
-        let unitBackgroundView = SeparatorView()
+    private lazy var unitBackgroundView: UIView = {
+        let unitBackgroundView = UIView()
         unitBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+        unitBackgroundView.backgroundColor = .branding
+        unitBackgroundView.layer.cornerRadius = 20.0
+        unitBackgroundView.layer.masksToBounds = true
 
         return unitBackgroundView
     }()

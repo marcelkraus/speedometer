@@ -7,9 +7,12 @@ protocol OnboardingViewControllerDelegate: class {
 class OnboardingViewController: UIViewController {
     weak var delegate: OnboardingViewControllerDelegate?
 
-    private lazy var separatorView: SeparatorView = {
-        let separatorView = SeparatorView()
+    private lazy var separatorView: UIView = {
+        let separatorView = UIView()
         separatorView.translatesAutoresizingMaskIntoConstraints = false
+        separatorView.backgroundColor = .branding
+        separatorView.layer.cornerRadius = 10.0
+        separatorView.layer.masksToBounds = true
 
         view.addSubview(separatorView)
         NSLayoutConstraint.activate([
