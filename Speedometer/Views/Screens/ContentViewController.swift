@@ -1,8 +1,15 @@
 import UIKit
 
 class ContentViewController: UIViewController {
-    var circularViewController: CircularViewController!
+    private let circularView: CircularView = {
+        let circularView = CircularView(indicatorColor: .branding, trackColor: .lightGray, indicatorFillment: 0.0)
+        circularView.translatesAutoresizingMaskIntoConstraints = false
+
+        return circularView
+    }()
+
     var locationViewController: LocationViewController!
+
     var speedViewController: SpeedViewController!
 
     private lazy var swipeInfoLabel: UILabel = {
@@ -47,7 +54,7 @@ class ContentViewController: UIViewController {
     }
 
     func update(with speedProvidedByDevice: Double, at location: Location) {
-        circularViewController.indicatorFillment = unit.calculcateFillment(for: speedProvidedByDevice)
+        circularView.indicatorFillment = unit.calculcateFillment(for: speedProvidedByDevice)
         speedViewController.speed = unit.calculateSpeed(for: speedProvidedByDevice)
         speedViewController.unit = unit
         locationViewController.location = location
@@ -75,20 +82,14 @@ class ContentViewController: UIViewController {
 
 private extension ContentViewController {
     func setupCircularView() {
-        circularViewController = CircularViewController()
-        addChild(circularViewController)
-
-        let circularView = circularViewController.view!
         view.addSubview(circularView)
 
-        circularView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             circularView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
             circularView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
             circularView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
             circularView.heightAnchor.constraint(equalTo: circularView.widthAnchor, multiplier: 1.0)
-            ])
-        circularViewController.didMove(toParent: self)
+        ])
     }
 
     func setupLocationView() {
@@ -100,10 +101,10 @@ private extension ContentViewController {
 
         locationView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            locationView.topAnchor.constraint(equalTo: circularViewController.view.bottomAnchor),
+            locationView.topAnchor.constraint(equalTo: circularView.bottomAnchor),
             locationView.bottomAnchor.constraint(equalTo: settingsButtonView.topAnchor),
             locationView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
-            ])
+        ])
         locationViewController.didMove(toParent: self)
     }
     
@@ -130,9 +131,9 @@ private extension ContentViewController {
 
         speedView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            speedView.trailingAnchor.constraint(equalTo: circularViewController.view.trailingAnchor),
-            speedView.bottomAnchor.constraint(equalTo: circularViewController.view.bottomAnchor)
-            ])
+            speedView.trailingAnchor.constraint(equalTo: circularView.trailingAnchor),
+            speedView.bottomAnchor.constraint(equalTo: circularView.bottomAnchor)
+        ])
         speedViewController.didMove(toParent: self)
     }
 
@@ -143,6 +144,6 @@ private extension ContentViewController {
         NSLayoutConstraint.activate([
             swipeInfoLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             swipeInfoLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
-            ])
+        ])
     }
 }
