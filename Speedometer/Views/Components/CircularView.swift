@@ -1,32 +1,39 @@
 import UIKit
 
 class CircularView: UIView {
+    private enum Layer {
+        case indicator, track
+    }
+
     private let startAngleInDegrees: Double
 
     private let maxAngleInDegrees: Double
 
     private let lineWeight: Double
 
-    private let color: CGColor
+    let indicatorColor: CGColor
 
-    var fillment: Double {
+    let trackColor: CGColor
+
+    var indicatorFillment: Double {
         didSet {
             setNeedsDisplay()
         }
     }
 
-    init(startAngleInDegrees: Double, maxAngleInDegrees: Double, lineWeight: Double, color: UIColor, fillment: Double) {
+    init(startAngleInDegrees: Double, maxAngleInDegrees: Double, lineWeight: Double, indicatorColor: UIColor, trackColor: UIColor, indicatorFillment: Double) {
         self.startAngleInDegrees = startAngleInDegrees
         self.maxAngleInDegrees = maxAngleInDegrees
         self.lineWeight = lineWeight
-        self.color = color.cgColor
-        self.fillment = fillment
+        self.indicatorColor = indicatorColor.cgColor
+        self.trackColor = trackColor.cgColor
+        self.indicatorFillment = indicatorFillment
 
         super.init(frame: .zero)
     }
 
-    convenience init(color: UIColor, fillment: Double) {
-        self.init(startAngleInDegrees: 180.0, maxAngleInDegrees: 90.0, lineWeight: 12.0, color: color, fillment: fillment)
+    convenience init(indicatorColor: UIColor, trackColor: UIColor, indicatorFillment: Double) {
+        self.init(startAngleInDegrees: 180.0, maxAngleInDegrees: 90.0, lineWeight: 12.0, indicatorColor: indicatorColor, trackColor: trackColor, indicatorFillment: indicatorFillment)
     }
 
     required init?(coder: NSCoder) {
@@ -34,6 +41,14 @@ class CircularView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
+        layer.addSublayer(circleLayer(for: .track))
+        layer.addSublayer(circleLayer(for: .indicator))
+    }
+
+    private func circleLayer(for layer: Layer) -> CAShapeLayer {
+        let fillment = (layer == .track) ? 1.0 : indicatorFillment
+        let color = (layer == .track) ? trackColor : indicatorColor
+
         let circlePath = UIBezierPath(
             arcCenter: CGPoint(x: bounds.maxX, y: bounds.maxY),
             radius: bounds.width - CGFloat(lineWeight) / 2.0,
@@ -48,7 +63,7 @@ class CircularView: UIView {
         circleLayer.strokeColor = color
         circleLayer.lineWidth = CGFloat(lineWeight)
 
-        layer.addSublayer(circleLayer)
+        return circleLayer
     }
 
     private func radians(of degrees: Double) -> Double {

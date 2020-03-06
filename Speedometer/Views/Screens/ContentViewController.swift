@@ -47,7 +47,7 @@ class ContentViewController: UIViewController {
     }
 
     func update(with speedProvidedByDevice: Double, at location: Location) {
-        circularViewController.fillment = unit.calculcateFillment(for: speedProvidedByDevice)
+        circularViewController.indicatorFillment = unit.calculcateFillment(for: speedProvidedByDevice)
         speedViewController.speed = unit.calculateSpeed(for: speedProvidedByDevice)
         speedViewController.unit = unit
         locationViewController.location = location
