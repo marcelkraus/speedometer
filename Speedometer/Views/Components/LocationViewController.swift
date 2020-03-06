@@ -7,6 +7,7 @@ class LocationViewController: UIViewController {
         locationLabel.numberOfLines = 2
         locationLabel.font = .location
         locationLabel.textColor = .location
+        locationLabel.textAlignment = .center
 
         return locationLabel
     }()
