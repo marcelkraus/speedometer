@@ -73,7 +73,14 @@ enum Unit: String, CaseIterable {
             formatter.allowedUnits = [.minute, .second]
             formatter.zeroFormattingBehavior = [.pad]
 
-            return formatter.string(from: speed) ?? "00:00"
+            var string = formatter.string(from: speed) ?? "00:00"
+
+            // Hack to remove the first of two leading zeros for the minute
+            if string.count == 5 && string.first == "0" {
+                string.remove(at: string.startIndex)
+            }
+
+            return string
         }
 
         return String(format: "%.0f", speed)
