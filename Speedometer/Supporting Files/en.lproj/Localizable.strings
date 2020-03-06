@@ -8,7 +8,7 @@
 "Message.LocationAuthorizationStatusRestricted.Heading" = "Okay, Houston, we've had a problem here.";
 "Message.LocationAuthorizationStatusRestricted.Text" = "Please allow access to your location data to use Speedometer\n\nPlease check the following settings:\n\nSettings > Privacy > Location Services > Speedometer > While Using";
 "Message.Onboarding.Heading" = "Hello World!\nThis is Speedometer.";
-"Message.Onboarding.Text" = "Speedometer shows your current speed. Simple, cost-free and without any advertisements.\n\nSpeedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease confirm access within the popup after you tapped the button below.";
+"Message.Onboarding.Text" = "Speedometer shows your current speed. Simple, cost-free and without any advertisements.\n\nSpeedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease confirm access after you tapped the button below.";
 "OnboardingViewController.Button" = "Gotcha, let's go!";
 "SettingsViewController.Imprint.Heading" = "Imprint";
 "SettingsViewController.Imprint.SwipeInfo" = "Swipe Down to Close";
