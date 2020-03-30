@@ -1,10 +1,15 @@
+import StoreKit
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
+    private let inAppPurchaseObserver = StoreObserver()
+
     func applicationDidFinishLaunching(_ application: UIApplication) {
+        SKPaymentQueue.default().add(inAppPurchaseObserver)
+
         setDefaultSettings()
 
         StoreReviewHelper.incrementAppStartCounter()
@@ -16,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .background
         window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
+    }
+
+    func applicationWillTerminate(_ application: UIApplication) {
+        SKPaymentQueue.default().remove(inAppPurchaseObserver)
     }
 }
 
