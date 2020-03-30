@@ -4,6 +4,8 @@ import UIKit
 class TipSelectionViewController: UIViewController {
     private var productRequest: SKProductsRequest!
 
+    private var products: [SKProduct] = []
+
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [activityIndicatorView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -35,13 +37,13 @@ class TipSelectionViewController: UIViewController {
     }
 
     private func requestProductInformation() {
-        let identifiers = Set([
+        let productIdentifiers = Set([
             "de.marcelkraus.speedometer.tip.small",
             "de.marcelkraus.speedometer.tip.medium",
             "de.marcelkraus.speedometer.tip.large"
         ])
 
-        productRequest = SKProductsRequest(productIdentifiers: identifiers)
+        productRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
         productRequest.delegate = self
         productRequest.start()
     }
@@ -51,8 +53,11 @@ class TipSelectionViewController: UIViewController {
         placeholderView.removeFromSuperview()
     }
 
-    @objc private func purchaseProduct() {
-        print("TODO: Purchase Product")
+    @objc private func didTapPurchaseButton(_ sender: UIButton) {
+        let product = products[sender.tag]
+        let payment = SKPayment(product: product)
+
+        SKPaymentQueue.default().add(payment)
     }
 }
 
@@ -65,13 +70,13 @@ extension TipSelectionViewController: SKProductsRequestDelegate {
                 return
             }
 
+            self.removePlaceholderView(placeholderView)
+
             let priceFormatter = NumberFormatter()
             priceFormatter.numberStyle = .currency
 
-            self.removePlaceholderView(placeholderView)
-
-            let products = response.products.sorted(by: { $0.productIdentifier > $1.productIdentifier })
-            for product in products {
+            self.products = response.products.sorted(by: { $0.productIdentifier > $1.productIdentifier })
+            for product in self.products {
                 priceFormatter.locale = product.priceLocale
 
                 let purchaseButton = UIButton()
@@ -81,7 +86,8 @@ extension TipSelectionViewController: SKProductsRequestDelegate {
                 purchaseButton.titleLabel?.textColor = .white
                 purchaseButton.titleLabel?.font = .preferredFont(forTextStyle: .callout)
                 purchaseButton.setTitle(priceFormatter.string(from: product.price), for: .normal)
-                purchaseButton.addTarget(self, action: #selector(self.purchaseProduct), for: .touchUpInside)
+                purchaseButton.addTarget(self, action: #selector(self.didTapPurchaseButton(_:)), for: .touchUpInside)
+                purchaseButton.tag = self.products.firstIndex(of: product)!
 
                 NSLayoutConstraint.activate([
                     purchaseButton.heightAnchor.constraint(equalToConstant: 40),
