@@ -20,7 +20,7 @@ class SettingsViewController: UIViewController {
     }()
 
     private lazy var stackView: UIStackView = {
-        let contentView = UIStackView(arrangedSubviews: [imprintView, swipeInfoLabel])
+        let contentView = UIStackView(arrangedSubviews: [tipJarStackView, imprintView, swipeInfoLabel])
         contentView.axis = .vertical
         contentView.spacing = 40.0
         contentView.alignment = .center
