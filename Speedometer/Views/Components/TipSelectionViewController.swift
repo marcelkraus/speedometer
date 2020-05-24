@@ -27,6 +27,8 @@ class TipSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        PaymentTransactionObserver.sharedInstance.delegate = self
+
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -103,5 +105,23 @@ extension TipSelectionViewController: SKProductsRequestDelegate {
                 self.stackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
             ])
         }
+    }
+}
+
+extension TipSelectionViewController: PaymentTransactionObserverDelegate {
+    func showTransactionAsInProgress(_ transaction: SKPaymentTransaction, deferred: Bool) {
+        print("[TODO] Show transaction as in progress")
+    }
+
+    func completeTransaction(_ transaction: SKPaymentTransaction) {
+        print("[TODO] Handle completion of transaction")
+
+        SKPaymentQueue.default().finishTransaction(transaction)
+    }
+
+    func failedTransaction(_ transaction: SKPaymentTransaction) {
+        print("[TODO] Handle failed transaction")
+
+        SKPaymentQueue.default().finishTransaction(transaction)
     }
 }

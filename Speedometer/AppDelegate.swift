@@ -5,10 +5,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    private let inAppPurchaseObserver = StoreObserver()
-
     func applicationDidFinishLaunching(_ application: UIApplication) {
-        SKPaymentQueue.default().add(inAppPurchaseObserver)
+        PaymentTransactionObserver.sharedInstance.register()
 
         setDefaultSettings()
 
@@ -24,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        SKPaymentQueue.default().remove(inAppPurchaseObserver)
+        PaymentTransactionObserver.sharedInstance.deregister()
     }
 }
 
