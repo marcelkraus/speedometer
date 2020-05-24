@@ -8,96 +8,98 @@ class SettingsViewController: UIViewController {
         separatorView.layer.cornerRadius = 10.0
         separatorView.layer.masksToBounds = true
 
-        view.addSubview(separatorView)
-        NSLayoutConstraint.activate([
-            separatorView.heightAnchor.constraint(equalToConstant: 20.0),
-            separatorView.widthAnchor.constraint(equalToConstant: 170.0),
-            separatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -30.0),
-            separatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0)
-        ])
-
         return separatorView
     }()
 
     private lazy var stackView: UIStackView = {
-        let contentView = UIStackView(arrangedSubviews: [tipJarStackView, imprintView, swipeInfoLabel])
-        contentView.axis = .vertical
-        contentView.spacing = 40.0
-        contentView.alignment = .center
+        addChild(imprintViewController)
+        imprintViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-        return contentView
+        let stackView = UIStackView(arrangedSubviews: [imprintViewController.view, tipJarStackView, swipeInfoLabel])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 40.0
+
+        imprintViewController.didMove(toParent: self)
+
+        return stackView
     }()
 
-    private lazy var tipJarIntroductionView: UIView = {
-        let tipJarIntroductionViewController = ParagraphViewController(heading: "SettingsViewController.TipJar.Heading".localized, text: "SettingsViewController.TipJar.Text".localized)
-        addChild(tipJarIntroductionViewController)
-
-        return tipJarIntroductionViewController.view!
+    private lazy var tipJarIntroductionViewController: UIViewController = {
+        return ParagraphViewController(heading: "SettingsViewController.TipJar.Heading".localized, text: "SettingsViewController.TipJar.Text".localized)
     }()
 
-    private lazy var tipJarButtonStackView: UIView = {
-        let tipJarButtonStackView = TipSelectionViewController()
-        addChild(tipJarButtonStackView)
-
-        return tipJarButtonStackView.view!
+    private lazy var tipJarButtonStackViewController: UIViewController = {
+        return TipSelectionViewController()
     }()
 
     private lazy var tipJarStackView: UIStackView = {
-        let tipJarStackView = UIStackView()
+        addChild(tipJarIntroductionViewController)
+        tipJarIntroductionViewController.view.translatesAutoresizingMaskIntoConstraints = false
+
+        addChild(tipJarButtonStackViewController)
+        tipJarButtonStackViewController.view.translatesAutoresizingMaskIntoConstraints = false
+
+        let tipJarStackView = UIStackView(arrangedSubviews: [tipJarIntroductionViewController.view, tipJarButtonStackViewController.view])
+        tipJarStackView.translatesAutoresizingMaskIntoConstraints = false
         tipJarStackView.axis = .vertical
         tipJarStackView.spacing = 20.0
-        tipJarStackView.addArrangedSubview(tipJarIntroductionView)
-        tipJarStackView.addArrangedSubview(tipJarButtonStackView)
+
+        tipJarIntroductionViewController.didMove(toParent: self)
+        tipJarButtonStackViewController.didMove(toParent: self)
 
         return tipJarStackView
     }()
 
-    private lazy var imprintView: UIView = {
-        let imprintViewController = ParagraphViewController(heading: "SettingsViewController.Imprint.Heading".localized, text: String(format: "SettingsViewController.Imprint.Text".localized, versionNumber, buildNumber))
-        addChild(imprintViewController)
-
-        return imprintViewController.view!
+    private lazy var imprintViewController: UIViewController = {
+        return ParagraphViewController(heading: "SettingsViewController.Imprint.Heading".localized, text: String(format: "SettingsViewController.Imprint.Text".localized, versionNumber, buildNumber))
     }()
 
     private lazy var swipeInfoLabel: UILabel = {
         let swipeInfoLabel = UILabel()
-        swipeInfoLabel.text = "↓ " + "SettingsViewController.Imprint.SwipeInfo".localized + " ↓"
+        swipeInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         swipeInfoLabel.font = .swipeInfo
         swipeInfoLabel.textColor = .swipeInfo
+        swipeInfoLabel.textAlignment = .center
+        swipeInfoLabel.text = "↓ " + "SettingsViewController.Imprint.SwipeInfo".localized + " ↓"
 
         return swipeInfoLabel
+    }()
+
+    private lazy var impactGenerator: UIImpactFeedbackGenerator = {
+        return UIImpactFeedbackGenerator(style: .medium)
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        presentationController?.delegate = self
+
+        view.backgroundColor = .white
+        view.addSubview(separatorView)
         view.addSubview(stackView)
 
+        separatorView.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+            separatorView.heightAnchor.constraint(equalToConstant: 20.0),
+            separatorView.widthAnchor.constraint(equalToConstant: 170.0),
+            separatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -30.0),
+            separatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0),
             stackView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
         ])
     }
-
-    override func loadView() {
-        let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(dismissSettings))
-        gestureRecognizer.direction = .down
-
-        view = UIView()
-        view.backgroundColor = .white
-        view.addGestureRecognizer(gestureRecognizer)
-    }
 }
 
-@objc private extension SettingsViewController {
-    func dismissSettings() {
-        let impactGenerator = UIImpactFeedbackGenerator(style: .medium)
+extension SettingsViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
         impactGenerator.prepare()
-        impactGenerator.impactOccurred()
+    }
 
-        presentingViewController?.dismiss(animated: true, completion: nil)
+    func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
+        impactGenerator.impactOccurred()
     }
 }
 
