@@ -2,12 +2,14 @@ import StoreKit
 import UIKit
 
 class TipSelectionViewController: UIViewController {
+    private let priceFormatter = NumberFormatter()
+
     private var productRequest: SKProductsRequest!
 
     private var products: [SKProduct] = []
 
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [activityIndicatorView])
+        let stackView = UIStackView(arrangedSubviews: [placeholderView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 20.0
         stackView.distribution = .fillEqually
@@ -16,12 +18,23 @@ class TipSelectionViewController: UIViewController {
         return stackView
     }()
 
-    private lazy var activityIndicatorView: UIActivityIndicatorView = {
-        let activityIndicatorView = UIActivityIndicatorView()
-        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicatorView.startAnimating()
+    private lazy var placeholderView: UIActivityIndicatorView = {
+        let placeholderView = UIActivityIndicatorView()
+        placeholderView.translatesAutoresizingMaskIntoConstraints = false
+        placeholderView.startAnimating()
 
-        return activityIndicatorView
+        return placeholderView
+    }()
+
+    private lazy var noProductsLabel: UILabel = {
+        let noProductsLabel = UILabel()
+        noProductsLabel.translatesAutoresizingMaskIntoConstraints = false
+        noProductsLabel.font = .text
+        noProductsLabel.textColor = .branding
+        noProductsLabel.numberOfLines = 0
+        noProductsLabel.text = "TipSelectionViewController.FallbackMessage".localized
+
+        return noProductsLabel
     }()
 
     override func viewDidLoad() {
@@ -31,8 +44,10 @@ class TipSelectionViewController: UIViewController {
 
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackView.topAnchor.constraint(equalTo: view.topAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
         ])
 
         requestProductInformation()
@@ -50,9 +65,19 @@ class TipSelectionViewController: UIViewController {
         productRequest.start()
     }
 
-    private func removePlaceholderView(_ placeholderView: UIView) {
+    private func replacePlaceholderView(with views: [UIView]) {
+        guard let placeholderView = stackView.arrangedSubviews.first, placeholderView is UIActivityIndicatorView else {
+            return
+        }
+
         stackView.removeArrangedSubview(placeholderView)
         placeholderView.removeFromSuperview()
+
+        for view in views {
+            stackView.addArrangedSubview(view)
+        }
+
+        view.setNeedsDisplay()
     }
 
     @objc private func didTapPurchaseButton(_ sender: UIButton) {
@@ -67,19 +92,18 @@ class TipSelectionViewController: UIViewController {
 
 extension TipSelectionViewController: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            guard response.products.count > 0, let placeholderView = self.stackView.arrangedSubviews.first else {
+        DispatchQueue.main.asyncAfter(deadline: .now()) { [unowned self] in
+            guard response.products.count > 0 else {
+                self.replacePlaceholderView(with: [self.noProductsLabel])
                 return
             }
 
-            self.removePlaceholderView(placeholderView)
-
-            let priceFormatter = NumberFormatter()
-            priceFormatter.numberStyle = .currency
-
+            var purchaseButtons: [UIView] = []
             self.products = response.products.sorted(by: { $0.productIdentifier > $1.productIdentifier })
+            self.priceFormatter.numberStyle = .currency
+
             for product in self.products {
-                priceFormatter.locale = product.priceLocale
+                self.priceFormatter.locale = product.priceLocale
 
                 let purchaseButton = UIButton()
                 purchaseButton.layer.cornerRadius = 20.0
@@ -87,7 +111,7 @@ extension TipSelectionViewController: SKProductsRequestDelegate {
                 purchaseButton.titleLabel?.textAlignment = .center
                 purchaseButton.titleLabel?.textColor = .white
                 purchaseButton.titleLabel?.font = .preferredFont(forTextStyle: .callout)
-                purchaseButton.setTitle(priceFormatter.string(from: product.price), for: .normal)
+                purchaseButton.setTitle(self.priceFormatter.string(from: product.price), for: .normal)
                 purchaseButton.addTarget(self, action: #selector(self.didTapPurchaseButton(_:)), for: .touchUpInside)
                 purchaseButton.tag = self.products.firstIndex(of: product)!
 
@@ -95,15 +119,10 @@ extension TipSelectionViewController: SKProductsRequestDelegate {
                     purchaseButton.heightAnchor.constraint(equalToConstant: 40),
                 ])
 
-                self.stackView.addArrangedSubview(purchaseButton)
+                purchaseButtons.append(purchaseButton)
             }
 
-            NSLayoutConstraint.activate([
-                self.stackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-                self.stackView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
-                self.stackView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
-                self.stackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
-            ])
+            self.replacePlaceholderView(with: purchaseButtons)
         }
     }
 }

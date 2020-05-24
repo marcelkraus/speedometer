@@ -16,3 +16,4 @@
 "SettingsViewController.TipJar.Heading" = "Trinkgeld-Box";
 "SettingsViewController.TipJar.Text" = "Mein Versprechen: Tacho bleibt einfach, kostenlos und werbefrei.\n\Solltest du mit der App aber besonders zufrieden sein, würde ich mich sehr freuen, wenn du mir etwas Trinkgeld gibst. Vielen Dank! :)";
 "SpeedometerViewController.SwipeInfo" = "Runter wischen für nächste Einheit";
+"TipSelectionViewController.FallbackMessage" = "Oh oh, da klemmt etwas! Zur Zeit stehen keine Produkte zum Kauf zur Verfügung - bitte probiere es später erneut. Vielen Dank!";

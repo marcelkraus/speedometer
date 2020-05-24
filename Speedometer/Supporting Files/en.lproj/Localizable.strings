@@ -16,3 +16,4 @@
 "SettingsViewController.TipJar.Heading" = "Tip Jar";
 "SettingsViewController.TipJar.Text" = "My promise: Tacho stays simple, cost-free and without any advertisements.\n\nIf you are satisfied with the app, I would appreciate if you give me a small tip. Thanks! :)";
 "SpeedometerViewController.SwipeInfo" = "Swipe Down for Next Unit";
+"TipSelectionViewController.FallbackMessage" = "Uh, there is something wrong! There are no products available at the moment, please try again later. Thank you!";
