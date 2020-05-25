@@ -27,14 +27,14 @@ class PaymentTransactionObserver: NSObject {
 extension PaymentTransactionObserver: SKPaymentTransactionObserver {
     public func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
-            verifyDelegate(for: transaction)
-
             switch transaction.transactionState {
             case .purchasing:
                 delegate?.showTransactionAsInProgress(transaction, deferred: false)
             case .purchased:
+                SKPaymentQueue.default().finishTransaction(transaction)
                 delegate?.completeTransaction(transaction)
             case .failed:
+                SKPaymentQueue.default().finishTransaction(transaction)
                 delegate?.failedTransaction(transaction)
             case .restored:
                 SKPaymentQueue.default().finishTransaction(transaction)
@@ -48,17 +48,5 @@ extension PaymentTransactionObserver: SKPaymentTransactionObserver {
 
     func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
         return true
-    }
-
-    private func verifyDelegate(for transaction: SKPaymentTransaction) {
-        guard delegate != nil else {
-            if transaction.transactionState == .purchased, transaction.transactionState == .failed {
-                SKPaymentQueue.default().finishTransaction(transaction)
-            }
-
-            fatalError("[Error] To handle transaction states, you have to set the `PaymentTransactionObserverDelegate` first")
-        }
-
-        return
     }
 }
