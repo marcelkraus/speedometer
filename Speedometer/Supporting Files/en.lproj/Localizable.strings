@@ -14,6 +14,7 @@
 "SettingsViewController.Imprint.SwipeInfo" = "Swipe Down to Close";
 "SettingsViewController.Imprint.Text" = "Speedometer is a project of:\n\nMarcel Kraus\nBonner Straße 88\nD-50374 Erftstadt\nGermany\nwww.marcelkraus.de\n\nApp version: v%@:%@. Some parts of the app icon was designed by Freepik/Flaticon.\n\nMany Thanks to Manuela, Marc, Thomas and all beta testers! ♡";
 "SettingsViewController.TipJar.Heading" = "Tip Jar";
-"SettingsViewController.TipJar.Text" = "My promise: nSpeedometer stays simple, cost-free and without any advertisements.\n\nIf you are satisfied with the app, I would appreciate if you give me a small tip. Thanks! :)";
+"SettingsViewController.TipJar.Text" = "My promise: Speedometer stays simple, cost-free and without any advertisements.\n\nIf you are satisfied with the app, I would appreciate if you give me a small tip. Thanks! :)";
 "SpeedometerViewController.SwipeInfo" = "Swipe Down for Next Unit";
 "TipSelectionViewController.FallbackMessage" = "Uh, there is something wrong! There are no products available at the moment, please try again later. Thank you!";
+"TipSelectionViewController.LoadingMessage" = "Loading products…";

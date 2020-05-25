@@ -2,7 +2,12 @@ import StoreKit
 import UIKit
 
 class TipSelectionViewController: UIViewController {
-    private let priceFormatter = NumberFormatter()
+    private lazy var priceFormatter: NumberFormatter = {
+        let priceFormatter = NumberFormatter()
+        priceFormatter.numberStyle = .currency
+
+        return priceFormatter
+    }()
 
     private var productRequest: SKProductsRequest!
 
@@ -13,15 +18,33 @@ class TipSelectionViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 20.0
         stackView.distribution = .fillEqually
-        stackView.alignment = .center
 
         return stackView
     }()
 
-    private lazy var placeholderView: UIActivityIndicatorView = {
-        let placeholderView = UIActivityIndicatorView()
-        placeholderView.translatesAutoresizingMaskIntoConstraints = false
-        placeholderView.startAnimating()
+    private lazy var placeholderView: UIView = {
+        let activityIndicatorView = UIActivityIndicatorView()
+        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicatorView.color = .activityIndicator
+        activityIndicatorView.startAnimating()
+
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .text
+        label.textColor = .activityIndicator
+        label.text = "TipSelectionViewController.LoadingMessage".localized
+
+        let placeholderView = UIView()
+        placeholderView.addSubview(activityIndicatorView)
+        placeholderView.addSubview(label)
+        NSLayoutConstraint.activate([
+            activityIndicatorView.topAnchor.constraint(equalTo: placeholderView.topAnchor),
+            activityIndicatorView.leadingAnchor.constraint(equalTo: placeholderView.leadingAnchor),
+            label.leadingAnchor.constraint(equalTo: activityIndicatorView.trailingAnchor, constant: 5.0),
+            label.trailingAnchor.constraint(equalTo: placeholderView.trailingAnchor),
+            activityIndicatorView.bottomAnchor.constraint(equalTo: placeholderView.bottomAnchor),
+            activityIndicatorView.centerYAnchor.constraint(equalTo: label.centerYAnchor),
+        ])
 
         return placeholderView
     }()
@@ -66,25 +89,41 @@ class TipSelectionViewController: UIViewController {
     }
 
     private func replacePlaceholderView(with views: [UIView]) {
-        guard let placeholderView = stackView.arrangedSubviews.first, placeholderView is UIActivityIndicatorView else {
+        guard stackView.arrangedSubviews.count == 1, let placeholderView = stackView.arrangedSubviews.first else {
             return
         }
 
         stackView.removeArrangedSubview(placeholderView)
         placeholderView.removeFromSuperview()
 
-        for view in views {
-            stackView.addArrangedSubview(view)
+        views.forEach {
+            stackView.addArrangedSubview($0)
         }
 
         view.setNeedsDisplay()
     }
 
-    @objc private func didTapPurchaseButton(_ sender: UIButton) {
+    @objc private func didTapButton(_ sender: UIButton) {
         let product = products[sender.tag]
         let payment = SKPayment(product: product)
 
         SKPaymentQueue.default().add(payment)
+    }
+
+    private func button(for product: SKProduct) -> UIButton {
+        priceFormatter.locale = product.priceLocale
+
+        let button = UIButton()
+        button.layer.cornerRadius = 20.0
+        button.backgroundColor = .branding
+        button.titleLabel?.textAlignment = .center
+        button.titleLabel?.textColor = .white
+        button.titleLabel?.font = .preferredFont(forTextStyle: .callout)
+        button.setTitle(priceFormatter.string(from: product.price), for: .normal)
+        button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
+        button.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+
+        return button
     }
 }
 
@@ -98,31 +137,16 @@ extension TipSelectionViewController: SKProductsRequestDelegate {
                 return
             }
 
-            var purchaseButtons: [UIView] = []
             self.products = response.products.sorted(by: { $0.productIdentifier > $1.productIdentifier })
-            self.priceFormatter.numberStyle = .currency
 
+            var buttons: [UIView] = []
             for product in self.products {
-                self.priceFormatter.locale = product.priceLocale
-
-                let purchaseButton = UIButton()
-                purchaseButton.layer.cornerRadius = 20.0
-                purchaseButton.backgroundColor = .branding
-                purchaseButton.titleLabel?.textAlignment = .center
-                purchaseButton.titleLabel?.textColor = .white
-                purchaseButton.titleLabel?.font = .preferredFont(forTextStyle: .callout)
-                purchaseButton.setTitle(self.priceFormatter.string(from: product.price), for: .normal)
-                purchaseButton.addTarget(self, action: #selector(self.didTapPurchaseButton(_:)), for: .touchUpInside)
-                purchaseButton.tag = self.products.firstIndex(of: product)!
-
-                NSLayoutConstraint.activate([
-                    purchaseButton.heightAnchor.constraint(equalToConstant: 40),
-                ])
-
-                purchaseButtons.append(purchaseButton)
+                let button = self.button(for: product)
+                button.tag = self.products.firstIndex(of: product)!
+                buttons.append(button)
             }
 
-            self.replacePlaceholderView(with: purchaseButtons)
+            self.replacePlaceholderView(with: buttons)
         }
     }
 }
