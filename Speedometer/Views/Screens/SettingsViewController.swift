@@ -1,6 +1,48 @@
+import StoreKit
 import UIKit
 
 class SettingsViewController: UIViewController {
+    private lazy var overlayView: UIView = {
+        let backgroundView = UIView()
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.backgroundColor = UIColor(white: 1, alpha: 0.9)
+
+        let canvasView = UIView()
+        canvasView.translatesAutoresizingMaskIntoConstraints = false
+        canvasView.backgroundColor = .branding
+        canvasView.layer.masksToBounds = true
+        canvasView.layer.cornerRadius = 60.0
+        canvasView.heightAnchor.constraint(equalToConstant: 120.0).isActive = true
+        canvasView.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
+
+        let activityIndicatorView = UIActivityIndicatorView()
+        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicatorView.style = .whiteLarge
+        activityIndicatorView.startAnimating()
+        activityIndicatorView.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
+        activityIndicatorView.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .heading
+        label.textColor = .branding
+        label.text = "Bitte warten…"
+
+        canvasView.addSubview(activityIndicatorView)
+        backgroundView.addSubview(canvasView)
+        backgroundView.addSubview(label)
+        NSLayoutConstraint.activate([
+            canvasView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
+            canvasView.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor, constant: (label.intrinsicContentSize.height + 20.0) * -1),
+            activityIndicatorView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor),
+            activityIndicatorView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor),
+            label.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
+            label.topAnchor.constraint(equalTo: canvasView.bottomAnchor, constant: 20.0),
+        ])
+
+        return backgroundView
+    }()
+
     private lazy var separatorView: UIView = {
         let separatorView = UIView()
         separatorView.translatesAutoresizingMaskIntoConstraints = false
@@ -73,6 +115,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        PaymentTransactionObserver.sharedInstance.delegate = self
         presentationController?.delegate = self
 
         view.backgroundColor = .white
@@ -90,6 +133,41 @@ class SettingsViewController: UIViewController {
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
         ])
+    }
+
+    func blockView() {
+        view.addSubview(overlayView)
+        NSLayoutConstraint.activate([
+            overlayView.topAnchor.constraint(equalTo: view.topAnchor),
+            overlayView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            overlayView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            overlayView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+        ])
+    }
+
+    func unblockView() {
+        overlayView.removeFromSuperview()
+    }
+}
+
+extension SettingsViewController: PaymentTransactionObserverDelegate {
+    func showTransactionAsInProgress(_ transaction: SKPaymentTransaction, deferred: Bool) {
+        blockView()
+        print("[TODO] Show transaction as in progress")
+    }
+
+    func completeTransaction(_ transaction: SKPaymentTransaction) {
+        SKPaymentQueue.default().finishTransaction(transaction)
+
+        unblockView()
+        print("[TODO] Handle completion of transaction")
+    }
+
+    func failedTransaction(_ transaction: SKPaymentTransaction) {
+        SKPaymentQueue.default().finishTransaction(transaction)
+
+        unblockView()
+        print("[TODO] Handle failed transaction")
     }
 }
 

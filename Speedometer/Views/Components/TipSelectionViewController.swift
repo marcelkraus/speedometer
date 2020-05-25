@@ -63,8 +63,6 @@ class TipSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        PaymentTransactionObserver.sharedInstance.delegate = self
-
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -113,9 +111,10 @@ class TipSelectionViewController: UIViewController {
     private func button(for product: SKProduct) -> UIButton {
         priceFormatter.locale = product.priceLocale
 
-        let button = UIButton()
+        let button = UIButton(type: .custom)
         button.layer.cornerRadius = 20.0
         button.backgroundColor = .branding
+        button.setTitleColor(UIColor(red: 192.0, green: 192.0, blue: 192.0, alpha: 1.0), for: .highlighted)
         button.titleLabel?.textAlignment = .center
         button.titleLabel?.textColor = .white
         button.titleLabel?.font = .preferredFont(forTextStyle: .callout)
@@ -148,23 +147,5 @@ extension TipSelectionViewController: SKProductsRequestDelegate {
 
             self.replacePlaceholderView(with: buttons)
         }
-    }
-}
-
-extension TipSelectionViewController: PaymentTransactionObserverDelegate {
-    func showTransactionAsInProgress(_ transaction: SKPaymentTransaction, deferred: Bool) {
-        print("[TODO] Show transaction as in progress")
-    }
-
-    func completeTransaction(_ transaction: SKPaymentTransaction) {
-        print("[TODO] Handle completion of transaction")
-
-        SKPaymentQueue.default().finishTransaction(transaction)
-    }
-
-    func failedTransaction(_ transaction: SKPaymentTransaction) {
-        print("[TODO] Handle failed transaction")
-
-        SKPaymentQueue.default().finishTransaction(transaction)
     }
 }
