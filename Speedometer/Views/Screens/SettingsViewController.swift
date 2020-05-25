@@ -11,33 +11,31 @@ class SettingsViewController: UIViewController {
         canvasView.translatesAutoresizingMaskIntoConstraints = false
         canvasView.backgroundColor = .branding
         canvasView.layer.masksToBounds = true
-        canvasView.layer.cornerRadius = 60.0
-        canvasView.heightAnchor.constraint(equalToConstant: 120.0).isActive = true
-        canvasView.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
+        canvasView.layer.cornerRadius = 20.0
+        canvasView.widthAnchor.constraint(equalToConstant: 200).isActive = true
 
         let activityIndicatorView = UIActivityIndicatorView()
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
         activityIndicatorView.style = .whiteLarge
         activityIndicatorView.startAnimating()
-        activityIndicatorView.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
-        activityIndicatorView.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
 
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .heading
-        label.textColor = .branding
+        label.textColor = .white
         label.text = "Bitte warten…"
 
         canvasView.addSubview(activityIndicatorView)
+        canvasView.addSubview(label)
         backgroundView.addSubview(canvasView)
-        backgroundView.addSubview(label)
         NSLayoutConstraint.activate([
             canvasView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
-            canvasView.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor, constant: (label.intrinsicContentSize.height + 20.0) * -1),
+            canvasView.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor),
+            activityIndicatorView.topAnchor.constraint(equalTo: canvasView.topAnchor, constant: 20.0),
             activityIndicatorView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor),
-            activityIndicatorView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor),
-            label.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
-            label.topAnchor.constraint(equalTo: canvasView.bottomAnchor, constant: 20.0),
+            label.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor),
+            label.topAnchor.constraint(equalTo: activityIndicatorView.bottomAnchor, constant: 20.0),
+            label.bottomAnchor.constraint(equalTo: canvasView.bottomAnchor, constant: -20.0),
         ])
 
         return backgroundView
