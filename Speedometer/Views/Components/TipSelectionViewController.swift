@@ -1,7 +1,15 @@
 import StoreKit
 import UIKit
 
+protocol TipSelectionViewControllerDelegate: class {
+    func tipSelectionViewControllerWillPurchaseProduct(_ tipSelectionViewController: TipSelectionViewController)
+    func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: TipSelectionViewController)
+    func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: TipSelectionViewController)
+}
+
 class TipSelectionViewController: UIViewController {
+    weak var delegate: TipSelectionViewControllerDelegate?
+
     private lazy var priceFormatter: NumberFormatter = {
         let priceFormatter = NumberFormatter()
         priceFormatter.numberStyle = .currency
@@ -63,6 +71,8 @@ class TipSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        PaymentTransactionObserver.sharedInstance.delegate = self
+
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -123,6 +133,26 @@ class TipSelectionViewController: UIViewController {
         button.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
 
         return button
+    }
+}
+
+// - MARK: PaymentTransactionObserverDelegate
+
+extension TipSelectionViewController: PaymentTransactionObserverDelegate {
+    func showTransactionAsInProgress(_ transaction: SKPaymentTransaction, deferred: Bool) {
+        delegate?.tipSelectionViewControllerWillPurchaseProduct(self)
+    }
+
+    func completeTransaction(_ transaction: SKPaymentTransaction) {
+        SKPaymentQueue.default().finishTransaction(transaction)
+
+        delegate?.tipSelectionViewControllerDidPurchaseProduct(self)
+    }
+
+    func failedTransaction(_ transaction: SKPaymentTransaction) {
+        SKPaymentQueue.default().finishTransaction(transaction)
+
+        delegate?.tipSelectionViewControllerCouldNotPurchaseProduct(self)
     }
 }
 

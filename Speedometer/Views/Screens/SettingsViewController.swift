@@ -1,4 +1,3 @@
-import StoreKit
 import UIKit
 
 class SettingsViewController: UIViewController {
@@ -70,7 +69,10 @@ class SettingsViewController: UIViewController {
     }()
 
     private lazy var tipJarButtonStackViewController: UIViewController = {
-        return TipSelectionViewController()
+        let tipSelectionViewController = TipSelectionViewController()
+        tipSelectionViewController.delegate = self
+
+        return tipSelectionViewController
     }()
 
     private lazy var tipJarStackView: UIStackView = {
@@ -113,7 +115,6 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        PaymentTransactionObserver.sharedInstance.delegate = self
         presentationController?.delegate = self
 
         view.backgroundColor = .white
@@ -132,8 +133,23 @@ class SettingsViewController: UIViewController {
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
         ])
     }
+}
 
-    func blockView() {
+extension SettingsViewController: TipSelectionViewControllerDelegate {
+    func tipSelectionViewControllerWillPurchaseProduct(_ tipSelectionViewController: TipSelectionViewController) {
+        blockUi()
+    }
+
+    func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: TipSelectionViewController) {
+        print("[TODO] Show nice confirmation message")
+        unblockUi()
+    }
+
+    func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: TipSelectionViewController) {
+        unblockUi()
+    }
+
+    private func blockUi() {
         view.addSubview(overlayView)
         NSLayoutConstraint.activate([
             overlayView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -143,29 +159,8 @@ class SettingsViewController: UIViewController {
         ])
     }
 
-    func unblockView() {
+    private func unblockUi() {
         overlayView.removeFromSuperview()
-    }
-}
-
-extension SettingsViewController: PaymentTransactionObserverDelegate {
-    func showTransactionAsInProgress(_ transaction: SKPaymentTransaction, deferred: Bool) {
-        blockView()
-        print("[TODO] Show transaction as in progress")
-    }
-
-    func completeTransaction(_ transaction: SKPaymentTransaction) {
-        SKPaymentQueue.default().finishTransaction(transaction)
-
-        unblockView()
-        print("[TODO] Handle completion of transaction")
-    }
-
-    func failedTransaction(_ transaction: SKPaymentTransaction) {
-        SKPaymentQueue.default().finishTransaction(transaction)
-
-        unblockView()
-        print("[TODO] Handle failed transaction")
     }
 }
 
