@@ -40,6 +40,10 @@ class SettingsViewController: UIViewController {
         return backgroundView
     }()
 
+    private lazy var impactGenerator: UIImpactFeedbackGenerator = {
+        return UIImpactFeedbackGenerator(style: .medium)
+    }()
+
     private lazy var separatorView: UIView = {
         let separatorView = UIView()
         separatorView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,51 +54,15 @@ class SettingsViewController: UIViewController {
         return separatorView
     }()
 
-    private lazy var stackView: UIStackView = {
-        addChild(imprintViewController)
-        imprintViewController.view.translatesAutoresizingMaskIntoConstraints = false
-
-        let stackView = UIStackView(arrangedSubviews: [imprintViewController.view, tipJarStackView, swipeInfoLabel])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 40.0
-
-        imprintViewController.didMove(toParent: self)
-
-        return stackView
-    }()
-
-    private lazy var tipJarIntroductionViewController: UIViewController = {
-        return ParagraphViewController(heading: "SettingsViewController.TipJar.Heading".localized, text: "SettingsViewController.TipJar.Text".localized)
-    }()
-
-    private lazy var tipJarButtonStackViewController: UIViewController = {
-        let tipSelectionViewController = TipSelectionViewController()
-        tipSelectionViewController.delegate = self
-
-        return tipSelectionViewController
-    }()
-
-    private lazy var tipJarStackView: UIStackView = {
-        addChild(tipJarIntroductionViewController)
-        tipJarIntroductionViewController.view.translatesAutoresizingMaskIntoConstraints = false
-
-        addChild(tipJarButtonStackViewController)
-        tipJarButtonStackViewController.view.translatesAutoresizingMaskIntoConstraints = false
-
-        let tipJarStackView = UIStackView(arrangedSubviews: [tipJarIntroductionViewController.view, tipJarButtonStackViewController.view])
-        tipJarStackView.translatesAutoresizingMaskIntoConstraints = false
-        tipJarStackView.axis = .vertical
-        tipJarStackView.spacing = 20.0
-
-        tipJarIntroductionViewController.didMove(toParent: self)
-        tipJarButtonStackViewController.didMove(toParent: self)
-
-        return tipJarStackView
-    }()
-
     private lazy var imprintViewController: UIViewController = {
         return ParagraphViewController(heading: "SettingsViewController.Imprint.Heading".localized, text: String(format: "SettingsViewController.Imprint.Text".localized, versionNumber, buildNumber))
+    }()
+
+    private lazy var tipJarViewController: UIViewController = {
+        let tipJarViewController = TipJarViewController()
+        tipJarViewController.delegate = self
+
+        return tipJarViewController
     }()
 
     private lazy var swipeInfoLabel: UILabel = {
@@ -108,8 +76,22 @@ class SettingsViewController: UIViewController {
         return swipeInfoLabel
     }()
 
-    private lazy var impactGenerator: UIImpactFeedbackGenerator = {
-        return UIImpactFeedbackGenerator(style: .medium)
+    private lazy var stackView: UIStackView = {
+        addChild(imprintViewController)
+        imprintViewController.view.translatesAutoresizingMaskIntoConstraints = false
+
+        addChild(tipJarViewController)
+        tipJarViewController.view.translatesAutoresizingMaskIntoConstraints = false
+
+        let stackView = UIStackView(arrangedSubviews: [imprintViewController.view, tipJarViewController.view, swipeInfoLabel])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 40.0
+
+        imprintViewController.didMove(toParent: self)
+        tipJarViewController.didMove(toParent: self)
+
+        return stackView
     }()
 
     override func viewDidLoad() {
@@ -135,24 +117,25 @@ class SettingsViewController: UIViewController {
     }
 }
 
-extension SettingsViewController: TipSelectionViewControllerDelegate {
-    func tipSelectionViewControllerWillPurchaseProduct(_ tipSelectionViewController: TipSelectionViewController) {
+extension SettingsViewController: TipJarViewControllerDelegate {
+    func tipSelectionViewControllerWillPurchaseProduct(_ tipSelectionViewController: TipJarViewController) {
         blockUi()
     }
 
-    func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: TipSelectionViewController) {
+    func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: TipJarViewController) {
         showConfirmationMessage()
         unblockUi()
     }
 
-    func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: TipSelectionViewController) {
+    func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: TipJarViewController) {
         unblockUi()
     }
 
     private func showConfirmationMessage() {
-        let okAction = UIAlertAction(title: "SettingsViewController.TipJar.SuccessAlert.Button".localized, style: .default, handler: nil)
-        let alertViewController = UIAlertController(title: "SettingsViewController.TipJar.SuccessAlert.Title".localized, message: "SettingsViewController.TipJar.SuccessAlert.Message".localized, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "SettingsViewController.TipConfirmationButton".localized, style: .default, handler: nil)
+        let alertViewController = UIAlertController(title: "SettingsViewController.TipConfirmationTitle".localized, message: "SettingsViewController.TipConfirmationMessage".localized, preferredStyle: .alert)
         alertViewController.addAction(okAction)
+        alertViewController.view.tintColor = .branding
 
         present(alertViewController, animated: true, completion: nil)
     }

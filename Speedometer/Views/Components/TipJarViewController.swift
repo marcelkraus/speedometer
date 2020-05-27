@@ -1,14 +1,18 @@
 import StoreKit
 import UIKit
 
-protocol TipSelectionViewControllerDelegate: class {
-    func tipSelectionViewControllerWillPurchaseProduct(_ tipSelectionViewController: TipSelectionViewController)
-    func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: TipSelectionViewController)
-    func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: TipSelectionViewController)
+protocol TipJarViewControllerDelegate: class {
+    func tipSelectionViewControllerWillPurchaseProduct(_ tipSelectionViewController: TipJarViewController)
+    func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: TipJarViewController)
+    func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: TipJarViewController)
 }
 
-class TipSelectionViewController: UIViewController {
-    weak var delegate: TipSelectionViewControllerDelegate?
+class TipJarViewController: UIViewController {
+    private var products: [SKProduct] = []
+
+    weak var delegate: TipJarViewControllerDelegate?
+
+    private var productRequest: SKProductsRequest!
 
     private lazy var priceFormatter: NumberFormatter = {
         let priceFormatter = NumberFormatter()
@@ -17,20 +21,7 @@ class TipSelectionViewController: UIViewController {
         return priceFormatter
     }()
 
-    private var productRequest: SKProductsRequest!
-
-    private var products: [SKProduct] = []
-
-    private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [placeholderView])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 20.0
-        stackView.distribution = .fillEqually
-
-        return stackView
-    }()
-
-    private lazy var placeholderView: UIView = {
+    private lazy var loadingProductsView: UIView = {
         let activityIndicatorView = UIActivityIndicatorView()
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
         activityIndicatorView.color = .activityIndicator
@@ -40,7 +31,7 @@ class TipSelectionViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .text
         label.textColor = .activityIndicator
-        label.text = "TipSelectionViewController.LoadingMessage".localized
+        label.text = "TipJarViewController.LoadingMessage".localized
 
         let placeholderView = UIView()
         placeholderView.addSubview(activityIndicatorView)
@@ -63,9 +54,46 @@ class TipSelectionViewController: UIViewController {
         noProductsLabel.font = .text
         noProductsLabel.textColor = .branding
         noProductsLabel.numberOfLines = 0
-        noProductsLabel.text = "TipSelectionViewController.FallbackMessage".localized
+        noProductsLabel.text = "TipJarViewController.FallbackMessage".localized
 
         return noProductsLabel
+    }()
+
+    private lazy var introductionViewController: UIViewController = {
+        return ParagraphViewController(heading: "TipJarViewController.Heading".localized, text: "TipJarViewController.Description".localized)
+    }()
+
+    private lazy var buttonsStackView: UIStackView = {
+        let buttonsStackView = UIStackView(arrangedSubviews: [loadingProductsView])
+        buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
+        buttonsStackView.spacing = 20.0
+        buttonsStackView.distribution = .fillEqually
+
+        return buttonsStackView
+    }()
+
+    private lazy var disclaimerLabel: UILabel = {
+        let tipJarDisclaimerLabel = UILabel()
+        tipJarDisclaimerLabel.translatesAutoresizingMaskIntoConstraints = false
+        tipJarDisclaimerLabel.font = .disclaimer
+        tipJarDisclaimerLabel.text = "TipJarViewController.Disclaimer".localized
+        tipJarDisclaimerLabel.numberOfLines = 0
+
+        return tipJarDisclaimerLabel
+    }()
+
+    private lazy var stackView: UIStackView = {
+        addChild(introductionViewController)
+        introductionViewController.view.translatesAutoresizingMaskIntoConstraints = false
+
+        let stackView = UIStackView(arrangedSubviews: [introductionViewController.view, buttonsStackView, disclaimerLabel])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 20.0
+
+        introductionViewController.didMove(toParent: self)
+
+        return stackView
     }()
 
     override func viewDidLoad() {
@@ -83,8 +111,10 @@ class TipSelectionViewController: UIViewController {
 
         requestProductInformation()
     }
+}
 
-    private func requestProductInformation() {
+private extension TipJarViewController {
+    func requestProductInformation() {
         let productIdentifiers = Set([
             "de.marcelkraus.speedometer.tip.small",
             "de.marcelkraus.speedometer.tip.medium",
@@ -96,29 +126,29 @@ class TipSelectionViewController: UIViewController {
         productRequest.start()
     }
 
-    private func replacePlaceholderView(with views: [UIView]) {
-        guard stackView.arrangedSubviews.count == 1, let placeholderView = stackView.arrangedSubviews.first else {
+    func replaceLoadingProductsView(with views: [UIView]) {
+        guard buttonsStackView.arrangedSubviews.count == 1, let loadingProductsView = buttonsStackView.arrangedSubviews.first else {
             return
         }
 
-        stackView.removeArrangedSubview(placeholderView)
-        placeholderView.removeFromSuperview()
+        buttonsStackView.removeArrangedSubview(loadingProductsView)
+        loadingProductsView.removeFromSuperview()
 
         views.forEach {
-            stackView.addArrangedSubview($0)
+            buttonsStackView.addArrangedSubview($0)
         }
 
         view.setNeedsDisplay()
     }
 
-    @objc private func didTapButton(_ sender: UIButton) {
+    @objc func didTapButton(_ sender: UIButton) {
         let product = products[sender.tag]
         let payment = SKPayment(product: product)
 
         SKPaymentQueue.default().add(payment)
     }
 
-    private func button(for product: SKProduct) -> UIButton {
+    func button(for product: SKProduct) -> UIButton {
         priceFormatter.locale = product.priceLocale
 
         let button = UIButton(type: .custom)
@@ -138,7 +168,7 @@ class TipSelectionViewController: UIViewController {
 
 // - MARK: PaymentTransactionObserverDelegate
 
-extension TipSelectionViewController: PaymentTransactionObserverDelegate {
+extension TipJarViewController: PaymentTransactionObserverDelegate {
     func showTransactionAsInProgress(_ transaction: SKPaymentTransaction, deferred: Bool) {
         delegate?.tipSelectionViewControllerWillPurchaseProduct(self)
     }
@@ -158,11 +188,11 @@ extension TipSelectionViewController: PaymentTransactionObserverDelegate {
 
 // MARK: - SKProductsRequestDelegate
 
-extension TipSelectionViewController: SKProductsRequestDelegate {
+extension TipJarViewController: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         DispatchQueue.main.asyncAfter(deadline: .now()) { [unowned self] in
             guard response.products.count > 0 else {
-                self.replacePlaceholderView(with: [self.noProductsLabel])
+                self.replaceLoadingProductsView(with: [self.noProductsLabel])
                 return
             }
 
@@ -175,7 +205,7 @@ extension TipSelectionViewController: SKProductsRequestDelegate {
                 buttons.append(button)
             }
 
-            self.replacePlaceholderView(with: buttons)
+            self.replaceLoadingProductsView(with: buttons)
         }
     }
 }

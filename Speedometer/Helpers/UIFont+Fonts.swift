@@ -9,6 +9,10 @@ extension UIFont {
         return .preferredFont(forTextStyle: .title2)
     }
 
+    static var disclaimer: UIFont {
+        return .preferredFont(forTextStyle: .caption1)
+    }
+
     static var heading: UIFont {
         return .preferredFont(forTextStyle: .title1)
     }
