@@ -14,6 +14,9 @@
 "SettingsViewController.Imprint.SwipeInfo" = "Runter wischen zum schließen";
 "SettingsViewController.Imprint.Text" = "Tacho ist ein Projekt von:\n\nMarcel Kraus\nBonner Straße 88\nD-50374 Erftstadt\nDeutschland\nwww.marcelkraus.de\n\nApp-Version: v%@:%@. Bestandteile des Icons wurden gestaltet von Freepik/Flaticon. Vielen Dank an Manuela, Marc und Thomas sowie alle Beta-Tester dieser App! ♡";
 "SettingsViewController.TipJar.Heading" = "Mein Sparschwein";
+"SettingsViewController.TipJar.SuccessAlert.Button" = "Gern geschehen!";
+"SettingsViewController.TipJar.SuccessAlert.Message" = "Danke, dass du die Entwicklung von Tacho mit einem Trinkgeld unterstützt. Das bedeutet mir sehr viel! <3";
+"SettingsViewController.TipJar.SuccessAlert.Title" = "Du bist klasse!";
 "SettingsViewController.TipJar.Text" = "Mein Versprechen: Tacho bleibt einfach, kostenlos und werbefrei!\n\nSolltest du ganz besonders zufrieden sein, würde ich mich trotzdem sehr freuen, wenn du mir etwas in mein Sparschwein wirfst. Vielen Dank! :)";
 "SpeedometerViewController.SwipeInfo" = "Runter wischen für nächste Einheit";
 "TipSelectionViewController.FallbackMessage" = "Oh oh, da klemmt etwas! Zur Zeit stehen keine Produkte zum Kauf zur Verfügung - bitte probiere es später erneut. Vielen Dank!";

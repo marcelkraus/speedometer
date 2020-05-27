@@ -141,12 +141,20 @@ extension SettingsViewController: TipSelectionViewControllerDelegate {
     }
 
     func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: TipSelectionViewController) {
-        print("[TODO] Show nice confirmation message")
+        showConfirmationMessage()
         unblockUi()
     }
 
     func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: TipSelectionViewController) {
         unblockUi()
+    }
+
+    private func showConfirmationMessage() {
+        let okAction = UIAlertAction(title: "SettingsViewController.TipJar.SuccessAlert.Button".localized, style: .default, handler: nil)
+        let alertViewController = UIAlertController(title: "SettingsViewController.TipJar.SuccessAlert.Title".localized, message: "SettingsViewController.TipJar.SuccessAlert.Message".localized, preferredStyle: .alert)
+        alertViewController.addAction(okAction)
+
+        present(alertViewController, animated: true, completion: nil)
     }
 
     private func blockUi() {
