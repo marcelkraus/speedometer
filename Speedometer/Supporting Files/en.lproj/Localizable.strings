@@ -1,4 +1,5 @@
-"LoadingIndicatorViewController.Indicator" = "Laden…";
+"BlockingOverlayViewController.LoadingMessage" = "Processing…";
+"LoadingIndicatorViewController.Indicator" = "Loading…";
 "Location.East" = "East";
 "Location.North" = "North";
 "Location.South" = "South";

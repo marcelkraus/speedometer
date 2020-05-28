@@ -37,6 +37,7 @@
 		DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFE69BD7205A904000FA0CE3 /* Localizable.strings */; };
 		DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */; };
 		DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */; };
+		DFECF442247FB6D500A83594 /* BlockingOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFECF441247FB6D500A83594 /* BlockingOverlayViewController.swift */; };
 		DFFBA786221B1BC000801688 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBA785221B1BC000801688 /* UIColor+Colors.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFEB62311F30B5EA00FEC555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFECF441247FB6D500A83594 /* BlockingOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingOverlayViewController.swift; sourceTree = "<group>"; };
 		DFFBA785221B1BC000801688 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 		DFE6E19B2216DC8400623E34 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DFECF441247FB6D500A83594 /* BlockingOverlayViewController.swift */,
 				DF4C365020D133CD00A9E1B7 /* CircularView.swift */,
 				DFDBDE4E21F9D93500F3E858 /* LocationViewController.swift */,
 				DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */,
@@ -386,6 +389,7 @@
 				DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */,
 				DF302F13221CAA87001FD967 /* UIFont+Fonts.swift in Sources */,
 				DF2F6BD321ADA4A400AC75BE /* ContentViewController.swift in Sources */,
+				DFECF442247FB6D500A83594 /* BlockingOverlayViewController.swift in Sources */,
 				DFD30999219F252C005CE3B9 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

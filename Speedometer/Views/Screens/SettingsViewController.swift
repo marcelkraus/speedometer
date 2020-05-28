@@ -1,43 +1,8 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    private lazy var overlayView: UIView = {
-        let backgroundView = UIView()
-        backgroundView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundView.backgroundColor = UIColor(white: 1, alpha: 0.9)
-
-        let canvasView = UIView()
-        canvasView.translatesAutoresizingMaskIntoConstraints = false
-        canvasView.backgroundColor = .branding
-        canvasView.layer.masksToBounds = true
-        canvasView.layer.cornerRadius = 20.0
-        canvasView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-
-        let activityIndicatorView = UIActivityIndicatorView()
-        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicatorView.style = .whiteLarge
-        activityIndicatorView.startAnimating()
-
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .heading
-        label.textColor = .white
-        label.text = "Bitte warten…"
-
-        canvasView.addSubview(activityIndicatorView)
-        canvasView.addSubview(label)
-        backgroundView.addSubview(canvasView)
-        NSLayoutConstraint.activate([
-            canvasView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
-            canvasView.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor),
-            activityIndicatorView.topAnchor.constraint(equalTo: canvasView.topAnchor, constant: 20.0),
-            activityIndicatorView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor),
-            label.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor),
-            label.topAnchor.constraint(equalTo: activityIndicatorView.bottomAnchor, constant: 20.0),
-            label.bottomAnchor.constraint(equalTo: canvasView.bottomAnchor, constant: -20.0),
-        ])
-
-        return backgroundView
+    private lazy var blockingOverlayViewController: UIViewController = {
+        return BlockingOverlayViewController()
     }()
 
     private lazy var impactGenerator: UIImpactFeedbackGenerator = {
@@ -174,17 +139,24 @@ extension SettingsViewController: TipJarViewControllerDelegate {
     }
 
     private func blockUi() {
-        view.addSubview(overlayView)
+        addChild(blockingOverlayViewController)
+
+        blockingOverlayViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(blockingOverlayViewController.view)
         NSLayoutConstraint.activate([
-            overlayView.topAnchor.constraint(equalTo: view.topAnchor),
-            overlayView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            overlayView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            overlayView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            blockingOverlayViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            blockingOverlayViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            blockingOverlayViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            blockingOverlayViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
         ])
+
+        blockingOverlayViewController.didMove(toParent: self)
     }
 
     private func unblockUi() {
-        overlayView.removeFromSuperview()
+        blockingOverlayViewController.willMove(toParent: self)
+        blockingOverlayViewController.view.removeFromSuperview()
+        blockingOverlayViewController.removeFromParent()
     }
 }
 
