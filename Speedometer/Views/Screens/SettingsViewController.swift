@@ -1,6 +1,30 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    private var isBlocked = false {
+        didSet {
+            switch isBlocked {
+            case true:
+                addChild(blockingOverlayViewController)
+
+                blockingOverlayViewController.view.translatesAutoresizingMaskIntoConstraints = false
+                view.addSubview(blockingOverlayViewController.view)
+                NSLayoutConstraint.activate([
+                    blockingOverlayViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
+                    blockingOverlayViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                    blockingOverlayViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                    blockingOverlayViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                ])
+
+                blockingOverlayViewController.didMove(toParent: self)
+            case false:
+                blockingOverlayViewController.willMove(toParent: self)
+                blockingOverlayViewController.view.removeFromSuperview()
+                blockingOverlayViewController.removeFromParent()
+            }
+        }
+    }
+
     private lazy var blockingOverlayViewController: UIViewController = {
         return BlockingOverlayViewController()
     }()
@@ -114,11 +138,11 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: TipJarViewControllerDelegate {
     func tipSelectionViewControllerWillPurchaseProduct(_ tipSelectionViewController: TipJarViewController) {
-        blockUi()
+        isBlocked = true
     }
 
     func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: TipJarViewController) {
-        unblockUi()
+        isBlocked = false
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.showConfirmationMessage()
@@ -126,7 +150,7 @@ extension SettingsViewController: TipJarViewControllerDelegate {
     }
 
     func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: TipJarViewController) {
-        unblockUi()
+        isBlocked = false
     }
 
     private func showConfirmationMessage() {
@@ -137,30 +161,13 @@ extension SettingsViewController: TipJarViewControllerDelegate {
 
         present(alertViewController, animated: true, completion: nil)
     }
-
-    private func blockUi() {
-        addChild(blockingOverlayViewController)
-
-        blockingOverlayViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(blockingOverlayViewController.view)
-        NSLayoutConstraint.activate([
-            blockingOverlayViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
-            blockingOverlayViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            blockingOverlayViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            blockingOverlayViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-        ])
-
-        blockingOverlayViewController.didMove(toParent: self)
-    }
-
-    private func unblockUi() {
-        blockingOverlayViewController.willMove(toParent: self)
-        blockingOverlayViewController.view.removeFromSuperview()
-        blockingOverlayViewController.removeFromParent()
-    }
 }
 
 extension SettingsViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
+        return isBlocked == false
+    }
+
     func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
         impactGenerator.prepare()
     }
