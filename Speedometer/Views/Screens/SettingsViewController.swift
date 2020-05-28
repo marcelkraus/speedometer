@@ -153,8 +153,11 @@ extension SettingsViewController: TipJarViewControllerDelegate {
     }
 
     func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: TipJarViewController) {
-        showConfirmationMessage()
         unblockUi()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            self?.showConfirmationMessage()
+        }
     }
 
     func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: TipJarViewController) {
