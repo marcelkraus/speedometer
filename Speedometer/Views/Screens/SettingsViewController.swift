@@ -142,9 +142,8 @@ extension SettingsViewController: TipJarViewControllerDelegate {
     }
 
     func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: TipJarViewController) {
-        isBlocked = false
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.isBlocked = false
             self.showConfirmationMessage()
         }
     }
