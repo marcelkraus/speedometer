@@ -94,25 +94,55 @@ class SettingsViewController: UIViewController {
         return stackView
     }()
 
+     private lazy var contentView: UIView = {
+         let contentView = UIView()
+         contentView.translatesAutoresizingMaskIntoConstraints = false
+
+         contentView.addSubview(separatorView)
+         contentView.addSubview(stackView)
+
+         NSLayoutConstraint.activate([
+             separatorView.heightAnchor.constraint(equalToConstant: 20.0),
+             separatorView.widthAnchor.constraint(equalToConstant: 170.0),
+             separatorView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40.0),
+             separatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -30.0),
+             stackView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
+             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20.0),
+             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20.0),
+             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20.0),
+         ])
+
+         return contentView
+     }()
+
+    private lazy var scrollView: UIScrollView = {
+         let scrollView = UIScrollView()
+         scrollView.translatesAutoresizingMaskIntoConstraints = false
+
+         scrollView.addSubview(contentView)
+         NSLayoutConstraint.activate([
+             scrollView.contentLayoutGuide.topAnchor.constraint(equalTo: contentView.topAnchor),
+             scrollView.contentLayoutGuide.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+             scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+             scrollView.contentLayoutGuide.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+         ])
+
+         return scrollView
+     }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = .white
         presentationController?.delegate = self
 
-        view.backgroundColor = .white
-        view.addSubview(separatorView)
-        view.addSubview(stackView)
-
-        separatorView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(scrollView)
         NSLayoutConstraint.activate([
-            separatorView.heightAnchor.constraint(equalToConstant: 20.0),
-            separatorView.widthAnchor.constraint(equalToConstant: 170.0),
-            separatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -30.0),
-            separatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0),
-            stackView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
-            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -40.0),
-            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40.0),
+            scrollView.frameLayoutGuide.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.frameLayoutGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.frameLayoutGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.frameLayoutGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.frameLayoutGuide.widthAnchor.constraint(equalTo: scrollView.contentLayoutGuide.widthAnchor),
         ])
     }
 }
