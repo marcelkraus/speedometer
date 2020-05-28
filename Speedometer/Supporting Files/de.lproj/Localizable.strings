@@ -13,13 +13,13 @@
 "OnboardingViewController.Button" = "Verstanden, leg los!";
 "SettingsViewController.Imprint.Heading" = "Impressum";
 "SettingsViewController.Imprint.SwipeInfo" = "Runter wischen zum schließen";
-"SettingsViewController.Imprint.Text" = "Tacho ist ein Projekt von:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nDeutschland\nwww.marcelkraus.de\n\nApp-Version: v%@:%@. Bestandteile des Icons wurden gestaltet von Freepik/Flaticon. Vielen Dank an Manuela, Marc und Thomas sowie alle Beta-Tester dieser App! ♡";
+"SettingsViewController.Imprint.Text" = "Tacho ist ein Projekt von:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nDeutschland\nwww.marcelkraus.de\n\nApp-Version: v%@:%@. Bestandteile des Icons wurden gestaltet von Freepik/Flaticon. Vielen Dank an Manuela, Marc und Thomas sowie alle Beta-Tester! ♡";
 "SettingsViewController.TipConfirmationTitle" = "Du bist klasse!";
 "SettingsViewController.TipConfirmationMessage" = "Danke, dass du die Entwicklung von Tacho mit einem Trinkgeld unterstützt. Das bedeutet mir sehr viel! <3";
 "SettingsViewController.TipConfirmationButton" = "Gern geschehen!";
 "SpeedometerViewController.SwipeInfo" = "Runter wischen für nächste Einheit";
 "TipJarViewController.Heading" = "Mein Sparschwein";
 "TipJarViewController.Description" = "Mein Versprechen: Tacho bleibt einfach, kostenlos und werbefrei!\n\nSolltest du ganz besonders zufrieden sein, würde ich mich trotzdem sehr freuen, wenn du mir etwas in mein Sparschwein wirfst. Vielen Dank! :)";
-"TipJarViewController.Disclaimer" = "Hinweis: Alle Käufe sind einmalig und dienen der freiwilligen Unterstützung des Entwicklers. :)";
+"TipJarViewController.Disclaimer" = "Hinweis: Alle Käufe sind einmalig (Keine Abonnements) und dienen alleine der freiwilligen Unterstützung des Entwicklers. Alle Funktionen von Tacho stehen auch ohne Kauf weiterhin zur Verfügung.";
 "TipJarViewController.LoadingMessage" = "Produkte werden geladen…";
 "TipJarViewController.FallbackMessage" = "Oh oh, da klemmt etwas! Zur Zeit stehen keine Produkte zum Kauf zur Verfügung - bitte probiere es später erneut. Vielen Dank!";

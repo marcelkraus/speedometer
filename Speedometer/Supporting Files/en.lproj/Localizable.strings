@@ -19,7 +19,7 @@
 "SettingsViewController.TipConfirmationButton" = "Your welcome!";
 "SpeedometerViewController.SwipeInfo" = "Swipe Down for Next Unit";
 "TipJarViewController.Heading" = "My Tip Jar";
-"TipJarViewController.Description" = "My promise: Speedometer stays simple, cost-free and without any advertisements.\n\nIf you are satisfied with the app, I would appreciate if you give me a small tip. Thanks! :)";
-"TipJarViewController.Disclaimer" = "Note: All purchases are one-time purchases and absolutely voluntary to support the developer. :)";
+"TipJarViewController.Description" = "My promise: Speedometer stays simple, cost-free and without any advertisements.\n\nIf you are satisfied with Speedometer, I would appreciate if you give me a small tip. Thanks! :)";
+"TipJarViewController.Disclaimer" = "Note: All purchases are one-time purchases (no subscriptions) and absolutely voluntary to support the developer. All features of Speedometer will be available, even without a purchase.";
 "TipJarViewController.LoadingMessage" = "Loading products…";
 "TipJarViewController.FallbackMessage" = "Uh, there is something wrong! There are no products available at the moment, please try again later. Thank you!";
