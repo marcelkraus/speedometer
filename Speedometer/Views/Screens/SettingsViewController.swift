@@ -120,8 +120,8 @@ extension SettingsViewController: TipJarViewControllerDelegate {
     func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: TipJarViewController) {
         unblockUi()
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-            self?.showConfirmationMessage()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.showConfirmationMessage()
         }
     }
 
