@@ -65,7 +65,11 @@ class ContentViewController: UIViewController {
 
 @objc private extension ContentViewController {
     func showSettings() {
-        present(SettingsViewController(), animated: true, completion: nil)
+        let settingsViewController = SettingsViewController()
+        settingsViewController.modalPresentationStyle = .fullScreen
+        settingsViewController.delegate = self
+
+        present(settingsViewController, animated: true, completion: nil)
     }
 
     func selectNextUnit() {
@@ -145,5 +149,11 @@ private extension ContentViewController {
             swipeInfoLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             swipeInfoLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
         ])
+    }
+}
+
+extension ContentViewController: SettingsViewControllerDelegate {
+    func settingsViewControllerDidTapCloseButton(_ settingsViewController: SettingsViewController) {
+        settingsViewController.dismiss(animated: true, completion: nil)
     }
 }

@@ -12,7 +12,6 @@
 "Message.Onboarding.Text" = "Tacho zeigt dir deine aktuelle Geschwindigkeit an. Einfach, kostenlos und werbefrei.\n\nTacho benötigt Zugriff auf deine Standortdaten, die nur für diese Zwecke verwendet und mit niemandem geteilt werden.\n\nBitte bestätige daher den Hinweis nach Tap auf den untenstehenden Button.";
 "OnboardingViewController.Button" = "Verstanden, leg los!";
 "SettingsViewController.Imprint.Heading" = "Impressum";
-"SettingsViewController.Imprint.SwipeInfo" = "Runter wischen zum schließen";
 "SettingsViewController.Imprint.Text" = "Tacho ist ein Projekt von:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nDeutschland\nwww.marcelkraus.de\n\nApp-Version: v%@:%@. Bestandteile des Icons wurden gestaltet von Freepik/Flaticon. Vielen Dank an Manuela, Marc und Thomas sowie alle Beta-Tester! ♡";
 "SettingsViewController.TipConfirmationTitle" = "Du bist klasse!";
 "SettingsViewController.TipConfirmationMessage" = "Danke, dass du die Entwicklung von Tacho mit einem Trinkgeld unterstützt. Das bedeutet mir sehr viel! <3";

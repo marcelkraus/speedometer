@@ -34,6 +34,9 @@ class CircularView: UIView {
 
     convenience init(indicatorColor: UIColor, trackColor: UIColor, indicatorFillment: Double) {
         self.init(startAngleInDegrees: 180.0, maxAngleInDegrees: 90.0, lineWeight: 12.0, indicatorColor: indicatorColor, trackColor: trackColor, indicatorFillment: indicatorFillment)
+
+        // Has to be set to work with iOS 11
+        self.backgroundColor = .white
     }
 
     required init?(coder: NSCoder) {

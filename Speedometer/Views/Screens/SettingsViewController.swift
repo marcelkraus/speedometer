@@ -1,6 +1,12 @@
 import UIKit
 
+protocol SettingsViewControllerDelegate: class {
+    func settingsViewControllerDidTapCloseButton(_ settingsViewController: SettingsViewController)
+}
+
 class SettingsViewController: UIViewController {
+    weak var delegate: SettingsViewControllerDelegate?
+
     private var isBlocked = false {
         didSet {
             switch isBlocked {
@@ -29,10 +35,6 @@ class SettingsViewController: UIViewController {
         return BlockingOverlayViewController()
     }()
 
-    private lazy var impactGenerator: UIImpactFeedbackGenerator = {
-        return UIImpactFeedbackGenerator(style: .medium)
-    }()
-
     private lazy var separatorView: UIView = {
         let separatorView = UIView()
         separatorView.translatesAutoresizingMaskIntoConstraints = false
@@ -41,6 +43,17 @@ class SettingsViewController: UIViewController {
         separatorView.layer.masksToBounds = true
 
         return separatorView
+    }()
+
+    private lazy var closeButton: UIButton = {
+        let closeButton = UIButton(type: .custom)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.tintColor = .branding
+        closeButton.setImage(UIImage(named: "Close")?.withRenderingMode(.alwaysTemplate), for: .normal)
+
+        closeButton.addTarget(self, action: #selector(didTapCloseButton), for: .touchUpInside)
+
+        return closeButton
     }()
 
     private lazy var imprintViewController: UIViewController = {
@@ -54,17 +67,6 @@ class SettingsViewController: UIViewController {
         return tipJarViewController
     }()
 
-    private lazy var swipeInfoLabel: UILabel = {
-        let swipeInfoLabel = UILabel()
-        swipeInfoLabel.translatesAutoresizingMaskIntoConstraints = false
-        swipeInfoLabel.font = .swipeInfo
-        swipeInfoLabel.textColor = .swipeInfo
-        swipeInfoLabel.textAlignment = .center
-        swipeInfoLabel.text = "↓ " + "SettingsViewController.Imprint.SwipeInfo".localized + " ↓"
-
-        return swipeInfoLabel
-    }()
-
     private lazy var stackView: UIStackView = {
         addChild(imprintViewController)
         imprintViewController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -72,7 +74,7 @@ class SettingsViewController: UIViewController {
         addChild(tipJarViewController)
         tipJarViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-        let stackView = UIStackView(arrangedSubviews: [imprintViewController.view, tipJarViewController.view, swipeInfoLabel])
+        let stackView = UIStackView(arrangedSubviews: [imprintViewController.view, tipJarViewController.view])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 40.0
@@ -88,6 +90,7 @@ class SettingsViewController: UIViewController {
          contentView.translatesAutoresizingMaskIntoConstraints = false
 
          contentView.addSubview(separatorView)
+         contentView.addSubview(closeButton)
          contentView.addSubview(stackView)
 
          NSLayoutConstraint.activate([
@@ -95,6 +98,10 @@ class SettingsViewController: UIViewController {
              separatorView.widthAnchor.constraint(equalToConstant: 170.0),
              separatorView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40.0),
              separatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -30.0),
+             closeButton.heightAnchor.constraint(equalToConstant: 20.0),
+             closeButton.widthAnchor.constraint(equalToConstant: 20.0),
+             closeButton.centerYAnchor.constraint(equalTo: separatorView.centerYAnchor),
+             closeButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20.0),
              stackView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
              stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20.0),
              stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20.0),
@@ -123,16 +130,19 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
-        presentationController?.delegate = self
 
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
-            scrollView.frameLayoutGuide.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.frameLayoutGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.frameLayoutGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            scrollView.frameLayoutGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.frameLayoutGuide.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.frameLayoutGuide.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.frameLayoutGuide.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.frameLayoutGuide.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.frameLayoutGuide.widthAnchor.constraint(equalTo: scrollView.contentLayoutGuide.widthAnchor),
         ])
+    }
+
+    @objc func didTapCloseButton() {
+        delegate?.settingsViewControllerDidTapCloseButton(self)
     }
 }
 
@@ -159,20 +169,6 @@ extension SettingsViewController: TipJarViewControllerDelegate {
         alertViewController.view.tintColor = .branding
 
         present(alertViewController, animated: true, completion: nil)
-    }
-}
-
-extension SettingsViewController: UIAdaptivePresentationControllerDelegate {
-    func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
-        return isBlocked == false
-    }
-
-    func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
-        impactGenerator.prepare()
-    }
-
-    func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
-        impactGenerator.impactOccurred()
     }
 }
 
