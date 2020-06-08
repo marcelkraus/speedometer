@@ -50,6 +50,7 @@ class SettingsViewController: UIViewController {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         closeButton.tintColor = .branding
         closeButton.setImage(UIImage(named: "Close")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        closeButton.contentEdgeInsets = UIEdgeInsets(top: 12.0, left: 12.0, bottom: 12.0, right: 12.0)
 
         closeButton.addTarget(self, action: #selector(didTapCloseButton), for: .touchUpInside)
 
@@ -98,10 +99,10 @@ class SettingsViewController: UIViewController {
              separatorView.widthAnchor.constraint(equalToConstant: 170.0),
              separatorView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40.0),
              separatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -30.0),
-             closeButton.heightAnchor.constraint(equalToConstant: 20.0),
-             closeButton.widthAnchor.constraint(equalToConstant: 20.0),
+             closeButton.heightAnchor.constraint(equalToConstant: 44.0),
+             closeButton.widthAnchor.constraint(equalToConstant: 44.0),
              closeButton.centerYAnchor.constraint(equalTo: separatorView.centerYAnchor),
-             closeButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20.0),
+             closeButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8.0),
              stackView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
              stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20.0),
              stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20.0),

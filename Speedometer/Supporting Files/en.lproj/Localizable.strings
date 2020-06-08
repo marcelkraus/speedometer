@@ -12,7 +12,7 @@
 "Message.Onboarding.Text" = "Speedometer shows your current speed. Simple, cost-free and without any advertisements.\n\nSpeedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease confirm access after you tapped the button below.";
 "OnboardingViewController.Button" = "Gotcha, let's go!";
 "SettingsViewController.Imprint.Heading" = "Imprint";
-"SettingsViewController.Imprint.Text" = "Speedometer is a project of:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nGermany\nwww.marcelkraus.de\n\nApp version: v%@:%@. Some parts of the app icon was designed by Freepik/Flaticon.\n\nMany Thanks to Manuela, Marc, Thomas and all beta testers! ♡";
+"SettingsViewController.Imprint.Text" = "Speedometer is a project of:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nGermany\nwww.marcelkraus.de\n\nApp version: v%@:%@. Parts of the app icon and some icons were designed by Freepik/Flaticon.\n\nMany Thanks to Manuela, Marc, Thomas and all beta testers! ♡";
 "SettingsViewController.TipConfirmationTitle" = "You are awesome!";
 "SettingsViewController.TipConfirmationMessage" = "Thanks for supporting the development of Speedometer by sending me a tip. This means a lot to me! <3";
 "SettingsViewController.TipConfirmationButton" = "Your welcome!";

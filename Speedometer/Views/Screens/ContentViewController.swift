@@ -22,9 +22,12 @@ class ContentViewController: UIViewController {
     }()
 
     private lazy var settingsButtonView: UIButton = {
-        let settingsButtonView = UIButton(type: .infoDark)
+        let settingsButtonView = UIButton(type: .custom)
         settingsButtonView.translatesAutoresizingMaskIntoConstraints  = false
         settingsButtonView.tintColor = .branding
+        settingsButtonView.setImage(UIImage(named: "Info")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        settingsButtonView.contentEdgeInsets = UIEdgeInsets(top: 12.0, left: 12.0, bottom: 12.0, right: 12.0)
+
         settingsButtonView.addTarget(self, action: #selector(showSettings), for: .touchUpInside)
 
         return settingsButtonView
@@ -121,8 +124,10 @@ private extension ContentViewController {
     func setupSettingsButtonView() {
         view.addSubview(settingsButtonView)
         NSLayoutConstraint.activate([
-            settingsButtonView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
-            settingsButtonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
+            settingsButtonView.heightAnchor.constraint(equalToConstant: 44.0),
+            settingsButtonView.widthAnchor.constraint(equalToConstant: 44.0),
+            settingsButtonView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8.0),
+            settingsButtonView.bottomAnchor.constraint(equalTo: swipeInfoLabel.bottomAnchor, constant: 12.0),
         ])
     }
 
