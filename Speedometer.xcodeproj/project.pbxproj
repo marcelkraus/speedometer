@@ -594,6 +594,7 @@
 				DEVELOPMENT_TEAM = N8P95HFNCS;
 				INFOPLIST_FILE = "Speedometer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.marcelkraus.speedometer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "62843f82-696b-4ca1-89b7-71dac72e6015";
@@ -615,6 +616,7 @@
 				DEVELOPMENT_TEAM = N8P95HFNCS;
 				INFOPLIST_FILE = "Speedometer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.marcelkraus.speedometer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "51df5708-c910-4b4c-b210-707bcc7630c6";
