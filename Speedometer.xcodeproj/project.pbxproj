@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		DF76227321A6E9AE0073CEBC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF76227221A6E9AE0073CEBC /* SettingsViewController.swift */; };
 		DF7D820221C2B073004A37C8 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D820021C2B073004A37C8 /* SpeedViewController.swift */; };
 		DF80694B238591DC0063482D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF80694A238591DC0063482D /* StoreKit.framework */; };
+		DF93642D24DD681900598DB1 /* Purchases in Frameworks */ = {isa = PBXBuildFile; productRef = DF93642C24DD681900598DB1 /* Purchases */; };
 		DF94839D20D16C7E009B120B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94839C20D16C7E009B120B /* Location.swift */; };
 		DF9D05BD23FE77100033F43D /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D05BC23FE77100033F43D /* Key.swift */; };
 		DF9DCB1320ADDAED008BAE8B /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DCB1220ADDAED008BAE8B /* UnitTests.swift */; };
@@ -105,6 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF80694B238591DC0063482D /* StoreKit.framework in Frameworks */,
+				DF93642D24DD681900598DB1 /* Purchases in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +285,9 @@
 			dependencies = (
 			);
 			name = Speedometer;
+			packageProductDependencies = (
+				DF93642C24DD681900598DB1 /* Purchases */,
+			);
 			productName = Speedometer;
 			productReference = DFEB62221F30B5EA00FEC555 /* Speedometer.app */;
 			productType = "com.apple.product-type.application";
@@ -321,6 +326,9 @@
 				en,
 			);
 			mainGroup = DFEB62191F30B5E900FEC555;
+			packageReferences = (
+				DF93642B24DD681900598DB1 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+			);
 			productRefGroup = DFEB62231F30B5EA00FEC555 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -439,7 +447,11 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = SpeedometerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marcelkraus.speedometer-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -461,7 +473,11 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = SpeedometerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marcelkraus.speedometer-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -577,7 +593,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -658,6 +675,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DF93642B24DD681900598DB1 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DF93642C24DD681900598DB1 /* Purchases */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF93642B24DD681900598DB1 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = Purchases;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DFEB621A1F30B5E900FEC555 /* Project object */;
 }
