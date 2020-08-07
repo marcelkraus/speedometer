@@ -1,13 +1,16 @@
-import StoreKit
+import Purchases
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    private static let revenueCatApiKey = "qzefGtCYnlDdBkhjXZpKYVEHvFgSnatV"
+
     var window: UIWindow?
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
         PaymentTransactionObserver.sharedInstance.register()
 
+        setupRevenueCat()
         setDefaultSettings()
 
         StoreReviewHelper.incrementAppStartCounter()
@@ -27,6 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 private extension AppDelegate {
+    func setupRevenueCat() {
+        Purchases.debugLogsEnabled = true
+        Purchases.configure(withAPIKey: Self.revenueCatApiKey, appUserID: nil, observerMode: true)
+    }
+
     func setDefaultSettings() {
         let defaultUnit = Unit.default
 
