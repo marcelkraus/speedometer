@@ -24,6 +24,7 @@
 		DF7D820221C2B073004A37C8 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D820021C2B073004A37C8 /* SpeedViewController.swift */; };
 		DF80694B238591DC0063482D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF80694A238591DC0063482D /* StoreKit.framework */; };
 		DF93642D24DD681900598DB1 /* Purchases in Frameworks */ = {isa = PBXBuildFile; productRef = DF93642C24DD681900598DB1 /* Purchases */; };
+		DF93715F24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF93715E24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift */; };
 		DF94839D20D16C7E009B120B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94839C20D16C7E009B120B /* Location.swift */; };
 		DF9D05BD23FE77100033F43D /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D05BC23FE77100033F43D /* Key.swift */; };
 		DF9DCB1320ADDAED008BAE8B /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DCB1220ADDAED008BAE8B /* UnitTests.swift */; };
@@ -69,6 +70,7 @@
 		DF76227221A6E9AE0073CEBC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DF7D820021C2B073004A37C8 /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
 		DF80694A238591DC0063482D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		DF93715E24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActionHandlerSleeve+Extension.swift"; sourceTree = "<group>"; };
 		DF94839C20D16C7E009B120B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DF9D05BC23FE77100033F43D /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		DF9DCB0720ADD8EC008BAE8B /* SpeedometerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedometerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +212,7 @@
 		DFE6E19C2216DCC300623E34 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DF93715E24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift */,
 				DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */,
 				DF3010D7205A929E005B493D /* String+Localization.swift */,
 				DFFBA785221B1BC000801688 /* UIColor+Colors.swift */,
@@ -398,6 +401,7 @@
 				DF302F13221CAA87001FD967 /* UIFont+Fonts.swift in Sources */,
 				DF2F6BD321ADA4A400AC75BE /* ContentViewController.swift in Sources */,
 				DFECF442247FB6D500A83594 /* BlockingOverlayViewController.swift in Sources */,
+				DF93715F24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift in Sources */,
 				DFD30999219F252C005CE3B9 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

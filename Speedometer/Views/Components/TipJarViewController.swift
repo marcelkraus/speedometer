@@ -117,7 +117,7 @@ class TipJarViewController: UIViewController {
             }
 
             let productButtons = offering.availablePackages.map {
-                self.button(for: $0.product)
+                self.purchaseButton(for: $0)
             }
 
             DispatchQueue.main.async {
@@ -143,25 +143,26 @@ private extension TipJarViewController {
         view.setNeedsDisplay()
     }
 
-    @objc func didTapButton(_ sender: UIButton) {
-        // TODO
-    }
+    func purchaseButton(for package: Purchases.Package) -> UIButton {
+        priceFormatter.locale = package.product.priceLocale
 
-    func button(for product: SKProduct) -> UIButton {
-        priceFormatter.locale = product.priceLocale
+        let purchaseButton = UIButton(type: .custom)
+        purchaseButton.layer.cornerRadius = 20.0
+        purchaseButton.backgroundColor = .branding
+        purchaseButton.setTitleColor(UIColor(red: 192.0, green: 192.0, blue: 192.0, alpha: 1.0), for: .highlighted)
+        purchaseButton.titleLabel?.textAlignment = .center
+        purchaseButton.titleLabel?.textColor = .white
+        purchaseButton.titleLabel?.font = .preferredFont(forTextStyle: .callout)
+        purchaseButton.setTitle(priceFormatter.string(from: package.product.price), for: .normal)
+        purchaseButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        purchaseButton.addAction {
+            Purchases.shared.purchasePackage(package) {
+                (_, _, _, _) in
+                print(package.identifier)
+            }
+        }
 
-        let button = UIButton(type: .custom)
-        button.layer.cornerRadius = 20.0
-        button.backgroundColor = .branding
-        button.setTitleColor(UIColor(red: 192.0, green: 192.0, blue: 192.0, alpha: 1.0), for: .highlighted)
-        button.titleLabel?.textAlignment = .center
-        button.titleLabel?.textColor = .white
-        button.titleLabel?.font = .preferredFont(forTextStyle: .callout)
-        button.setTitle(priceFormatter.string(from: product.price), for: .normal)
-        button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
-        button.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-
-        return button
+        return purchaseButton
     }
 }
 
