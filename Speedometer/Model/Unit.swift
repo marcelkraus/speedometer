@@ -7,17 +7,24 @@ enum Unit: String, CaseIterable {
     case knots = "kn"
     case split500 = "min./500m"
 
-    static var selected: Unit {
-        let selectedUnit = UserDefaults.standard.string(forKey: Key.selectedUnit)!
+    static var `default`: Unit {
+        Locale.current.usesMetricSystem ? Unit.kilometersPerHour : Unit.milesPerHour
+    }
 
-        // This should only happen if there was a migration error and the
-        // NSUserDefaults still contains an Int, we then return the first Unit
-        // defined.
-        guard Int(selectedUnit) == nil else {
-            return Unit.allCases.first!
+    static var selected: Unit {
+        // Return default unit in case the selected unit id can not be fetched
+        // from UserDefaults or still contains an Int (e.g. fauly migration).
+        guard let selectedUnit = UserDefaults.standard.string(forKey: Key.selectedUnit) else {
+            return .default
         }
 
-        return Unit(rawValue: selectedUnit)!
+        // Return default unit in case the selected unit can not be used to
+        // create an `Unit`, e.g. when an `Unit` was removed.
+        guard let unit = Unit(rawValue: selectedUnit) else {
+            return .default
+        }
+
+        return unit
     }
 
     var next: Unit {

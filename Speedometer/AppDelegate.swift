@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 private extension AppDelegate {
     func setDefaultSettings() {
-        let defaultUnit = Locale.current.usesMetricSystem ? Unit.kilometersPerHour : Unit.milesPerHour
+        let defaultUnit = Unit.default
 
         UserDefaults.standard.register(defaults: [
             Key.appStartCounter: 0,
