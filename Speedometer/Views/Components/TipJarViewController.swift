@@ -1,4 +1,4 @@
-import StoreKit
+import Purchases
 import UIKit
 
 protocol TipJarViewControllerDelegate: class {
@@ -8,11 +8,7 @@ protocol TipJarViewControllerDelegate: class {
 }
 
 class TipJarViewController: UIViewController {
-    private var products: [SKProduct] = []
-
     weak var delegate: TipJarViewControllerDelegate?
-
-    private var productRequest: SKProductsRequest!
 
     private lazy var priceFormatter: NumberFormatter = {
         let priceFormatter = NumberFormatter()
@@ -109,23 +105,29 @@ class TipJarViewController: UIViewController {
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
         ])
 
-        requestProductInformation()
+        Purchases.shared.offerings { offerings, error in
+            guard error == nil else {
+                self.replaceLoadingProductsView(with: [self.noProductsLabel])
+
+                return
+            }
+
+            guard let offering = offerings?.current, offering.availablePackages.count > 0 else {
+                return
+            }
+
+            let productButtons = offering.availablePackages.map {
+                self.button(for: $0.product)
+            }
+
+            DispatchQueue.main.async {
+                self.replaceLoadingProductsView(with: productButtons)
+            }
+        }
     }
 }
 
 private extension TipJarViewController {
-    func requestProductInformation() {
-        let productIdentifiers = Set([
-            "de.marcelkraus.speedometer.tip.small",
-            "de.marcelkraus.speedometer.tip.medium",
-            "de.marcelkraus.speedometer.tip.large"
-        ])
-
-        productRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
-        productRequest.delegate = self
-        productRequest.start()
-    }
-
     func replaceLoadingProductsView(with views: [UIView]) {
         guard buttonsStackView.arrangedSubviews.count == 1, let loadingProductsView = buttonsStackView.arrangedSubviews.first else {
             return
@@ -142,10 +144,7 @@ private extension TipJarViewController {
     }
 
     @objc func didTapButton(_ sender: UIButton) {
-        let product = products[sender.tag]
-        let payment = SKPayment(product: product)
-
-        SKPaymentQueue.default().add(payment)
+        // TODO
     }
 
     func button(for product: SKProduct) -> UIButton {
@@ -183,29 +182,5 @@ extension TipJarViewController: PaymentTransactionObserverDelegate {
         SKPaymentQueue.default().finishTransaction(transaction)
 
         delegate?.tipSelectionViewControllerCouldNotPurchaseProduct(self)
-    }
-}
-
-// MARK: - SKProductsRequestDelegate
-
-extension TipJarViewController: SKProductsRequestDelegate {
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        DispatchQueue.main.asyncAfter(deadline: .now()) { [unowned self] in
-            guard response.products.count > 0 else {
-                self.replaceLoadingProductsView(with: [self.noProductsLabel])
-                return
-            }
-
-            self.products = response.products.sorted(by: { $0.productIdentifier > $1.productIdentifier })
-
-            var buttons: [UIView] = []
-            for product in self.products {
-                let button = self.button(for: product)
-                button.tag = self.products.firstIndex(of: product)!
-                buttons.append(button)
-            }
-
-            self.replaceLoadingProductsView(with: buttons)
-        }
     }
 }
