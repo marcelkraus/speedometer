@@ -22,3 +22,4 @@
 "TipJarViewController.Disclaimer" = "Hinweis: Alle Käufe sind einmalig (Keine Abonnements) und dienen alleine der freiwilligen Unterstützung des Entwicklers. Alle Funktionen von Tacho stehen auch ohne Kauf weiterhin zur Verfügung.";
 "TipJarViewController.LoadingMessage" = "Produkte werden geladen…";
 "TipJarViewController.FallbackMessage" = "Oh oh, da klemmt etwas! Zur Zeit stehen keine Produkte zum Kauf zur Verfügung - bitte probiere es später erneut. Vielen Dank!";
+"TipJarViewController.RestoreButton" = "Einkäufe wiederherstellen";

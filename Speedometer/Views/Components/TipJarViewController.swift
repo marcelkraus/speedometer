@@ -68,6 +68,41 @@ class TipJarViewController: UIViewController {
         return purchaseButtonsStackView
     }()
 
+    private lazy var inAppStoreStackView: UIStackView = {
+        let inAppStoreStackView = UIStackView(arrangedSubviews: [purchaseButtonsStackView])
+        inAppStoreStackView.translatesAutoresizingMaskIntoConstraints = false
+        inAppStoreStackView.axis = .vertical
+        inAppStoreStackView.spacing = 10.0
+
+        return inAppStoreStackView
+    }()
+
+    private lazy var restoreButton: UIButton = {
+        let restoreButton = UIButton(type: .system)
+        restoreButton.translatesAutoresizingMaskIntoConstraints = false
+        restoreButton.setTitle("TipJarViewController.RestoreButton".localized, for: .normal)
+        restoreButton.titleLabel?.font = .preferredFont(forTextStyle: .callout)
+        restoreButton.tintColor = .branding
+        restoreButton.addAction {
+            Purchases.shared.restoreTransactions { [weak self] purchaserInfo, error in
+                guard error == nil else {
+                    print("[RevenueCat] An error occured, purchases could not be restored")
+                    return
+                }
+
+                guard purchaserInfo?.allPurchasedProductIdentifiers.count ?? 0 > 0 else {
+                    print("[RevenueCat] No purchases available which could be restored")
+                    return
+                }
+
+                print("[RevenueCat] Purchases were restored successfully")
+            }
+        }
+
+        return restoreButton
+    }()
+
+
     private lazy var disclaimerLabel: UILabel = {
         let tipJarDisclaimerLabel = UILabel()
         tipJarDisclaimerLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -82,7 +117,7 @@ class TipJarViewController: UIViewController {
         addChild(introductionViewController)
         introductionViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-        let stackView = UIStackView(arrangedSubviews: [introductionViewController.view, purchaseButtonsStackView, disclaimerLabel])
+        let stackView = UIStackView(arrangedSubviews: [introductionViewController.view, inAppStoreStackView, disclaimerLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 20.0
@@ -124,6 +159,14 @@ class TipJarViewController: UIViewController {
                 self.replaceLoadingProductsView(with: productButtons)
             }
         }
+
+        Purchases.shared.purchaserInfo { purchaserInfo, error in
+            guard error == nil else {
+                return
+            }
+
+            print("[RevenueCat] Available entitlements: \(purchaserInfo?.entitlements.all.keys.joined(separator: ",") ?? "")")
+        }
     }
 }
 
@@ -140,6 +183,8 @@ private extension TipJarViewController {
             purchaseButtonsStackView.addArrangedSubview($0)
         }
 
+        inAppStoreStackView.addArrangedSubview(restoreButton)
+
         view.setNeedsDisplay()
     }
 
@@ -147,6 +192,7 @@ private extension TipJarViewController {
         priceFormatter.locale = package.product.priceLocale
 
         let purchaseButton = UIButton(type: .custom)
+        purchaseButton.translatesAutoresizingMaskIntoConstraints = false
         purchaseButton.layer.cornerRadius = 20.0
         purchaseButton.backgroundColor = .branding
         purchaseButton.setTitleColor(UIColor(red: 192.0, green: 192.0, blue: 192.0, alpha: 1.0), for: .highlighted)
@@ -156,9 +202,12 @@ private extension TipJarViewController {
         purchaseButton.setTitle(priceFormatter.string(from: package.product.price), for: .normal)
         purchaseButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         purchaseButton.addAction {
-            Purchases.shared.purchasePackage(package) {
-                (_, _, _, _) in
-                print(package.identifier)
+            Purchases.shared.purchasePackage(package) { (_, _, error, _) in
+                guard error == nil else {
+                    return
+                }
+
+                print("[RevenueCat] Purchasing product `\(package.identifier)`")
             }
         }
 

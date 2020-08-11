@@ -22,3 +22,4 @@
 "TipJarViewController.Disclaimer" = "Note: All purchases are one-time purchases (no subscriptions) and absolutely voluntary to support the developer. All features of Speedometer will be available, even without a purchase.";
 "TipJarViewController.LoadingMessage" = "Loading products…";
 "TipJarViewController.FallbackMessage" = "Uh, there is something wrong! There are no products available at the moment, please try again later. Thank you!";
+"TipJarViewController.RestoreButton" = "Restore Purchases";
