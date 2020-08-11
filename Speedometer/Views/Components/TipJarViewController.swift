@@ -44,28 +44,28 @@ class TipJarViewController: UIViewController {
         return placeholderView
     }()
 
-    private lazy var noProductsLabel: UILabel = {
-        let noProductsLabel = UILabel()
-        noProductsLabel.translatesAutoresizingMaskIntoConstraints = false
-        noProductsLabel.font = .text
-        noProductsLabel.textColor = .branding
-        noProductsLabel.numberOfLines = 0
-        noProductsLabel.text = "TipJarViewController.FallbackMessage".localized
+    private lazy var fallbackLabel: UILabel = {
+        let fallbackLabel = UILabel()
+        fallbackLabel.translatesAutoresizingMaskIntoConstraints = false
+        fallbackLabel.font = .text
+        fallbackLabel.textColor = .branding
+        fallbackLabel.numberOfLines = 0
+        fallbackLabel.text = "TipJarViewController.FallbackMessage".localized
 
-        return noProductsLabel
+        return fallbackLabel
     }()
 
     private lazy var introductionViewController: UIViewController = {
         return ParagraphViewController(heading: "TipJarViewController.Heading".localized, text: "TipJarViewController.Description".localized)
     }()
 
-    private lazy var buttonsStackView: UIStackView = {
-        let buttonsStackView = UIStackView(arrangedSubviews: [loadingProductsView])
-        buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
-        buttonsStackView.spacing = 20.0
-        buttonsStackView.distribution = .fillEqually
+    private lazy var purchaseButtonsStackView: UIStackView = {
+        let purchaseButtonsStackView = UIStackView(arrangedSubviews: [loadingProductsView])
+        purchaseButtonsStackView.translatesAutoresizingMaskIntoConstraints = false
+        purchaseButtonsStackView.spacing = 20.0
+        purchaseButtonsStackView.distribution = .fillEqually
 
-        return buttonsStackView
+        return purchaseButtonsStackView
     }()
 
     private lazy var disclaimerLabel: UILabel = {
@@ -82,7 +82,7 @@ class TipJarViewController: UIViewController {
         addChild(introductionViewController)
         introductionViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-        let stackView = UIStackView(arrangedSubviews: [introductionViewController.view, buttonsStackView, disclaimerLabel])
+        let stackView = UIStackView(arrangedSubviews: [introductionViewController.view, purchaseButtonsStackView, disclaimerLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 20.0
@@ -107,7 +107,7 @@ class TipJarViewController: UIViewController {
 
         Purchases.shared.offerings { offerings, error in
             guard error == nil else {
-                self.replaceLoadingProductsView(with: [self.noProductsLabel])
+                self.replaceLoadingProductsView(with: [self.fallbackLabel])
 
                 return
             }
@@ -129,15 +129,15 @@ class TipJarViewController: UIViewController {
 
 private extension TipJarViewController {
     func replaceLoadingProductsView(with views: [UIView]) {
-        guard buttonsStackView.arrangedSubviews.count == 1, let loadingProductsView = buttonsStackView.arrangedSubviews.first else {
+        guard purchaseButtonsStackView.arrangedSubviews.count == 1, let loadingProductsView = purchaseButtonsStackView.arrangedSubviews.first else {
             return
         }
 
-        buttonsStackView.removeArrangedSubview(loadingProductsView)
+        purchaseButtonsStackView.removeArrangedSubview(loadingProductsView)
         loadingProductsView.removeFromSuperview()
 
         views.forEach {
-            buttonsStackView.addArrangedSubview($0)
+            purchaseButtonsStackView.addArrangedSubview($0)
         }
 
         view.setNeedsDisplay()
