@@ -2,7 +2,7 @@ import UIKit
 
 class ContentViewController: UIViewController {
     private let circularView: CircularView = {
-        let circularView = CircularView(indicatorColor: .branding, trackColor: .lightGray, indicatorFillment: 0.0)
+        let circularView = CircularView(indicatorColor: AppDelegate.shared.theme.corporateColor, trackColor: .lightGray, indicatorFillment: 0.0)
         circularView.translatesAutoresizingMaskIntoConstraints = false
 
         return circularView
@@ -15,8 +15,8 @@ class ContentViewController: UIViewController {
     private lazy var swipeInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "↓ " + "SpeedometerViewController.SwipeInfo".localized + " ↓"
-        label.font = .swipeInfo
-        label.textColor = .swipeInfo
+        label.font = AppDelegate.shared.theme.swipeInfoFont
+        label.textColor = AppDelegate.shared.theme.swipeInfoColor
 
         return label
     }()
@@ -24,7 +24,7 @@ class ContentViewController: UIViewController {
     private lazy var settingsButtonView: UIButton = {
         let settingsButtonView = UIButton(type: .custom)
         settingsButtonView.translatesAutoresizingMaskIntoConstraints  = false
-        settingsButtonView.tintColor = .branding
+        settingsButtonView.tintColor = AppDelegate.shared.theme.corporateColor
         settingsButtonView.setImage(UIImage(named: "Info")?.withRenderingMode(.alwaysTemplate), for: .normal)
         settingsButtonView.contentEdgeInsets = UIEdgeInsets(top: 12.0, left: 12.0, bottom: 12.0, right: 12.0)
 

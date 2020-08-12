@@ -13,8 +13,8 @@ class ParagraphViewController: UIViewController {
     private lazy var headingLabel: UILabel = {
         let headingLabel = UILabel()
         headingLabel.translatesAutoresizingMaskIntoConstraints = false
-        headingLabel.font = .heading
-        headingLabel.textColor = .branding
+        headingLabel.font = AppDelegate.shared.theme.headingFont
+        headingLabel.textColor = AppDelegate.shared.theme.corporateColor
         headingLabel.numberOfLines = 2
 
         return headingLabel
@@ -23,8 +23,8 @@ class ParagraphViewController: UIViewController {
     private lazy var textLabel: UILabel = {
         let textLabel = UILabel()
         textLabel.translatesAutoresizingMaskIntoConstraints = false
-        textLabel.font = .text
-        textLabel.textColor = .text
+        textLabel.font = AppDelegate.shared.theme.textFont
+        textLabel.textColor = AppDelegate.shared.theme.primaryTextColor
         textLabel.numberOfLines = 0
 
         return textLabel

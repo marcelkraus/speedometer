@@ -18,7 +18,7 @@ class BlockingOverlayViewController: UIViewController {
     private lazy var canvasView: UIView = {
         let canvasView = UIView()
         canvasView.translatesAutoresizingMaskIntoConstraints = false
-        canvasView.backgroundColor = .branding
+        canvasView.backgroundColor = AppDelegate.shared.theme.corporateColor
         canvasView.layer.masksToBounds = true
         canvasView.layer.cornerRadius = 20.0
         canvasView.widthAnchor.constraint(equalToConstant: 200).isActive = true
@@ -48,8 +48,8 @@ class BlockingOverlayViewController: UIViewController {
     private lazy var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .heading
-        label.textColor = .white
+        label.font = AppDelegate.shared.theme.headingFont
+        label.textColor = AppDelegate.shared.theme.textOnCorporateColor
         label.text = "BlockingOverlayViewController.LoadingMessage".localized
 
         return label

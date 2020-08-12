@@ -5,8 +5,8 @@ class LocationViewController: UIViewController {
         let locationLabel = UILabel()
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
         locationLabel.numberOfLines = 2
-        locationLabel.font = .location
-        locationLabel.textColor = .location
+        locationLabel.font = AppDelegate.shared.theme.locationFont
+        locationLabel.textColor = AppDelegate.shared.theme.locationColor
         locationLabel.textAlignment = .center
 
         return locationLabel

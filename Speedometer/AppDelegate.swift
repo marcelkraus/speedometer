@@ -5,11 +5,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private static let revenueCatApiKey = "qzefGtCYnlDdBkhjXZpKYVEHvFgSnatV"
 
+    static var shared = AppDelegate()
+
     var window: UIWindow?
 
+    private(set) var theme = Theme.default
+
     func applicationDidFinishLaunching(_ application: UIApplication) {
+        AppDelegate.shared = self
+
         PaymentTransactionObserver.sharedInstance.register()
 
+        setupTheme()
         setupRevenueCat()
         setDefaultSettings()
 
@@ -19,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         migrateTo12()
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .background
+        window?.backgroundColor = theme.backgroundColor
         window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
     }
@@ -30,6 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 private extension AppDelegate {
+    func setupTheme() {
+        // TODO
+    }
+
     func setupRevenueCat() {
         Purchases.debugLogsEnabled = true
         Purchases.configure(withAPIKey: Self.revenueCatApiKey, appUserID: nil, observerMode: true)

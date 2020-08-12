@@ -6,7 +6,7 @@ class MessageViewController: UIViewController {
     private lazy var separatorView: UIView = {
         let separatorView = UIView()
         separatorView.translatesAutoresizingMaskIntoConstraints = false
-        separatorView.backgroundColor = .branding
+        separatorView.backgroundColor = AppDelegate.shared.theme.corporateColor
         separatorView.layer.cornerRadius = 10.0
         separatorView.layer.masksToBounds = true
 

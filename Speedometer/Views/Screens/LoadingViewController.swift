@@ -16,7 +16,7 @@ class LoadingViewController: UIViewController {
     private lazy var activityIndicatorView: UIActivityIndicatorView = {
         let activityIndicatorView = UIActivityIndicatorView()
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicatorView.color = .activityIndicator
+        activityIndicatorView.color = AppDelegate.shared.theme.activityIndicatorColor
         activityIndicatorView.startAnimating()
 
         return activityIndicatorView
@@ -25,8 +25,8 @@ class LoadingViewController: UIViewController {
     private lazy var indicatorLabel: UILabel = {
         let indicatorLabel = UILabel()
         indicatorLabel.translatesAutoresizingMaskIntoConstraints = false
-        indicatorLabel.font = .activityIndicator
-        indicatorLabel.textColor = .activityIndicator
+        indicatorLabel.font = AppDelegate.shared.theme.activityIndicatorFont
+        indicatorLabel.textColor = AppDelegate.shared.theme.activityIndicatorColor
         indicatorLabel.text = "LoadingIndicatorViewController.Indicator".localized
 
         return indicatorLabel
