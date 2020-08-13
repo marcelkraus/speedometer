@@ -5,7 +5,7 @@ class SpeedViewController: UIViewController {
         let speedLabel = UILabel()
         speedLabel.translatesAutoresizingMaskIntoConstraints = false
         speedLabel.font = AppDelegate.shared.theme.speedFont
-        speedLabel.textColor = AppDelegate.shared.theme.speedColor
+        speedLabel.textColor = AppDelegate.shared.theme.primaryContentColor
         speedLabel.textAlignment = .right
         speedLabel.text = "0"
 
@@ -15,7 +15,7 @@ class SpeedViewController: UIViewController {
     private lazy var unitBackgroundView: UIView = {
         let unitBackgroundView = UIView()
         unitBackgroundView.translatesAutoresizingMaskIntoConstraints = false
-        unitBackgroundView.backgroundColor = AppDelegate.shared.theme.corporateColor
+        unitBackgroundView.backgroundColor = AppDelegate.shared.theme.interactionColor
         unitBackgroundView.layer.cornerRadius = 20.0
         unitBackgroundView.layer.masksToBounds = true
 
@@ -26,7 +26,7 @@ class SpeedViewController: UIViewController {
         let unitLabel = UILabel()
         unitLabel.translatesAutoresizingMaskIntoConstraints = false
         unitLabel.font = AppDelegate.shared.theme.unitFont
-        unitLabel.textColor = AppDelegate.shared.theme.textOnCorporateColor
+        unitLabel.textColor = AppDelegate.shared.theme.onInteractionColor
         unitLabel.textAlignment = .center
 
         return unitLabel

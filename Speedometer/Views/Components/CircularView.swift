@@ -44,6 +44,9 @@ class CircularView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
+        // Remove obsolete layers from `CircularView`
+        layer.sublayers?.forEach { $0.removeFromSuperlayer() }
+
         layer.addSublayer(circleLayer(for: .track))
         layer.addSublayer(circleLayer(for: .indicator))
     }

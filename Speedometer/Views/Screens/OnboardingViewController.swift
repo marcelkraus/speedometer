@@ -10,7 +10,7 @@ class OnboardingViewController: UIViewController {
     private lazy var separatorView: UIView = {
         let separatorView = UIView()
         separatorView.translatesAutoresizingMaskIntoConstraints = false
-        separatorView.backgroundColor = AppDelegate.shared.theme.corporateColor
+        separatorView.backgroundColor = AppDelegate.shared.theme.interactionColor
         separatorView.layer.cornerRadius = 10.0
         separatorView.layer.masksToBounds = true
 
@@ -36,7 +36,7 @@ class OnboardingViewController: UIViewController {
         let authorizationButtonView = UIButton()
         authorizationButtonView.translatesAutoresizingMaskIntoConstraints = false
         authorizationButtonView.setTitle("OnboardingViewController.Button".localized, for: .normal)
-        authorizationButtonView.setTitleColor(AppDelegate.shared.theme.corporateColor, for: .normal)
+        authorizationButtonView.setTitleColor(AppDelegate.shared.theme.interactionColor, for: .normal)
         authorizationButtonView.addTarget(self, action: #selector(didTapAuthorizeButton), for: .touchUpInside)
 
         return authorizationButtonView

@@ -20,13 +20,13 @@ class TipJarViewController: UIViewController {
     private lazy var loadingProductsView: UIView = {
         let activityIndicatorView = UIActivityIndicatorView()
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicatorView.color = AppDelegate.shared.theme.activityIndicatorColor
+        activityIndicatorView.color = AppDelegate.shared.theme.primaryContentColor
         activityIndicatorView.startAnimating()
 
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = AppDelegate.shared.theme.textFont
-        label.textColor = AppDelegate.shared.theme.activityIndicatorColor
+        label.textColor = AppDelegate.shared.theme.primaryContentColor
         label.text = "TipJarViewController.LoadingMessage".localized
 
         let placeholderView = UIView()
@@ -48,7 +48,7 @@ class TipJarViewController: UIViewController {
         let fallbackLabel = UILabel()
         fallbackLabel.translatesAutoresizingMaskIntoConstraints = false
         fallbackLabel.font = AppDelegate.shared.theme.textFont
-        fallbackLabel.textColor = AppDelegate.shared.theme.corporateColor
+        fallbackLabel.textColor = AppDelegate.shared.theme.interactionColor
         fallbackLabel.numberOfLines = 0
         fallbackLabel.text = "TipJarViewController.FallbackMessage".localized
 
@@ -82,7 +82,7 @@ class TipJarViewController: UIViewController {
         restoreButton.translatesAutoresizingMaskIntoConstraints = false
         restoreButton.setTitle("TipJarViewController.RestoreButton".localized, for: .normal)
         restoreButton.titleLabel?.font = AppDelegate.shared.theme.buttonFont
-        restoreButton.tintColor = AppDelegate.shared.theme.corporateColor
+        restoreButton.tintColor = AppDelegate.shared.theme.interactionColor
         restoreButton.addAction {
             Purchases.shared.restoreTransactions { [weak self] purchaserInfo, error in
                 guard error == nil else {
@@ -107,6 +107,7 @@ class TipJarViewController: UIViewController {
         let tipJarDisclaimerLabel = UILabel()
         tipJarDisclaimerLabel.translatesAutoresizingMaskIntoConstraints = false
         tipJarDisclaimerLabel.font = AppDelegate.shared.theme.disclaimerFont
+        tipJarDisclaimerLabel.textColor = AppDelegate.shared.theme.tertiaryContentColor
         tipJarDisclaimerLabel.text = "TipJarViewController.Disclaimer".localized
         tipJarDisclaimerLabel.numberOfLines = 0
 
@@ -194,10 +195,9 @@ private extension TipJarViewController {
         let purchaseButton = UIButton(type: .custom)
         purchaseButton.translatesAutoresizingMaskIntoConstraints = false
         purchaseButton.layer.cornerRadius = 20.0
-        purchaseButton.backgroundColor = AppDelegate.shared.theme.corporateColor
-        purchaseButton.setTitleColor(UIColor(red: 192.0, green: 192.0, blue: 192.0, alpha: 1.0), for: .highlighted)
+        purchaseButton.backgroundColor = AppDelegate.shared.theme.interactionColor
+        purchaseButton.setTitleColor(AppDelegate.shared.theme.onInteractionColor, for: .normal)
         purchaseButton.titleLabel?.textAlignment = .center
-        purchaseButton.titleLabel?.textColor = AppDelegate.shared.theme.textOnCorporateColor
         purchaseButton.titleLabel?.font = AppDelegate.shared.theme.buttonFont
         purchaseButton.setTitle(priceFormatter.string(from: package.product.price), for: .normal)
         purchaseButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true

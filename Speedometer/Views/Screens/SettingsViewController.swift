@@ -38,7 +38,7 @@ class SettingsViewController: UIViewController {
     private lazy var separatorView: UIView = {
         let separatorView = UIView()
         separatorView.translatesAutoresizingMaskIntoConstraints = false
-        separatorView.backgroundColor = AppDelegate.shared.theme.corporateColor
+        separatorView.backgroundColor = AppDelegate.shared.theme.interactionColor
         separatorView.layer.cornerRadius = 10.0
         separatorView.layer.masksToBounds = true
 
@@ -48,7 +48,7 @@ class SettingsViewController: UIViewController {
     private lazy var closeButton: UIButton = {
         let closeButton = UIButton(type: .custom)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.tintColor = AppDelegate.shared.theme.corporateColor
+        closeButton.tintColor = AppDelegate.shared.theme.interactionColor
         closeButton.setImage(UIImage(named: "Close")?.withRenderingMode(.alwaysTemplate), for: .normal)
         closeButton.contentEdgeInsets = UIEdgeInsets(top: 12.0, left: 12.0, bottom: 12.0, right: 12.0)
 
@@ -167,7 +167,7 @@ extension SettingsViewController: TipJarViewControllerDelegate {
         let okAction = UIAlertAction(title: "SettingsViewController.TipConfirmationButton".localized, style: .default, handler: nil)
         let alertViewController = UIAlertController(title: "SettingsViewController.TipConfirmationTitle".localized, message: "SettingsViewController.TipConfirmationMessage".localized, preferredStyle: .alert)
         alertViewController.addAction(okAction)
-        alertViewController.view.tintColor = AppDelegate.shared.theme.corporateColor
+        alertViewController.view.tintColor = AppDelegate.shared.theme.interactionColor
 
         present(alertViewController, animated: true, completion: nil)
     }

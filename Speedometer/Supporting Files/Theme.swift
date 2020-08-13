@@ -7,39 +7,43 @@ enum Theme {
 // MARK: - Colors
 
 extension Theme {
-    var activityIndicatorColor: UIColor {
-        .darkGray
-    }
-
     var backgroundColor: UIColor {
-        .white
+        if #available(iOS 13.0, *) {
+            return .secondarySystemBackground
+        } else {
+            return .white
+        }
     }
 
-    var circularViewColor: UIColor {
-        .lightGray
+    var primaryContentColor: UIColor {
+        if #available(iOS 13.0, *) {
+            return .label
+        } else {
+            return .darkGray
+        }
     }
 
-    var corporateColor: UIColor {
-        UIColor(red: 0.012, green: 0.569, blue: 0.576, alpha: 1.00)
+    var secondaryContentColor: UIColor {
+        if #available(iOS 13.0, *) {
+            return .secondaryLabel
+        } else {
+            return .lightGray
+        }
     }
 
-    var locationColor: UIColor {
-        .darkGray
+    var tertiaryContentColor: UIColor {
+        if #available(iOS 13.0, *) {
+            return .tertiaryLabel
+        } else {
+            return .lightGray
+        }
     }
 
-    var speedColor: UIColor {
-        .black
+    var interactionColor: UIColor {
+        UIColor(named: "Corporate")!
     }
 
-    var swipeInfoColor: UIColor {
-        .darkGray
-    }
-
-    var primaryTextColor: UIColor {
-        .black
-    }
-
-    var textOnCorporateColor: UIColor {
+    var onInteractionColor: UIColor {
         .white
     }
 }
