@@ -1,14 +1,14 @@
 import Purchases
 import UIKit
 
-protocol TipJarViewControllerDelegate: class {
-    func tipSelectionViewControllerWillPurchaseProduct(_ tipSelectionViewController: TipJarViewController)
-    func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: TipJarViewController)
-    func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: TipJarViewController)
+protocol InAppStoreViewControllerDelegate: class {
+    func tipSelectionViewControllerWillPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController)
+    func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController)
+    func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController)
 }
 
-class TipJarViewController: UIViewController {
-    weak var delegate: TipJarViewControllerDelegate?
+class InAppStoreViewController: UIViewController {
+    weak var delegate: InAppStoreViewControllerDelegate?
 
     private lazy var priceFormatter: NumberFormatter = {
         let priceFormatter = NumberFormatter()
@@ -27,7 +27,7 @@ class TipJarViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = AppDelegate.shared.theme.textFont
         label.textColor = AppDelegate.shared.theme.primaryContentColor
-        label.text = "TipJarViewController.LoadingMessage".localized
+        label.text = "InAppStoreViewController.LoadingMessage".localized
 
         let placeholderView = UIView()
         placeholderView.addSubview(activityIndicatorView)
@@ -50,13 +50,13 @@ class TipJarViewController: UIViewController {
         fallbackLabel.font = AppDelegate.shared.theme.textFont
         fallbackLabel.textColor = AppDelegate.shared.theme.interactionColor
         fallbackLabel.numberOfLines = 0
-        fallbackLabel.text = "TipJarViewController.FallbackMessage".localized
+        fallbackLabel.text = "InAppStoreViewController.FallbackMessage".localized
 
         return fallbackLabel
     }()
 
     private lazy var introductionViewController: UIViewController = {
-        return ParagraphViewController(heading: "TipJarViewController.Heading".localized, text: "TipJarViewController.Description".localized)
+        return ParagraphViewController(heading: "InAppStoreViewController.Heading".localized, text: "InAppStoreViewController.Description".localized)
     }()
 
     private lazy var purchaseButtonsStackView: UIStackView = {
@@ -80,7 +80,7 @@ class TipJarViewController: UIViewController {
     private lazy var restoreButton: UIButton = {
         let restoreButton = UIButton(type: .system)
         restoreButton.translatesAutoresizingMaskIntoConstraints = false
-        restoreButton.setTitle("TipJarViewController.RestoreButton".localized, for: .normal)
+        restoreButton.setTitle("InAppStoreViewController.RestoreButton".localized, for: .normal)
         restoreButton.titleLabel?.font = AppDelegate.shared.theme.buttonFont
         restoreButton.tintColor = AppDelegate.shared.theme.interactionColor
         restoreButton.addAction {
@@ -104,14 +104,14 @@ class TipJarViewController: UIViewController {
 
 
     private lazy var disclaimerLabel: UILabel = {
-        let tipJarDisclaimerLabel = UILabel()
-        tipJarDisclaimerLabel.translatesAutoresizingMaskIntoConstraints = false
-        tipJarDisclaimerLabel.font = AppDelegate.shared.theme.disclaimerFont
-        tipJarDisclaimerLabel.textColor = AppDelegate.shared.theme.tertiaryContentColor
-        tipJarDisclaimerLabel.text = "TipJarViewController.Disclaimer".localized
-        tipJarDisclaimerLabel.numberOfLines = 0
+        let disclaimerLabel = UILabel()
+        disclaimerLabel.translatesAutoresizingMaskIntoConstraints = false
+        disclaimerLabel.font = AppDelegate.shared.theme.disclaimerFont
+        disclaimerLabel.textColor = AppDelegate.shared.theme.tertiaryContentColor
+        disclaimerLabel.text = "InAppStoreViewController.Disclaimer".localized
+        disclaimerLabel.numberOfLines = 0
 
-        return tipJarDisclaimerLabel
+        return disclaimerLabel
     }()
 
     private lazy var stackView: UIStackView = {
@@ -171,7 +171,7 @@ class TipJarViewController: UIViewController {
     }
 }
 
-private extension TipJarViewController {
+private extension InAppStoreViewController {
     func replaceLoadingProductsView(with views: [UIView]) {
         guard purchaseButtonsStackView.arrangedSubviews.count == 1, let loadingProductsView = purchaseButtonsStackView.arrangedSubviews.first else {
             return
@@ -217,7 +217,7 @@ private extension TipJarViewController {
 
 // - MARK: PaymentTransactionObserverDelegate
 
-extension TipJarViewController: PaymentTransactionObserverDelegate {
+extension InAppStoreViewController: PaymentTransactionObserverDelegate {
     func showTransactionAsInProgress(_ transaction: SKPaymentTransaction, deferred: Bool) {
         delegate?.tipSelectionViewControllerWillPurchaseProduct(self)
     }

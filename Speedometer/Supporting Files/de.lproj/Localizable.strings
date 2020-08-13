@@ -1,4 +1,10 @@
 "BlockingOverlayViewController.LoadingMessage" = "Bitte warten…";
+"InAppStoreViewController.Heading" = "Mein Sparschwein";
+"InAppStoreViewController.Description" = "Mein Versprechen: Tacho bleibt einfach, kostenlos und werbefrei!\n\nSolltest du ganz besonders zufrieden sein, würde ich mich trotzdem sehr freuen, wenn du mir etwas in mein Sparschwein wirfst. Vielen Dank! :)";
+"InAppStoreViewController.Disclaimer" = "Hinweis: Alle Käufe sind einmalig (Keine Abonnements) und dienen alleine der freiwilligen Unterstützung des Entwicklers. Alle Funktionen von Tacho stehen auch ohne Kauf weiterhin zur Verfügung.";
+"InAppStoreViewController.LoadingMessage" = "Produkte werden geladen…";
+"InAppStoreViewController.FallbackMessage" = "Oh oh, da klemmt etwas! Zur Zeit stehen keine Produkte zum Kauf zur Verfügung - bitte probiere es später erneut. Vielen Dank!";
+"InAppStoreViewController.RestoreButton" = "Einkäufe wiederherstellen";
 "LoadingIndicatorViewController.Indicator" = "Laden…";
 "Location.East" = "Ost";
 "Location.North" = "Nord";
@@ -17,9 +23,3 @@
 "SettingsViewController.TipConfirmationMessage" = "Danke, dass du die Entwicklung von Tacho mit einem Trinkgeld unterstützt. Das bedeutet mir sehr viel! <3";
 "SettingsViewController.TipConfirmationButton" = "Gern geschehen!";
 "SpeedometerViewController.SwipeInfo" = "Runter wischen für nächste Einheit";
-"TipJarViewController.Heading" = "Mein Sparschwein";
-"TipJarViewController.Description" = "Mein Versprechen: Tacho bleibt einfach, kostenlos und werbefrei!\n\nSolltest du ganz besonders zufrieden sein, würde ich mich trotzdem sehr freuen, wenn du mir etwas in mein Sparschwein wirfst. Vielen Dank! :)";
-"TipJarViewController.Disclaimer" = "Hinweis: Alle Käufe sind einmalig (Keine Abonnements) und dienen alleine der freiwilligen Unterstützung des Entwicklers. Alle Funktionen von Tacho stehen auch ohne Kauf weiterhin zur Verfügung.";
-"TipJarViewController.LoadingMessage" = "Produkte werden geladen…";
-"TipJarViewController.FallbackMessage" = "Oh oh, da klemmt etwas! Zur Zeit stehen keine Produkte zum Kauf zur Verfügung - bitte probiere es später erneut. Vielen Dank!";
-"TipJarViewController.RestoreButton" = "Einkäufe wiederherstellen";

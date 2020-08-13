@@ -1,4 +1,10 @@
 "BlockingOverlayViewController.LoadingMessage" = "Processing…";
+"InAppStoreViewController.Heading" = "My Tip Jar";
+"InAppStoreViewController.Description" = "My promise: Speedometer stays simple, cost-free and without any advertisements.\n\nIf you are satisfied with Speedometer, I would appreciate if you give me a small tip. Thanks! :)";
+"InAppStoreViewController.Disclaimer" = "Note: All purchases are one-time purchases (no subscriptions) and absolutely voluntary to support the developer. All features of Speedometer will be available, even without a purchase.";
+"InAppStoreViewController.LoadingMessage" = "Loading products…";
+"InAppStoreViewController.FallbackMessage" = "Uh, there is something wrong! There are no products available at the moment, please try again later. Thank you!";
+"InAppStoreViewController.RestoreButton" = "Restore Purchases";
 "LoadingIndicatorViewController.Indicator" = "Loading…";
 "Location.East" = "East";
 "Location.North" = "North";
@@ -17,9 +23,3 @@
 "SettingsViewController.TipConfirmationMessage" = "Thanks for supporting the development of Speedometer by sending me a tip. This means a lot to me! <3";
 "SettingsViewController.TipConfirmationButton" = "Your welcome!";
 "SpeedometerViewController.SwipeInfo" = "Swipe Down for Next Unit";
-"TipJarViewController.Heading" = "My Tip Jar";
-"TipJarViewController.Description" = "My promise: Speedometer stays simple, cost-free and without any advertisements.\n\nIf you are satisfied with Speedometer, I would appreciate if you give me a small tip. Thanks! :)";
-"TipJarViewController.Disclaimer" = "Note: All purchases are one-time purchases (no subscriptions) and absolutely voluntary to support the developer. All features of Speedometer will be available, even without a purchase.";
-"TipJarViewController.LoadingMessage" = "Loading products…";
-"TipJarViewController.FallbackMessage" = "Uh, there is something wrong! There are no products available at the moment, please try again later. Thank you!";
-"TipJarViewController.RestoreButton" = "Restore Purchases";

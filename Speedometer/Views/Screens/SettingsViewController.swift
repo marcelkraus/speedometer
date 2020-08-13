@@ -61,11 +61,11 @@ class SettingsViewController: UIViewController {
         return ParagraphViewController(heading: "SettingsViewController.Imprint.Heading".localized, text: String(format: "SettingsViewController.Imprint.Text".localized, versionNumber, buildNumber))
     }()
 
-    private lazy var tipJarViewController: UIViewController = {
-        let tipJarViewController = TipJarViewController()
-        tipJarViewController.delegate = self
+    private lazy var inAppStoreViewController: UIViewController = {
+        let inAppStoreViewController = InAppStoreViewController()
+        inAppStoreViewController.delegate = self
 
-        return tipJarViewController
+        return inAppStoreViewController
     }()
 
     private lazy var themeButton: UIButton = {
@@ -86,16 +86,16 @@ class SettingsViewController: UIViewController {
         addChild(imprintViewController)
         imprintViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-        addChild(tipJarViewController)
-        tipJarViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        addChild(inAppStoreViewController)
+        inAppStoreViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-        let stackView = UIStackView(arrangedSubviews: [imprintViewController.view, themeButton, tipJarViewController.view])
+        let stackView = UIStackView(arrangedSubviews: [imprintViewController.view, themeButton, inAppStoreViewController.view])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 40.0
 
         imprintViewController.didMove(toParent: self)
-        tipJarViewController.didMove(toParent: self)
+        inAppStoreViewController.didMove(toParent: self)
 
         return stackView
     }()
@@ -161,19 +161,19 @@ class SettingsViewController: UIViewController {
     }
 }
 
-extension SettingsViewController: TipJarViewControllerDelegate {
-    func tipSelectionViewControllerWillPurchaseProduct(_ tipSelectionViewController: TipJarViewController) {
+extension SettingsViewController: InAppStoreViewControllerDelegate {
+    func tipSelectionViewControllerWillPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController) {
         isBlocked = true
     }
 
-    func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: TipJarViewController) {
+    func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.isBlocked = false
             self.showConfirmationMessage()
         }
     }
 
-    func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: TipJarViewController) {
+    func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController) {
         isBlocked = false
     }
 
