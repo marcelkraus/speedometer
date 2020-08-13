@@ -14,7 +14,7 @@ class ParagraphViewController: UIViewController {
         let headingLabel = UILabel()
         headingLabel.translatesAutoresizingMaskIntoConstraints = false
         headingLabel.font = AppDelegate.shared.theme.headingFont
-        headingLabel.textColor = AppDelegate.shared.theme.interactionColor
+        headingLabel.textColor = AppDelegate.shared.theme.primaryContentColor
         headingLabel.numberOfLines = 2
 
         return headingLabel
@@ -24,7 +24,7 @@ class ParagraphViewController: UIViewController {
         let textLabel = UILabel()
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.font = AppDelegate.shared.theme.textFont
-        textLabel.textColor = AppDelegate.shared.theme.primaryContentColor
+        textLabel.textColor = AppDelegate.shared.theme.secondaryContentColor
         textLabel.numberOfLines = 0
 
         return textLabel

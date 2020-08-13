@@ -68,6 +68,20 @@ class SettingsViewController: UIViewController {
         return tipJarViewController
     }()
 
+    private lazy var themeButton: UIButton = {
+        let themeButton = UIButton()
+        themeButton.translatesAutoresizingMaskIntoConstraints = false
+        themeButton.setTitle("Theme wechseln und Fenster schließen", for: .normal)
+        themeButton.setTitleColor(AppDelegate.shared.theme.interactionColor, for: .normal)
+        themeButton.titleLabel?.font = AppDelegate.shared.theme.buttonFont
+        themeButton.addAction { [weak self] in
+            AppDelegate.shared.theme = AppDelegate.shared.theme.next
+            self?.dismiss(animated: true, completion: nil)
+        }
+
+        return themeButton
+    }()
+
     private lazy var stackView: UIStackView = {
         addChild(imprintViewController)
         imprintViewController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -75,7 +89,7 @@ class SettingsViewController: UIViewController {
         addChild(tipJarViewController)
         tipJarViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-        let stackView = UIStackView(arrangedSubviews: [imprintViewController.view, tipJarViewController.view])
+        let stackView = UIStackView(arrangedSubviews: [imprintViewController.view, themeButton, tipJarViewController.view])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 40.0

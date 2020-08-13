@@ -1,7 +1,36 @@
 import UIKit
 
-enum Theme {
-    case `default`
+enum Theme: String, CaseIterable {
+    case blueberry
+    case mint
+    case orange
+    case raspberry
+
+    static var `default`: Self {
+        Theme.mint
+    }
+
+    static var selected: Self {
+        guard let themeIdentifier = UserDefaults.standard.string(forKey: Key.selectedTheme) else {
+            return .default
+        }
+
+        guard let theme = Theme(rawValue: themeIdentifier) else {
+            return .default
+        }
+
+        return theme
+    }
+
+    var next: Self {
+        let themes = Theme.allCases
+
+        let index = themes.firstIndex(of: self)! + 1
+        let theme = (index < themes.count) ? themes[index] : themes.first!
+        UserDefaults.standard.set(theme.rawValue, forKey: Key.selectedTheme)
+
+        return theme
+    }
 }
 
 // MARK: - Colors
@@ -40,7 +69,7 @@ extension Theme {
     }
 
     var interactionColor: UIColor {
-        UIColor(named: "Corporate")!
+        UIColor(named: "\(self.rawValue.capitalized).Corporate")!
     }
 
     var onInteractionColor: UIColor {

@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    private(set) var theme = Theme.default
+    var theme: Theme!
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
         AppDelegate.shared = self
@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 private extension AppDelegate {
     func setupTheme() {
-        // TODO
+        theme = Theme.selected
     }
 
     func setupRevenueCat() {
@@ -48,10 +48,12 @@ private extension AppDelegate {
 
     func setDefaultSettings() {
         let defaultUnit = Unit.default
+        let defaultTheme = Theme.default
 
         UserDefaults.standard.register(defaults: [
             Key.appStartCounter: 0,
             Key.selectedUnit: defaultUnit.rawValue,
+            Key.selectedTheme: defaultTheme.rawValue,
         ])
     }
 

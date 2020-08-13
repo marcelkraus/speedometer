@@ -7,27 +7,27 @@ enum Unit: String, CaseIterable {
     case knots = "kn"
     case split500 = "min./500m"
 
-    static var `default`: Unit {
+    static var `default`: Self {
         Locale.current.usesMetricSystem ? Unit.kilometersPerHour : Unit.milesPerHour
     }
 
-    static var selected: Unit {
+    static var selected: Self {
         // Return default unit in case the selected unit id can not be fetched
         // from UserDefaults or still contains an Int (e.g. fauly migration).
-        guard let selectedUnit = UserDefaults.standard.string(forKey: Key.selectedUnit) else {
+        guard let unitIdentifier = UserDefaults.standard.string(forKey: Key.selectedUnit) else {
             return .default
         }
 
         // Return default unit in case the selected unit can not be used to
         // create an `Unit`, e.g. when an `Unit` was removed.
-        guard let unit = Unit(rawValue: selectedUnit) else {
+        guard let unit = Unit(rawValue: unitIdentifier) else {
             return .default
         }
 
         return unit
     }
 
-    var next: Unit {
+    var next: Self {
         let units = Unit.allCases
 
         let index = units.firstIndex(of: self)! + 1
