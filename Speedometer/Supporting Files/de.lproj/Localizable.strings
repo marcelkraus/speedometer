@@ -1,9 +1,9 @@
 "BlockingOverlayViewController.LoadingMessage" = "Bitte warten…";
-"InAppStoreViewController.Heading" = "Mein Sparschwein";
-"InAppStoreViewController.Description" = "Mein Versprechen: Tacho bleibt einfach, kostenlos und werbefrei!\n\nSolltest du ganz besonders zufrieden sein, würde ich mich trotzdem sehr freuen, wenn du mir etwas in mein Sparschwein wirfst. Vielen Dank! :)";
-"InAppStoreViewController.Disclaimer" = "Hinweis: Alle Käufe sind einmalig (Keine Abonnements) und dienen alleine der freiwilligen Unterstützung des Entwicklers. Alle Funktionen von Tacho stehen auch ohne Kauf weiterhin zur Verfügung.";
-"InAppStoreViewController.LoadingMessage" = "Produkte werden geladen…";
-"InAppStoreViewController.FallbackMessage" = "Oh oh, da klemmt etwas! Zur Zeit stehen keine Produkte zum Kauf zur Verfügung - bitte probiere es später erneut. Vielen Dank!";
+"InAppStoreViewController.Heading" = "Ein kleines Trinkgeld…";
+"InAppStoreViewController.Description" = "Mein Versprechen: Tacho bleibt übersichtlich, kostenlos und werbefrei!\n\nSollte dir Tacho jedoch besonders gut gefallen, würde ich mich freuen, wenn du mir ein kleines Trinkgeld zukommen lässt.\n\nAls Dankeschön erhälst du Zugriff auf drei weitere Farbmotive, die Tacho in einem neuen Glanz erstrahlen lassen. Alle Farbmotive unterstützen den Dark Mode und beinhalten jeweils ein eigenes App-Icon.";
+"InAppStoreViewController.Disclaimer" = "Alle Käufe sind einmalig und keine Abonnements, der Betrag ist frei wählbar und dient der Unterstützung des Entwicklers. Du erhälst sofort Zugriff auf drei weitere Farbmotive, weitere kommen in unregelmäßigen Abständen dazu. Alle wesentlichen Funktionen von Tacho stehen dir auch ohne Kauf zur Verfügung.";
+"InAppStoreViewController.LoadingMessage" = "In-App-Store wird geladen…";
+"InAppStoreViewController.FallbackMessage" = "Oh, da klemmt etwas! Zur Zeit stehen keine Produkte zum Kauf zur Verfügung - bitte probiere es später erneut. Vielen Dank!";
 "InAppStoreViewController.RestoreButton" = "Einkäufe wiederherstellen";
 "LoadingIndicatorViewController.Indicator" = "Laden…";
 "Location.East" = "Ost";

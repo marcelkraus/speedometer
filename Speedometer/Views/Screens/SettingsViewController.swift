@@ -89,7 +89,7 @@ class SettingsViewController: UIViewController {
         addChild(inAppStoreViewController)
         inAppStoreViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-        let stackView = UIStackView(arrangedSubviews: [imprintViewController.view, themeButton, inAppStoreViewController.view])
+        let stackView = UIStackView(arrangedSubviews: [inAppStoreViewController.view, imprintViewController.view, themeButton])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 40.0

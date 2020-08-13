@@ -102,12 +102,11 @@ class InAppStoreViewController: UIViewController {
         return restoreButton
     }()
 
-
     private lazy var disclaimerLabel: UILabel = {
         let disclaimerLabel = UILabel()
         disclaimerLabel.translatesAutoresizingMaskIntoConstraints = false
         disclaimerLabel.font = AppDelegate.shared.theme.disclaimerFont
-        disclaimerLabel.textColor = AppDelegate.shared.theme.tertiaryContentColor
+        disclaimerLabel.textColor = AppDelegate.shared.theme.secondaryContentColor
         disclaimerLabel.text = "InAppStoreViewController.Disclaimer".localized
         disclaimerLabel.numberOfLines = 0
 
