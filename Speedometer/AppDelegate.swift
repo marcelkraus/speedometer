@@ -9,14 +9,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var theme: Theme!
+    private(set) var theme: Theme = Theme.selected
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
         AppDelegate.shared = self
 
         PaymentTransactionObserver.sharedInstance.register()
 
-        setupTheme()
         setupRevenueCat()
         setDefaultSettings()
 
@@ -34,21 +33,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         PaymentTransactionObserver.sharedInstance.deregister()
     }
+
+    func setTheme(_ theme: Theme) {
+        self.theme = theme
+    }
 }
 
 private extension AppDelegate {
-    func setupTheme() {
-        theme = Theme.selected
-    }
-
     func setupRevenueCat() {
         Purchases.debugLogsEnabled = true
         Purchases.configure(withAPIKey: Self.revenueCatApiKey, appUserID: nil, observerMode: true)
     }
 
     func setDefaultSettings() {
-        let defaultUnit = Unit.default
-        let defaultTheme = Theme.default
+        let defaultUnit = Unit.selected
+        let defaultTheme = Theme.selected
 
         UserDefaults.standard.register(defaults: [
             Key.appStartCounter: 0,

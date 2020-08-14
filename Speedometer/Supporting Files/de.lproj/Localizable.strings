@@ -22,4 +22,5 @@
 "SettingsViewController.TipConfirmationTitle" = "Du bist klasse!";
 "SettingsViewController.TipConfirmationMessage" = "Danke, dass du die Entwicklung von Tacho mit einem Trinkgeld unterstützt. Das bedeutet mir sehr viel! <3";
 "SettingsViewController.TipConfirmationButton" = "Gern geschehen!";
+"SettingsViewController.ThemeSelection.Heading" = "Auswahl des Farbmotivs";
 "SpeedometerViewController.SwipeInfo" = "Runter wischen für nächste Einheit";

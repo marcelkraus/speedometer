@@ -6,28 +6,20 @@ enum Theme: String, CaseIterable {
     case orange
     case raspberry
 
-    static var `default`: Self {
-        Theme.mint
+    private static var `default`: Self {
+        .mint
     }
 
     static var selected: Self {
+        // Return default theme in case the selected theme id is not set yet.
         guard let themeIdentifier = UserDefaults.standard.string(forKey: Key.selectedTheme) else {
             return .default
         }
-
+        // Return default theme in case the selected theme can not be used to
+        // create an `Theme`, e.g. when a `Theme` was removed.
         guard let theme = Theme(rawValue: themeIdentifier) else {
             return .default
         }
-
-        return theme
-    }
-
-    var next: Self {
-        let themes = Theme.allCases
-
-        let index = themes.firstIndex(of: self)! + 1
-        let theme = (index < themes.count) ? themes[index] : themes.first!
-        UserDefaults.standard.set(theme.rawValue, forKey: Key.selectedTheme)
 
         return theme
     }

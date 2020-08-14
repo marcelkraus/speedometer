@@ -22,4 +22,5 @@
 "SettingsViewController.TipConfirmationTitle" = "You are awesome!";
 "SettingsViewController.TipConfirmationMessage" = "Thanks for supporting the development of Speedometer by sending me a tip. This means a lot to me! <3";
 "SettingsViewController.TipConfirmationButton" = "Your welcome!";
+"SettingsViewController.ThemeSelection.Heading" = "Theme Selection";
 "SpeedometerViewController.SwipeInfo" = "Swipe Down for Next Unit";

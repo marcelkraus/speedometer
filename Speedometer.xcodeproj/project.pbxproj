@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */; };
+		DF22618124E67B9300BCD867 /* FillableCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF22618024E67B9300BCD867 /* FillableCircleView.swift */; };
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
 		DF2F6BD321ADA4A400AC75BE /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F6BD221ADA4A400AC75BE /* ContentViewController.swift */; };
 		DF3010D8205A929E005B493D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3010D7205A929E005B493D /* String+Localization.swift */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DF22618024E67B9300BCD867 /* FillableCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillableCircleView.swift; sourceTree = "<group>"; };
 		DF2C45AE1FCC2EF0005C8906 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		DF2F6BD221ADA4A400AC75BE /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		DF3010D7205A929E005B493D /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			children = (
 				DFECF441247FB6D500A83594 /* BlockingOverlayViewController.swift */,
 				DF4C365020D133CD00A9E1B7 /* CircularView.swift */,
+				DF22618024E67B9300BCD867 /* FillableCircleView.swift */,
 				DF36993E23882D3800BA8C08 /* InAppStoreViewController.swift */,
 				DFDBDE4E21F9D93500F3E858 /* LocationViewController.swift */,
 				DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */,
@@ -387,6 +390,7 @@
 				DFDB3682219F7B4D002B7D53 /* Message.swift in Sources */,
 				DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */,
 				DF7D820221C2B073004A37C8 /* SpeedViewController.swift in Sources */,
+				DF22618124E67B9300BCD867 /* FillableCircleView.swift in Sources */,
 				DFFD6FEF24E3DAC4004E3A51 /* Theme.swift in Sources */,
 				DF511037219D9B05000321E8 /* LoadingViewController.swift in Sources */,
 				DF4C365120D133CD00A9E1B7 /* CircularView.swift in Sources */,

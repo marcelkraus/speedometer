@@ -68,18 +68,40 @@ class SettingsViewController: UIViewController {
         return inAppStoreViewController
     }()
 
-    private lazy var themeButton: UIButton = {
-        let themeButton = UIButton()
-        themeButton.translatesAutoresizingMaskIntoConstraints = false
-        themeButton.setTitle("Theme wechseln und Fenster schließen", for: .normal)
-        themeButton.setTitleColor(AppDelegate.shared.theme.interactionColor, for: .normal)
-        themeButton.titleLabel?.font = AppDelegate.shared.theme.buttonFont
-        themeButton.addAction { [weak self] in
-            AppDelegate.shared.theme = AppDelegate.shared.theme.next
-            self?.dismiss(animated: true, completion: nil)
+    private lazy var themeSelectionStackView: UIStackView = {
+        let headingLabel = UILabel()
+        headingLabel.translatesAutoresizingMaskIntoConstraints = false
+        headingLabel.font = AppDelegate.shared.theme.headingFont
+        headingLabel.textColor = AppDelegate.shared.theme.primaryContentColor
+        headingLabel.numberOfLines = 2
+        headingLabel.text = "SettingsViewController.ThemeSelection.Heading".localized
+
+        let themeSelectionStackView = UIStackView()
+        themeSelectionStackView.translatesAutoresizingMaskIntoConstraints = false
+        themeSelectionStackView.distribution = .equalCentering
+
+        Theme.allCases.forEach { theme in
+            let fillableCircleView = FillableCircleView(color: theme.interactionColor, isFilled: theme == AppDelegate.shared.theme)
+            fillableCircleView.translatesAutoresizingMaskIntoConstraints = false
+            fillableCircleView.backgroundColor = AppDelegate.shared.theme.backgroundColor
+            fillableCircleView.addAction { [weak self] in
+                AppDelegate.shared.setTheme(theme)
+                self?.dismiss(animated: true, completion: nil)
+            }
+            NSLayoutConstraint.activate([
+                fillableCircleView.heightAnchor.constraint(equalToConstant: 60.0),
+                fillableCircleView.widthAnchor.constraint(equalTo: fillableCircleView.heightAnchor),
+            ])
+
+            themeSelectionStackView.addArrangedSubview(fillableCircleView)
         }
 
-        return themeButton
+        let stackView = UIStackView(arrangedSubviews: [headingLabel, themeSelectionStackView])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 20.0
+
+        return stackView
     }()
 
     private lazy var stackView: UIStackView = {
@@ -89,7 +111,7 @@ class SettingsViewController: UIViewController {
         addChild(inAppStoreViewController)
         inAppStoreViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-        let stackView = UIStackView(arrangedSubviews: [inAppStoreViewController.view, imprintViewController.view, themeButton])
+        let stackView = UIStackView(arrangedSubviews: [themeSelectionStackView, inAppStoreViewController.view, imprintViewController.view])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 40.0

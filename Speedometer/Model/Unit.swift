@@ -7,8 +7,8 @@ enum Unit: String, CaseIterable {
     case knots = "kn"
     case split500 = "min./500m"
 
-    static var `default`: Self {
-        Locale.current.usesMetricSystem ? Unit.kilometersPerHour : Unit.milesPerHour
+    private static var `default`: Self {
+        Locale.current.usesMetricSystem ? .kilometersPerHour : .milesPerHour
     }
 
     static var selected: Self {
