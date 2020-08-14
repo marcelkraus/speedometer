@@ -81,7 +81,7 @@ class SettingsViewController: UIViewController {
         themeSelectionStackView.distribution = .equalCentering
 
         Theme.allCases.forEach { theme in
-            let fillableCircleView = FillableCircleView(color: theme.interactionColor, isFilled: theme == AppDelegate.shared.theme)
+            let fillableCircleView = FillableCircleView(color: theme.interactionColor, isFilled: theme.isSelected)
             fillableCircleView.translatesAutoresizingMaskIntoConstraints = false
             fillableCircleView.backgroundColor = AppDelegate.shared.theme.backgroundColor
             fillableCircleView.addAction { [weak self] in
@@ -93,7 +93,19 @@ class SettingsViewController: UIViewController {
                 fillableCircleView.widthAnchor.constraint(equalTo: fillableCircleView.heightAnchor),
             ])
 
-            themeSelectionStackView.addArrangedSubview(fillableCircleView)
+            let themeLabel = UILabel()
+            themeLabel.translatesAutoresizingMaskIntoConstraints = false
+            themeLabel.font = AppDelegate.shared.theme.disclaimerFont
+            themeLabel.textColor = theme.interactionColor
+            themeLabel.textAlignment = .center
+            themeLabel.text = theme.name
+
+            let themeStackView = UIStackView(arrangedSubviews: [fillableCircleView, themeLabel])
+            themeStackView.translatesAutoresizingMaskIntoConstraints = false
+            themeStackView.axis = .vertical
+            themeStackView.spacing = 6.0
+
+            themeSelectionStackView.addArrangedSubview(themeStackView)
         }
 
         let stackView = UIStackView(arrangedSubviews: [headingLabel, themeSelectionStackView])
@@ -111,7 +123,7 @@ class SettingsViewController: UIViewController {
         addChild(inAppStoreViewController)
         inAppStoreViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-        let stackView = UIStackView(arrangedSubviews: [themeSelectionStackView, inAppStoreViewController.view, imprintViewController.view])
+        let stackView = UIStackView(arrangedSubviews: [imprintViewController.view, themeSelectionStackView, inAppStoreViewController.view])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 40.0

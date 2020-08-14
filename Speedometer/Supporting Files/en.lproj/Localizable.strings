@@ -1,5 +1,5 @@
 "BlockingOverlayViewController.LoadingMessage" = "Processing…";
-"InAppStoreViewController.Heading" = "A little tip…";
+"InAppStoreViewController.Heading" = "My little tip jar";
 "InAppStoreViewController.Description" = "My promise: Speedometer stays clear, cost-free and without any advertisements.\n\nIf you are satisfied with Speedometer, I would appreciate if you give me a small tip.\n\nAs a little thank you, I will provide you access to three additional color themes which will make Speedometer look great. All color themes include Dark mode support and a matching app icon.";
 "InAppStoreViewController.Disclaimer" = "All purchases are one-time purchases and no subscriptions, the amount can be chosen and they are voluntary to support the developer. You will gain access to the three color themes immediately, additional color themes will be added in the future. All core features of Speedometer will stay available, even without a purchase.";
 "InAppStoreViewController.LoadingMessage" = "Loading In-App store…";
@@ -24,3 +24,7 @@
 "SettingsViewController.TipConfirmationButton" = "Your welcome!";
 "SettingsViewController.ThemeSelection.Heading" = "Theme Selection";
 "SpeedometerViewController.SwipeInfo" = "Swipe Down for Next Unit";
+"Theme.Blueberry.Name" = "Blueberry";
+"Theme.Mint.Name" = "Mint";
+"Theme.Orange.Name" = "Orange";
+"Theme.Raspberry.Name" = "Raspberry";

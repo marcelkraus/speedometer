@@ -23,6 +23,14 @@ enum Theme: String, CaseIterable {
 
         return theme
     }
+
+    var name: String {
+        "Theme.\(self.rawValue.capitalized).Name".localized
+    }
+
+    var isSelected: Bool {
+        self == AppDelegate.shared.theme
+    }
 }
 
 // MARK: - Colors
