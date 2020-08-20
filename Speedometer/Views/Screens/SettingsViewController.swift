@@ -61,7 +61,7 @@ class SettingsViewController: UIViewController {
         return ParagraphViewController(heading: "SettingsViewController.Imprint.Heading".localized, text: String(format: "SettingsViewController.Imprint.Text".localized, versionNumber, buildNumber))
     }()
 
-    private lazy var inAppStoreViewController: UIViewController = {
+    private lazy var inAppStoreViewController: InAppStoreViewController = {
         let inAppStoreViewController = InAppStoreViewController()
         inAppStoreViewController.delegate = self
 
@@ -123,7 +123,7 @@ class SettingsViewController: UIViewController {
         addChild(inAppStoreViewController)
         inAppStoreViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-        let stackView = UIStackView(arrangedSubviews: [imprintViewController.view, themeSelectionStackView, inAppStoreViewController.view])
+        let stackView = UIStackView(arrangedSubviews: [imprintViewController.view, AppDelegate.shared.isSupporter ? themeSelectionStackView : inAppStoreViewController.view])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 40.0
@@ -201,23 +201,14 @@ extension SettingsViewController: InAppStoreViewControllerDelegate {
     }
 
     func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.isBlocked = false
-            self.showConfirmationMessage()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.isBlocked = false
+            self?.inAppStoreViewController.showConfirmationMessage()
         }
     }
 
     func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController) {
         isBlocked = false
-    }
-
-    private func showConfirmationMessage() {
-        let okAction = UIAlertAction(title: "SettingsViewController.TipConfirmationButton".localized, style: .default, handler: nil)
-        let alertViewController = UIAlertController(title: "SettingsViewController.TipConfirmationTitle".localized, message: "SettingsViewController.TipConfirmationMessage".localized, preferredStyle: .alert)
-        alertViewController.addAction(okAction)
-        alertViewController.view.tintColor = AppDelegate.shared.theme.interactionColor
-
-        present(alertViewController, animated: true, completion: nil)
     }
 }
 

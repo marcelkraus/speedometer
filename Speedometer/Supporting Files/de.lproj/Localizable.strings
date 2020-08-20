@@ -19,8 +19,8 @@
 "OnboardingViewController.Button" = "Verstanden, leg los!";
 "SettingsViewController.Imprint.Heading" = "Impressum";
 "SettingsViewController.Imprint.Text" = "Tacho ist ein Projekt von:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nDeutschland\nwww.marcelkraus.de\n\nApp-Version: v%@:%@. Bestandteile des App-Icons und weitere Icons wurden gestaltet von Freepik/Flaticon. Vielen Dank an Manuela, Marc und Thomas sowie alle Beta-Tester! ♡";
-"SettingsViewController.TipConfirmationTitle" = "Du bist klasse!";
-"SettingsViewController.TipConfirmationMessage" = "Danke, dass du die Entwicklung von Tacho mit einem Trinkgeld unterstützt. Das bedeutet mir sehr viel! <3";
+"SettingsViewController.TipConfirmationTitle" = "Du bist klasse! <3";
+"SettingsViewController.TipConfirmationMessage" = "Danke, dass du die Entwicklung von Tacho unterstützt. Als kleines Zeichen meiner Anerkennung findest du in den Einstellungen ab sofort die Farbmotiv-Auswahl.";
 "SettingsViewController.TipConfirmationButton" = "Gern geschehen!";
 "SettingsViewController.ThemeSelection.Heading" = "Auswahl des Farbmotivs";
 "SpeedometerViewController.SwipeInfo" = "Runter wischen für nächste Einheit";

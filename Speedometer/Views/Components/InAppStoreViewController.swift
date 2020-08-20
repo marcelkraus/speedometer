@@ -96,6 +96,8 @@ class InAppStoreViewController: UIViewController {
                 }
 
                 print("[RevenueCat] Purchases were restored successfully")
+                self?.showConfirmationMessage()
+                AppDelegate.shared.updateUserStatus()
             }
         }
 
@@ -168,6 +170,17 @@ class InAppStoreViewController: UIViewController {
             print("[RevenueCat] Available entitlements: \(purchaserInfo?.entitlements.all.keys.joined(separator: ",") ?? "")")
         }
     }
+
+    func showConfirmationMessage() {
+        let okAction = UIAlertAction(title: "SettingsViewController.TipConfirmationButton".localized, style: .default) { [weak self] _ in
+            self?.dismiss(animated: true, completion: nil)
+        }
+        let alertViewController = UIAlertController(title: "SettingsViewController.TipConfirmationTitle".localized, message: "SettingsViewController.TipConfirmationMessage".localized, preferredStyle: .alert)
+        alertViewController.addAction(okAction)
+        alertViewController.view.tintColor = AppDelegate.shared.theme.interactionColor
+
+        present(alertViewController, animated: true, completion: nil)
+    }
 }
 
 private extension InAppStoreViewController {
@@ -206,6 +219,7 @@ private extension InAppStoreViewController {
                     return
                 }
 
+                AppDelegate.shared.updateUserStatus()
                 print("[RevenueCat] Purchasing product `\(package.identifier)`")
             }
         }

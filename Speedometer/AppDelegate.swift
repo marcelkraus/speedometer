@@ -11,12 +11,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private(set) var theme: Theme = Theme.selected
 
+    private(set) var isSupporter = false
+
     func applicationDidFinishLaunching(_ application: UIApplication) {
         AppDelegate.shared = self
 
         PaymentTransactionObserver.sharedInstance.register()
 
         setupRevenueCat()
+        updateUserStatus()
         setDefaultSettings()
 
         StoreReviewHelper.incrementAppStartCounter()
@@ -36,6 +39,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func setTheme(_ theme: Theme) {
         self.theme = theme
+    }
+
+    func updateUserStatus() {
+        return Purchases.shared.purchaserInfo { [weak self] purchaserInfo, error in
+            guard error == nil else {
+                return
+            }
+
+            self?.isSupporter = purchaserInfo?.entitlements.active.keys.contains("supporter") ?? false
+        }
     }
 }
 
