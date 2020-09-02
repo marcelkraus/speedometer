@@ -86,7 +86,9 @@ class SettingsViewController: UIViewController {
             fillableCircleView.backgroundColor = AppDelegate.shared.theme.backgroundColor
             fillableCircleView.addAction { [weak self] in
                 AppDelegate.shared.setTheme(theme)
-                self?.dismiss(animated: true, completion: nil)
+                UIApplication.shared.setAlternateIconName(theme == .mint ? nil : theme.rawValue) { [weak self] _ in
+                    self?.dismiss(animated: true, completion: nil)
+                }
             }
             NSLayoutConstraint.activate([
                 fillableCircleView.heightAnchor.constraint(equalToConstant: 60.0),

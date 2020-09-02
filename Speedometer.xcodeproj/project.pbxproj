@@ -13,6 +13,15 @@
 		DF2F6BD321ADA4A400AC75BE /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F6BD221ADA4A400AC75BE /* ContentViewController.swift */; };
 		DF3010D8205A929E005B493D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3010D7205A929E005B493D /* String+Localization.swift */; };
 		DF36993F23882D3800BA8C08 /* InAppStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36993E23882D3800BA8C08 /* InAppStoreViewController.swift */; };
+		DF4792B425001AAB006E3D1C /* Blueberry.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B125001AAA006E3D1C /* Blueberry.png */; };
+		DF4792B525001AAB006E3D1C /* Blueberry@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B225001AAA006E3D1C /* Blueberry@3x.png */; };
+		DF4792B625001AAB006E3D1C /* Blueberry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B325001AAB006E3D1C /* Blueberry@2x.png */; };
+		DF4792BA25001C2D006E3D1C /* Orange@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B725001C2D006E3D1C /* Orange@3x.png */; };
+		DF4792BB25001C2D006E3D1C /* Orange.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B825001C2D006E3D1C /* Orange.png */; };
+		DF4792BC25001C2D006E3D1C /* Orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B925001C2D006E3D1C /* Orange@2x.png */; };
+		DF4792C025001C4A006E3D1C /* Raspberry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792BD25001C49006E3D1C /* Raspberry@2x.png */; };
+		DF4792C125001C4A006E3D1C /* Raspberry@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792BE25001C49006E3D1C /* Raspberry@3x.png */; };
+		DF4792C225001C4A006E3D1C /* Raspberry.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792BF25001C49006E3D1C /* Raspberry.png */; };
 		DF4C365120D133CD00A9E1B7 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C365020D133CD00A9E1B7 /* CircularView.swift */; };
 		DF511037219D9B05000321E8 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511035219D9B05000321E8 /* LoadingViewController.swift */; };
 		DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */; };
@@ -60,6 +69,15 @@
 		DF2F6BD221ADA4A400AC75BE /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		DF3010D7205A929E005B493D /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		DF36993E23882D3800BA8C08 /* InAppStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppStoreViewController.swift; sourceTree = "<group>"; };
+		DF4792B125001AAA006E3D1C /* Blueberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blueberry.png; sourceTree = "<group>"; };
+		DF4792B225001AAA006E3D1C /* Blueberry@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blueberry@3x.png"; sourceTree = "<group>"; };
+		DF4792B325001AAB006E3D1C /* Blueberry@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blueberry@2x.png"; sourceTree = "<group>"; };
+		DF4792B725001C2D006E3D1C /* Orange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Orange@3x.png"; sourceTree = "<group>"; };
+		DF4792B825001C2D006E3D1C /* Orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Orange.png; sourceTree = "<group>"; };
+		DF4792B925001C2D006E3D1C /* Orange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Orange@2x.png"; sourceTree = "<group>"; };
+		DF4792BD25001C49006E3D1C /* Raspberry@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Raspberry@2x.png"; sourceTree = "<group>"; };
+		DF4792BE25001C49006E3D1C /* Raspberry@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Raspberry@3x.png"; sourceTree = "<group>"; };
+		DF4792BF25001C49006E3D1C /* Raspberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Raspberry.png; sourceTree = "<group>"; };
 		DF4C365020D133CD00A9E1B7 /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
 		DF511035219D9B05000321E8 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.ttf"; sourceTree = "<group>"; };
@@ -115,6 +133,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF4792B025001A40006E3D1C /* Alternate App Icons */ = {
+			isa = PBXGroup;
+			children = (
+				DF4792B125001AAA006E3D1C /* Blueberry.png */,
+				DF4792B325001AAB006E3D1C /* Blueberry@2x.png */,
+				DF4792B225001AAA006E3D1C /* Blueberry@3x.png */,
+				DF4792B825001C2D006E3D1C /* Orange.png */,
+				DF4792B925001C2D006E3D1C /* Orange@2x.png */,
+				DF4792B725001C2D006E3D1C /* Orange@3x.png */,
+				DF4792BF25001C49006E3D1C /* Raspberry.png */,
+				DF4792BD25001C49006E3D1C /* Raspberry@2x.png */,
+				DF4792BE25001C49006E3D1C /* Raspberry@3x.png */,
+			);
+			path = "Alternate App Icons";
+			sourceTree = "<group>";
+		};
 		DF4C364F20D133B500A9E1B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +173,7 @@
 		DF568E471FD0119600D546B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DF4792B025001A40006E3D1C /* Alternate App Icons */,
 				DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */,
 				DF58A64A2057FAC900005A07 /* Fonts */,
 				DFEB62311F30B5EA00FEC555 /* Info.plist */,
@@ -354,12 +389,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF4792C125001C4A006E3D1C /* Raspberry@3x.png in Resources */,
+				DF4792B625001AAB006E3D1C /* Blueberry@2x.png in Resources */,
 				DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */,
+				DF4792BB25001C2D006E3D1C /* Orange.png in Resources */,
+				DF4792B525001AAB006E3D1C /* Blueberry@3x.png in Resources */,
+				DF4792BA25001C2D006E3D1C /* Orange@3x.png in Resources */,
 				DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */,
+				DF4792BC25001C2D006E3D1C /* Orange@2x.png in Resources */,
 				DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */,
+				DF4792B425001AAB006E3D1C /* Blueberry.png in Resources */,
 				DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */,
 				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
 				DFC358F4205A9BCF00DEDB9E /* InfoPlist.strings in Resources */,
+				DF4792C225001C4A006E3D1C /* Raspberry.png in Resources */,
+				DF4792C025001C4A006E3D1C /* Raspberry@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
