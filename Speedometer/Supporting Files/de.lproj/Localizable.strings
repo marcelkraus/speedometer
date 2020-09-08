@@ -1,7 +1,7 @@
 "BlockingOverlayViewController.LoadingMessage" = "Bitte warten…";
 "InAppStoreViewController.Heading" = "Mein kleines Sparschwein";
 "InAppStoreViewController.Description" = "Mein Versprechen: Tacho bleibt übersichtlich, kostenlos und werbefrei!\n\nSollte dir Tacho jedoch besonders gut gefallen, würde ich mich freuen, wenn du mir ein kleines Trinkgeld zukommen lässt.\n\nAls Dankeschön erhälst du Zugriff auf drei weitere Farbmotive, die Tacho in einem neuen Glanz erstrahlen lassen. Alle Farbmotive unterstützen den Dark Mode und beinhalten jeweils ein eigenes App-Icon.";
-"InAppStoreViewController.Disclaimer" = "Alle Käufe sind einmalig und keine Abonnements, der Betrag ist frei wählbar und dient der Unterstützung des Entwicklers. Du erhälst sofort Zugriff auf drei weitere Farbmotive, weitere kommen in unregelmäßigen Abständen dazu. Alle wesentlichen Funktionen von Tacho stehen dir auch ohne Kauf zur Verfügung.";
+"InAppStoreViewController.Disclaimer" = "Alle Käufe sind einmalig und der Betrag ist frei wählbar. Du erhälst sofort Zugriff auf die Farbmotive. Der In-App-Kauf wird mit Unterstützung von RevenueCat durchgeführt, siehe meine Datenschutzerklärung (https://tacho.marcelkraus.de) für Details.";
 "InAppStoreViewController.LoadingMessage" = "In-App-Store wird geladen…";
 "InAppStoreViewController.FallbackMessage" = "Oh, da klemmt etwas! Zur Zeit stehen keine Produkte zum Kauf zur Verfügung - bitte probiere es später erneut. Vielen Dank!";
 "InAppStoreViewController.RestoreButton" = "Einkäufe wiederherstellen";
