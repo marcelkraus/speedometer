@@ -1,13 +1,10 @@
 import UIKit
 
 enum Theme: String, CaseIterable {
-    case blueberry
-    case mint
-    case orange
-    case raspberry
+    case pear, blueberry, orange, raspberry
 
     private static var `default`: Self {
-        .mint
+        .pear
     }
 
     static var selected: Self {

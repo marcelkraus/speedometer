@@ -86,7 +86,7 @@ class SettingsViewController: UIViewController {
             fillableCircleView.backgroundColor = AppDelegate.shared.theme.backgroundColor
             fillableCircleView.addAction { [weak self] in
                 AppDelegate.shared.setTheme(theme)
-                UIApplication.shared.setAlternateIconName(theme == .mint ? nil : theme.rawValue) { [weak self] _ in
+                UIApplication.shared.setAlternateIconName(theme == .pear ? nil : theme.rawValue) { [weak self] _ in
                     self?.dismiss(animated: true, completion: nil)
                 }
             }
