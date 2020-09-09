@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
+## [Version 1.3] - Unreleased
+
+### Added
+
+- Added support for iOS Dark Mode
+- Added three more color schemes with alternate app icons (after an optional tip)
+
+### Changed
+
+- Replaced Apple In-App purchase logic with RevenueCat In-App purchase logic
+
 ## [Version 1.2.1] - 2020-08-10
 
 ### Fixed
