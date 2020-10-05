@@ -1,38 +1,44 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
-    var loadingIndicatorViewController: LoadingIndicatorViewController!
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.spacing = 8.0
+        stackView.addArrangedSubview(activityIndicatorView)
+        stackView.addArrangedSubview(indicatorLabel)
 
-    init() {
-        super.init(nibName: nil, bundle: nil)
+        return stackView
+    }()
 
-        setupLoadingIndicatorView()
-    }
+    private lazy var activityIndicatorView: UIActivityIndicatorView = {
+        let activityIndicatorView = UIActivityIndicatorView()
+        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicatorView.color = AppDelegate.shared.theme.primaryContentColor
+        activityIndicatorView.startAnimating()
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
+        return activityIndicatorView
+    }()
 
-// MARK: - UI Setup
+    private lazy var indicatorLabel: UILabel = {
+        let indicatorLabel = UILabel()
+        indicatorLabel.translatesAutoresizingMaskIntoConstraints = false
+        indicatorLabel.font = AppDelegate.shared.theme.activityIndicatorFont
+        indicatorLabel.textColor = AppDelegate.shared.theme.primaryContentColor
+        indicatorLabel.text = "LoadingIndicatorViewController.Indicator".localized
 
-private extension LoadingViewController {
-    func setupLoadingIndicatorView() {
-        loadingIndicatorViewController = LoadingIndicatorViewController()
-        addChild(loadingIndicatorViewController)
+        return indicatorLabel
+    }()
 
-        let loadingIndicatorView = loadingIndicatorViewController.view!
-        view.addSubview(loadingIndicatorView)
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-        loadingIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(stackView)
         NSLayoutConstraint.activate([
-            loadingIndicatorView.leadingAnchor.constraint(equalTo: loadingIndicatorView.leadingAnchor),
-            loadingIndicatorView.topAnchor.constraint(equalTo: loadingIndicatorView.topAnchor),
-            loadingIndicatorView.bottomAnchor.constraint(equalTo: loadingIndicatorView.bottomAnchor),
-            loadingIndicatorView.trailingAnchor.constraint(equalTo: loadingIndicatorView.trailingAnchor),
-            loadingIndicatorView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            loadingIndicatorView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
-            ])
-        loadingIndicatorViewController.didMove(toParent: self)
+            stackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
+        ])
     }
 }

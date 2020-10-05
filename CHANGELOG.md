@@ -4,7 +4,40 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Version 1.1] - 2019-07-29
+## Unreleased
+
+## [Version 1.3] - 2020-10-03
+
+### Added
+
+- Added support for iOS Dark Mode
+- Added three more color schemes with alternate app icons (after an optional tip)
+
+### Changed
+
+- Replaced Apple In-App purchase logic with RevenueCat In-App purchase logic
+
+## [Version 1.2.1] - 2020-08-10
+
+### Fixed
+
+- Fixed a possible crash while fetching the selected `Unit` using the string based identifier from `UserDefaults`
+
+## [Version 1.2] - 2020-06-08
+
+### Added
+
+- Added new unit "split500" ("min./500m")
+- Added the tip jar on the new settings screen
+
+### Changed
+
+- Updated the authors address
+- Updated the imprint screen to a scrollable settings screen
+- Updated the models to make calculations for new unit possible
+- Updated the project structure
+
+## [Version 1.1.1] - 2019-07-29
 
 ### Added
 

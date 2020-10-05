@@ -3,45 +3,53 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF17A23121FB4D3200DE901A /* SeparatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF17A23021FB4D3200DE901A /* SeparatorViewController.swift */; };
 		DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */; };
+		DF22618124E67B9300BCD867 /* FillableCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF22618024E67B9300BCD867 /* FillableCircleView.swift */; };
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
-		DF2F6BD321ADA4A400AC75BE /* SpeedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */; };
+		DF2F6BD321ADA4A400AC75BE /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F6BD221ADA4A400AC75BE /* ContentViewController.swift */; };
 		DF3010D8205A929E005B493D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3010D7205A929E005B493D /* String+Localization.swift */; };
-		DF302F13221CAA87001FD967 /* UIFont+Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF302F12221CAA87001FD967 /* UIFont+Fonts.swift */; };
+		DF36993F23882D3800BA8C08 /* InAppStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36993E23882D3800BA8C08 /* InAppStoreViewController.swift */; };
+		DF4792B425001AAB006E3D1C /* Blueberry.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B125001AAA006E3D1C /* Blueberry.png */; };
+		DF4792B525001AAB006E3D1C /* Blueberry@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B225001AAA006E3D1C /* Blueberry@3x.png */; };
+		DF4792B625001AAB006E3D1C /* Blueberry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B325001AAB006E3D1C /* Blueberry@2x.png */; };
+		DF4792BA25001C2D006E3D1C /* Orange@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B725001C2D006E3D1C /* Orange@3x.png */; };
+		DF4792BB25001C2D006E3D1C /* Orange.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B825001C2D006E3D1C /* Orange.png */; };
+		DF4792BC25001C2D006E3D1C /* Orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B925001C2D006E3D1C /* Orange@2x.png */; };
+		DF4792C025001C4A006E3D1C /* Raspberry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792BD25001C49006E3D1C /* Raspberry@2x.png */; };
+		DF4792C125001C4A006E3D1C /* Raspberry@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792BE25001C49006E3D1C /* Raspberry@3x.png */; };
+		DF4792C225001C4A006E3D1C /* Raspberry.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792BF25001C49006E3D1C /* Raspberry.png */; };
 		DF4C365120D133CD00A9E1B7 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C365020D133CD00A9E1B7 /* CircularView.swift */; };
-		DF4E314321C16D9F00ADE39F /* CircularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E314221C16D9F00ADE39F /* CircularViewController.swift */; };
-		DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */; };
+		DF511037219D9B05000321E8 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511035219D9B05000321E8 /* LoadingViewController.swift */; };
 		DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */; };
 		DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */; };
 		DF5F4C5F1FD5DAA10043F97E /* UIViewController+Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */; };
 		DF602D1520AEE3C00083532A /* StoreKitReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */; };
-		DF64A52320EE621A00063BBD /* CoordinatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64A52220EE621A00063BBD /* CoordinatesTests.swift */; };
-		DF76227321A6E9AE0073CEBC /* ImprintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF76227221A6E9AE0073CEBC /* ImprintViewController.swift */; };
+		DF64A52320EE621A00063BBD /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64A52220EE621A00063BBD /* LocationTests.swift */; };
+		DF76227321A6E9AE0073CEBC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF76227221A6E9AE0073CEBC /* SettingsViewController.swift */; };
 		DF7D820221C2B073004A37C8 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D820021C2B073004A37C8 /* SpeedViewController.swift */; };
-		DF94839D20D16C7E009B120B /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94839C20D16C7E009B120B /* Coordinates.swift */; };
-		DF9DCB0A20ADD8EC008BAE8B /* SpeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DCB0920ADD8EC008BAE8B /* SpeedTests.swift */; };
+		DF80694B238591DC0063482D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF80694A238591DC0063482D /* StoreKit.framework */; };
+		DF93642D24DD681900598DB1 /* Purchases in Frameworks */ = {isa = PBXBuildFile; productRef = DF93642C24DD681900598DB1 /* Purchases */; };
+		DF93715F24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF93715E24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift */; };
+		DF94839D20D16C7E009B120B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94839C20D16C7E009B120B /* Location.swift */; };
+		DF9D05BD23FE77100033F43D /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D05BC23FE77100033F43D /* Key.swift */; };
 		DF9DCB1320ADDAED008BAE8B /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DCB1220ADDAED008BAE8B /* UnitTests.swift */; };
-		DFB6D73820815E2700BFC1F3 /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB6D73720815E2700BFC1F3 /* Speed.swift */; };
+		DFA96BE42431F3EC001A898C /* PaymentTransactionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA96BE32431F3EC001A898C /* PaymentTransactionObserver.swift */; };
 		DFC358F4205A9BCF00DEDB9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFC358F6205A9BCF00DEDB9E /* InfoPlist.strings */; };
-		DFC6DD7A2215C79F001675AB /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6DD792215C79F001675AB /* ButtonViewController.swift */; };
-		DFC6DD7C2215D092001675AB /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6DD7B2215D092001675AB /* ButtonType.swift */; };
 		DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C601FD5E17300260E24 /* RootViewController.swift */; };
-		DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */; };
 		DFD30993219F240E005CE3B9 /* ParagraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */; };
 		DFD30999219F252C005CE3B9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */; };
 		DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB367F219F770B002B7D53 /* MessageViewController.swift */; };
-		DFDB3682219F7B4D002B7D53 /* MessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB3681219F7B4D002B7D53 /* MessageType.swift */; };
-		DFDBDE5021F9D93500F3E858 /* CoordinatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */; };
+		DFDB3682219F7B4D002B7D53 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB3681219F7B4D002B7D53 /* Message.swift */; };
+		DFDBDE5021F9D93500F3E858 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDBDE4E21F9D93500F3E858 /* LocationViewController.swift */; };
 		DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFE69BD7205A904000FA0CE3 /* Localizable.strings */; };
 		DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */; };
 		DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */; };
-		DFFBA784221B1B8900801688 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBA783221B1B8900801688 /* SeparatorView.swift */; };
-		DFFBA786221B1BC000801688 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBA785221B1BC000801688 /* UIColor+Colors.swift */; };
+		DFECF442247FB6D500A83594 /* BlockingOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFECF441247FB6D500A83594 /* BlockingOverlayViewController.swift */; };
+		DFFD6FEF24E3DAC4004E3A51 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFD6FEE24E3DAC4004E3A51 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,47 +63,54 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DF17A23021FB4D3200DE901A /* SeparatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorViewController.swift; sourceTree = "<group>"; };
 		DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DF22618024E67B9300BCD867 /* FillableCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillableCircleView.swift; sourceTree = "<group>"; };
 		DF2C45AE1FCC2EF0005C8906 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
-		DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerViewController.swift; sourceTree = "<group>"; };
+		DF2F6BD221ADA4A400AC75BE /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		DF3010D7205A929E005B493D /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
-		DF302F12221CAA87001FD967 /* UIFont+Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Fonts.swift"; sourceTree = "<group>"; };
+		DF36993E23882D3800BA8C08 /* InAppStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppStoreViewController.swift; sourceTree = "<group>"; };
+		DF4792B125001AAA006E3D1C /* Blueberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blueberry.png; sourceTree = "<group>"; };
+		DF4792B225001AAA006E3D1C /* Blueberry@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blueberry@3x.png"; sourceTree = "<group>"; };
+		DF4792B325001AAB006E3D1C /* Blueberry@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blueberry@2x.png"; sourceTree = "<group>"; };
+		DF4792B725001C2D006E3D1C /* Orange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Orange@3x.png"; sourceTree = "<group>"; };
+		DF4792B825001C2D006E3D1C /* Orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Orange.png; sourceTree = "<group>"; };
+		DF4792B925001C2D006E3D1C /* Orange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Orange@2x.png"; sourceTree = "<group>"; };
+		DF4792BD25001C49006E3D1C /* Raspberry@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Raspberry@2x.png"; sourceTree = "<group>"; };
+		DF4792BE25001C49006E3D1C /* Raspberry@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Raspberry@3x.png"; sourceTree = "<group>"; };
+		DF4792BF25001C49006E3D1C /* Raspberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Raspberry.png; sourceTree = "<group>"; };
 		DF4C365020D133CD00A9E1B7 /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
-		DF4E314221C16D9F00ADE39F /* CircularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularViewController.swift; sourceTree = "<group>"; };
-		DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewController.swift; sourceTree = "<group>"; };
+		DF511035219D9B05000321E8 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.ttf"; sourceTree = "<group>"; };
 		DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Medium.ttf"; sourceTree = "<group>"; };
 		DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Transition.swift"; sourceTree = "<group>"; };
 		DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitReviewHelper.swift; sourceTree = "<group>"; };
-		DF64A52220EE621A00063BBD /* CoordinatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesTests.swift; sourceTree = "<group>"; };
-		DF76227221A6E9AE0073CEBC /* ImprintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprintViewController.swift; sourceTree = "<group>"; };
+		DF64A52220EE621A00063BBD /* LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
+		DF76227221A6E9AE0073CEBC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DF7D820021C2B073004A37C8 /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
-		DF94839C20D16C7E009B120B /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		DF80694A238591DC0063482D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		DF93715E24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActionHandlerSleeve+Extension.swift"; sourceTree = "<group>"; };
+		DF94839C20D16C7E009B120B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		DF9D05BC23FE77100033F43D /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		DF9DCB0720ADD8EC008BAE8B /* SpeedometerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedometerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF9DCB0920ADD8EC008BAE8B /* SpeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTests.swift; sourceTree = "<group>"; };
 		DF9DCB0B20ADD8EC008BAE8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF9DCB1220ADDAED008BAE8B /* UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
-		DFB6D73720815E2700BFC1F3 /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
+		DFA96BE32431F3EC001A898C /* PaymentTransactionObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTransactionObserver.swift; sourceTree = "<group>"; };
 		DFC358F8205A9BDD00DEDB9E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DFC358F9205A9BE800DEDB9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DFC6DD792215C79F001675AB /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
-		DFC6DD7B2215D092001675AB /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
 		DFCA0C601FD5E17300260E24 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphViewController.swift; sourceTree = "<group>"; };
 		DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		DFDB367F219F770B002B7D53 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		DFDB3681219F7B4D002B7D53 /* MessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageType.swift; sourceTree = "<group>"; };
-		DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesViewController.swift; sourceTree = "<group>"; };
+		DFDB3681219F7B4D002B7D53 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		DFDBDE4E21F9D93500F3E858 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		DFE69BD6205A904000FA0CE3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DFE69BD8205A904C00FA0CE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DFEB62221F30B5EA00FEC555 /* Speedometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Speedometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFEB62311F30B5EA00FEC555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFFBA783221B1B8900801688 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
-		DFFBA785221B1BC000801688 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
+		DFECF441247FB6D500A83594 /* BlockingOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingOverlayViewController.swift; sourceTree = "<group>"; };
+		DFFD6FEE24E3DAC4004E3A51 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,18 +125,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF80694B238591DC0063482D /* StoreKit.framework in Frameworks */,
+				DF93642D24DD681900598DB1 /* Purchases in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF4792B025001A40006E3D1C /* Alternate App Icons */ = {
+			isa = PBXGroup;
+			children = (
+				DF4792B125001AAA006E3D1C /* Blueberry.png */,
+				DF4792B325001AAB006E3D1C /* Blueberry@2x.png */,
+				DF4792B225001AAA006E3D1C /* Blueberry@3x.png */,
+				DF4792B825001C2D006E3D1C /* Orange.png */,
+				DF4792B925001C2D006E3D1C /* Orange@2x.png */,
+				DF4792B725001C2D006E3D1C /* Orange@3x.png */,
+				DF4792BF25001C49006E3D1C /* Raspberry.png */,
+				DF4792BD25001C49006E3D1C /* Raspberry@2x.png */,
+				DF4792BE25001C49006E3D1C /* Raspberry@3x.png */,
+			);
+			path = "Alternate App Icons";
+			sourceTree = "<group>";
+		};
 		DF4C364F20D133B500A9E1B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				DFE6E19B2216DC8400623E34 /* Components */,
 				DF511031219D97EE000321E8 /* Screens */,
-				DFFBA782221B1B6900801688 /* Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -129,11 +161,11 @@
 		DF511031219D97EE000321E8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				DF76227221A6E9AE0073CEBC /* ImprintViewController.swift */,
-				DFCA0C641FD5E5C100260E24 /* LoadingViewController.swift */,
+				DF2F6BD221ADA4A400AC75BE /* ContentViewController.swift */,
+				DF511035219D9B05000321E8 /* LoadingViewController.swift */,
 				DFDB367F219F770B002B7D53 /* MessageViewController.swift */,
 				DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */,
-				DF2F6BD221ADA4A400AC75BE /* SpeedometerViewController.swift */,
+				DF76227221A6E9AE0073CEBC /* SettingsViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -141,11 +173,16 @@
 		DF568E471FD0119600D546B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DF4792B025001A40006E3D1C /* Alternate App Icons */,
 				DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */,
 				DF58A64A2057FAC900005A07 /* Fonts */,
 				DFEB62311F30B5EA00FEC555 /* Info.plist */,
 				DFC358F6205A9BCF00DEDB9E /* InfoPlist.strings */,
+				DF9D05BC23FE77100033F43D /* Key.swift */,
+				DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */,
 				DFE69BD7205A904000FA0CE3 /* Localizable.strings */,
+				DFA96BE32431F3EC001A898C /* PaymentTransactionObserver.swift */,
+				DFFD6FEE24E3DAC4004E3A51 /* Theme.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -162,24 +199,19 @@
 		DF5F138B202A5AAE006D51DA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DFC6DD7B2215D092001675AB /* ButtonType.swift */,
-				DF94839C20D16C7E009B120B /* Coordinates.swift */,
-				DFDB3681219F7B4D002B7D53 /* MessageType.swift */,
-				DFB6D73720815E2700BFC1F3 /* Speed.swift */,
+				DF94839C20D16C7E009B120B /* Location.swift */,
+				DFDB3681219F7B4D002B7D53 /* Message.swift */,
 				DF2C45AE1FCC2EF0005C8906 /* Unit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DF8FDCE72008DD6200140DA9 /* Extensions */ = {
+		DF806949238591DC0063482D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DF3010D7205A929E005B493D /* String+Localization.swift */,
-				DFFBA785221B1BC000801688 /* UIColor+Colors.swift */,
-				DF302F12221CAA87001FD967 /* UIFont+Fonts.swift */,
-				DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */,
+				DF80694A238591DC0063482D /* StoreKit.framework */,
 			);
-			path = Extensions;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DF9DCB0820ADD8EC008BAE8B /* SpeedometerTests */ = {
@@ -194,8 +226,7 @@
 		DF9DCB1120ADD99B008BAE8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DF64A52220EE621A00063BBD /* CoordinatesTests.swift */,
-				DF9DCB0920ADD8EC008BAE8B /* SpeedTests.swift */,
+				DF64A52220EE621A00063BBD /* LocationTests.swift */,
 				DF9DCB1220ADDAED008BAE8B /* UnitTests.swift */,
 			);
 			path = Model;
@@ -204,13 +235,12 @@
 		DFE6E19B2216DC8400623E34 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				DFC6DD792215C79F001675AB /* ButtonViewController.swift */,
-				DF4E314221C16D9F00ADE39F /* CircularViewController.swift */,
-				DFDBDE4E21F9D93500F3E858 /* CoordinatesViewController.swift */,
-				DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */,
-				DF511035219D9B05000321E8 /* LoadingIndicatorViewController.swift */,
+				DFECF441247FB6D500A83594 /* BlockingOverlayViewController.swift */,
+				DF4C365020D133CD00A9E1B7 /* CircularView.swift */,
+				DF22618024E67B9300BCD867 /* FillableCircleView.swift */,
+				DF36993E23882D3800BA8C08 /* InAppStoreViewController.swift */,
+				DFDBDE4E21F9D93500F3E858 /* LocationViewController.swift */,
 				DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */,
-				DF17A23021FB4D3200DE901A /* SeparatorViewController.swift */,
 				DF7D820021C2B073004A37C8 /* SpeedViewController.swift */,
 			);
 			path = Components;
@@ -219,7 +249,10 @@
 		DFE6E19C2216DCC300623E34 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DF93715E24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift */,
 				DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */,
+				DF3010D7205A929E005B493D /* String+Localization.swift */,
+				DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -229,6 +262,7 @@
 			children = (
 				DFEB62241F30B5EA00FEC555 /* Speedometer */,
 				DF9DCB0820ADD8EC008BAE8B /* SpeedometerTests */,
+				DF806949238591DC0063482D /* Frameworks */,
 				DFEB62231F30B5EA00FEC555 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -245,7 +279,6 @@
 		DFEB62241F30B5EA00FEC555 /* Speedometer */ = {
 			isa = PBXGroup;
 			children = (
-				DF8FDCE72008DD6200140DA9 /* Extensions */,
 				DFE6E19C2216DCC300623E34 /* Helpers */,
 				DF5F138B202A5AAE006D51DA /* Model */,
 				DF568E471FD0119600D546B8 /* Supporting Files */,
@@ -254,15 +287,6 @@
 				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
 			);
 			path = Speedometer;
-			sourceTree = "<group>";
-		};
-		DFFBA782221B1B6900801688 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DF4C365020D133CD00A9E1B7 /* CircularView.swift */,
-				DFFBA783221B1B8900801688 /* SeparatorView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +323,9 @@
 			dependencies = (
 			);
 			name = Speedometer;
+			packageProductDependencies = (
+				DF93642C24DD681900598DB1 /* Purchases */,
+			);
 			productName = Speedometer;
 			productReference = DFEB62221F30B5EA00FEC555 /* Speedometer.app */;
 			productType = "com.apple.product-type.application";
@@ -335,8 +362,12 @@
 			knownRegions = (
 				de,
 				en,
+				Base,
 			);
 			mainGroup = DFEB62191F30B5E900FEC555;
+			packageReferences = (
+				DF93642B24DD681900598DB1 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+			);
 			productRefGroup = DFEB62231F30B5EA00FEC555 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -359,12 +390,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF4792C125001C4A006E3D1C /* Raspberry@3x.png in Resources */,
+				DF4792B625001AAB006E3D1C /* Blueberry@2x.png in Resources */,
 				DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */,
+				DF4792BB25001C2D006E3D1C /* Orange.png in Resources */,
+				DF4792B525001AAB006E3D1C /* Blueberry@3x.png in Resources */,
+				DF4792BA25001C2D006E3D1C /* Orange@3x.png in Resources */,
 				DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */,
+				DF4792BC25001C2D006E3D1C /* Orange@2x.png in Resources */,
 				DFE69BD5205A904000FA0CE3 /* Localizable.strings in Resources */,
+				DF4792B425001AAB006E3D1C /* Blueberry.png in Resources */,
 				DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */,
 				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
 				DFC358F4205A9BCF00DEDB9E /* InfoPlist.strings in Resources */,
+				DF4792C225001C4A006E3D1C /* Raspberry.png in Resources */,
+				DF4792C025001C4A006E3D1C /* Raspberry@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,8 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF9DCB0A20ADD8EC008BAE8B /* SpeedTests.swift in Sources */,
-				DF64A52320EE621A00063BBD /* CoordinatesTests.swift in Sources */,
+				DF64A52320EE621A00063BBD /* LocationTests.swift in Sources */,
 				DF9DCB1320ADDAED008BAE8B /* UnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,30 +425,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF602D1520AEE3C00083532A /* StoreKitReviewHelper.swift in Sources */,
-				DFC6DD7C2215D092001675AB /* ButtonType.swift in Sources */,
 				DFD30993219F240E005CE3B9 /* ParagraphViewController.swift in Sources */,
-				DFCA0C651FD5E5C100260E24 /* LoadingViewController.swift in Sources */,
+				DF9D05BD23FE77100033F43D /* Key.swift in Sources */,
+				DF36993F23882D3800BA8C08 /* InAppStoreViewController.swift in Sources */,
 				DF5F4C5F1FD5DAA10043F97E /* UIViewController+Transition.swift in Sources */,
-				DFFBA786221B1BC000801688 /* UIColor+Colors.swift in Sources */,
-				DFDBDE5021F9D93500F3E858 /* CoordinatesViewController.swift in Sources */,
-				DF76227321A6E9AE0073CEBC /* ImprintViewController.swift in Sources */,
+				DFDBDE5021F9D93500F3E858 /* LocationViewController.swift in Sources */,
+				DF76227321A6E9AE0073CEBC /* SettingsViewController.swift in Sources */,
 				DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */,
-				DFB6D73820815E2700BFC1F3 /* Speed.swift in Sources */,
-				DF4E314321C16D9F00ADE39F /* CircularViewController.swift in Sources */,
-				DF17A23121FB4D3200DE901A /* SeparatorViewController.swift in Sources */,
-				DFDB3682219F7B4D002B7D53 /* MessageType.swift in Sources */,
+				DFDB3682219F7B4D002B7D53 /* Message.swift in Sources */,
 				DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */,
 				DF7D820221C2B073004A37C8 /* SpeedViewController.swift in Sources */,
-				DF511037219D9B05000321E8 /* LoadingIndicatorViewController.swift in Sources */,
+				DF22618124E67B9300BCD867 /* FillableCircleView.swift in Sources */,
+				DFFD6FEF24E3DAC4004E3A51 /* Theme.swift in Sources */,
+				DF511037219D9B05000321E8 /* LoadingViewController.swift in Sources */,
 				DF4C365120D133CD00A9E1B7 /* CircularView.swift in Sources */,
-				DF94839D20D16C7E009B120B /* Coordinates.swift in Sources */,
-				DFFBA784221B1B8900801688 /* SeparatorView.swift in Sources */,
-				DFC6DD7A2215C79F001675AB /* ButtonViewController.swift in Sources */,
+				DF94839D20D16C7E009B120B /* Location.swift in Sources */,
+				DFA96BE42431F3EC001A898C /* PaymentTransactionObserver.swift in Sources */,
 				DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */,
 				DF3010D8205A929E005B493D /* String+Localization.swift in Sources */,
 				DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */,
-				DF302F13221CAA87001FD967 /* UIFont+Fonts.swift in Sources */,
-				DF2F6BD321ADA4A400AC75BE /* SpeedometerViewController.swift in Sources */,
+				DF2F6BD321ADA4A400AC75BE /* ContentViewController.swift in Sources */,
+				DFECF442247FB6D500A83594 /* BlockingOverlayViewController.swift in Sources */,
+				DF93715F24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift in Sources */,
 				DFD30999219F252C005CE3B9 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,7 +496,11 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = SpeedometerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marcelkraus.speedometer-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -481,7 +522,11 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = SpeedometerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marcelkraus.speedometer-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -597,7 +642,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -607,16 +653,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N8P95HFNCS;
 				INFOPLIST_FILE = "Speedometer/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = de.marcelkraus.speedometer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "62843f82-696b-4ca1-89b7-71dac72e6015";
-				PROVISIONING_PROFILE_SPECIFIER = "Speedometer – Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Speedometer - Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -627,16 +678,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N8P95HFNCS;
 				INFOPLIST_FILE = "Speedometer/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = de.marcelkraus.speedometer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "51df5708-c910-4b4c-b210-707bcc7630c6";
-				PROVISIONING_PROFILE_SPECIFIER = "Speedometer – Distribution";
+				PROVISIONING_PROFILE_SPECIFIER = "Speedometer - Distribution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -674,6 +730,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DF93642B24DD681900598DB1 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DF93642C24DD681900598DB1 /* Purchases */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF93642B24DD681900598DB1 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = Purchases;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DFEB621A1F30B5E900FEC555 /* Project object */;
 }

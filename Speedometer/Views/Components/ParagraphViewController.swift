@@ -2,31 +2,32 @@ import UIKit
 
 class ParagraphViewController: UIViewController {
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView()
+        let stackView = UIStackView(arrangedSubviews: [headingLabel, textLabel])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        stackView.spacing = 40.0
+        stackView.spacing = 20.0
 
         return stackView
     }()
 
     private lazy var headingLabel: UILabel = {
-        let label = UILabel()
-        label.font = .heading
-        label.textColor = .branding
-        label.numberOfLines = 2
+        let headingLabel = UILabel()
+        headingLabel.translatesAutoresizingMaskIntoConstraints = false
+        headingLabel.font = AppDelegate.shared.theme.headingFont
+        headingLabel.textColor = AppDelegate.shared.theme.primaryContentColor
+        headingLabel.numberOfLines = 2
 
-        return label
+        return headingLabel
     }()
 
     private lazy var textLabel: UILabel = {
-        let label = UILabel()
-        label.font = .text
-        label.textColor = .text
-        label.numberOfLines = 0
+        let textLabel = UILabel()
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        textLabel.font = AppDelegate.shared.theme.textFont
+        textLabel.textColor = AppDelegate.shared.theme.secondaryContentColor
+        textLabel.numberOfLines = 0
 
-        return label
+        return textLabel
     }()
 
     init(heading: String, text: String) {
@@ -34,50 +35,21 @@ class ParagraphViewController: UIViewController {
 
         self.headingLabel.text = heading
         self.textLabel.text = text
-
-        setupStackView()
-    }
-
-    init(messageType: MessageType) {
-        super.init(nibName: nil, bundle: nil)
-
-        setupFromMessage(ofType: messageType)
-        setupStackView()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
 
-private extension ParagraphViewController {
-    func setupFromMessage(ofType messageType: MessageType) {
-        switch messageType {
-        case .locationAuthorizationStatusDenied:
-            headingLabel.text = "ParagraphViewController.LocationAuthorizationStatusRestricted.Heading".localized
-            textLabel.text = "ParagraphViewController.LocationAuthorizationStatusRestricted.Text".localized
-        case .locationAuthorizationStatusRestricted:
-            headingLabel.text = "ParagraphViewController.LocationAuthorizationStatusDenied.Heading".localized
-            textLabel.text = "ParagraphViewController.LocationAuthorizationStatusRestricted.Text".localized
-        case .onboarding:
-            headingLabel.text = "ParagraphViewController.Onboarding.Heading".localized
-            textLabel.text = "ParagraphViewController.Onboarding.Text".localized
-        }
-    }
-}
-
-private extension ParagraphViewController {
-    func setupStackView() {
-        stackView.addArrangedSubview(headingLabel)
-        stackView.addArrangedSubview(textLabel)
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
         view.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-            ])
+        ])
     }
 }
