@@ -86,8 +86,17 @@ class SettingsViewController: UIViewController {
             fillableCircleView.backgroundColor = AppDelegate.shared.theme.backgroundColor
             fillableCircleView.addAction { [weak self] in
                 AppDelegate.shared.setTheme(theme)
+                guard UIApplication.shared.supportsAlternateIcons else {
+                    DispatchQueue.main.async {
+                        self?.dismiss(animated: true, completion: nil)
+                    }
+                    return
+                }
+
                 UIApplication.shared.setAlternateIconName(theme == .pear ? nil : theme.rawValue) { [weak self] _ in
-                    self?.dismiss(animated: true, completion: nil)
+                    DispatchQueue.main.async {
+                        self?.dismiss(animated: true, completion: nil)
+                    }
                 }
             }
             NSLayoutConstraint.activate([

@@ -9,7 +9,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    private(set) var theme: Theme = Theme.selected
+    private(set) var theme: Theme = Theme.selected {
+        didSet {
+            UserDefaults.standard.set(theme.rawValue, forKey: Key.selectedTheme)
+        }
+    }
 
     private(set) var isSupporter = false
 
