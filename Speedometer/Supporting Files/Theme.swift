@@ -34,35 +34,19 @@ enum Theme: String, CaseIterable {
 
 extension Theme {
     var backgroundColor: UIColor {
-        if #available(iOS 13.0, *) {
-            return .secondarySystemBackground
-        } else {
-            return .white
-        }
+        .secondarySystemBackground
     }
 
     var primaryContentColor: UIColor {
-        if #available(iOS 13.0, *) {
-            return .label
-        } else {
-            return .darkGray
-        }
+        .label
     }
 
     var secondaryContentColor: UIColor {
-        if #available(iOS 13.0, *) {
-            return .secondaryLabel
-        } else {
-            return .lightGray
-        }
+        .secondaryLabel
     }
 
     var tertiaryContentColor: UIColor {
-        if #available(iOS 13.0, *) {
-            return .tertiaryLabel
-        } else {
-            return .lightGray
-        }
+        .tertiaryLabel
     }
 
     var interactionColor: UIColor {
