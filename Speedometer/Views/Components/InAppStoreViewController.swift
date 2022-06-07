@@ -1,7 +1,7 @@
 import Purchases
 import UIKit
 
-protocol InAppStoreViewControllerDelegate: class {
+protocol InAppStoreViewControllerDelegate: AnyObject {
     func tipSelectionViewControllerWillPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController)
     func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController)
     func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController)

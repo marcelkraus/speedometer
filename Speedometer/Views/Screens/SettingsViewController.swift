@@ -1,6 +1,6 @@
 import UIKit
 
-protocol SettingsViewControllerDelegate: class {
+protocol SettingsViewControllerDelegate: AnyObject {
     func settingsViewControllerDidTapCloseButton(_ settingsViewController: SettingsViewController)
 }
 

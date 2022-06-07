@@ -1,6 +1,6 @@
 import UIKit
 
-protocol OnboardingViewControllerDelegate: class {
+protocol OnboardingViewControllerDelegate: AnyObject {
     func didTapAuthorizeButton()
 }
 
