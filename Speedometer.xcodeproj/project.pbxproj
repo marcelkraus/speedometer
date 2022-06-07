@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */; };
 		DF22618124E67B9300BCD867 /* FillableCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF22618024E67B9300BCD867 /* FillableCircleView.swift */; };
+		DF266FBE284F582800C211EB /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = DF266FBD284F582800C211EB /* RevenueCat */; };
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
 		DF2F6BD321ADA4A400AC75BE /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F6BD221ADA4A400AC75BE /* ContentViewController.swift */; };
 		DF3010D8205A929E005B493D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3010D7205A929E005B493D /* String+Localization.swift */; };
@@ -32,7 +33,6 @@
 		DF76227321A6E9AE0073CEBC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF76227221A6E9AE0073CEBC /* SettingsViewController.swift */; };
 		DF7D820221C2B073004A37C8 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D820021C2B073004A37C8 /* SpeedViewController.swift */; };
 		DF80694B238591DC0063482D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF80694A238591DC0063482D /* StoreKit.framework */; };
-		DF93642D24DD681900598DB1 /* Purchases in Frameworks */ = {isa = PBXBuildFile; productRef = DF93642C24DD681900598DB1 /* Purchases */; };
 		DF93715F24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF93715E24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift */; };
 		DF94839D20D16C7E009B120B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94839C20D16C7E009B120B /* Location.swift */; };
 		DF9D05BD23FE77100033F43D /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D05BC23FE77100033F43D /* Key.swift */; };
@@ -125,8 +125,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF266FBE284F582800C211EB /* RevenueCat in Frameworks */,
 				DF80694B238591DC0063482D /* StoreKit.framework in Frameworks */,
-				DF93642D24DD681900598DB1 /* Purchases in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +324,7 @@
 			);
 			name = Speedometer;
 			packageProductDependencies = (
-				DF93642C24DD681900598DB1 /* Purchases */,
+				DF266FBD284F582800C211EB /* RevenueCat */,
 			);
 			productName = Speedometer;
 			productReference = DFEB62221F30B5EA00FEC555 /* Speedometer.app */;
@@ -738,17 +738,17 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.5.2;
+				kind = exactVersion;
+				version = 4.5.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DF93642C24DD681900598DB1 /* Purchases */ = {
+		DF266FBD284F582800C211EB /* RevenueCat */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DF93642B24DD681900598DB1 /* XCRemoteSwiftPackageReference "purchases-ios" */;
-			productName = Purchases;
+			productName = RevenueCat;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

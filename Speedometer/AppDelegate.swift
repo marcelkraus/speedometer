@@ -1,4 +1,4 @@
-import Purchases
+import RevenueCat
 import UIKit
 
 @UIApplicationMain
@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func updateUserStatus() {
-        return Purchases.shared.purchaserInfo { [weak self] purchaserInfo, error in
+        return Purchases.shared.getCustomerInfo { [weak self] purchaserInfo, error in
             guard error == nil else {
                 return
             }
@@ -58,8 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 private extension AppDelegate {
     func setupRevenueCat() {
-        Purchases.debugLogsEnabled = true
-        Purchases.configure(withAPIKey: Self.revenueCatApiKey, appUserID: nil, observerMode: true)
+        Purchases.logLevel = .debug
+        Purchases.configure(withAPIKey: Self.revenueCatApiKey)
     }
 
     func setDefaultSettings() {
