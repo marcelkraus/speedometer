@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
+## [Version 1.3.1] - to be released
+
+### Changed
+
+- Set minimum iOS version to iOS 13.0
+- Switched to automatic signing
+- Updated project to remove all warnings with Xcode 13.4.1
+- Updated RevenueCat SDK to version 4.5.1
+- Updated some copywriting
+
 ## [Version 1.3] - 2020-10-03
 
 ### Added
