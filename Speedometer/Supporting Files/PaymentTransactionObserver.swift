@@ -1,6 +1,6 @@
 import StoreKit
 
-protocol PaymentTransactionObserverDelegate: class {
+protocol PaymentTransactionObserverDelegate: AnyObject {
     func showTransactionAsInProgress(_ transaction: SKPaymentTransaction, deferred: Bool)
     func completeTransaction(_ transaction: SKPaymentTransaction)
     func failedTransaction(_ transaction: SKPaymentTransaction)

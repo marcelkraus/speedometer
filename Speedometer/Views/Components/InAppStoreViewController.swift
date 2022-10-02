@@ -1,7 +1,8 @@
-import Purchases
+import RevenueCat
+import StoreKit
 import UIKit
 
-protocol InAppStoreViewControllerDelegate: class {
+protocol InAppStoreViewControllerDelegate: AnyObject {
     func tipSelectionViewControllerWillPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController)
     func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController)
     func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController)
@@ -9,13 +10,6 @@ protocol InAppStoreViewControllerDelegate: class {
 
 class InAppStoreViewController: UIViewController {
     weak var delegate: InAppStoreViewControllerDelegate?
-
-    private lazy var priceFormatter: NumberFormatter = {
-        let priceFormatter = NumberFormatter()
-        priceFormatter.numberStyle = .currency
-
-        return priceFormatter
-    }()
 
     private lazy var loadingProductsView: UIView = {
         let activityIndicatorView = UIActivityIndicatorView()
@@ -84,7 +78,7 @@ class InAppStoreViewController: UIViewController {
         restoreButton.titleLabel?.font = AppDelegate.shared.theme.buttonFont
         restoreButton.tintColor = AppDelegate.shared.theme.interactionColor
         restoreButton.addAction {
-            Purchases.shared.restoreTransactions { [weak self] purchaserInfo, error in
+            Purchases.shared.restorePurchases { [weak self] purchaserInfo, error in
                 guard error == nil else {
                     print("[RevenueCat] An error occured, purchases could not be restored")
                     return
@@ -142,7 +136,7 @@ class InAppStoreViewController: UIViewController {
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
         ])
 
-        Purchases.shared.offerings { offerings, error in
+        Purchases.shared.getOfferings { offerings, error in
             guard error == nil else {
                 self.replaceLoadingProductsView(with: [self.fallbackLabel])
 
@@ -162,7 +156,7 @@ class InAppStoreViewController: UIViewController {
             }
         }
 
-        Purchases.shared.purchaserInfo { purchaserInfo, error in
+        Purchases.shared.getCustomerInfo { purchaserInfo, error in
             guard error == nil else {
                 return
             }
@@ -201,9 +195,7 @@ private extension InAppStoreViewController {
         view.setNeedsDisplay()
     }
 
-    func purchaseButton(for package: Purchases.Package) -> UIButton {
-        priceFormatter.locale = package.product.priceLocale
-
+    func purchaseButton(for package: Package) -> UIButton {
         let purchaseButton = UIButton(type: .custom)
         purchaseButton.translatesAutoresizingMaskIntoConstraints = false
         purchaseButton.layer.cornerRadius = 20.0
@@ -211,10 +203,10 @@ private extension InAppStoreViewController {
         purchaseButton.setTitleColor(AppDelegate.shared.theme.onInteractionColor, for: .normal)
         purchaseButton.titleLabel?.textAlignment = .center
         purchaseButton.titleLabel?.font = AppDelegate.shared.theme.buttonFont
-        purchaseButton.setTitle(priceFormatter.string(from: package.product.price), for: .normal)
+        purchaseButton.setTitle(package.storeProduct.localizedPriceString, for: .normal)
         purchaseButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         purchaseButton.addAction {
-            Purchases.shared.purchasePackage(package) { (_, _, error, _) in
+            Purchases.shared.purchase(package: package) { (_, _, error, _) in
                 guard error == nil else {
                     return
                 }

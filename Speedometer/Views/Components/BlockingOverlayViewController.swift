@@ -39,7 +39,7 @@ class BlockingOverlayViewController: UIViewController {
     private lazy var activityIndicatorView: UIActivityIndicatorView = {
         let activityIndicatorView = UIActivityIndicatorView()
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicatorView.style = .whiteLarge
+        activityIndicatorView.style = .large
         activityIndicatorView.startAnimating()
 
         return activityIndicatorView

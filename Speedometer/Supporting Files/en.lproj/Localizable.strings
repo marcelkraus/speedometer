@@ -1,7 +1,7 @@
 "BlockingOverlayViewController.LoadingMessage" = "Processing…";
-"InAppStoreViewController.Heading" = "My little tip jar";
+"InAppStoreViewController.Heading" = "My tip jar";
 "InAppStoreViewController.Description" = "My promise: Speedometer stays clear, cost-free and without any advertisements.\n\nIf you are satisfied with Speedometer, I would appreciate if you give me a small tip.\n\nAs a little thank you, I will provide you access to three additional color themes which will make Speedometer look great. All color themes include Dark mode support and a matching app icon.";
-"InAppStoreViewController.Disclaimer" = "All purchases are one-time purchases and the amount can be chosen freely. You will gain access to the color themes immediately. The In-App purchase is powered by RevenueCat, see my privacy policy (https://speedometer.marcelkraus.de) for details.";
+"InAppStoreViewController.Disclaimer" = "All purchases are one-time purchases and the amount can be chosen freely. You will gain access to the color themes immediately. The In-App purchase is powered by RevenueCat, see the App Store and my privacy policy (https://speedometer.marcelkraus.de) for details.";
 "InAppStoreViewController.LoadingMessage" = "Loading In-App store…";
 "InAppStoreViewController.FallbackMessage" = "Uh, there is something wrong! There are no products available at the moment, please try again later. Thank you!";
 "InAppStoreViewController.RestoreButton" = "Restore Purchases";
@@ -18,7 +18,7 @@
 "Message.Onboarding.Text" = "Speedometer shows your current speed. Simple, cost-free and without any advertisements.\n\nSpeedometer needs access to your location data, which will only be used for this purpose and never be shared.\n\nPlease confirm access after you tapped the button below.";
 "OnboardingViewController.Button" = "Gotcha, let's go!";
 "SettingsViewController.Imprint.Heading" = "Imprint";
-"SettingsViewController.Imprint.Text" = "Speedometer is a project of:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nGermany\nwww.marcelkraus.de\n\nApp version: v%@:%@. Parts of the app icon and some icons were designed by Freepik/Flaticon.\n\nMany Thanks to Manuela, Marc, Thomas and all beta testers! ♡";
+"SettingsViewController.Imprint.Text" = "Speedometer is a project of:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nGermany\nwww.marcelkraus.de\n\nApp version: v%@:%@. Parts of the app icon and some icons were designed by Freepik/Flaticon.";
 "SettingsViewController.TipConfirmationTitle" = "You are awesome! <3";
 "SettingsViewController.TipConfirmationMessage" = "Thanks for supporting the development of Speedometer! As a token of appreciation, you will find the color theme selection in the settings.";
 "SettingsViewController.TipConfirmationButton" = "Your welcome!";

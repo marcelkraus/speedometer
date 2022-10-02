@@ -1,7 +1,7 @@
 "BlockingOverlayViewController.LoadingMessage" = "Bitte warten…";
-"InAppStoreViewController.Heading" = "Mein kleines Sparschwein";
+"InAppStoreViewController.Heading" = "Mein Sparschwein";
 "InAppStoreViewController.Description" = "Mein Versprechen: Tacho bleibt übersichtlich, kostenlos und werbefrei!\n\nSollte dir Tacho jedoch besonders gut gefallen, würde ich mich freuen, wenn du mir ein kleines Trinkgeld zukommen lässt.\n\nAls Dankeschön erhälst du Zugriff auf drei weitere Farbmotive, die Tacho in einem neuen Glanz erstrahlen lassen. Alle Farbmotive unterstützen den Dark Mode und beinhalten jeweils ein eigenes App-Icon.";
-"InAppStoreViewController.Disclaimer" = "Alle Käufe sind einmalig und der Betrag ist frei wählbar. Du erhälst sofort Zugriff auf die Farbmotive. Der In-App-Kauf wird mit Unterstützung von RevenueCat durchgeführt, siehe meine Datenschutzerklärung (https://tacho.marcelkraus.de) für Details.";
+"InAppStoreViewController.Disclaimer" = "Alle Käufe sind einmalig und der Betrag ist frei wählbar. Du erhälst sofort Zugriff auf die Farbmotive. Der In-App-Kauf wird mit Unterstützung von RevenueCat durchgeführt, siehe den App Store und meine Datenschutzerklärung (https://tacho.marcelkraus.de) für Details.";
 "InAppStoreViewController.LoadingMessage" = "In-App-Store wird geladen…";
 "InAppStoreViewController.FallbackMessage" = "Oh, da klemmt etwas! Zur Zeit stehen keine Produkte zum Kauf zur Verfügung - bitte probiere es später erneut. Vielen Dank!";
 "InAppStoreViewController.RestoreButton" = "Einkäufe wiederherstellen";
@@ -18,7 +18,7 @@
 "Message.Onboarding.Text" = "Tacho zeigt dir deine aktuelle Geschwindigkeit an. Einfach, kostenlos und werbefrei.\n\nTacho benötigt Zugriff auf deine Standortdaten, die nur für diese Zwecke verwendet und mit niemandem geteilt werden.\n\nBitte bestätige daher den Hinweis nach Tap auf den untenstehenden Button.";
 "OnboardingViewController.Button" = "Verstanden, leg los!";
 "SettingsViewController.Imprint.Heading" = "Impressum";
-"SettingsViewController.Imprint.Text" = "Tacho ist ein Projekt von:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nDeutschland\nwww.marcelkraus.de\n\nApp-Version: v%@:%@. Bestandteile des App-Icons und weitere Icons wurden gestaltet von Freepik/Flaticon. Vielen Dank an Manuela, Marc und Thomas sowie alle Beta-Tester! ♡";
+"SettingsViewController.Imprint.Text" = "Tacho ist ein Projekt von:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nDeutschland\nwww.marcelkraus.de\n\nApp-Version: v%@:%@. Bestandteile des App-Icons und weitere Icons wurden gestaltet von Freepik/Flaticon.";
 "SettingsViewController.TipConfirmationTitle" = "Du bist klasse! <3";
 "SettingsViewController.TipConfirmationMessage" = "Danke, dass du die Entwicklung von Tacho unterstützt. Als kleines Zeichen meiner Anerkennung findest du in den Einstellungen ab sofort die Farbmotiv-Auswahl.";
 "SettingsViewController.TipConfirmationButton" = "Gern geschehen!";
