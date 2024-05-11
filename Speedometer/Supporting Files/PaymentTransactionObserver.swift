@@ -11,7 +11,7 @@ class PaymentTransactionObserver: NSObject {
 
     weak var delegate: PaymentTransactionObserverDelegate?
 
-    private override init() {
+    override private init() {
         super.init()
     }
 
@@ -25,7 +25,7 @@ class PaymentTransactionObserver: NSObject {
 }
 
 extension PaymentTransactionObserver: SKPaymentTransactionObserver {
-    public func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    public func paymentQueue(_: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchasing:
@@ -46,7 +46,7 @@ extension PaymentTransactionObserver: SKPaymentTransactionObserver {
         }
     }
 
-    func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
+    func paymentQueue(_: SKPaymentQueue, shouldAddStorePayment _: SKPayment, for _: SKProduct) -> Bool {
         return true
     }
 }

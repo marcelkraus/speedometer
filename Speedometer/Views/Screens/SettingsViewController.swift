@@ -31,9 +31,7 @@ class SettingsViewController: UIViewController {
         }
     }
 
-    private lazy var blockingOverlayViewController: UIViewController = {
-        return BlockingOverlayViewController()
-    }()
+    private lazy var blockingOverlayViewController: UIViewController = BlockingOverlayViewController()
 
     private lazy var separatorView: UIView = {
         let separatorView = UIView()
@@ -57,9 +55,7 @@ class SettingsViewController: UIViewController {
         return closeButton
     }()
 
-    private lazy var imprintViewController: UIViewController = {
-        return ParagraphViewController(heading: "SettingsViewController.Imprint.Heading".localized, text: String(format: "SettingsViewController.Imprint.Text".localized, versionNumber, buildNumber))
-    }()
+    private lazy var imprintViewController: UIViewController = ParagraphViewController(heading: "SettingsViewController.Imprint.Heading".localized, text: String(format: "SettingsViewController.Imprint.Text".localized, versionNumber, buildNumber))
 
     private lazy var inAppStoreViewController: InAppStoreViewController = {
         let inAppStoreViewController = InAppStoreViewController()
@@ -80,7 +76,7 @@ class SettingsViewController: UIViewController {
         themeSelectionStackView.translatesAutoresizingMaskIntoConstraints = false
         themeSelectionStackView.distribution = .equalCentering
 
-        Theme.allCases.forEach { theme in
+        for theme in Theme.allCases {
             let fillableCircleView = FillableCircleView(color: theme.interactionColor, isFilled: theme.isSelected)
             fillableCircleView.translatesAutoresizingMaskIntoConstraints = false
             fillableCircleView.backgroundColor = AppDelegate.shared.theme.backgroundColor
@@ -145,46 +141,46 @@ class SettingsViewController: UIViewController {
         return stackView
     }()
 
-     private lazy var contentView: UIView = {
-         let contentView = UIView()
-         contentView.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var contentView: UIView = {
+        let contentView = UIView()
+        contentView.translatesAutoresizingMaskIntoConstraints = false
 
-         contentView.addSubview(separatorView)
-         contentView.addSubview(closeButton)
-         contentView.addSubview(stackView)
+        contentView.addSubview(separatorView)
+        contentView.addSubview(closeButton)
+        contentView.addSubview(stackView)
 
-         NSLayoutConstraint.activate([
-             separatorView.heightAnchor.constraint(equalToConstant: 20.0),
-             separatorView.widthAnchor.constraint(equalToConstant: 170.0),
-             separatorView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40.0),
-             separatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -30.0),
-             closeButton.heightAnchor.constraint(equalToConstant: 44.0),
-             closeButton.widthAnchor.constraint(equalToConstant: 44.0),
-             closeButton.centerYAnchor.constraint(equalTo: separatorView.centerYAnchor),
-             closeButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8.0),
-             stackView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
-             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20.0),
-             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20.0),
-             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20.0),
-         ])
+        NSLayoutConstraint.activate([
+            separatorView.heightAnchor.constraint(equalToConstant: 20.0),
+            separatorView.widthAnchor.constraint(equalToConstant: 170.0),
+            separatorView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40.0),
+            separatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -30.0),
+            closeButton.heightAnchor.constraint(equalToConstant: 44.0),
+            closeButton.widthAnchor.constraint(equalToConstant: 44.0),
+            closeButton.centerYAnchor.constraint(equalTo: separatorView.centerYAnchor),
+            closeButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8.0),
+            stackView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 40.0),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20.0),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20.0),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20.0),
+        ])
 
-         return contentView
-     }()
+        return contentView
+    }()
 
     private lazy var scrollView: UIScrollView = {
-         let scrollView = UIScrollView()
-         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
 
-         scrollView.addSubview(contentView)
-         NSLayoutConstraint.activate([
-             scrollView.contentLayoutGuide.topAnchor.constraint(equalTo: contentView.topAnchor),
-             scrollView.contentLayoutGuide.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-             scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-             scrollView.contentLayoutGuide.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-         ])
+        scrollView.addSubview(contentView)
+        NSLayoutConstraint.activate([
+            scrollView.contentLayoutGuide.topAnchor.constraint(equalTo: contentView.topAnchor),
+            scrollView.contentLayoutGuide.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            scrollView.contentLayoutGuide.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+        ])
 
-         return scrollView
-     }()
+        return scrollView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -207,18 +203,18 @@ class SettingsViewController: UIViewController {
 }
 
 extension SettingsViewController: InAppStoreViewControllerDelegate {
-    func tipSelectionViewControllerWillPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController) {
+    func tipSelectionViewControllerWillPurchaseProduct(_: InAppStoreViewController) {
         isBlocked = true
     }
 
-    func tipSelectionViewControllerDidPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController) {
+    func tipSelectionViewControllerDidPurchaseProduct(_: InAppStoreViewController) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
             self?.isBlocked = false
             self?.inAppStoreViewController.showConfirmationMessage()
         }
     }
 
-    func tipSelectionViewControllerCouldNotPurchaseProduct(_ tipSelectionViewController: InAppStoreViewController) {
+    func tipSelectionViewControllerCouldNotPurchaseProduct(_: InAppStoreViewController) {
         isBlocked = false
     }
 }

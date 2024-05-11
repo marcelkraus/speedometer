@@ -21,11 +21,11 @@ class RootViewController: UIViewController {
 // MARK: - CLLocationManagerDelegate
 
 extension RootViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        self.selectViewController()
+    func locationManager(_: CLLocationManager, didChangeAuthorization _: CLAuthorizationStatus) {
+        selectViewController()
     }
 
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {
             return
         }

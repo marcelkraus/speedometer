@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    private(set) var theme: Theme = Theme.selected {
+    private(set) var theme: Theme = .selected {
         didSet {
             UserDefaults.standard.set(theme.rawValue, forKey: Key.selectedTheme)
         }
@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
 
-    func applicationWillTerminate(_ application: UIApplication) {
+    func applicationWillTerminate(_: UIApplication) {
         PaymentTransactionObserver.sharedInstance.deregister()
     }
 
@@ -79,11 +79,11 @@ private extension AppDelegate {
             1: "km/h",
             2: "mph",
             3: "m/s",
-            4: "kn"
+            4: "kn",
         ]
 
         let currentUnit = UserDefaults.standard.integer(forKey: Key.selectedUnit)
-        guard 1...4 ~= currentUnit else {
+        guard 1 ... 4 ~= currentUnit else {
             return
         }
 

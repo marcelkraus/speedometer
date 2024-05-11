@@ -49,9 +49,7 @@ class InAppStoreViewController: UIViewController {
         return fallbackLabel
     }()
 
-    private lazy var introductionViewController: UIViewController = {
-        return ParagraphViewController(heading: "InAppStoreViewController.Heading".localized, text: "InAppStoreViewController.Description".localized)
-    }()
+    private lazy var introductionViewController: UIViewController = ParagraphViewController(heading: "InAppStoreViewController.Heading".localized, text: "InAppStoreViewController.Description".localized)
 
     private lazy var purchaseButtonsStackView: UIStackView = {
         let purchaseButtonsStackView = UIStackView(arrangedSubviews: [loadingProductsView])
@@ -186,8 +184,8 @@ private extension InAppStoreViewController {
         purchaseButtonsStackView.removeArrangedSubview(loadingProductsView)
         loadingProductsView.removeFromSuperview()
 
-        views.forEach {
-            purchaseButtonsStackView.addArrangedSubview($0)
+        for view in views {
+            purchaseButtonsStackView.addArrangedSubview(view)
         }
 
         inAppStoreStackView.addArrangedSubview(restoreButton)
@@ -206,7 +204,7 @@ private extension InAppStoreViewController {
         purchaseButton.setTitle(package.storeProduct.localizedPriceString, for: .normal)
         purchaseButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         purchaseButton.addAction {
-            Purchases.shared.purchase(package: package) { (_, _, error, _) in
+            Purchases.shared.purchase(package: package) { _, _, error, _ in
                 guard error == nil else {
                     return
                 }
@@ -223,7 +221,7 @@ private extension InAppStoreViewController {
 // - MARK: PaymentTransactionObserverDelegate
 
 extension InAppStoreViewController: PaymentTransactionObserverDelegate {
-    func showTransactionAsInProgress(_ transaction: SKPaymentTransaction, deferred: Bool) {
+    func showTransactionAsInProgress(_: SKPaymentTransaction, deferred _: Bool) {
         delegate?.tipSelectionViewControllerWillPurchaseProduct(self)
     }
 

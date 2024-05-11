@@ -11,7 +11,7 @@ struct Location {
 
         let longitudeDegrees = abs(Int(longitude))
         let longitudeMinutes = abs(Int((longitude * 3600).truncatingRemainder(dividingBy: 3600) / 60))
-        let longitudeSeconds = Double(abs((longitude * 3600).truncatingRemainder(dividingBy: 3600).truncatingRemainder(dividingBy: 60) ))
+        let longitudeSeconds = Double(abs((longitude * 3600).truncatingRemainder(dividingBy: 3600).truncatingRemainder(dividingBy: 60)))
 
         return (
             String(format: "%d° %d' %.0f\" %@", latitudeDegrees, latitudeMinutes, latitudeSeconds, latitude >= 0 ? "Location.North".localized : "Location.South".localized),

@@ -22,7 +22,7 @@ enum Theme: String, CaseIterable {
     }
 
     var name: String {
-        "Theme.\(self.rawValue.capitalized).Name".localized
+        "Theme.\(rawValue.capitalized).Name".localized
     }
 
     var isSelected: Bool {
@@ -50,7 +50,7 @@ extension Theme {
     }
 
     var interactionColor: UIColor {
-        UIColor(named: "\(self.rawValue.capitalized).Corporate")!
+        UIColor(named: "\(rawValue.capitalized).Corporate")!
     }
 
     var onInteractionColor: UIColor {

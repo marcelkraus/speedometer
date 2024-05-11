@@ -38,7 +38,7 @@ class SpeedViewController: UIViewController {
         }
     }
 
-    var unit: Unit = Unit.selected {
+    var unit: Unit = .selected {
         didSet {
             unitLabel.text = unit.rawValue
         }
@@ -61,7 +61,7 @@ class SpeedViewController: UIViewController {
             unitBackgroundView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 40.0),
             unitBackgroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             unitLabel.centerXAnchor.constraint(equalTo: unitBackgroundView.centerXAnchor),
-            unitLabel.centerYAnchor.constraint(equalTo: unitBackgroundView.centerYAnchor)
+            unitLabel.centerYAnchor.constraint(equalTo: unitBackgroundView.centerYAnchor),
         ])
     }
 }

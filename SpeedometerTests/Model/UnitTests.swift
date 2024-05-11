@@ -1,5 +1,5 @@
-import XCTest
 @testable import Speedometer
+import XCTest
 
 class UnitTests: XCTestCase {
     func testUnitAbbreviation() {

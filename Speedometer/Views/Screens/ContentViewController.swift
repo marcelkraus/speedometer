@@ -23,7 +23,7 @@ class ContentViewController: UIViewController {
 
     private lazy var settingsButtonView: UIButton = {
         let settingsButtonView = UIButton(type: .custom)
-        settingsButtonView.translatesAutoresizingMaskIntoConstraints  = false
+        settingsButtonView.translatesAutoresizingMaskIntoConstraints = false
         settingsButtonView.tintColor = AppDelegate.shared.theme.interactionColor
         settingsButtonView.setImage(UIImage(named: "Info")?.withRenderingMode(.alwaysTemplate), for: .normal)
         settingsButtonView.contentEdgeInsets = UIEdgeInsets(top: 12.0, left: 12.0, bottom: 12.0, right: 12.0)
@@ -33,7 +33,7 @@ class ContentViewController: UIViewController {
         return settingsButtonView
     }()
 
-    var unit: Unit = Unit.selected {
+    var unit: Unit = .selected {
         didSet {
             speedViewController.unit = unit
         }
@@ -52,7 +52,8 @@ class ContentViewController: UIViewController {
         StoreReviewHelper.askForReview(in: view.window?.windowScene)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -95,7 +96,7 @@ private extension ContentViewController {
             circularView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
             circularView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
             circularView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
-            circularView.heightAnchor.constraint(equalTo: circularView.widthAnchor, multiplier: 1.0)
+            circularView.heightAnchor.constraint(equalTo: circularView.widthAnchor, multiplier: 1.0),
         ])
     }
 
@@ -110,11 +111,11 @@ private extension ContentViewController {
         NSLayoutConstraint.activate([
             locationView.topAnchor.constraint(equalTo: circularView.bottomAnchor),
             locationView.bottomAnchor.constraint(equalTo: settingsButtonView.topAnchor),
-            locationView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+            locationView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
         ])
         locationViewController.didMove(toParent: self)
     }
-    
+
     func setupGestureRecognizer() {
         let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(selectNextUnit))
         gestureRecognizer.direction = .down
@@ -141,7 +142,7 @@ private extension ContentViewController {
         speedView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             speedView.trailingAnchor.constraint(equalTo: circularView.trailingAnchor),
-            speedView.bottomAnchor.constraint(equalTo: circularView.bottomAnchor)
+            speedView.bottomAnchor.constraint(equalTo: circularView.bottomAnchor),
         ])
         speedViewController.didMove(toParent: self)
     }
@@ -152,7 +153,7 @@ private extension ContentViewController {
 
         NSLayoutConstraint.activate([
             swipeInfoLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            swipeInfoLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0)
+            swipeInfoLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
         ])
     }
 }
