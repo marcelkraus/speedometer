@@ -8,7 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
-- Bumped RevenueCat SDK to version 4.41.2
+- Set minimum iOS version to iOS 16.6
+- Updated RevenueCat SDK to version 4.41.2
 
 ## [Version 1.3.1] - 2022-08-25
 
