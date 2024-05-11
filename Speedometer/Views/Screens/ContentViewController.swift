@@ -49,7 +49,7 @@ class ContentViewController: UIViewController {
         setupLocationView()
         setupGestureRecognizer()
 
-        StoreReviewHelper.askForReview()
+        StoreReviewHelper.askForReview(in: view.window?.windowScene)
     }
 
     required init?(coder aDecoder: NSCoder) {

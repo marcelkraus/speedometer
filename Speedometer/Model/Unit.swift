@@ -8,7 +8,7 @@ enum Unit: String, CaseIterable {
     case split500 = "min./500m"
 
     private static var `default`: Self {
-        Locale.current.usesMetricSystem ? .kilometersPerHour : .milesPerHour
+        Locale.current.measurementSystem == .metric ? .kilometersPerHour : .milesPerHour
     }
 
     static var selected: Self {

@@ -39,7 +39,7 @@ extension RootViewController: CLLocationManagerDelegate {
 private extension RootViewController {
     func selectViewController() {
         transition(to: LoadingViewController()) { _ in
-            switch CLLocationManager.authorizationStatus() {
+            switch CLLocationManager().authorizationStatus {
             case .notDetermined:
                 let onboardingViewController = OnboardingViewController()
                 onboardingViewController.delegate = self
