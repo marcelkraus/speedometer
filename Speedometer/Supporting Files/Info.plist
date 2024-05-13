@@ -67,7 +67,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>$(NSLocationWhenInUseUsageDescription)</string>
+	<string>(Placeholder: See `InfoPlist.xcstrings` for localized value)</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SourceCodePro-Medium.ttf</string>

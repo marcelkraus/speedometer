@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
+- Migrated to new String Catalogs for localization
 - Set minimum iOS version to iOS 16.6
 - Updated RevenueCat SDK to version 4.41.2
 
