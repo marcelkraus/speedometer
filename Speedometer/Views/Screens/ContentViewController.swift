@@ -23,7 +23,7 @@ class ContentViewController: UIViewController {
 
     private lazy var settingsButtonView: UIButton = {
         var configuration = UIButton.Configuration.plain()
-        configuration.image = UIImage(named: "Info")?.withRenderingMode(.alwaysTemplate)
+        configuration.image = UIImage(named: "Info")?.preparingThumbnail(of: CGSize(width: 20.0, height: 20.0))?.withRenderingMode(.alwaysTemplate)
         configuration.contentInsets = NSDirectionalEdgeInsets(top: 12.0, leading: 12.0, bottom: 12.0, trailing: 12.0)
 
         let settingsButtonView = UIButton(configuration: configuration)

@@ -45,7 +45,7 @@ class SettingsViewController: UIViewController {
 
     private lazy var closeButton: UIButton = {
         var configuration = UIButton.Configuration.plain()
-        configuration.image = UIImage(named: "Close")?.withRenderingMode(.alwaysTemplate)
+        configuration.image = UIImage(named: "Close")?.preparingThumbnail(of: CGSize(width: 20.0, height: 20.0))?.withRenderingMode(.alwaysTemplate)
         configuration.contentInsets = NSDirectionalEdgeInsets(top: 12.0, leading: 12.0, bottom: 12.0, trailing: 12.0)
 
         let closeButton = UIButton(configuration: configuration)
