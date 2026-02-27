@@ -20,8 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidFinishLaunching(_ application: UIApplication) {
         AppDelegate.shared = self
 
-        PaymentTransactionObserver.sharedInstance.register()
-
         setupRevenueCat()
         updateUserStatus()
         setDefaultSettings()
@@ -35,10 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = theme.backgroundColor
         window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
-    }
-
-    func applicationWillTerminate(_: UIApplication) {
-        PaymentTransactionObserver.sharedInstance.deregister()
     }
 
     func setTheme(_ theme: Theme) {

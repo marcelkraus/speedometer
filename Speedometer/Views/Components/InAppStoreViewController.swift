@@ -1,5 +1,4 @@
 import RevenueCat
-import StoreKit
 import UIKit
 
 protocol InAppStoreViewControllerDelegate: AnyObject {
@@ -124,8 +123,6 @@ class InAppStoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        PaymentTransactionObserver.sharedInstance.delegate = self
-
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -203,37 +200,21 @@ private extension InAppStoreViewController {
         purchaseButton.titleLabel?.font = AppDelegate.shared.theme.buttonFont
         purchaseButton.setTitle(package.storeProduct.localizedPriceString, for: .normal)
         purchaseButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        purchaseButton.addAction {
-            Purchases.shared.purchase(package: package) { _, _, error, _ in
-                guard error == nil else {
-                    return
+        purchaseButton.addAction { [weak self] in
+            guard let self else { return }
+            self.delegate?.tipSelectionViewControllerWillPurchaseProduct(self)
+            Purchases.shared.purchase(package: package) { [weak self] _, _, error, userCancelled in
+                guard let self else { return }
+                if error == nil && !userCancelled {
+                    AppDelegate.shared.updateUserStatus()
+                    print("[RevenueCat] Purchasing product `\(package.identifier)`")
+                    self.delegate?.tipSelectionViewControllerDidPurchaseProduct(self)
+                } else {
+                    self.delegate?.tipSelectionViewControllerCouldNotPurchaseProduct(self)
                 }
-
-                AppDelegate.shared.updateUserStatus()
-                print("[RevenueCat] Purchasing product `\(package.identifier)`")
             }
         }
 
         return purchaseButton
-    }
-}
-
-// - MARK: PaymentTransactionObserverDelegate
-
-extension InAppStoreViewController: PaymentTransactionObserverDelegate {
-    func showTransactionAsInProgress(_: SKPaymentTransaction, deferred _: Bool) {
-        delegate?.tipSelectionViewControllerWillPurchaseProduct(self)
-    }
-
-    func completeTransaction(_ transaction: SKPaymentTransaction) {
-        SKPaymentQueue.default().finishTransaction(transaction)
-
-        delegate?.tipSelectionViewControllerDidPurchaseProduct(self)
-    }
-
-    func failedTransaction(_ transaction: SKPaymentTransaction) {
-        SKPaymentQueue.default().finishTransaction(transaction)
-
-        delegate?.tipSelectionViewControllerCouldNotPurchaseProduct(self)
     }
 }
