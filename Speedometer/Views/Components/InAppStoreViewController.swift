@@ -76,13 +76,13 @@ class InAppStoreViewController: UIViewController {
         restoreButton.titleLabel?.font = AppDelegate.shared.theme.buttonFont
         restoreButton.tintColor = AppDelegate.shared.theme.interactionColor
         restoreButton.addAction {
-            Purchases.shared.restorePurchases { [weak self] purchaserInfo, error in
+            Purchases.shared.restorePurchases { [weak self] customerInfo, error in
                 guard error == nil else {
                     print("[RevenueCat] An error occured, purchases could not be restored")
                     return
                 }
 
-                guard purchaserInfo?.allPurchasedProductIdentifiers.count ?? 0 > 0 else {
+                guard customerInfo?.allPurchasedProductIdentifiers.count ?? 0 > 0 else {
                     print("[RevenueCat] No purchases available which could be restored")
                     return
                 }
@@ -154,12 +154,12 @@ class InAppStoreViewController: UIViewController {
             }
         }
 
-        Purchases.shared.getCustomerInfo { purchaserInfo, error in
+        Purchases.shared.getCustomerInfo { customerInfo, error in
             guard error == nil else {
                 return
             }
 
-            print("[RevenueCat] Available entitlements: \(purchaserInfo?.entitlements.all.keys.joined(separator: ",") ?? "")")
+            print("[RevenueCat] Available entitlements: \(customerInfo?.entitlements.all.keys.joined(separator: ",") ?? "")")
         }
     }
 

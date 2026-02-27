@@ -46,12 +46,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func updateUserStatus() {
-        return Purchases.shared.getCustomerInfo { [weak self] purchaserInfo, error in
+        return Purchases.shared.getCustomerInfo { [weak self] customerInfo, error in
             guard error == nil else {
                 return
             }
 
-            self?.isSupporter = purchaserInfo?.entitlements.active.keys.contains("supporter") ?? false
+            self?.isSupporter = customerInfo?.entitlements.active.keys.contains("supporter") ?? false
         }
     }
 }
