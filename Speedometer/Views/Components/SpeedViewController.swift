@@ -28,6 +28,7 @@ class SpeedViewController: UIViewController {
         unitLabel.font = AppDelegate.shared.theme.unitFont
         unitLabel.textColor = AppDelegate.shared.theme.onInteractionColor
         unitLabel.textAlignment = .center
+        unitLabel.text = unit.rawValue
 
         return unitLabel
     }()
