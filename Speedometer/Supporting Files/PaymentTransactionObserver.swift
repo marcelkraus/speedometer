@@ -25,7 +25,7 @@ class PaymentTransactionObserver: NSObject {
 }
 
 extension PaymentTransactionObserver: SKPaymentTransactionObserver {
-    public func paymentQueue(_: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    func paymentQueue(_: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchasing:

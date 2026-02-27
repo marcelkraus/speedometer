@@ -44,12 +44,13 @@ class SettingsViewController: UIViewController {
     }()
 
     private lazy var closeButton: UIButton = {
-        let closeButton = UIButton(type: .custom)
+        var configuration = UIButton.Configuration.plain()
+        configuration.image = UIImage(named: "Close")?.withRenderingMode(.alwaysTemplate)
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 12.0, leading: 12.0, bottom: 12.0, trailing: 12.0)
+
+        let closeButton = UIButton(configuration: configuration)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         closeButton.tintColor = AppDelegate.shared.theme.interactionColor
-        closeButton.setImage(UIImage(named: "Close")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        closeButton.contentEdgeInsets = UIEdgeInsets(top: 12.0, left: 12.0, bottom: 12.0, right: 12.0)
-
         closeButton.addTarget(self, action: #selector(didTapCloseButton), for: .touchUpInside)
 
         return closeButton
