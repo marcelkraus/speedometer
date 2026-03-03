@@ -58,7 +58,7 @@ enum Unit: String, CaseIterable {
         }
     }
 
-    func calculcateFillment(for speedProvidedByDevice: Double) -> Double {
+    func calculateFillment(for speedProvidedByDevice: Double) -> Double {
         let maximumFillment = self == .split500 ? 7.00000 : 66.66667
         let fillment = ((speedProvidedByDevice * 100) / maximumFillment) * 0.01
 

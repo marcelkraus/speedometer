@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
+- Updated the app imprint to match my other apps
 - Migrated to new String Catalogs for localization
 - Set minimum iOS version to iOS 17.6
 - Updated RevenueCat SDK to version 5.60.0, incl. new transaction handling
