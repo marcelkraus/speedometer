@@ -14,7 +14,7 @@ extension UIViewController {
         if let existing = current {
             existing.willMove(toParent: nil)
 
-            transition(from: existing, to: child, duration: duration, options: [.transitionCrossDissolve], animations: { }, completion: { done in
+            transition(from: existing, to: child, duration: duration, options: [.transitionCrossDissolve], animations: {}, completion: { done in
                 existing.removeFromParent()
                 child.didMove(toParent: self)
                 completion?(done)
@@ -22,7 +22,7 @@ extension UIViewController {
         } else {
             view.addSubview(newView)
 
-            UIView.animate(withDuration: duration, delay: 0, options: [.transitionCrossDissolve], animations: { }, completion: { done in
+            UIView.animate(withDuration: duration, delay: 0, options: [.transitionCrossDissolve], animations: {}, completion: { done in
                 child.didMove(toParent: self)
                 completion?(done)
             })

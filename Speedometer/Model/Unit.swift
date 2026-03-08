@@ -8,7 +8,7 @@ enum Unit: String, CaseIterable {
     case split500 = "min./500m"
 
     private static var `default`: Self {
-        Locale.current.usesMetricSystem ? .kilometersPerHour : .milesPerHour
+        Locale.current.measurementSystem == .metric ? .kilometersPerHour : .milesPerHour
     }
 
     static var selected: Self {
@@ -58,12 +58,12 @@ enum Unit: String, CaseIterable {
         }
     }
 
-    func calculcateFillment(for speedProvidedByDevice: Double) -> Double {
+    func calculateFillment(for speedProvidedByDevice: Double) -> Double {
         let maximumFillment = self == .split500 ? 7.00000 : 66.66667
         let fillment = ((speedProvidedByDevice * 100) / maximumFillment) * 0.01
 
         guard fillment > 0.0 else {
-            return  0.0
+            return 0.0
         }
 
         guard fillment < 1.0 else {
@@ -74,7 +74,7 @@ enum Unit: String, CaseIterable {
     }
 
     func localizedString(for speed: Double) -> String {
-        if (self == .split500) {
+        if self == .split500 {
             let formatter = DateComponentsFormatter()
             formatter.unitsStyle = .positional
             formatter.allowedUnits = [.minute, .second]

@@ -6,10 +6,10 @@ enum Message: String {
     case onboarding = "Onboarding"
 
     var heading: String {
-        return "Message.\(self.rawValue).Heading".localized
+        return "Message.\(rawValue).Heading".localized
     }
 
     var text: String {
-        return "Message.\(self.rawValue).Text".localized
+        return "Message.\(rawValue).Text".localized
     }
 }

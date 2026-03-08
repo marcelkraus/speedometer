@@ -3,7 +3,7 @@ import UIKit
 @objc class ActionHandlerSleeve: NSObject {
     let actionHandler: () -> Void
 
-    init (_ actionHandler: @escaping () -> Void) {
+    init(_ actionHandler: @escaping () -> Void) {
         self.actionHandler = actionHandler
     }
 

@@ -20,12 +20,18 @@ class ParagraphViewController: UIViewController {
         return headingLabel
     }()
 
-    private lazy var textLabel: UILabel = {
-        let textLabel = UILabel()
+    private lazy var textLabel: UITextView = {
+        let textLabel = UITextView()
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.font = AppDelegate.shared.theme.textFont
         textLabel.textColor = AppDelegate.shared.theme.secondaryContentColor
-        textLabel.numberOfLines = 0
+        textLabel.backgroundColor = .clear
+        textLabel.isEditable = false
+        textLabel.isScrollEnabled = false
+        textLabel.dataDetectorTypes = .link
+        textLabel.textContainerInset = .zero
+        textLabel.textContainer.lineFragmentPadding = 0
+        textLabel.linkTextAttributes = [.foregroundColor: AppDelegate.shared.theme.interactionColor]
 
         return textLabel
     }()
@@ -33,11 +39,12 @@ class ParagraphViewController: UIViewController {
     init(heading: String, text: String) {
         super.init(nibName: nil, bundle: nil)
 
-        self.headingLabel.text = heading
-        self.textLabel.text = text
+        headingLabel.text = heading
+        textLabel.text = text
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -49,7 +56,7 @@ class ParagraphViewController: UIViewController {
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
     }
 }

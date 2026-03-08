@@ -19,7 +19,7 @@ class OnboardingViewController: UIViewController {
             separatorView.heightAnchor.constraint(equalToConstant: 20.0),
             separatorView.widthAnchor.constraint(equalToConstant: 170.0),
             separatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -30.0),
-            separatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0)
+            separatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40.0),
         ])
 
         return separatorView

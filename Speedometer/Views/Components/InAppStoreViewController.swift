@@ -1,5 +1,4 @@
 import RevenueCat
-import StoreKit
 import UIKit
 
 protocol InAppStoreViewControllerDelegate: AnyObject {
@@ -49,9 +48,7 @@ class InAppStoreViewController: UIViewController {
         return fallbackLabel
     }()
 
-    private lazy var introductionViewController: UIViewController = {
-        return ParagraphViewController(heading: "InAppStoreViewController.Heading".localized, text: "InAppStoreViewController.Description".localized)
-    }()
+    private lazy var introductionViewController: UIViewController = ParagraphViewController(heading: "InAppStoreViewController.Heading".localized, text: "InAppStoreViewController.Description".localized)
 
     private lazy var purchaseButtonsStackView: UIStackView = {
         let purchaseButtonsStackView = UIStackView(arrangedSubviews: [loadingProductsView])
@@ -78,13 +75,13 @@ class InAppStoreViewController: UIViewController {
         restoreButton.titleLabel?.font = AppDelegate.shared.theme.buttonFont
         restoreButton.tintColor = AppDelegate.shared.theme.interactionColor
         restoreButton.addAction {
-            Purchases.shared.restorePurchases { [weak self] purchaserInfo, error in
+            Purchases.shared.restorePurchases { [weak self] customerInfo, error in
                 guard error == nil else {
                     print("[RevenueCat] An error occured, purchases could not be restored")
                     return
                 }
 
-                guard purchaserInfo?.allPurchasedProductIdentifiers.count ?? 0 > 0 else {
+                guard customerInfo?.allPurchasedProductIdentifiers.count ?? 0 > 0 else {
                     print("[RevenueCat] No purchases available which could be restored")
                     return
                 }
@@ -126,8 +123,6 @@ class InAppStoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        PaymentTransactionObserver.sharedInstance.delegate = self
-
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -156,12 +151,12 @@ class InAppStoreViewController: UIViewController {
             }
         }
 
-        Purchases.shared.getCustomerInfo { purchaserInfo, error in
+        Purchases.shared.getCustomerInfo { customerInfo, error in
             guard error == nil else {
                 return
             }
 
-            print("[RevenueCat] Available entitlements: \(purchaserInfo?.entitlements.all.keys.joined(separator: ",") ?? "")")
+            print("[RevenueCat] Available entitlements: \(customerInfo?.entitlements.all.keys.joined(separator: ",") ?? "")")
         }
     }
 
@@ -186,8 +181,8 @@ private extension InAppStoreViewController {
         purchaseButtonsStackView.removeArrangedSubview(loadingProductsView)
         loadingProductsView.removeFromSuperview()
 
-        views.forEach {
-            purchaseButtonsStackView.addArrangedSubview($0)
+        for view in views {
+            purchaseButtonsStackView.addArrangedSubview(view)
         }
 
         inAppStoreStackView.addArrangedSubview(restoreButton)
@@ -205,37 +200,21 @@ private extension InAppStoreViewController {
         purchaseButton.titleLabel?.font = AppDelegate.shared.theme.buttonFont
         purchaseButton.setTitle(package.storeProduct.localizedPriceString, for: .normal)
         purchaseButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        purchaseButton.addAction {
-            Purchases.shared.purchase(package: package) { (_, _, error, _) in
-                guard error == nil else {
-                    return
+        purchaseButton.addAction { [weak self] in
+            guard let self else { return }
+            self.delegate?.tipSelectionViewControllerWillPurchaseProduct(self)
+            Purchases.shared.purchase(package: package) { [weak self] _, _, error, userCancelled in
+                guard let self else { return }
+                if error == nil && !userCancelled {
+                    AppDelegate.shared.updateUserStatus()
+                    print("[RevenueCat] Purchasing product `\(package.identifier)`")
+                    self.delegate?.tipSelectionViewControllerDidPurchaseProduct(self)
+                } else {
+                    self.delegate?.tipSelectionViewControllerCouldNotPurchaseProduct(self)
                 }
-
-                AppDelegate.shared.updateUserStatus()
-                print("[RevenueCat] Purchasing product `\(package.identifier)`")
             }
         }
 
         return purchaseButton
-    }
-}
-
-// - MARK: PaymentTransactionObserverDelegate
-
-extension InAppStoreViewController: PaymentTransactionObserverDelegate {
-    func showTransactionAsInProgress(_ transaction: SKPaymentTransaction, deferred: Bool) {
-        delegate?.tipSelectionViewControllerWillPurchaseProduct(self)
-    }
-
-    func completeTransaction(_ transaction: SKPaymentTransaction) {
-        SKPaymentQueue.default().finishTransaction(transaction)
-
-        delegate?.tipSelectionViewControllerDidPurchaseProduct(self)
-    }
-
-    func failedTransaction(_ transaction: SKPaymentTransaction) {
-        SKPaymentQueue.default().finishTransaction(transaction)
-
-        delegate?.tipSelectionViewControllerCouldNotPurchaseProduct(self)
     }
 }

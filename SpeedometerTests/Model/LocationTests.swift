@@ -1,5 +1,5 @@
-import XCTest
 @testable import Speedometer
+import XCTest
 
 class LocationTests: XCTestCase {
     func testNumericalPartOfLatitude() {

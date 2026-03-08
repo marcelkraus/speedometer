@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    private(set) var theme: Theme = Theme.selected {
+    private(set) var theme: Theme = .selected {
         didSet {
             UserDefaults.standard.set(theme.rawValue, forKey: Key.selectedTheme)
         }
@@ -19,8 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
         AppDelegate.shared = self
-
-        PaymentTransactionObserver.sharedInstance.register()
 
         setupRevenueCat()
         updateUserStatus()
@@ -37,21 +35,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
 
-    func applicationWillTerminate(_ application: UIApplication) {
-        PaymentTransactionObserver.sharedInstance.deregister()
-    }
-
     func setTheme(_ theme: Theme) {
         self.theme = theme
     }
 
     func updateUserStatus() {
-        return Purchases.shared.getCustomerInfo { [weak self] purchaserInfo, error in
+        return Purchases.shared.getCustomerInfo { [weak self] customerInfo, error in
             guard error == nil else {
                 return
             }
 
-            self?.isSupporter = purchaserInfo?.entitlements.active.keys.contains("supporter") ?? false
+            self?.isSupporter = customerInfo?.entitlements.active.keys.contains("supporter") ?? false
         }
     }
 }
@@ -79,11 +73,11 @@ private extension AppDelegate {
             1: "km/h",
             2: "mph",
             3: "m/s",
-            4: "kn"
+            4: "kn",
         ]
 
         let currentUnit = UserDefaults.standard.integer(forKey: Key.selectedUnit)
-        guard 1...4 ~= currentUnit else {
+        guard 1 ... 4 ~= currentUnit else {
             return
         }
 
