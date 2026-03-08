@@ -6,11 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
+## [Version 1.4] - 2026-03-08
+
 ### Changed
 
+- Updated the app imprint to match my other apps
 - Migrated to new String Catalogs for localization
 - Set minimum iOS version to iOS 17.6
-- Updated RevenueCat SDK to version 5.3.3
+- Updated RevenueCat SDK to version 5.60.0, incl. new transaction handling
+
+### Fixed
+
+- Fixed Xcode warnings
 
 ## [Version 1.3.1] - 2022-08-25
 

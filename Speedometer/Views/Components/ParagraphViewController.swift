@@ -20,12 +20,18 @@ class ParagraphViewController: UIViewController {
         return headingLabel
     }()
 
-    private lazy var textLabel: UILabel = {
-        let textLabel = UILabel()
+    private lazy var textLabel: UITextView = {
+        let textLabel = UITextView()
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.font = AppDelegate.shared.theme.textFont
         textLabel.textColor = AppDelegate.shared.theme.secondaryContentColor
-        textLabel.numberOfLines = 0
+        textLabel.backgroundColor = .clear
+        textLabel.isEditable = false
+        textLabel.isScrollEnabled = false
+        textLabel.dataDetectorTypes = .link
+        textLabel.textContainerInset = .zero
+        textLabel.textContainer.lineFragmentPadding = 0
+        textLabel.linkTextAttributes = [.foregroundColor: AppDelegate.shared.theme.interactionColor]
 
         return textLabel
     }()

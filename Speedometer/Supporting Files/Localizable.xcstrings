@@ -41,13 +41,13 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alle Käufe sind einmalig und der Betrag ist frei wählbar. Du erhälst sofort Zugriff auf die Farbmotive. Der In-App-Kauf wird mit Unterstützung von RevenueCat durchgeführt, siehe den App Store und meine Datenschutzerklärung (https://tacho.marcelkraus.de) für Details."
+            "value" : "Alle Käufe sind einmalig und der Betrag ist frei wählbar. Du erhälst sofort Zugriff auf die Farbmotive."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "All purchases are one-time purchases and the amount can be chosen freely. You will gain access to the color themes immediately. The In-App purchase is powered by RevenueCat, see the App Store and my privacy policy (https://speedometer.marcelkraus.de) for details."
+            "value" : "All purchases are one-time purchases and the amount can be chosen freely. You will gain access to the color themes immediately."
           }
         }
       }
@@ -347,13 +347,13 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tacho ist ein Projekt von:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nDeutschland\nwww.marcelkraus.de\n\nApp-Version: v%@:%@. Bestandteile des App-Icons und weitere Icons wurden gestaltet von Freepik/Flaticon."
+            "value" : "Tacho ist ein Projekt von:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nDeutschland\n\nhallo@marcelkraus.de\nwww.marcelkraus.de\n+49 2235 8401372 (Kein Telefon-Support)\n\nDatenschutzerklärung: www.marcelkraus.de/datenschutz\n\nApp-Version: v%@:%@. Bestandteile des App-Icons und weitere Icons wurden gestaltet von Freepik/Flaticon."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Speedometer is a project of:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nGermany\nwww.marcelkraus.de\n\nApp version: v%@:%@. Parts of the app icon and some icons were designed by Freepik/Flaticon."
+            "value" : "Speedometer is a project of:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nGermany\n\nhallo@marcelkraus.de\nwww.marcelkraus.de\n+49 2235 8401372 (No support by phone)\n\nData Privacy Statement: www.marcelkraus.de/datenschutz\n\nApp Version: v%@:%@. Parts of the app icon and some icons were designed by Freepik/Flaticon."
           }
         }
       }
