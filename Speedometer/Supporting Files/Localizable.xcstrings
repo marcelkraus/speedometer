@@ -324,6 +324,40 @@
         }
       }
     },
+    "SettingsViewController.TripOdometer.Heading" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wegstrecke"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trip Odometer"
+          }
+        }
+      }
+    },
+    "SettingsViewController.TripOdometer.ResetButton" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wegstrecke zurücksetzen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset Trip Odometer"
+          }
+        }
+      }
+    },
     "SettingsViewController.Imprint.Heading" : {
       "extractionState" : "manual",
       "localizations" : {

@@ -124,6 +124,36 @@ class SettingsViewController: UIViewController {
         return stackView
     }()
 
+    private lazy var tripOdometerSectionView: UIStackView = {
+        let headingLabel = UILabel()
+        headingLabel.translatesAutoresizingMaskIntoConstraints = false
+        headingLabel.font = AppDelegate.shared.theme.headingFont
+        headingLabel.textColor = AppDelegate.shared.theme.primaryContentColor
+        headingLabel.text = "SettingsViewController.TripOdometer.Heading".localized
+
+        let distanceLabel = UILabel()
+        distanceLabel.translatesAutoresizingMaskIntoConstraints = false
+        distanceLabel.font = AppDelegate.shared.theme.textFont
+        distanceLabel.textColor = AppDelegate.shared.theme.secondaryContentColor
+        distanceLabel.text = Distance.localizedString(for: .selected)
+
+        var resetButtonConfiguration = UIButton.Configuration.filled()
+        resetButtonConfiguration.title = "SettingsViewController.TripOdometer.ResetButton".localized
+        resetButtonConfiguration.baseBackgroundColor = AppDelegate.shared.theme.interactionColor
+        resetButtonConfiguration.baseForegroundColor = AppDelegate.shared.theme.onInteractionColor
+
+        let resetButton = UIButton(configuration: resetButtonConfiguration)
+        resetButton.translatesAutoresizingMaskIntoConstraints = false
+        resetButton.addTarget(self, action: #selector(didTapResetTripOdometerButton), for: .touchUpInside)
+
+        let stackView = UIStackView(arrangedSubviews: [headingLabel, distanceLabel, resetButton])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 12.0
+
+        return stackView
+    }()
+
     private lazy var stackView: UIStackView = {
         addChild(imprintViewController)
         imprintViewController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -131,7 +161,7 @@ class SettingsViewController: UIViewController {
         addChild(inAppStoreViewController)
         inAppStoreViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-        let stackView = UIStackView(arrangedSubviews: [imprintViewController.view, AppDelegate.shared.isSupporter ? themeSelectionStackView : inAppStoreViewController.view])
+        let stackView = UIStackView(arrangedSubviews: [tripOdometerSectionView, imprintViewController.view, AppDelegate.shared.isSupporter ? themeSelectionStackView : inAppStoreViewController.view])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 40.0
@@ -199,6 +229,11 @@ class SettingsViewController: UIViewController {
     }
 
     @objc func didTapCloseButton() {
+        delegate?.settingsViewControllerDidTapCloseButton(self)
+    }
+
+    @objc func didTapResetTripOdometerButton() {
+        Distance.reset()
         delegate?.settingsViewControllerDidTapCloseButton(self)
     }
 }

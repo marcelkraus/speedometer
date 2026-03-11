@@ -8,6 +8,8 @@ class ContentViewController: UIViewController {
         return circularView
     }()
 
+    var distanceViewController: DistanceViewController!
+
     var locationViewController: LocationViewController!
 
     var speedViewController: SpeedViewController!
@@ -47,6 +49,7 @@ class ContentViewController: UIViewController {
         setupSettingsButtonView()
         setupCircularView()
         setupSpeedView()
+        setupDistanceView()
         setupLocationView()
         setupGestureRecognizer()
 
@@ -58,11 +61,14 @@ class ContentViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func update(with speedProvidedByDevice: Double, at location: Location) {
+    func update(with speedProvidedByDevice: Double, at location: Location, deltaDistance: Double) {
         circularView.indicatorFillment = unit.calculateFillment(for: speedProvidedByDevice)
         speedViewController.speed = unit.calculateSpeed(for: speedProvidedByDevice)
         speedViewController.unit = unit
         locationViewController.location = location
+
+        Distance.accumulate(deltaMeters: deltaDistance, speed: speedProvidedByDevice)
+        distanceViewController.distance = Distance.localizedString(for: unit)
     }
 }
 
@@ -101,6 +107,21 @@ private extension ContentViewController {
         ])
     }
 
+    func setupDistanceView() {
+        distanceViewController = DistanceViewController()
+        addChild(distanceViewController)
+
+        let distanceView = distanceViewController.view!
+        view.addSubview(distanceView)
+
+        distanceView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            distanceView.topAnchor.constraint(equalTo: circularView.bottomAnchor),
+            distanceView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+        ])
+        distanceViewController.didMove(toParent: self)
+    }
+
     func setupLocationView() {
         locationViewController = LocationViewController()
         addChild(locationViewController)
@@ -110,7 +131,7 @@ private extension ContentViewController {
 
         locationView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            locationView.topAnchor.constraint(equalTo: circularView.bottomAnchor),
+            locationView.topAnchor.constraint(equalTo: distanceViewController.view.bottomAnchor),
             locationView.bottomAnchor.constraint(equalTo: settingsButtonView.topAnchor),
             locationView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
         ])

@@ -4,4 +4,5 @@ enum Key {
     static let appStartCounter = "app_start_counter"
     static let selectedUnit = "unit"
     static let selectedTheme = "theme"
+    static let tripDistance = "trip_distance"
 }

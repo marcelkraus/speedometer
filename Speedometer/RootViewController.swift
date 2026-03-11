@@ -4,6 +4,7 @@ import UIKit
 class RootViewController: UIViewController {
     private let locationManager = CLLocationManager()
     private var contentViewController: ContentViewController!
+    private var previousLocation: CLLocation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,10 @@ extension RootViewController: CLLocationManagerDelegate {
             return
         }
 
-        contentViewController.update(with: location.speed, at: Location(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
+        let deltaDistance = previousLocation?.distance(from: location) ?? 0
+        previousLocation = location
+
+        contentViewController.update(with: location.speed, at: Location(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude), deltaDistance: deltaDistance)
     }
 }
 
