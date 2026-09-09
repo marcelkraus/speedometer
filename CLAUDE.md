@@ -157,11 +157,9 @@ App name: "Speedometer" (en) / "Tacho" (de).
 - `lazy var` properties with inline configuration closures for all UI components.
 - `NSLayoutConstraint.activate([...])` exclusively for constraints.
 - `private extension MyClass { }` to group private methods.
-- `// MARK: -` comments to separate file sections.
 - `@available(*, unavailable)` on `init?(coder:)` in all programmatic view controllers.
 - No force-unwrapping except `fatalError()` for truly unreachable states.
 - **SwiftFormat** is configured (`.swiftformat`): `--self init-only` (no redundant `self.` outside `init`), `--swiftversion 5`. Run SwiftFormat before committing.
-- Commit messages: short, imperative, present tense (e.g. `Fix warnings`, `Update RevenueCat SDK to v5.60.0`).
 
 ---
 
