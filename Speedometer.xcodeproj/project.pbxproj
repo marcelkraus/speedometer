@@ -44,6 +44,7 @@
 		DFDB3682219F7B4D002B7D53 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB3681219F7B4D002B7D53 /* Message.swift */; };
 		DFDBDE5021F9D93500F3E858 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDBDE4E21F9D93500F3E858 /* LocationViewController.swift */; };
 		DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */; };
+		DF5CE0010000000000000001 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CE0010000000000000002 /* SceneDelegate.swift */; };
 		DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */; };
 		DFECF442247FB6D500A83594 /* BlockingOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFECF441247FB6D500A83594 /* BlockingOverlayViewController.swift */; };
 		DFF84F4E2BF16AC4005C07AA /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DFF84F4D2BF16AC4005C07AA /* Localizable.xcstrings */; };
@@ -101,6 +102,7 @@
 		DFDBDE4E21F9D93500F3E858 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		DFEB62221F30B5EA00FEC555 /* Speedometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Speedometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DF5CE0010000000000000002 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFEB62311F30B5EA00FEC555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFECF441247FB6D500A83594 /* BlockingOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingOverlayViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				DF4C364F20D133B500A9E1B7 /* Views */,
 				DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */,
 				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
+				DF5CE0010000000000000002 /* SceneDelegate.swift */,
 			);
 			path = Speedometer;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */,
 				DF3010D8205A929E005B493D /* String+Localization.swift in Sources */,
 				DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */,
+				DF5CE0010000000000000001 /* SceneDelegate.swift in Sources */,
 				DF2F6BD321ADA4A400AC75BE /* ContentViewController.swift in Sources */,
 				DFECF442247FB6D500A83594 /* BlockingOverlayViewController.swift in Sources */,
 				DF93715F24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift in Sources */,

@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
+### Changed
+
+- Updated the app imprint to the krausgebaut brand, incl. the VAT ID and the current contact data
+- Updated RevenueCat SDK to version 5.102.2
+
+### Fixed
+
+- Fixed the app failing to launch when built with the iOS 27 SDK by adopting the scene life cycle
+
 ## [Version 1.4] - 2026-03-08
 
 ### Changed

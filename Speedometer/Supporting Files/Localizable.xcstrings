@@ -347,13 +347,13 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tacho ist ein Projekt von:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nDeutschland\n\nhallo@marcelkraus.de\nwww.marcelkraus.de\n+49 2235 8401372 (Kein Telefon-Support)\n\nDatenschutzerklärung: www.marcelkraus.de/datenschutz\n\nApp-Version: v%@:%@. Bestandteile des App-Icons und weitere Icons wurden gestaltet von Freepik/Flaticon."
+            "value" : "Tacho ist ein Projekt von:\n\nkrausgebaut von Marcel Kraus\nMarcel Kraus\nBonner Str. 88\n50374 Erftstadt\nDeutschland\n\nUmsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE225346678\n\nmail+legal@krausgebaut.de\nwww.krausgebaut.de\n+49 151 47828523 (Kein Telefon-Support)\n\nDatenschutzerklärung: www.krausgebaut.de/datenschutz\n\nApp-Version: v%@:%@. Bestandteile des App-Icons und weitere Icons wurden gestaltet von Freepik/Flaticon."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Speedometer is a project of:\n\nMarcel Kraus\nBonner Straße 88\n50374 Erftstadt\nGermany\n\nhallo@marcelkraus.de\nwww.marcelkraus.de\n+49 2235 8401372 (No support by phone)\n\nData Privacy Statement: www.marcelkraus.de/datenschutz\n\nApp Version: v%@:%@. Parts of the app icon and some icons were designed by Freepik/Flaticon."
+            "value" : "Speedometer is a project of:\n\nkrausgebaut by Marcel Kraus\nMarcel Kraus\nBonner Str. 88\n50374 Erftstadt\nGermany\n\nVAT ID under Section 27a of the German VAT Act: DE225346678\n\nmail+legal@krausgebaut.de\nwww.krausgebaut.de\n+49 151 47828523 (No support by phone)\n\nData Privacy Statement: www.krausgebaut.de/datenschutz\n\nApp Version: v%@:%@. Parts of the app icon and some icons were designed by Freepik/Flaticon."
           }
         }
       }

@@ -7,8 +7,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     static var shared = AppDelegate()
 
-    var window: UIWindow?
-
     private(set) var theme: Theme = .selected {
         didSet {
             UserDefaults.standard.set(theme.rawValue, forKey: Key.selectedTheme)
@@ -28,11 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.isIdleTimerDisabled = true
 
         migrateTo12()
-
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = theme.backgroundColor
-        window?.rootViewController = RootViewController()
-        window?.makeKeyAndVisible()
     }
 
     func setTheme(_ theme: Theme) {

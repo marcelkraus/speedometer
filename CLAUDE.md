@@ -24,7 +24,7 @@ The app follows a "Better MVC" pattern (per Dave DeLong's approach). Key princip
 ### VC hierarchy
 
 ```
-AppDelegate → RootViewController
+SceneDelegate → RootViewController
     ├── LoadingViewController       (brief, shown during auth check)
     ├── OnboardingViewController    (CLAuthorizationStatus.notDetermined)
     ├── MessageViewController       (.restricted or .denied)
@@ -42,6 +42,7 @@ AppDelegate → RootViewController
 ```
 Speedometer/
 ├── AppDelegate.swift                   # Entry point, RevenueCat setup, global state
+├── SceneDelegate.swift                 # Creates the window with RootViewController
 ├── RootViewController.swift            # CLLocationManager, authorization, VC transitions
 ├── Helpers/
 │   ├── ActionHandlerSleeve+Extension.swift   # UIButton.addAction { } closure helper
@@ -116,7 +117,7 @@ Managed via **Swift Package Manager** (no CocoaPods, no Carthage).
 
 | Package | Version | Purpose |
 |---------|---------|---------|
-| `purchases-ios` (RevenueCat) | 5.60.0 (min: 5.3.3) | In-app purchases, entitlement management |
+| `purchases-ios` (RevenueCat) | 5.102.2 (min: 5.3.3) | In-app purchases, entitlement management |
 
 RevenueCat is configured with `upToNextMajorVersion` from 5.3.3. The SDK uses **StoreKit 2** by default in v5 (iOS 15+); since the deployment target is 17.6, SK2 is always used.
 
