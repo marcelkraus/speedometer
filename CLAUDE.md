@@ -12,7 +12,7 @@ Speedometer (“How Fast Am I?”) is a focused, single-purpose iOS app that dis
 
 ## Status
 
-- The app stays on sale without maintenance: no new features, no bug fixes, no SDK updates.
+- The app stays on sale and gets bug fixes and maintenance only, no new features.
 
 ## Architecture
 
