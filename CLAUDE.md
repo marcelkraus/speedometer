@@ -1,8 +1,8 @@
-# CLAUDE.md – Speedometer
+# Speedometer
 
 ## Project Overview
 
-Speedometer ("How Fast Am I?") is a focused, single-purpose iOS app that displays the device's GPS-derived speed in multiple units alongside geographic coordinates. It is available free of charge on the App Store (ID: 1361655713). A one-time in-app purchase unlocks additional themes via a "tip jar" model.
+Speedometer (“How Fast Am I?”) is a focused, single-purpose iOS app that displays the device's GPS-derived speed in multiple units alongside geographic coordinates. It is available free of charge on the App Store (ID: 1361655713). A one-time in-app purchase unlocks additional themes via a “tip jar” model.
 
 - **Platform:** iOS (iPhone only)
 - **Minimum deployment target:** iOS 17.6
@@ -10,16 +10,18 @@ Speedometer ("How Fast Am I?") is a focused, single-purpose iOS app that display
 - **Localization:** English (development language) and German
 - **Bundle ID:** `de.marcelkraus.speedometer`
 
----
+## Status
+
+- The app stays on sale without maintenance: no new features, no bug fixes, no SDK updates.
 
 ## Architecture
 
-The app follows a "Better MVC" pattern (per Dave DeLong's approach). Key principles:
+The app follows a “Better MVC” pattern (per Dave DeLong's approach). Key principles:
 
-- **No Storyboards for app screens** – all UI is built programmatically with Auto Layout. Only `LaunchScreen.storyboard` exists.
-- **Container-based view controllers** – `RootViewController` manages child view controllers and transitions between them based on location authorization state.
-- **Protocol-based delegation** – all cross-VC communication uses `weak var delegate` with custom protocols.
-- **Global state via `AppDelegate.shared`** – theme and supporter status are stored here and accessed app-wide.
+- **No Storyboards for app screens**—all UI is built programmatically with Auto Layout. Only `LaunchScreen.storyboard` exists.
+- **Container-based view controllers**—`RootViewController` manages child view controllers and transitions between them based on location authorization state.
+- **Protocol-based delegation**—all cross-VC communication uses `weak var delegate` with custom protocols.
+- **Global state via `AppDelegate.shared`**—theme and supporter status are stored here and accessed app-wide.
 
 ### VC hierarchy
 
@@ -34,8 +36,6 @@ SceneDelegate → RootViewController
 ```
 
 `ContentViewController` also embeds a `CircularView` (quarter-arc gauge) and opens `SettingsViewController` modally via the Info button.
-
----
 
 ## Project Structure
 
@@ -83,8 +83,6 @@ SpeedometerTests/
     └── UnitTests.swift                 # Speed conversion and unit cycling tests
 ```
 
----
-
 ## Key Components
 
 ### `Unit` (Model/Unit.swift)
@@ -102,14 +100,12 @@ Enum: `.pear` (free, default), `.blueberry`, `.orange`, `.raspberry` (all requir
 
 ### `AppDelegate` (AppDelegate.swift)
 Global state holder accessed via `AppDelegate.shared`:
-- `theme: Theme` – persisted to UserDefaults.
-- `isSupporter: Bool` – fetched from RevenueCat entitlement `"supporter"`.
-- `updateUserStatus()` – calls `Purchases.shared.getCustomerInfo` to refresh supporter status.
+- `theme: Theme`—persisted to UserDefaults.
+- `isSupporter: Bool`—fetched from RevenueCat entitlement `"supporter"`.
+- `updateUserStatus()`—calls `Purchases.shared.getCustomerInfo` to refresh supporter status.
 
 ### `RootViewController` (RootViewController.swift)
 Owns the single `CLLocationManager` instance. Handles authorization changes and routes to the correct child VC with a crossfade transition.
-
----
 
 ## Dependencies
 
@@ -121,11 +117,9 @@ Managed via **Swift Package Manager** (no CocoaPods, no Carthage).
 
 RevenueCat is configured with `upToNextMajorVersion` from 5.3.3. The SDK uses **StoreKit 2** by default in v5 (iOS 15+); since the deployment target is 17.6, SK2 is always used.
 
----
-
 ## In-App Purchases
 
-Implemented in `InAppStoreViewController`. Uses RevenueCat exclusively – there is no direct StoreKit code for purchases.
+Implemented in `InAppStoreViewController`. Uses RevenueCat exclusively—there is no direct StoreKit code for purchases.
 
 **Flow:**
 1. `getOfferings` fetches available packages; each gets a price button.
@@ -138,8 +132,6 @@ Implemented in `InAppStoreViewController`. Uses RevenueCat exclusively – there
 
 **Gate:** `SettingsViewController` checks `AppDelegate.shared.isSupporter` at view construction time to show either the IAP section or theme selection. Settings must be reopened after purchase for the theme UI to appear (the confirmation dismiss achieves this automatically).
 
----
-
 ## Localization
 
 Uses Xcode String Catalogs (`.xcstrings`). Languages: `en` (development), `de`.
@@ -148,9 +140,7 @@ Key convention: dot-separated namespace, e.g. `"Message.Onboarding.Heading"`, `"
 
 Usage in code: `"SomeKey".localized` (via `String+Localization.swift` which wraps `NSLocalizedString`).
 
-App name: "Speedometer" (en) / "Tacho" (de).
-
----
+App name: “Speedometer” (en) / “Tacho” (de).
 
 ## Coding Conventions
 
@@ -161,8 +151,6 @@ App name: "Speedometer" (en) / "Tacho" (de).
 - `@available(*, unavailable)` on `init?(coder:)` in all programmatic view controllers.
 - No force-unwrapping except `fatalError()` for truly unreachable states.
 - **SwiftFormat** is configured (`.swiftformat`): `--self init-only` (no redundant `self.` outside `init`), `--swiftversion 5`. Run SwiftFormat before committing.
-
----
 
 ## Testing
 
@@ -180,11 +168,9 @@ Run tests via Xcode (`Cmd+U`) or:
 xcodebuild test -scheme Speedometer -destination 'platform=iOS Simulator,name=iPhone 16'
 ```
 
----
+## Releases
 
-## Git Workflow
-
-- **`main`** – stable releases only.
-- **`develop`** – active development; not considered stable.
-- PRs should be based on `main`.
+- Git flow: `release/vX.Y.Z` branches off `develop`, is merged into `main` with an annotated tag and back into `develop`.
 - No CI/CD configuration is present.
+- `CHANGELOG.md` is written in English and follows Keep a Changelog.
+- Change `MARKETING_VERSION` directly in `project.pbxproj`. Editing it in the Xcode target editor moves keys from `Info.plist` into build settings.
