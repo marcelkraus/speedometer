@@ -82,6 +82,8 @@ Speedometer/
         ├── OnboardingViewController.swift
         └── SettingsViewController.swift          # Themes (supporters) or IAP (others)
 SpeedometerTests/
+├── Helpers/
+│   └── PurchaseManagerTests.swift      # Tip purchases against the StoreKit configuration
 ├── Info.plist                          # Test bundle Info.plist, not bundled as a resource
 └── Model/
     ├── LocationTests.swift             # DMS formatting tests
@@ -159,9 +161,10 @@ App name: “Speedometer” (en) / “Tacho” (de).
 
 Framework: XCTest (`@testable import Speedometer`).
 
-Only model-layer logic is tested. Tests mirror the app's `Model/` folder structure under `SpeedometerTests/Model/`.
+Model logic and the purchase manager are tested. Tests mirror the app's folder structure under `SpeedometerTests/`.
 
 - `LocationTests`: DMS coordinate formatting.
+- `PurchaseManagerTests`: the three tips, purchase, failed and pending purchase, restore with and without an earlier tip, supporter status at start, refund. They run against `Supporting Files/StoreKit Configuration.storekit` through `StoreKitTest` and need the host app for its window scene; a user canceling a purchase cannot be simulated there.
 - `UnitTests`: Speed conversion, minimum threshold (0.5 m/s), unit cycling order.
 
 No UI tests. No snapshot tests.
