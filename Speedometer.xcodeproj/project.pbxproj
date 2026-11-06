@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */; };
 		DF22618124E67B9300BCD867 /* FillableCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF22618024E67B9300BCD867 /* FillableCircleView.swift */; };
-		DF266FBE284F582800C211EB /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = DF266FBD284F582800C211EB /* RevenueCat */; };
 		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
 		DF2F6BD321ADA4A400AC75BE /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F6BD221ADA4A400AC75BE /* ContentViewController.swift */; };
 		DF3010D8205A929E005B493D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3010D7205A929E005B493D /* String+Localization.swift */; };
@@ -50,6 +49,8 @@
 		DFF84F4E2BF16AC4005C07AA /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DFF84F4D2BF16AC4005C07AA /* Localizable.xcstrings */; };
 		DFF84F502BF16AC4005C07AA /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DFF84F4F2BF16AC4005C07AA /* InfoPlist.xcstrings */; };
 		DFFD6FEF24E3DAC4004E3A51 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFD6FEE24E3DAC4004E3A51 /* Theme.swift */; };
+		DF5CE0030000000000000001 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = DF5CE0030000000000000002 /* PrivacyInfo.xcprivacy */; };
+		DF5CE0020000000000000001 /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CE0020000000000000002 /* PurchaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,9 @@
 		DFF84F4D2BF16AC4005C07AA /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		DFF84F4F2BF16AC4005C07AA /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		DFFD6FEE24E3DAC4004E3A51 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		DF5CE0030000000000000002 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		DF5CE0020000000000000002 /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
+		DF5CE0040000000000000002 /* StoreKit Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "StoreKit Configuration.storekit"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +127,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF266FBE284F582800C211EB /* RevenueCat in Frameworks */,
 				DF80694B238591DC0063482D /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,6 +182,8 @@
 				DF9D05BC23FE77100033F43D /* Key.swift */,
 				DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */,
 				DFF84F4D2BF16AC4005C07AA /* Localizable.xcstrings */,
+				DF5CE0030000000000000002 /* PrivacyInfo.xcprivacy */,
+				DF5CE0040000000000000002 /* StoreKit Configuration.storekit */,
 				DFFD6FEE24E3DAC4004E3A51 /* Theme.swift */,
 			);
 			path = "Supporting Files";
@@ -247,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				DF93715E24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift */,
+				DF5CE0020000000000000002 /* PurchaseManager.swift */,
 				DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */,
 				DF3010D7205A929E005B493D /* String+Localization.swift */,
 				DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */,
@@ -321,9 +327,6 @@
 			dependencies = (
 			);
 			name = Speedometer;
-			packageProductDependencies = (
-				DF266FBD284F582800C211EB /* RevenueCat */,
-			);
 			productName = Speedometer;
 			productReference = DFEB62221F30B5EA00FEC555 /* Speedometer.app */;
 			productType = "com.apple.product-type.application";
@@ -362,9 +365,6 @@
 				Base,
 			);
 			mainGroup = DFEB62191F30B5E900FEC555;
-			packageReferences = (
-				DF93642B24DD681900598DB1 /* XCRemoteSwiftPackageReference "purchases-ios" */,
-			);
 			productRefGroup = DFEB62231F30B5EA00FEC555 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -402,6 +402,7 @@
 				DFF84F502BF16AC4005C07AA /* InfoPlist.xcstrings in Resources */,
 				DF4792C225001C4A006E3D1C /* Raspberry.png in Resources */,
 				DF4792C025001C4A006E3D1C /* Raspberry@2x.png in Resources */,
+				DF5CE0030000000000000001 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +446,7 @@
 				DFECF442247FB6D500A83594 /* BlockingOverlayViewController.swift in Sources */,
 				DF93715F24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift in Sources */,
 				DFD30999219F252C005CE3B9 /* OnboardingViewController.swift in Sources */,
+				DF5CE0020000000000000001 /* PurchaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,24 +719,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		DF93642B24DD681900598DB1 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.3.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		DF266FBD284F582800C211EB /* RevenueCat */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DF93642B24DD681900598DB1 /* XCRemoteSwiftPackageReference "purchases-ios" */;
-			productName = RevenueCat;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DFEB621A1F30B5E900FEC555 /* Project object */;
 }

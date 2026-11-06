@@ -49,13 +49,17 @@ class ContentViewController: UIViewController {
         setupSpeedView()
         setupLocationView()
         setupGestureRecognizer()
-
-        StoreReviewHelper.askForReview(in: view.window?.windowScene)
     }
 
     @available(*, unavailable)
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        StoreReviewHelper.askForReview(in: view.window?.windowScene)
     }
 
     func update(with speedProvidedByDevice: Double, at location: Location) {

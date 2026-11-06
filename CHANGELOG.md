@@ -6,13 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
+### Added
+
+- Added a privacy manifest
+
 ### Changed
 
 - Updated the app imprint to the krausgebaut brand, incl. the VAT ID and the current contact data
-- Updated RevenueCat SDK to version 5.102.2
+- Replaced RevenueCat with StoreKit 2, so the app no longer talks to any third party; tips from earlier versions keep unlocking the themes
 
 ### Fixed
 
+- Fixed the review dialog never appearing
 - Fixed the app failing to launch when built with the iOS 27 SDK by adopting the scene life cycle
 
 ## [Version 1.4] - 2026-03-08

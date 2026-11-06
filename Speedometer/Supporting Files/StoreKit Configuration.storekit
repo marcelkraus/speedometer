@@ -1,0 +1,139 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "5E3D0A11",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "5E3D0A12",
+      "localizations" : [
+        {
+          "description" : "A small tip that unlocks the themes.",
+          "displayName" : "Small Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Ein kleines Trinkgeld, das die Farbthemen freischaltet.",
+          "displayName" : "Kleines Trinkgeld",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "de.marcelkraus.speedometer.tip.incentive.small",
+      "referenceName" : "Small Tip with Incentive",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "5E3D0A13",
+      "localizations" : [
+        {
+          "description" : "A medium tip that unlocks the themes.",
+          "displayName" : "Medium Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Ein mittleres Trinkgeld, das die Farbthemen freischaltet.",
+          "displayName" : "Mittleres Trinkgeld",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "de.marcelkraus.speedometer.tip.incentive.medium",
+      "referenceName" : "Medium Tip with Incentive",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "7.99",
+      "familyShareable" : false,
+      "internalID" : "5E3D0A14",
+      "localizations" : [
+        {
+          "description" : "A large tip that unlocks the themes.",
+          "displayName" : "Large Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Ein großes Trinkgeld, das die Farbthemen freischaltet.",
+          "displayName" : "Großes Trinkgeld",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "de.marcelkraus.speedometer.tip.incentive.large",
+      "referenceName" : "Large Tip with Incentive",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "DEU",
+    "_storeKitErrors" : [
+      {
+        "current" : {
+          "index" : 4,
+          "type" : "generic"
+        },
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : {
+          "index" : 1,
+          "type" : "purchase"
+        },
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

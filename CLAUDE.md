@@ -41,12 +41,13 @@ SceneDelegate → RootViewController
 
 ```
 Speedometer/
-├── AppDelegate.swift                   # Entry point, RevenueCat setup, global state
+├── AppDelegate.swift                   # Entry point, purchase manager, global state
 ├── SceneDelegate.swift                 # Creates the window with RootViewController
 ├── RootViewController.swift            # CLLocationManager, authorization, VC transitions
 ├── Helpers/
 │   ├── ActionHandlerSleeve+Extension.swift   # UIButton.addAction { } closure helper
-│   ├── StoreKitReviewHelper.swift            # SKStoreReviewController logic (start 5, then every 10)
+│   ├── PurchaseManager.swift                 # StoreKit 2 tips and supporter status
+│   ├── StoreKitReviewHelper.swift            # Review request once the window exists (start 5, then every 10)
 │   ├── String+Localization.swift             # String.localized computed property
 │   └── UIViewController+Transition.swift    # Crossfade transition helper
 ├── Model/
@@ -60,6 +61,8 @@ Speedometer/
 │   ├── Localizable.xcstrings           # All UI strings (en + de)
 │   ├── InfoPlist.xcstrings             # App display name + location usage description
 │   ├── Key.swift                       # UserDefaults key constants
+│   ├── PrivacyInfo.xcprivacy           # Privacy manifest (UserDefaults, reason CA92.1)
+│   ├── StoreKit Configuration.storekit # Local tip products, set in the scheme, not bundled
 │   ├── Theme.swift                     # Theme enum with colors and fonts
 │   └── LaunchScreen.storyboard
 └── Views/
@@ -67,7 +70,7 @@ Speedometer/
     │   ├── BlockingOverlayViewController.swift   # Full-screen overlay during IAP
     │   ├── CircularView.swift                    # Quarter-arc speed gauge (CAShapeLayer)
     │   ├── FillableCircleView.swift              # Theme selector dot (filled/outlined)
-    │   ├── InAppStoreViewController.swift        # RevenueCat tip jar UI
+    │   ├── InAppStoreViewController.swift        # Tip jar UI
     │   ├── LocationViewController.swift          # DMS coordinate display
     │   ├── ParagraphViewController.swift         # Generic heading + text view
     │   └── SpeedViewController.swift             # Speed number + unit badge
@@ -101,34 +104,30 @@ Enum: `.pear` (free, default), `.blueberry`, `.orange`, `.raspberry` (all requir
 ### `AppDelegate` (AppDelegate.swift)
 Global state holder accessed via `AppDelegate.shared`:
 - `theme: Theme`—persisted to UserDefaults.
-- `isSupporter: Bool`—fetched from RevenueCat entitlement `"supporter"`.
-- `updateUserStatus()`—calls `Purchases.shared.getCustomerInfo` to refresh supporter status.
+- `purchaseManager: PurchaseManager`—started in `applicationDidFinishLaunching`.
+- `isSupporter: Bool`—read from `purchaseManager`.
 
 ### `RootViewController` (RootViewController.swift)
 Owns the single `CLLocationManager` instance. Handles authorization changes and routes to the correct child VC with a crossfade transition.
 
 ## Dependencies
 
-Managed via **Swift Package Manager** (no CocoaPods, no Carthage).
-
-| Package | Version | Purpose |
-|---------|---------|---------|
-| `purchases-ios` (RevenueCat) | 5.102.2 (min: 5.3.3) | In-app purchases, entitlement management |
-
-RevenueCat is configured with `upToNextMajorVersion` from 5.3.3. The SDK uses **StoreKit 2** by default in v5 (iOS 15+); since the deployment target is 17.6, SK2 is always used.
+None. The app uses Apple frameworks only and talks to no third party.
 
 ## In-App Purchases
 
-Implemented in `InAppStoreViewController`. Uses RevenueCat exclusively—there is no direct StoreKit code for purchases.
+StoreKit 2 in `PurchaseManager`, shown by `InAppStoreViewController`. The three tips (`de.marcelkraus.speedometer.tip.incentive.small`, `.medium`, `.large`) are **non-consumable**, so `Transaction.currentEntitlements` returns them without a server—tips from earlier versions included.
+
+**Supporter:** any verified, unrevoked entry in `Transaction.currentEntitlements`. `PurchaseManager.start()` derives it at launch and listens to `Transaction.updates`, finishing every verified transaction.
 
 **Flow:**
-1. `getOfferings` fetches available packages; each gets a price button.
-2. Tapping a button calls `tipSelectionViewControllerWillPurchaseProduct` (shows blocking overlay), then `Purchases.shared.purchase(package:)`.
-3. On success: `updateUserStatus()` refreshes entitlements → `tipSelectionViewControllerDidPurchaseProduct` → overlay dismissed after 0.5s, confirmation alert shown.
-4. On cancel or error: `tipSelectionViewControllerCouldNotPurchaseProduct` → overlay dismissed immediately.
-5. Restore: `Purchases.shared.restorePurchases` re-checks `allPurchasedProductIdentifiers`.
+1. `products()` loads the tips by ID, sorted by price; each gets a button titled with `displayPrice`. A failed or empty load shows the fallback message.
+2. Tapping a button calls `tipSelectionViewControllerWillPurchaseProduct` (shows blocking overlay), then `purchase(_:in:)`, which confirms the purchase in the window scene.
+3. On a verified purchase: the transaction is finished, the supporter status refreshed → `tipSelectionViewControllerDidPurchaseProduct` → overlay dismissed after 0.5s, confirmation alert shown.
+4. On cancel, pending (Ask to Buy) or error: `tipSelectionViewControllerCouldNotPurchaseProduct` → overlay dismissed immediately. A pending purchase arrives later through `Transaction.updates`.
+5. Restore: `restore()` runs `AppStore.sync()` and shows the confirmation alert when the user is a supporter afterwards.
 
-**Entitlement identifier:** `"supporter"`
+**Local testing:** the scheme's run action uses `Supporting Files/StoreKit Configuration.storekit` with the App Store prices in euros (1.99, 3.99, 7.99).
 
 **Gate:** `SettingsViewController` checks `AppDelegate.shared.isSupporter` at view construction time to show either the IAP section or theme selection. Settings must be reopened after purchase for the theme UI to appear (the confirmation dismiss achieves this automatically).
 
