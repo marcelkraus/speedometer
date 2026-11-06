@@ -55,16 +55,17 @@ Speedometer/
 │   ├── Message.swift                   # Enum for onboarding/denied/restricted screens
 │   └── Unit.swift                      # Enum for speed units, conversion, formatting
 ├── Supporting Files/
-│   ├── Assets.xcassets/                # App icon, named color sets per theme
 │   ├── Alternate App Icons/            # Blueberry, Orange, Raspberry PNGs
+│   ├── Assets.xcassets/                # App icon, named color sets per theme
 │   ├── Fonts/                          # SourceCodePro-Medium.ttf, SourceCodePro-Regular.ttf
-│   ├── Localizable.xcstrings           # All UI strings (en + de)
+│   ├── Info.plist                      # App Info.plist, not bundled as a resource
 │   ├── InfoPlist.xcstrings             # App display name + location usage description
 │   ├── Key.swift                       # UserDefaults key constants
+│   ├── LaunchScreen.storyboard
+│   ├── Localizable.xcstrings           # All UI strings (en + de)
 │   ├── PrivacyInfo.xcprivacy           # Privacy manifest (UserDefaults, reason CA92.1)
 │   ├── StoreKit Configuration.storekit # Local tip products, set in the scheme, not bundled
-│   ├── Theme.swift                     # Theme enum with colors and fonts
-│   └── LaunchScreen.storyboard
+│   └── Theme.swift                     # Theme enum with colors and fonts
 └── Views/
     ├── Components/
     │   ├── BlockingOverlayViewController.swift   # Full-screen overlay during IAP
@@ -81,10 +82,13 @@ Speedometer/
         ├── OnboardingViewController.swift
         └── SettingsViewController.swift          # Themes (supporters) or IAP (others)
 SpeedometerTests/
+├── Info.plist                          # Test bundle Info.plist, not bundled as a resource
 └── Model/
     ├── LocationTests.swift             # DMS formatting tests
     └── UnitTests.swift                 # Speed conversion and unit cycling tests
 ```
+
+`Speedometer/` and `SpeedometerTests/` are synchronized folders (`PBXFileSystemSynchronizedRootGroup`, project format `objectVersion = 100`). Membership follows the file system: a new file inside them belongs to its target the moment it exists, and no entry has to be added to `project.pbxproj`. `Supporting Files/Info.plist`, `Supporting Files/StoreKit Configuration.storekit` and `SpeedometerTests/Info.plist` are the declared exceptions, so they are not copied into a bundle as resources.
 
 ## Key Components
 
@@ -155,7 +159,7 @@ App name: “Speedometer” (en) / “Tacho” (de).
 
 Framework: XCTest (`@testable import Speedometer`).
 
-Only model-layer logic is tested. Tests mirror the app's `Model/` group structure under `SpeedometerTests/Model/`.
+Only model-layer logic is tested. Tests mirror the app's `Model/` folder structure under `SpeedometerTests/Model/`.
 
 - `LocationTests`: DMS coordinate formatting.
 - `UnitTests`: Speed conversion, minimum threshold (0.5 m/s), unit cycling order.
