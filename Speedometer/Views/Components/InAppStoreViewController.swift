@@ -1,4 +1,4 @@
-import RevenueCat
+import StoreKit
 import UIKit
 
 protocol InAppStoreViewControllerDelegate: AnyObject {
@@ -74,21 +74,13 @@ class InAppStoreViewController: UIViewController {
         restoreButton.setTitle("InAppStoreViewController.RestoreButton".localized, for: .normal)
         restoreButton.titleLabel?.font = AppDelegate.shared.theme.buttonFont
         restoreButton.tintColor = AppDelegate.shared.theme.interactionColor
-        restoreButton.addAction {
-            Purchases.shared.restorePurchases { [weak self] customerInfo, error in
-                guard error == nil else {
-                    print("[RevenueCat] An error occured, purchases could not be restored")
+        restoreButton.addAction { [weak self] in
+            Task {
+                guard (try? await AppDelegate.shared.purchaseManager.restore()) == true else {
                     return
                 }
 
-                guard customerInfo?.allPurchasedProductIdentifiers.count ?? 0 > 0 else {
-                    print("[RevenueCat] No purchases available which could be restored")
-                    return
-                }
-
-                print("[RevenueCat] Purchases were restored successfully")
                 self?.showConfirmationMessage()
-                AppDelegate.shared.updateUserStatus()
             }
         }
 
@@ -131,32 +123,19 @@ class InAppStoreViewController: UIViewController {
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
         ])
 
-        Purchases.shared.getOfferings { offerings, error in
-            guard error == nil else {
-                self.replaceLoadingProductsView(with: [self.fallbackLabel])
+        Task { [weak self] in
+            let products = try? await AppDelegate.shared.purchaseManager.products()
+            guard let self else {
+                return
+            }
+
+            guard let products, products.isEmpty == false else {
+                replaceLoadingProductsView(with: [fallbackLabel])
 
                 return
             }
 
-            guard let offering = offerings?.current, offering.availablePackages.count > 0 else {
-                return
-            }
-
-            let productButtons = offering.availablePackages.map {
-                self.purchaseButton(for: $0)
-            }
-
-            DispatchQueue.main.async {
-                self.replaceLoadingProductsView(with: productButtons)
-            }
-        }
-
-        Purchases.shared.getCustomerInfo { customerInfo, error in
-            guard error == nil else {
-                return
-            }
-
-            print("[RevenueCat] Available entitlements: \(customerInfo?.entitlements.all.keys.joined(separator: ",") ?? "")")
+            replaceLoadingProductsView(with: products.map { self.purchaseButton(for: $0) })
         }
     }
 
@@ -190,7 +169,7 @@ private extension InAppStoreViewController {
         view.setNeedsDisplay()
     }
 
-    func purchaseButton(for package: Package) -> UIButton {
+    func purchaseButton(for product: Product) -> UIButton {
         let purchaseButton = UIButton(type: .custom)
         purchaseButton.translatesAutoresizingMaskIntoConstraints = false
         purchaseButton.layer.cornerRadius = 20.0
@@ -198,20 +177,22 @@ private extension InAppStoreViewController {
         purchaseButton.setTitleColor(AppDelegate.shared.theme.onInteractionColor, for: .normal)
         purchaseButton.titleLabel?.textAlignment = .center
         purchaseButton.titleLabel?.font = AppDelegate.shared.theme.buttonFont
-        purchaseButton.setTitle(package.storeProduct.localizedPriceString, for: .normal)
+        purchaseButton.setTitle(product.displayPrice, for: .normal)
         purchaseButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         purchaseButton.addAction { [weak self] in
-            guard let self else { return }
-            self.delegate?.tipSelectionViewControllerWillPurchaseProduct(self)
-            Purchases.shared.purchase(package: package) { [weak self] _, _, error, userCancelled in
-                guard let self else { return }
-                if error == nil && !userCancelled {
-                    AppDelegate.shared.updateUserStatus()
-                    print("[RevenueCat] Purchasing product `\(package.identifier)`")
-                    self.delegate?.tipSelectionViewControllerDidPurchaseProduct(self)
-                } else {
+            guard let self, let windowScene = view.window?.windowScene else {
+                return
+            }
+
+            delegate?.tipSelectionViewControllerWillPurchaseProduct(self)
+            Task {
+                guard (try? await AppDelegate.shared.purchaseManager.purchase(product, in: windowScene)) == true else {
                     self.delegate?.tipSelectionViewControllerCouldNotPurchaseProduct(self)
+
+                    return
                 }
+
+                self.delegate?.tipSelectionViewControllerDidPurchaseProduct(self)
             }
         }
 

@@ -3,52 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 100;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */; };
-		DF22618124E67B9300BCD867 /* FillableCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF22618024E67B9300BCD867 /* FillableCircleView.swift */; };
-		DF266FBE284F582800C211EB /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = DF266FBD284F582800C211EB /* RevenueCat */; };
-		DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C45AE1FCC2EF0005C8906 /* Unit.swift */; };
-		DF2F6BD321ADA4A400AC75BE /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F6BD221ADA4A400AC75BE /* ContentViewController.swift */; };
-		DF3010D8205A929E005B493D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3010D7205A929E005B493D /* String+Localization.swift */; };
-		DF36993F23882D3800BA8C08 /* InAppStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36993E23882D3800BA8C08 /* InAppStoreViewController.swift */; };
-		DF4792B425001AAB006E3D1C /* Blueberry.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B125001AAA006E3D1C /* Blueberry.png */; };
-		DF4792B525001AAB006E3D1C /* Blueberry@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B225001AAA006E3D1C /* Blueberry@3x.png */; };
-		DF4792B625001AAB006E3D1C /* Blueberry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B325001AAB006E3D1C /* Blueberry@2x.png */; };
-		DF4792BA25001C2D006E3D1C /* Orange@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B725001C2D006E3D1C /* Orange@3x.png */; };
-		DF4792BB25001C2D006E3D1C /* Orange.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B825001C2D006E3D1C /* Orange.png */; };
-		DF4792BC25001C2D006E3D1C /* Orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792B925001C2D006E3D1C /* Orange@2x.png */; };
-		DF4792C025001C4A006E3D1C /* Raspberry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792BD25001C49006E3D1C /* Raspberry@2x.png */; };
-		DF4792C125001C4A006E3D1C /* Raspberry@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792BE25001C49006E3D1C /* Raspberry@3x.png */; };
-		DF4792C225001C4A006E3D1C /* Raspberry.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4792BF25001C49006E3D1C /* Raspberry.png */; };
-		DF4C365120D133CD00A9E1B7 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4C365020D133CD00A9E1B7 /* CircularView.swift */; };
-		DF511037219D9B05000321E8 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF511035219D9B05000321E8 /* LoadingViewController.swift */; };
-		DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */; };
-		DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */; };
-		DF5F4C5F1FD5DAA10043F97E /* UIViewController+Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */; };
-		DF602D1520AEE3C00083532A /* StoreKitReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */; };
-		DF64A52320EE621A00063BBD /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64A52220EE621A00063BBD /* LocationTests.swift */; };
-		DF76227321A6E9AE0073CEBC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF76227221A6E9AE0073CEBC /* SettingsViewController.swift */; };
-		DF7D820221C2B073004A37C8 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7D820021C2B073004A37C8 /* SpeedViewController.swift */; };
 		DF80694B238591DC0063482D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF80694A238591DC0063482D /* StoreKit.framework */; };
-		DF93715F24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF93715E24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift */; };
-		DF94839D20D16C7E009B120B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94839C20D16C7E009B120B /* Location.swift */; };
-		DF9D05BD23FE77100033F43D /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9D05BC23FE77100033F43D /* Key.swift */; };
-		DF9DCB1320ADDAED008BAE8B /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DCB1220ADDAED008BAE8B /* UnitTests.swift */; };
-		DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA0C601FD5E17300260E24 /* RootViewController.swift */; };
-		DFD30993219F240E005CE3B9 /* ParagraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */; };
-		DFD30999219F252C005CE3B9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */; };
-		DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB367F219F770B002B7D53 /* MessageViewController.swift */; };
-		DFDB3682219F7B4D002B7D53 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB3681219F7B4D002B7D53 /* Message.swift */; };
-		DFDBDE5021F9D93500F3E858 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDBDE4E21F9D93500F3E858 /* LocationViewController.swift */; };
-		DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */; };
-		DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */; };
-		DFECF442247FB6D500A83594 /* BlockingOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFECF441247FB6D500A83594 /* BlockingOverlayViewController.swift */; };
-		DFF84F4E2BF16AC4005C07AA /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DFF84F4D2BF16AC4005C07AA /* Localizable.xcstrings */; };
-		DFF84F502BF16AC4005C07AA /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DFF84F4F2BF16AC4005C07AA /* InfoPlist.xcstrings */; };
-		DFFD6FEF24E3DAC4004E3A51 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFD6FEE24E3DAC4004E3A51 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,52 +21,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DF22618024E67B9300BCD867 /* FillableCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillableCircleView.swift; sourceTree = "<group>"; };
-		DF2C45AE1FCC2EF0005C8906 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
-		DF2F6BD221ADA4A400AC75BE /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
-		DF3010D7205A929E005B493D /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
-		DF36993E23882D3800BA8C08 /* InAppStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppStoreViewController.swift; sourceTree = "<group>"; };
-		DF4792B125001AAA006E3D1C /* Blueberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blueberry.png; sourceTree = "<group>"; };
-		DF4792B225001AAA006E3D1C /* Blueberry@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blueberry@3x.png"; sourceTree = "<group>"; };
-		DF4792B325001AAB006E3D1C /* Blueberry@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blueberry@2x.png"; sourceTree = "<group>"; };
-		DF4792B725001C2D006E3D1C /* Orange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Orange@3x.png"; sourceTree = "<group>"; };
-		DF4792B825001C2D006E3D1C /* Orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Orange.png; sourceTree = "<group>"; };
-		DF4792B925001C2D006E3D1C /* Orange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Orange@2x.png"; sourceTree = "<group>"; };
-		DF4792BD25001C49006E3D1C /* Raspberry@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Raspberry@2x.png"; sourceTree = "<group>"; };
-		DF4792BE25001C49006E3D1C /* Raspberry@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Raspberry@3x.png"; sourceTree = "<group>"; };
-		DF4792BF25001C49006E3D1C /* Raspberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Raspberry.png; sourceTree = "<group>"; };
-		DF4C365020D133CD00A9E1B7 /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
-		DF511035219D9B05000321E8 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.ttf"; sourceTree = "<group>"; };
-		DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Medium.ttf"; sourceTree = "<group>"; };
-		DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Transition.swift"; sourceTree = "<group>"; };
-		DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitReviewHelper.swift; sourceTree = "<group>"; };
-		DF64A52220EE621A00063BBD /* LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
-		DF76227221A6E9AE0073CEBC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		DF7D820021C2B073004A37C8 /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
 		DF80694A238591DC0063482D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		DF93715E24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActionHandlerSleeve+Extension.swift"; sourceTree = "<group>"; };
-		DF94839C20D16C7E009B120B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		DF9D05BC23FE77100033F43D /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		DF9DCB0720ADD8EC008BAE8B /* SpeedometerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedometerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF9DCB0B20ADD8EC008BAE8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF9DCB1220ADDAED008BAE8B /* UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
-		DFCA0C601FD5E17300260E24 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphViewController.swift; sourceTree = "<group>"; };
-		DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		DFDB367F219F770B002B7D53 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		DFDB3681219F7B4D002B7D53 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		DFDBDE4E21F9D93500F3E858 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		DFEB62221F30B5EA00FEC555 /* Speedometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Speedometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DFEB62311F30B5EA00FEC555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFECF441247FB6D500A83594 /* BlockingOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingOverlayViewController.swift; sourceTree = "<group>"; };
-		DFF84F4D2BF16AC4005C07AA /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		DFF84F4F2BF16AC4005C07AA /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
-		DFFD6FEE24E3DAC4004E3A51 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		DF5CE0050000000000000003 /* Exceptions for "Speedometer" folder in "Speedometer" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Supporting Files/Info.plist",
+				"Supporting Files/StoreKit Configuration.storekit",
+			);
+			target = DFEB62211F30B5E900FEC555 /* Speedometer */;
+		};
+		DF5CE0050000000000000004 /* Exceptions for "SpeedometerTests" folder in "SpeedometerTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = DF9DCB0620ADD8EC008BAE8B /* SpeedometerTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		DF5CE0050000000000000001 /* Speedometer */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DF5CE0050000000000000003 /* Exceptions for "Speedometer" folder in "Speedometer" target */,
+			);
+			path = Speedometer;
+			sourceTree = "<group>";
+		};
+		DF5CE0050000000000000002 /* SpeedometerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DF5CE0050000000000000004 /* Exceptions for "SpeedometerTests" folder in "SpeedometerTests" target */,
+			);
+			path = SpeedometerTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DF9DCB0420ADD8EC008BAE8B /* Frameworks */ = {
@@ -121,7 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF266FBE284F582800C211EB /* RevenueCat in Frameworks */,
 				DF80694B238591DC0063482D /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,78 +82,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DF4792B025001A40006E3D1C /* Alternate App Icons */ = {
-			isa = PBXGroup;
-			children = (
-				DF4792B125001AAA006E3D1C /* Blueberry.png */,
-				DF4792B325001AAB006E3D1C /* Blueberry@2x.png */,
-				DF4792B225001AAA006E3D1C /* Blueberry@3x.png */,
-				DF4792B825001C2D006E3D1C /* Orange.png */,
-				DF4792B925001C2D006E3D1C /* Orange@2x.png */,
-				DF4792B725001C2D006E3D1C /* Orange@3x.png */,
-				DF4792BF25001C49006E3D1C /* Raspberry.png */,
-				DF4792BD25001C49006E3D1C /* Raspberry@2x.png */,
-				DF4792BE25001C49006E3D1C /* Raspberry@3x.png */,
-			);
-			path = "Alternate App Icons";
-			sourceTree = "<group>";
-		};
-		DF4C364F20D133B500A9E1B7 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DFE6E19B2216DC8400623E34 /* Components */,
-				DF511031219D97EE000321E8 /* Screens */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		DF511031219D97EE000321E8 /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				DF2F6BD221ADA4A400AC75BE /* ContentViewController.swift */,
-				DF511035219D9B05000321E8 /* LoadingViewController.swift */,
-				DFDB367F219F770B002B7D53 /* MessageViewController.swift */,
-				DFD30997219F252C005CE3B9 /* OnboardingViewController.swift */,
-				DF76227221A6E9AE0073CEBC /* SettingsViewController.swift */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		DF568E471FD0119600D546B8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DF4792B025001A40006E3D1C /* Alternate App Icons */,
-				DF58A64A2057FAC900005A07 /* Fonts */,
-				DFEB622C1F30B5EA00FEC555 /* Assets.xcassets */,
-				DFEB62311F30B5EA00FEC555 /* Info.plist */,
-				DFF84F4F2BF16AC4005C07AA /* InfoPlist.xcstrings */,
-				DF9D05BC23FE77100033F43D /* Key.swift */,
-				DF1F79DC2059EAE800BAFC11 /* LaunchScreen.storyboard */,
-				DFF84F4D2BF16AC4005C07AA /* Localizable.xcstrings */,
-				DFFD6FEE24E3DAC4004E3A51 /* Theme.swift */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DF58A64A2057FAC900005A07 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				DF58A64D2057FCC200005A07 /* SourceCodePro-Medium.ttf */,
-				DF58A64B2057FCC200005A07 /* SourceCodePro-Regular.ttf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		DF5F138B202A5AAE006D51DA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				DF94839C20D16C7E009B120B /* Location.swift */,
-				DFDB3681219F7B4D002B7D53 /* Message.swift */,
-				DF2C45AE1FCC2EF0005C8906 /* Unit.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		DF806949238591DC0063482D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,54 +90,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DF9DCB0820ADD8EC008BAE8B /* SpeedometerTests */ = {
-			isa = PBXGroup;
-			children = (
-				DF9DCB0B20ADD8EC008BAE8B /* Info.plist */,
-				DF9DCB1120ADD99B008BAE8B /* Model */,
-			);
-			path = SpeedometerTests;
-			sourceTree = "<group>";
-		};
-		DF9DCB1120ADD99B008BAE8B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				DF64A52220EE621A00063BBD /* LocationTests.swift */,
-				DF9DCB1220ADDAED008BAE8B /* UnitTests.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		DFE6E19B2216DC8400623E34 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				DFECF441247FB6D500A83594 /* BlockingOverlayViewController.swift */,
-				DF4C365020D133CD00A9E1B7 /* CircularView.swift */,
-				DF22618024E67B9300BCD867 /* FillableCircleView.swift */,
-				DF36993E23882D3800BA8C08 /* InAppStoreViewController.swift */,
-				DFDBDE4E21F9D93500F3E858 /* LocationViewController.swift */,
-				DFD30991219F240E005CE3B9 /* ParagraphViewController.swift */,
-				DF7D820021C2B073004A37C8 /* SpeedViewController.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		DFE6E19C2216DCC300623E34 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				DF93715E24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift */,
-				DF602D1420AEE3C00083532A /* StoreKitReviewHelper.swift */,
-				DF3010D7205A929E005B493D /* String+Localization.swift */,
-				DF5F4C5E1FD5DAA10043F97E /* UIViewController+Transition.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		DFEB62191F30B5E900FEC555 = {
 			isa = PBXGroup;
 			children = (
-				DFEB62241F30B5EA00FEC555 /* Speedometer */,
-				DF9DCB0820ADD8EC008BAE8B /* SpeedometerTests */,
+				DF5CE0050000000000000001 /* Speedometer */,
+				DF5CE0050000000000000002 /* SpeedometerTests */,
 				DF806949238591DC0063482D /* Frameworks */,
 				DFEB62231F30B5EA00FEC555 /* Products */,
 			);
@@ -269,19 +107,6 @@
 				DF9DCB0720ADD8EC008BAE8B /* SpeedometerTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		DFEB62241F30B5EA00FEC555 /* Speedometer */ = {
-			isa = PBXGroup;
-			children = (
-				DFE6E19C2216DCC300623E34 /* Helpers */,
-				DF5F138B202A5AAE006D51DA /* Model */,
-				DF568E471FD0119600D546B8 /* Supporting Files */,
-				DF4C364F20D133B500A9E1B7 /* Views */,
-				DFEB62251F30B5EA00FEC555 /* AppDelegate.swift */,
-				DFCA0C601FD5E17300260E24 /* RootViewController.swift */,
-			);
-			path = Speedometer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +125,9 @@
 			dependencies = (
 				DF9DCB0D20ADD8EC008BAE8B /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				DF5CE0050000000000000002 /* SpeedometerTests */,
+			);
 			name = SpeedometerTests;
 			productName = SpeedometerTests;
 			productReference = DF9DCB0720ADD8EC008BAE8B /* SpeedometerTests.xctest */;
@@ -317,10 +145,10 @@
 			);
 			dependencies = (
 			);
-			name = Speedometer;
-			packageProductDependencies = (
-				DF266FBD284F582800C211EB /* RevenueCat */,
+			fileSystemSynchronizedGroups = (
+				DF5CE0050000000000000001 /* Speedometer */,
 			);
+			name = Speedometer;
 			productName = Speedometer;
 			productReference = DFEB62221F30B5EA00FEC555 /* Speedometer.app */;
 			productType = "com.apple.product-type.application";
@@ -359,9 +187,7 @@
 				Base,
 			);
 			mainGroup = DFEB62191F30B5E900FEC555;
-			packageReferences = (
-				DF93642B24DD681900598DB1 /* XCRemoteSwiftPackageReference "purchases-ios" */,
-			);
+			preferredProjectObjectVersion = 100;
 			productRefGroup = DFEB62231F30B5EA00FEC555 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -384,21 +210,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF4792C125001C4A006E3D1C /* Raspberry@3x.png in Resources */,
-				DF4792B625001AAB006E3D1C /* Blueberry@2x.png in Resources */,
-				DF1F79DD2059EAE800BAFC11 /* LaunchScreen.storyboard in Resources */,
-				DF4792BB25001C2D006E3D1C /* Orange.png in Resources */,
-				DF4792B525001AAB006E3D1C /* Blueberry@3x.png in Resources */,
-				DF4792BA25001C2D006E3D1C /* Orange@3x.png in Resources */,
-				DF58A6502057FCC700005A07 /* SourceCodePro-Regular.ttf in Resources */,
-				DF4792BC25001C2D006E3D1C /* Orange@2x.png in Resources */,
-				DF4792B425001AAB006E3D1C /* Blueberry.png in Resources */,
-				DFF84F4E2BF16AC4005C07AA /* Localizable.xcstrings in Resources */,
-				DF58A64F2057FCC700005A07 /* SourceCodePro-Medium.ttf in Resources */,
-				DFEB622D1F30B5EA00FEC555 /* Assets.xcassets in Resources */,
-				DFF84F502BF16AC4005C07AA /* InfoPlist.xcstrings in Resources */,
-				DF4792C225001C4A006E3D1C /* Raspberry.png in Resources */,
-				DF4792C025001C4A006E3D1C /* Raspberry@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,8 +220,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF64A52320EE621A00063BBD /* LocationTests.swift in Sources */,
-				DF9DCB1320ADDAED008BAE8B /* UnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,29 +227,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF602D1520AEE3C00083532A /* StoreKitReviewHelper.swift in Sources */,
-				DFD30993219F240E005CE3B9 /* ParagraphViewController.swift in Sources */,
-				DF9D05BD23FE77100033F43D /* Key.swift in Sources */,
-				DF36993F23882D3800BA8C08 /* InAppStoreViewController.swift in Sources */,
-				DF5F4C5F1FD5DAA10043F97E /* UIViewController+Transition.swift in Sources */,
-				DFDBDE5021F9D93500F3E858 /* LocationViewController.swift in Sources */,
-				DF76227321A6E9AE0073CEBC /* SettingsViewController.swift in Sources */,
-				DF2C45AF1FCC2EF0005C8906 /* Unit.swift in Sources */,
-				DFDB3682219F7B4D002B7D53 /* Message.swift in Sources */,
-				DFCA0C611FD5E17300260E24 /* RootViewController.swift in Sources */,
-				DF7D820221C2B073004A37C8 /* SpeedViewController.swift in Sources */,
-				DF22618124E67B9300BCD867 /* FillableCircleView.swift in Sources */,
-				DFFD6FEF24E3DAC4004E3A51 /* Theme.swift in Sources */,
-				DF511037219D9B05000321E8 /* LoadingViewController.swift in Sources */,
-				DF4C365120D133CD00A9E1B7 /* CircularView.swift in Sources */,
-				DF94839D20D16C7E009B120B /* Location.swift in Sources */,
-				DFDB3680219F770B002B7D53 /* MessageViewController.swift in Sources */,
-				DF3010D8205A929E005B493D /* String+Localization.swift in Sources */,
-				DFEB62261F30B5EA00FEC555 /* AppDelegate.swift in Sources */,
-				DF2F6BD321ADA4A400AC75BE /* ContentViewController.swift in Sources */,
-				DFECF442247FB6D500A83594 /* BlockingOverlayViewController.swift in Sources */,
-				DF93715F24DD919F00745A99 /* ActionHandlerSleeve+Extension.swift in Sources */,
-				DFD30999219F252C005CE3B9 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,7 +427,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = de.marcelkraus.speedometer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -667,7 +453,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = de.marcelkraus.speedometer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -713,24 +499,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		DF93642B24DD681900598DB1 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.3.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		DF266FBD284F582800C211EB /* RevenueCat */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DF93642B24DD681900598DB1 /* XCRemoteSwiftPackageReference "purchases-ios" */;
-			productName = RevenueCat;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DFEB621A1F30B5E900FEC555 /* Project object */;
 }
